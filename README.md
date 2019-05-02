@@ -26,9 +26,13 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 
 (This section under construction)
 
-### Gibb Deep Cavity Cavitand (GDCC) binding of Guests
+### Gibb Deep Cavity Cavitand (GDCC) binding of guests
 
 One host-guest series is based on the Gibb Deep Cavity Cavitands (GDCCs), familiar from SAMPL4-6. However, this challenge we swap one of the hosts; previously, we used octa acid (OA) and tetramethyl octa acid (TEMOA); this challenge revisits OA but also utilizes a variant which changes the location of the carboxylates.  Both were developed in the laboratory of Dr. Bruce Gibb (Tulane U), who will provide binding free energies and enthalpies, measured by ITC. In this case the challenge is to predict binding of eight compounds to TECTA, and two of these to OA; the other six have been studied previously in OA. Existing benchmark datasets based on the OA host may be of interest for those preparing to tackle these new complexes: https://github.com/MobleyLab/benchmarksets; this perpetual review paper also provides a good introduction to the sampling and experimental issues which are known to be relevant in these systems. See the [README on this challenge](host_guest/GDCC_and_guests/README.md) for more details.
+
+### Modified acyclic cucurbituril binding of guests
+
+The Isaacs lab is contributing data on binding of a series of guests to an acyclic cucubituril host, as detailed in `host_guest/Isaacs_clip` tentatively. Guest selection is still being finalized to ensure good dynamic range, but it will likely include compounds which overlap with the GDCC and cyclodextrin-derivative challenges, with a total of roughly ten complexes being examined.
 
 ## LICENSE
 
