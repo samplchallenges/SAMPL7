@@ -1,6 +1,6 @@
-# The SAMPL7 CB-like Clip Challenge
+# The SAMPL7 TrimerTrip Challenge
 
-For SAMPL7, the Isaacs group is **tentatively** contributing binding data for roughly ten guests to a CB-like clip molecule highlighted in the attached documents.
+For SAMPL7, the Isaacs group is **tentatively** contributing binding data for roughly ten guests to a CB-like clip molecule highlighted in the attached documents. This host is codenamed TrimerTrip.
 
 ## Challenge timing details (preliminary)
 
