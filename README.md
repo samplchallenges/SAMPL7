@@ -9,13 +9,13 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 ## What's here
 - [Challenge Overview](#challenge-overview) -- *in progress*
 - Very preliminary information on the octa acid and TrimerTrip host-guest challenge components in the `host_guest` directory.
-- Nearly solidified information on the cyclodextrin challenge in the `host_guest/cyclodextrin` directory.
+- Nearly solidified information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory.
 
 ## What's coming
 - Host-guest challenge information (May 2019)
   - Finalized details on the Gibb octa acid-based challenges
   - Finalized details on the Isaacs TrimerTrip challenge
-  - Launch of the Gilson lab cyclodextrin challenge
+  - Launch of the Gilson lab cyclodextrin derivatives challenge
 
 ## Changes and Data Set Versions
 
@@ -35,7 +35,7 @@ One host-guest series is based on the Gibb Deep Cavity Cavitands (GDCCs), famili
 
 The Isaacs lab is contributing data on binding of a series of guests to an acyclic cucubituril host, codenamed "TrimerTrip", as detailed in `host_guest/Isaacs_clip` tentatively. Guest selection is still being finalized to ensure good dynamic range, but it will likely include compounds which overlap with the GDCC and cyclodextrin-derivative challenges, with a total of roughly ten complexes being examined.
 
-### Modified cyclodextrin challenge
+### The cyclodextrin derivatives challenge
 
 The Gilson lab is measuring binding of two guests to ten different hosts, including beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-3-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges.
 
