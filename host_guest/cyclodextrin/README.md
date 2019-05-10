@@ -1,9 +1,6 @@
 # The SAMPL7 Modified Cyclodextrin Challenge
 
-For SAMPL7, the Gilson group is contributing binding data for two hosts (r-rimantadine and trans-3-methylcyclohexanol) binding to beta-cyclodextrin as well as nine novel cyclodextrin derivatives synthesized by Gilson postdoc Katy Kellett. for eight
-guests to two of the Gibb Deep Cavity Cavitand (GDCC) hosts it has frequently studied ---
-the familiar "Octa Acid" (OA) host and a newer, *exo*-OA host as detailed below.
-
+For SAMPL7, the Gilson group is contributing binding data for two hosts (r-rimantadine and trans-3-methylcyclohexanol) binding to beta-cyclodextrin as well as nine novel cyclodextrin derivatives synthesized by Gilson postdoc Katy Kellett. 
 ![](images/R_rimantadine.jpg)
 
 Above, R-rimantadine
