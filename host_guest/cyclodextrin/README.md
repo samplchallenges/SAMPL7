@@ -4,6 +4,14 @@ For SAMPL7, the Gilson group is contributing binding data for two hosts (r-riman
 guests to two of the Gibb Deep Cavity Cavitand (GDCC) hosts it has frequently studied ---
 the familiar "Octa Acid" (OA) host and a newer, *exo*-OA host as detailed below.
 
+![](images/R_rimantadine.jpg)
+
+Above, R-rimantadine
+
+![](images/trans_3_methylcyclohexanol.jpg)
+
+Above, trans-3-methylcyclohexanol
+
 ## Challenge timing details (preliminary)
 
 Currently, as of May 10, 2019, Dr. Kellett has collected most of the ITC data on guest binding and expects to have data collection finalized very soon. Participants may begin their calculations (though we will be preparing additional structures/inputs for those who would like additional file formats) and submissions will be allowed as soon as our submission system is online. The challenge is expected to run through August, 2019, with experimental results released at that time. (The formal submission deadline will be announced soon.)
