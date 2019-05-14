@@ -1,6 +1,6 @@
 # The SAMPL7 Cyclodextrin Derivatives Challenge
 
-For SAMPL7, the Gilson group is contributing binding data for two hosts (r-rimantadine and trans-3-methylcyclohexanol) binding to beta-cyclodextrin as well as nine novel cyclodextrin derivatives synthesized by Gilson postdoc Katy Kellett.
+For SAMPL7, the Gilson group is contributing binding data for two hosts (r-rimantadine and trans-4-methylcyclohexanol) binding to beta-cyclodextrin as well as nine novel cyclodextrin derivatives synthesized by Gilson postdoc Katy Kellett.
 
 ## Challenge overview
 
@@ -12,9 +12,9 @@ The challenge consists of predicting binding free energies of two guests to the 
 
 Above, R-rimantadine
 
-![](images/trans_3_methylcyclohexanol.jpg)
+![](images/trans_4_methylcyclohexanol.png)
 
-Above, trans-3-methylcyclohexanol
+Above, trans-4-methylcyclohexanol
 
 We plan to separately analyze submissions predicting absolute binding free energies of individual guests to individual hosts, and predictions of relative binding free energies of a single guest to a series of hosts.
 
@@ -29,7 +29,7 @@ This section is under construction and will provide background details on these 
 
 ### Additional technical details
 
-Binding in all systems was assayed in 25 mM pH 6.8 sodium phosphate buffer. All systems exhibit 1:1 binding except that one may end up being a nonbinder. NMR is being done in the hopes of assessing whether compounds are binding to the primary or secondary face.
+Binding in all systems was assayed in 25 mM pH 6.8 sodium phosphate buffer. All systems exhibit 1:1 binding except that one may end up being a nonbinder. NMR is being done in the hopes of assessing the preferred orientation of the bound guests.
 Compounds exhibiting strange binding patterns have already been removed prior to construction of this set.
 
 # What's here

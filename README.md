@@ -37,7 +37,7 @@ The Isaacs lab is contributing data on binding of a series of guests to an acycl
 
 ### The cyclodextrin derivatives challenge
 
-The Gilson lab is measuring binding of two guests to ten different hosts, including beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-3-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges.
+The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges.
 
 ## LICENSE
 
