@@ -29,7 +29,7 @@ This section is under construction and will provide background details on these 
 
 ### Additional technical details
 
-Binding in all systems was assayed in 25 mM pH 6.8 sodium phosphate buffer. All systems exhibit 1:1 binding except that one may end up being a nonbinder. NMR is being done in the hopes of assessing the preferred orientation of the bound guests.
+Binding in all systems was assayed in 25 mM pH 6.8 sodium phosphate buffer at 27 Celsius. All systems exhibit 1:1 binding except that one may end up being a nonbinder. NMR is being done in the hopes of assessing the preferred orientation of the bound guests.
 Compounds exhibiting strange binding patterns have already been removed prior to construction of this set.
 
 # What's here
