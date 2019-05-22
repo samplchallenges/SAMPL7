@@ -1,6 +1,6 @@
-# The SAMPL7 Cyclodextrin Derivatives Challenge
+README.md# The SAMPL7 Cyclodextrin Derivatives Challenge
 
-For SAMPL7, the Gilson group is contributing binding data for two hosts (r-rimantadine and trans-4-methylcyclohexanol) binding to beta-cyclodextrin as well as nine novel cyclodextrin derivatives synthesized by Gilson postdoc Katy Kellett.
+For SAMPL7, the Gilson group is contributing binding data for two hosts (r-rimantadine and trans-4-methylcyclohexanol) binding to beta-cyclodextrin as well as eight novel cyclodextrin derivatives synthesized by Gilson postdoc Katy Kellett.
 
 ## Challenge overview
 
