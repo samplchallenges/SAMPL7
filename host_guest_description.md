@@ -10,6 +10,7 @@
 Two guest molecules were used: trans-4-methylcyclohexanol and R-rimantadine hydrochloride (below).
 
 ![](images/CD_guests_fig1.png)
+
 **Figure 1** - *Structures of two guest molecules used with assigned stereochemistry*
 
 ### Host Molecules
@@ -47,6 +48,7 @@ However ITC results do not confirm primary vs. secondary binding orientation (fo
 Note, that primary/secondary binding orientations may not exchange on simulation timescales, meaning that part of this challenge may include binding mode prediction.
 
 ![](images/CD_face_binding.png)
+
 **Figure 2** - *Different potential 1:1 binding orientations of guest molecules (specifically rimantadine) and a modified cyclodextrin.*
 
 Analysis was conducted using code written within the Gilson group, made publicly available at https://github.com/GilsonLabUCSD/itc_fit commit ID `e9eabb0`, which treats N (stoichiometry) as floating.  
