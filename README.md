@@ -10,7 +10,8 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - [Challenge Overview](#challenge-overview) -- *in progress*
 - Very preliminary information on the TrimerTrip host-guest challenge components in the `host_guest` directory.
 - Final information on the Gibb octa acid-based challenge ("Gibb deep cavity cavitand" (GDCC) challenge) in the `host_guest/GDCC_and_guests` directory.
-- Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory.
+- Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
+- Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 
 You can consider the Gibb and Gilson challenges final and launched (though additional supporting files will be added, see below) and the Isaacs challenge will be finalized very soon.
 
@@ -25,6 +26,7 @@ You can consider the Gibb and Gilson challenges final and launched (though addit
 ### Release versions
 
 ### Changes not in a release
+- No formal releases yet
 
 ## Challenge overview
 
@@ -40,7 +42,7 @@ The Isaacs lab is contributing data on binding of a series of guests to an acycl
 
 ### The cyclodextrin derivatives challenge
 
-The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges.
+The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges. [Full details](host_guest_description.md) are available.
 
 ## LICENSE
 
