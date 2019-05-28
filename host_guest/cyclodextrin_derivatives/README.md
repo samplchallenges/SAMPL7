@@ -36,3 +36,4 @@ Compounds exhibiting strange binding patterns have already been removed prior to
 
 - Hosts: `hosts`: Folder containing beta cyclodextrin plus the eight other cyclodextrin derivative hosts, provided by Katy Kellett and Michael Gilson, initially only in PDB format with all protons present.
 - Guests: `guests`: Initially containing only names/SMILES strings of guests, but to be expanded with `mol2`/`sdf` files additionally.
+- Images: `images`: Folder containing jpeg and pdf images of the guest and host structures.
