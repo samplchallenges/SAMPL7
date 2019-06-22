@@ -35,5 +35,4 @@ For positively charged guests, chloride salts are expected to be used.
 # What's here
 
 All files here so far are extremely tentative pending finalization.
-- Hosts: `OA.pdb` and `exoOA.pdb` provided by Paolo Suating (Tulane) April 26, 2019; `SAMPL7_tentative_hosts.cdx` provided by Bruce Gibb April 26, 2019.
-- Guests: `SAMPL7_tentative_guests.cdx` provided by Bruce Gibb April 26, 2019.
+- `hosts_guest_files/`: Directory containing Chemdraw (`.cdx`), PDB, MOL2 and SDF files.
