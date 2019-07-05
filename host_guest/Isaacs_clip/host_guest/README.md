@@ -6,3 +6,4 @@
   - File creation: The `pytraj` toolkit was used to remove the solvent (water, Na+ and Cl-) and create a `MOL2` file, then the `antechamber` toolkit was used to convert GAFF2 atom types to SYBYL/Tripos atom type, the resulting `MOL2` file was read into OpenEye and written out to a new standards-compliant `MOL2` file, this `MOL2` file was then used to generate a SDF and PDB file.
 
 - Guests are codenamed from `g1` to `g15` and are provided in PDB, Tripos MOL2, and SDF file format. Guest file preparation is provided in the `input_maker.ipynb` jupyter notebook in this folder. For guest `g11` a random stereoisomer was chosen.
+- `trimertrip_guest_smiles.txt` : SMILES strings and codenames for all of the guests.
