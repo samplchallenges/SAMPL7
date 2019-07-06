@@ -5,5 +5,5 @@ Guests are trans-3-methylcyclohexanol and R-rimantadine hydrochloride, codenamed
 
 ## What's here
 
-- `guests.ism`: ids and isomeric SMILES strings for the guests
-- `guests.csv`: ids and names for the guests
+- `guests.ism`: isomeric SMILES strings and ids for the guests
+- `guests.csv`: names and ids for the guests
