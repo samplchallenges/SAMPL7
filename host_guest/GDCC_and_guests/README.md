@@ -33,5 +33,6 @@ Buffer conditions are expected to be 10 mM sodium phosphate, but this will be co
 For positively charged guests, chloride salts are expected to be used.
 
 # What's here
-
-- `hosts_guest_files/`: Directory containing Chemdraw (`.cdx`), PDB, MOL2 and SDF files.
+- Hosts: `SAMPL7_hosts.cdx` provided by Bruce Gibb April 26, 2019.
+- Guests: `SAMPL7_guests.cdx` provided by Bruce Gibb April 26, 2019.
+- `hosts_guest_files/`: Directory containing PDB, MOL2 and SDF files of the hosts and guest.
