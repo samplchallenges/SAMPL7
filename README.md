@@ -8,20 +8,25 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 
 ## What's here
 - [Challenge Overview](#challenge-overview) -- *in progress*
-- Very preliminary information on the octa acid and TrimerTrip host-guest challenge components in the `host_guest` directory.
-- Nearly solidified information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory.
+- Very preliminary information on the TrimerTrip host-guest challenge components in the `host_guest` directory.
+- Final information on the Gibb octa acid-based challenge ("Gibb deep cavity cavitand" (GDCC) challenge) in the `host_guest/GDCC_and_guests` directory.
+- Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
+- Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
+
+You can consider the Gibb and Gilson challenges final and launched (though additional supporting files will be added, see below) and the Isaacs challenge will be finalized very soon.
 
 ## What's coming
-- Host-guest challenge information (May 2019)
-  - Finalized details on the Gibb octa acid-based challenges
+- Host-guest challenge information (late May 2019)
   - Finalized details on the Isaacs TrimerTrip challenge
-  - Launch of the Gilson lab cyclodextrin derivatives challenge
+  - Additional supporting files such as 3D structures of guests, additional structure files, and perhaps parameterized systems
+  - Submission file formats
 
 ## Changes and Data Set Versions
 
 ### Release versions
 
 ### Changes not in a release
+- No formal releases yet
 
 ## Challenge overview
 
@@ -37,7 +42,7 @@ The Isaacs lab is contributing data on binding of a series of guests to an acycl
 
 ### The cyclodextrin derivatives challenge
 
-The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges.
+The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges. [Full details](host_guest_description.md) are available.
 
 ## LICENSE
 

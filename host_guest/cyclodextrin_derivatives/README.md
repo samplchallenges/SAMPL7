@@ -20,7 +20,7 @@ We plan to separately analyze submissions predicting absolute binding free energ
 
 ## Challenge timing details (preliminary)
 
-Dr. Kellett has finished the ITC data collection on guest binding. Participants may begin their calculations (though we will be preparing additional structures/inputs for those who would like additional file formats) and submissions will be allowed as soon as our submission system is online. The challenge is expected to run through August, 2019, with experimental results released at that time. (The formal submission deadline will be announced soon.)
+Dr. Kellett has finished the ITC data collection on guest binding and [full experimental details are available](../host_guest_description.md). Participants may begin their calculations (though we will be preparing additional structures/inputs for those who would like additional file formats) and submissions will be allowed as soon as our submission system is online. The challenge is expected to run through August, 2019, with experimental results released at that time. (The formal submission deadline will be announced soon.)
 
 ## Background information
 
@@ -31,6 +31,7 @@ This section is under construction and will provide background details on these 
 
 Binding in all systems was assayed in 25 mM pH 6.8 sodium phosphate buffer at 27 Celsius. All systems exhibit 1:1 binding except that one may end up being a nonbinder. NMR is being done in the hopes of assessing the preferred orientation of the bound guests.
 Compounds exhibiting strange binding patterns have already been removed prior to construction of this set.
+[Full experimental details are available.](../host_guest_description.md)
 
 # What's here
 
