@@ -33,6 +33,7 @@ Buffer conditions are expected to be 10 mM sodium phosphate, but this will be co
 For positively charged guests, chloride salts are expected to be used.
 
 # What's here
-- Hosts: `SAMPL7_hosts.cdx` provided by Bruce Gibb April 26, 2019.
-- Guests: `SAMPL7_guests.cdx` provided by Bruce Gibb April 26, 2019.
-- `hosts_guest_files/`: Directory containing PDB, MOL2 and SDF files of the hosts and guest.
+
+- Hosts: `host_files`: Folder containing PDB, MOL2 and SDF files for the Octa Acid (OA) host and the exo-OA host. Contains the the jupyter notebook used to generate the MOL2 and SDF files of the guests.
+- Guests: `guest_files`: Folder containing files for the eight guests, SMILES strings, and the jupyter notebook used to generate PDB, MOL2 and SDF files of the guests.
+- Images: `images`: Folder containing images of the guest and host structures for this challenge in PDF format.

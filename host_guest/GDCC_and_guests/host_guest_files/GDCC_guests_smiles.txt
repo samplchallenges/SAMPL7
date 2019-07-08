@@ -1,8 +1,0 @@
-CCCCCC([O-])=O;g1
-O=C([O-])C1=CC=C(Cl)C=C1;g2
-[O-]C(C1=CC[C@@H](C(C)=C)CC1)=O;g3
-C/C(C)=C/CC[C@H](C)CC([O-])=O;g4
-C[N](C)([CH2+])CCC1=CC=CC=C1;g5
-CCCCCC[N+](C)(C)C;g6
-C[C@H]1CC[C@H]([N+](C)(C)C)CC1;g7
-C[N+](C12C[C@@H]3C[C@H](C1)C[C@H](C2)C3)(C)C;g8
