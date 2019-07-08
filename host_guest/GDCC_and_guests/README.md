@@ -1,6 +1,6 @@
 # The SAMPL7 GDCC Challenge
 
-For SAMPL7, the Gibb group is **tentatively** contributing binding data for eight
+For SAMPL7, the Gibb group is contributing binding data for eight
 guests to two of the Gibb Deep Cavity Cavitand (GDCC) hosts it has frequently studied ---
 the familiar "Octa Acid" (OA) host and a newer, *exo*-OA host as detailed below.
 
@@ -30,12 +30,12 @@ Given the identity of these guests, it is likely we will be able to have *some* 
 
 ### Additional technical details
 
-Tentatively, buffer conditions will be 10 mM sodium phosphate, but this will be confirmed as data collection begins. The plan is to gather data in triplicate with fresh solutions of host and guest on each occasion.  Also, all hosts samples are probed by one of either two ways to determine the waters of hydration in each sample.  This can be as high so this analysis is a requirement to avoid bad data.
+Buffer conditions are expected to be 10 mM sodium phosphate, but this will be confirmed as data collection begins. The plan is to gather data in triplicate with fresh solutions of host and guest on each occasion.  Also, all hosts samples are probed by one of either two ways to determine the waters of hydration in each sample.  This can be as high so this analysis is a requirement to avoid bad data.
 
 For positively charged guests, chloride salts are expected to be used.
 
 # What's here
 
-All files here so far are extremely tentative pending finalization.
-- Hosts: `OA.pdb` and `exoOA.pdb` provided by Paolo Suating (Tulane) April 26, 2019; `SAMPL7_tentative_hosts.cdx` provided by Bruce Gibb April 26, 2019.
-- Guests: `SAMPL7_tentative_guests.cdx` provided by Bruce Gibb April 26, 2019.
+- Hosts: `host_files`: Folder containing PDB, MOL2 and SDF files for the Octa Acid (OA) host and the exo-OA host. Contains the the jupyter notebook used to generate the MOL2 and SDF files of the guests.
+- Guests: `guest_files`: Folder containing files for the eight guests, SMILES strings, and the jupyter notebook used to generate PDB, MOL2 and SDF files of the guests.
+- Images: `images`: Folder containing images of the guest and host structures for this challenge in PDF format.
