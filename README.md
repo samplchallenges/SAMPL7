@@ -26,7 +26,8 @@ You can consider the Gibb and Gilson challenges final and launched (though addit
 ### Release versions
 
 ### Changes not in a release
-- No formal releases yet
+There are no formal releases yet, so here we only note particularly important changes. 
+- **Critical bug**: Isaacs/TrimerTrip guest `g15` had an incorrect SMILES string as originally provided. This was corrected in the provided input files on July 18, 2019.
 
 ## Challenge overview
 
