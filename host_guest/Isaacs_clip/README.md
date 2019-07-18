@@ -9,7 +9,7 @@ Following this, the challenge is expected to launch around June 1, 2019, with ex
 
 ## A quick view of the host and guests
 
-![](SAMPL7.jpg)
+![](images/SAMPL7.jpg)
 
 # What's here
 
