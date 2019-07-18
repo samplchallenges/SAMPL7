@@ -1,6 +1,6 @@
 # Hosts for the SAMPL7 Cyclodextrin Derivatives Challenge
 
-Provided are the hosts for this challenge in PDB and ChemDraw (.cdx) format, including beta cyclodextrin as well as the series of modified cyclodextrins.
+Provided are the hosts for this challenge in PDB (.pdb), MOL2 (.mol2), SDF (.sdf) and ChemDraw (.cdx) format, including beta cyclodextrin as well as the series of modified cyclodextrins.
 
 
 ## What's here
@@ -11,3 +11,4 @@ Provided are the hosts for this challenge in PDB and ChemDraw (.cdx) format, inc
 - `bCD.cdx` : ChemDraw file of host beta-cyclodextrin provided by Katy Kellett May 10th, 2019.
 - `sampl_host_structures_coded.cdx` : ChemDraw file of the host structures with code names included, provided by Katy Kellett May 15, 2019.
 - `sampl_host_structures_1.cdx` : ChemDraw file of the host structures without any code names, provided by Katy Kellett May 15, 2019.
+- `host_input_maker.ipynb`: The jupyter notebook used to generate the MOL2 and SDF files for each guest using OpenEye toolkits and the PDBs that were provided by Katy Kellett.
