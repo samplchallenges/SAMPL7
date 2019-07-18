@@ -6,8 +6,7 @@ the familiar "Octa Acid" (OA) host and a newer, *exo*-OA host as detailed below.
 
 ## Challenge timing details (preliminary)
 
-Currently, as of May 1, 2019, the Gibb group needs several weeks to check scale up of synthesis of the *exo*-OA host to finalize host selection.
-Following this, the guest set will be finalized and the challenge will be opened for predictions.
+The SAMPL7 GDCC challenge is now finalized (as of May 25, 2019) with the details as given below. Additional files will be added to this repository in the near future, but predictions can begin immediately.
 Data collection is expected to be completed within three months, which means the
 challenge will likely close (with experimental data released) by the end of summer or early fall 2019.
 
@@ -20,7 +19,10 @@ In the former they are remote from the non-polar pocket, whilst in the latter th
 
 The Gibb group will examine the binding of eight guests: four negatively charged, and four positively charged.
 As previously, all binding constants will be determined in sodium phosphate buffer at pH 11.5.
-The guests have been selected to partially overlap with previous determinations for binding to OA (Ka values in black below).  These six examples will act as a reference point for the other determinations.  There will be two new determinations for binding to OA (estimated Ka shown in red), as well as eight new determinations for *exo*-OA (unknown Ka values shown as red question marks.)  Each of the ten new determinations will be carried out in triplicate using ITC.
+The guests have been selected to partially overlap with previous determinations for binding to OA (first row of guests; known ITC values to be added to this repository later).
+These six examples will act as a reference point for the other determinations.
+There will be two new determinations for binding to OA (second row of guests), as well as the eight new determinations using new host exo-OA.
+Each of the ten new determinations will be carried out in triplicate using ITC, and where necessary, verified by NMR.
 
 ![](../../images/GDCC_guests.jpg)
 
