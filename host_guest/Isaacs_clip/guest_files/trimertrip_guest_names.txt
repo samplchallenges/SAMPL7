@@ -1,0 +1,15 @@
+4-azaniumylbutylammonium;g1
+5-$l^{4}-azanylpentylammonium;g2
+6-azaniumylhexylammonium;g3
+7-azaniumylheptylammonium;g4
+8-azaniumyloctylammonium;g5
+1-adamantyl(trimethyl)ammonium;g6
+(4-azaniumylcyclohexyl)ammonium;g7
+[4-(azaniumylmethyl)phenyl]methylammonium;g8
+1-adamantylammonium;g9
+(9-azaniumyl-4-pentacyclo[7.3.1.1^{4,12}.0^{2,7}.0^{6,11}]tetradecanyl)ammonium;g10
+1-(1-adamantyl)ethanamine;g11
+hexyl(trimethyl)ammonium;g12
+methyl-[6-(methylammonio)hexyl]ammonium;g13
+6-(dimethylammonio)hexyl-dimethyl-ammonium;g14
+trimethyl-[6-(trimethylammonio)hexyl]ammonium;g15

@@ -1,0 +1,8 @@
+hexanoate;g1
+4-chlorobenzoate;g2
+(4~{S})-4-isopropenylcyclohexene-1-carboxylate;g3
+(3~{S})-3,7-dimethyloct-6-enoate;g4
+2-[dimethyl(methyl)-$l^{4}-azanyl]ethylbenzene;g5
+hexyl(trimethyl)ammonium;g6
+trimethyl-(4-methylcyclohexyl)ammonium;g7
+1-adamantyl(trimethyl)ammonium;g8
