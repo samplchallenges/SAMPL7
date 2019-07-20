@@ -1,6 +1,6 @@
 # Guests for the SAMPL7 Cyclodextrin Derivatives Challenge
 
-Provided are the two guests for this challenge in MOL2 (.mol2), PDB (.pdb) and SDF (.sdf) format. Guests are trans-3-methylcyclohexanol and R-rimantadine hydrochloride, codenamed `g1` and `g2` respectively.
+Provided are the SMILES strings for the two guests for this challenge, and then MOL2 (.mol2), PDB (.pdb) and SDF (.sdf) files generated from those SMILES strings are also provided here. Guests are trans-3-methylcyclohexanol and R-rimantadine hydrochloride, codenamed `g1` and `g2` respectively.
 
 
 ## What's here
