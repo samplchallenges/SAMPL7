@@ -13,4 +13,4 @@ Provided are the hosts for this challenge in PDB (.pdb), MOL2 (.mol2), SDF (.sdf
 - `bCD.cdx` : ChemDraw file of host beta-cyclodextrin provided by Katy Kellett May 10th, 2019.
 - `sampl_host_structures_coded.cdx` : ChemDraw file of the host structures with code names included, provided by Katy Kellett May 15, 2019.
 - `sampl_host_structures_1.cdx` : ChemDraw file of the host structures without any code names, provided by Katy Kellett May 15, 2019.
-- `host_SDF_maker.ipynb`: The jupyter notebook used to generate the SDF files for each host using OpenEye toolkits and the PDBs found here.
+- `host_SDF_maker.ipynb`: The jupyter notebook used to generate the SDF files for each host using OpenEye toolkits and the MOL2 files found here.
