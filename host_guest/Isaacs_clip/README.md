@@ -20,3 +20,8 @@ Note that we have typically selected reasonable protonation states and conformer
 - Hosts: `host_files`: Folder containing PDB, MOL2, SDF and Chemdraw files for the TrimerTrip host. Contains a detailed description of input file generation for the TrimerTrip host.
 - Guests: `guest_files`: Folder containing files for the 15 guests, SMILES strings, and the jupyter notebook used to generate PDB, MOL2 and SDF files of the guests.
 - Images: `images`: Folder containing an image of the guest and host structures for this challenge in JPG file format.
+
+**Source files**
+In this case the original source files provided were:
+- `guest_files/SAMPL7.cdx`, from Lyle Isaacs, providing a 2D structure of the host and all of the guests
+- A (not deposited) `.cif` crystallographic file of the host, from which we prepared the host structure and checked it against the 2D structure.
