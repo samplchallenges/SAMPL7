@@ -46,7 +46,7 @@ One host-guest series is based on the Gibb Deep Cavity Cavitands (GDCCs), famili
 
 ### Modified acyclic cucurbituril (TrimerTrip) binding of guests
 
-The Isaacs lab is contributing data on binding of a series of guests to an acyclic cucubituril host, codenamed "TrimerTrip", as detailed in `host_guest/Isaacs_clip` tentatively. Guest selection is still being finalized to ensure good dynamic range, but it will likely include compounds which overlap with the GDCC and cyclodextrin-derivative challenges, with a total of roughly ten complexes being examined.
+The Isaacs lab is contributing data on binding of a series of guests to an acyclic cucubituril host, codenamed "TrimerTrip", as detailed in `host_guest/Isaacs_clip`. Guests include compounds which overlap with the GDCC and cyclodextrin-derivative challenges, with a total of roughly 15 complexes being examined.
 
 ### The cyclodextrin derivatives challenge
 
