@@ -1,4 +1,7 @@
 # The SAMPL7 Blind Prediction Challenges for Computational Chemistry
+[![DOI](https://zenodo.org/badge/184310568.svg)](https://zenodo.org/badge/latestdoi/184310568)
+
+
 Challenge details, inputs, and (eventually) results for the SAMPL7 series of challenges
 
 See the [SAMPL website](https://samplchallenges.github.io) for information on the Statistical Assessment of the Modeling of Proteins and Ligands (SAMPL) series of challenges as a whole. This repository focuses specifically on the SAMPL7 series of challenges.
@@ -30,6 +33,7 @@ All three host-guest components of this challenge are now final and launched, th
 
 ### Release versions
 - **Release 0.1** (July 22, 2019): Finalizes all three host-guest systems and provides sdf, mol2 and PDB files for all guests. Fixes several critical bugs, including **fixing several incorrect cyclodextrin-derivative host structure files**, **fixing errors in a draft TrimerTrip structure file**, **fixing the SMILES string for TrimerTrip guest `g15`**, and **finalizing TrimerTrip guest list**.
+- **Release 0.1.1** (July 22, 2019, DOI [10.5281/zenodo.3346023](https://dx.doi.org/10.5281/zenodo.3346023)): Includes updated README files that should have been in release 0.1.
 
 ### Changes not in a release
 
