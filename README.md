@@ -30,6 +30,7 @@ There are no formal releases yet, so here we only note particularly important ch
 - **Critical bug**: Isaacs/TrimerTrip guest `g15` had an incorrect SMILES string as originally provided. This was corrected in the provided input files on July 18, 2019.
 - **Finalized systems**: Finalized details of TrimerTrip hosts from Lyle Isaacs, July 22, 2019. Materials added this date included several modifications to which guests are being considered relative to what had been provided earlier. GDCC and cyclodextrin challenges were finalized at an earlier date.
 - **Critical bug**: Isaacs/TrimerTrip host draft 3D structure files (mol2, sdf, PDB) had incorrect host due to a bond perception error in generating the files initially.
+- **Critical bug**: Cyclodextrin hosts 9, 24 and 36 had incorrect starting PDB files (and thus host mol2/sdf files as well) due to errors in their construction in the Gilson lab. 2D structures of these compounds were correct, however. This has now been fixed.
 
 ## Challenge overview
 
