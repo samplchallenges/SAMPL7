@@ -13,4 +13,4 @@ trimethyl-[6-(trimethylammonio)hexyl]ammonium;g15
 10-azaniumyldecylammonium;g16
 12-azaniumyldodecylammonium; g17
 1-methyl-4-(1-methylpyridin-1-ium-4-yl)pyridin-1-ium;g18
-3-(1,1-dimethylpiperidin-1-ium-4-yl)propyl-trimethyl-ammonium;g19
+4-(1,1-dimethylpiperidin-1-ium-4-yl)-1,1-dimethyl-piperidin-1-ium;g19
