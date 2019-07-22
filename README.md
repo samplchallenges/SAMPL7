@@ -7,19 +7,19 @@ Because these files are available publicly, we have no record of who downloads t
 Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMPL7-related announcements.
 
 ## What's here
-- [Challenge Overview](#challenge-overview) -- *in progress*
-- Very preliminary information on the TrimerTrip host-guest challenge components in the `host_guest` directory.
+- [Challenge Overview](#challenge-overview)
+- Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory.
 - Final information on the Gibb octa acid-based challenge ("Gibb deep cavity cavitand" (GDCC) challenge) in the `host_guest/GDCC_and_guests` directory.
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 
-You can consider the Gibb and Gilson challenges final and launched (though additional supporting files will be added, see below) and the Isaacs challenge will be finalized very soon.
+All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date.
 
 ## What's coming
-- Host-guest challenge information (late May 2019)
-  - Finalized details on the Isaacs TrimerTrip challenge
-  - Additional supporting files such as 3D structures of guests, additional structure files, and perhaps parameterized systems
+- Host-guest challenge
+  - Possibly parameterized systems
   - Submission file formats
+- GSK logD challenge information as soon as available
 
 ## Changes and Data Set Versions
 
@@ -28,10 +28,15 @@ You can consider the Gibb and Gilson challenges final and launched (though addit
 ### Changes not in a release
 There are no formal releases yet, so here we only note particularly important changes. 
 - **Critical bug**: Isaacs/TrimerTrip guest `g15` had an incorrect SMILES string as originally provided. This was corrected in the provided input files on July 18, 2019.
+- **Finalized systems**: Finalized details of TrimerTrip hosts from Lyle Isaacs, July 22, 2019. Materials added this date included several modifications to which guests are being considered relative to what had been provided earlier. GDCC and cyclodextrin challenges were finalized at an earlier date.
+- **Critical bug**: Isaacs/TrimerTrip host draft 3D structure files (mol2, sdf, PDB) had incorrect host due to a bond perception error in generating the files initially.
 
 ## Challenge overview
 
-(This section under construction)
+The SAMPL7 phase of challenges currently includes host-guest binding on three systems: A pair of Gibb Deeep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involves a total of 9-20 binding free energy calculations.
+Additional details are provided below.
+
+A later phase of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
 
