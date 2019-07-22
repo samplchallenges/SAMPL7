@@ -1,0 +1,19 @@
+[NH3+]CCCC[NH3+];g1 ;still present as g1
+[NH3+]CCCCC[NH3+];g2 ; still present as g2
+[NH3+]CCCCCC[NH3+];g3 ; still present as g3
+[NH3+]CCCCCCC[NH3+];g4 ; removed
+[NH3+]CCCCCCCC[NH3+];g5; still present as g5
+C[N+](C1(C2)C[C@H]3C[C@@H]2C[C@@H](C1)C3)(C)C;g6 ; still present as g6
+[NH3+][C@H]1CC[C@H]([NH3+])CC1;g7; still present as g7
+[NH3+]CC1=CC=C(C[NH3+])C=C1;g8 ; still present as g8
+[NH3+]C1(C2)C[C@H]3C[C@@H]2C[C@@H](C1)C3;g9 ; still present as g9
+[NH3+]C1(C2)C[C@H]3[C@H](C4)[C@@H]2[C@@H]5CC4([NH3+])C[C@H]3[C@@H]5C1 ; g10
+NC(C)C1(C2)C[C@H]3C[C@@H]2C[C@@H](C1)C3;g11; still present as g11
+CCCCCC[N+](C)(C)C;g12; still present as g12
+C[NH2+]CCCCCC[NH2+]C;g13; removed
+C[NH+](C)CCCCCC[NH+](C)C;g14; removed
+C[N+](C)(C)CCCCCC[N+](C)(C)C;g15 ; still present as g15
+[NH3+]CCCCCCCCCC[NH3+]; g16 ; new addition
+[NH3+]CCCCCCCCCCCC[NH3+]; g17 ; new addition
+C[N+]1=CC=C(C2=CC=[N+](C)C=C2)C=C1 ; g18 ; new addition
+C[N+](C)(C)CCCC1CC[N+](C)(C)CC1 ; g19 ; new addition
