@@ -16,7 +16,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 
-All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date.
+All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. The tentative submission deadline is Oct. 1.
 
 ## What's coming
 - Host-guest challenge
@@ -43,6 +43,8 @@ The SAMPL7 phase of challenges currently includes host-guest binding on three sy
 Additional details are provided below.
 
 A later phase of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
+
+**The tentative submission deadline for predictions for the host-guest challenge is October 1, 2019.**
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
 
