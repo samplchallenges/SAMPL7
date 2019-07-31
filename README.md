@@ -36,6 +36,7 @@ All three host-guest components of this challenge are now final and launched, th
 - **Release 0.1.1** (July 22, 2019, DOI [10.5281/zenodo.3346023](https://dx.doi.org/10.5281/zenodo.3346023)): Includes updated README files that should have been in release 0.1.
 
 ### Changes not in a release
+- List final (rather than tentative) buffer conditions for GDCC case: Confirming 10 mM sodium phosphate, correcting pH from 11.5 to 11.7
 
 ## Challenge overview
 
