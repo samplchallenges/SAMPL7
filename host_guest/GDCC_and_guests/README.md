@@ -6,9 +6,8 @@ the familiar "Octa Acid" (OA) host and a newer, *exo*-OA host as detailed below.
 
 ## Challenge timing details (preliminary)
 
-The SAMPL7 GDCC challenge is now finalized (as of May 25, 2019) with the details as given below. Additional files will be added to this repository in the near future, but predictions can begin immediately.
-Data collection is expected to be completed within three months, which means the
-challenge will likely close (with experimental data released) by the end of summer or early fall 2019.
+The SAMPL7 GDCC challenge is now finalized (as of May 25, 2019) with the details as given below. 
+The challenge submission deadline is Nov. 1, 2019.
 
 ## Proposed challenge for SAMPL7: A Coulombic Challenge
 
