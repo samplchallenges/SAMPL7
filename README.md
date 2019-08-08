@@ -16,7 +16,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 
-All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. The tentative submission deadline is Oct. 1.
+All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. The submission deadline is Oct. 1 for the TrimerTrip host-guest challenge and Nov. 1 for the cyclodextrin derivatives and GDCC challenges, due to timescales for data collection and publication of the experimental data.
 
 ## What's coming
 - Host-guest challenge
@@ -37,6 +37,7 @@ All three host-guest components of this challenge are now final and launched, th
 
 ### Changes not in a release
 - List final (rather than tentative) buffer conditions for GDCC case: Confirming 10 mM sodium phosphate, correcting pH from 11.5 to 11.7
+- Update submission deadlines
 
 ## Challenge overview
 

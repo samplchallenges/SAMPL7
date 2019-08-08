@@ -20,7 +20,7 @@ We plan to separately analyze submissions predicting absolute binding free energ
 
 ## Challenge timing details (preliminary)
 
-Dr. Kellett has finished the ITC data collection on guest binding and [full experimental details are available](../../host_guest_description.md). Participants may begin their calculations (though we will be preparing additional structures/inputs for those who would like additional file formats) and submissions will be allowed as soon as our submission system is online. The challenge is expected to run through August, 2019, with experimental results released at that time. (The formal submission deadline will be announced soon.)
+Dr. Kellett has finished the ITC data collection on guest binding and [full experimental details are available](../../host_guest_description.md). Participants may begin their calculations and submissions will be allowed as soon as our submission system is online. The challenge deadline concludes in Oct. 2019, with experimental results released at that time. The formal submission deadline is available on the main page for this repository.
 
 ## Background information
 
