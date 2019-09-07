@@ -27,7 +27,7 @@ All three host-guest components of this challenge are now final and launched, th
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
 - We make an effort to indicate which files are original source files, and which are derived files, so that participants can refer to the original source files to help resolve any uncertainties. We encourage participants to do so.
-- While we make every effort to ensure correctness of the files we provide, it is not uncommon for there to be some errors. *Please* sign up for our e-mail list, since if any critical bugs are found, we will e-mail out appropriate announcements. 
+- While we make every effort to ensure correctness of the files we provide, it is not uncommon for there to be some errors. *Please* sign up for our e-mail list, since if any critical bugs are found, we will e-mail out appropriate announcements.
 
 ## Changes and Data Set Versions
 
@@ -38,6 +38,7 @@ All three host-guest components of this challenge are now final and launched, th
 ### Changes not in a release
 - List final (rather than tentative) buffer conditions for GDCC case: Confirming 10 mM sodium phosphate, correcting pH from 11.5 to 11.7
 - Update submission deadlines
+- Fix input files for guest g11 in the Trimertrip challenge (added on 9/6/19) as they were missing coordinates. 
 
 ## Challenge overview
 
