@@ -34,13 +34,9 @@ All three host-guest components of this challenge are now final and launched, th
 ### Release versions
 - **Release 0.1** (July 22, 2019): Finalizes all three host-guest systems and provides sdf, mol2 and PDB files for all guests. Fixes several critical bugs, including **fixing several incorrect cyclodextrin-derivative host structure files**, **fixing errors in a draft TrimerTrip structure file**, **fixing the SMILES string for TrimerTrip guest `g15`**, and **finalizing TrimerTrip guest list**.
 - **Release 0.1.1** (July 22, 2019, DOI [10.5281/zenodo.3346023](https://dx.doi.org/10.5281/zenodo.3346023)): Includes updated README files that should have been in release 0.1.
+- **Release 0.1.2** (Sept. 16, 2019): Fixes protonation states for three "modified cyclodextrin" hosts which had accidentally been prepared (and drawn in ChemDraw) with charged groups present as neutral -- specifically terminal -NH3 groups were provided as -NH2. This affected MGLab19, 24 and 34. Also includes minor maintenance fixes -- listing final rather than tentative buffer conditions for GDCC case (just removing the "tentative" on the buffer identity, and correcting pH from 11.5 to 11.7); updates submission deadlines; fixes missing coordinates in TrimerTrip `g11`; fixing breakdown into residues in a couple modified cyclodextrin host PDB/mol2 files.
 
 ### Changes not in a release
-- List final (rather than tentative) buffer conditions for GDCC case: Confirming 10 mM sodium phosphate, correcting pH from 11.5 to 11.7
-- Update submission deadlines
-- Fix input files for guest g11 in the Trimertrip challenge (added on 9/6/19) as they were missing coordinates. 
-- Fix protonation states for three "modified cyclodextrin" hosts which had accidentally been prepared (and drawn in ChemDraw) with charged groups present as neutral -- specifically terminal -NH3groups were provided as -NH2. This affected MGLab19, 24 and 34
-- At the same time, fixed numbering of residues in mol2 files for MGLab9 and MGLab36, which made certain workflows unhappy.
 
 ## Challenge overview
 
