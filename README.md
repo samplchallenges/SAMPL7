@@ -39,6 +39,8 @@ All three host-guest components of this challenge are now final and launched, th
 - List final (rather than tentative) buffer conditions for GDCC case: Confirming 10 mM sodium phosphate, correcting pH from 11.5 to 11.7
 - Update submission deadlines
 - Fix input files for guest g11 in the Trimertrip challenge (added on 9/6/19) as they were missing coordinates. 
+- Fix protonation states for three "modified cyclodextrin" hosts which had accidentally been prepared (and drawn in ChemDraw) with charged groups present as neutral -- specifically terminal -NH3groups were provided as -NH2. This affected MGLab19, 24 and 34
+- At the same time, fixed numbering of residues in mol2 files for MGLab9 and MGLab36, which made certain workflows unhappy.
 
 ## Challenge overview
 
