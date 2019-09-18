@@ -1,0 +1,89 @@
+# Results for clip
+#
+# This file will be automatically parsed.  It must contain the following five elements: predictions, name of method, software listing, method, and ranked.
+# These elements must be provided in the order shown.
+# Please explicitly describe how you handle ions and pKa effects.
+#
+# The data in each prediction line should be structured as follows, with all (up to six) numbers in kcal/mol.
+# host-guest ID, Free energy, free energy SEM, free energy method error, enthalpy, enthalpy SEM, enthalpy method uncertainty
+# Note that the "method error" should be your estimate of ACCURACY of this particular approach
+# for the compound considered.
+# The list of predictions must begin with the "Prediction:" keyword, as illustrated here.
+Predictions:
+clip-g1, -10.1,,,  -0.3,,
+clip-g2, -10.5,,,  -20.5,,
+clip-g3, -5.4,,,   -2.9,,
+clip-g4, -2.3,,,   -5.0,,
+clip-g5, -8.9,,,   -12.1,,
+clip-g6, -1.4,,,   -1.8,,
+clip-g7, -9.2,,,   -0.8,,
+clip-g8, -2.3,,,   -5.0,,
+clip-g9, -8.9,,,   -12.1,,
+clip-g10, -1.4,,,   -1.8,,
+clip-g11, -6.2,,,   -0.4,,
+clip-g12, -8.2,,,   -0.3,,
+clip-g15, -7.2,,,   -0.6,,
+clip-g16, -7.2,,,   -0.6,,
+clip-g17, -7.2,,,   -0.6,,
+clip-g18, -7.2,,,   -0.6,,
+clip-g19, -7.2,,,   -0.6,,
+#
+# Please provide an informal yet informative name of the method used.
+# Following is sample text; please edit to your taste.
+# The "Name:" keyword is required, as shown here.
+Name:
+Long/DDM/GAFF/TIP3P
+#
+# All major software packages used and their versions
+# Following is sample text; please edit to your taste.
+# The "Software:" keyword is required.
+Software:
+Gromacs 5.0.2
+Gaussian 09
+#
+# Methodology and computational details.
+# Level of detail should be at least that used in a publication.
+# Please include the values of key parameters, with units, and explain how any statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# Please explicitly describe how you handle ions (e.g. counterions) and pKa effects
+# Following is sample text; please edit to your taste.
+# All text following the "Method:" keyword will be regarded as part of your free text methods description.
+Method:
+All simulations were performed with the pmemd.cuda program from
+AMBER14, using our attach-pull-release method (10.1002/jcc.23398,
+10.1021/acs.jctc.5b00405). Ten windows were used for the attach phase,
+and umbrella sampling windows during the pull phase were spaced at 1
+Angstrom intervals, and extended to a maximum distance of 25
+Angstroms. As no restraints were added to the host itself, the work of
+release could be computed purely analytically.
+
+Each sampling window included a minimum of 50 ns simulation time, with
+extension as needed to bring the standard error estimate of the
+overall free energy within 0.5 kcal/mol. The longest sampling required
+in any window was 125 ns. The bonded and initial Lennard-Jones
+parameters were obtained from GAFF. Partial atomic charges were
+generated with the RESP procedures as implemented in the program
+Antechamber. Sodium or chloride counterions, with parameters from
+Joung and Cheatham (10.1021/jp8001614), were added only as needed to
+neutralize the total charge of each host-guest system; no additional
+counterions were added. The starting structures were obtained by
+docking from MOE initially, but were relaxed through short preliminary
+MD simulations. Each system was solvated with ~2000 TIP3P waters in an
+orthorhombic box whose dimensions were approximately 36 x 36 x 52
+cubic Angstroms.
+
+Production simulations were run in the NPT ensemble, with temperature
+control using a Langevin thermostat with collision frequency 1.0 ps-1
+and pressure control provided by the Monte Carlo barostat. Direct
+space nonbonded interactions were truncated with a 9.0 Angstrom cutoff,
+whereas long-range electrostatics were handled with the PME method,
+using default AMBER settings. SHAKE constraints were applied to bonds
+involving hydrogen, and the simulation time step was set to 2 fs.
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True

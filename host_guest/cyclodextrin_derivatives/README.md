@@ -42,6 +42,7 @@ Note that we have typically selected reasonable protonation states and conformer
 - Hosts: `host_files`: Folder containing beta cyclodextrin plus the eight other cyclodextrin derivative hosts, provided by Katy Kellett and Michael Gilson, initially only in PDB format with all protons present. The Chemdraw files are also provided. MOL2 and SDF files of the hosts were added on 7/18/19.
 - Guests: `guest_files`: Contains MOL2, PDB and SDF files and files containing the isomeric SMILES strings and codenames of the guests.
 - Images: `images`: Folder containing images of the guest and host structures for this challenge in JPG and PDF format.
+- Submission format: `CD_submission.txt`: Example submission file (please replace the text and values with your own!) for submitting to our system.
 
 **Source files**:
 - PDB files of all hosts from the Gilson lab, which served to generate host sdf and mol2 files
