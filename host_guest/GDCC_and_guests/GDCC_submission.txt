@@ -1,0 +1,124 @@
+# Results for GDCC
+#
+# This file will be automatically parsed.  It must contain the following seven elements:
+# predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
+# These elements must be provided in the order shown.
+#
+# FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
+# Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
+# contains a non-UTF-8 character, you may note it in comments near that entry.
+#
+#
+# PREDICTIONS
+# Please explicitly describe how you handle ions and pKa effects.
+#
+# The data in each prediction line should be structured as follows, with all (up to six) numbers in kcal/mol.
+# host-guest ID (note that the host varies!), Free energy, free energy SEM, free energy model uncertainty,
+# enthalpy, enthalpy SEM, enthalpy model uncertainty
+#
+# Note that the "model uncertainty" should be your estimate of ACCURACY of this particular approach
+# for the compound considered.
+# Beta CD (bCD) is optional and will not be judged, as literature values are available.
+#
+# The list of predictions must begin with the "Prediction:" keyword, as illustrated here.
+Predictions:
+OA-g1, -10.1, 0.1, 1.0, -0.3, 0.1, 1.0
+OA-g2, -10.5,,,  -20.5,,
+OA-g3, -5.4,,,   -2.9,,
+OA-g3, -2.3,,,   -5.0,,
+OA-g4, -8.9,,,   -12.1,,
+OA-g5, -1.4,,,   -1.8,,
+OA-g6, -9.2,,,   -0.8,,
+OA-g7, -2.3,,,   -5.0,,
+OA-g8, -8.9,,,   -12.1,,
+exoOA-g1, -1.4,,,   -1.8,,
+exoOA-g2, -6.2,,,   -0.4,,
+exoOA-g3, -8.2,,,   -0.3,,
+exoOA-g4, -7.2,,,   -0.6,,
+exoOA-g5, -8.9,,,   -12.1,,
+exoOA-g6, -1.4,,,   -1.8,,
+exoOA-g7, -9.2,,,   -0.8,,
+exoOA-g8, -2.3,,,   -5.0,,
+#
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+David Mobley
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+University of California, Irvine
+#
+#
+# Please provide a brief (40 character limit) informal yet informative name of the method used.
+# Following is sample text; please edit to your taste.
+# The "Name:" keyword is required, as shown here.
+# 40 character limit.
+Name:
+Long/DDM/GAFF/TIP3P
+#
+# All major software packages used and their versions
+# Following is sample text; please edit to your taste.
+# The "Software:" keyword is required.
+Software:
+Gromacs 5.0.2
+Gaussian 09
+#
+# Methodology and computational details.
+# Level of detail should be at least that used in a publication.
+# Please include the values of key parameters, with units, and explain how any
+# statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# Please explicitly describe how you handle ions (e.g. counterions) and pKa effects
+# Following is sample text; please edit to your taste.
+# All text following the "Method:" keyword will be regarded as part of your free text methods description.
+Method:
+All simulations were performed with the pmemd.cuda program from
+AMBER14, using our attach-pull-release method (10.1002/jcc.23398,
+10.1021/acs.jctc.5b00405). Ten windows were used for the attach phase,
+and umbrella sampling windows during the pull phase were spaced at 1
+Angstrom intervals, and extended to a maximum distance of 25
+Angstroms. As no restraints were added to the host itself, the work of
+release could be computed purely analytically.
+
+Each sampling window included a minimum of 50 ns simulation time, with
+extension as needed to bring the standard error estimate of the
+overall free energy within 0.5 kcal/mol. The longest sampling required
+in any window was 125 ns. The bonded and initial Lennard-Jones
+parameters were obtained from GAFF. Partial atomic charges were
+generated with the RESP procedures as implemented in the program
+Antechamber. Sodium or chloride counterions, with parameters from
+Joung and Cheatham (10.1021/jp8001614), were added only as needed to
+neutralize the total charge of each host-guest system; no additional
+counterions were added. The starting structures were obtained by
+docking from MOE initially, but were relaxed through short preliminary
+MD simulations. Each system was solvated with ~2000 TIP3P waters in an
+orthorhombic box whose dimensions were approximately 36 x 36 x 52
+cubic Angstroms.
+
+Production simulations were run in the NPT ensemble, with temperature
+control using a Langevin thermostat with collision frequency 1.0 ps-1
+and pressure control provided by the Monte Carlo barostat. Direct
+space nonbonded interactions were truncated with a 9.0 Angstrom cutoff,
+whereas long-range electrostatics were handled with the PME method,
+using default AMBER settings. SHAKE constraints were applied to bonds
+involving hydrogen, and the simulation time step was set to 2 fs.
+
+#
+#
+# METHOD CATEGORY SECTION
+#
+# State which method category your prediction method is better described as:
+# `Alchemical`, `Quantum`, `Other Physical` `Empirical`, `Mixed`, or `Other`.
+# Pick only one category label.
+# The `Category:` keyword is required.
+Category:
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True
