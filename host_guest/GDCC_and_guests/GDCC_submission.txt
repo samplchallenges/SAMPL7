@@ -3,6 +3,7 @@
 # This file will be automatically parsed.  It must contain the following seven elements:
 # predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
 # These elements must be provided in the order shown.
+# The file name must begin with the letters "GDCC" and then be followed by an underscore or dash.
 #
 # FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
 # Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
