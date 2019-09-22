@@ -114,6 +114,7 @@ involving hydrogen, and the simulation time step was set to 2 fs.
 # Pick only one category label.
 # The `Category:` keyword is required.
 Category:
+Alchemical
 #
 # All submissions must either be ranked or non-ranked.
 # Only one ranked submission per participant is allowed.
