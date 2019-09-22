@@ -11,6 +11,10 @@ You must use the provided templates to upload your predictions. Templates are:
 - [GDCC_and_guests/GDCC_submission.txt](GDCC_and_guests/GDCC_submission.txt) for the GDCC challenge
 - [Isaacs_clip/Clip_submission.txt](Isaacs_clip/Clip_submission.txt) for the Isaacs clip/TrimerTrip challenge
 
+File names must begin with the letters "CD", "GDCC", or "Clip" depending on the
+challenge (as in the template files) and be followed by an underscore or dash.
+The remainder of the filename is up to you.
+
 ## Multiple submissions
 
 As per our [policy on multiple submissions](https://samplchallenges.github.io/roadmap/submissions/), each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form. We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
