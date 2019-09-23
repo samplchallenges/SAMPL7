@@ -19,8 +19,8 @@ In the former they are remote from the non-polar pocket, whilst in the latter th
 The Gibb group will examine the binding of eight guests: four negatively charged, and four positively charged.
 As previously, all binding constants will be determined in (10 mM) sodium phosphate buffer, here at pH 11.7.
 The guests have been selected to partially overlap with previous determinations for binding to OA (first row of guests; known ITC values to be added to this repository later).
-These six examples will act as a reference point for the other determinations.
-There will be two new determinations for binding to OA (second row of guests), as well as the eight new determinations using new host exo-OA.
+These six examples will act as a reference point for the other determinations, thus submission of these values is optional.
+There will be two new determinations for binding to OA (second row of guests; required), as well as the eight new determinations using new host exo-OA.
 Each of the ten new determinations will be carried out in triplicate using ITC, and where necessary, verified by NMR.
 
 ![](../../images/GDCC_guests.jpg)

@@ -19,7 +19,11 @@
 #
 # Note that the "model uncertainty" should be your estimate of ACCURACY of this particular approach
 # for the compound considered.
-# Beta CD (bCD) is optional and will not be judged, as literature values are available.
+#
+# For the CD challenge, beta CD (bCD) is optional and will not be judged, as
+# literature values are available.
+# Likewise, for the GDCC challenge, OA binding values for guests 1-6 (but not 7-8)
+# are optional as literature values are available.
 #
 # The list of predictions must begin with the "Prediction:" keyword, as illustrated here.
 Predictions:
