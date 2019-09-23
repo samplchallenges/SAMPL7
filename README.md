@@ -20,9 +20,8 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. The submission deadline is Oct. 1 for the TrimerTrip host-guest challenge and Nov. 1 for the cyclodextrin derivatives and GDCC challenges, due to timescales for data collection and publication of the experimental data.
 
 ## What's coming
-- Host-guest challenge
-  - Possibly parameterized systems
 - GSK logD challenge information as soon as available
+- Results (and inputs for) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
