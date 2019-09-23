@@ -5,6 +5,7 @@ For SAMPL7, the Isaacs group is contributing binding data for roughly ten guests
 ## Challenge timing details
 
 Data collection for the TrimerTrip challenge is complete or nearly so, as of Aug. 2016, and a paper is to be submitted this fall. The challenge deadline (so as to not delay publication) is therefore Oct. 1, 2019.
+The challenge consists of predicting binding free energies of all 15 guests to TrimerTrip. Optionally, binding enthalpies may also be submitted, as these are being measured.
 
 ## A quick view of the host and guests
 

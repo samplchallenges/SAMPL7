@@ -38,6 +38,7 @@ All three host-guest components of this challenge are now final and launched, th
 ### Changes not in a release
 - Added host-guest submission template files and instructions (Sept. 18, 2019)
 - Made more clear which compounds/cases are optional (Sept. 23, 2019)
+- Make clear that free energy predictions (and uncertainties) are required; enthalpies optional (Sept. 23, 2019)
 
 ## Challenge overview
 

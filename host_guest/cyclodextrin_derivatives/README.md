@@ -4,7 +4,7 @@ For SAMPL7, the Gilson group is contributing binding data for two hosts (r-riman
 
 ## Challenge overview
 
-The challenge consists of predicting binding free energies of two guests to the series of modified cyclodextrin hosts shown below.
+The challenge consists of predicting binding free energies (and, optionally, enthalpies of binding) of two guests to the series of modified cyclodextrin hosts shown below.
 
 ![](images/sampl_host_structures_coded.jpg)
 

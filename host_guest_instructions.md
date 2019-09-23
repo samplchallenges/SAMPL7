@@ -29,10 +29,14 @@ Anonymous participation is not allowed.
 
 Three different host-guest categories are considered, each involving one or more sub-systems, as detailed in the main README.md. Measured binding free energies are available in all cases, and binding enthalpies are also expected to be available.
 
-### Optional submissions:
+### Optional systems:
 In the cyclodextrin derivatives sub-challenge, beta-cyclodextrin is provided as a host but can be considered optional, because literature values are likely available for binding of the guests to this host. Beta-CD binding will not be judged, but can be used as a reference (e.g. for relative free energy calculations).
 
 In the Gibb deep cavity cavitand (GDCC) challenge, octa acid (OA) binding prediction for guests 1 through 6 is optional (as literature values are available) but guests 7 and 8 are required. The whole series is required for exoOA. All values can be submitted, as values for the optional combinations can serve as a reference (e.g. for relative free energy calculations).
+
+### Optional values:
+All submissions are required to have predicted binding **free energies**, predicted standard error,
+and predicted model uncertainty (your estimate of the accuracy of your method, which can vary from compound to compound), for all required compounds/systems. Enthalpy predictions (and the associated errors/model uncertainties) are optional, though for most systems here, binding enthalpy values WILL be available.
 
 ## Computational methods
 

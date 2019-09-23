@@ -4,10 +4,11 @@ For SAMPL7, the Gibb group is contributing binding data for eight
 guests to two of the Gibb Deep Cavity Cavitand (GDCC) hosts it has frequently studied ---
 the familiar "Octa Acid" (OA) host and a newer, *exo*-OA host as detailed below.
 
-## Challenge timing details (preliminary)
+## Challenge timing details
 
 The SAMPL7 GDCC challenge design is now finalized (as of May 25, 2019) with the details as given below.
 The challenge submission deadline is Nov. 1, 2019.
+The challenge consists of predicting binding free energies of eight compounds to exoOA, and two to OA. Optionally, binding enthalpies may also be submitted.
 
 ## Proposed challenge for SAMPL7: A Coulombic Challenge
 
@@ -21,11 +22,13 @@ As previously, all binding constants will be determined in (10 mM) sodium phosph
 The guests have been selected to partially overlap with previous determinations for binding to OA (first row of guests; known ITC values to be added to this repository later).
 These six examples will act as a reference point for the other determinations, thus submission of these values is optional.
 There will be two new determinations for binding to OA (second row of guests; required), as well as the eight new determinations using new host exo-OA.
-Each of the ten new determinations will be carried out in triplicate using ITC, and where necessary, verified by NMR.
+Each of the ten new determinations will be carried out in triplicate using ITC, and where necessary, verified by NMR (or measured by NMR, for very weak binders).
 
 ![](../../images/GDCC_guests.jpg)
 
 Given the identity of these guests, we will be able to have *some* overlap between the GDCC guests and those used in the modified cyclodextrin (Gilson lab) and acyclic CB (Isaacs lab) portions of the challenge.
+
+For all compounds for which binding is being determined by ITC, binding enthalpy measurements will also be available. Thus, binding enthalpy values can optionally be submitted and will be judged as data is available (that is, for most compounds).
 
 ### Additional technical details
 

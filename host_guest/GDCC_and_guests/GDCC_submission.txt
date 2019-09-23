@@ -16,6 +16,8 @@
 # The data in each prediction line should be structured as follows, with all (up to six) numbers in kcal/mol.
 # host-guest ID (note that the host varies!), Free energy, free energy SEM, free energy model uncertainty,
 # enthalpy, enthalpy SEM, enthalpy model uncertainty
+# The free energy, free energy SEM, and free energy model uncertainty are REQUIRED.
+# The corresponding quantities for binding enthalpy are optional.
 #
 # Note that the "model uncertainty" should be your estimate of ACCURACY of this particular approach
 # for the compound considered.
