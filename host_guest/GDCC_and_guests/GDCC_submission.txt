@@ -30,22 +30,22 @@
 # The list of predictions must begin with the "Prediction:" keyword, as illustrated here.
 Predictions:
 OA-g1, -10.1, 0.1, 1.0, -0.3, 0.1, 1.0
-OA-g2, -10.5,,,  -20.5,,
-OA-g3, -5.4,,,   -2.9,,
-OA-g3, -2.3,,,   -5.0,,
-OA-g4, -8.9,,,   -12.1,,
-OA-g5, -1.4,,,   -1.8,,
-OA-g6, -9.2,,,   -0.8,,
-OA-g7, -2.3,,,   -5.0,,
-OA-g8, -8.9,,,   -12.1,,
-exoOA-g1, -1.4,,,   -1.8,,
-exoOA-g2, -6.2,,,   -0.4,,
-exoOA-g3, -8.2,,,   -0.3,,
-exoOA-g4, -7.2,,,   -0.6,,
-exoOA-g5, -8.9,,,   -12.1,,
-exoOA-g6, -1.4,,,   -1.8,,
-exoOA-g7, -9.2,,,   -0.8,,
-exoOA-g8, -2.3,,,   -5.0,,
+OA-g2, -10.5, 0.1, 1.0,  -20.5,,
+OA-g3, -5.4,  0.1, 0.8,   -2.9,,
+OA-g3, -2.3,  0.1, 1.0,   -5.0,,
+OA-g4, -8.9,  0.1, 1.0,   -12.1,,
+OA-g5, -1.4,  0.1, 1.0,   -1.8,,
+OA-g6, -9.2,  0.1, 0.5,   -0.8,,
+OA-g7, -2.3,  0.1, 1.0,   -5.0,,
+OA-g8, -8.9,  0.1, 1.0,   -12.1,,
+exoOA-g1, -1.4, 0.2, 1.5,   -1.8,,
+exoOA-g2, -6.2, 0.1, 1.0,   -0.4,,
+exoOA-g3, -8.2, 0.1, 1.0,   -0.3,,
+exoOA-g4, -7.2, 0.1, 1.0,   -0.6,,
+exoOA-g5, -8.9, 0.1, 1.0,   -12.1,,
+exoOA-g6, -1.4, 0.1, 1.0,   -1.8,,
+exoOA-g7, -9.2, 0.1, 1.0,   -0.8,,
+exoOA-g8, -2.3, 0.1, 1.0,   -5.0,,
 #
 #
 # Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
