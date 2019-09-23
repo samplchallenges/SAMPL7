@@ -16,30 +16,36 @@
 # The data in each prediction line should be structured as follows, with all (up to six) numbers in kcal/mol.
 # host-guest ID (note that the host varies!), Free energy, free energy SEM, free energy model uncertainty,
 # enthalpy, enthalpy SEM, enthalpy model uncertainty
+# The free energy, free energy SEM, and free energy model uncertainty are REQUIRED.
+# The corresponding quantities for binding enthalpy are optional.
 #
 # Note that the "model uncertainty" should be your estimate of ACCURACY of this particular approach
 # for the compound considered.
-# Beta CD (bCD) is optional and will not be judged, as literature values are available.
+#
+# For the CD challenge, beta CD (bCD) is optional and will not be judged, as
+# literature values are available.
+# Likewise, for the GDCC challenge, OA binding values for guests 1-6 (but not 7-8)
+# are optional as literature values are available.
 #
 # The list of predictions must begin with the "Prediction:" keyword, as illustrated here.
 Predictions:
 clip-g1, -10.1, 0.1, 1.0, -0.3, 0.1, 1.0
-clip-g2, -10.5,,,  -20.5,,
-clip-g3, -5.4,,,   -2.9,,
-clip-g4, -2.3,,,   -5.0,,
-clip-g5, -8.9,,,   -12.1,,
-clip-g6, -1.4,,,   -1.8,,
-clip-g7, -9.2,,,   -0.8,,
-clip-g8, -2.3,,,   -5.0,,
-clip-g9, -8.9,,,   -12.1,,
-clip-g10, -1.4,,,   -1.8,,
-clip-g11, -6.2,,,   -0.4,,
-clip-g12, -8.2,,,   -0.3,,
-clip-g15, -7.2,,,   -0.6,,
-clip-g16, -7.2,,,   -0.6,,
-clip-g17, -7.2,,,   -0.6,,
-clip-g18, -7.2,,,   -0.6,,
-clip-g19, -7.2,,,   -0.6,,
+clip-g2, -10.5, 0.1, 1.0,  -20.5,,
+clip-g3, -5.4, 0.2, 1.4,   -2.9,,
+clip-g4, -2.3, 0.1, 0.5,   -5.0,,
+clip-g5, -8.9, 0.1, 1.0,   -12.1,,
+clip-g6, -1.4, 0.1, 1.0,   -1.8,,
+clip-g7, -9.2, 0.1, 1.0,   -0.8,,
+clip-g8, -2.3, 0.1, 1.0,   -5.0,,
+clip-g9, -8.9, 0.1, 1.0,   -12.1,,
+clip-g10, -1.4, 0.1, 1.0,   -1.8,,
+clip-g11, -6.2, 0.1, 1.0,   -0.4,,
+clip-g12, -8.2, 0.1, 1.0,   -0.3,,
+clip-g15, -7.2, 0.1, 1.0,   -0.6,,
+clip-g16, -7.2, 0.1, 1.0,   -0.6,,
+clip-g17, -7.2, 0.1, 1.0,   -0.6,,
+clip-g18, -7.2, 0.1, 1.0,   -0.6,,
+clip-g19, -7.2, 0.1, 1.0,   -0.6,,
 #
 #
 # Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.

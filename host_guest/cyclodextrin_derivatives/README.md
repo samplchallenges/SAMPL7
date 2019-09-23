@@ -4,7 +4,7 @@ For SAMPL7, the Gilson group is contributing binding data for two hosts (r-riman
 
 ## Challenge overview
 
-The challenge consists of predicting binding free energies of two guests to the series of modified cyclodextrin hosts shown below.
+The challenge consists of predicting binding free energies (and, optionally, enthalpies of binding) of two guests to the series of modified cyclodextrin hosts shown below.
 
 ![](images/sampl_host_structures_coded.jpg)
 
@@ -18,14 +18,11 @@ Above, trans-4-methylcyclohexanol
 
 We plan to separately analyze submissions predicting absolute binding free energies of individual guests to individual hosts, and predictions of relative binding free energies of a single guest to a series of hosts.
 
-## Challenge timing details (preliminary)
+[Full experimental details are available elsewhere in this repository.](../../host_guest_description.md)
 
-Dr. Kellett has finished the ITC data collection on guest binding and [full experimental details are available](../../host_guest_description.md). Participants may begin their calculations and submissions will be allowed as soon as our submission system is online. The challenge deadline concludes in Oct. 2019, with experimental results released at that time. The formal submission deadline is available on the main page for this repository.
+## Challenge timing details
 
-## Background information
-
-This section is under construction and will provide background details on these systems in the near future.
-
+Dr. Kellett has finished the ITC data collection on guest binding and [full experimental details are available](../../host_guest_description.md). Participants may begin their calculations and submissions will be allowed as soon as our submission system is online. The formal challenge deadline is available on the main page for this repository.
 
 ### Additional technical details
 

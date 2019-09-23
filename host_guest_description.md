@@ -2,9 +2,15 @@
 
 ## Gibb Deep Cavity Cavitand (GDCC) binding of guests
 
+Instructions are available in the [host guest instructions](host_guest_instructions.md) and full details are in the [README.md of the `GDCC_and_guests` directory](GDCC_and_guests/README.md).
+
 ## Modified acyclic cucurbituril (TrimerTrip) binding of guests
 
+Instructions are available in the [host guest instructions](host_guest_instructions.md) and full details are available in the [README.md of the `Isaacs_clip` directory](Isaacs_clip/README.md).
+
 ## The cyclodextrin derivatives challenge
+
+Instructions are available in the [host guest instructions](host_guest_instructions.md). Details on the experiments and molecules follow.
 
 ### Structures of Guest Molecules
 Two guest molecules were used: trans-4-methylcyclohexanol and R-rimantadine hydrochloride (below).
