@@ -37,7 +37,7 @@ All three host-guest components of this challenge are now final and launched, th
 - **Release 0.2** (Sept. 24, 2019, DOI [10.5281/zenodo.3459975](https://dx.doi.org/10.5281/zenodo.3459975)): Adds host-guest submission template files and instructions; makes more clear which compounds/cases are optional; makes clear that free energy predictions (and uncertainties) are required; enthalpies optional; adds links to [host-guest submission system](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/)
 
 ### Changes not in a release
-
+- Remove outdated info in README.md
 
 ## Challenge overview
 
@@ -45,8 +45,6 @@ The SAMPL7 phase of challenges currently includes host-guest binding on three sy
 Additional details are provided below. Note that several hosts and/or guests are optional.
 
 A later phase of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
-
-**The tentative submission deadline for predictions for the host-guest challenge is October 1, 2019.**
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
 
