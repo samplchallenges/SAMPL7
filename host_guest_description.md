@@ -33,7 +33,7 @@ All host molecules were synthesised in the Gilson group, and purity was assessed
 | MGLab9 | Mono-3-(4-oxobut-2-enoic acid)-α-cyclodextrin | -1 |
 | MGLab24 | Mono-3-(3-carboxypropionamido-lysine)-β-cyclodextrin | 0 |
 | MGLab23 | Mono-3-(3-carboxypropionamido-glutathione)-β-cyclodextrin | -2 |
-| MGLab19 | Mono-3-glycine-β-cyclodextrin | +1 |
+| MGLab29 | Mono-3-glycine-β-cyclodextrin | 0 |
 | MGLab34 | Mono-6-β-tyrosine-β-cyclodextrin | +1 |
 | MGLab35 | Mono-6-(carboxypropionamido)-β-cyclodextrin | -1 |
 | MGLab36 | Mono-3-cholic acid-β-cyclodextrin | 0 |
