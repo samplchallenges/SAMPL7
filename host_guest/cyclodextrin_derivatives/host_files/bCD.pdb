@@ -1,5 +1,5 @@
 REMARK  99                                                                      
-REMARK  99 MOE v2018.01 (Chemical Computing Group ULC) Fri Apr 26 11:34:33 2019 
+REMARK  99 MOE v2019.01 (Chemical Computing Group ULC) Thu Sep 26 15:54:35 2019 
 LINK         O1  MGO     4                 C4  MGO     5     1555   1555  1.45
 LINK         C4  MGO     4                 O1  MGO    10     1555   1555  1.45
 LINK         O1  MGO     5                 C4  MGO     6     1555   1555  1.45
@@ -263,7 +263,7 @@ CONECT  106  107  108  113  117
 CONECT  107  106  133
 CONECT  108  106  109  110  118
 CONECT  109  108  119
-CONECT  110  108  111  120  116
+CONECT  110  108  111  116  120
 CONECT  111   86  110  112  122
 CONECT  112  111  113  114  123
 CONECT  113  106  112
