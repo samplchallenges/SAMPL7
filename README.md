@@ -38,6 +38,7 @@ All three host-guest components of this challenge are now final and launched, th
 
 ### Changes not in a release
 - Remove outdated info in README.md
+- Remove extra guest listed in TrimerTrip submission template
 
 ## Challenge overview
 
