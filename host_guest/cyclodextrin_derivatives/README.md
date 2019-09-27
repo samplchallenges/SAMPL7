@@ -34,6 +34,8 @@ Compounds exhibiting strange binding patterns have already been removed prior to
 
 Note that we have typically selected reasonable protonation states and conformers of the hosts and guests, but these may be controversial, uncertain, or change upon binding, so participants are encouraged to exercise care in selecting which states are modeled.
 
+(Please note that we made a significant update to the provided protonation states on Sept. 26, 2019, for version 0.3, as the originally provided protonation states were likely incorrect for certain hosts -- see [PR 42](https://github.com/MobleyLab/SAMPL7/pull/42) and the main README.md for more details).
+
 # What's here
 
 - Hosts: `host_files`: Folder containing beta cyclodextrin plus the eight other cyclodextrin derivative hosts, provided by Katy Kellett and Michael Gilson, initially only in PDB format with all protons present. The Chemdraw files are also provided. MOL2 and SDF files of the hosts were added on 7/18/19.
