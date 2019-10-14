@@ -11,7 +11,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 
 ## What's here
 - [Challenge Overview](#challenge-overview)
-- Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory.
+- Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory, and experimental values in the `host_guest/Analysis/ExperimentalMeasurements` directory.
 - Final information on the Gibb octa acid-based challenge ("Gibb deep cavity cavitand" (GDCC) challenge) in the `host_guest/GDCC_and_guests` directory.
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
@@ -22,6 +22,8 @@ All three host-guest components of this challenge are now final and launched, th
 ## What's coming
 - GSK logD challenge information as soon as available
 - Results (and inputs for) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
+- Experimental results for the host-guest challenge (except for TrimerTrip, which is available now)
+- Analysis of submissions for the host-guest challenge
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -39,6 +41,7 @@ All three host-guest components of this challenge are now final and launched, th
 
 ### Changes not in a release
 - Update TrimerTrip deadline to Oct. 4.
+- Add Isaacs' group TrimerTrip binding data 10/14/19 (in `host_guest/analysis/ExperimentalMeasurements`)
 
 ## Challenge overview
 
