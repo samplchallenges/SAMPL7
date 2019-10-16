@@ -14,7 +14,6 @@ import math
 import csv
 import json
 from collections import OrderedDict
-import copy
 
 import numpy as np
 from simtk import unit as u
@@ -214,22 +213,15 @@ def compute_DG(Ka, dKa):
         Binding free energy uncertainty.
 
     """
-    print(str(Ka), str(dKa), type(Ka), type(dKa), Ka.unit, dKa.unit, id(Ka), id(dKa))
-    print(Ka.value_in_unit(Ka.unit), Ka.unit, type(Ka))
-    print(dKa.value_in_unit(dKa.unit), dKa.unit, type(dKa))
     concentration_unit = 1 / Ka.unit
-    print(concentration_unit)
     DG = -R * T * np.log(Ka*concentration_unit)
     # Propagate error.
     if dKa is None:
         dDG = None
     else:
         dDGdKa = -R * T / Ka  # Derivative dDG(Ka)/dKa.
-        print(dDGdKa.value_in_unit(dDGdKa.unit), dDGdKa.unit)
-        print(dKa.value_in_unit(dKa.unit), dKa.unit)
-        dDG = np.sqrt(dDGdKa**2 * dKa**2)
-        print(dDG.unit)
-    print(type(DG), type(dDG), id(DG), id(dDG))
+        # Have to use u.sqrt to avoid bug with simtk.unit
+        dDG = u.sqrt(dDGdKa**2 * dKa**2)
     return DG, dDG
 
 def compute_Ka(DG, dDG):
@@ -257,7 +249,7 @@ def compute_Ka(DG, dDG):
         dKa = None
     else:
         dKadDG = - Ka / (R*T)  # Derivative dKa(DG)/dDG.
-        dKa = np.sqrt(dKadDG**2 * dDG**2) * 1/concentration_unit
+        dKa = u.sqrt(dKadDG**2 * dDG**2) * 1/concentration_unit
     return Ka, dKa
 
 
@@ -284,7 +276,7 @@ def compute_TDS(DG, dDG, DH, dDH):
 
     """
     TDS = DH - DG
-    dTDS = np.sqrt(dDH**2 + dDG**2)
+    dTDS = u.sqrt(dDH**2 + dDG**2)
     return TDS, dTDS
 
 
@@ -360,8 +352,8 @@ if __name__ == '__main__':
                     system_data[data_type] = final_val
 
                     # Also compute uncertainty -- the larger of the propagated uncertainty and the standard error in the mean
-                    final_unc = np.sqrt( system_data[data_type+'_1']**2 + system_data[data_type+'_2']**2 )
-                    std_err = np.sqrt( 0.5*( (system_data[data_type+'_1']-final_val)**2 + (system_data[data_type+'_2']-final_val)**2) )
+                    final_unc = u.sqrt( system_data[data_type+'_1']**2 + system_data[data_type+'_2']**2 )
+                    std_err = u.sqrt( 0.5*( (system_data[data_type+'_1']-final_val)**2 + (system_data[data_type+'_2']-final_val)**2) )
                     if std_err > final_unc:
                         final_unc = std_err
                     system_data['d'+data_type] = final_unc
@@ -378,25 +370,20 @@ if __name__ == '__main__':
                 elif 'Ka' in data_type:
                     if 'Ka_1' in system_data and not 'Ka' in system_data:
                         # Now convert to free energy
-                        #DG_1, dDG_1 = compute_DG(system_data['Ka_1'], system_data['dKa_1'])
-                        #DG_2, dDG_2 = compute_DG(system_data['Ka_2'], system_data['dKa_2'])
-                        DG_1, dDG_1 = compute_DG(copy.copy(system_data['Ka_1']), copy.copy(system_data['dKa_1']))
-                        DG_2, dDG_2 = compute_DG(copy.copy(system_data['Ka_2']), copy.copy(system_data['dKa_2']))
+                        DG_1, dDG_1 = compute_DG(system_data['Ka_1'], system_data['dKa_1'])
+                        DG_2, dDG_2 = compute_DG(system_data['Ka_2'], system_data['dKa_2'])
                         # Take mean
-                        #DG = (DG_1+DG_2)/2.
-                        DG = (copy.copy(DG_1)+copy.copy(DG_2))/2.
+                        DG = (DG_1+DG_2)/2.
                         # Compute uncertainty
-                        #final_unc = np.sqrt( dDG_1**2 + dDG_2**2)
-                        final_unc = np.sqrt( copy.copy(dDG_1)**2 + copy.copy(dDG_2)**2)
-                        std_err = np.sqrt( 0.5*( (DG_1-DG).value_in_unit(u.kilocalories_per_mole)**2 + (DG_2-DG).value_in_unit(u.kilocalories_per_mole)**2) )*u.kilocalories_per_mole
+                        final_unc = u.sqrt( (dDG_1)**2 + (dDG_2)**2)
+                        std_err = u.sqrt( 0.5*( (DG_1-DG)**2 + (DG_2-DG)**2) )
                         print(final_unc, std_err)
                         if std_err > final_unc:
                             final_unc = std_err
                         # Convert back to Ka and store
-                        #Ka, dKa = compute_Ka( DG, final_unc)
-                        Ka, dKa = compute_Ka( copy.copy(DG), copy.copy(final_unc))
-                        system_data['Ka'] = copy.copy(Ka)
-                        system_data['dKa'] = copy.copy(dKa)
+                        Ka, dKa = compute_Ka( DG, final_unc)
+                        system_data['Ka'] = Ka
+                        system_data['dKa'] = dKa
 
 
         # Incorporate the relative concentration uncertainties into quantities.
@@ -414,8 +401,7 @@ if __name__ == '__main__':
 
         # Propagate Ka and DH error into DG and TDS.
         print(system_data)
-        #DG, dDG = compute_DG(system_data['Ka'], system_data['dKa'])
-        DG, dDG = compute_DG(copy.copy(system_data['Ka']), copy.copy(system_data['dKa']))
+        DG, dDG = compute_DG(system_data['Ka'], system_data['dKa'])
         print(system_data['Ka'], system_data['dKa'])
         print(DG, dDG)
         system_data['DG'] = DG
