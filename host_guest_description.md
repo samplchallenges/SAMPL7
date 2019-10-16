@@ -21,7 +21,7 @@ Two guest molecules were used: trans-4-methylcyclohexanol and R-rimantadine hydr
 
 ### Host Molecules
 Host structures have been provided in pdb format with the correct stereochemistry and charge state where applicable.
-All host molecules were synthesised in the Gilson group, and purity was assessed using LC-MS and NMR before binding studies were conducted.
+All host molecules were synthesized in the Gilson group, and purity was assessed using LC-MS and NMR before binding studies were conducted.
 
 ### Table 1 - The nine host molecules used in this data set, with their chemical name and charge state.
 
@@ -47,7 +47,7 @@ Concentrations of solutions varied for each complex depending on binding affinit
 
 R-rimantadine hydrochloride has a reported purity of 95%, trans-4-methylcyclohexanol is 98% and the host molecules all has a reported purity of ≥ 95%.
 The purity was taken into account when calculating concentrations of all solutions.
-β-Cyclodextrin has a reported 8 hydration water molecules, therefore there was also taken into account when calculating host concentrations.
+β-Cyclodextrin has a reported 8 hydration water molecules, therefore this was also taken into account when calculating host concentrations.
 
 Binding was found to be 1:1 stoichiometry for all complexes and inside the binding cavity (i.e. no surface binding).
 However ITC results do not confirm primary vs. secondary binding orientation (for example see Figure 2, below).
