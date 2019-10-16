@@ -509,13 +509,13 @@ if __name__ == '__main__':
 
         f.write('\end{tabu}\end{center}\\vspace{5mm}\n'
                 'All quantities are reported as point estimate +- statistical error from the ITC data fitting procedure. '
-                #'The upper bound ($1\%$) was used for errors reported to be $<1\%$. We also included a 3\% relative '
-                #'uncertainty in the titrant concentration assuming the stoichiometry coefficient to be fitted to the ITC '
-                #'data [1]. This is exact only for the OA/TEMOA sets (with the exception of OA-G5, TEMOA-G5, and TEMOA G7). '
+                'The upper bound ($1\%$) was used for errors reported to be $<1\%$. We also included a 3\% relative '
+                'uncertainty in the titrant concentration assuming the stoichiometry coefficient to be fitted to the ITC '
+                'data [1].'#' This is exact only for the OA/TEMOA sets (with the exception of OA-G5, TEMOA-G5, and TEMOA G7). '
                 #'For the other guests, we may expand the error analysis to include also the effect of the uncertainties '
                 #'in titrand concentration and cell volume. \\\\\n'
                 '($^a$) Statistical errors were propagated from the $K_a$ measurements. \\\\\n'
-                #'($^b$) All experiments were performed at 298 K. \\\\\n'
+                '($^b$) All experiments were performed at 298 K. \\\\\n'
                 '($^c$) Units of M$^{-2}$. \\\\\n'
                 '($^d$) Units of M$^{-3}$.\n'
                 '\end{document}\n')
