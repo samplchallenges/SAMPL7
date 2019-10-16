@@ -25,8 +25,7 @@ from simtk import unit as u
 
 T = 298 * u.kelvin
 R = u.MOLAR_GAS_CONSTANT_R
-# The relative titrant concetnration error is disabled for now
-#RELATIVE_TITRANT_CONC_ERROR = 0.03
+RELATIVE_TITRANT_CONC_ERROR = 0.03
 
 CLIP_GUESTS_SMILES_PATH = '../../Isaacs_clip/guest_files/trimertrip_guest_smiles.txt'
 GDCC_GUESTS_SMILES_PATH = '../../GDCC_and_guests/guest_files/GDCC_guest_smiles.txt'
@@ -387,17 +386,18 @@ if __name__ == '__main__':
 
 
         # Incorporate the relative concentration uncertainties into quantities.
-        #for k in ['Ka', 'DH']:
-        #    quantity = system_data[k]
-        #    relative_uncertainty = system_data['d' + k]
-        #    # Use upper-bound of 1% if <1% is reported. Keep track of these molecules.
-        #    if relative_uncertainty is None:
-        #        upper_bound_molecules[k].add(system_name)
-        #        relative_uncertainty = 0.01
-        #    # Incorporate the relative concentration uncertainties into quantities.
-        #    relative_uncertainty += RELATIVE_TITRANT_CONC_ERROR
-        #    # Convert relative to absolute errors.
-        #    system_data['d' + k] = abs(quantity * relative_uncertainty)
+        for k in ['Ka', 'DH']:
+            quantity = system_data[k]
+            # Compute relative uncertainty
+            relative_uncertainty = system_data['d' + k]/quantity
+            # Use upper-bound of 1% if <1% is reported. Keep track of these molecules.
+            if relative_uncertainty is None:
+                upper_bound_molecules[k].add(system_name)
+                relative_uncertainty = 0.01
+            # Incorporate the relative concentration uncertainties into quantities.
+            relative_uncertainty = u.sqrt( relative_uncertainty**2 + RELATIVE_TITRANT_CONC_ERROR**2)
+            # Convert relative to absolute errors.
+            system_data['d' + k] = abs(quantity * relative_uncertainty)
 
         # Propagate Ka and DH error into DG and TDS.
         DG, dDG = compute_DG(system_data['Ka'], system_data['dKa'])
