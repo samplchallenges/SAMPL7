@@ -249,7 +249,8 @@ def compute_Ka(DG, dDG):
         dKa = None
     else:
         dKadDG = - Ka / (R*T)  # Derivative dKa(DG)/dDG.
-        dKa = u.sqrt(dKadDG**2 * dDG**2) * 1/concentration_unit
+        dKa = u.sqrt(dKadDG**2 * dDG**2)
+
     return Ka, dKa
 
 
@@ -324,7 +325,7 @@ if __name__ == '__main__':
         for smi, gid in smiles_by_host[host]:
             for name, gid2 in names_by_host[host]:
                 if gid==gid2:
-                    molecule_names[host][gid] = name, smi
+                    molecule_names[host][gid] = smi, name
 
     output_dict = OrderedDict()
     upper_bound_molecules = dict(Ka=set(), DH=set(), TDS=set())
@@ -377,7 +378,6 @@ if __name__ == '__main__':
                         # Compute uncertainty
                         final_unc = u.sqrt( (dDG_1)**2 + (dDG_2)**2)
                         std_err = u.sqrt( 0.5*( (DG_1-DG)**2 + (DG_2-DG)**2) )
-                        print(final_unc, std_err)
                         if std_err > final_unc:
                             final_unc = std_err
                         # Convert back to Ka and store
@@ -400,7 +400,6 @@ if __name__ == '__main__':
         #    system_data['d' + k] = abs(quantity * relative_uncertainty)
 
         # Propagate Ka and DH error into DG and TDS.
-        print(system_data)
         DG, dDG = compute_DG(system_data['Ka'], system_data['dKa'])
         print(system_data['Ka'], system_data['dKa'])
         print(DG, dDG)
@@ -422,10 +421,10 @@ if __name__ == '__main__':
         assert np.isclose(np.around(computed_DG, decimals=2), system_data['DG'], atol=0.0200000000000001, rtol=0.0)
 
         # Report only error most significant digit.
-        #for k in ['Ka', 'DH', 'TDS', 'DG']:
-        #    quantity, uncertainty = system_data[k], system_data['d' + k]
-        #    if uncertainty is not None:
-        #        system_data[k], system_data['d' + k] = reduce_to_first_significant_digit(quantity, uncertainty)
+        for k in ['Ka', 'DH', 'TDS', 'DG']:
+            quantity, uncertainty = system_data[k], system_data['d' + k]
+            if uncertainty is not None:
+                system_data[k], system_data['d' + k] = reduce_to_first_significant_digit(quantity, uncertainty)
 
     # Create output JSON file.
     with open('experimental_measurements.json', 'w') as f:
@@ -467,6 +466,8 @@ if __name__ == '__main__':
         # Print lines.
         for csv_dict in csv_dicts:
             # Separate hosts with a double horizontal line.
+            print(csv_dict)
+            print(csv_dict['ID'])
             host_name = csv_dict['ID'].split('-')[0]
             if host_name != old_host:
                 f.write('\\hline\n')
