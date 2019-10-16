@@ -154,7 +154,7 @@ EXPERIMENTAL_DATA = OrderedDict([
     ('clip-g19', OrderedDict([
         ('Kd_1', 2.80e-9 * u.molar), ('dKd_1', 1.53e-10 * u.molar),
         ('DH_1', -13.7 * u.kilocalories_per_mole), ('dDH_1', 0.039 * u.kilocalories_per_mole),
-        ('Kd_2', 2.74e-9 * u.molar), ('dKd_2', 6.04e-9 * u.molar),
+        ('Kd_2', 2.74e-9 * u.molar), ('dKd_2', 6.04e-10 * u.molar),
         ('DH_2', -13.6 * u.kilocalories_per_mole), ('dDH_2', 0.144 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
         ('n', 1)
@@ -353,7 +353,7 @@ if __name__ == '__main__':
                     system_data[data_type] = final_val
 
                     # Also compute uncertainty -- the larger of the propagated uncertainty and the standard error in the mean
-                    final_unc = u.sqrt( system_data[data_type+'_1']**2 + system_data[data_type+'_2']**2 )
+                    final_unc = u.sqrt( system_data['d'+data_type+'_1']**2 + system_data['d'+data_type+'_2']**2 )
                     std_err = u.sqrt( 0.5*( (system_data[data_type+'_1']-final_val)**2 + (system_data[data_type+'_2']-final_val)**2) )
                     if std_err > final_unc:
                         final_unc = std_err
@@ -401,8 +401,6 @@ if __name__ == '__main__':
 
         # Propagate Ka and DH error into DG and TDS.
         DG, dDG = compute_DG(system_data['Ka'], system_data['dKa'])
-        print(system_data['Ka'], system_data['dKa'])
-        print(DG, dDG)
         system_data['DG'] = DG
         system_data['dDG'] = dDG
         TDS, dTDS = compute_TDS(system_data['DG'], system_data['dDG'],
@@ -465,13 +463,17 @@ if __name__ == '__main__':
 
         # Print lines.
         for csv_dict in csv_dicts:
+
             # Separate hosts with a double horizontal line.
-            print(csv_dict)
-            print(csv_dict['ID'])
             host_name = csv_dict['ID'].split('-')[0]
             if host_name != old_host:
                 f.write('\\hline\n')
                 old_host = host_name
+
+            if csv_dict['ID']=='clip-g10':
+                # One name can't be dealt with; reformat
+                csv_dict['name'] = "Can't format in LaTeX"
+
 
             row = '{ID} & {name}'
             for k in ['Ka', 'DG', 'DH', 'TDS']:
