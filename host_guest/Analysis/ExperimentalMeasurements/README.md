@@ -9,4 +9,4 @@
 
 ## Notes on error propagation
 
-Currently we are utilizing uncertainties provided by Lyle Isaacs rather than doing error propagation as in [SAMPL6](https://github.com/samplchallenges/SAMPL6/tree/master/host_guest/Analysis/ExperimentalMeasurements) but this may change as data from the other challenge components becomes available and we obtain more information on experimental protocols. So you can expect that the provided experimental uncertainties may be updated at a later date.
+Currently we are utilizing uncertainties provided by Lyle Isaacs, which provide ITC-based uncertainties, along with additional error propagation to handle uncertainties in titrant concentrations, as was done for SAMPL6.
