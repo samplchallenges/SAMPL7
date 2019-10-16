@@ -103,7 +103,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('n', 1)
     ])),
     ('clip-g9', OrderedDict([
-        ('Kd_1', 2.8e-6 * u.molar), ('dKd_1', 113e-9 * u.molar),
+        ('Kd_1', 2.80e-6 * u.molar), ('dKd_1', 113e-9 * u.molar),
         ('DH_1', -4.83 * u.kilocalories_per_mole), ('dDH_1', 0.036 * u.kilocalories_per_mole),
         ('Kd_2', 2.79e-6 * u.molar), ('dKd_2', 162e-9 * u.molar),
         ('DH_2', -4.72 * u.kilocalories_per_mole), ('dDH_2', 0.046 * u.kilocalories_per_mole),
