@@ -42,6 +42,7 @@ All three host-guest components of this challenge are now final and launched, th
 ### Changes not in a release
 - Update TrimerTrip deadline to Oct. 4.
 - Add Isaacs' group TrimerTrip binding data 10/14/19 (in `host_guest/analysis/ExperimentalMeasurements`)
+- Update Isaacs' group TrimerTrip binding data to give n value from fit
 
 ## Challenge overview
 

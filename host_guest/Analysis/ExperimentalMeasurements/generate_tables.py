@@ -44,7 +44,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 29.6e-6 * u.molar), ('dKd_2', 7.70e-6 * u.molar),
         ('DH_2', -6.14 * u.kilocalories_per_mole), ('dDH_2', 0.696 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.899, 0.825]))
     ])),
     ('clip-g2', OrderedDict([
         ('Kd_1', 749e-9 * u.molar), ('dKd_1', 17.7e-9 * u.molar),
@@ -52,7 +52,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 829e-9 * u.molar), ('dKd_2', 40.8e-9 * u.molar),
         ('DH_2', -8.95 * u.kilocalories_per_mole), ('dDH_2', 0.053 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.891, 1.11]))
     ])),
     ('clip-g3', OrderedDict([
         ('Kd_1', 43.5e-9 * u.molar), ('dKd_1', 3.39e-9 * u.molar),
@@ -60,7 +60,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 41.3e-9 * u.molar), ('dKd_2', 3.24e-9 * u.molar),
         ('DH_2', -10.9 * u.kilocalories_per_mole), ('dDH_2', 0.043 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.974, 0.831]))
     ])),
     ('clip-g15', OrderedDict([
         ('Kd_1', 18.3e-9 * u.molar), ('dKd_1', 1.00e-9 * u.molar),
@@ -68,7 +68,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 20.0e-9 * u.molar), ('dKd_2', 8.74e-10 * u.molar),
         ('DH_2', -12.7 * u.kilocalories_per_mole), ('dDH_2', 0.028 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.917, 1.02]))
     ])),
     ('clip-g12', OrderedDict([
         ('Kd_1', 830e-9 * u.molar), ('dKd_1', 23.3e-9 * u.molar),
@@ -76,7 +76,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 827e-9 * u.molar), ('dKd_2', 31.0e-9 * u.molar),
         ('DH_2', -8.25 * u.kilocalories_per_mole), ('dDH_2', 0.034 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.970, 0.907]))
     ])),
     ('clip-g5', OrderedDict([
         ('Kd_1', 7.07e-9 * u.molar), ('dKd_1', 1.13e-9 * u.molar),
@@ -84,7 +84,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 6.63e-9 * u.molar), ('dKd_2', 8.99e-10 * u.molar),
         ('DH_2', -11.3 * u.kilocalories_per_mole), ('dDH_2', 0.07 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.950, 0.837]))
     ])),
     ('clip-g16', OrderedDict([
         ('Kd_1', 3.55e-9 * u.molar), ('dKd_1', 7.80e-10 * u.molar),
@@ -92,7 +92,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 3.27e-9 * u.molar), ('dKd_2', 8.48e-10 * u.molar),
         ('DH_2', -11.2 * u.kilocalories_per_mole), ('dDH_2', 0.072 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.925, 0.856]))
     ])),
     ('clip-g17', OrderedDict([
         ('Kd_1', 1.97e-9 * u.molar), ('dKd_1', 1.06e-9 * u.molar),
@@ -100,7 +100,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 2.20e-9 * u.molar), ('dKd_2', 5.76e-10 * u.molar),
         ('DH_2', -10.4 * u.kilocalories_per_mole), ('dDH_2', 0.064 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.968, 0.979]))
     ])),
     ('clip-g9', OrderedDict([
         ('Kd_1', 2.80e-6 * u.molar), ('dKd_1', 113e-9 * u.molar),
@@ -108,7 +108,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 2.79e-6 * u.molar), ('dKd_2', 162e-9 * u.molar),
         ('DH_2', -4.72 * u.kilocalories_per_mole), ('dDH_2', 0.046 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([1.07, 0.829]))
     ])),
     ('clip-g6', OrderedDict([
         ('Kd_1', 88.3e-9 * u.molar), ('dKd_1', 9.44e-9 * u.molar),
@@ -116,7 +116,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 97.0e-9 * u.molar), ('dKd_2', 13.6e-9 * u.molar),
         ('DH_2', -10.3 * u.kilocalories_per_mole), ('dDH_2', 0.165 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.848, 0.814]))
     ])),
     ('clip-g11', OrderedDict([
         ('Kd_1', 245e-9 * u.molar), ('dKd_1', 22.3e-9 * u.molar),
@@ -124,7 +124,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 238e-9 * u.molar), ('dKd_2', 22.2e-9 * u.molar),
         ('DH_2', -7.35 * u.kilocalories_per_mole), ('dDH_2', 0.084 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.848, 0.846]))
     ])),
     ('clip-g10', OrderedDict([
         ('Kd_1', 902e-9 * u.molar), ('dKd_1', 64.8e-9 * u.molar),
@@ -132,7 +132,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 1.17e-6 * u.molar), ('dKd_2', 72.6e-9 * u.molar),
         ('DH_2', -5.80 * u.kilocalories_per_mole), ('dDH_2', 0.047 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.960, 1.02]))
     ])),
     ('clip-g8', OrderedDict([
         ('Kd_1', 114e-9 * u.molar), ('dKd_1', 6.79e-9 * u.molar),
@@ -140,7 +140,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 120e-9 * u.molar), ('dKd_2', 5.34e-9 * u.molar),
         ('DH_2', -10.6 * u.kilocalories_per_mole), ('dDH_2', 0.033 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.910, 0.894]))
     ])),
     ('clip-g18', OrderedDict([
         ('Kd_1', 17.2e-9 * u.molar), ('dKd_1', 1.42e-9 * u.molar),
@@ -148,7 +148,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 19.8e-9 * u.molar), ('dKd_2', 2.34e-9 * u.molar),
         ('DH_2', -12.3 * u.kilocalories_per_mole), ('dDH_2', 0.069 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.896, 1.00]))
     ])),
     ('clip-g19', OrderedDict([
         ('Kd_1', 2.80e-9 * u.molar), ('dKd_1', 1.53e-10 * u.molar),
@@ -156,7 +156,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 2.74e-9 * u.molar), ('dKd_2', 6.04e-10 * u.molar),
         ('DH_2', -13.6 * u.kilocalories_per_mole), ('dDH_2', 0.144 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.755, 0.828]))
     ])),
     ('clip-g7', OrderedDict([
         ('Kd_1', 16.8e-6 * u.molar), ('dKd_1', 652e-9 * u.molar),
@@ -164,7 +164,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('Kd_2', 17.2e-6 * u.molar), ('dKd_2', 1.24e-6 * u.molar),
         ('DH_2', -6.80 * u.kilocalories_per_mole), ('dDH_2', 0.170 * u.kilocalories_per_mole),
         ('TDS', None), ('dTDS', None),
-        ('n', 1)
+        ('n', np.mean([0.839, 0.813]))
     ])),
 ])
 
