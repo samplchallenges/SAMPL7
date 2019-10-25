@@ -44,13 +44,28 @@ All three host-guest components of this challenge are now final and launched, th
 - Add Isaacs' group TrimerTrip binding data 10/14/19 (in `host_guest/analysis/ExperimentalMeasurements`)
 - Update Isaacs' group TrimerTrip binding data to give n value from fit
 - Add TrimerTrip submissions.
+- Add preliminary info on bromodomain fragment binding challenges (10/25/19)
 
 ## Challenge overview
 
-The SAMPL7 phase of challenges currently includes host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involves a total of 9-20 binding free energy calculations.
+The SAMPL7 phase of challenges currently includes a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involves a total of 9-20 binding free energy calculations.
 Additional details are provided below. Note that several hosts and/or guests are optional.
 
 A later phase of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
+
+### PHIP2 binding prediction
+
+We are excited to announce a new set of SAMPL7 challenges focusing on protein-ligand binding, in partnership with the XChem facility for fragment screening at Diamond Light Source. The second bromodomain of PHIP (PHIP2) was targeted in an extensive X-ray crystallographic fragment screening experiment, leading to the 3D structures of multiple hits. This SAMPL7 challenge will take advantage of this dataset, addressing computational methods for the discrimination of binders from non-binders, binding pose predictions, and the unique opportunity to select new candidate ligands from a database, to be validated experimentally by X-ray crystallography at the Diamond Light Source (Harwell, UK).   
+
+Details will be posted to our SAMPL7 GitHub repository (github.com/samplchallenges/sampl7) and the SAMPL website (https://samplchallenges.github.io) very soon; we're targeting a Nov. 1 start date for Phase 1 (focused on identification of binders).
+
+This challenge breaks out into at least three phases on a tight timeline:
+1) Identification of binders from fragment screening
+2) Prediction of fragment binding modes
+3) Selection of new compounds for screening from an experimental database
+
+The timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Phase 3).
+
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
 
@@ -63,6 +78,11 @@ The Isaacs lab is contributing data on binding of a series of guests to an acycl
 ### The cyclodextrin derivatives challenge
 
 The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges. [Full details](host_guest_description.md) are available. Binding to beta-cyclodextrin can optionally be submitted, but literature values for these compounds are available.
+
+## MANIFEST
+- `host_guest`: Details on host-guest challenges
+- `protein_ligand`: (Upcoming) details on/inputs for PHIP2 bromodomain challenge
+- `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
 
 ## LICENSE
 
