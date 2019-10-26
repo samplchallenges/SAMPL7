@@ -84,6 +84,10 @@ The Gilson lab is measuring binding of two guests to ten different hosts, compri
 - `protein_ligand`: (Upcoming) details on/inputs for PHIP2 bromodomain challenge
 - `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
 
+## SAMPL-related content
+
+If you give a SAMPL-related talk or presentation or an analysis of its data, and are willing to share publicly, please consider posting on Zenodo and linking it to the [SAMPL Zenodo community](https://zenodo.org/communities/sampl?page=1&size=20).
+
 ## LICENSE
 
 This material here is made available under CC-BY and MIT licenses, as appropriate:
