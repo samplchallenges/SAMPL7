@@ -16,14 +16,16 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
+- Protein-ligand details on the [PHIP2 challenge](protein_ligand/README.md), in the `protein_ligand` directory.
 
-All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 1 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data.
+All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 1 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data. The first stage of the protein-ligand challenge is due Nov. 28, 2019.
 
 ## What's coming
 - GSK logD challenge information as soon as available
 - Results (and inputs for) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
 - Experimental results for the host-guest challenge (except for TrimerTrip, which is available now)
 - Analysis of submissions for the host-guest challenge
+- PHIP2 protein-ligand challenge details on Stage 2 and Stage 3.
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -45,6 +47,7 @@ All three host-guest components of this challenge are now final and launched, th
 - Update Isaacs' group TrimerTrip binding data to give n value from fit
 - Add TrimerTrip submissions.
 - Add preliminary info on bromodomain fragment binding challenges (10/25/19)
+- Add PHIP2 protein-ligand challenge Stage 1 details (10/29/2019)
 
 ## Challenge overview
 
@@ -57,14 +60,12 @@ A later phase of SAMPL7 is expected to include logD prediction (hopefully with p
 
 We are excited to announce a new set of SAMPL7 challenges focusing on protein-ligand binding, in partnership with the XChem facility for fragment screening at Diamond Light Source. The second bromodomain of PHIP (PHIP2) was targeted in an extensive X-ray crystallographic fragment screening experiment, leading to the 3D structures of multiple hits. This SAMPL7 challenge will take advantage of this dataset, addressing computational methods for the discrimination of binders from non-binders, binding pose predictions, and the unique opportunity to select new candidate ligands from a database, to be validated experimentally by X-ray crystallography at the Diamond Light Source (Harwell, UK).   
 
-Details will be posted to our SAMPL7 GitHub repository (github.com/samplchallenges/sampl7) and the SAMPL website (https://samplchallenges.github.io) very soon; we're targeting a Nov. 1 start date for Phase 1 (focused on identification of binders).
-
-This challenge breaks out into at least three phases on a tight timeline:
+This challenge breaks out into at least three stages on a tight timeline:
 1) Identification of binders from fragment screening
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database
 
-The timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Phase 3).
+Stage 1 is now open and focuses on identification of binders. Unfortunately, the timeline for stages 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3).
 
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
@@ -81,8 +82,12 @@ The Gilson lab is measuring binding of two guests to ten different hosts, compri
 
 ## MANIFEST
 - `host_guest`: Details on host-guest challenges
-- `protein_ligand`: (Upcoming) details on/inputs for PHIP2 bromodomain challenge
+- `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Phase 1 is available.
 - `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
+
+## SAMPL-related content
+
+If you give a SAMPL-related talk or presentation or an analysis of its data, and are willing to share publicly, please consider posting on Zenodo and linking it to the [SAMPL Zenodo community](https://zenodo.org/communities/sampl?page=1&size=20).
 
 ## LICENSE
 

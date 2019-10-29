@@ -4,7 +4,7 @@
 
 Due dates vary by challenge; refer to the main [README.md](README.md) for exact dates.
 
-Your predictions must be uploaded via our web form (currently being prepared, likely available around Sept. 25 and to be linked from here) before midnight US Pacific time on the due date. The experimental results will be available as soon as possible after SAMPL closes. Please refer to the below instructions for information on uploading.
+Your predictions must be uploaded via our [web form](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit) before midnight US Pacific time on the due date. The experimental results will be available as soon as possible after SAMPL closes. Please refer to the below instructions for information on uploading.
 
 You must use the provided templates to upload your predictions. Templates are:
 - [cyclodextrin_derivatives/CD_submission.txt](cyclodextrin_derivatives/CD_submission.txt) for cyclodextrin cyclodextrin derivatives
@@ -19,7 +19,7 @@ The remainder of the filename is up to you.
 
 As per our [policy on multiple submissions](https://samplchallenges.github.io/roadmap/submissions/), each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form. We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
 
-If multiple submissions are incorrectly provided as "ranked" by a single participant we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
+If multiple submissions are incorrectly provided as "ranked" by a single participant, we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
 
 ## Anonymous participation
 
