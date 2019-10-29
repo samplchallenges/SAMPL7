@@ -57,14 +57,12 @@ A later phase of SAMPL7 is expected to include logD prediction (hopefully with p
 
 We are excited to announce a new set of SAMPL7 challenges focusing on protein-ligand binding, in partnership with the XChem facility for fragment screening at Diamond Light Source. The second bromodomain of PHIP (PHIP2) was targeted in an extensive X-ray crystallographic fragment screening experiment, leading to the 3D structures of multiple hits. This SAMPL7 challenge will take advantage of this dataset, addressing computational methods for the discrimination of binders from non-binders, binding pose predictions, and the unique opportunity to select new candidate ligands from a database, to be validated experimentally by X-ray crystallography at the Diamond Light Source (Harwell, UK).   
 
-Details will be posted to our SAMPL7 GitHub repository (github.com/samplchallenges/sampl7) and the SAMPL website (https://samplchallenges.github.io) very soon; we're targeting a Nov. 1 start date for Phase 1 (focused on identification of binders).
-
-This challenge breaks out into at least three phases on a tight timeline:
+This challenge breaks out into at least three stages on a tight timeline:
 1) Identification of binders from fragment screening
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database
 
-The timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Phase 3).
+Stage 1 is now open and focuses on identification of binders. Unfortunately, the timeline for stages 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3).
 
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
@@ -81,7 +79,7 @@ The Gilson lab is measuring binding of two guests to ten different hosts, compri
 
 ## MANIFEST
 - `host_guest`: Details on host-guest challenges
-- `protein_ligand`: (Upcoming) details on/inputs for PHIP2 bromodomain challenge
+- `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Phase 1 is available.
 - `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
 
 ## SAMPL-related content
