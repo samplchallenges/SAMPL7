@@ -16,14 +16,16 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
+- Protein-ligand details on the [PHIP2 challenge](protein_ligand/README.md), in the `protein_ligand` directory.
 
-All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 1 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data.
+All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 1 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data. The first stage of the protein-ligand challenge is due Nov. 28, 2019.
 
 ## What's coming
 - GSK logD challenge information as soon as available
 - Results (and inputs for) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
 - Experimental results for the host-guest challenge (except for TrimerTrip, which is available now)
 - Analysis of submissions for the host-guest challenge
+- PHIP2 protein-ligand challenge details on Stage 2 and Stage 3.
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -45,6 +47,7 @@ All three host-guest components of this challenge are now final and launched, th
 - Update Isaacs' group TrimerTrip binding data to give n value from fit
 - Add TrimerTrip submissions.
 - Add preliminary info on bromodomain fragment binding challenges (10/25/19)
+- Add PHIP2 protein-ligand challenge Stage 1 details (10/29/2019)
 
 ## Challenge overview
 
