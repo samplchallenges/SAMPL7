@@ -1,6 +1,9 @@
 # The SAMPL7 protein-ligand challenge
 
-We are excited to announce a new set of SAMPL7 challenges focusing on protein-ligand binding, in partnership with the XChem facility for fragment screening at Diamond Light Source. The second bromodomain of PHIP (PHIP2) was targeted in an extensive X-ray crystallographic fragment screening experiment, leading to the 3D structures of multiple hits. This SAMPL7 challenge will take advantage of this dataset, addressing computational methods for the discrimination of binders from non-binders, binding pose predictions, and the unique opportunity to select new candidate ligands from a database, to be validated experimentally by X-ray crystallography at the Diamond Light Source (Harwell, UK).   
+We are excited to announce a new set of SAMPL7 challenges focusing on the binding of small fragment-like molecules to a relatively simple target protein.
+
+The second bromodomain of PHIP (PHIP2)---a small protein for which little small molecule binding data is available---was targeted in an extensive X-ray crystallographic fragment screening experiment, leading to 3D structures of multiple screening hits.
+This SAMPL7 challenge will take advantage of this dataset, assessing the accuracy of computational methods for the discrimination of binders from non-binders, binding pose prediction, and the unique opportunity to select new candidate ligands to be screened from a provided set of purchasable compounds that will be assessed experimentally by X-ray crystallography.
 
 This challenge breaks out into at least three phases on a tight timeline:
 1) Identification of binders from fragment screening
@@ -13,11 +16,29 @@ If you plan to participate, be sure to [join our SAMPL7 e-mail list](https://dru
 
 ## System background
 
-The Pleckstrin homology domain interacting protein (PHIP) is a multidomain protein that is involved in important cellular processes such as cytoskeletal organization, cell division and its deregulation was found to be involved in melanoma. Two of PHIP’s domains are bromodomains, which are known to bind acetylated lysines. These post-translationally modified protein residues can be found on the N-terminal tails of histones and mediate the regulation of gene expression. Bromodomains are attractive targets and several drugs are currently in clinical trials.
+The [Pleckstrin homology domain interacting protein (PHIP)](https://www.uniprot.org/uniprot/Q8WWQ0) is a multidomain protein that is involved in important cellular processes such as cytoskeletal organization, cell division and its deregulation was found to be involved in melanoma.
+Two of PHIP’s domains are [bromodomains](https://en.wikipedia.org/wiki/Bromodomain), which are known to bind acetylated lysines.
+These post-translationally modified protein residues can be found on the N-terminal tails of histones and mediate the regulation of gene expression.
+Bromodomains are attractive targets and several drugs are currently in clinical trials.
 
-X-ray crystallographic fragment screening experiments involve the soaking of protein crystals with small fragment molecules (<250 Da) and shooting at light sources. This enables the identification of binders while providing high resolution structural information. Such experiments are now feasible in a high-throughput fashion thanks to infrastructures such as [XChem](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) where hundreds of crystals can be soaked and shot within a day.
+X-ray crystallographic fragment screening experiments involve the [soaking of protein crystals with small fragment molecules](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Methods-for-Fragment-Screening.html) (<250 Da) and shooting at light sources.
+This enables the identification of binders while providing high resolution structural information.
+Such experiments are now feasible in a high-throughput fashion thanks to infrastructures such as [XChem](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) where hundreds of crystals can be soaked and shot within a day.
 
-The second bromodomain of PHIP (PHIP2) was utilized as target at the XChem and a number of fragment hits were identified. This unpublished dataset offers an opportunity to computational chemists and biochemists to test their predictive methods in a blind trial focused on protein-fragment complexes. This edition of the SAMPL challenge will be divided into at least three stages.
+The [second bromodomain of PHIP (PHIP2)](https://www.uniprot.org/uniprot/Q8WWQ0#family_and_domains) was utilized as target at [XChem](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) and a number of fragment hits were identified.
+This unpublished dataset offers an opportunity to computational chemists and biochemists to test their predictive methods in a blind trial focused on protein-fragment complexes.
+This edition of the SAMPL challenge will be divided into at least three stages.
+
+## Fragment screening at XChem
+
+This challenge is made possible through an exciting new collaboration with the [XChem fragment screening facility / Macromolecular Crystallography (MX) program](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) at the [Diamond Light Source](https://www.diamond.ac.uk/Home.html), with special thanks to [Harold Grosjean (Oxford)](https://www.linkedin.com/in/harold-grosjean-992741a8?originalSubdomain=uk), [Rachel Skyner (Diamond)](https://scholar.google.com/citations?user=qC2iEdMAAAAJ&hl=en), [Tobias Krojer (SGC Oxford)](https://thesgc.org/groupprofile/9489), and [Frank von Delft (SGC Oxford / Diamond)](https://www.thesgc.org/node/9489).
+The XChem fragment screening facility and Macromolecular Crystallography (MX) program at Diamond offer the ability to perform [high-throughput crystal soaking experiments](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) of several [fragment libraries](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html), and allow [both academic and industry groups](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Applying-for-XChem.html) to utilize their resources to advance drug discovery and the design of new chemical probes.
+Academic groups can apply for access via a simple [two-page proposal](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Applying-for-XChem/Standard-access.html).
+
+To get an idea for what existing XChem fragment screening datasets look like, you can use the [XChem Fragalysis browser](https://fragalysis.diamond.ac.uk) to interactively view fragment hits, or browse [all datasets available on Zenodo](https://zenodo.org/search?page=1&size=20&q=keywords:%22PanDDA%22) (example [here](https://zenodo.org/record/1244111#.XbiAzJNKiL4)).
+XChem also provides a [detailed overview of their fragment screening methods](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Methods-for-Fragment-Screening.html) and [available fragment libraries](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html).
+
+This project used both the [DSI-Poised fragment library](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Fragment-Libraries/DSI-poised-library.html) an the [Leeds Fraglites fragment library](https://pubs.acs.org/doi/abs/10.1021/acs.jmedchem.9b00304), but challenge participants are encouraged to use the provided `fragments_screened.csv` file for the exact chemical identities of compounds screened.
 
 ## Phase 1: Discrimination of binders from non-binders at specific sites
 
@@ -68,15 +89,13 @@ If multiple submissions are incorrectly provided as "ranked" by a single partici
 - `PHIPA_C2_Apo.pdb`: Structure for use in screening, as provided by XChem.
 - `PHIPA_C2_apo_sites.pdb`: Apo structure with manual addition of noble gas atoms to designate different potential binding sites, as described above (as provided by XChem).
 
-
-
 ## Stage 2: Prediction of binding poses for binding fragment
 
 Plans for stage 2 are still being finalized, but this is planned to involve predicting the bound structures of the compounds which bind, the identity of which will be released at the end of the first stage.
 
-Starts: Friday the 29th of November 2019
+**Start date:** Friday the 29th of November 2019
 
-Ends:  Thursday the 12th of December 2019
+**End date:**  Thursday the 12th of December 2019
 
 ## Stage 3: Selection of novel binders from a database
 
@@ -88,10 +107,9 @@ Crystallography will be used to assay compounds for activity. Follow-up compound
 
 **Provided data**: Cocrystal structures, list of candidate compounds, possibly directing participants to predict binders to the main binding site of interest, rules for stage 3 of the challenge, and submission instructions.
 
-Starts: Friday the 13th of December 2019
+**Start date:** Friday the 13th of December 2019
 
-Ends:  Monday the 13th of January 2020
-
+**End date:**  Monday the 13th of January 2020
 
 ## Later stages
 
