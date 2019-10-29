@@ -44,23 +44,25 @@ This project used both the [DSI-Poised fragment library](https://www.diamond.ac.
 
 ### Setup and description of Stage 1
 
-**Aim**: The objective of this first stage is to discriminate fragment binders from non-binders at each of the 4 sites identified by PanDDA.
+**Aim**: The objective of this first stage is to discriminate fragment binders from non-binders at each of the four sites identified by [PanDDA](https://pandda.bitbucket.io/).
 
-A total of 799 unique fragments were screened at the XChem. This will be validated by both positive hit data for PHIPA, and negative data where crystals were soaked and screened, but no readout identified binding.
-Fragment binding predictions here are important, because accurate predictions could improve library design, including bespoke libraries for specific targets.
+A total of 799 unique fragments were screened at the [XChem facility](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html).
+This will be validated by both positive hit data for PHIPA, and negative data where crystals were soaked and screened, but no readout identified binding.
+Fragment binding predictions here are important because accurate predictions could improve library design, including the ability to design bespoke libraries for specific targets.
 
-Overall, PHIP2 was crystalized in a C2 space group at 4°C with 20% PEG8000 and 0.04M potassium phosphate monobasic.
+Overall, PHIP2 was crystalized in a C2 space group at 4°C with 20% PEG8000 and 0.04 M monobasic potassium phosphate.
 The resulting crystals were soaked with 20 mM final concentration of each fragment, plunged into liquid nitrogen and shot at the i04-1 beamline located at the Diamond Light Source (Harwell, UK).
-The diffraction data were analyzed with PanDDA (Pearce et al., 2017) which revealed a number of fragments located across 4 sites.
+The diffraction data were analyzed with [PanDDA](https://pandda.bitbucket.io/) ([Pearce et al., 2017](https://www.nature.com/articles/ncomms15123)) which revealed a number of fragments located across four distinct sites.
 
-The first site (denoted by a helium atom - S1 - in the provided structure, see Manifest below) is the acetylated lysine binding site which is the most voluminous cavity.
+The first site (denoted by a helium atom `S1` in the provided structure (`PHIPA_C2_apo_sites.pdb`), see Manifest below) is the acetylated lysine binding site which is the most voluminous cavity.
 It is located in between the disordered loops at the extremity  of the 4-helix bundle.
-The second site (denoted by a neon atom - S2) is a small pocket located near cysteine 1335. The third site (denoted by an argon atom - S3) is solvent exposed and located near Aspartic acid 1384.
-The fourth and last site (denoted by a krypton atom - S4) is also exposed to solvent and located behind a flexible loop near lysine 1399.
+The second site (denoted by a neon atom `S2`) is a small pocket located near cysteine 1335.
+The third site (denoted by an argon atom `S3`) is solvent exposed and located near Aspartic acid 1384.
+The fourth and last site (denoted by a krypton atom `S4`) is also exposed to solvent and located behind a flexible loop near lysine 1399.
 
-An apo structure of PHIP2 has been provided along with the isomeric SMILES strings of the fragments screened.
+An *apo* structure of PHIP2 has been provided (`PHIPA_C2_Apo.pdb`) along with the [isomeric SMILES strings](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) (`fragments_screened.csv`) of the fragments screened.
 
-For the purposes of predicting whether a compound binds or not, consider the 20mM concentration used for soaking fragments; compounds which bind observably at this concentration (after factoring in any applicable solubility issues) will be judged binders, and those which do not will be judged nonbinders.
+For the purposes of predicting whether a compound binds or not, consider the 20 mM concentration used for soaking fragments; compounds which bind observably at this concentration (after factoring in any applicable solubility issues) will be judged binders, and those which do not will be judged as nonbinders.
 
 ### Provided data for Stage 1
 - Apo structure of the protein: See Manifest below
@@ -80,14 +82,15 @@ Your predictions must be uploaded via our web form (to be linked from here as so
 
 You must use the provided templates (to be posted shortly) to upload your predictions. We will be asking you to submit the SMILES string and compound identifier for each compound you predict to bind, and similarly for each compound you predict *not* to bind.
 
-While you are welcome to submit multiple entries in order to test diverse methods, as per our [policy on multiple submissions](https://samplchallenges.github.io/roadmap/submissions/), each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form. We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
+While you are welcome to submit multiple entries in order to test diverse methods, as per our [policy on multiple submissions](https://samplchallenges.github.io/roadmap/submissions/), each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form.
+We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
 
 If multiple submissions are incorrectly provided as "ranked" by a single participant, we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
 
 ### Manifest for Stage 1
-- `fragments_screened.csv`: CSV file containing isomeric SMILES of compounds screened, along with identifiers.
-- `PHIPA_C2_Apo.pdb`: Structure for use in screening, as provided by XChem.
-- `PHIPA_C2_apo_sites.pdb`: Apo structure with manual addition of noble gas atoms to designate different potential binding sites, as described above (as provided by XChem).
+- `fragments_screened.csv`: CSV file containing isomeric SMILES of compounds screened, along with identifiers
+- `PHIPA_C2_Apo.pdb`: Structure for use in screening, as provided by XChem
+- `PHIPA_C2_apo_sites.pdb`: *Apo* structure with manual addition of noble gas atoms to designate different potential binding sites, as described above (as provided by XChem)
 
 ## Stage 2: Prediction of binding poses for binding fragment
 
