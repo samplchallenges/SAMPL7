@@ -91,3 +91,8 @@ Crystallography will be used to assay compounds for activity. Follow-up compound
 Starts: Friday the 13th of December 2019
 
 Ends:  Monday the 13th of January 2020
+
+
+## Later stages
+
+Depending on the outcome of potential affinity measurements and other details, we may further extend this challenge by adding more stages. This remains to be determined.
