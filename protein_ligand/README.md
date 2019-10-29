@@ -44,7 +44,7 @@ This project used both the [DSI-Poised fragment library](https://www.diamond.ac.
 
 ### Setup and description of Stage 1
 
-**Aim**: The objective of this first stage is to discriminate fragment binders from non-binders at each of the four sites identified by [PanDDA](https://pandda.bitbucket.io/).
+**Aim**: The objective of this first stage is to discriminate fragment binders from non-binders at each of the four sites identified by [PanDDA](https://pandda.bitbucket.io/) (pan-density data analysis), which facilitates the analysis of multiple crystallographic datasets to identify ligand binding sites and structural events.
 
 A total of 799 unique fragments were screened at the [XChem facility](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html).
 This will be validated by both positive hit data for PHIPA, and negative data where crystals were soaked and screened, but no readout identified binding.
