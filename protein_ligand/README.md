@@ -12,7 +12,7 @@ This challenge breaks out into at least three phases on a tight timeline:
 
 Phase 1 is now open and focuses on identification of binders. Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Phase 3).
 
-If you plan to participate, be sure to [join our SAMPL7 e-mail list](https://drugdesigndata.us19.list-manage.com/subscribe?u=8181f49f8d2daca876bc86225&id=44c32db76e) so we can let you know of any changes to our data files, deadlines, etc.
+If you plan to participate, please [join our SAMPL7 e-mail list](https://drugdesigndata.us19.list-manage.com/subscribe?u=8181f49f8d2daca876bc86225&id=44c32db76e) so we can keep you updated.
 
 ## System background
 
@@ -21,7 +21,7 @@ Two of PHIP’s domains are [bromodomains](https://en.wikipedia.org/wiki/Bromodo
 These post-translationally modified protein residues can be found on the N-terminal tails of histones and mediate the regulation of gene expression.
 Bromodomains are attractive targets and several drugs are currently in clinical trials.
 
-X-ray crystallographic fragment screening experiments involve the [soaking of protein crystals with small fragment molecules](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Methods-for-Fragment-Screening.html) (<250 Da) and shooting at light sources.
+X-ray crystallographic fragment screening experiments involve the [soaking of protein crystals with small fragment molecules](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Methods-for-Fragment-Screening.html) (<250 Da) into an apo crystal, followed by high-throughput automated X-ray crystallography and structure solution.
 This enables the identification of binders while providing high resolution structural information.
 Such experiments are now feasible in a high-throughput fashion thanks to infrastructures such as [XChem](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening.html) where hundreds of crystals can be soaked and shot within a day.
 
