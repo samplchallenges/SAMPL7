@@ -12,7 +12,7 @@ This challenge breaks out into at least three phases on a tight timeline:
 
 Phase 1 is now open and focuses on identification of binders. Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Phase 3).
 
-If you plan to participate, please [join our SAMPL7 e-mail list](https://drugdesigndata.us19.list-manage.com/subscribe?u=8181f49f8d2daca876bc86225&id=44c32db76e) so we can keep you updated.
+If you plan to participate, please [join our SAMPL7 e-mail list](http://eepurl.com/gpBBun) so we can keep you updated.
 
 ## System background
 
