@@ -51,7 +51,7 @@ This will be validated by both positive hit data for PHIPA, and negative data wh
 Fragment binding predictions here are important because accurate predictions could improve library design, including the ability to design bespoke libraries for specific targets.
 
 Overall, PHIP2 was crystalized in a C2 space group at 4°C with 20% PEG8000 and 0.04 M monobasic potassium phosphate.
-The resulting crystals were soaked with 20 mM final concentration of each fragment, plunged into liquid nitrogen and shot at the i04-1 beamline located at the Diamond Light Source (Harwell, UK).
+The resulting crystals were soaked with 20 mM final concentration of each fragment from ethylene glycol stock solutions, plunged into liquid nitrogen and shot at the i04-1 beamline located at the Diamond Light Source (Harwell, UK).
 The diffraction data were analyzed with [PanDDA](https://pandda.bitbucket.io/) ([Pearce et al., 2017](https://www.nature.com/articles/ncomms15123)) which revealed a number of fragments located across four distinct sites.
 
 The first site (denoted by a helium atom `S1` in the provided structure (`PHIPA_C2_apo_sites.pdb`), see Manifest below) is the acetylated lysine binding site which is the most voluminous cavity.
