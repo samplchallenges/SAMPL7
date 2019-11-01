@@ -7,7 +7,7 @@ the familiar "Octa Acid" (OA) host and a newer, *exo*-OA host as detailed below.
 ## Challenge timing details
 
 The SAMPL7 GDCC challenge design is now finalized (as of May 25, 2019) with the details as given below.
-The challenge submission deadline is Nov. 1, 2019.
+The challenge submission deadline is Nov. 4, 2019.
 The challenge consists of predicting binding free energies of eight compounds to exoOA, and two to OA. Optionally, binding enthalpies may also be submitted.
 
 ## Proposed challenge for SAMPL7: A Coulombic Challenge
