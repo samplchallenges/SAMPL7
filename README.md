@@ -43,6 +43,7 @@ All three host-guest components of this challenge are now final and launched, th
 - **Release 0.4** (Oct. 30, 2019)): Adds Isaacs' group TrimerTrip binding data (in `host_guest/analysis/ExperimentalMeasurements`); adds TrimerTrip submissions; adds PHIP2 protein-ligand challenge Stage 1 details.
 
 ### Changes not in a release
+- (11/2/19, PHIP2) Fix misformatted SMILES line on line 620 of `fragments_screened.csv` for PHIP2 screening challenge.
 
 ## Challenge overview
 
