@@ -44,6 +44,7 @@ All three host-guest components of this challenge are now final and launched, th
 
 ### Changes not in a release
 - (11/2/19, PHIP2) Fix misformatted SMILES line on line 620 of `fragments_screened.csv` for PHIP2 screening challenge.
+- (11/11/19, PHIP2) Fix an incorrect SMILES for fragment F62 in the PHIP2 screening challenge.
 
 ## Challenge overview
 
