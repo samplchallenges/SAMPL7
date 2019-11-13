@@ -17,6 +17,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
 - Protein-ligand details on the [PHIP2 challenge](protein_ligand/README.md), in the `protein_ligand` directory.
+- [PHIP2 challenge submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file. Our submission system is not yet available.
 
 All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 4 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data. The **first stage of the protein-ligand challenge is due Nov. 28, 2019.**
 
@@ -45,6 +46,7 @@ All three host-guest components of this challenge are now final and launched, th
 ### Changes not in a release
 - (11/2/19, PHIP2) Fix misformatted SMILES line on line 620 of `fragments_screened.csv` for PHIP2 screening challenge.
 - (11/11/19, PHIP2) Fix an incorrect SMILES for fragment F62 in the PHIP2 screening challenge.
+- (11/12/19, PHIP2) Add participation instructions and submission format for PHIP2 virtual screening component.
 
 ## Challenge overview
 
@@ -81,6 +83,7 @@ The Gilson lab is measuring binding of two guests to ten different hosts, compri
 - `host_guest`: Details on host-guest challenges
 - `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Phase 1 is available.
 - `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
+- `protein_ligand_instructions.md`: Detailed instructions for participation in the protein-ligand challenge.
 
 ## SAMPL-related content
 
