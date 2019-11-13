@@ -69,6 +69,8 @@ An *apo* structure of PHIP2 has been provided (`PHIPA_C2_Apo.pdb`) along with th
 
 For the purposes of predicting whether a compound binds or not, consider the 20 mM concentration used for soaking fragments; compounds which bind observably at this concentration (after factoring in any applicable solubility issues) will be judged binders, and those which do not will be judged as nonbinders.
 
+We are asking you to submit both site-specific binding predictions (whether each compound binds at each specific site) as well as overall binding predictions (whether each compound binds at all), as detailed in the [submission format](screening_format.txt). You may elect to assess only binding to one specific site, or to all sites; we plan to analyze predictions for each site separately, as well as overall predictions.
+
 ### Provided data for Stage 1
 - Apo structure of the protein: See Manifest below
 - isomeric SMILES strings for the 799 fragments: See Manifest below
