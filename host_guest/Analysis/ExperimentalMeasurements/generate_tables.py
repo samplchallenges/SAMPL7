@@ -166,6 +166,102 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('TDS', None), ('dTDS', None),
         ('n', np.mean([0.839, 0.813]))
     ])),
+    ('OA-g1', OrderedDict([
+        ('DG', -20.8 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
+        ('DH', -23.2 * u.kilojoules_per_mole), ('dDH', 0.4 * u.kilojoules_per_mole),
+        ('TDS', 2.4 * u.kilojoules_per_mole), ('dTDS', 0.6 * u.kilojoule_per_mole),
+        ('n', 1)
+    ])),
+    ('OA-g2', OrderedDict([
+        ('DG', -28.9 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
+        ('DH', -40 * u.kilojoules_per_mole), ('dDH', 1 * u.kilojoules_per_mole),
+        ('TDS', 11 * u.kilojoules_per_mole), ('dTDS', 1 * u.kilojoule_per_mole),
+        ('n', 1)
+    ])),
+    ('OA-g3', OrderedDict([
+        ('DG', -33.9 * u.kilojoules_per_mole), ('dDG', 0.2 * u.kilojoules_per_mole),
+        ('DH', -50.2 * u.kilojoules_per_mole), ('dDH', 0.1 * u.kilojoules_per_mole),
+        ('TDS', 16.3 * u.kilojoules_per_mole), ('dTDS', 0.1 * u.kilojoule_per_mole),
+        ('n', 1)
+    ])),
+    ('OA-g4', OrderedDict([
+        ('DG', -28.4 * u.kilojoules_per_mole), ('dDG', 0.2 * u.kilojoules_per_mole),
+        ('DH', -28.0 * u.kilojoules_per_mole), ('dDH', 0.6 * u.kilojoules_per_mole),
+        ('TDS', -0.3 * u.kilojoules_per_mole), ('dTDS', 0.1 * u.kilojoule_per_mole),
+        ('n', 1)
+    ])),
+    ('OA-g5', OrderedDict([
+        ('DG', -19.8 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
+        ('DH', -31.3 * u.kilojoules_per_mole), ('dDH', 0.2 * u.kilojoules_per_mole),
+        ('TDS', 11.5 * u.kilojoules_per_mole), ('dTDS', 0.2 * u.kilojoule_per_mole),
+        ('n', 1)
+    ])),
+    ('OA-g6', OrderedDict([
+        ('DG', -20.8 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
+        ('DH', -30 * u.kilojoules_per_mole), ('dDH', 1 * u.kilojoules_per_mole),
+        ('TDS', 10 * u.kilojoules_per_mole), ('dTDS', 1 * u.kilojoule_per_mole),
+        ('n', 1)
+    ])),
+    ('OA-g7', OrderedDict([
+        ('DG', -25.4 * u.kilojoules_per_mole), ('dDG', 0.2 * u.kilojoules_per_mole),
+        ('DH', -24.0 * u.kilojoules_per_mole), ('dDH', 0.6 * u.kilojoules_per_mole),
+        ('TDS', -1.4 * u.kilojoules_per_mole), ('dTDS', 0.6 * u.kilojoule_per_mole),
+        ('n', 1)
+    ])),
+    ('OA-g8', OrderedDict([
+        ('DG', -34 * u.kilojoules_per_mole), ('dDG', 2 * u.kilojoules_per_mole),
+        ('DH', -32.7 * u.kilojoules_per_mole), ('dDH', 0.7 * u.kilojoules_per_mole),
+        ('TDS', -1.7 * u.kilojoules_per_mole), ('dTDS', 0.9 * u.kilojoule_per_mole),
+        ('n', 1)
+    ])),
+    ('exoOA-g1', OrderedDict([
+        ('DG', 'ND'), ('dDG', 'ND'),
+        ('DH', 'ND'), ('dDH', 'ND'),
+        ('TDS', 'ND'), ('dTDS', 'ND'),
+        ('n', 1)
+    ])),
+    ('exoOA-g2', OrderedDict([
+        ('DG', -9 * unit.kilojoules_per_mole), ('dDG', 3 * unit.kilojoules_per_mole),
+        ('DH', 'ND'), ('dDH', 'ND'),
+        ('TDS', 'ND'), ('dTDS', 'ND'),
+        ('n', 1)
+    ])),
+    ('exoOA-g3', OrderedDict([
+        ('DG', -14.1 * unit.kilojoules_per_mole), ('dDG', 0.1 * unit.kilojoules_per_mole),
+        ('DH', -25.2 * unit.kilojoules_per_mole), ('dDH', 0.5 * unit.kilojoules_per_mole),
+        ('TDS', 11.7 * unit.kilojoules_per_mole), ('dTDS', 0.1 * unit.kilojoules_per_mole),
+        ('n', 1)
+    ])),
+    ('exoOA-g4', OrderedDict([
+        ('DG', -15.1 * unit.kilojoules_per_mole), ('dDG', 0.1 * unit.kilojoules_per_mole),
+        ('DH', -31 * unit.kilojoules_per_mole), ('dDH', 2 * unit.kilojoules_per_mole),
+        ('TDS', 15 * unit.kilojoules_per_mole), ('dTDS', 3 * unit.kilojoules_per_mole),
+        ('n', 1)
+    ])),
+    ('exoOA-g5', OrderedDict([
+        ('DG', -23.3 * unit.kilojoules_per_mole), ('dDG', 0.1 * unit.kilojoules_per_mole),
+        ('DH', -25.8 * unit.kilojoules_per_mole), ('dDH', 0.1 * unit.kilojoules_per_mole),
+        ('TDS', 2.5 * unit.kilojoules_per_mole), ('dTDS', 0.1 * unit.kilojoules_per_mole),
+        ('n', 1)
+    ])),
+    ('exoOA-g6', OrderedDict([
+        ('DG', -24.4 * unit.kilojoules_per_mole), ('dDG', 0.1 * unit.kilojoules_per_mole),
+        ('DH', -13.6 * unit.kilojoules_per_mole), ('dDH', 0.1 * unit.kilojoules_per_mole),
+        ('TDS', -10.8 * unit.kilojoules_per_mole), ('dTDS', 0.2 * unit.kilojoules_per_mole),
+        ('n', 1)
+    ])),
+    ('exoOA-g7', OrderedDict([
+        ('DG', -29.2 * unit.kilojoules_per_mole), ('dDG', 0.5 * unit.kilojoules_per_mole),
+        ('DH', -20.8 * unit.kilojoules_per_mole), ('dDH', 0.3 * unit.kilojoules_per_mole),
+        ('TDS', -8.4 * unit.kilojoules_per_mole), ('dTDS', 0.9 * unit.kilojoules_per_mole),
+        ('n', 1)
+    ])),
+    ('exoOA-g8', OrderedDict([
+        ('DG', -32.1 * unit.kilojoules_per_mole), ('dDG', 0.4 * unit.kilojoules_per_mole),
+        ('DH', -21.1 * unit.kilojoules_per_mole), ('dDH', 0.2 * unit.kilojoules_per_mole),
+        ('TDS', -11 * unit.kilojoules_per_mole), ('dTDS', 1 * unit.kilojoules_per_mole),
+        ('n', 1)
+    ])),
 ])
 
 
