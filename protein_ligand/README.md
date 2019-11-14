@@ -87,17 +87,7 @@ We are asking you to submit both site-specific binding predictions (whether each
 
 Your predictions must be uploaded via our web form (to be linked from here as soon as it is available) before midnight US Pacific time on the due date. The experimental results will be available as soon as possible after SAMPL closes. Please refer to the [../protein_ligand_instructions.md](../protein_ligand_instructions.md) for information on uploading.
 
-You must use the provided templates to upload your predictions. We will be asking you to submit the compound identifier for each compound you predict to bind, along with a designation of which specific sites you predict it to bind to, if you are able to assess binding to specific subsites. Details as to how to submit this information are given in the [format file](stage1_submission_template.txt). Note that each submission must also be accompanied by a variety of methodological details, etc., as given in the submission format.  
-
-In the Method Category section of your submission file please state which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`. 
-If your method takes advantage of multiple approaches please report more than one category label, separated by comma.  
-- `Docking` category refers to structure-based virtual screening methods that model the structure of the receptor binding pocket and pose of the ligand followed by an scoring the goodness of the fit .
-- `Ligand-based` methods are virtual screening methods that do not rely on protein structure such as pharmacophore modeling, ligand shape-based, 2D or 3D structural similarity based methods.
-- `MD` methods utilize molecular dynamics simulations based on molecular mechanics including free energy calculations.
-- `ML` category includes machine learning, QSPR approaches, and all prediction methods trained on empirical knowledge.
-- `Null` predictions employ a model which is not expected to produce useful predictions, however,  can provide a simple comparison point for more sophisticated methods, as ideally, good methods should outperform the null model.
-- If these categories do not match your method, report as “Other”.
-If you choose the “Other” category, please explain your decision in the beginning of Method Description section.  
+You must use the [provided template](stage1_submission_template.txt) to upload your predictions, and the file must have a filename beginning with `PHIP2`. We will be asking you to submit the compound identifier for each compound you predict to bind, along with a designation of which specific sites you predict it to bind to, if you are able to assess binding to specific subsites. Details as to how to submit this information are given in the [format file](stage1_submission_template.txt). Note that each submission must also be accompanied by a variety of methodological details, etc., as given in the submission format.  
 
 While you are welcome to submit multiple entries in order to test diverse methods, as per our [policy on multiple submissions](https://samplchallenges.github.io/roadmap/submissions/), each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form.
 We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.

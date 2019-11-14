@@ -30,7 +30,19 @@ You may use any method(s) you like to generate your predictions; e.g. docking, s
 
 ## Method descriptions
 
-Your method descriptions should give a detailed description of your approach, ideally with enough detail that someone could reproduce the work. These often serve to allow researchers to coordinate on why calculations which seem similar performed quite different in practice, so you should be sure to address how you generated poses, selected protonation states and tautomers if applicable, etc., as well as any method-specific details that, if varied, might result in different performance. Software versions should be provided.
+Your method descriptions should give a detailed description of your approach, ideally with enough detail that someone could reproduce the work. These often serve to allow researchers to coordinate on why calculations which seem similar performed quite different in practice, so you should be sure to address how you generated poses, selected protonation states and tautomers if applicable, etc., as well as any method-specific details that, if varied, might result in different performance. Software versions should be provided. You will also need to assign a category to your method, as discussed below.
+
+## Method category
+
+In the Method Category section of your submission file please state which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`.
+If your method takes advantage of multiple approaches please report more than one category label, separated by comma.  
+- `Docking` refers to structure-based virtual screening methods that model the structure of the receptor binding pocket and pose of the ligand followed by a scoring the goodness of the fit.
+- `Ligand-based` methods are virtual screening methods that do not rely on protein structure such as pharmacophore modeling, ligand shape-based, 2D or 3D structural similarity based methods.
+- `MD` methods utilize molecular dynamics simulations based on molecular mechanics including free energy calculations. Select this also if you used a docking or ligand-based approach combined with MD.
+- `ML` category includes machine learning, QSPR approaches, and other predictive methods trained on empirical knowledge (however, docking approaches using empirical scoring functions belong in the `docking` category)
+- `Null` predictions employ a model which is not expected to produce useful predictions (e.g., molecular weight). However, these can provide a simple comparison point for more sophisticated methods, as ideally, good methods should outperform the null model.
+- `Other`: If these categories do not match your method, report as “Other”. If you choose the “Other” category, please explain your decision in the beginning of Method Description section.  
+
 
 ## Uploading your predictions
 
