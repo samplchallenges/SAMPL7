@@ -9,7 +9,7 @@ Due dates vary by challenge; refer to the main [README.md](README.md) for exact 
 Your predictions must be uploaded via our [web form](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit) before midnight US Pacific time on the due date. The experimental results will be available as soon as possible after SAMPL closes. Please refer to the below instructions for information on uploading.
 
 You must use the provided templates to upload your predictions. Templates are:
-- [protein_ligand/screening_format.txt](protein_ligand/screening_format.txt) for the virtual screening component
+- [protein_ligand/stage1_submission_template.txt](protein_ligand/stage1_submission_template.txt) for the virtual screening component
 - (to be updated)
 
 File names must begin with the letters "PHIP2" and the additional details provided in the submission template.

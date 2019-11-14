@@ -69,7 +69,7 @@ An *apo* structure of PHIP2 has been provided (`PHIPA_C2_Apo.pdb`) along with th
 
 For the purposes of predicting whether a compound binds or not, consider the 20 mM concentration used for soaking fragments; compounds which bind observably at this concentration (after factoring in any applicable solubility issues) will be judged binders, and those which do not will be judged as nonbinders.
 
-We are asking you to submit both site-specific binding predictions (whether each compound binds at each specific site) as well as overall binding predictions (whether each compound binds at all), as detailed in the [submission format](screening_format.txt). You may elect to assess only binding to one specific site, or to all sites; we plan to analyze predictions for each site separately, as well as overall predictions.
+We are asking you to submit both site-specific binding predictions (whether each compound binds at each specific site) as well as overall binding predictions (whether each compound binds at all), as detailed in the [submission format](stage1_submission_template.txt). You may elect to assess only binding to one specific site, or to all sites; we plan to analyze predictions for each site separately, as well as overall predictions.
 
 ### Provided data for Stage 1
 - Apo structure of the protein: See Manifest below
@@ -77,7 +77,7 @@ We are asking you to submit both site-specific binding predictions (whether each
 - Descriptions of the candidate binding sites are provided in the description above
 - Coordinates of atoms marking the candidate binding sites are provided in the `PHIPA_C2_apo_sites.pdb` file, as described above
 - Rules: See below
-- Submission format: `screening_format.txt`
+- Submission format: `stage1_submission_template.txt`
 
 ### Rules for Stage 1
 
@@ -87,7 +87,7 @@ We are asking you to submit both site-specific binding predictions (whether each
 
 Your predictions must be uploaded via our web form (to be linked from here as soon as it is available) before midnight US Pacific time on the due date. The experimental results will be available as soon as possible after SAMPL closes. Please refer to the [../protein_ligand_instructions.md](../protein_ligand_instructions.md) for information on uploading.
 
-You must use the provided templates to upload your predictions. We will be asking you to submit the compound identifier for each compound you predict to bind, along with a designation of which specific sites you predict it to bind to, if you are able to assess binding to specific subsites. Details as to how to submit this information are given in the [format file](screening_format.txt). Note that each submission must also be accompanied by a variety of methodological details, etc., as given in the submission format.  
+You must use the provided templates to upload your predictions. We will be asking you to submit the compound identifier for each compound you predict to bind, along with a designation of which specific sites you predict it to bind to, if you are able to assess binding to specific subsites. Details as to how to submit this information are given in the [format file](stage1_submission_template.txt). Note that each submission must also be accompanied by a variety of methodological details, etc., as given in the submission format.  
 
 In the Method Category section of your submission file please state which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`. 
 If your method takes advantage of multiple approaches please report more than one category label, separated by comma.  
@@ -108,7 +108,7 @@ If multiple submissions are incorrectly provided as "ranked" by a single partici
 - `fragments_screened.csv`: CSV file containing isomeric SMILES of compounds screened, along with identifiers
 - `PHIPA_C2_Apo.pdb`: Structure for use in screening, as provided by XChem
 - `PHIPA_C2_apo_sites.pdb`: *Apo* structure with manual addition of noble gas atoms to designate different potential binding sites, as described above (as provided by XChem)
-- `screening_format.txt`: Sample submission format for submitting PHIP2 virtual screening results.
+- `stage1_submission_template.txt`: Sample submission format for submitting PHIP2 virtual screening results.
 
 ## Stage 2: Prediction of binding poses for binding fragment
 
