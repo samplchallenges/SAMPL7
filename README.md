@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/184310568.svg)](https://zenodo.org/badge/latestdoi/184310568)
 
 
-Challenge details, inputs, and (eventually) results for the SAMPL7 series of challenges
+Challenge details, inputs, and (eventually) results for the SAMPL7 series (phase) of challenges. Each individual SAMPL7 challenge may be broken up into multiple stages.
 
 See the [SAMPL website](https://samplchallenges.github.io) for information on the Statistical Assessment of the Modeling of Proteins and Ligands (SAMPL) series of challenges as a whole. This repository focuses specifically on the SAMPL7 series of challenges.
 
@@ -53,7 +53,7 @@ All three host-guest components of this challenge are now final and launched, th
 The SAMPL7 phase of challenges currently includes a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involves a total of 9-20 binding free energy calculations.
 Additional details are provided below. Note that several hosts and/or guests are optional.
 
-A later phase of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
+A later stage of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
 
 ### PHIP2 binding prediction
 
@@ -81,7 +81,7 @@ The Gilson lab is measuring binding of two guests to ten different hosts, compri
 
 ## MANIFEST
 - `host_guest`: Details on host-guest challenges
-- `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Phase 1 is available.
+- `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Stage 1 is available.
 - `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
 - `protein_ligand_instructions.md`: Detailed instructions for participation in the protein-ligand challenge.
 

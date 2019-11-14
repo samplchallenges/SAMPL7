@@ -5,12 +5,12 @@ We are excited to announce a new set of SAMPL7 challenges focusing on the bindin
 The second bromodomain of PHIP (PHIP2)---a small protein for which little small molecule binding data is available---was targeted in an extensive X-ray crystallographic fragment screening experiment, leading to 3D structures of multiple screening hits.
 This SAMPL7 challenge will take advantage of this dataset, assessing the accuracy of computational methods for the discrimination of binders from non-binders, binding pose prediction, and the unique opportunity to select new candidate ligands to be screened from a provided set of purchasable compounds that will be assessed experimentally by X-ray crystallography.
 
-This challenge breaks out into at least three phases on a tight timeline:
+This challenge breaks out into at least three stages on a tight timeline:
 1) Identification of binders from fragment screening
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database
 
-Phase 1 is now open and focuses on identification of binders. Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Phase 3).
+Stage 1 is now open and focuses on identification of binders. Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3).
 
 If you plan to participate, please [join our SAMPL7 e-mail list](http://eepurl.com/gpBBun) so we can keep you updated.
 
