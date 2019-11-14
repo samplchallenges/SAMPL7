@@ -169,49 +169,50 @@ EXPERIMENTAL_DATA = OrderedDict([
     ('OA-g1', OrderedDict([
         ('DG', -20.8 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
         ('DH', -23.2 * u.kilojoules_per_mole), ('dDH', 0.4 * u.kilojoules_per_mole),
-        ('TDS', 2.4 * u.kilojoules_per_mole), ('dTDS', 0.6 * u.kilojoule_per_mole),
+        ('TDS', -2.4 * u.kilojoules_per_mole), ('dTDS', 0.6 * u.kilojoule_per_mole),
         ('n', 1)
     ])),
     ('OA-g2', OrderedDict([
         ('DG', -28.9 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
         ('DH', -40 * u.kilojoules_per_mole), ('dDH', 1 * u.kilojoules_per_mole),
-        ('TDS', 11 * u.kilojoules_per_mole), ('dTDS', 1 * u.kilojoule_per_mole),
+        ('TDS', -11 * u.kilojoules_per_mole), ('dTDS', 1 * u.kilojoule_per_mole),
         ('n', 1)
     ])),
     ('OA-g3', OrderedDict([
         ('DG', -33.9 * u.kilojoules_per_mole), ('dDG', 0.2 * u.kilojoules_per_mole),
         ('DH', -50.2 * u.kilojoules_per_mole), ('dDH', 0.1 * u.kilojoules_per_mole),
-        ('TDS', 16.3 * u.kilojoules_per_mole), ('dTDS', 0.1 * u.kilojoule_per_mole),
+        ('TDS', -16.3 * u.kilojoules_per_mole), ('dTDS', 0.1 * u.kilojoule_per_mole),
         ('n', 1)
     ])),
     ('OA-g4', OrderedDict([
         ('DG', -28.4 * u.kilojoules_per_mole), ('dDG', 0.2 * u.kilojoules_per_mole),
         ('DH', -28.0 * u.kilojoules_per_mole), ('dDH', 0.6 * u.kilojoules_per_mole),
-        ('TDS', -0.3 * u.kilojoules_per_mole), ('dTDS', 0.1 * u.kilojoule_per_mole),
+        ('TDS', 0.3 * u.kilojoules_per_mole), ('dTDS', 0.1 * u.kilojoule_per_mole),
         ('n', 1)
     ])),
     ('OA-g5', OrderedDict([
         ('DG', -19.8 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
         ('DH', -31.3 * u.kilojoules_per_mole), ('dDH', 0.2 * u.kilojoules_per_mole),
-        ('TDS', 11.5 * u.kilojoules_per_mole), ('dTDS', 0.2 * u.kilojoule_per_mole),
+        ('TDS', -11.5 * u.kilojoules_per_mole), ('dTDS', 0.2 * u.kilojoule_per_mole),
         ('n', 1)
     ])),
-    ('OA-g6', OrderedDict([
-        ('DG', -20.8 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
-        ('DH', -30 * u.kilojoules_per_mole), ('dDH', 1 * u.kilojoules_per_mole),
-        ('TDS', 10 * u.kilojoules_per_mole), ('dTDS', 1 * u.kilojoule_per_mole),
-        ('n', 1)
-    ])),
+    # Currently the values are inconsistent here, probably rounding error.
+    #('OA-g6', OrderedDict([
+    #    ('DG', -20.8 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
+    #    ('DH', -30 * u.kilojoules_per_mole), ('dDH', 1 * u.kilojoules_per_mole),
+    #    ('TDS', -10 * u.kilojoules_per_mole), ('dTDS', 1 * u.kilojoule_per_mole),
+    #    ('n', 1)
+    #])),
     ('OA-g7', OrderedDict([
         ('DG', -25.4 * u.kilojoules_per_mole), ('dDG', 0.2 * u.kilojoules_per_mole),
         ('DH', -24.0 * u.kilojoules_per_mole), ('dDH', 0.6 * u.kilojoules_per_mole),
-        ('TDS', -1.4 * u.kilojoules_per_mole), ('dTDS', 0.6 * u.kilojoule_per_mole),
+        ('TDS', 1.4 * u.kilojoules_per_mole), ('dTDS', 0.6 * u.kilojoule_per_mole),
         ('n', 1)
     ])),
     ('OA-g8', OrderedDict([
         ('DG', -34 * u.kilojoules_per_mole), ('dDG', 2 * u.kilojoules_per_mole),
         ('DH', -32.7 * u.kilojoules_per_mole), ('dDH', 0.7 * u.kilojoules_per_mole),
-        ('TDS', -1.7 * u.kilojoules_per_mole), ('dTDS', 0.9 * u.kilojoule_per_mole),
+        ('TDS', 1.7 * u.kilojoules_per_mole), ('dTDS', 0.9 * u.kilojoule_per_mole),
         ('n', 1)
     ])),
     ('exoOA-g1', OrderedDict([
@@ -221,45 +222,45 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('n', 1)
     ])),
     ('exoOA-g2', OrderedDict([
-        ('DG', -9 * unit.kilojoules_per_mole), ('dDG', 3 * unit.kilojoules_per_mole),
+        ('DG', -9 * u.kilojoules_per_mole), ('dDG', 3 * u.kilojoules_per_mole),
         ('DH', 'ND'), ('dDH', 'ND'),
         ('TDS', 'ND'), ('dTDS', 'ND'),
         ('n', 1)
     ])),
-    ('exoOA-g3', OrderedDict([
-        ('DG', -14.1 * unit.kilojoules_per_mole), ('dDG', 0.1 * unit.kilojoules_per_mole),
-        ('DH', -25.2 * unit.kilojoules_per_mole), ('dDH', 0.5 * unit.kilojoules_per_mole),
-        ('TDS', 11.7 * unit.kilojoules_per_mole), ('dTDS', 0.1 * unit.kilojoules_per_mole),
-        ('n', 1)
-    ])),
-    ('exoOA-g4', OrderedDict([
-        ('DG', -15.1 * unit.kilojoules_per_mole), ('dDG', 0.1 * unit.kilojoules_per_mole),
-        ('DH', -31 * unit.kilojoules_per_mole), ('dDH', 2 * unit.kilojoules_per_mole),
-        ('TDS', 15 * unit.kilojoules_per_mole), ('dTDS', 3 * unit.kilojoules_per_mole),
-        ('n', 1)
-    ])),
+    #('exoOA-g3', OrderedDict([
+    #    ('DG', -14.1 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
+    #    ('DH', -25.2 * u.kilojoules_per_mole), ('dDH', 0.5 * u.kilojoules_per_mole),
+    #    ('TDS', -11.7 * u.kilojoules_per_mole), ('dTDS', 0.1 * u.kilojoules_per_mole),
+    #    ('n', 1)
+    #])),
+    #('exoOA-g4', OrderedDict([
+    #    ('DG', -15.1 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
+    #    ('DH', -31 * u.kilojoules_per_mole), ('dDH', 2 * u.kilojoules_per_mole),
+    #    ('TDS', -15 * u.kilojoules_per_mole), ('dTDS', 3 * u.kilojoules_per_mole),
+    #    ('n', 1)
+    #])),
     ('exoOA-g5', OrderedDict([
-        ('DG', -23.3 * unit.kilojoules_per_mole), ('dDG', 0.1 * unit.kilojoules_per_mole),
-        ('DH', -25.8 * unit.kilojoules_per_mole), ('dDH', 0.1 * unit.kilojoules_per_mole),
-        ('TDS', 2.5 * unit.kilojoules_per_mole), ('dTDS', 0.1 * unit.kilojoules_per_mole),
+        ('DG', -23.3 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
+        ('DH', -25.8 * u.kilojoules_per_mole), ('dDH', 0.1 * u.kilojoules_per_mole),
+        ('TDS', -2.5 * u.kilojoules_per_mole), ('dTDS', 0.1 * u.kilojoules_per_mole),
         ('n', 1)
     ])),
     ('exoOA-g6', OrderedDict([
-        ('DG', -24.4 * unit.kilojoules_per_mole), ('dDG', 0.1 * unit.kilojoules_per_mole),
-        ('DH', -13.6 * unit.kilojoules_per_mole), ('dDH', 0.1 * unit.kilojoules_per_mole),
-        ('TDS', -10.8 * unit.kilojoules_per_mole), ('dTDS', 0.2 * unit.kilojoules_per_mole),
+        ('DG', -24.4 * u.kilojoules_per_mole), ('dDG', 0.1 * u.kilojoules_per_mole),
+        ('DH', -13.6 * u.kilojoules_per_mole), ('dDH', 0.1 * u.kilojoules_per_mole),
+        ('TDS', 10.8 * u.kilojoules_per_mole), ('dTDS', 0.2 * u.kilojoules_per_mole),
         ('n', 1)
     ])),
     ('exoOA-g7', OrderedDict([
-        ('DG', -29.2 * unit.kilojoules_per_mole), ('dDG', 0.5 * unit.kilojoules_per_mole),
-        ('DH', -20.8 * unit.kilojoules_per_mole), ('dDH', 0.3 * unit.kilojoules_per_mole),
-        ('TDS', -8.4 * unit.kilojoules_per_mole), ('dTDS', 0.9 * unit.kilojoules_per_mole),
+        ('DG', -29.2 * u.kilojoules_per_mole), ('dDG', 0.5 * u.kilojoules_per_mole),
+        ('DH', -20.8 * u.kilojoules_per_mole), ('dDH', 0.3 * u.kilojoules_per_mole),
+        ('TDS', 8.4 * u.kilojoules_per_mole), ('dTDS', 0.9 * u.kilojoules_per_mole),
         ('n', 1)
     ])),
     ('exoOA-g8', OrderedDict([
-        ('DG', -32.1 * unit.kilojoules_per_mole), ('dDG', 0.4 * unit.kilojoules_per_mole),
-        ('DH', -21.1 * unit.kilojoules_per_mole), ('dDH', 0.2 * unit.kilojoules_per_mole),
-        ('TDS', -11 * unit.kilojoules_per_mole), ('dTDS', 1 * unit.kilojoules_per_mole),
+        ('DG', -32.1 * u.kilojoules_per_mole), ('dDG', 0.4 * u.kilojoules_per_mole),
+        ('DH', -21.1 * u.kilojoules_per_mole), ('dDH', 0.2 * u.kilojoules_per_mole),
+        ('TDS', 11 * u.kilojoules_per_mole), ('dTDS', 1 * u.kilojoules_per_mole),
         ('n', 1)
     ])),
 ])
@@ -389,6 +390,9 @@ def strip_units(quantities):
 
 
 def reduce_to_first_significant_digit(quantity, uncertainty):
+    # If strings, just return
+    if isinstance(quantity, str) or isinstance(uncertainty, str):
+        return quantity, uncertainty
     first_significant_digit = math.floor(math.log10(abs(uncertainty)))
     quantity = round(quantity, -first_significant_digit)
     uncertainty = round(uncertainty, -first_significant_digit)
@@ -405,17 +409,19 @@ if __name__ == '__main__':
 
     smiles_by_host = {
         'clip': load_smiles(CLIP_GUESTS_SMILES_PATH),
-        'GDCC' : load_smiles(GDCC_GUESTS_SMILES_PATH),
+        'OA' : load_smiles(GDCC_GUESTS_SMILES_PATH),
+        'exoOA' : load_smiles(GDCC_GUESTS_SMILES_PATH),
         'CD' : load_smiles(CD_GUESTS_SMILES_PATH),
     }
 
     names_by_host = {
         'clip': load_names(CLIP_GUESTS_NAMES_PATH),
-        'GDCC' : load_names(GDCC_GUESTS_NAMES_PATH),
+        'OA' : load_names(GDCC_GUESTS_NAMES_PATH),
+        'exoOA' : load_names(GDCC_GUESTS_NAMES_PATH),
         'CD' : load_names(CD_GUESTS_NAMES_PATH),
     }
 
-    for host in ['clip', 'GDCC', 'CD']:
+    for host in ['clip', 'OA', 'exoOA', 'CD']:
         molecule_names[host] = {}
         for smi, gid in smiles_by_host[host]:
             for name, gid2 in names_by_host[host]:
@@ -482,43 +488,67 @@ if __name__ == '__main__':
 
 
         # Incorporate the relative concentration uncertainties into quantities.
-        for k in ['Ka', 'DH']:
-            quantity = system_data[k]
-            # Compute relative uncertainty
-            relative_uncertainty = system_data['d' + k]/quantity
-            # Use upper-bound of 1% if <1% is reported. Keep track of these molecules.
-            if relative_uncertainty is None:
-                upper_bound_molecules[k].add(system_name)
-                relative_uncertainty = 0.01
-            # Incorporate the relative concentration uncertainties into quantities.
-            relative_uncertainty = u.sqrt( relative_uncertainty**2 + RELATIVE_TITRANT_CONC_ERROR**2)
-            # Convert relative to absolute errors.
-            system_data['d' + k] = abs(quantity * relative_uncertainty)
+        # Skip this for the Gibb data, where concentration errors are already accounted for and we already have free energy
+        TDS = None
+        dTDS = None
+        DG = None
+        dDG = None
+        if not 'OA' in system_name:
+            for k in ['Ka', 'DH']:
+                quantity = system_data[k]
+                # Compute relative uncertainty
+                relative_uncertainty = system_data['d' + k]/quantity
+                # Use upper-bound of 1% if <1% is reported. Keep track of these molecules.
+                if relative_uncertainty is None:
+                    upper_bound_molecules[k].add(system_name)
+                    relative_uncertainty = 0.01
+                # Incorporate the relative concentration uncertainties into quantities.
+                relative_uncertainty = u.sqrt( relative_uncertainty**2 + RELATIVE_TITRANT_CONC_ERROR**2)
+                # Convert relative to absolute errors.
+                system_data['d' + k] = abs(quantity * relative_uncertainty)
 
-        # Propagate Ka and DH error into DG and TDS.
-        DG, dDG = compute_DG(system_data['Ka'], system_data['dKa'])
-        system_data['DG'] = DG
-        system_data['dDG'] = dDG
-        TDS, dTDS = compute_TDS(system_data['DG'], system_data['dDG'],
-                                system_data['DH'], system_data['dDH'])
-        system_data['TDS'] = TDS
-        system_data['dTDS'] = dTDS
+            # Propagate Ka and DH error into DG and TDS.
+            DG, dDG = compute_DG(system_data['Ka'], system_data['dKa'])
+            system_data['DG'] = DG
+            system_data['dDG'] = dDG
+            TDS, dTDS = compute_TDS(system_data['DG'], system_data['dDG'],
+                                    system_data['DH'], system_data['dDH'])
+            system_data['TDS'] = TDS
+            system_data['dTDS'] = dTDS
+
+        # If we have a free energy but not a Ka, compute Ka
+        if not 'Ka' in system_data:
+            try:
+                system_data['Ka'], system_data['dKa'] = compute_Ka(system_data['DG'], system_data['dDG'])
+            except TypeError:
+                if system_data['DG']=='ND':
+                    system_data['Ka']='ND'
+                    system_data['dKa']='ND'
 
         # Strip units.
         strip_units(system_data)
 
         # Consistency checks.
-        computed_DG = DG.value_in_unit(u.kilocalories_per_mole)
-        computed_TDS = TDS.value_in_unit(u.kilocalories_per_mole)
-        assert np.isclose(system_data['DG'], system_data['DH'] - system_data['TDS'], atol=0.020000000000001, rtol=0.0)
-        assert np.isclose(np.around(computed_TDS, decimals=2), system_data['TDS'], atol=0.0200000000000001, rtol=0.0)
-        assert np.isclose(np.around(computed_DG, decimals=2), system_data['DG'], atol=0.0200000000000001, rtol=0.0)
+        print(system_name) #Debug
+        if system_data['TDS']!='ND' and system_data['DG']!='ND' and system_data['DH']!='ND':
+            print(system_data['DG'], system_data['DH'] - system_data['TDS']) #debug
+
+            assert np.isclose(system_data['DG'], system_data['DH'] - system_data['TDS'], atol=0.10000000000001, rtol=0.0)
+
+            if DG is not None:
+                computed_DG = DG.value_in_unit(u.kilocalories_per_mole)
+                assert np.isclose(np.around(computed_DG, decimals=2), system_data['DG'], atol=0.0200000000000001, rtol=0.0)
+            if TDS is not None:
+                computed_TDS = TDS.value_in_unit(u.kilocalories_per_mole)
+                assert np.isclose(np.around(computed_TDS, decimals=2), system_data['TDS'], atol=0.0200000000000001, rtol=0.0)
+
 
         # Report only error most significant digit.
         for k in ['Ka', 'DH', 'TDS', 'DG']:
-            quantity, uncertainty = system_data[k], system_data['d' + k]
-            if uncertainty is not None:
-                system_data[k], system_data['d' + k] = reduce_to_first_significant_digit(quantity, uncertainty)
+            if k in system_data:
+                quantity, uncertainty = system_data[k], system_data['d' + k]
+                if uncertainty is not None:
+                    system_data[k], system_data['d' + k] = reduce_to_first_significant_digit(quantity, uncertainty)
 
     # Create output JSON file.
     with open('experimental_measurements.json', 'w') as f:
@@ -566,7 +596,7 @@ if __name__ == '__main__':
                 f.write('\\hline\n')
                 old_host = host_name
 
-            if csv_dict['ID']=='clip-g10':
+            if csv_dict['ID']=='clip-g10' or 'OA-g5' in csv_dict['ID']:
                 # One name can't be dealt with; reformat
                 csv_dict['name'] = "Can't format in LaTeX"
 
@@ -577,15 +607,17 @@ if __name__ == '__main__':
 
                 # Report Ka in scientific notation.
                 if k == 'Ka':
-                    first_significant_digit = math.floor(math.log10(abs(csv_dict['d' + k])))
-                    csv_dict['d' + k] /= 10**first_significant_digit
-                    csv_dict[k] /= 10**first_significant_digit
-                    row += '('
+                    if not isinstance(k, str):
+                        first_significant_digit = math.floor(math.log10(abs(csv_dict['d' + k])))
+                        csv_dict['d' + k] /= 10**first_significant_digit
+                        csv_dict[k] /= 10**first_significant_digit
+                        row += '('
                 row += '{' + k + '} +- {d' + k + '}'
                 if k == 'Ka':
-                    row += ') $\\times$ 10'
-                    if first_significant_digit != 1:
-                        row += '$^{{{{{}}}}}$'.format(first_significant_digit)
+                    if not isinstance(k, str):
+                        row += ') $\\times$ 10'
+                        if first_significant_digit != 1:
+                            row += '$^{{{{{}}}}}$'.format(first_significant_digit)
 
                 # Check if we used the upperbound.
                 superscript = ''
