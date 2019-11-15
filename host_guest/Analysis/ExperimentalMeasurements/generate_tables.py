@@ -33,6 +33,7 @@ CD_GUESTS_SMILES_PATH = '../../cyclodextrin_derivatives/guest_files/cyclodextrin
 CLIP_GUESTS_NAMES_PATH = '../../Isaacs_clip/guest_files/trimertrip_guest_names.txt'
 GDCC_GUESTS_NAMES_PATH = '../../GDCC_and_guests/guest_files/GDCC_guest_names.txt'
 CD_GUESTS_NAMES_PATH = '../../cyclodextrin_derivatives/guest_files/cyclodextrin_guest_names.txt'
+CD_HOST_NAMES = ['bCD', 'MGLab_8', 'MGLab_9','MGLab_19', 'MGLab_23', 'MGLab_24', 'MGLab_34', 'MGLab_35', 'MGLab_36']
 
 # Experimental results as provided by the Gibb, Isaacs and Gilson groups.
 # The error is relative. None means that the error is <1%.
@@ -263,185 +264,187 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('TDS', 11 * u.kilojoules_per_mole), ('dTDS', 1 * u.kilojoules_per_mole),
         ('n', 1)
     ])),
-    # Trans-4-methylcyclohexanol
     ('bCD-g1', OrderedDict([
-        ('Ka_1', 2025.31 / u.molar), ('dKa_1', 68.11 * / u.molar),
-        ('Ka_2', 2098.64 / u.molar), ('dKa_2', 66.95 * / u.molar),
+        ('Ka_1', 2025.31 / u.molar), ('dKa_1', 68.11 / u.molar),
+        ('Ka_2', 2098.64 / u.molar), ('dKa_2', 66.95 / u.molar),
         ('DH_1', -10.90 * u.kilojoules_per_mole), ('dDH_1', 0.44 * u.kilojoules_per_mole),
         ('DH_2', -10.53 * u.kilojoules_per_mole), ('dDH_2', 0.47 * u.kilojoules_per_mole),
-        ('TDS_1', 8.09 * u.kilojoules_per_mole), ('dTDS_1', 0.45 * u.kilojoules_per_mole),
-        ('TDS_2', 8.56 * u.kilojoules_per_mole), ('dTDS_2', 0.47 * u.kilojoules_per_mole),
+        #('TDS_1', 8.09 * u.kilojoules_per_mole), ('dTDS_1', 0.45 * u.kilojoules_per_mole),
+        #('TDS_2', 8.56 * u.kilojoules_per_mole), ('dTDS_2', 0.47 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
         ('n', 0.875)
+    ])),
+    ('bCD-g2', OrderedDict([
+        ('Ka_1', 36491.91 / u.molar), ('dKa_1', 1737.70 / u.molar),
+        ('Ka_2', 33572.61 / u.molar), ('dKa_2', 1563.02 / u.molar),
+        ('DH_1', -43.26 * u.kilojoules_per_mole), ('dDH_1', 1.75 * u.kilojoules_per_mole),
+        ('DH_2', -43.85 * u.kilojoules_per_mole), ('dDH_2', 1.76 * u.kilojoules_per_mole),
+        #('TDS_1', -17.04 * u.kilojoules_per_mole), ('dTDS_1', 1.75 * u.kilojoules_per_mole),
+        #('TDS_2', -17.84 * u.kilojoules_per_mole), ('dTDS_2', 1.76 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', 1.00)
     ])),
     ('MGLab_8-g1', OrderedDict([
         ('Ka_1', 244.18 / u.molar), ('dKa_1', 13.89 / u.molar),
         ('Ka_2', 286.54 / u.molar), ('dKa_2', 14.93 / u.molar),
         ('DH_1', -9.18 * u.kilojoules_per_mole), ('dDH_1', 1.40 * u.kilojoules_per_mole),
         ('DH_2', -5.89 * u.kilojoules_per_mole), ('dDH_2', 0.52 * u.kilojoules_per_mole),
-        ('TDS_1', 4.54 * u.kilojoules_per_mole), ('dTDS_1', 1.40 * u.kilojoules_per_mole),
-        ('TDS_2', 8.23 * u.kilojoules_per_mole), ('dTDS_2', 0.53 * u.kilojoules_per_mole),
+        #('TDS_1', 4.54 * u.kilojoules_per_mole), ('dTDS_1', 1.40 * u.kilojoules_per_mole),
+        #('TDS_2', 8.23 * u.kilojoules_per_mole), ('dTDS_2', 0.53 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
         ('n', (0.78+1)/2)
-    ])),
-    ('MGLab_24-g1', OrderedDict([
-        ('Ka_1', 276.83 / u.molar), ('dKa_1', 13.59 / u.molar),
-        ('Ka_2', 286.54 / u.molar), ('dKa_2', 14.95 / u.molar),
-        ('DH_1', -7.76 * u.kilojoules_per_mole), ('dDH_1', 0.44 * u.kilojoules_per_mole),
-        ('DH_2', -5.89 * u.kilojoules_per_mole), ('dDH_2', 0.47 * u.kilojoules_per_mole),
-        ('TDS_1', 6.28 * u.kilojoules_per_mole), ('dTDS_1', 0.84 * u.kilojoules_per_mole),
-        ('TDS_2', 8.23 * u.kilojoules_per_mole), ('dTDS_2', 0.54 * u.kilojoules_per_mole),
-        ('n', (0.83+1)/2)
-    ])),
-    ('MGLab_9-g1', OrderedDict([
-        ('Ka_1', 221.08 / u.molar), ('dKa_1', 12.72 / u.molar),
-        ('Ka_2', 203.13 / u.molar), ('dKa_2', 10.87 / u.molar),
-        ('DH_1', -10.49 * u.kilojoules_per_mole), ('dDH_1', 1.80 * u.kilojoules_per_mole),
-        ('DH_2', -12.44 * u.kilojoules_per_mole), ('dDH_2', 2.65 * u.kilojoules_per_mole),
-        ('TDS_1', 2.98 * u.kilojoules_per_mole), ('dTDS_1', 1.80 * u.kilojoules_per_mole),
-        ('TDS_2', 0.81 * u.kilojoules_per_mole), ('dTDS_2', 2.66 * u.kilojoules_per_mole),
-        ('n', 0.875)
-    ])),
-    ('MGLab_23-g1', OrderedDict([
-            ('Ka_1', 236.64 / u.molar), ('dKa_1', 11.99 / u.molar),
-            ('Ka_2', 210.20 / u.molar), ('dKa_2', 10.99 / u.molar),
-            ('DH_1', -9.88 * u.kilojoules_per_mole), ('dDH_1', 1.68 * u.kilojoules_per_mole),
-            ('DH_2', -13.01 * u.kilojoules_per_mole), ('dDH_2', 4.18 * u.kilojoules_per_mole),
-            ('TDS_1', 3.76 * u.kilojoules_per_mole), ('dTDS_1', 1.68 * u.kilojoules_per_mole),
-            ('TDS_2', 0.33 * u.kilojoules_per_mole), ('dTDS_2', 4.18 * u.kilojoules_per_mole),
-            ('n', (0.81+0.70)/2)
-        ])),
-    ('MGLab_19-g1', OrderedDict([
-        ('Ka_1', 199.60 / u.molar), ('dKa_1', 8.02 / u.molar),
-        ('Ka_2', 228.31 / u.molar), ('dKa_2', 8.02 / u.molar),
-        ('DH_1', -9.17 * u.kilojoules_per_mole), ('dDH_1', 0.73 * u.kilojoules_per_mole),
-        ('DH_2', -8.05 * u.kilojoules_per_mole), ('dDH_2', 0.52 * u.kilojoules_per_mole),
-        ('TDS_1', 4.05 * u.kilojoules_per_mole), ('dTDS_1', 0.73 * u.kilojoules_per_mole),
-        ('TDS_2', 5.51 * u.kilojoules_per_mole), ('dTDS_2', 0.53 * u.kilojoules_per_mole),
-        ('n', (0.81+0.85)/2)
-    ])),
-    ('MGLab_35-g1', OrderedDict([
-        ('Ka_1', 2103.19 / u.molar), ('dKa_1', 65.42 / u.molar),
-        ('Ka_2', 2442.72 / u.molar), ('dKa_2', 73.46 / u.molar),
-        ('DH_1', -17.87 * u.kilojoules_per_mole), ('dDH_1', 0.72 * u.kilojoules_per_mole),
-        ('DH_2', -19.78 * u.kilojoules_per_mole), ('dDH_2', 0.83 * u.kilojoules_per_mole),
-        ('TDS_1', 1.22 * u.kilojoules_per_mole), ('dTDS_1', 0.72 * u.kilojoules_per_mole),
-        ('TDS_2', -0.31 * u.kilojoules_per_mole), ('dTDS_2', 0.83 * u.kilojoules_per_mole),
-        ('n', (0.94+0.76)/2)
-    ])),
-    ('MGLab_34-g1', OrderedDict([
-        ('Ka_1', 570.79 / u.molar), ('dKa_1', 17.8 / u.molar),
-        ('Ka_2', 775.47 / u.molar), ('dKa_2', 23.66 / u.molar),
-        ('DH_1', -15.14 * u.kilojoules_per_mole), ('dDH_1', 0.74 * u.kilojoules_per_mole),
-        ('DH_2', -15.98 * u.kilojoules_per_mole), ('dDH_2', 0.72 * u.kilojoules_per_mole),
-        ('TDS_1', 0.70 * u.kilojoules_per_mole), ('dTDS_1', 0.74 * u.kilojoules_per_mole),
-        ('TDS_2', 0.63 * u.kilojoules_per_mole), ('dTDS_2', 0.72 * u.kilojoules_per_mole),
-        ('n', (0.83+0.80)/2)
-    ])),
-    ('MGLab_36-g1', OrderedDict([
-        ('Ka_1', 197.68 / u.molar), ('dKa_1', 7.63 / u.molar),
-        ('Ka_2', 207.65 / u.molare), ('dKa_2', 8.29 / u.molar),
-        ('DH_1', -13.55 * u.kilojoules_per_mole), ('dDH_1', 1.14 * u.kilojoules_per_mole),
-        ('DH_2', -11.66 * u.kilojoules_per_mole), ('dDH_2', 0.81 * u.kilojoules_per_mole),
-        ('TDS_1', -0.36 * u.kilojoules_per_mole), ('dTDS_1', 1.15 * u.kilojoules_per_mole),
-        ('TDS_2', 1.65 * u.kilojoules_per_mole), ('dTDS_2', 0.82 * u.kilojoules_per_mole),
-        ('n', (0.81+0.93)/2)
-    ])),
-    # Rimantadine
-    ('bCD-g2', OrderedDict([
-        ('Ka_1', 36491.91 / u.molar), ('dKa_1', 1737.70 / u.molar),
-        ('Ka_2', 33572.61 / u.molar), ('dKa_2', 1563.02 / u.molar),
-        ('DH_1', -43.26 * u.kilojoules_per_mole), ('dDH_1', 1.75 * u.kilojoules_per_mole),
-        ('DH_2', -43.85 * u.kilojoules_per_mole), ('dDH_2', 1.76 * u.kilojoules_per_mole),
-        ('TDS_1', -17.04 * u.kilojoules_per_mole), ('dTDS_1', 1.75 * u.kilojoules_per_mole),
-        ('TDS_2', -17.84 * u.kilojoules_per_mole), ('dTDS_2', 1.76 * u.kilojoules_per_mole),
-        ('n', 1.00)
-    ])),
-    ('MGLab_34-g2', OrderedDict([
-        ('Ka_1', 19532.83 / u.molar), ('dKa_1', 733.92 / u.molar),
-        ('Ka_2', 5690.03 / u.molar), ('dKa_2', 192.09 / u.molar),
-        ('DH_1', -43.67 * u.kilojoules_per_mole), ('dDH_1', 1.57 * u.kilojoules_per_mole),
-        ('DH_2', -30.51 * u.kilojoules_per_mole), ('dDH_2', 0.93 * u.kilojoules_per_mole),
-        ('TDS_1', -19.02 * u.kilojoules_per_mole), ('dTDS_1', 1.58 * u.kilojoules_per_mole),
-        ('TDS_2', -8.93 * u.kilojoules_per_mole), ('dTDS_2', 0.94 * u.kilojoules_per_mole),
-        ('n', (0.95+1.04)/2)
-    ])),
-    ('MGLab_35-g2', OrderedDict([
-        ('Ka_1', 27807.38 / u.molar), ('dKa_1', 1045.27 / u.molar),
-        ('Ka_2', 25648.94 / u.molar), ('dKa_2', 1023.43 / u.molar),
-        ('DH_1', -31.59 * u.kilojoules_per_mole), ('dDH_1', 1.30 * u.kilojoules_per_mole),
-        ('DH_2', -29.36 * u.kilojoules_per_mole), ('dDH_2', 1.28 * u.kilojoules_per_mole),
-        ('TDS_1', -6.05 * u.kilojoules_per_mole), ('dTDS_1', 1.30 * u.kilojoules_per_mole),
-        ('TDS_2', -4.02 * u.kilojoules_per_mole), ('dTDS_2', 0.29 * u.kilojoules_per_mole),
-        ('n', (0.75+0.81)/2)
     ])),
     ('MGLab_8-g2', OrderedDict([
         ('Ka_1', 780.56 / u.molar), ('dKa_1', 31.98 / u.molar),
         ('Ka_2', 874.24 / u.molar), ('dKa_2', 32.42 / u.molar),
         ('DH_1', -27.40 * u.kilojoules_per_mole), ('dDH_1', 1.18 * u.kilojoules_per_mole),
         ('DH_2', -30.46 * u.kilojoules_per_mole), ('dDH_2', 1.47 * u.kilojoules_per_mole),
-        ('TDS_1', -10.78 * u.kilojoules_per_mole), ('dTDS_1', 1.19 * u.kilojoules_per_mole),
-        ('TDS_2', -13.56 * u.kilojoules_per_mole), ('dTDS_2', 1.47 * u.kilojoules_per_mole),
+        #('TDS_1', -10.78 * u.kilojoules_per_mole), ('dTDS_1', 1.19 * u.kilojoules_per_mole),
+        #('TDS_2', -13.56 * u.kilojoules_per_mole), ('dTDS_2', 1.47 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
         ('n', (0.96+1.10)/2)
     ])),
-    ('MGLab_24-g2', OrderedDict([
-        ('Ka_1', 1161.66 / u.molar), ('dKa_1', 44.16 / u.molar),
-        ('Ka_2', 1038.92 / u.molar), ('dKa_2', 35.79 / u.molare),
-        ('DH_1', -35.46 * u.kilojoules_per_mole), ('dDH_1', 1.52 * u.kilojoules_per_mole),
-        ('DH_2', -36.92 * u.kilojoules_per_mole), ('dDH_2', 1.56 * u.kilojoules_per_mole),
-        ('TDS_1', -17.85 * u.kilojoules_per_mole), ('dTDS_1', 1.53 * u.kilojoules_per_mole),
-        ('TDS_2', -19.59 * u.kilojoules_per_mole), ('dTDS_2', 1.56 * u.kilojoules_per_mole),
-        ('n', (1.05+1.01)/2)
+    ('MGLab_9-g1', OrderedDict([
+        ('Ka_1', 221.08 / u.molar), ('dKa_1', 12.72 / u.molar),
+        ('Ka_2', 203.13 / u.molar), ('dKa_2', 10.87 / u.molar),
+        ('DH_1', -10.49 * u.kilojoules_per_mole), ('dDH_1', 1.80 * u.kilojoules_per_mole),
+        ('DH_2', -12.44 * u.kilojoules_per_mole), ('dDH_2', 2.65 * u.kilojoules_per_mole),
+        #('TDS_1', 2.98 * u.kilojoules_per_mole), ('dTDS_1', 1.80 * u.kilojoules_per_mole),
+        #('TDS_2', 0.81 * u.kilojoules_per_mole), ('dTDS_2', 2.66 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', 0.875)
     ])),
     ('MGLab_9-g2', OrderedDict([
         ('Ka_1', 683.17 / u.molar), ('dKa_1', 21.71 / u.molar),
         ('Ka_2', 713.79 / u.molar), ('dKa_2', 20.94 / u.molar),
         ('DH_1', -38.12 * u.kilojoules_per_mole), ('dDH_1', 1.73 * u.kilojoules_per_mole),
         ('DH_2', -37.61 * u.kilojoules_per_mole), ('dDH_2', 1.75 * u.kilojoules_per_mole),
-        ('TDS_1', -21.82 * u.kilojoules_per_mole), ('dTDS_1', 1.73 * u.kilojoules_per_mole),
-        ('TDS_2', -21.21 * u.kilojoules_per_mole), ('dTDS_2', 5.73 * u.kilojoules_per_mole),
+        #('TDS_1', -21.82 * u.kilojoules_per_mole), ('dTDS_1', 1.73 * u.kilojoules_per_mole),
+        #('TDS_2', -21.21 * u.kilojoules_per_mole), ('dTDS_2', 5.73 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
         ('n', (0.98+1.02)/2)
     ])),
-    ('MGLab_23-g2', OrderedDict([
-        ('Ka_1', 1427.70 / u.molar), ('dKa_1', 56.95 / u.molar),
-        ('Ka_2', 1588.79 / u.molar), ('dKa_2', 59.25 / u.molar),
-        ('DH_1', -32.09 * u.kilojoules_per_mole), ('dDH_1', 1.38 * u.kilojoules_per_mole),
-        ('DH_2', -31.54 * u.kilojoules_per_mole), ('dDH_2', 1.33 * u.kilojoules_per_mole),
-        ('TDS_1', -13.96 * u.kilojoules_per_mole), ('dTDS_1', 0.48 * u.kilojoules_per_mole),
-        ('TDS_2', -13.14 * u.kilojoules_per_mole), ('dTDS_2', 1.33 * u.kilojoules_per_mole),
-        ('n', (0.88+1.03)/2)
-    ])),
-    ('MGLab_23-g2', OrderedDict([
-        ('Ka_1', 1427.70 / u.molar), ('dKa_1', 56.95 / u.molar),
-        ('Ka_2', 1588.79 / u.molar), ('dKa_2', 59.25 / u.molar),
-        ('DH_1', -32.09 * u.kilojoules_per_mole), ('dDH_1', 1.38 * u.kilojoules_per_mole),
-        ('DH_2', -31.54 * u.kilojoules_per_mole), ('dDH_2', 1.33 * u.kilojoules_per_mole),
-        ('TDS_1', -13.96 * u.kilojoules_per_mole), ('dTDS_1', 0.48 * u.kilojoules_per_mole),
-        ('TDS_2', -13.14 * u.kilojoules_per_mole), ('dTDS_2', 1.33 * u.kilojoules_per_mole),
-        ('n', (0.88+0.83)/2)
+    ('MGLab_19-g1', OrderedDict([
+        ('Ka_1', 199.60 / u.molar), ('dKa_1', 8.02 / u.molar),
+        ('Ka_2', 228.31 / u.molar), ('dKa_2', 8.02 / u.molar),
+        ('DH_1', -9.17 * u.kilojoules_per_mole), ('dDH_1', 0.73 * u.kilojoules_per_mole),
+        ('DH_2', -8.05 * u.kilojoules_per_mole), ('dDH_2', 0.52 * u.kilojoules_per_mole),
+        #('TDS_1', 4.05 * u.kilojoules_per_mole), ('dTDS_1', 0.73 * u.kilojoules_per_mole),
+        #('TDS_2', 5.51 * u.kilojoules_per_mole), ('dTDS_2', 0.53 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', (0.81+0.85)/2)
     ])),
     ('MGLab_19-g2', OrderedDict([
         ('Ka_1', 315.83 / u.molar), ('dKa_1', 17.83 / u.molar),
-        ('Ka_2', 318.83 / u.molar), ('dKa_2', 9.41 / u.molar),
+        ('Ka_2', 318.33 / u.molar), ('dKa_2', 9.41 / u.molar),
         ('DH_1', -47.55 * u.kilojoules_per_mole), ('dDH_1', 3.40 * u.kilojoules_per_mole),
         ('DH_2', -48.60 * u.kilojoules_per_mole), ('dDH_2', 2.75 * u.kilojoules_per_mole),
-        ('TDS_1', -33.19 * u.kilojoules_per_mole), ('dTDS_1', 3.40 * u.kilojoules_per_mole),
-        ('TDS_2', -34.22 * u.kilojoules_per_mole), ('dTDS_2', 2.75 * u.kilojoules_per_mole),
+        #('TDS_1', -33.19 * u.kilojoules_per_mole), ('dTDS_1', 3.40 * u.kilojoules_per_mole),
+        #('TDS_2', -34.21 * u.kilojoules_per_mole), ('dTDS_2', 2.75 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
         ('n', (1.09+0.79)/2)
+    ])),
+    ('MGLab_23-g1', OrderedDict([
+            ('Ka_1', 236.64 / u.molar), ('dKa_1', 11.99 / u.molar),
+            ('Ka_2', 210.20 / u.molar), ('dKa_2', 10.99 / u.molar),
+            ('DH_1', -9.88 * u.kilojoules_per_mole), ('dDH_1', 1.68 * u.kilojoules_per_mole),
+            ('DH_2', -13.01 * u.kilojoules_per_mole), ('dDH_2', 4.18 * u.kilojoules_per_mole),
+            #('TDS_1', 3.76 * u.kilojoules_per_mole), ('dTDS_1', 1.68 * u.kilojoules_per_mole),
+            #('TDS_2', 0.33 * u.kilojoules_per_mole), ('dTDS_2', 4.18 * u.kilojoules_per_mole),
+            ('TDS', None), ('dTDS', None),
+            ('n', (0.81+0.70)/2)
+        ])),
+    ('MGLab_23-g2', OrderedDict([
+        ('Ka_1', 1427.70 / u.molar), ('dKa_1', 56.95 / u.molar),
+        ('Ka_2', 1588.79 / u.molar), ('dKa_2', 59.25 / u.molar),
+        ('DH_1', -32.09 * u.kilojoules_per_mole), ('dDH_1', 1.38 * u.kilojoules_per_mole),
+        ('DH_2', -31.54 * u.kilojoules_per_mole), ('dDH_2', 1.33 * u.kilojoules_per_mole),
+        #('TDS_1', -13.96 * u.kilojoules_per_mole), ('dTDS_1', 0.48 * u.kilojoules_per_mole),
+        #('TDS_2', -13.14 * u.kilojoules_per_mole), ('dTDS_2', 1.33 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', (0.88+1.03)/2)
+    ])),
+    ('MGLab_24-g1', OrderedDict([
+        ('Ka_1', 276.83 / u.molar), ('dKa_1', 13.59 / u.molar),
+        ('Ka_2', 286.54 / u.molar), ('dKa_2', 14.95 / u.molar),
+        ('DH_1', -7.76 * u.kilojoules_per_mole), ('dDH_1', 0.44 * u.kilojoules_per_mole),
+        ('DH_2', -5.89 * u.kilojoules_per_mole), ('dDH_2', 0.47 * u.kilojoules_per_mole),
+        #('TDS_1', 6.28 * u.kilojoules_per_mole), ('dTDS_1', 0.84 * u.kilojoules_per_mole),
+        #('TDS_2', 8.23 * u.kilojoules_per_mole), ('dTDS_2', 0.54 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', (0.83+1)/2)
+    ])),
+    ('MGLab_24-g2', OrderedDict([
+        ('Ka_1', 1161.66 / u.molar), ('dKa_1', 44.16 / u.molar),
+        ('Ka_2', 1038.92 / u.molar), ('dKa_2', 35.79 / u.molar),
+        ('DH_1', -35.46 * u.kilojoules_per_mole), ('dDH_1', 1.52 * u.kilojoules_per_mole),
+        ('DH_2', -36.92 * u.kilojoules_per_mole), ('dDH_2', 1.56 * u.kilojoules_per_mole),
+        #('TDS_1', -17.85 * u.kilojoules_per_mole), ('dTDS_1', 1.53 * u.kilojoules_per_mole),
+        #('TDS_2', -19.59 * u.kilojoules_per_mole), ('dTDS_2', 1.56 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', (1.05+1.01)/2)
+    ])),
+    ('MGLab_34-g1', OrderedDict([
+        ('Ka_1', 570.79 / u.molar), ('dKa_1', 17.8 / u.molar),
+        ('Ka_2', 775.47 / u.molar), ('dKa_2', 23.66 / u.molar),
+        ('DH_1', -15.14 * u.kilojoules_per_mole), ('dDH_1', 0.74 * u.kilojoules_per_mole),
+        ('DH_2', -15.98 * u.kilojoules_per_mole), ('dDH_2', 0.72 * u.kilojoules_per_mole),
+        #('TDS_1', 0.70 * u.kilojoules_per_mole), ('dTDS_1', 0.74 * u.kilojoules_per_mole),
+        #('TDS_2', 0.63 * u.kilojoules_per_mole), ('dTDS_2', 0.72 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', (0.83+0.80)/2)
+    ])),
+    ('MGLab_34-g2', OrderedDict([
+        ('Ka_1', 19532.83 / u.molar), ('dKa_1', 733.92 / u.molar),
+        ('Ka_2', 5690.03 / u.molar), ('dKa_2', 192.09 / u.molar),
+        ('DH_1', -43.67 * u.kilojoules_per_mole), ('dDH_1', 1.57 * u.kilojoules_per_mole),
+        ('DH_2', -30.51 * u.kilojoules_per_mole), ('dDH_2', 0.93 * u.kilojoules_per_mole),
+        #('TDS_1', -19.02 * u.kilojoules_per_mole), ('dTDS_1', 1.58 * u.kilojoules_per_mole),
+        #('TDS_2', -8.93 * u.kilojoules_per_mole), ('dTDS_2', 0.94 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', (0.95+1.04)/2)
+    ])),
+    ('MGLab_35-g1', OrderedDict([
+        ('Ka_1', 2103.19 / u.molar), ('dKa_1', 65.42 / u.molar),
+        ('Ka_2', 2442.72 / u.molar), ('dKa_2', 73.46 / u.molar),
+        ('DH_1', -17.87 * u.kilojoules_per_mole), ('dDH_1', 0.72 * u.kilojoules_per_mole),
+        ('DH_2', -19.78 * u.kilojoules_per_mole), ('dDH_2', 0.83 * u.kilojoules_per_mole),
+        #('TDS_1', 1.22 * u.kilojoules_per_mole), ('dTDS_1', 0.72 * u.kilojoules_per_mole),
+        #('TDS_2', -0.31 * u.kilojoules_per_mole), ('dTDS_2', 0.83 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', (0.94+0.76)/2)
+    ])),
+    ('MGLab_35-g2', OrderedDict([
+        ('Ka_1', 27807.38 / u.molar), ('dKa_1', 1045.27 / u.molar),
+        ('Ka_2', 25648.94 / u.molar), ('dKa_2', 1023.43 / u.molar),
+        ('DH_1', -31.59 * u.kilojoules_per_mole), ('dDH_1', 1.30 * u.kilojoules_per_mole),
+        ('DH_2', -29.36 * u.kilojoules_per_mole), ('dDH_2', 1.28 * u.kilojoules_per_mole),
+        #('TDS_1', -6.05 * u.kilojoules_per_mole), ('dTDS_1', 1.30 * u.kilojoules_per_mole),
+        #('TDS_2', -4.02 * u.kilojoules_per_mole), ('dTDS_2', 0.29 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', (0.75+0.81)/2)
+    ])),
+    ('MGLab_36-g1', OrderedDict([
+        ('Ka_1', 197.68 / u.molar), ('dKa_1', 7.63 / u.molar),
+        ('Ka_2', 207.65 / u.molar), ('dKa_2', 8.29 / u.molar),
+        ('DH_1', -13.55 * u.kilojoules_per_mole), ('dDH_1', 1.14 * u.kilojoules_per_mole),
+        ('DH_2', -11.66 * u.kilojoules_per_mole), ('dDH_2', 0.81 * u.kilojoules_per_mole),
+        #('TDS_1', -0.36 * u.kilojoules_per_mole), ('dTDS_1', 1.15 * u.kilojoules_per_mole),
+        #('TDS_2', 1.65 * u.kilojoules_per_mole), ('dTDS_2', 0.82 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
+        ('n', (0.81+0.93)/2)
     ])),
     ('MGLab_36-g2', OrderedDict([
         ('Ka_1', 372.79 / u.molar), ('dKa_1', 15.55 / u.molar),
         ('Ka_2', 335./42 / u.molar), ('dKa_2', 14.34 / u.molar),
         ('DH_1', -45.32 * u.kilojoules_per_mole), ('dDH_1', 3.70 * u.kilojoules_per_mole),
         ('DH_2', -45.37 * u.kilojoules_per_mole), ('dDH_2', 3.93 * u.kilojoules_per_mole),
-        ('TDS_1', -30.74 * u.kilojoules_per_mole), ('dTDS_1', 3.70 * u.kilojoules_per_mole),
-        ('TDS_2', -30.86 * u.kilojoules_per_mole), ('dTDS_2', 3.93 * u.kilojoules_per_mole),
+        #('TDS_1', -30.74 * u.kilojoules_per_mole), ('dTDS_1', 3.70 * u.kilojoules_per_mole),
+        #('TDS_2', -30.86 * u.kilojoules_per_mole), ('dTDS_2', 3.93 * u.kilojoules_per_mole),
+        ('TDS', None), ('dTDS', None),
         ('n', (0.83+0.85)/2)
     ])),
 ])
-
-
-
-
-MGLab_36-g1, -7.2, 0.1, 1.0,   -0.6,,
 
 
 
@@ -590,17 +593,19 @@ if __name__ == '__main__':
         'clip': load_smiles(CLIP_GUESTS_SMILES_PATH),
         'OA' : load_smiles(GDCC_GUESTS_SMILES_PATH),
         'exoOA' : load_smiles(GDCC_GUESTS_SMILES_PATH),
-        'CD' : load_smiles(CD_GUESTS_SMILES_PATH),
     }
 
     names_by_host = {
         'clip': load_names(CLIP_GUESTS_NAMES_PATH),
         'OA' : load_names(GDCC_GUESTS_NAMES_PATH),
         'exoOA' : load_names(GDCC_GUESTS_NAMES_PATH),
-        'CD' : load_names(CD_GUESTS_NAMES_PATH),
     }
 
-    for host in ['clip', 'OA', 'exoOA', 'CD']:
+    for host in CD_HOST_NAMES:
+        smiles_by_host[host] = load_smiles(CD_GUESTS_SMILES_PATH)
+        names_by_host[host] = load_names(CD_GUESTS_NAMES_PATH)
+
+    for host in ['clip', 'OA', 'exoOA']+CD_HOST_NAMES:
         molecule_names[host] = {}
         for smi, gid in smiles_by_host[host]:
             for name, gid2 in names_by_host[host]:
@@ -708,10 +713,7 @@ if __name__ == '__main__':
         strip_units(system_data)
 
         # Consistency checks.
-        print(system_name) #Debug
         if system_data['TDS']!='ND' and system_data['DG']!='ND' and system_data['DH']!='ND':
-            print(system_data['DG'], system_data['DH'] - system_data['TDS']) #debug
-
             assert np.isclose(system_data['DG'], system_data['DH'] - system_data['TDS'], atol=0.10000000000001, rtol=0.0)
 
             if DG is not None:
@@ -755,6 +757,7 @@ if __name__ == '__main__':
                 '\\pagenumbering{gobble}\n'
                 '\\begin{document}\n'
                 '\\begin{center}\n'
+                '\\footnotesize\n'
                 '\\begin{tabu}')
 
         # Cell alignment.
@@ -778,6 +781,8 @@ if __name__ == '__main__':
             if csv_dict['ID']=='clip-g10' or 'OA-g5' in csv_dict['ID']:
                 # One name can't be dealt with; reformat
                 csv_dict['name'] = "Can't format in LaTeX"
+
+
 
 
             row = '{ID} & {name}'
@@ -810,9 +815,16 @@ if __name__ == '__main__':
                 if superscript != '':
                     row += ' $^{{(' + superscript + ')}}$'
 
-            row += (' & {n} \\\\\n'
+            row += (' & {n: .2f} \\\\\n'
                     '\\hline\n')
-            f.write(row.format(**csv_dict))
+
+            row = row.format(**csv_dict)
+
+            # Escape underscores for latex formatting
+            row = row.replace('_','\_')
+
+            # Write
+            f.write(row)
 
         f.write('\end{tabu}\end{center}\\vspace{5mm}\n'
                 'All quantities are reported as point estimate +- statistical error from the ITC data fitting procedure. '
