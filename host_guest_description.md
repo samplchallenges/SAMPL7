@@ -2,11 +2,11 @@
 
 ## Gibb Deep Cavity Cavitand (GDCC) binding of guests
 
-Instructions are available in the [host guest instructions](host_guest_instructions.md) and full details are in the [README.md of the `GDCC_and_guests` directory](GDCC_and_guests/README.md).
+Instructions are available in the [host guest instructions](host_guest_instructions.md) and full details are in the [README.md of the `GDCC_and_guests` directory](https://github.com/samplchallenges/SAMPL7/blob/master/host_guest/GDCC_and_guests/README.md).
 
 ## Modified acyclic cucurbituril (TrimerTrip) binding of guests
 
-Instructions are available in the [host guest instructions](host_guest_instructions.md) and full details are available in the [README.md of the `Isaacs_clip` directory](Isaacs_clip/README.md).
+Instructions are available in the [host guest instructions](host_guest_instructions.md) and full details are available in the [README.md of the `Isaacs_clip` directory](https://github.com/samplchallenges/SAMPL7/blob/master/host_guest/Isaacs_clip/README.md).
 
 ## The cyclodextrin derivatives challenge
 
