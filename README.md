@@ -47,6 +47,7 @@ All three host-guest components of this challenge are now final and launched, th
 - (11/2/19, PHIP2) Fix misformatted SMILES line on line 620 of `fragments_screened.csv` for PHIP2 screening challenge.
 - (11/11/19, PHIP2) Fix an incorrect SMILES for fragment F62 in the PHIP2 screening challenge.
 - (11/12/19, PHIP2) Add participation instructions and submission format for PHIP2 virtual screening component (Stage 1).
+- (11/15/19, host-guest) Add TrimerTrip and cyclodextrin experimental binding data (first draft).
 
 ## Challenge overview
 
