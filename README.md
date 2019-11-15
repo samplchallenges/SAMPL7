@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/184310568.svg)](https://zenodo.org/badge/latestdoi/184310568)
 
 
-Challenge details, inputs, and (eventually) results for the SAMPL7 series of challenges
+Challenge details, inputs, and (eventually) results for the SAMPL7 series (phase) of challenges. Each individual SAMPL7 challenge may be broken up into multiple stages.
 
 See the [SAMPL website](https://samplchallenges.github.io) for information on the Statistical Assessment of the Modeling of Proteins and Ligands (SAMPL) series of challenges as a whole. This repository focuses specifically on the SAMPL7 series of challenges.
 
@@ -17,6 +17,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
 - Protein-ligand details on the [PHIP2 challenge](protein_ligand/README.md), in the `protein_ligand` directory.
+- [PHIP2 challenge submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file. Our submission system is not yet available.
 
 All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 4 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data. The **first stage of the protein-ligand challenge is due Nov. 28, 2019.**
 
@@ -45,13 +46,14 @@ All three host-guest components of this challenge are now final and launched, th
 ### Changes not in a release
 - (11/2/19, PHIP2) Fix misformatted SMILES line on line 620 of `fragments_screened.csv` for PHIP2 screening challenge.
 - (11/11/19, PHIP2) Fix an incorrect SMILES for fragment F62 in the PHIP2 screening challenge.
+- (11/12/19, PHIP2) Add participation instructions and submission format for PHIP2 virtual screening component (Stage 1).
 
 ## Challenge overview
 
 The SAMPL7 phase of challenges currently includes a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involves a total of 9-20 binding free energy calculations.
 Additional details are provided below. Note that several hosts and/or guests are optional.
 
-A later phase of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
+A later stage of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
 
 ### PHIP2 binding prediction
 
@@ -79,8 +81,9 @@ The Gilson lab is measuring binding of two guests to ten different hosts, compri
 
 ## MANIFEST
 - `host_guest`: Details on host-guest challenges
-- `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Phase 1 is available.
+- `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Stage 1 is available.
 - `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
+- `protein_ligand_instructions.md`: Detailed instructions for participation in the protein-ligand challenge.
 
 ## SAMPL-related content
 
