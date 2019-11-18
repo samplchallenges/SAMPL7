@@ -435,7 +435,7 @@ EXPERIMENTAL_DATA = OrderedDict([
     ])),
     ('MGLab_36-g2', OrderedDict([
         ('Ka_1', 372.79 / u.molar), ('dKa_1', 15.55 / u.molar),
-        ('Ka_2', 335./42 / u.molar), ('dKa_2', 14.34 / u.molar),
+        ('Ka_2', 335.42 / u.molar), ('dKa_2', 14.34 / u.molar),
         ('DH_1', -45.32 * u.kilojoules_per_mole), ('dDH_1', 3.70 * u.kilojoules_per_mole),
         ('DH_2', -45.37 * u.kilojoules_per_mole), ('dDH_2', 3.93 * u.kilojoules_per_mole),
         #('TDS_1', -30.74 * u.kilojoules_per_mole), ('dTDS_1', 3.70 * u.kilojoules_per_mole),
