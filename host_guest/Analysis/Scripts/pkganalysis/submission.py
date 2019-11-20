@@ -130,12 +130,14 @@ class SamplSubmission:
     CSV_SECTIONS = {}
 
     def __init__(self, file_path, user_map):
-        file_name = os.path.splitext(os.path.basename(file_path))[0]
+        file_name = os.path.basename(file_path)
+        file_prefix = os.path.splitext(file_name)[0]
         self.file_name = file_name
 
         # Store user map information.
         if user_map is not None:
             user_map_record = user_map[user_map.file_name == self.file_name]
+            
             assert len(user_map_record) == 1
             user_map_record = user_map_record.iloc[0]
 
@@ -143,9 +145,9 @@ class SamplSubmission:
         else:
             self.sid = None
 
-    # Check if this is a test submission.
-    if self.sid in self.TEST_SUBMISSIONS:
-        raise IgnoredSubmissionError('This submission has been used for tests.')
+        # Check if this is a test submission.
+        if self.sid in self.TEST_SUBMISSIONS:
+            raise IgnoredSubmissionError('This submission has been used for tests.')
 
     @classmethod
     def _read_lines(cls, file_path):
@@ -176,7 +178,7 @@ class SamplSubmission:
         # Check that all the sections have been loaded.
         found_sections = set(sections.keys())
         if found_sections != cls.SECTIONS:
-            raise BadFormatError('Missing sections: {}.'.format(cls.SECTIONS - found_sections))
+            raise BadFormatError(f'In file {file_path}, missing sections: {cls.SECTIONS - found_sections}.')
 
         # Create a Pandas dataframe from the CSV format.
         for section_name, pandas_kwargs in cls.CSV_SECTIONS.items():
