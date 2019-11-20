@@ -11,5 +11,5 @@ file.close()
 file = open(outfile, 'w')
 for line in text:
     tmp = line.split(',')
-    file.write(f'{tmp[0].strip()}, {tmp[2].strip().replace(" ","_")}\n')
+    file.write(f'{tmp[0].strip()},{tmp[2].strip().replace(" ","_")}\n')
 file.close()

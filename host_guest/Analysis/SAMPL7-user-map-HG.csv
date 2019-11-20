@@ -1,27 +1,27 @@
-sid, file_name
-4, Clip_submission_wUhW7Ex.txt
-5, Clip_dserillon.txt
-6, Clip-ponder.txt
-7, Clip-ponder_qJXNo7Q.txt
-8, Clip-ponder-2.txt
-9, Clip-ponder-3.txt
-12, CD_MGLab_FSDAM_ranked.txt
-13, CD_MGLab_FSDAM_JB.txt
-14, GDCC_submission.txt
-15, CD_submission.txt
-16, GDCC_MMGBSA_RESP_NoEntropy.txt
-17, GDCC_MMPBSA_AM1-BCC_NoEntropy.txt
-18, GDCC_MMPBSA_RESP_Nmode.txt
-19, GDCC_MMPBSA_RESP_NoEntropy.txt
-20, GDCC_MMPBSA_RESP_NoEntropy_Linear.txt
-21, GDCC_Nuno_DZ.txt
-22, GDCC_Nuno_TZ.txt
-23, GDCC_Nuno_QZ_RANKED.txt
-24, GDCC_Nuno_QZ_NON_RANKED.txt
-25, CD_MPIBPC_GAFF-1.txt
-26, CD_MPIBPC_CHARMM-1.txt
-27, CD_MPIBPC_consensus-1.txt
-28, GDCC-dserillon-1.txt.txt
-29, GDCC-ponder.txt
-30, GDCC-ponder-2.txt
-31, GDCC-ponder-3.txt
+sid,file_name
+4,Clip_submission_wUhW7Ex.txt
+5,Clip_dserillon.txt
+6,Clip-ponder.txt
+7,Clip-ponder_qJXNo7Q.txt
+8,Clip-ponder-2.txt
+9,Clip-ponder-3.txt
+12,CD_MGLab_FSDAM_ranked.txt
+13,CD_MGLab_FSDAM_JB.txt
+14,GDCC_submission.txt
+15,CD_submission.txt
+16,GDCC_MMGBSA_RESP_NoEntropy.txt
+17,GDCC_MMPBSA_AM1-BCC_NoEntropy.txt
+18,GDCC_MMPBSA_RESP_Nmode.txt
+19,GDCC_MMPBSA_RESP_NoEntropy.txt
+20,GDCC_MMPBSA_RESP_NoEntropy_Linear.txt
+21,GDCC_Nuno_DZ.txt
+22,GDCC_Nuno_TZ.txt
+23,GDCC_Nuno_QZ_RANKED.txt
+24,GDCC_Nuno_QZ_NON_RANKED.txt
+25,CD_MPIBPC_GAFF-1.txt
+26,CD_MPIBPC_CHARMM-1.txt
+27,CD_MPIBPC_consensus-1.txt
+28,GDCC-dserillon-1.txt.txt
+29,GDCC-ponder.txt
+30,GDCC-ponder-2.txt
+31,GDCC-ponder-3.txt
