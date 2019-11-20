@@ -131,37 +131,21 @@ class SamplSubmission:
 
     def __init__(self, file_path, user_map):
         file_name = os.path.splitext(os.path.basename(file_path))[0]
-        file_data = file_name.split('-')
-
-        # Check if this is a deleted submission.
-        if file_data[0] == 'DELETED':
-            raise IgnoredSubmissionError('This submission was deleted.')
-
-        # Check if this is a test submission.
-        self.receipt_id = file_data[0]
-        if self.receipt_id in self.TEST_SUBMISSIONS:
-            raise IgnoredSubmissionError('This submission has been used for tests.')
-
-        # Check this is the correct challenge.
-        self.challenge_id = int(file_data[1])
-        assert self.challenge_id in self.CHALLENGE_IDS
+        self.file_name = file_name
 
         # Store user map information.
         if user_map is not None:
-            user_map_record = user_map[user_map.receipt_id == self.receipt_id]
+            user_map_record = user_map[user_map.file_name == self.file_name]
             assert len(user_map_record) == 1
             user_map_record = user_map_record.iloc[0]
 
-            self.id = user_map_record.id
-            #self.participant = user_map_record.firstname + ' ' + user_map_record.lastname
-            self.participant_id = user_map_record.uid
-            self.participant_email = user_map_record.email
-            #assert self.challenge_id == user_map_record.component
+            self.sid = user_map_record.sid
         else:
-            self.id = None
-            self.participant = None
-            self.participant_id = None
-            self.participant_email = None
+            self.sid = None
+
+    # Check if this is a test submission.
+    if self.sid in self.TEST_SUBMISSIONS:
+        raise IgnoredSubmissionError('This submission has been used for tests.')
 
     @classmethod
     def _read_lines(cls, file_path):

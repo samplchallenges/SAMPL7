@@ -31,7 +31,7 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 # - (DONE) Remove CHALLENGE ID stuff below
 # - (DONE) Propagate in other changes made for logP challenge like to not read submission names from files
 # - (DONE) Update to allow reference submissions, as previously done for SAMPL6 logP
-# - Deal with user map stuff, which is totally different now or we don't have a user map (see below in "think through")
+# - (MAYBE done) Deal with user map stuff, which is totally different now or we don't have a user map (see below in "think through")
 # - Update host-guest names/etc below (partially done)
 # - Deal with "TO DO" items in code.
 
@@ -59,6 +59,8 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 # - Test to ensure that multiple ranked submissions would get caught
 # - Test to ensure non-ranked submissions get excluded etc.
 # - Update method class stuff
+# - Make sure code would still work correctly if we flagged something as a test submission.
+# - Check flagging as ignored submissions still works correctly
 
 
 # =============================================================================
@@ -66,8 +68,9 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 # =============================================================================
 
 # Paths to input data.
-HOST_GUEST_OA_SUBMISSIONS_DIR_PATH = '../Submissions/OA-TEMOA/'
-HOST_GUEST_CB_SUBMISSIONS_DIR_PATH = '../Submissions/CB8/'
+HOST_GUEST_GDCC_SUBMISSIONS_DIR_PATH = '../Submissions/GDCC/'
+HOST_GUEST_TRIMERTRIP_SUBMISSIONS_DIR_PATH = '../Submissions/TrimerTrip/'
+HOST_GUEST_CD_SUBMISSIONS_DIR_PATH = '../Submissions/CD/'
 EXPERIMENTAL_DATA_FILE_PATH = '../ExperimentalMeasurements/experimental_measurements.csv'
 
 # TO DO: Update for this challenge
@@ -100,9 +103,9 @@ class HostGuestSubmission(SamplSubmission):
     """
 
     # The IDs of the submissions used for testing the validation.
-    TEST_SUBMISSION_NAMES = {}
+    TEST_SUBMISSION_SIDS = {}
 
-    REF_SUBMISSION_NAMES = []
+    REF_SUBMISSION_SIDS = []
 
     # Section of the submission file.
     SECTIONS = {'Predictions', 'Participant name', 'Participant organization', 'Name', 'Software', 'Method', 'Category', 'Ranked'}
@@ -159,12 +162,12 @@ class HostGuestSubmission(SamplSubmission):
                                  'GDCC':[f'exoOA-{guest}' for guest in GDCC_guests] + ['OA-g7', 'OA-g8']}
 
         # Check if this is a test submission.
-        if self.rname in self.TEST_SUBMISSION_NAMES:
+        if self.sids in self.TEST_SUBMISSION_SIDS:
             raise IgnoredSubmissionError('This submission has been used for tests.')
 
         # Check if this is a reference submission
         self.reference_submission = False
-        if self.name in self.REF_SUBMISSION_NAMES:
+        if self.sid in self.REF_SUBMISSION_SIDS:
             self.reference_submission = True
 
     def __add__(self, other):
@@ -292,75 +295,72 @@ class HostGuestSubmissionCollection:
             return 'Alchemical/Relative'
         return name
 
-    # TO DO: The following function does not pertain to this challenge/needs updating.
-    @staticmethod
-    def _assign_paper_method_name(name):
-        # Convert from submission method name to the name used in the paper.
-        method_names = {
-            'DDM/GAFF/AM1-BCC/TIP3P': 'DDM-GAFF',
-            'HREM/BAR/RESP/Force-Matching/TIP3P': 'DDM-FM',
-            'DDM/Force-Matching/FEP/HREM/MBAR': 'DDM-FM-QMMM',
-            'BSSE-corrected RI-B3PW91 (SMD)/CBS': 'DFT(B3PW91)',
-            'BSSE-corrected RI-B3PW91-D3 (SMD)/CBS': 'DFT(B3PW91)-D3',
-            'DFT-opt': 'DFT(TPSS)-D3',
-            'FEP-MM': 'RFEC-GAFF2',
-            'FEP-QM/MM': 'RFEC-QMMM',
-            'FS-DAM/GAFF2/TIP3P': 'FSDAM',
-            'EKEN-DIAZ/MD/MMPBSA': 'MMPBSA-GAFF',
-            'SQM-opt': 'SQM(PM6-DH+)',
-            'AMOEBA/BAR/Tinker': 'DDM-AMOEBA',
-            'Umbrella Sampling/TIP3P': 'US-CGenFF',
-            'US/PMF/MT/MD_1': 'US-GAFF',
-            'US/PMF/MT/MD_2': 'US-GAFF-C',
-        }
-        try:
-            return method_names[name]
-        except KeyError:
-            pass
-
-        if name.startswith('SOMD/AM1BCC-GAFF-TIP3P'):
-            paper_name = 'SOMD-' + name[-1]
-            if 'NOBUFFER' in name:
-                paper_name += '-nobuffer'
-        if name.startswith('US/PMF/MT/MD'):
-            submission_number = int(name.rsplit('_', 1)[-1])
-            identifier = ''
-            # Potential
-            if 18 <= submission_number <= 19:
-                identifier += 'K'
-            else:
-                identifier += 'G'
-            # Input structure identifier
-            if 3 <= submission_number <= 7:  # MD_relaxed
-                identifier += 'D'
-            elif 8 <= submission_number <= 12:  # minimum from Umbrella Sampling
-                identifier += 'U'
-            elif 13 <= submission_number <= 19 or 26 <= submission_number <= 27:  # MT_minimum
-                identifier += 'T'
-            else:  # Ensemble calculation
-                identifier += 'E'
-            # States
-            if submission_number in [3, 4, 8, 9, 13, 14, 20, 21, 22, 23, 24, 25, 26, 27]:
-                identifier += '3'
-            else:
-                identifier += '1'
-            # Correction
-            if submission_number in [3, 5, 8, 10, 13, 15, 18, 20]:  # No
-                identifier += 'N'
-            elif submission_number in [4, 6, 9, 11, 14, 16, 19, 21]:  # Yes (linear)
-                identifier += 'L'
-            elif submission_number in [7, 12, 17, 22]:  # Yes only intercept
-                identifier += 'O'
-            elif submission_number in [23, 26]:  # Yes^1
-                identifier += 'U'
-            elif submission_number in [27, 24]:  # Yes^2
-                identifier += 'S'
-            else:  # Yes^2 only intercept
-                identifier += 'Z'
-            paper_name = 'MovTyp-' + identifier
-        if 'NULL' in name:
-            paper_name = name
-        return paper_name
+    # TO DO: The following function does not pertain to this challenge/needs updating if we even retain
+    #@staticmethod
+    #def _assign_paper_method_name(name):
+    #    # Convert from submission method name to the name used in the paper.
+    #    method_names = {
+    #        'DDM/GAFF/AM1-BCC/TIP3P': 'DDM-GAFF',
+    #        'HREM/BAR/RESP/Force-Matching/TIP3P': 'DDM-FM',
+    #        'DDM/Force-Matching/FEP/HREM/MBAR': 'DDM-FM-QMMM',
+    #        'BSSE-corrected RI-B3PW91 (SMD)/CBS': 'DFT(B3PW91)',
+    #        'BSSE-corrected RI-B3PW91-D3 (SMD)/CBS': 'DFT(B3PW91)-D3',
+    #        'DFT-opt': 'DFT(TPSS)-D3',
+    #        'FEP-MM': 'RFEC-GAFF2',
+    #        'FEP-QM/MM': 'RFEC-QMMM',
+    #        'FS-DAM/GAFF2/TIP3P': 'FSDAM',
+    #        'EKEN-DIAZ/MD/MMPBSA': 'MMPBSA-GAFF',
+    #        'SQM-opt': 'SQM(PM6-DH+)',
+    #        'AMOEBA/BAR/Tinker': 'DDM-AMOEBA',
+    #        'Umbrella Sampling/TIP3P': 'US-CGenFF',
+    #        'US/PMF/MT/MD_1': 'US-GAFF',
+    #        'US/PMF/MT/MD_2': 'US-GAFF-C',
+    #    }
+    #    try:
+    #        return method_names[name]
+    #    except KeyError:
+    #        pass
+#
+#        if name.startswith('SOMD/AM1BCC-GAFF-TIP3P'):
+#            paper_name = 'SOMD-' + name[-1]
+#            if 'NOBUFFER' in name:
+#                paper_name += '-nobuffer'
+#        if name.startswith('US/PMF/MT/MD'):
+#            submission_number = int(name.rsplit('_', 1)[-1])
+#            identifier = ''
+#            # Potential
+#            if 18 <= submission_number <= 19:
+#                identifier += 'K'
+#            else:
+#             # Input structure identifier
+#            if 3 <= submission_number <= 7:  # MD_relaxed
+#                identifier += 'D'
+#            elif 8 <= submission_number <= 12:  # minimum from Umbrella Sampling
+#                identifier += 'U'
+#            elif 13 <= submission_number <= 19 or 26 <= submission_number <= 27:  # MT_minimum
+#                identifier += 'T'
+#            # States
+#            if submission_number in [3, 4, 8, 9, 13, 14, 20, 21, 22, 23, 24, 25, 26, 27]:
+#                identifier += '3'
+#            else:
+#                identifier += '1'
+#            # Correction
+#            if submission_number in [3, 5, 8, 10, 13, 15, 18, 20]:  # No
+#                identifier += 'N'
+#            elif submission_number in [4, 6, 9, 11, 14, 16, 19, 21]:  # Yes (linear)
+#                identifier += 'L'
+#            elif submission_number in [7, 12, 17, 22]:  # Yes only intercept
+#                identifier += 'O'
+#            elif submission_number in [23, 26]:  # Yes^1
+#                identifier += 'U'
+#            elif submission_number in [27, 24]:  # Yes^2
+#                identifier += 'S'
+#            else:  # Yes^2 only intercept
+#                identifier += 'Z'
+#            paper_name = 'MovTyp-' + identifier
+#        if 'NULL' in name:
+#            paper_name = name
+#        return paper_name
 
     def generate_correlation_plots(self):
         # Free energy correlation plots.
@@ -996,10 +996,11 @@ if __name__ == '__main__':
 
     # Import user map.
     try:
-        with open('../SubmissionsDoNotUpload2/SAMPL6_user_map.csv', 'r') as f:
+        with open('../SAMPL7-user-map-HG.csv', 'r') as f:
             user_map = pd.read_csv(f)
     except FileNotFoundError:
         user_map=None
+        print("Warning: No user map found.")
 
     # Configuration: statistics to compute.
     stats_funcs = collections.OrderedDict([
@@ -1047,44 +1048,44 @@ if __name__ == '__main__':
 
     # Load submissions data. We do OA and TEMOA together.
     submissions_cb = load_submissions(HostGuestSubmission, HOST_GUEST_CB_SUBMISSIONS_DIR_PATH, user_map)
-    submissions_oa_temoa = load_submissions(HostGuestSubmission, HOST_GUEST_OA_SUBMISSIONS_DIR_PATH, user_map)
+    #submissions_oa_temoa = load_submissions(HostGuestSubmission, HOST_GUEST_OA_SUBMISSIONS_DIR_PATH, user_map)
 
     # Separate OA submissions from TEMOA submissions.
-    submissions_oa = [submission for submission in submissions_oa_temoa if submission.host_name == 'OA']
-    submissions_temoa = [submission for submission in submissions_oa_temoa if submission.host_name == 'TEMOA']
+    #submissions_oa = [submission for submission in submissions_oa_temoa if submission.host_name == 'OA']
+    #submissions_temoa = [submission for submission in submissions_oa_temoa if submission.host_name == 'TEMOA']
 
     # Merge methods that were run on both OA and TEMOA.
-    submissions_oa_temoa = merge_submissions(submissions_oa_temoa)
+    #submissions_oa_temoa = merge_submissions(submissions_oa_temoa)
 
     # Merge all methods that were run on all hosts.
-    submissions_cb_oa_temoa = merge_submissions(submissions_oa_temoa + submissions_cb)
+    #submissions_cb_oa_temoa = merge_submissions(submissions_oa_temoa + submissions_cb)
 
     # Merge all methods to obtain molecule statistics.
-    submissions_all = merge_submissions(submissions_oa + submissions_temoa + submissions_cb,
+    #submissions_all = merge_submissions(submissions_oa + submissions_temoa + submissions_cb,
                                         discard_not_matched=False)
 
     # Create submission collections
     collection_cb = HostGuestSubmissionCollection(submissions_cb, experimental_data,
                                                   output_directory_path='../Accuracy/CB8')
-    collection_oa = HostGuestSubmissionCollection(submissions_oa, experimental_data,
+    #collection_oa = HostGuestSubmissionCollection(submissions_oa, experimental_data,
                                                   output_directory_path='../Accuracy/OA')
-    collection_temoa = HostGuestSubmissionCollection(submissions_temoa, experimental_data,
+    #collection_temoa = HostGuestSubmissionCollection(submissions_temoa, experimental_data,
                                                      output_directory_path='../Accuracy/TEMOA')
-    collection_oa_temoa = HostGuestSubmissionCollection(submissions_oa_temoa, experimental_data,
+    #collection_oa_temoa = HostGuestSubmissionCollection(submissions_oa_temoa, experimental_data,
                                                         output_directory_path='../Accuracy/OA-TEMOA')
-    collection_cb_oa_temoa = HostGuestSubmissionCollection(submissions_cb_oa_temoa, experimental_data,
+    #collection_cb_oa_temoa = HostGuestSubmissionCollection(submissions_cb_oa_temoa, experimental_data,
                                                            output_directory_path='../Accuracy/CB8-OA-TEMOA')
     collection_all = HostGuestSubmissionCollection(submissions_all, experimental_data,
                                                    output_directory_path='../Accuracy/MoleculesStatistics')
 
     # Create a CB8 collection excluding the bonus challenges.
-    def remove_bonus(submission_collection_data):
-        return submission_collection_data[(submission_collection_data.system_id != 'CB8-G11') &
-                                          (submission_collection_data.system_id != 'CB8-G12') &
-                                          (submission_collection_data.system_id != 'CB8-G13')]
-    collection_cb_no_bonus = HostGuestSubmissionCollection(submissions_cb, experimental_data,
+    #def remove_bonus(submission_collection_data):
+    #    return submission_collection_data[(submission_collection_data.system_id != 'CB8-G11') &
+    #                                      (submission_collection_data.system_id != 'CB8-G12') &
+    #                                      (submission_collection_data.system_id != 'CB8-G13')]
+    #collection_cb_no_bonus = HostGuestSubmissionCollection(submissions_cb, experimental_data,
                                                            output_directory_path='../Accuracy/CB8-NOBONUS')
-    collection_cb_no_bonus.data = remove_bonus(collection_cb_no_bonus.data)
+    #collection_cb_no_bonus.data = remove_bonus(collection_cb_no_bonus.data)
 
 
     # =============================================================================
@@ -1094,16 +1095,17 @@ if __name__ == '__main__':
     sns.set_style('whitegrid')
 
     # Generate correlation plots and statistics.
-    for collection in [collection_cb, collection_cb_no_bonus, collection_oa, collection_temoa,
-                       collection_oa_temoa, collection_cb_oa_temoa]:
+    for collection in [collection_cb]:
+    #for collection in [collection_cb, collection_cb_no_bonus, collection_oa, collection_temoa,
+    #                   collection_oa_temoa, collection_cb_oa_temoa]:
         sns.set_context('notebook')
         collection.generate_correlation_plots()
 
         sns.set_context('talk')
         caption = ''
-        if any('NB001' in receipt_id for receipt_id in collection.data.receipt_id.unique()):
-            caption += ('* NB001 was not submitted before the deadline because of a technical issue, '
-                        'and it was received after the experimental results were published.')
+        #if any('NB001' in receipt_id for receipt_id in collection.data.receipt_id.unique()):
+        #    caption += ('* NB001 was not submitted before the deadline because of a technical issue, '
+        #                'and it was received after the experimental results were published.')
         collection.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
                                               groupby='name', extra_fields=['receipt_id'],
                                               sort_stat='RMSE', ordering_functions=ordering_functions,
@@ -1120,30 +1122,30 @@ if __name__ == '__main__':
     # Don't modify original collection_all as we'll use it later.
     collection = copy.deepcopy(collection_all)
     # Include only the top 10 methods on the merged OA/TEMOA and CB8 datasets.
-    included_methods = {
-        'ForceMatch',
-        'MovTyp-GE3N',
-        'MovTyp-GE3O',
-        'MovTyp-GT1N',
-        'MovTyp-KT1N',
-        'MovTyp-KT1L',
-        'RFEC-GAFF2',
-        'RFEC-QMMM',
-        'SOMD-C',
-        'SOMD-D',
-        'SOMD-D-nobuffer',
-        'Tinker-AMOEBA',
-        'US-CGenFF',
-        'US-GAFF-C'
-    }
-    collection.data = collection.data[collection.data.method.isin(included_methods)]
+    #included_methods = {
+    #    'ForceMatch',
+    #    'MovTyp-GE3N',
+    #    'MovTyp-GE3O',
+    #    'MovTyp-GT1N',
+    #    'MovTyp-KT1N',
+    #    'MovTyp-KT1L',
+    #    'RFEC-GAFF2',
+    #    'RFEC-QMMM',
+    #    'SOMD-C',
+    #    'SOMD-D',
+    #    'SOMD-D-nobuffer',
+    #    'Tinker-AMOEBA',
+    #    'US-CGenFF',
+    #    'US-GAFF-C'
+    #}
+    #collection.data = collection.data[collection.data.method.isin(included_methods)]
     # Exclude bonus challenges.
-    collection.data = collection.data[~collection.data.system_id.isin({'CB8-G11', 'CB8-G12', 'CB8-G13'})]
-    collection.generate_molecules_plot()
-    collection.generate_statistics_tables(stats_funcs_molecules, 'StatisticsTables', groupby='system_id',
-                                          sort_stat='MAE', ordering_functions=ordering_functions,
-                                          latex_header_conversions=latex_header_conversions)
-    collection.plot_bootstrap_distributions(stats_funcs_molecules, subdirectory_path='StatisticsPlots',
+    #collection.data = collection.data[~collection.data.system_id.isin({'CB8-G11', 'CB8-G12', 'CB8-G13'})]
+    #collection.generate_molecules_plot()
+    #collection.generate_statistics_tables(stats_funcs_molecules, 'StatisticsTables', groupby='system_id',
+    #                                      sort_stat='MAE', ordering_functions=ordering_functions,
+    #                                      latex_header_conversions=latex_header_conversions)
+    #collection.plot_bootstrap_distributions(stats_funcs_molecules, subdirectory_path='StatisticsPlots',
                                             groupby='system_id', ordering_functions=ordering_functions,
                                             latex_header_conversions=latex_header_conversions)
 
@@ -1154,27 +1156,27 @@ if __name__ == '__main__':
 
     # Regenerate the OA/TEMOA submission collection, this time without discarding
     # the methods that were applied to only one of the two sets.
-    submissions_oa_temoa = load_submissions(HostGuestSubmission, HOST_GUEST_OA_SUBMISSIONS_DIR_PATH, user_map)
-    submissions_oa_temoa = merge_submissions(submissions_oa_temoa, discard_not_matched=False)
-    collection_oa_temoa = HostGuestSubmissionCollection(submissions_oa_temoa, experimental_data,
+    #submissions_oa_temoa = load_submissions(HostGuestSubmission, HOST_GUEST_OA_SUBMISSIONS_DIR_PATH, user_map)
+    #submissions_oa_temoa = merge_submissions(submissions_oa_temoa, discard_not_matched=False)
+    #collection_oa_temoa = HostGuestSubmissionCollection(submissions_oa_temoa, experimental_data,
                                                         output_directory_path='../Accuracy/OA-TEMOA')
 
     # Create a set of all the methods.
-    all_methods = set(collection_oa.data.method.unique())
-    all_methods.update(set(collection_temoa.data.method.unique()))
+    #all_methods = set(collection_oa.data.method.unique())
+    #all_methods.update(set(collection_temoa.data.method.unique()))
     all_methods.update(set(collection_cb.data.method.unique()))
 
     # Submissions using experimental corrections.
-    is_corrected = lambda m: ('MovTyp' in m and m[-1] != 'N') or 'SOMD-D' in m or 'RFEC' in m or 'US-GAFF-C' == m
-    corrected_methods = {m for m in all_methods if is_corrected(m)}
+    #is_corrected = lambda m: ('MovTyp' in m and m[-1] != 'N') or 'SOMD-D' in m or 'RFEC' in m or 'US-GAFF-C' == m
+    #corrected_methods = {m for m in all_methods if is_corrected(m)}
 
     # For movable type we plot only GE3N, GE3O, GE3L, KT1N, KT1L, GT1N, GT1L.
-    exclusions = {
-        'MovTyp-GD1N', 'MovTyp-GD1O', 'MovTyp-GD1L', 'MovTyp-GD3N', 'MovTyp-GD3L',
-        'MovTyp-GE3S', 'MovTyp-GE3U', 'MovTyp-GE3Z', 'MovTyp-GT1O', 'MovTyp-GT3N',
-        'MovTyp-GT3S', 'MovTyp-GT3U', 'MovTyp-GT3L', 'MovTyp-GU1N', 'MovTyp-GU1O',
-        'MovTyp-GU1L', 'MovTyp-GU3N', 'MovTyp-GU3L'
-    }
+    #exclusions = {
+    #    'MovTyp-GD1N', 'MovTyp-GD1O', 'MovTyp-GD1L', 'MovTyp-GD3N', 'MovTyp-GD3L',
+    #    'MovTyp-GE3S', 'MovTyp-GE3U', 'MovTyp-GE3Z', 'MovTyp-GT1O', 'MovTyp-GT3N',
+    #    'MovTyp-GT3S', 'MovTyp-GT3U', 'MovTyp-GT3L', 'MovTyp-GU1N', 'MovTyp-GU1O',
+    #    'MovTyp-GU1L', 'MovTyp-GU3N', 'MovTyp-GU3L'
+    #}
 
 
     # FIGURE 2: Figure experiment distributions.
