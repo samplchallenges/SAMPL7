@@ -29,26 +29,36 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 
 # UPDATES TO PRESENT:
 # - (DONE) Remove CHALLENGE ID stuff below
-# - Update host-guest names/etc below
-# - Propagate in other changes made for logP challenge like reading submission names from files
-# - Deal with user map stuff, which is totally different now
+# - (DONE) Propagate in other changes made for logP challenge like to not read submission names from files
+# - (DONE) Update to allow reference submissions, as previously done for SAMPL6 logP
+# - Deal with user map stuff, which is totally different now or we don't have a user map (see below in "think through")
+# - Update host-guest names/etc below (partially done)
 # - Deal with "TO DO" items in code.
 
-#LIGHTBULB:
-# - Easiest way to generalize this code to handle reference submissions, and non-ranked submissions,
-# is just to instantiate the HostGuestSubmissionCollection twice -- once for all, once for only ranked
 
 # THINK THROUGH:
 # - I'm in the process of switching from submission IDs to submission names as identifiers.
 #   But I have not checked that submission names are unique. This is dangerous.
 #   File names are unique, though not necessarily informative.
-# - Need to check that no participant has more than one ranked submission
+# DEAL WITH THIS IN CONTEXT OF USER MAP: Use a list of submission IDs, which ARE unique.
 
 # EXTENSIONS
-# - Update to allow reference submissions, as previously done for SAMPL6 logP
-# - Update to allow single ranked submission per group (additional submissions go into separate category)
-#    - Optionally additional submissions can get analyzed/plotted separately, on plots with reference calculations
+# - (DONE) Update to allow single ranked submission per group (additional submissions go into separate category)
+#    - Optionally additional submissions can get analyzed/plotted separately, on plots with reference calculations.
+#      This gets handled at the analysis stage at the very end (next bullet point).
+# - Handling of ranked vs non-ranked and reference submissions will be done at the end of the code via
+#     options to the HostGuestSubmissionCollection class (ignore_refcalcs, etc.)
+
+# FIRST TESTS:
+# - First test it out on the CBClip system, as this is "normal"
+# - Then add OA systems (two hosts)
+# - Finally bring on CD system which is "odd"
+
+# AFTER FIRST DRAFT
 # - Update to exclude compounds with previously published values from performance stats/plots (do supplemental plots with these?)
+# - Test to ensure that multiple ranked submissions would get caught
+# - Test to ensure non-ranked submissions get excluded etc.
+# - Update method class stuff
 
 
 # =============================================================================
@@ -60,6 +70,7 @@ HOST_GUEST_OA_SUBMISSIONS_DIR_PATH = '../Submissions/OA-TEMOA/'
 HOST_GUEST_CB_SUBMISSIONS_DIR_PATH = '../Submissions/CB8/'
 EXPERIMENTAL_DATA_FILE_PATH = '../ExperimentalMeasurements/experimental_measurements.csv'
 
+# TO DO: Update for this challenge
 HOST_PALETTE = {
     'OA': '#FFBE0C',
     'CB8': 'C0',
@@ -132,6 +143,11 @@ class HostGuestSubmission(SamplSubmission):
         self.data['host_name'] = self.host_name
         assert self.host_name in self.HOST_NAMES
 
+        # Store participant name, organization, method category
+        self.participant = self.sections['Participant name'][0].strip()
+        self.category = self.sections['Category'][0].strip()
+        self.organization = self.sections['Participant organization'].strip()
+
         # Required system System IDs
         clip_guests = ['g1', 'g2', 'g3', 'g5', 'g6', 'g7', 'g8', 'g9', 'g10', 'g11', 'g12', 'g15', 'g16', 'g17', 'g18', 'g19']
         CD_guests = ['g1','g2']
@@ -180,7 +196,11 @@ class HostGuestSubmissionCollection:
 
     _ROW_HEIGHT = 0.25
 
-    def __init__(self, submissions, experimental_data, output_directory_path, ignore_refcalcs = True):
+    # Participant names we've found so far; tracked to ensure no one has more than one
+    # ranked submission
+    participant_names_ranked = []
+
+    def __init__(self, submissions, experimental_data, output_directory_path, ignore_refcalcs = True, ranked_only = True):
         # Build full free energy table.
         data = []
 
@@ -189,12 +209,27 @@ class HostGuestSubmissionCollection:
             # Ignore reference calculations, if applicable
             if submission.reference_submission and ignore_refcalcs:
                 continue
+
             for system_id, series in submission.data[['$\Delta$G', 'SEM $\Delta$G', '$\Delta$H']].iterrows():
                 free_energy_expt = experimental_data.loc[system_id, '$\Delta$G']
                 enthalpy_expt = experimental_data.loc[system_id, '$\Delta$H']
                 free_energy_calc = series['$\Delta$G']
                 free_energy_calc_sem = series['SEM $\Delta$G']
                 enthalpy_calc = series['$\Delta$H']
+                ranked = submission.sections['Ranked'][0].strip()
+
+                if ranked_only and ranked == 'False':
+                    #DEBUG
+                    print("Skipping non-ranked submission")
+                    continue
+                # Store names associated with ranked submission, skip if they submitted multiple
+                if ranked == 'True':
+                    if not self.participant in participant_names_ranked:
+                        participant_names_ranked.append(self.participant)
+                    else:
+                        print(f"Error: %{self.participant} submitted multiple ranked submissions.")
+                        continue
+
                 # TO DO: We won't have some of the data below such as receipt ID I think.
                 data.append({
                     'receipt_id': submission.receipt_id,
@@ -257,6 +292,7 @@ class HostGuestSubmissionCollection:
             return 'Alchemical/Relative'
         return name
 
+    # TO DO: The following function does not pertain to this challenge/needs updating.
     @staticmethod
     def _assign_paper_method_name(name):
         # Convert from submission method name to the name used in the paper.

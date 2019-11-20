@@ -153,10 +153,10 @@ class SamplSubmission:
             user_map_record = user_map_record.iloc[0]
 
             self.id = user_map_record.id
-            self.participant = user_map_record.firstname + ' ' + user_map_record.lastname
+            #self.participant = user_map_record.firstname + ' ' + user_map_record.lastname
             self.participant_id = user_map_record.uid
             self.participant_email = user_map_record.email
-            assert self.challenge_id == user_map_record.component
+            #assert self.challenge_id == user_map_record.component
         else:
             self.id = None
             self.participant = None
