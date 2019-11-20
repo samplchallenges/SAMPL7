@@ -28,14 +28,25 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 # Specifically, that already correctly loads predictions.
 
 # UPDATES TO PRESENT:
-# - Remove CHALLENGE ID stuff below
+# - (DONE) Remove CHALLENGE ID stuff below
 # - Update host-guest names/etc below
 # - Propagate in other changes made for logP challenge like reading submission names from files
 # - Deal with user map stuff, which is totally different now
+# - Deal with "TO DO" items in code.
+
+#LIGHTBULB:
+# - Easiest way to generalize this code to handle reference submissions, and non-ranked submissions,
+# is just to instantiate the HostGuestSubmissionCollection twice -- once for all, once for only ranked
+
+# THINK THROUGH:
+# - I'm in the process of switching from submission IDs to submission names as identifiers.
+#   But I have not checked that submission names are unique. This is dangerous.
+#   File names are unique, though not necessarily informative.
+# - Need to check that no participant has more than one ranked submission
 
 # EXTENSIONS
 # - Update to allow reference submissions, as previously done for SAMPL6 logP
-# - Update to allow single judged submission per group (additional submissions go into separate category)
+# - Update to allow single ranked submission per group (additional submissions go into separate category)
 #    - Optionally additional submissions can get analyzed/plotted separately, on plots with reference calculations
 # - Update to exclude compounds with previously published values from performance stats/plots (do supplemental plots with these?)
 
@@ -78,9 +89,9 @@ class HostGuestSubmission(SamplSubmission):
     """
 
     # The IDs of the submissions used for testing the validation.
-    TEST_SUBMISSIONS = {}
+    TEST_SUBMISSION_NAMES = {}
 
-    REF_SUBMISSIONS = []
+    REF_SUBMISSION_NAMES = []
 
     # Section of the submission file.
     SECTIONS = {'Predictions', 'Participant name', 'Participant organization', 'Name', 'Software', 'Method', 'Category', 'Ranked'}
@@ -93,20 +104,20 @@ class HostGuestSubmission(SamplSubmission):
                         'index_col': 'System ID'}
     }
 
+    # Acceptable host names (in filenames) and the host IDs they correspond to
+    HOST_NAMES = { 'CLIP': ['clip'], 'CD':['bCD', 'MGLab_8', 'MGLab_9', 'MGLab_19', 'MGLab_23', 'MGLab_24', 'MGLab_34', 'MGLab_35', 'MGLab_36'],
+
+
     RENAME_METHODS = {
     }
 
     def __init__(self, file_path, user_map):
-        super().__init__(file_path, user_map)
 
         file_name = os.path.splitext(os.path.basename(file_path))[0]
-        file_data = file_name.split('-')
 
-        # Check this is a known host, and tansform into uppercase.
-        self.host_name = file_data[2].upper()
-        assert self.host_name in ['OA', 'TEMOA', 'CB8']
-
-        self.file_name, self.index = file_data[3:]
+        #TO DO:  Not sure if I'm going to use the immediately following for anything
+        file_name_simple = file_name.replace('_','-')
+        file_data = file_name_simple.split('-')
 
         # Load predictions.
         sections = self._load_sections(file_path)  # From parent-class.
@@ -117,7 +128,28 @@ class HostGuestSubmission(SamplSubmission):
             self.name = sections['Name'][0]
 
         # Add host name column to predictions.
+        self.host_name = file_data[0].upper()
         self.data['host_name'] = self.host_name
+        assert self.host_name in self.HOST_NAMES
+
+        # Required system System IDs
+        clip_guests = ['g1', 'g2', 'g3', 'g5', 'g6', 'g7', 'g8', 'g9', 'g10', 'g11', 'g12', 'g15', 'g16', 'g17', 'g18', 'g19']
+        CD_guests = ['g1','g2']
+        GDCC_guests = ['g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'g8']
+        CD_hosts = copy.copy(self.HOST_NAMES['CD'])
+        CD_hosts.remove('bCD')
+        self.REQUIRED_SYSTEM_IDs = {'CLIP':[f'clip-{guest}' for guest in clip_guests],
+                                'CD':[f'{host}-{guest}' for guest in CD_guests for host in CD_hosts],
+                                 'GDCC':[f'exoOA-{guest}' for guest in GDCC_guests] + ['OA-g7', 'OA-g8']}
+
+        # Check if this is a test submission.
+        if self.rname in self.TEST_SUBMISSION_NAMES:
+            raise IgnoredSubmissionError('This submission has been used for tests.')
+
+        # Check if this is a reference submission
+        self.reference_submission = False
+        if self.name in self.REF_SUBMISSION_NAMES:
+            self.reference_submission = True
 
     def __add__(self, other):
         """Merge the data of the two submission."""
@@ -148,18 +180,22 @@ class HostGuestSubmissionCollection:
 
     _ROW_HEIGHT = 0.25
 
-    def __init__(self, submissions, experimental_data, output_directory_path):
+    def __init__(self, submissions, experimental_data, output_directory_path, ignore_refcalcs = True):
         # Build full free energy table.
         data = []
 
         # Submissions free energies and enthalpies.
         for submission in submissions:
+            # Ignore reference calculations, if applicable
+            if submission.reference_submission and ignore_refcalcs:
+                continue
             for system_id, series in submission.data[['$\Delta$G', 'SEM $\Delta$G', '$\Delta$H']].iterrows():
                 free_energy_expt = experimental_data.loc[system_id, '$\Delta$G']
                 enthalpy_expt = experimental_data.loc[system_id, '$\Delta$H']
                 free_energy_calc = series['$\Delta$G']
                 free_energy_calc_sem = series['SEM $\Delta$G']
                 enthalpy_calc = series['$\Delta$H']
+                # TO DO: We won't have some of the data below such as receipt ID I think.
                 data.append({
                     'receipt_id': submission.receipt_id,
                     'participant': submission.participant,
@@ -339,7 +375,7 @@ class HostGuestSubmissionCollection:
     def generate_statistics_tables(self, stats_funcs, subdirectory_path, groupby,
                                    extra_fields=None, sort_stat=None,
                                    ordering_functions=None, latex_header_conversions=None,
-                                   caption=''):
+                                   caption='', ignore_refcalcs = True):
         """Generate statistics tables in CSV, JSON, and LaTex format.
 
         Parameters
@@ -966,6 +1002,12 @@ if __name__ == '__main__':
         ('MAE', mae),
         ('ME', me),
     ])
+
+    # TO DO: NEED TO UPDATE DOWN HERE TO DEAL WITH IGNORING OF REFERENCE CALCULATIONS/INCLUSION OF REFERENCE calculations
+    # See ignore_refcalcs
+    # I'm going to instantiate two sets of HostGuestSubmissionCollections -- one which ignores reference calculations
+    # and one which doesn't.
+
 
     # Load submissions data. We do OA and TEMOA together.
     submissions_cb = load_submissions(HostGuestSubmission, HOST_GUEST_CB_SUBMISSIONS_DIR_PATH, user_map)
