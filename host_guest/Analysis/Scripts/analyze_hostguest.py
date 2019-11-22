@@ -158,7 +158,7 @@ class HostGuestSubmission(SamplSubmission):
         self.participant = sections['Participant name'][0].strip()
         self.category = sections['Category'][0].strip()
         self.organization = sections['Participant organization'][0].strip()
-        self.ranked = bool(sections['Ranked'][0].strip())
+        self.ranked = sections['Ranked'][0].strip() =='True'
 
         # Required system System IDs
         clip_guests = ['g1', 'g2', 'g3', 'g5', 'g6', 'g7', 'g8', 'g9', 'g10', 'g11', 'g12', 'g15', 'g16', 'g17', 'g18', 'g19']
@@ -229,6 +229,7 @@ class HostGuestSubmissionCollection:
                 continue
 
             # Store names associated with ranked submission, skip if they submitted multiple
+            print(submission.ranked)
             if submission.ranked:
                 if not submission.participant in self.participant_names_ranked:
                     self.participant_names_ranked.append(submission.participant)
