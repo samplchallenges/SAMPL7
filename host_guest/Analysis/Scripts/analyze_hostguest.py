@@ -34,6 +34,7 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 # - (MAYBE done) Deal with user map stuff, which is totally different now or we don't have a user map (see below in "think through")
 # - Update host-guest names/etc below (partially done)
 # - Deal with "TO DO" items in code.
+# - Deal with non-numeric ("ND") experimental data
 
 
 # THINK THROUGH:
@@ -102,9 +103,10 @@ class HostGuestSubmission(SamplSubmission):
 
     """
 
-    # The IDs of the submissions used for testing the validation.
+    # The IDs of the submissions used for testing the validation. Should be strings of submission IDs
     TEST_SUBMISSION_SIDS = {}
 
+    # The IDs of submissions for reference calculations. Should be strings of submission IDs
     REF_SUBMISSION_SIDS = []
 
     # Section of the submission file.
@@ -112,6 +114,7 @@ class HostGuestSubmission(SamplSubmission):
 
 
     # Sections in CSV format with kwargs to pass to pandas.read_csv().
+
     CSV_SECTIONS = {
         'Predictions': {'names': ('System ID', '$\Delta$G', 'SEM $\Delta$G', 'd$\Delta$G',
                                   '$\Delta$H', 'SEM $\Delta$H', 'd$\Delta$H'),
@@ -120,22 +123,26 @@ class HostGuestSubmission(SamplSubmission):
 
     # Acceptable host names (in filenames) and the host IDs they correspond to
     HOST_NAMES = { 'CLIP': ['clip'], 'CD':['bCD', 'MGLab_8', 'MGLab_9', 'MGLab_19', 'MGLab_23', 'MGLab_24', 'MGLab_34', 'MGLab_35', 'MGLab_36'],
+                'GDCC':['OA', 'exoOA'] }
 
 
-    RENAME_METHODS = {
-    }
+    RENAME_METHODS = {}
 
     def __init__(self, file_path, user_map):
+        super().__init__(file_path, user_map)
 
         file_name = os.path.splitext(os.path.basename(file_path))[0]
+        self.file_name = file_name
 
         #TO DO:  Not sure if I'm going to use the immediately following for anything
         file_name_simple = file_name.replace('_','-')
         file_data = file_name_simple.split('-')
+        self.host_name = file_data[0]
 
         # Load predictions.
         sections = self._load_sections(file_path)  # From parent-class.
-        self.data = sections['Predictions']  # This is a pandas DataFrame.
+        self.data = sections['Predictions']  # This is a list
+        self.data = pd.DataFrame(data=self.data) # Now a DataFrame
         try:
             self.name = self.RENAME_METHODS[sections['Name'][0]]
         except KeyError:
@@ -143,13 +150,15 @@ class HostGuestSubmission(SamplSubmission):
 
         # Add host name column to predictions.
         self.host_name = file_data[0].upper()
+        print(self.data)
         self.data['host_name'] = self.host_name
         assert self.host_name in self.HOST_NAMES
 
         # Store participant name, organization, method category
-        self.participant = self.sections['Participant name'][0].strip()
-        self.category = self.sections['Category'][0].strip()
-        self.organization = self.sections['Participant organization'].strip()
+        self.participant = sections['Participant name'][0].strip()
+        self.category = sections['Category'][0].strip()
+        self.organization = sections['Participant organization'][0].strip()
+        self.ranked = bool(sections['Ranked'][0].strip())
 
         # Required system System IDs
         clip_guests = ['g1', 'g2', 'g3', 'g5', 'g6', 'g7', 'g8', 'g9', 'g10', 'g11', 'g12', 'g15', 'g16', 'g17', 'g18', 'g19']
@@ -162,7 +171,7 @@ class HostGuestSubmission(SamplSubmission):
                                  'GDCC':[f'exoOA-{guest}' for guest in GDCC_guests] + ['OA-g7', 'OA-g8']}
 
         # Check if this is a test submission.
-        if self.sids in self.TEST_SUBMISSION_SIDS:
+        if self.sid in self.TEST_SUBMISSION_SIDS:
             raise IgnoredSubmissionError('This submission has been used for tests.')
 
         # Check if this is a reference submission
@@ -173,7 +182,7 @@ class HostGuestSubmission(SamplSubmission):
     def __add__(self, other):
         """Merge the data of the two submission."""
         merged_submission = copy.deepcopy(self)
-        merged_submission.receipt_id = '{} + {}'.format(*sorted([self.receipt_id, other.receipt_id]))
+        merged_submission.sid = '{} + {}'.format(*sorted([self.sid, other.sid]))
         merged_submission.index = '{} + {}'.format(*sorted([self.index, other.index]))
         merged_submission.host_name = '{} + {}'.format(*sorted([self.host_name, other.host_name]))
 
@@ -199,13 +208,14 @@ class HostGuestSubmissionCollection:
 
     _ROW_HEIGHT = 0.25
 
-    # Participant names we've found so far; tracked to ensure no one has more than one
-    # ranked submission
-    participant_names_ranked = []
 
     def __init__(self, submissions, experimental_data, output_directory_path, ignore_refcalcs = True, ranked_only = True):
         # Build full free energy table.
         data = []
+
+        # Participant names we've found so far; tracked to ensure no one has more than one
+        # ranked submission
+        self.participant_names_ranked = []
 
         # Submissions free energies and enthalpies.
         for submission in submissions:
@@ -213,36 +223,40 @@ class HostGuestSubmissionCollection:
             if submission.reference_submission and ignore_refcalcs:
                 continue
 
-            for system_id, series in submission.data[['$\Delta$G', 'SEM $\Delta$G', '$\Delta$H']].iterrows():
+            if ranked_only and not submission.ranked:
+                #DEBUG
+                print("Skipping non-ranked submission")
+                continue
+
+            # Store names associated with ranked submission, skip if they submitted multiple
+            if submission.ranked:
+                if not submission.participant in self.participant_names_ranked:
+                    self.participant_names_ranked.append(submission.participant)
+                else:
+                    print(f"Error: {submission.participant} submitted multiple ranked submissions.")
+                    continue
+
+            for system_id, series in submission.data[['$\Delta$G', 'd$\Delta$G', '$\Delta$H']].iterrows():
                 free_energy_expt = experimental_data.loc[system_id, '$\Delta$G']
                 enthalpy_expt = experimental_data.loc[system_id, '$\Delta$H']
                 free_energy_calc = series['$\Delta$G']
-                free_energy_calc_sem = series['SEM $\Delta$G']
+                free_energy_calc_sem = series['d$\Delta$G']
                 enthalpy_calc = series['$\Delta$H']
-                ranked = submission.sections['Ranked'][0].strip()
+                ranked = submission.ranked
 
-                if ranked_only and ranked == 'False':
-                    #DEBUG
-                    print("Skipping non-ranked submission")
-                    continue
-                # Store names associated with ranked submission, skip if they submitted multiple
-                if ranked == 'True':
-                    if not self.participant in participant_names_ranked:
-                        participant_names_ranked.append(self.participant)
-                    else:
-                        print(f"Error: %{self.participant} submitted multiple ranked submissions.")
-                        continue
 
-                # TO DO: We won't have some of the data below such as receipt ID I think.
+
+
                 data.append({
-                    'receipt_id': submission.receipt_id,
+                    'sid': submission.sid,
                     'participant': submission.participant,
                     'name': submission.name,
-                    'method': self._assign_paper_method_name(submission.name),
+                    #'method': self._assign_paper_method_name(submission.name),
+                    'method': submission.name, # Make this duplicate name for now, as right now name does somewhat describe method. TO DO
                     'system_id': system_id,
                     'host_name': submission.data.loc[system_id, 'host_name'],
                     '$\Delta$G (calc) [kcal/mol]': free_energy_calc,
-                    'SEM $\Delta$G (calc) [kcal/mol]': free_energy_calc_sem,
+                    'd$\Delta$G (calc) [kcal/mol]': free_energy_calc_sem,
                     '$\Delta$G (expt) [kcal/mol]': free_energy_expt,
                     '$\Delta\Delta$G error (calc - expt)  [kcal/mol]': free_energy_calc - free_energy_expt,
                     '$\Delta$H (calc) [kcal/mol]': enthalpy_calc,
@@ -373,17 +387,17 @@ class HostGuestSubmissionCollection:
     def _generate_correlation_plots(self, x, y, directory_path):
         output_dir_path = os.path.join(self.output_directory_path, directory_path)
         os.makedirs(output_dir_path, exist_ok=True)
-        for receipt_id in self.data.receipt_id.unique():
-            data = self.data[self.data.receipt_id == receipt_id]
+        for sid in self.data.sid.unique():
+            data = self.data[self.data.sid == sid]
 
             # If this is a merged submission, we need a hue.
             host_names = data.host_name.unique()
             if len(host_names) > 1:
                 hue = 'host_name'
-                title = '{} ({})'.format(data.name.unique()[0], receipt_id)
+                title = '{} ({})'.format(data.name.unique()[0], sid)
             else:
                 hue = None
-                title = '{} - {} ({})'.format(data.name.unique()[0], host_names[0], receipt_id)
+                title = '{} - {} ({})'.format(data.name.unique()[0], host_names[0], sid)
 
             # Check if enthalpies were computed.
             if data[y].isnull().any():
@@ -393,7 +407,7 @@ class HostGuestSubmissionCollection:
             plot_correlation(x=x, y=y, data=data, title=title, hue=hue)
             plt.tight_layout(pad=0.2)
             # plt.show()
-            output_path = os.path.join(output_dir_path, '{}.pdf'.format(receipt_id))
+            output_path = os.path.join(output_dir_path, '{}.pdf'.format(sid))
             plt.savefig(output_path)
 
 
@@ -748,7 +762,7 @@ class HostGuestSubmissionCollection:
             data = self.data[self.data[groupby] == group]
 
             # Check if SEMs for the free energies are reported.
-            sems = data['SEM $\Delta$G (calc) [kcal/mol]'].values
+            sems = data['d$\Delta$G (calc) [kcal/mol]'].values
             if np.any(np.isnan(sems)):
                 sems = None
             else:  # Add a column of SEMs = 0.0 for the experimental values.
@@ -982,8 +996,9 @@ if __name__ == '__main__':
     # Read experimental data.
     with open(EXPERIMENTAL_DATA_FILE_PATH, 'r') as f:
         # experimental_data = pd.read_json(f, orient='index')
-        names = ('System ID', 'name', 'SMILES', 'Ka', 'dKa', '$\Delta$H', 'd$\Delta$H',
-                 'T$\Delta$S', 'dT$\Delta$S', 'n', '$\Delta$G', 'd$\Delta$G')
+        names = ('System ID', 'name', 'SMILES', '$Kd_1$', 'd$Kd_1$','$\Delta H_1$', 'd$\Delta H_1$', '$Kd_2$', 'd$Kd_2$','$\Delta H_2$', 'd$\Delta H_2$',
+                 'T$\Delta$S', 'dT$\Delta$S', 'n', '$Ka_1$', 'd$Ka_1$', '$Ka_2$', 'd$Ka_2$', '$Ka$','d$Ka','$\Delta$H', 'd$\Delta$H',
+                 '$\Delta$G', 'd$\Delta$G')
         experimental_data = pd.read_csv(f, sep=';', names=names, index_col='System ID', skiprows=1)
 
     # Convert numeric values to dtype float.
@@ -991,13 +1006,15 @@ if __name__ == '__main__':
         experimental_data[col] = pd.to_numeric(experimental_data[col], errors='coerce')
 
     # Rename CB8-G12a to CB8-G12 since we'll print only this.
-    id_index = np.where(experimental_data.index.values == 'CB8-G12a')[0][0]
-    experimental_data.index.values[id_index] = 'CB8-G12'
+    #id_index = np.where(experimental_data.index.values == 'CB8-G12a')[0][0]
+    #experimental_data.index.values[id_index] = 'CB8-G12'
 
     # Import user map.
     try:
         with open('../SAMPL7-user-map-HG.csv', 'r') as f:
             user_map = pd.read_csv(f)
+            #DEBUG
+            print(user_map)
     except FileNotFoundError:
         user_map=None
         print("Warning: No user map found.")
@@ -1047,7 +1064,7 @@ if __name__ == '__main__':
 
 
     # Load submissions data. We do OA and TEMOA together.
-    submissions_cb = load_submissions(HostGuestSubmission, HOST_GUEST_CB_SUBMISSIONS_DIR_PATH, user_map)
+    submissions_trimertrip = load_submissions(HostGuestSubmission, HOST_GUEST_TRIMERTRIP_SUBMISSIONS_DIR_PATH, user_map)
     #submissions_oa_temoa = load_submissions(HostGuestSubmission, HOST_GUEST_OA_SUBMISSIONS_DIR_PATH, user_map)
 
     # Separate OA submissions from TEMOA submissions.
@@ -1062,21 +1079,21 @@ if __name__ == '__main__':
 
     # Merge all methods to obtain molecule statistics.
     #submissions_all = merge_submissions(submissions_oa + submissions_temoa + submissions_cb,
-                                        discard_not_matched=False)
+    #                                    discard_not_matched=False)
 
     # Create submission collections
-    collection_cb = HostGuestSubmissionCollection(submissions_cb, experimental_data,
-                                                  output_directory_path='../Accuracy/CB8')
+    collection_trimertrip = HostGuestSubmissionCollection(submissions_trimertrip, experimental_data,
+                                                  output_directory_path='../Accuracy/TrimerTrip')
     #collection_oa = HostGuestSubmissionCollection(submissions_oa, experimental_data,
-                                                  output_directory_path='../Accuracy/OA')
+    #                                              output_directory_path='../Accuracy/OA')
     #collection_temoa = HostGuestSubmissionCollection(submissions_temoa, experimental_data,
-                                                     output_directory_path='../Accuracy/TEMOA')
+    #                                                 output_directory_path='../Accuracy/TEMOA')
     #collection_oa_temoa = HostGuestSubmissionCollection(submissions_oa_temoa, experimental_data,
-                                                        output_directory_path='../Accuracy/OA-TEMOA')
+    #                                                    output_directory_path='../Accuracy/OA-TEMOA')
     #collection_cb_oa_temoa = HostGuestSubmissionCollection(submissions_cb_oa_temoa, experimental_data,
-                                                           output_directory_path='../Accuracy/CB8-OA-TEMOA')
-    collection_all = HostGuestSubmissionCollection(submissions_all, experimental_data,
-                                                   output_directory_path='../Accuracy/MoleculesStatistics')
+    #                                                       output_directory_path='../Accuracy/CB8-OA-TEMOA')
+    #collection_all = HostGuestSubmissionCollection(submissions_all, experimental_data,
+    #                                               output_directory_path='../Accuracy/MoleculesStatistics')
 
     # Create a CB8 collection excluding the bonus challenges.
     #def remove_bonus(submission_collection_data):
@@ -1084,7 +1101,7 @@ if __name__ == '__main__':
     #                                      (submission_collection_data.system_id != 'CB8-G12') &
     #                                      (submission_collection_data.system_id != 'CB8-G13')]
     #collection_cb_no_bonus = HostGuestSubmissionCollection(submissions_cb, experimental_data,
-                                                           output_directory_path='../Accuracy/CB8-NOBONUS')
+    #                                                       output_directory_path='../Accuracy/CB8-NOBONUS')
     #collection_cb_no_bonus.data = remove_bonus(collection_cb_no_bonus.data)
 
 
@@ -1095,7 +1112,7 @@ if __name__ == '__main__':
     sns.set_style('whitegrid')
 
     # Generate correlation plots and statistics.
-    for collection in [collection_cb]:
+    for collection in [collection_trimertrip]:
     #for collection in [collection_cb, collection_cb_no_bonus, collection_oa, collection_temoa,
     #                   collection_oa_temoa, collection_cb_oa_temoa]:
         sns.set_context('notebook')
@@ -1107,7 +1124,7 @@ if __name__ == '__main__':
         #    caption += ('* NB001 was not submitted before the deadline because of a technical issue, '
         #                'and it was received after the experimental results were published.')
         collection.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
-                                              groupby='name', extra_fields=['receipt_id'],
+                                              groupby='name', extra_fields=['sid'],
                                               sort_stat='RMSE', ordering_functions=ordering_functions,
                                               latex_header_conversions=latex_header_conversions,
                                               caption=caption)
@@ -1146,8 +1163,8 @@ if __name__ == '__main__':
     #                                      sort_stat='MAE', ordering_functions=ordering_functions,
     #                                      latex_header_conversions=latex_header_conversions)
     #collection.plot_bootstrap_distributions(stats_funcs_molecules, subdirectory_path='StatisticsPlots',
-                                            groupby='system_id', ordering_functions=ordering_functions,
-                                            latex_header_conversions=latex_header_conversions)
+    #                                        groupby='system_id', ordering_functions=ordering_functions,
+    #                                        latex_header_conversions=latex_header_conversions)
 
 
     # =============================================================================
@@ -1159,7 +1176,7 @@ if __name__ == '__main__':
     #submissions_oa_temoa = load_submissions(HostGuestSubmission, HOST_GUEST_OA_SUBMISSIONS_DIR_PATH, user_map)
     #submissions_oa_temoa = merge_submissions(submissions_oa_temoa, discard_not_matched=False)
     #collection_oa_temoa = HostGuestSubmissionCollection(submissions_oa_temoa, experimental_data,
-                                                        output_directory_path='../Accuracy/OA-TEMOA')
+    #                                                    output_directory_path='../Accuracy/OA-TEMOA')
 
     # Create a set of all the methods.
     #all_methods = set(collection_oa.data.method.unique())
@@ -1434,6 +1451,11 @@ if __name__ == '__main__':
 
     # FIGURE 6: Distribution of RMSE and R2 in previous SAMPL challenges.
     # --------------------------------------------------------------------
+
+    # TO DO:
+    # currently we break before figure 6
+    import sys
+    sys.exit('Stopping before trying to generate figure 6; that needs updating.')
 
     sns.set_style('whitegrid')
     sns.set_context('paper', font_scale=1)

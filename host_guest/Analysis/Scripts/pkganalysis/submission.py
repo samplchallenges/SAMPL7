@@ -137,11 +137,11 @@ class SamplSubmission:
         # Store user map information.
         if user_map is not None:
             user_map_record = user_map[user_map.file_name == self.file_name]
-            
+
             assert len(user_map_record) == 1
             user_map_record = user_map_record.iloc[0]
 
-            self.sid = user_map_record.sid
+            self.sid = str(user_map_record.sid)
         else:
             self.sid = None
 
