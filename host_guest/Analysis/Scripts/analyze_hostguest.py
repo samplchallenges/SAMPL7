@@ -34,6 +34,7 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 # - (MAYBE done) Deal with user map stuff, which is totally different now or we don't have a user map (see below in "think through")
 # - Update host-guest names/etc below (partially done)
 # - Deal with "TO DO" items in code.
+# - Remove stray DEBUG items in code
 # - Deal with non-numeric ("ND") experimental data
 
 
@@ -74,11 +75,22 @@ HOST_GUEST_TRIMERTRIP_SUBMISSIONS_DIR_PATH = '../Submissions/TrimerTrip/'
 HOST_GUEST_CD_SUBMISSIONS_DIR_PATH = '../Submissions/CD/'
 EXPERIMENTAL_DATA_FILE_PATH = '../ExperimentalMeasurements/experimental_measurements.csv'
 
-# TO DO: Update for this challenge
+# Host color scheme.
 HOST_PALETTE = {
     'OA': '#FFBE0C',
-    'CB8': 'C0',
-    'TEMOA': 'C2',
+    'exoOA': '#FF0C0C', #First pass
+    'CLIP': 'C0',
+    'clip': 'C0',
+    'CD': 'C2',
+    'bCD': 'C2',
+    'MGLab_8': 'C2',
+    'MGLab_9': 'C2',
+    'MGLab_19': 'C2',
+    'MGLab_23': 'C2',
+    'MGLab_24': 'C2',
+    'MGLab_34': 'C2',
+    'MGLab_35': 'C2',
+    'MGLab_36': 'C2',
     'other1': '#1C0F13',  # Licorice
     'other2': '#93A3B1'  # Cadet grey
 }
@@ -122,7 +134,7 @@ class HostGuestSubmission(SamplSubmission):
     }
 
     # Acceptable host names (in filenames) and the host IDs they correspond to
-    HOST_NAMES = { 'CLIP': ['clip'], 'CD':['bCD', 'MGLab_8', 'MGLab_9', 'MGLab_19', 'MGLab_23', 'MGLab_24', 'MGLab_34', 'MGLab_35', 'MGLab_36'],
+    HOST_NAMES = { 'CLIP': ['CLIP'], 'CD':['bCD', 'MGLab_8', 'MGLab_9', 'MGLab_19', 'MGLab_23', 'MGLab_24', 'MGLab_34', 'MGLab_35', 'MGLab_36'],
                 'GDCC':['OA', 'exoOA'] }
 
 
@@ -150,7 +162,6 @@ class HostGuestSubmission(SamplSubmission):
 
         # Add host name column to predictions.
         self.host_name = file_data[0].upper()
-        print(self.data)
         self.data['host_name'] = self.host_name
         assert self.host_name in self.HOST_NAMES
 
@@ -229,7 +240,6 @@ class HostGuestSubmissionCollection:
                 continue
 
             # Store names associated with ranked submission, skip if they submitted multiple
-            print(submission.ranked)
             if submission.ranked:
                 if not submission.participant in self.participant_names_ranked:
                     self.participant_names_ranked.append(submission.participant)
@@ -311,9 +321,10 @@ class HostGuestSubmissionCollection:
         return name
 
     # TO DO: The following function does not pertain to this challenge/needs updating if we even retain
-    #@staticmethod
-    #def _assign_paper_method_name(name):
-    #    # Convert from submission method name to the name used in the paper.
+    @staticmethod
+    def _assign_paper_method_name(name):
+        return name
+        # Convert from submission method name to the name used in the paper.
     #    method_names = {
     #        'DDM/GAFF/AM1-BCC/TIP3P': 'DDM-GAFF',
     #        'HREM/BAR/RESP/Force-Matching/TIP3P': 'DDM-FM',
@@ -1014,8 +1025,6 @@ if __name__ == '__main__':
     try:
         with open('../SAMPL7-user-map-HG.csv', 'r') as f:
             user_map = pd.read_csv(f)
-            #DEBUG
-            print(user_map)
     except FileNotFoundError:
         user_map=None
         print("Warning: No user map found.")
@@ -1079,8 +1088,14 @@ if __name__ == '__main__':
     #submissions_cb_oa_temoa = merge_submissions(submissions_oa_temoa + submissions_cb)
 
     # Merge all methods to obtain molecule statistics.
+    submissions_all = submissions_trimertrip
+    print("Warning: Fix the above to merge submissions")
     #submissions_all = merge_submissions(submissions_oa + submissions_temoa + submissions_cb,
     #                                    discard_not_matched=False)
+
+    if not os.path.isdir('../Accuracy'): os.mkdir('../Accuracy')
+    if not os.path.isdir('../Accuracy/MoleculesStatistics'): os.mkdir('../Accuracy/MoleculesStatistics')
+    if not os.path.isdir('../Accuracy/PaperImages'): os.mkdir('../Accuracy/PaperImages')
 
     # Create submission collections
     collection_trimertrip = HostGuestSubmissionCollection(submissions_trimertrip, experimental_data,
@@ -1093,8 +1108,8 @@ if __name__ == '__main__':
     #                                                    output_directory_path='../Accuracy/OA-TEMOA')
     #collection_cb_oa_temoa = HostGuestSubmissionCollection(submissions_cb_oa_temoa, experimental_data,
     #                                                       output_directory_path='../Accuracy/CB8-OA-TEMOA')
-    #collection_all = HostGuestSubmissionCollection(submissions_all, experimental_data,
-    #                                               output_directory_path='../Accuracy/MoleculesStatistics')
+    collection_all = HostGuestSubmissionCollection(submissions_all, experimental_data,
+                                                   output_directory_path='../Accuracy/MoleculesStatistics')
 
     # Create a CB8 collection excluding the bonus challenges.
     #def remove_bonus(submission_collection_data):
@@ -1181,14 +1196,16 @@ if __name__ == '__main__':
 
     # Create a set of all the methods.
     #all_methods = set(collection_oa.data.method.unique())
+    all_methods = set(collection_trimertrip.data.method.unique())
     #all_methods.update(set(collection_temoa.data.method.unique()))
-    all_methods.update(set(collection_cb.data.method.unique()))
+    #all_methods.update(set(collection_cb.data.method.unique()))
 
     # Submissions using experimental corrections.
     #is_corrected = lambda m: ('MovTyp' in m and m[-1] != 'N') or 'SOMD-D' in m or 'RFEC' in m or 'US-GAFF-C' == m
     #corrected_methods = {m for m in all_methods if is_corrected(m)}
 
     # For movable type we plot only GE3N, GE3O, GE3L, KT1N, KT1L, GT1N, GT1L.
+    exclusions = {}
     #exclusions = {
     #    'MovTyp-GD1N', 'MovTyp-GD1O', 'MovTyp-GD1L', 'MovTyp-GD3N', 'MovTyp-GD3L',
     #    'MovTyp-GE3S', 'MovTyp-GE3U', 'MovTyp-GE3Z', 'MovTyp-GT1O', 'MovTyp-GT3N',
@@ -1231,16 +1248,22 @@ if __name__ == '__main__':
         """Shortcut to create correlation plots."""
         n_methods = len(plotted_methods)
 
-        n_cols = 5
-        n_rows = int(np.floor(n_methods/(n_cols-1)))
+        if n_methods > 4:
+            n_cols = 5
+            n_rows = int(np.floor(n_methods/(n_cols-1)))
+        else:
+            n_cols = n_methods
+            n_rows = 1
         plot_size = 7.25 / n_cols
         fig = plt.figure(figsize=(n_cols*plot_size, n_rows*plot_size))
         grid = plt.GridSpec(nrows=n_rows, ncols=n_cols*2)
         # All rows have 4 plots except for last one which has 5.
         axes = []
+        #TODO: This needs generalization
         for row_idx in range(n_rows-1):
-            axes.extend([fig.add_subplot(grid[row_idx, c:c+2]) for c in range(1,9,2)])
-        axes.extend([fig.add_subplot(grid[-1, c:c+2]) for c in range(0,10,2)])
+            #axes.extend([fig.add_subplot(grid[row_idx, c:c+2]) for c in range(1,9,2)])
+            axes.extend([fig.add_subplot(grid[row_idx, c:c+2]) for c in range(1,7,2)])
+        axes.extend([fig.add_subplot(grid[-1, c:c+2]) for c in range(0,5,2)])
 
         # Associate a color to each host.
         for method, ax in zip(plotted_methods, axes):
@@ -1269,60 +1292,68 @@ if __name__ == '__main__':
         plt.tight_layout(pad=0.9, rect=[0.0, 0.025, 1.0, 1.0])
         plt.savefig('../Accuracy/PaperImages/{}.pdf'.format(file_name))
 
+    #DEBUG
+    print(set(all_methods))
     correlation_plots(
-        plotted_methods = sorted(set(all_methods) - set(exclusions) - {'NULL'}),
+        #plotted_methods = sorted(set(all_methods) - set(exclusions) - {'NULL'}),
+        plotted_methods = sorted(set(all_methods) - set(exclusions)),
         file_name='Figure3_correlation_plots'
     )
 
     # Supplementary figure with correlations plots of movable type calculations.
-    correlation_plots(
-        plotted_methods = sorted(m for m in all_methods if 'MovTyp' in m),
-        file_name='SIFigure_correlation_plots_movtyp'
-    )
+    #correlation_plots(
+    #    plotted_methods = sorted(m for m in all_methods if 'MovTyp' in m),
+    #    file_name='SIFigure_correlation_plots_movtyp'
+    #)
 
 
     # FIGURE 4: Violin plots of bootstrap distribution for two collections OA/TEMOA and CB8-NOBONUS.
     # -----------------------------------------------------------------------------------------------
-    sns.set_style('whitegrid')
-    sns.set_context('paper', font_scale=0.7)
+    #sns.set_style('whitegrid')
+    #sns.set_context('paper', font_scale=0.7)
 
-    collection = SplitBootstrapSubmissionCollection(collection_oa_temoa, collection_cb_no_bonus,
-                                                    hue='dataset', collection1_hue='OA/TEMOA', collection2_hue='CB8',
-                                                    output_directory_path='../Accuracy/PaperImages')
-    palette = {'OA/TEMOA': HOST_PALETTE['OA'], 'CB8': HOST_PALETTE['CB8']}
+    #collection = SplitBootstrapSubmissionCollection(collection_oa_temoa, collection_cb_no_bonus,
+    #                                                hue='dataset', collection1_hue='OA/TEMOA', collection2_hue='CB8',
+    #                                                output_directory_path='../Accuracy/PaperImages')
+    #palette = {'OA/TEMOA': HOST_PALETTE['OA'], 'CB8': HOST_PALETTE['CB8']}
 
-    def plot_split_bootstrap_distribution(stats_funcs, stats_limits, exclusions, suffix=''):
-        """Shortcut to plot bootstrap distribution with SplitBootstrapSubmissionCollection."""
-        collection.plot_bootstrap_distributions(
-            stats_funcs, 'Figure4_bootstrap_distributions', groupby='method',
-            ordering_functions=ordering_functions, stats_limits=stats_limits,
-            latex_header_conversions=latex_header_conversions,
-            exclusions=exclusions, shaded=corrected_methods,
-            figure_width=7.25/4, output_file_suffix=suffix,
-            hue='dataset', split=True, palette=palette)
+    #def plot_split_bootstrap_distribution(stats_funcs, stats_limits, exclusions, suffix=''):
+    #    """Shortcut to plot bootstrap distribution with SplitBootstrapSubmissionCollection."""
+    #    collection.plot_bootstrap_distributions(
+    #        stats_funcs, 'Figure4_bootstrap_distributions', groupby='method',
+    #        ordering_functions=ordering_functions, stats_limits=stats_limits,
+    #        latex_header_conversions=latex_header_conversions,
+    #        exclusions=exclusions, shaded=corrected_methods,
+    #        figure_width=7.25/4, output_file_suffix=suffix,
+    #        hue='dataset', split=True, palette=palette)
 
     # These entries have a very large RMSE and ME so we plot them
     # separately to keep a good resolution for the others.
-    larger_error_entries = {'MMPBSA-GAFF', 'DFT(B3PW91)', 'DFT(B3PW91)-D3', 'NULL'}
-    sf = {n: stats_funcs[n] for n in ['RMSE', 'ME']}
-    plot_split_bootstrap_distribution(
-        stats_funcs=sf,
-        stats_limits={'RMSE': (0, 12.5), 'ME': (-10, 10)},
-        exclusions=exclusions.union(larger_error_entries)
-    )
-    plot_split_bootstrap_distribution(
-        stats_funcs=sf,
-        stats_limits={'RMSE': (0, 50), 'ME': (-30, 50)},
-        exclusions=all_methods-larger_error_entries,
-        suffix='largererror.svg'
-    )
+    #larger_error_entries = {'MMPBSA-GAFF', 'DFT(B3PW91)', 'DFT(B3PW91)-D3', 'NULL'}
+    #sf = {n: stats_funcs[n] for n in ['RMSE', 'ME']}
+    #plot_split_bootstrap_distribution(
+    #    stats_funcs=sf,
+    #    stats_limits={'RMSE': (0, 12.5), 'ME': (-10, 10)},
+    #    exclusions=exclusions.union(larger_error_entries)
+    #)
+    #plot_split_bootstrap_distribution(
+    #    stats_funcs=sf,
+    #    stats_limits={'RMSE': (0, 50), 'ME': (-30, 50)},
+    #    exclusions=all_methods-larger_error_entries,
+    #    suffix='largererror.svg'
+    #)
 
     # Plot correlation statistics split bootstrap distributions.
-    plot_split_bootstrap_distribution(
-        stats_funcs={n: stats_funcs[n] for n in ['R2', 'kendall_tau']},
-        stats_limits={'R2': (0, 1), 'kendall_tau': (-1, 1)},
-        exclusions=exclusions
-    )
+    #plot_split_bootstrap_distribution(
+    #    stats_funcs={n: stats_funcs[n] for n in ['R2', 'kendall_tau']},
+    #    stats_limits={'R2': (0, 1), 'kendall_tau': (-1, 1)},
+    #    exclusions=exclusions
+    #)
+
+    # TO DO:
+    # currently we break before figure 5
+    import sys
+    sys.exit('Stopping before trying to generate figure 5; that needs updating.')
 
 
     # FIGURE 5: Figure statistics by molecule.
@@ -1413,8 +1444,8 @@ if __name__ == '__main__':
                'TEMOA-G4', 'TEMOA-G4-incorrect', 'TEMOA-G4-notsubmitted',
                'CB8-G8', 'CB8-G8-incorrect', 'CB8-G8-notsubmitted']
     palette = [sns.desaturate(color, 0.75) for color in [HOST_PALETTE['OA'], '0.7', 'white',
-                                                         HOST_PALETTE['TEMOA'], '0.7', 'white',
-                                                         HOST_PALETTE['CB8'], '0.7', 'white']]
+                                                         HOST_PALETTE['CD'], '0.7', 'white',
+                                                         HOST_PALETTE['CLIP'], '0.7', 'white']]
     data = pd.DataFrame.from_dict(data, orient='index', columns=columns)
 
     # Plot percentage of correct binders across methods.
@@ -1453,10 +1484,6 @@ if __name__ == '__main__':
     # FIGURE 6: Distribution of RMSE and R2 in previous SAMPL challenges.
     # --------------------------------------------------------------------
 
-    # TO DO:
-    # currently we break before figure 6
-    import sys
-    sys.exit('Stopping before trying to generate figure 6; that needs updating.')
 
     sns.set_style('whitegrid')
     sns.set_context('paper', font_scale=1)
