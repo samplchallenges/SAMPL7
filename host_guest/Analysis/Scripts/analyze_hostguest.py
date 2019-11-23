@@ -37,12 +37,9 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 # - Remove stray DEBUG items in code
 # - Deal with non-numeric ("ND") experimental data
 
-
-# THINK THROUGH:
-# - I'm in the process of switching from submission IDs to submission names as identifiers.
-#   But I have not checked that submission names are unique. This is dangerous.
-#   File names are unique, though not necessarily informative.
-# DEAL WITH THIS IN CONTEXT OF USER MAP: Use a list of submission IDs, which ARE unique.
+# NEXT:
+# - Bring on GDCC analysis (will require dealing with "ND" data)
+#    And at a later time, removing non-required data
 
 # EXTENSIONS
 # - (DONE) Update to allow single ranked submission per group (additional submissions go into separate category)
