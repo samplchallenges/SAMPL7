@@ -57,3 +57,5 @@ The file will be machine parsed, so correct formatting is essential.
 Lines beginning with a hash-tag (#) may be included as comments. These and blank lines will be ignored.
 
 The file must contain the following five components in the following order: your predictions, a name for your computational protocol, a list of the major software packages used, a long-form methods description, and, finally, whether your submission is to be ranked or not. Each of these components must begin with a line containing only the corresponding keyword: Predictions:, Name:, Software:, Method:, and Ranked:, as illustrated in the example files. The last field should have a boolean value (True or False). See above information on "multiple submissions" for discussion of the role this plays.
+
+Please note that the submission page is relatively minimal and is hosted at AWS at an ".elasticbeanstalk.com" address; do not be alarmed to find that in the URL.
