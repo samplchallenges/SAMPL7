@@ -17,9 +17,9 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
 - Protein-ligand details on the [PHIP2 challenge](protein_ligand/README.md), in the `protein_ligand` directory.
-- [PHIP2 challenge submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file. Our submission system is not yet available.
+- [PHIP2 challenge submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file. **Our submission system is live.**
 
-All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 4 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data. The **first stage of the protein-ligand challenge is due Nov. 28, 2019.**
+All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 4 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data. The **first stage of the protein-ligand challenge is due Nov. 28, 2019 by midnight US Pacific time.**
 
 ## What's coming
 - GSK logD challenge information as soon as available
@@ -49,6 +49,7 @@ All three host-guest components of this challenge are now final and launched, th
 - (11/12/19, PHIP2) Add participation instructions and submission format for PHIP2 virtual screening component (Stage 1).
 - (11/15/19, host-guest) Add TrimerTrip and cyclodextrin experimental binding data (first draft). Update Gibb data with additional precision/correct rounding errors.
 - (11/18/19, host-guest) Fix typo in one of values, for MGLab_36-g2
+- (11/25/19, protein-ligand): Add submission link for protein-ligand virtual screening challenge at [http://sampl-submission.us-west-1.elasticbeanstalk.com/submit](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit)
 
 ## Challenge overview
 
