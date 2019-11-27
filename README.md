@@ -50,6 +50,7 @@ All three host-guest components of this challenge are now final and launched, th
 - (11/15/19, host-guest) Add TrimerTrip and cyclodextrin experimental binding data (first draft). Update Gibb data with additional precision/correct rounding errors.
 - (11/18/19, host-guest) Fix typo in one of values, for MGLab_36-g2
 - (11/25/19, protein-ligand): Add submission link for protein-ligand virtual screening challenge at [http://sampl-submission.us-west-1.elasticbeanstalk.com/submit](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit)
+- (11/27/19, protein-ligand): Clarify some aspects of instructions and submission deadline.
 
 ## Challenge overview
 
