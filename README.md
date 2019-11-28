@@ -41,17 +41,11 @@ All three host-guest components of this challenge are now final and launched, th
 - **Release 0.1.2** (Sept. 16, 2019, DOI [10.5281/zenodo.3432298](https://dx.doi.org/10.5281/zenodo.3432298)): Fixes protonation states for three "modified cyclodextrin" hosts which had accidentally been prepared (and drawn in ChemDraw) with charged groups present as neutral -- specifically terminal -NH3 groups were provided as -NH2. This affected MGLab19, 24 and 34. Also includes minor maintenance fixes -- listing final rather than tentative buffer conditions for GDCC case (just removing the "tentative" on the buffer identity, and correcting pH from 11.5 to 11.7); updates submission deadlines; fixes missing coordinates in TrimerTrip `g11`; fixing breakdown into residues in a couple modified cyclodextrin host PDB/mol2 files.
 - **Release 0.2** (Sept. 24, 2019, DOI [10.5281/zenodo.3459975](https://dx.doi.org/10.5281/zenodo.3459975)): Adds host-guest submission template files and instructions; makes more clear which compounds/cases are optional; makes clear that free energy predictions (and uncertainties) are required; enthalpies optional; adds links to [host-guest submission system](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/)
 - **Release 0.3** (Sept. 26, 2019, DOI [10.5281/zenodo.3462865](https://dx.doi.org/10.5281/zenodo.3462865)): Corrected likely charges/protonation states for MGLab23 and MGLab24 in overview table and in jpg and PDF files. Updated corresponding coded and noncoded CDX files. Fixed a mixture of UNK and MGO residue names. Eliminates all instances of atom name HQ which should correspond to a carbon (which for some reason was instead named HX in some hosts, likely causing problems for some workflows). This has been mapped to atom name C9. Reconnects missing bonds in the PDB section of several models. See [PR 42](https://github.com/MobleyLab/SAMPL7/pull/42) for full details. Also removes outdated info in README.md and removes extra guest listed in TrimerTrip submission template.
-- **Release 0.4** (Oct. 30, 2019)): Adds Isaacs' group TrimerTrip binding data (in `host_guest/analysis/ExperimentalMeasurements`); adds TrimerTrip submissions; adds PHIP2 protein-ligand challenge Stage 1 details.
-- **Release 0.41** (Nov. 27, 2019)): Fixes and corrects some SMILES formatting errors (see release notes) for protein-ligand challenge, adds host-guest experimental data, adds submission instructions for stage 1 protein-ligand challenge. 
+- **Release 0.4** (Oct. 30, 2019): Adds Isaacs' group TrimerTrip binding data (in `host_guest/analysis/ExperimentalMeasurements`); adds TrimerTrip submissions; adds PHIP2 protein-ligand challenge Stage 1 details.
+- **Release 0.4.1** (Nov. 27, 2019, DOI [10.5281/zenodo.3555601](https://dx.doi.org/10.5281/zenodo.3555601)): Fixes and corrects some SMILES formatting errors (see release notes) for protein-ligand challenge, adds host-guest experimental data, adds submission instructions for stage 1 protein-ligand challenge. 
 
 ### Changes not in a release
-- (11/2/19, PHIP2) Fix misformatted SMILES line on line 620 of `fragments_screened.csv` for PHIP2 screening challenge.
-- (11/11/19, PHIP2) Fix an incorrect SMILES for fragment F62 in the PHIP2 screening challenge.
-- (11/12/19, PHIP2) Add participation instructions and submission format for PHIP2 virtual screening component (Stage 1).
-- (11/15/19, host-guest) Add TrimerTrip and cyclodextrin experimental binding data (first draft). Update Gibb data with additional precision/correct rounding errors.
-- (11/18/19, host-guest) Fix typo in one of values, for MGLab_36-g2
-- (11/25/19, protein-ligand): Add submission link for protein-ligand virtual screening challenge at [http://sampl-submission.us-west-1.elasticbeanstalk.com/submit](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit)
-- (11/27/19, protein-ligand): Clarify some aspects of instructions and submission deadline.
+
 
 ## Challenge overview
 
