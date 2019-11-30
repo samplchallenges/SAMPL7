@@ -120,7 +120,7 @@ The *apo* structure of PHIP2 that was provided in stage 1 (`PHIPA_C2_Apo.pdb`) s
 
 **Start date:** Friday the 29th of November 2019
 
-**Submissions due:**  Thursday the 12th of December 2019, at midnight US Pacific Time
+**Submissions due:**  Thursday the 12th of December 2019, midnight (24:00) US Pacific time
 
 ## Stage 3: Selection of novel binders from a database
 
