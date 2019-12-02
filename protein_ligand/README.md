@@ -102,11 +102,25 @@ If multiple submissions are incorrectly provided as "ranked" by a single partici
 
 ## Stage 2: Prediction of binding poses for binding fragment
 
-Plans for stage 2 are still being finalized, but this is planned to involve predicting the bound structures of the compounds which bind, the identity of which will be released at the end of the first stage.
+### Setup and description of Stage 2
+
+**Aim**: The second part of the SAMPL7 challenge builds onto the first stage. The objective is to correctly predict the binding pose for each of protein-fragment complex identified by [PanDDA](https://pandda.bitbucket.io/). In total, 52 fragments were found to bind to the C2 crystal form described in stage 1. 45 hits were identified at the first site (denoted by a helium atom `S1` in the provided structure (`PHIPA_C2_apo_sites.pdb`)). 4 were found at the second site (denoted by a neon atom `S2`). The third (denoted by an argon atom `S3`) and the fourth site (denoted by a krypton atom `S4`) were each found to bind to a single distinct fragment. Accurate binding pose prediction is essential in structure-based drug discovery and in the elaboration/ optimization of known drugs and chemical probes.   
+
+The *apo* structure of PHIP2 that was provided in stage 1 (`PHIPA_C2_Apo.pdb`) should be used along with the [isomeric SMILES strings](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) of the fragments identified at each site (Site 1:`stage2-input-data/site-1_fragment-hits.csv`, Site 2:`stage2-input-data/site-2_fragment-hits.csv`, Site 3:`stage2-input-data/site-3_fragment-hits.csv`, Site 4:`stage2-input-data/site-4_fragment-hits.csv`)
+
+### Provided data for Stage 2
+
+- Apo structure of the protein: See Manifest below
+- isomeric SMILES strings for the binding fragments for each site: See Manifest below
+- Coordinates of atoms marking the binding sites are provided in the `PHIPA_C2_apo_sites.pdb` file, as described above
+- Rules: See below
+- Submission format: To be posted shortly
+
+### Rules for Stage 2
 
 **Start date:** Friday the 29th of November 2019
 
-**End date:**  Thursday the 12th of December 2019
+**Submissions due:**  Thursday the 12th of December 2019, midnight (24:00) US Pacific time
 
 ## Stage 3: Selection of novel binders from a database
 
