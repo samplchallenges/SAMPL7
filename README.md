@@ -26,7 +26,7 @@ All three host-guest components of this challenge are now final and launched, th
 - Results (and inputs for) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
 - Experimental results for the host-guest challenge (except for TrimerTrip, which is available now)
 - Analysis of submissions for the host-guest challenge
-- PHIP2 protein-ligand challenge details on Stage 2 and Stage 3.
+- PHIP2 protein-ligand challenge details for Stage 3.
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -42,9 +42,10 @@ All three host-guest components of this challenge are now final and launched, th
 - **Release 0.2** (Sept. 24, 2019, DOI [10.5281/zenodo.3459975](https://dx.doi.org/10.5281/zenodo.3459975)): Adds host-guest submission template files and instructions; makes more clear which compounds/cases are optional; makes clear that free energy predictions (and uncertainties) are required; enthalpies optional; adds links to [host-guest submission system](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/)
 - **Release 0.3** (Sept. 26, 2019, DOI [10.5281/zenodo.3462865](https://dx.doi.org/10.5281/zenodo.3462865)): Corrected likely charges/protonation states for MGLab23 and MGLab24 in overview table and in jpg and PDF files. Updated corresponding coded and noncoded CDX files. Fixed a mixture of UNK and MGO residue names. Eliminates all instances of atom name HQ which should correspond to a carbon (which for some reason was instead named HX in some hosts, likely causing problems for some workflows). This has been mapped to atom name C9. Reconnects missing bonds in the PDB section of several models. See [PR 42](https://github.com/MobleyLab/SAMPL7/pull/42) for full details. Also removes outdated info in README.md and removes extra guest listed in TrimerTrip submission template.
 - **Release 0.4** (Oct. 30, 2019): Adds Isaacs' group TrimerTrip binding data (in `host_guest/analysis/ExperimentalMeasurements`); adds TrimerTrip submissions; adds PHIP2 protein-ligand challenge Stage 1 details.
-- **Release 0.4.1** (Nov. 27, 2019, DOI [10.5281/zenodo.3555601](https://dx.doi.org/10.5281/zenodo.3555601)): Fixes and corrects some SMILES formatting errors (see release notes) for protein-ligand challenge, adds host-guest experimental data, adds submission instructions for stage 1 protein-ligand challenge. 
+- **Release 0.4.1** (Nov. 27, 2019, DOI [10.5281/zenodo.3555601](https://dx.doi.org/10.5281/zenodo.3555601)): Fixes and corrects some SMILES formatting errors (see release notes) for protein-ligand challenge, adds host-guest experimental data, adds submission instructions for stage 1 protein-ligand challenge.
 
 ### Changes not in a release
+- (12/2/2019): Add PHIP2 Stage 2 inputs
 
 
 ## Challenge overview
@@ -63,7 +64,7 @@ This challenge breaks out into at least three stages on a tight timeline:
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database
 
-Stage 1 is now open and focuses on identification of binders. Unfortunately, the timeline for stages 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3). See [protein_ligand/README.md](protein_ligand/README.md) for full details.
+Stage 2 is now open and focuses on identification of binders (and Stage 1 is closed). Unfortunately, the timeline for stages 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3). See [protein_ligand/README.md](protein_ligand/README.md) for full details.
 
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests

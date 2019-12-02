@@ -10,7 +10,7 @@ This challenge breaks out into at least three stages on a tight timeline:
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database
 
-Stage 1 is now open and focuses on identification of binders. Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3).
+Stage 2 is now open and focuses on identification of binders (Stage 1 is now closed). Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3).
 
 If you plan to participate, please [join our SAMPL7 e-mail list](http://eepurl.com/gpBBun) so we can keep you updated.
 
@@ -104,9 +104,9 @@ If multiple submissions are incorrectly provided as "ranked" by a single partici
 
 ### Setup and description of Stage 2
 
-**Aim**: The second part of the SAMPL7 challenge builds onto the first stage. The objective is to correctly predict the binding pose for the protein-fragment complexes identified by [PanDDA](https://pandda.bitbucket.io/). In total, 52 fragments were found to bind to the C2 crystal form described in stage 1. 45 hits were identified at the first site (denoted by a helium atom `S1` in the provided structure (`PHIPA_C2_apo_sites.pdb`)). 4 were found at the second site (denoted by a neon atom `S2`). The third (denoted by an argon atom `S3`) and the fourth site (denoted by a krypton atom `S4`) were each found to bind to a single distinct fragment. 
+**Aim**: The second part of the SAMPL7 challenge builds onto the first stage. The objective is to correctly predict the binding pose for the protein-fragment complexes identified by [PanDDA](https://pandda.bitbucket.io/). In total, 52 fragments were found to bind to the C2 crystal form described in stage 1. 45 hits were identified at the first site (denoted by a helium atom `S1` in the provided structure (`PHIPA_C2_apo_sites.pdb`)). 4 were found at the second site (denoted by a neon atom `S2`). The third (denoted by an argon atom `S3`) and the fourth site (denoted by a krypton atom `S4`) were each found to bind to a single distinct fragment.
 
-The *apo* structure of PHIP2 that was provided in stage 1 (`PHIPA_C2_Apo.pdb`) may be used along with the [isomeric SMILES strings](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) of the fragments identified (`stage2-input-data/site-1_fragment-hits.csv`) to carry out pose predictions. The acetylated-lysine binding site, being the most populated and pharmacologically relevant, will be the focus of the second stage. Optionally, participants may also try to extend their predictions to the other sites (Site 2:`stage2-input-data/site-2_fragment-hits.csv`, Site 3:`stage2-input-data/site-3_fragment-hits.csv`, Site 4:`stage2-input-data/site-4_fragment-hits.csv`). Other structures and information may also be used in the predictions. However, the predicted protein-ligand poses must be aligned to the reference structure (`PHIPA_C2_Apo.pdb`) for assessment purposes. 
+The *apo* structure of PHIP2 that was provided in stage 1 (`PHIPA_C2_Apo.pdb`) may be used along with the [isomeric SMILES strings](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) of the fragments identified (`stage2-input-data/site-1_fragment-hits.csv`) to carry out pose predictions, and **must be used to define the frame of reference for your pose predictions**. The acetylated-lysine binding site, being the most populated and pharmacologically relevant, will be the focus of the second stage. Optionally, participants may also try to extend their predictions to the other sites (Site 2:`stage2-input-data/site-2_fragment-hits.csv`, Site 3:`stage2-input-data/site-3_fragment-hits.csv`, Site 4:`stage2-input-data/site-4_fragment-hits.csv`). Other structures and information may also be used in the predictions. However, the predicted protein-ligand poses must be aligned to the reference structure (`PHIPA_C2_Apo.pdb`) for assessment purposes.
 
 ### Provided data for Stage 2
 
@@ -114,15 +114,24 @@ The *apo* structure of PHIP2 that was provided in stage 1 (`PHIPA_C2_Apo.pdb`) m
 - isomeric SMILES strings for the binding fragments for each site: See Manifest below
 - Coordinates of atoms marking the binding sites are provided in the `PHIPA_C2_apo_sites.pdb` file, as described above
 - Rules: See below
-- Submission format: To be posted shortly
+- Submission format: To be posted shortly; note that you will need to submit a text method description and posed ligands (see Rules below).
 
 ### Rules for Stage 2
-More TBA shortly. However, in brief, expect to submit a detailed text format method description similar to that used in Stage 1, as well as poses for all of your predicted binders in the same frame of reference as the provided apo structure (`PHIPA_C2_Apo.pdb`). If you choose to use other protein structures in making the predictions, these should be described in your Method description. 
-You must predict binding modes for all 45 hits binding in site S1 for your submission to be ranked. Prediction of poses in the alternate sites is optional and will be ranked separately for those submissions predicting poses for those compounds.
 
 **Start date:** Friday the 29th of November 2019
 
 **Submissions due:**  Thursday the 12th of December 2019, midnight (24:00) US Pacific time
+
+In brief, expect to submit a detailed text format method description similar to that used in Stage 1, as well as poses for all of your predicted binders in the same frame of reference as the provided apo structure (`PHIPA_C2_Apo.pdb`). It is likely that submissions will be requested to include only ligand poses (in .mol2, .sdf or .pdb format) without the protein, though this is still being finalized. Submission instructions will be provided here once available.
+
+If you choose to use other protein structures other than the provided apo structure in making your predictions, these should be described in your Method description. You may draw on any existing literature data that you wish, just make sure to clearly describe any data utilized in your Methods.
+
+You must predict binding modes for all 45 hits binding in site S1 for your submission to be ranked. Prediction of poses in the alternate sites is optional and pose predictions for alternate sites will be ranked separately for those submissions predicting poses for those compounds.
+
+As in Stage 1, while you are welcome to submit multiple entries in order to test diverse methods, as per our [policy on multiple submissions](https://samplchallenges.github.io/roadmap/submissions/), each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form.
+We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
+
+If multiple submissions are incorrectly provided as "ranked" by a single participant, we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
 
 ## Stage 3: Selection of novel binders from a database
 
