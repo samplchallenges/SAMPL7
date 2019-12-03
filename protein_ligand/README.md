@@ -108,6 +108,8 @@ If multiple submissions are incorrectly provided as "ranked" by a single partici
 
 The *apo* structure of PHIP2 that was provided in stage 1 (`PHIPA_C2_Apo.pdb`) may be used along with the [isomeric SMILES strings](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) of the fragments identified (`stage2-input-data/site-1_fragment-hits.csv`) to carry out pose predictions, and **must be used to define the frame of reference for your pose predictions**. The acetylated-lysine binding site, being the most populated and pharmacologically relevant, will be the focus of the second stage. Optionally, participants may also try to extend their predictions to the other sites (Site 2:`stage2-input-data/site-2_fragment-hits.csv`, Site 3:`stage2-input-data/site-3_fragment-hits.csv`, Site 4:`stage2-input-data/site-4_fragment-hits.csv`). Other structures and information may also be used in the predictions. However, the predicted protein-ligand poses must be aligned to the reference structure (`PHIPA_C2_Apo.pdb`) for assessment purposes.
 
+Please, note that predictions should be done considering the C2 crystal form and soaking method described in Stage 1. Other, structures are available on the PDB but were identified using another crystal form. Screening against different crystal forms often lead to differential fragment-hit identification due to solution and solid states effects such as pH and crystal packing. 
+
 ### Provided data for Stage 2
 
 - Apo structure of the protein: See Manifest below
