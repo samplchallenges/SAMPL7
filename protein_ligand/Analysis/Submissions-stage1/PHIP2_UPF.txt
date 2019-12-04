@@ -1,0 +1,104 @@
+# Results for PHIP2 virtual screening
+ 
+# PREDICTIONS SECTION
+# Any compounds not listed are assumed to be predicted as nonbinders.
+Predictions:
+F16, true, false, false, false, true
+F17, true, false, false, false, true
+F37, true, false, false, false, true
+F243, true, false, false, false, true
+F285, true, false, false, false, true
+F296, true, false, false, false, true
+F683, true, false, false, false, true
+F705, true, false, false, false, true
+F718, true, false, false, false, true
+F735, true, false, false, false, true
+F744, true, false, false, false, true
+ 
+# PARTICIPANT INFORMATION SECTION
+Participant name:
+Maciej Majewski
+ 
+# Full list of contributors:
+# Maciej Majewski 1
+# Jose Jimenez-Luna 2
+# Alejandro Varela-Rial 3
+# Alberto Cuzzolin 3
+# Gianni De Fabritiis 1, 3, 4
+ 
+Participant organization:
+Universitat Pompeu Fabra, Spain
+ 
+# Full list of affiliations:
+# 1. Computational Science Laboratory, Universitat Pompeu Fabra, PRBB, Barcelona, Spain
+# 2. Department of Chemistry and Applied Biosciences, RETHINK, ETH Zurich, Switzerland.
+# 3. Acellera, Barcelona, Spain
+# 4. Institucio Catalana de Recerca i Estudis Avancats (ICREA), Barcelona, Spain
+ 
+# METHOD NAME SECTION
+Name:
+ECFP4rdkit-RF
+ 
+# SOFTWARE SECTION
+Software:
+MOE 2016.08
+python 3.6.9
+rdkit 2019.09.1.0
+scikit-learn 0.21.3
+ 
+# METHOD CATEGORY SECTION
+Category:
+Ligand-based, ML
+ 
+# RANKING INFORMATION SECTION
+Ranked:
+True
+ 
+# METHOD DESCRIPTION SECTION
+Method:
+ 
+To predict binding to PHIP2 we trained a random forest classifier. We only attempted to predict binders for the S1 pocket. Other pockets (S2, S3, S4) are on the outside surface of the protein and are affected by crystal packing. When we generated crystal lattice for provided template pdb structure we could see that pockets S2, S3 and S4 are formed on the interface of neighboring macromolecules. As much as they are relevant in crystallography they will not be as biologically relevant as pocket S1.
+ 
+Github repository:
+ 
+https://github.com/compsciencelab/SAMPL7
+ 
+Data Collection:
+ 
+We sourced the data from 3 sources: PDB, ChEMBL and publication featuring x-ray structures for PHIP2 (Cox, Oakley B., et al. "A poised fragment library enables rapid synthetic expansion yielding the first reported inhibitors of PHIP (2), an atypical bromodomain." Chemical science 7.3 (2016): 2322-2330.)
+ 
+  	Data Set from Publication:
+First part of the data was sourced from a publication on x-ray fragment screening on PHIP2 (Cox, Oakley B., et al. "A poised fragment library enables rapid synthetic expansion yielding the first reported inhibitors of PHIP (2), an atypical bromodomain." Chemical science 7.3 (2016): 2322-2330.)
+The sdf file with DSPL1 library containing 407 fragments was downloaded from supplementary information of the publication. 4 fragments were x-ray binders and the remaining 403 were non-binders. This data set was later expanded with additional follow-up molecules sourced from the same publication, resulting in 6 additional binders and 45 non-binders.
+ 
+  	PDB:
+Due to the lack of available structural data for PHIP2, we extended data collection to other representatives of bromodomain family that possessed x-ray structure in PDB. The selection was made based on Pfam database (http://pfam.xfam.org/family/Bromodomain)
+List of selected uniprot ids: [Q9NR48, Q6PL18, Q9ULI0, Q9NRL2, Q9UIF9, Q9UIF8, Q5A4W8, Q12830, O95696, P25440, Q15059, Q8K2F0, O60885, Q9ESU6, Q9NPI1, Q9H8M2, Q58F21, Q91Y44, P55201, Q9NSI6, Q92793, P45481, Q9BXF3, D0A3H5, D0A8L1, E9BA17, E9BU22, E9BU61, Q09472, F0X3M9, Q03330, H0Y4R8, Q92830, Q92831, Q9JHD1, Q86U86, Q8BSQ9, Q8WWQ0, Q9ULU4, Q382J7, Q38AE9, Q38AM1, Q5CQB7, Q5CUE2, Q8IJ72, Q8IK82, Q02206, P51531, P51532, Q13342, P21675, Q8IZX4, O15164, Q9UPN9, Q15326, Q8R5C8]
+ 
+1214 PDB structures corresponding to listed uniprot ids were downloaded and all non-protein residues were extracted from the pdb structures. From further analysis we excluded modified amino-acids, metal ions and molecules with less than 3 heavy atoms. Next sdf files for selected ligands were downloaded from PDB.
+ 
+  	ChEMBL:
+For the same uniport codes all available activity data in ChEMBL was collected. The code is available in github repository.
+ 
+Data Processing:
+ 
+  	Test set:
+The molecules provided in SAMPL, for which prediction had to be made, were prepared using MOE. Protomers and tautomers were enumerated at pH of 6 (as indicated in experimental conditions). Stereoisomers were enumerated if chirality of molecule was not indicated in SMILES. At the end we made a prediction for each of the isomers individually.
+ 
+  	Training set:
+Molecules sourced from the publication and PDB molecules were protonated at pH = 6 (as indicated in publication) using MOE. Tautomers and protomers were enumerated. For the ligands from the publication stereoisomers were enumerated if chirality of molecule was not indicated in SMILES.
+Tautomers and protomers of ChEMBL ligands were enumerated at the pH = 7 using MOE. Due to the size of this data set (more than 70k mols) chirality was not considered.
+ 
+Molecules from both training and test set were represented as a combination of Morgan fingerprint (with nBits=4096) and other rdkit descriptors, computed using rdkit. Details of data processing are described in github repository.
+ 
+Model Training:
+ 
+Molecules form the publication were classified as binders or non-binders based on the information from the paper. All the PDB ligands were classified as binders. All ChEMBL ligands with pAcc > 5.5 were classified as binders, where pAcc is a negative logarithm of a activity measurement (IC50, EC50, Ki, Kd, etc.). All the remaining ChEMBL ligands were classified as nonbinders. The choice of threshold value was based on the distribution of activity values of all CheMBL ligands.
+ 
+As a classifier we used RandomForestClassifier available in scikit-learn package, with n_estimators = 10000. The code is available in github repository.
+ 
+Prediction:
+ 
+Molecules provided by SAMPL were processed as described above. We used our pre-trained model to compute probabilities of molecules being binders and selected the ones with probability higher than 0.5. Predictions for all isomers were done individually and then selected molecules were inspected with the focus on their protonation states. None of the molecules selected by the model was discarded. 
+
+

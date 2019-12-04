@@ -1,0 +1,57 @@
+# Results for PHIP2 virtual screening
+ 
+# PREDICTIONS SECTION
+# Any compounds not listed are assumed to be predicted as nonbinders.
+Predictions:
+F147, true, false, false, false, true
+F168, true, false, false, false, true
+F267, true, false, false, false, true
+F425, true, false, false, false, true
+F448, true, false, false, false, true
+F471, true, false, false, false, true
+F484, true, false, false, false, true
+F487, true, false, false, false, true
+F517, true, false, false, false, true
+F759, true, false, false, false, true
+ 
+# PARTICIPANT INFORMATION SECTION
+Participant name:
+Maciej Majewski
+ 
+# Full list of contributors:
+# Maciej Majewski 1
+# Jose Jimenez-Luna 2
+# Alejandro Varela-Rial 3
+# Alberto Cuzzolin 3
+# Gianni De Fabritiis 1, 3, 4
+ 
+Participant organization:
+Universitat Pompeu Fabra, Spain
+ 
+# Full list of affiliations:
+# 1. Computational Science Laboratory, Universitat Pompeu Fabra, PRBB, Barcelona, Spain
+# 2. Department of Chemistry and Applied Biosciences, RETHINK, ETH Zurich, Switzerland.
+# 3. Acellera, Barcelona, Spain
+# 4. Institucio Catalana de Recerca i Estudis Avancats (ICREA), Barcelona, Spain
+ 
+# METHOD NAME SECTION
+Name:
+rdkit_logP_pred
+ 
+# SOFTWARE SECTION
+Software:
+python 3.6.9
+rdkit 2019.09.1.0
+ 
+# METHOD CATEGORY SECTION
+Category:
+Null
+ 
+# RANKING INFORMATION SECTION
+Ranked:
+False
+ 
+# METHOD DESCRIPTION SECTION
+Method:
+
+Ligands were prepared by enumerating stereoisomers (where it was not explicitly defined), tautomers and protomers. Then logP was calculated using rdkit.Chem.Descriptors.MolLogP function. The ligands were sorted based on calculated logP and then top 10 were chosen as binders. Only 10 were chosen to match 1.2% hit rate from the publication: Cox, Oakley B., et al. "A poised fragment library enables rapid synthetic expansion yielding the first reported inhibitors of PHIP (2), an atypical bromodomain." Chemical science 7.3 (2016): 2322-2330. 
