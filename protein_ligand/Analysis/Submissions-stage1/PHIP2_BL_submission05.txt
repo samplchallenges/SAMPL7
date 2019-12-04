@@ -1,0 +1,212 @@
+# Results for PHIP2 virtual screening
+# Submission05: All fragment from protocol with MMGBSA less than 22 for the docking pose
+#
+# This file will be automatically parsed.  It must contain the following eight elements:
+# predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
+# These elements must be provided in the order shown.
+# The file name must begin with the letters "PHIP2" and then be followed by an underscore or dash.
+#
+# FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
+# Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
+# contains a non-UTF-8 character, you may note it in comments near that entry.
+
+
+# PREDICTIONS SECTION
+#
+# The data in each prediction line should be structured as follows:
+# Fragment identifier, binding in S1 (true/false), binds in S2 (true/false), binds in S3 (true/false), binds in S4 (true/false), binds overall (true/false).
+# Any compounds not listed are assumed to be predicted as nonbinders.
+# The list of predictions must begin with the "Predictions:" keyword, as illustrated here.
+Predictions:
+F350, true, false, false, false, true
+F716, true, false, false, false, true
+F686, true, false, false, false, true
+F568, true, false, false, false, true
+F261, true, false, false, false, true
+F188, true, false, false, false, true
+F586, true, false, false, false, true
+F417, true, false, false, false, true
+F187, true, false, false, false, true
+F326, true, false, false, false, true
+F551, true, false, false, false, true
+F396, true, false, false, false, true
+F33, true, false, false, false, true
+F419, true, false, false, false, true
+F483, true, false, false, false, true
+F360, true, false, false, false, true
+F178, true, false, false, false, true
+F560, true, false, false, false, true
+F403, true, false, false, false, true
+F40, true, false, false, false, true
+F137, true, false, false, false, true
+F357, true, false, false, false, true
+F420, true, false, false, false, true
+F581, true, false, false, false, true
+F545, true, false, false, false, true
+F416, true, false, false, false, true
+F331, true, false, false, false, true
+
+
+# PARTICIPANT INFORMATION SECTION
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+# Author list in alphabetic order: X. Barril, M. Majewski, M. Miñarro, S. Piticchio, M. Rachman, J. Salamanca, D. Serillon, A. Serrano.
+Participant name:
+Barril Lab
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+University of Barcelona, Spain
+
+
+# METHOD NAME SECTION
+#
+# Please provide a brief (40 character limit) informal yet informative name of the method used.
+# Following is sample text; please edit to your taste.
+# The "Name:" keyword is required, as shown here.
+# 40 character limit.
+Name:
+DUck-aided Virtual Screening (DaViS)
+
+
+# SOFTWARE SECTION
+#
+# All major software packages used and their versions.
+# Please use a new line for each software.
+# Following is sample text; please edit to your taste.
+# The "Software:" keyword is required.
+Software:
+rDock 2013.1
+Amber16
+AmberTools16
+MDmix 0.2.0
+Gromacs version 2018.1
+LigPrep version 46013
+MOE 2019.0102
+Prime version 5.6 (r012)
+
+
+# METHOD CATEGORY SECTION
+#
+# State which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`. 
+# If your method takes advantage of multiple approaches please report more than one category label, separated by comma.  
+# `Docking` category refers to structure-based virtual screening methods that model the structure of the receptor binding pocket and pose of the ligand followed by an scoring the goodness of the fit .
+# `Ligand-based` methods are virtual screening methods that do not rely on protein structure such as pharmacophore modeling, ligand shape-based, 2D or 3D structural similarity based methods.
+# `MD` methods utilize molecular dynamics simulations based on molecular mechanics including free energy calculations.
+# `ML` category includes machine learning, QSPR approaches, and all prediction methods trained on empirical knowledge.
+# `Null` predictions employ a model which is not expected to produce useful predictions, however,  can provide a simple comparison point for more sophisticated methods, as ideally, good methods should outperform the null model.
+# If these categories do not match your method, report as “Other”.
+# If you choose the `Other` category, please explain your decision in the beginning of Method Description section.  
+# The `Category:` keyword is required.
+Category:
+Docking, MD
+
+
+# RANKING INFORMATION SECTION
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+False
+
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of detail should be at least that used in a publication.
+# Please include the values of key parameters, with units, and explain how any
+# statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# Please explicitly describe how you handle ions (e.g. counterions) and pKa effects
+# Following is sample text; please edit to your taste.
+# All text following the "Method:" keyword will be regarded as part of your free text methods description.
+Method:
+System analysis.
+From previous studies of bromodomains it is known that S1 is the main cavity, binding the substrate acetyllysine. Normally, bromodomains have an asparagine residue mediating the binding of the acetyllysine and a set of 4-7 waters at the bottom of the cavity. Differently from the other bromodomains, PHIP(2) doesn’t contain an asparagine but a threonine (THR1396).
+A comparison with other bromodomain structures shows that PHIP(2) maintains the following water molecules: HOH14, HOH20, HOH22, HOH23, HOH24, HOH41.
+In PDB there are 8 experimental structure of PHIP(2), all containing a ligand only in S1: 3MB3, 5ENB, 5ENC, 5ENE, 5ENF, 5ENH, 5ENI, 5EHJ.
+A molecule of water (HOH26) mediates the interaction between THR1396 and the ligand (or acetyllysine), in the same way as asparagine in other bromodomains, in 6 out of the 8 ligands (3MB3, 5ENB, 5ENC, 5ENH, 5ENI, 5EHJ).
+The remaining ligands 5ENE, 5ENF are interacting directly with the threonine 1396 and they show an additional interaction with tyrosine 1350.
+Additionally, ligand of 5ENB displace one of the water in the bottom of the cavity (HOH23).
+
+MDmix.
+MDmix [1] simulation with only water and restraints in the backbone shows water mapping coinciding with the 6 crystal waters. MDmix simulation with ethanol 20% shows that the water molecule HOH23 is easily displaceable. For this reason we decided to include 5 structural water molecules in the docking protocol, but HOH23 was optional considered only in one docking protocol.
+
+Molecular Dynamics.
+Comparing the PDB structures with the given APO structure, and according to the position of the TYR1350, we could distinguish 3 different conformations, “open”, “semi-open” and “closed” conformation. In particular, the APO structure shows a closed conformation.
+In order to better understand the motion of the APO structure a classical Molecular dynamics simulation is performed with Gromacs. We can see that most of the variability is carried by the movement of the ZA-Loop. That allow us to extract several conformations of the APO-protein based on the movement of the loop.
+In order to consider how a ligand can stabilise the complex (protein-ligand), we decided to launch another MD from the 5ENF The system is prepared, charged and solvated with AMBER using antechamber and tleap. The ligand was parameterized using GAFF.
+The minimization of the protein is realized in three steps, using steepest descent and conjugated gradient algorithm. 100ps of equilibration are realised with md integrator. System was solvated with ~7500 TI3P water in a cubic box whose dimensions were approximately 47x42x40 angstroms. Production simulation were run in the NPT ensemble with temperature control using V-rescale thermostat at 300K and with tau_t = 0.1 and pressure control provided by Berendsen barostat. A cutoff-scheme=Verlet is used and the frequency to update the neighbor list is initially set at 10 (nstlist is actually a minimum value and gmx mdrun might increase), whereas long-range electrostatics were handled with the PME method with PME order set at 4.0.
+100ns of simulation are realised for the systems, with a snapshot every 0.1ps for a total of 1000 frames for all the simulations.
+We can conclude that the opening of the cavity happen frequently. The ZA-loop, though, is very flexible and during the simulation shows different conformations. The presence of the ligand stabilizes the movement of the loop, maintaining it in the open conformation.
+For this reason, we decided to use one of the “open” conformations from the structures in PDB. Among the structures, 5ENC present the most opened conformation and the best resolution so it was the one used in the following binding assessment.
+
+Data preparation.
+Considering the unusual water-mediated interaction, we decided to tune our protocol using the 8 ligand present in the PDB and 7 inactive obtained from the paper of Cox et al. [2]  (s1, s14, s24, s5, s29, s34, 19).
+The dataset was prepared by enumerating  tautomers and protomers at pH = 5.6+-1 (experimental conditions given) with LigPrep. Stereoisomers were enumerated if the absolute configuration of the chiral centers was not defined. The library of fragments was prepared in the same way.
+The protein was prepared with MOE using the structure preparation tool and protonated at pH 5.6 with the Protonate 3D function.
+As said previously, five structural waters at the bottom of the cavity (HOH14, HOH41,HOH20,HOH24,HOH22) and the one involved in the interaction (HOH26) were maintained. HOH23 was maintained in only one docking protocol.
+
+Docking.
+Molecular docking simulations were calculated with rDock [3] using pharmacophoric restraints. Bearing in mind the complexity of the system, four docking protocols (A, B, BW1 and C) were designed.
+Each protocol has different pharmacophore restraints according to the structure used as reference to retrieve X-ray binding mode.
+In protocol A, the PDBid 5ENB was used as reference to collect the pharmacophore restraints. The mandatory restraints are an acceptor in the position of a water (W1 i.e.HOH23) with a radius of 1.0 A, aromatic with a radius of 2.3 A and either acceptor or donor with a radius of 1.0 A close to the structural PHIP water (PW i.e. HOH26).
+For protocol B, the structures to consider for the pharmacophore are the PDBids 5ENC, 5ENH, 5ENI and 5ENJ. The mandatory restraints are a hydrophobic region over a water-network with a radius of 2.5 A (methyl of acetyl-amide group of the ligands), aromatic with radius 2.3 A and either acceptor or donor with a radius of 1.0 A facing the PW.
+For protocol BW1 the same restraints as protocol B were applied, but the water molecule HOH23 was included in the binding pocket.
+Protocol C was based on the PDBids 5ENE and 5ENF and the mandatory restraints are the hydrophobic region over a water-network with a radius of 2.5 A, aromatic with a radius of 2 A and the direct interaction with the threonine 1396 as donor or acceptor with a radius of 1.0 A.
+The standard docking protocol was used for 100 run per ligand isomer/protomer.
+
+Post-filtering of poses.
+The 100 poses per ligand isomer/protomer were ranked by “SCORE” (overall score). They were clustered using sdrmsd script from rDock. The poses  with a “SCORE.RESTR” (pharmacophoric restraints score) higher than 0.00 were discarded. The best “SCORE” pose per cluster was selected and for the same  isomer/protomer the best “SCORE” pose between clusters was selected. The selected poses of all the isomers/protomers of the same fragments were ranked together by “SCORE.INTER” (score of the interaction with the protein) and the best one per fragment was selected. The ones with positive SCORE.INTER were discarded.
+The same protocols were applied to the x-ray ligands, the inactives and the library of fragments.
+From the results of protocol BW1 on the library of fragments, only the fragments not overlapping with the ones resulting from protocol B were considered.
+
+Dynamic Undocking (DUck).
+After docking we used a modified Dynamic Undocking (DUck) [4] to assess the poses generated by docking for each dataset.
+For the four protocols, the open conformation (based on 5ENC) was used as the base for the chunk. The chunk was created keeping ASN1330-VAL1366 and LYS1383-GLU1416 in order to reduce computational cost.
+Two different DUck protocols were applied to the docking poses.
+The poses from the docking protocol C were analyzed using the standard DUck procedure, steering from the threonine1396’s OG1  to the ligand’s closest interacting atom, from 2.5 to 5 A.
+For the poses coming from the docking protocol A, B and BW1 we defined the collective variable as the distance between the threonine1396’s OG1 to the ligand’s center of mass from 4.5 to 7 A. With that, the water bridge was taken into account. Additionally, for the Water 1619 to stan on place, it was added to the harmonic constraint mask (which normally only affects the protein) and the force value was increased to 10 kcal/mol. Finally, the distance restraint during the md was also adapted to fit the 4.5 starting distance for the steering.
+The analysis of the trajectories was performed using an adapted version of the DUck tools, because of normalization issues regarding the different collective variable.
+A WQB threshold of 2 kcal/mol was used to distinguish binders (WQB>2) and non-binders. This is the threshold we usually apply for fragments in our lab and also corresponded to the worse WQB obtained using the crystalized ligands (2.071 kcal/mol).
+The results were then curated by choosing those with an acceptable work distribution. The curation was done manually, although efforts are being put on automatizing, especially the minima analysis.
+The results showed that the inactives molecules didn’t pass any of the filters. For the PDB ligands we were able to correctly select the poses of protocol A/B for all the ligands doing the water bridge interaction but one (3MB3, which is the smallest one), discarding the incorrect poses obtained from protocol C (direct-interaction). Nonetheless, using the direct interaction we could not recover any of the two corresponding ligands (5ENE & 5ENF).
+We conclude that we can use this protocol to discard the majority of non-binders, taking into consideration that in the case of protocol C could be false positive and additional analysis can be necessary on the binders obtained.
+
+Visual Inspection.
+After visual inspection of these compounds we found that some ligands showed a wrong protonation state at pH 5.6+-1. we confirm the correct protonation with Chemicalize webpage (https://chemicalize.com/). For those binders we checked if the correct state passed the docking filters, if not then we discard the compound. If it passes then we apply the DUck protocol and filters as usual and keep it if it passes them.
+We noticed that some ligands’ bonding pose shifted in a high manner from the docking pose during the md steps of DUck. For that we ran two different analysis to check how each compound is moving during the simulation. We have checked it using the ligand’s B-factor and RMSF during MD and the RMSD between the average coordinates of the md and the initial position.
+For the B-factor/RMSF we have used from md1 to md9 trajectories from DUck. For the RMSD we have used the average structure of those same md trajectories and aligned it to the rDock pose using only the CA atoms, then extracted the rmsd for the non-hydrogen atoms.
+Plotting RMSD (y axis) vs RMSF (x axis) and applying a cutoff for RMSD of 2A and a cutoff of RMSF of 1.2A  we could distinguish 4 quadrants starting from the left bottom in clockwise order:
+1)RMSD<2A and RMSF< 1.2 : The docking pose are correct and stable during MD.
+2)RMSD>2A and RMSF<1.2 : The compound finds a stable position during MD but it is very different from the pose obtained by rDock.
+3)RMSD>2A and RMSF>1.2 : The compound does not have a stable binding pose and it’s different from the docking pose, which might indicate a false positive.
+4)RMSD<2A and RMSF>1.2 : The compound does not have a stable binding pose but it’s similar to the docking pose.
+We also calculated MMGBSA energies using Schrodinger’s Prime for both the docking pose and the final pose found with DUck as an optional filtering criteria. We found that the best MMGBSA energies were found in the first quadrant. As such, we decided to have an unranked submission only based on the results of MMGBSA, we used -22 kcal/mol as threshold, equal to the worse score observed for the x-ray ligands.
+In the quadrant 4 there was only one fragment includes and we saw that the majority of mobility was given from a bromide which can be an artifact of MD and we decided to include on the quadrant 1.
+We decided to do different submission according to the strictness of our criteria. From the less strict to the more strict criteria the submissions will be:
+1) Include all the fragments that we have obtained until this point.
+2) Exclude all the fragments in quadrant 3 (high RMSD and high RMSF).
+3) Excluding all the fragments in quadrant 3 and molecules with RMSD higher than 5 (The average position is not buried in the cavity).
+5) Include only fragment in quadrant 1 (low RMSD and low RMSF meaning that we can be more confident on the prediction and the pose stable).
+From submission 1 to 5 we expect to lose “Recall” but we expect to increase “Precision”.
+From a majority vote we decided to consider as ranked the N3. The main reason was that we predict it to yield a good balance between precision and recall.
+Additional not ranked submission will be:
+6) All molecules with a  Wqb>4, simply being more strict in the choosing of score cutoff. 4 kcal/mol is chosen arbitrarily as the double of the score that we generally use to select the good poses in order to be sure to only have “real binders”.
+7) All molecules with a MMGBSA score < -22 for the docking pose. To see if we could have distinguished only based on this score.
+8) All molecules with a MMGBSA score < -22 for the final pose after MD of DUck.
+9) Substructure search of crystallized compounds.
+
+Other cavities.
+For the lack of binders in the other cavities (except EDO, GOL etc…) we couldn’t prepare a ligand-based pharmacophore. For this reason we decided to use our solvent-mixed molecular dynamics program, MDmix, to obtain solvent maps that can help obtain pharmacophoric points in the cavities S2, S3, S4.
+For S3 we didn’t find any solvent pattern. For S4 we obtained only a hydrophobic point but in the Apo conformation, not in the open conformation, suggesting that only small ligand could bind there, and the binding of those would not allow any binding in the main cavity S1. S2 contained more pharmacophoric points and we could use them for the protocol. In addition from a search of sequence-related bromodomains we found that an imidazole could bind in this position. Though, the packing of the crystal showed that the actual cavity is smaller than expected and the pharmacophoric points where not adjusting to the new cavity definition. For this reason we decided not to apply the protocol to this cavity.
+
+References:
+[1]J.Med.Chem.2014,57,20,8530-8539
+[2]Chem.Sci.,2016,7,2322.DOI:10.1039/c5sc03115j
+[3]PLoS Computational Biology,2014,10(4),pp.e1003571.
+[4]Nature Chemistry.2017,9,201-206.
+
