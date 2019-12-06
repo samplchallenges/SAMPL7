@@ -305,11 +305,11 @@ if ("__main__") == (__name__):
     ######Usage exmaple######
     ### Use the alignment option to realign the submitted structure onto the crystal position###
     ### Here the answer file under folder template_at_crystal_position should be used ###
-    # python D3R_GC2_rmsd_calculation.py --submitdir ./example_submission_folder --templatedir ./template_at_crystal_position --alignment
+    # python RMSD_calculator.py --submitdir ./example_submission_folder --templatedir ./template_at_crystal_position --alignment
 
     ### Directly calculate the RMSDs between submitted structure with the template ligand ###
     ### Here the answer file under folder template_at_APO_position should be used ###
-    # python D3R_GC2_rmsd_calculation.py --submitdir ./example_submission_folder --templatedir ./template_at_APO_position
+    # python RMSD_calculator.py --submitdir ./example_submission_folder --templatedir ./template_at_APO_position
 
     #Note for FXR system, we notice that using the alignment option will get a slightly lower RMSDs, so our reported RMSDs are RMSDs with the alignment method.
     #########################
