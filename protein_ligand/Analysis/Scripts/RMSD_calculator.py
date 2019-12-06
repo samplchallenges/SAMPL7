@@ -99,9 +99,8 @@ def wait_and_check (filename, timestep = 100, how_many_times = 1000):
             return True
     return False
 
-def extract_ligand_from_complex (complex_pdb_file, ligand_pdb_file, ligand_info = "UNK-900"):
-    #here the default ligand info is from schrodinger structure convert default ligand name.
-    #TO DO: Will need to update ligand info here.
+def extract_ligand_from_complex (complex_pdb_file, ligand_pdb_file, ligand_info = "UNL"):
+    #here the default ligand info is the residue name OpenEye assigns for unknown ligands, UNL.
 
     print('we are now entering extract ligand from complex', complex_pdb_file, ligand_pdb_file)
     complex_file = open(complex_pdb_file, "r")
@@ -118,7 +117,6 @@ def extract_ligand_from_complex (complex_pdb_file, ligand_pdb_file, ligand_info 
 
 
 def convert_ligand_format (input_ligand, output_ligand):
-    #TO DO: Probably will need to standardize ligand residue name so it can be recognized when extracting from complex
     print('We are now converting the ligand format:', input_ligand, output_ligand)
     try:
         mol = OEMol()
@@ -215,7 +213,7 @@ def rmsd_calculation(input_ligand, template_ligand, input_protein, template_prot
         #step 5: split the aligned protein to get aligned ligand
         aligned_input_ligand = input_ligand_title + "_vs_" + template_ligand_title + "_ligand_aligned.pdb"
         try:
-            extract_ligand_from_complex(aligned_ligand_protein_complex, aligned_input_ligand, ligand_info = "UNK-900")
+            extract_ligand_from_complex(aligned_ligand_protein_complex, aligned_input_ligand, ligand_info = "UNL")
             logging.info("Successfully extract ligand file %s from aligned complex %s"%(aligned_input_ligand, aligned_ligand_protein_complex))
         except:
             logging.info("\tFatal Error: Cannot extract ligand file %s from aligned complex %s"%(aligned_input_ligand, aligned_ligand_protein_complex))
