@@ -27,7 +27,6 @@ All three host-guest components of this challenge are now final and launched, th
 - Experimental results for the host-guest challenge (except for TrimerTrip, which is available now)
 - Analysis of submissions for the host-guest challenge
 - PHIP2 protein-ligand challenge details for Stage 3.
-- PHIP2 submission link for stage 2
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -49,6 +48,7 @@ All three host-guest components of this challenge are now final and launched, th
 - (12/2/2019): Add PHIP2 Stage 2 inputs
 - (12/5/2019): Add PHIP2 Stage 2 submission format. Submission link still to come.
 - (12/7/2019): Add PHIP2 example submission package.
+- (12/7/2019): Add link to bare-bones [PHIP2 Stage 2 submission uploads](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/) -- open for submissions, but does not yet validate that provided poses are valid. Use at your own risk.
 
 
 ## Challenge overview

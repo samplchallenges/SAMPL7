@@ -117,7 +117,7 @@ Please, note that predictions should be done considering the C2 crystal form and
 - Coordinates of atoms marking the binding sites are provided in the `PHIPA_C2_apo_sites.pdb` file, as described above
 - Rules: See below
 - Submission format: Provided below.
-- Submission link: To be provided as soon as available.
+- Submission link: [A preliminary submission handling page is available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). This is open for submissions, but does not yet validate that provided poses are valid. Use at your own risk. We hope to update by Tuesday with additional checking that ensures we can read the molecules/poses you provide; currently we only check that you have provided all required files and we can parse your description.
 
 ### Rules for Stage 2
 
@@ -151,7 +151,7 @@ So for example for ligand F13, you might submit:
 - PHIP2-F13-1.sdf
 - PHIP2-F13-2.pdb
 - PHIP2-F13-2.sdf
-if you were submitting two poses. (The lowest numbered poses will be assumed to be those predicted to be most favorable.) These would be placed into a single directory along with any other files to be submitted (minimally, poses for [all compounds binding in S1](Stage-2-input-data/site-1_fragment_hits.csv)) along with your `PHIP2_2-description.txt` file, then tarred, gzipped, and uploaded to our submission site. An example submission package is provided in [Examples/stage2_docking/PHIP2_2_poses.tar.gz](`Examples/stage2_docking/PHIP2_2_poses.tar.gz`).
+if you were submitting two poses. (The lowest numbered poses will be assumed to be those predicted to be most favorable.) These would be placed into a single directory along with any other files to be submitted (minimally, poses for [all compounds binding in S1](Stage-2-input-data/site-1_fragment_hits.csv)) along with your `PHIP2_2-description.txt` file, then tarred, gzipped, and uploaded to our submission site. An example submission package is provided in [Examples/stage2_docking/PHIP2_2_poses.tar.gz](`Examples/stage2_docking/PHIP2_2_poses.tar.gz`). Submissions must be uploaded via the link above.
 
 We anticipate judging poses in two ways -- first, considering only the top-scoring (first) pose from each submission and, second, considering the lowest-RMSD pose out of all submitted poses. These results will be analyzed and presented separately.
 
