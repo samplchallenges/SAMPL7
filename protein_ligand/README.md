@@ -151,7 +151,7 @@ So for example for ligand F13, you might submit:
 - PHIP2-F13-1.sdf
 - PHIP2-F13-2.pdb
 - PHIP2-F13-2.sdf
-if you were submitting two poses. (The lowest numbered poses will be assumed to be those predicted to be most favorable.) These would be placed into a single directory along with any other files to be submitted (minimally, poses for [all compounds binding in S1](Stage-2-input-data/site-1_fragment_hits.csv)) along with your `PHIP2_2-description.txt` file, then tarred, gzipped, and uploaded to our submission site. An example submission package will be provided.
+if you were submitting two poses. (The lowest numbered poses will be assumed to be those predicted to be most favorable.) These would be placed into a single directory along with any other files to be submitted (minimally, poses for [all compounds binding in S1](Stage-2-input-data/site-1_fragment_hits.csv)) along with your `PHIP2_2-description.txt` file, then tarred, gzipped, and uploaded to our submission site. An example submission package is provided in [Examples/stage2_docking/PHIP2_2_poses.tar.gz](`Examples/stage2_docking/PHIP2_2_poses.tar.gz`).
 
 We anticipate judging poses in two ways -- first, considering only the top-scoring (first) pose from each submission and, second, considering the lowest-RMSD pose out of all submitted poses. These results will be analyzed and presented separately.
 
