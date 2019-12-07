@@ -48,6 +48,7 @@ All three host-guest components of this challenge are now final and launched, th
 ### Changes not in a release
 - (12/2/2019): Add PHIP2 Stage 2 inputs
 - (12/5/2019): Add PHIP2 Stage 2 submission format. Submission link still to come.
+- (12/7/2019): Add PHIP2 example submission package.
 
 
 ## Challenge overview
