@@ -116,15 +116,16 @@ Please, note that predictions should be done considering the C2 crystal form and
 - isomeric SMILES strings for the binding fragments for each site: See Manifest below
 - Coordinates of atoms marking the binding sites are provided in the `PHIPA_C2_apo_sites.pdb` file, as described above
 - Rules: See below
-- Submission format: To be posted shortly; note that you will need to submit a text method description and posed ligands (see Rules below).
+- Submission format: Provided below.
+- Submission link: To be provided as soon as available.
 
 ### Rules for Stage 2
 
 **Start date:** Friday the 29th of November 2019
 
-**Submissions due:**  Thursday the 12th of December 2019, midnight (24:00) US Pacific time
+**Submissions due:**  Thursday the 12th of December 2019, midnight (24:00) US Pacific time.
 
-In brief, expect to submit a detailed text format method description similar to that used in Stage 1, as well as poses for all of your predicted binders in the same frame of reference as the provided apo structure (`PHIPA_C2_Apo.pdb`). It is likely that submissions will be requested to include only ligand poses (in .mol2, .sdf or .pdb format) without the protein, though this is still being finalized. Submission instructions will be provided here once available.
+In brief, expect to submit a detailed text format method description similar to that used in Stage 1, as well as poses for all of your predicted binders in the same frame of reference as the provided apo structure (`PHIPA_C2_Apo.pdb`), along with the corresponding protein structure for each pose, as further detailed below.
 
 If you choose to use other protein structures other than the provided apo structure in making your predictions, these should be described in your Method description. You may draw on any existing literature data that you wish, just make sure to clearly describe any data utilized in your Methods.
 
@@ -134,6 +135,29 @@ As in Stage 1, while you are welcome to submit multiple entries in order to test
 We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
 
 If multiple submissions are incorrectly provided as "ranked" by a single participant, we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
+
+**Submission format**: Your submissions be provided in a single compressed, archived `.tar.gz` file which contains a set of files described below. This file name should have the prefix `PHIP2` followed by a dash or underscore and end with `.tar.gz`. This file should contain a single compressed directory including pose predictions and a completed submission description file named `PHIP2_2-description.txt` based on [our format](stage2_submission_template.txt). This file is used to submit one set of predicted protein-ligand poses, where up to five poses are permitted for each protein-ligand pair (if multiple poses are submitted, your poses are expected to be submitted in ranked order, with pose 1 being the top-scoring pose and pose 5 being the worst scoring pose). Each pose `.tar.gz` file must contain, for each ligand, a minimum of one and up to 5 protein structure PDB files and 5 corresponding ligand poses (in MDL `.mol`, format, `.sdf` format, or `.mol2` format) predicted by a method described in the separately uploaded pose prediction description file.  
+
+**Each pose prediction must be provided in the form of a protein structure PDB file and a corresponding ligand structure file (`.sdf`, `.mol2`, or MDL `.mol`) with all-atom 3D atomic coordinates for the pose, where the coordinates in the protein PDB file and the ligand molfile are in the same frame of reference**. Any ligand coordinates provided in PDB format or included in the protein PDB files will be ignored. You may treat the protein as rigid or flexible, but you must rotationally and translationally superimpose all of your final structure predictions, onto the [reference protein structure provided](PHIPA_C2_Apo.pdb) in the challenge data package in order to facilitate evaluation of your predictions.
+
+The file names of your pose prediction protein PDB and ligand mol files must be constructed as follows:
+
+```
+PHIP2-<LigandID>-<poseRank>.pdb
+PHIP2-<LigandID>-<poseRank>.mol (or .sdf or .mol2)
+```
+So for example for ligand F13, you might submit:
+- PHIP2-F13-1.pdb
+- PHIP2-F13-1.sdf
+- PHIP2-F13-2.pdb
+- PHIP2-F13-2.sdf
+if you were submitting two poses. (The lowest numbered poses will be assumed to be those predicted to be most favorable.) These would be placed into a single directory along with any other files to be submitted (minimally, poses for [all compounds binding in S1](Stage-2-input-data/site-1_fragment_hits.csv)) along with your `PHIP2_2-description.txt` file, then tarred, gzipped, and uploaded to our submission site. An example submission package will be provided.
+
+We anticipate judging poses in two ways -- first, considering only the top-scoring (first) pose from each submission and, second, considering the lowest-RMSD pose out of all submitted poses. These results will be analyzed and presented separately.
+
+If your submissions are incomplete (e.g. you omit required ligands, are missing required files, or do not use the correct frame of reference) we reserve the right not to evaluate them, though we hope our submission system will be able to provide a preliminary assessment of whether we can parse your submissions.
+
+Please do not use negative residue numbers in submitted PDB files, and avoid nonstandard characters in your submitted files.
 
 ## Stage 3: Selection of novel binders from a database
 
