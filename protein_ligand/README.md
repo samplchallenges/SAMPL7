@@ -156,3 +156,4 @@ Depending on the outcome of potential affinity measurements and other details, w
 
 ## Additional manifest
 - `Analysis`: Submissions and analysis for the various challenges
+- `Examples`: Example submission(s).
