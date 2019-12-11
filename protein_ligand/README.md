@@ -110,7 +110,7 @@ The *apo* structure of PHIP2 that was provided in stage 1 (`PHIPA_C2_Apo.pdb`) m
 
 Please, note that predictions should be done considering the C2 crystal form and soaking method described in Stage 1. Other structures are available in the PDB but were crystallized in another crystal form. Screening against different crystal forms often leads to differential fragment-hit identification due to solution and solid state effects such as pH and crystal packing. Thus, if you choose to use PDB structures you should pay particular attention to the possibility of such differences.
 
-Here, compound stocks were purchased as as racemic mixes; the higher affinity conformer should be revealed in the electron density. However, the both stereoisomers can also bind the target resulting in an average density. Participants may wish to take this information into account. 
+Here, compound stocks were purchased as as racemic mixes; the higher affinity conformer should be revealed in the electron density. However, the both stereoisomers can also bind the target resulting in an average density. Participants may wish to take this information into account.
 
 ### Provided data for Stage 2
 
@@ -125,7 +125,7 @@ Here, compound stocks were purchased as as racemic mixes; the higher affinity co
 
 **Start date:** Friday the 29th of November 2019
 
-**Submissions due:**  Thursday the 12th of December 2019, midnight (24:00) US Pacific time.
+**Submissions due:**  Saturday the 14th of December 2019, noon (12:00) US Pacific time.
 
 In brief, expect to submit a detailed text format method description similar to that used in Stage 1, as well as poses for all of your predicted binders in the same frame of reference as the provided apo structure (`PHIPA_C2_Apo.pdb`), along with the corresponding protein structure for each pose, as further detailed below.
 
@@ -171,7 +171,7 @@ Crystallography will be used to assay compounds for activity. Follow-up compound
 
 **Provided data**: Cocrystal structures, list of candidate compounds, possibly directing participants to predict binders to the main binding site of interest, rules for stage 3 of the challenge, and submission instructions.
 
-**Start date:** Friday the 13th of December 2019
+**Start date:** Saturday the 14th of December 2019
 
 **End date:**  Monday the 13th of January 2020
 
