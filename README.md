@@ -19,7 +19,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Protein-ligand details on the [PHIP2 stage 1 challenge](protein_ligand/README.md), in the `protein_ligand` directory.
 - [PHIP2 challenge stage 1-2 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
 
-All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 4 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data. The **first stage of the protein-ligand challenge is due Nov. 28, 2019 by midnight (24:00) US Pacific time.**
+All three host-guest challenges are now closed, as is the first stage of the PHIP2 protein-ligand challenge. The **second stage of the protein-ligand challenge is due Dec. 14, 2019 by noon (12:00) US Pacific time.**
 
 ## What's coming
 - GSK logD challenge information as soon as available
@@ -49,6 +49,7 @@ All three host-guest components of this challenge are now final and launched, th
 - (12/5/2019): Add PHIP2 Stage 2 submission format. Submission link still to come.
 - (12/7/2019): Add PHIP2 example submission package.
 - (12/7/2019): Add link to bare-bones [PHIP2 Stage 2 submission uploads](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/) -- open for submissions, but does not yet validate that provided poses are valid. Use at your own risk.
+- (12/11/2019): Update PHIP2 stage 2 deadline to noon US Pacific time Dec. 14.
 
 
 ## Challenge overview
