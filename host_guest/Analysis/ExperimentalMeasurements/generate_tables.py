@@ -222,7 +222,7 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('n', 1)
     ])),
     ('exoOA-g2', OrderedDict([
-        ('DG', -9.2 * u.kilojoules_per_mole), ('dDG', 3.1 * u.kilojoules_per_mole),
+        ('DG', -5.5 * u.kilojoules_per_mole), ('dDG', 1.2 * u.kilojoules_per_mole),
         ('DH', 'ND'), ('dDH', 'ND'),
         ('TDS', 'ND'), ('dTDS', 'ND'),
         ('n', 1)
