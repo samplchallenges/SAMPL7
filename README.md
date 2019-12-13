@@ -48,8 +48,9 @@ All three host-guest challenges are now closed, as is the first stage of the PHI
 - (12/2/2019): Add PHIP2 Stage 2 inputs
 - (12/5/2019): Add PHIP2 Stage 2 submission format. Submission link still to come.
 - (12/7/2019): Add PHIP2 example submission package.
-- (12/7/2019): Add link to bare-bones [PHIP2 Stage 2 submission uploads](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/) -- open for submissions, but does not yet validate that provided poses are valid. Use at your own risk.
+- (12/7/2019): Add link to bare-bones [PHIP2 Stage 2 submission uploads](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/) -- open for submissions.
 - (12/11/2019): Update PHIP2 stage 2 deadline to noon US Pacific time Dec. 14.
+- (12/12/2019): Correct a single exoOA value (for G2) binding, per e-mail from Bruce Gibb. 
 
 
 ## Challenge overview
