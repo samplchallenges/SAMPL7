@@ -169,11 +169,12 @@ Please do not use negative residue numbers in submitted PDB files, and avoid non
 
 Stage 3 focuses on the selection of fragment follow-up compounds from a database for experimental screening via X-ray crystallography (with potential further validation by ITC). The proposed compounds should bind Site 1 and aim at increasing affinity for the receptor. Participants will be provided with the co-crystal structures of the 52 fragment-protein complexes identified by the method described in Stages 1 and 2. We also provide a compound database (and several subsets) from which compounds must be selected for screening.
 
-For the compound databases, we provide a large compound database (`full.txt`) which consists of more than 40M compounds. We additionally provide several subsets of this database if participants would prefer to work with fewer compounds. Participants may recommend any compound(s) from the full database (or its subsets) for screening.
+For the [compound databases](https://dx.doi.org/10.5281/zenodo.3576140
+), we provide a large compound database (`full.txt`) which consists of more than 40M compounds. We additionally provide several subsets of this database if participants would prefer to work with fewer compounds. Participants may recommend any compound(s) from the full database (or its subsets) for screening.
 
 Our full database is a combination of MolPort ["AllStockCompounds"](https://www.molport.com/shop/database-download) from July 2019 (~7.5M molecules), plus the SUBSET of [Enamine REAL](https://enamine.net/library-synthesis/real-compounds/real-database) that is based around the [DSI-Poised fragment library](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Fragment-Libraries/DSI-poised-library.html) and is approximately rule of 5 compliant (~40M molecules). All the compounds are purchasable and predicted binders must be selected from these databases.
 
-Subsets of the full database were selected via a fragment network approach, and are provided in case participants prefer to work with smaller numbers of compounds. The fragment network ([Hall, Murray and Verdonk, 2017](https://pubs.acs.org/doi/10.1021/acs.jmedchem.7b00809)) provides a convenient way to filter-out compounds that are dissimilar to the input hit(s). Overall, this search algorithm requires a compound input and 3 parameters: 1- the number of graph traversals (hops), 2- number of changes in heavy atom count (hac), 3- number of changes in ring atoms counts (rac).  Please, read the above reference for the specifics of the methods. Here, 51 hits were used in the query and the resulting files aggregate the results for all query hits (`output-hops[1;4]-hac[3;5]-rac[1;2].txt`). 
+Subsets of the full database were selected via a fragment network approach, and are provided in case participants prefer to work with smaller numbers of compounds. The fragment network ([Hall, Murray and Verdonk, 2017](https://pubs.acs.org/doi/10.1021/acs.jmedchem.7b00809)) provides a convenient way to filter-out compounds that are dissimilar to the input hit(s). Overall, this search algorithm requires a compound input and 3 parameters: 1- the number of graph traversals (hops), 2- number of changes in heavy atom count (hac), 3- number of changes in ring atoms counts (rac).  Please, read the above reference for the specifics of the methods. Here, 51 hits were used in the query and the resulting files aggregate the results for all query hits (`output-hops[1;4]-hac[3;5]-rac[1;2].txt`).
 
 Please note that the compound `F763 (O=C1N(CCO)C=CC(Br)=C1)` cannot be found in the aggregated results (`output-hops[1;4]-hac[3;5]-rac[1;2].txt`) because it belongs to the FragLites library which was not included in the initial database refinement.
 
@@ -181,7 +182,8 @@ The participants are asked to submit a ranked list of the top compounds they wou
 
 **Provided data**:
 - Cocrystal structure for each hit
-- The full compounds database and various fragment network aggregated results for all hits: see [here](https://zenodo.org/record/3576140#.XfUlXZNKjOQ)
+- The full compounds database and various fragment network aggregated results for all hits -- [DOI 10.5281/zenodo.3576140
+](https://dx.doi.org/10.5281/zenodo.3576140)
 
 ### Rules for Stage 3
 
