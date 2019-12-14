@@ -163,22 +163,47 @@ Please do not use negative residue numbers in submitted PDB files, and avoid non
 
 ## Stage 3: Selection of novel binders from a database
 
-Plans for Stage 3 are still being finalized. However, a brief summary follows below, which will be updated as plans are solidified.
+### Setup and description of Stage 3
 
-**Aim**: The third stage of the SAMPL7 challenge will offer the unique opportunity to select new candidate ligands from a database of purchasable compounds. Cocrystal structures will have been released at the end of Stage 2, allowing participants to exploit that information to predict which new compounds bind to the target as well as their associated binding modes. Selected proposed ligands will be validated experimentally by X-ray crystallography at the Diamond Light Source using the C2 crystal form described in stage 1, but the number of ligands from each submission which are tested will depend on participation numbers.
+**Aim**: Fragment based-drug design aims to elaborate and/ or merge small drug-like compounds into more potent and specific binders. Data-base mining is an essential part of this process as it enables to identify follow-up compounds based on criteria such as biological activity or chemical synthesizability.
 
-Crystallography will be used to assay compounds for activity. Follow-up compounds should aim to improve biding and/or (predicted) potency from the hit they originated from.
+Stage 3 focuses on the selection of fragment follow-up compounds from a database for experimental screening via X-ray crystallography (with potential further validation by ITC). The proposed compounds should bind site 1 and aim at increasing affinity for the receptor. The participant will be provided with the co-crystal structures of the 52 fragment-protein complexes identified by the method described in stage 1 and 2. A compound database (`full.txt`) composed of MolPort ["AllStockCompounds"](https://www.molport.com/shop/database-download) from July 2019 (~7.5M molecules), plus the SUBSET of [Enamine REAL](https://enamine.net/library-synthesis/real-compounds/real-database) that is based around the [DSI-Poised fragment library](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Fragment-Libraries/DSI-poised-library.html) and is approximately rule of 5 compliant (~40M molecules) is also provided. All the compounds are purchasable and the participant's predicted binders must be listed on the database. 
 
-**Provided data**: Cocrystal structures, list of candidate compounds, possibly directing participants to predict binders to the main binding site of interest, rules for stage 3 of the challenge, and submission instructions.
+The fragment network [Hall, Murray and Verdonk, 2017](https://pubs.acs.org/doi/10.1021/acs.jmedchem.7b00809) provides a convenient way to filter-out compounds that are dissimilar to the input hit(s). Overall, this search algorithm requires a compound input and 3 parameters: 1- the number of graph traversals (hops), 2- number of changes in heavy atom count (hac), 3- number of changes in ring atoms counts (rac).  Please, read the above reference for the specifics of the methods. 51 hits were used in the query and the resulting files aggregates the results for all query hits (`output-hops[1;4]-hac[3;5]-rac[1;2].txt`). The participants may or may not choose to use the compounds returned by the fragment networks in they search.
 
-**Start date:** Friday the 13th of December 2019
+Please note that the compound `F763 (O=C1N(CCO)C=CC(Br)=C1)` cannot be found in the aggregated results (`output-hops[1;4]-hac[3;5]-rac[1;2].txt`) because it belongs to the FragLites library which was not included in the initial database refinement.
 
-**End date:**  Monday the 13th of January 2020
+The participants are asked to submit a “top N” list of compounds they would recommend for purchase and assay for binding via crystallography. The same method as stated in stages 1 and 2 will be employed for the crystallographic assay. Thus, the predictions should take into consideration the associated experimental constraints. In addition, participants will be asked to submit confidence estimates along with their predictions. These may be used to help inform selection of compounds, but also to rank final performance -- methods which predict with high confidence that compounds bind will be penalized more if these compounds do not bind.
+
+**Provided data**:
+- Cocrystal structure for each hit
+- The full compounds database and various fragment network aggregated results for all hits: see [here](https://zenodo.org/record/3576140#.XfUlXZNKjOQ)
+
+### Rules for Stage 3
+
+**Start date:** Saturday the 14th of December 2019
+
+**Submission due:**  Monday the 13th of January 2020
+
+Predictions must carried out against site 1 and should aim at increasing the affinity of the follow-up compound(s) with respect with the original hit(s). The proposed compounds must be members of the database (`full.txt`) for purchase purposes. Participants may of may not choose to use the cocrystal-structures and the subsets genarated by the fragment network. They should also keep in into consideration the experimental set-up. 
+
+Because this challenge involves actually purchasing compounds for experimental screening, we will incur significant costs in the process, so the challenge involves a number of unusual aspects and caveats:
+- We reserve the right to decline to purchase compounds proposed by any participant
+- Depending on participation numbers, we may be limited in whether we can purchase compounds proposed by all participants
+- We expect to likely purchase an upper limit of 50-100 compounds in total for screening, though we are pursuing options that might allow us to expand this number.
+- Because of compound limits, submissions are restricted:
+  - No submissions of null models are allowed
+  - No participant may make more than one submission
+- We will likely filter submissions prior to compound selection:
+  - We plan to have several computational experts read provided method descriptions and ensure the approach applied seems reasonable, well justified, and thoroughly described before selecting compounds for screening.
+  - Several chemists will then judge predictions to determine whether, if they were working on this project, they would judge the proposed compounds worth pursuing synthetically for this target, given your provided justification and any proposed rationale or structure activity relationships. (You may address your justification for your choices in your method selection.)
+- If participants are concerned about these filtering steps, we are open to partnerships where participants might pay for the purchase of their proposed compounds from Enamine to ensure we screen them.
+
+**Submission format**: TBD
 
 ## Later stages
 
 Depending on the outcome of potential affinity measurements and other details, we may further extend this challenge by adding more stages. This remains to be determined.
-
 
 ## Additional manifest
 - `Analysis`: Submissions and analysis for the various challenges
