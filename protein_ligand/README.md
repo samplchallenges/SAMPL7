@@ -192,7 +192,8 @@ Predictions must be carried out against Site 1 and should aim at increasing the 
 Because this challenge involves actually purchasing compounds for experimental screening, we will incur significant costs in the process, so the challenge involves a number of unusual aspects and caveats:
 - We reserve the right to decline to purchase compounds proposed by any participant
 - Depending on participation numbers, we may be limited in whether we can purchase compounds proposed by all participants
-- We expect to likely purchase an upper limit of 50-100 compounds in total for screening, though we are pursuing options that might allow us to expand this number.
+- We expect to likely purchase an upper limit of 50-100 compounds in total for screening, though we are pursuing options that might allow us to expand this number. This means that, in all likelihood, not all proposed compounds will be screened.
+- We plan to consider at least the first 10 compounds in each submission for potential screening; depending on participation, our judges may consider additional compounds, but certainly not more than 100 per submission, and we may only consider the first 10 if participation is high.
 - Because of compound limits, submissions are restricted:
   - No submissions of null models are allowed
   - No participant may make more than one submission
@@ -201,7 +202,9 @@ Because this challenge involves actually purchasing compounds for experimental s
   - Several chemists will then judge predictions to determine whether, if they were working on this project, they would judge the proposed compounds worth pursuing synthetically for this target, given your provided justification and any proposed rationale or structure activity relationships. (You may address your justification for your choices in your method selection.)
 - If participants are concerned about these filtering steps, we are open to partnerships where participants might pay for the purchase of their proposed compounds from Enamine to ensure we screen them.
 
-**Submission format**: TBD
+We encourage participants to submit suggested poses of compounds along with their submitted compound choices, especially when using structure-based methods like docking and MD. While such poses will not be judged, participants are welcome to uses these poses as part of their justification for selecting these compounds. Additionally, SAMPL will be able to verify that these predictions were made in advance of experiment.
+
+**Submission format**: The submission format will be announced shortly.
 
 ## Later stages
 
