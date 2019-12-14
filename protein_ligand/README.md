@@ -125,7 +125,7 @@ Here, compound stocks were purchased as as racemic mixes; the higher affinity co
 
 **Start date:** Friday the 29th of November 2019
 
-**Submissions due:**  Saturday the 14th of December 2019, noon (12:00) US Pacific time.
+**Submissions due:**  Saturday the 14th of December 2019, noon (12:00) US Pacific time. (Submissions are now closed.)
 
 In brief, expect to submit a detailed text format method description similar to that used in Stage 1, as well as poses for all of your predicted binders in the same frame of reference as the provided apo structure (`PHIPA_C2_Apo.pdb`), along with the corresponding protein structure for each pose, as further detailed below.
 

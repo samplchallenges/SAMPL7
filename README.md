@@ -16,17 +16,17 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
-- Protein-ligand details on the [PHIP2 stage 1 challenge](protein_ligand/README.md), in the `protein_ligand` directory.
-- [PHIP2 challenge stage 1-2 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
+- Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
+- [PHIP2 challenge stage 1-3 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
 
-All three host-guest challenges are now closed, as is the first stage of the PHIP2 protein-ligand challenge. The **second stage of the protein-ligand challenge is due Dec. 14, 2019 by noon (12:00) US Pacific time.**
+All three host-guest challenges are now closed, as are the first and second stages of the PHIP2 protein-ligand challenge. The **third stage of the protein-ligand challenge is due Jan. 13, 2019 by midnight (24:00) US Pacific time.**
 
 ## What's coming
 - GSK logD challenge information as soon as available
 - Results (and inputs for) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
 - Experimental results for the host-guest challenge (except for TrimerTrip, which is available now)
 - Analysis of submissions for the host-guest challenge
-- PHIP2 protein-ligand challenge details for Stage 3.
+- PHIP2 protein-ligand challenge submission format and URL.
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -50,7 +50,8 @@ All three host-guest challenges are now closed, as is the first stage of the PHI
 - (12/7/2019): Add PHIP2 example submission package.
 - (12/7/2019): Add link to bare-bones [PHIP2 Stage 2 submission uploads](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/) -- open for submissions.
 - (12/11/2019): Update PHIP2 stage 2 deadline to noon US Pacific time Dec. 14.
-- (12/12/2019): Correct a single exoOA value (for G2) binding, per e-mail from Bruce Gibb. 
+- (12/12/2019): Correct a single exoOA value (for G2) binding, per e-mail from Bruce Gibb.
+- (2019-12-14): Add crystal structures of PHIP2 hits, instructions for stage 3.
 
 
 ## Challenge overview
