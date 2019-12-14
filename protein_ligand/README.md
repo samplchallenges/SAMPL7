@@ -208,6 +208,10 @@ Because this challenge involves actually purchasing compounds for experimental s
 
 We encourage participants to submit suggested poses of compounds along with their submitted compound choices, especially when using structure-based methods like docking and MD. While such poses will not be judged, participants are welcome to uses these poses as part of their justification for selecting these compounds. Additionally, SAMPL will be able to verify that these predictions were made in advance of experiment.
 
+### Manifest for Stage 3:
+- `stage-3-input-data/cocrystals`: Contains co-crystal structures for the various hits from Stage 1-2, by fragment ID
+- [fragment database and subsets](https://dx.doi.org/10.5281/zenodo.3576140): Available on Zenodo and citable via the DOI `10.5281/zenodo.3576140`.
+
 **Submission format**: The submission format will be announced shortly.
 
 ## Later stages
