@@ -1,2 +1,2 @@
-URL to the database and fragment network results:
-https://zenodo.org/record/3576140#.XfU-YZNKjOR
+The database is available in versioned manner on Zenodo; its DOI is [10.5281/zenodo.3576140
+](https://dx.doi.org/10.5281/zenodo.3576140) and it may be cited via that DOI.
