@@ -30,21 +30,21 @@
 # The list of predictions must begin with the "Prediction:" keyword, as illustrated here.
 Predictions:
 OA-g1, 
-OA-g2, -10.082, 0.133, 1.0,  
+OA-g2, -10.082, 0.671, 0.133, 
 OA-g3,    
 OA-g4, 
 OA-g5, 
 OA-g6, 
-OA-g7, -8.511,  0.553, 1.0,   
-OA-g8, -9.205,  0.356, 1.0,   
-exoOA-g1, -7.629, 0.090, 1.0,   
-exoOA-g2, -8.857, 0.398, 1.0,   
-exoOA-g3, -11.520, 0.282, 1.0,   
-exoOA-g4, -7.361, 0.216, 1.0,   
-exoOA-g5, -4.913, 0.353, 1.0,   
-exoOA-g6, -6.844, 0.355, 1.0,   
-exoOA-g7, -5.996, 0.496, 1.0,   
-exoOA-g8, -7.064, 0.565, 1.0,   
+OA-g7, -8.511, 0.319, 0.553   
+OA-g8, -9.205, 0.356, 0.356   
+exoOA-g1, -7.629, 1.388, 0.090   
+exoOA-g2, -8.857, 0.954, 0.398   
+exoOA-g3, -11.520, 1.060, 0.282   
+exoOA-g4, -7.361, 0.317, 0.216  
+exoOA-g5, -4.913, 0.280, 0.353   
+exoOA-g6, -6.844, 0.435, 0.355  
+exoOA-g7, -5.996, 0.287, 0.496 
+exoOA-g8, -7.064, 0.355, 0.565   
 #
 #
 # Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
@@ -84,23 +84,33 @@ Openeye (QuacpacTK version 2.0.2, OEChemTK version 2.3.0)
 # Following is sample text; please edit to your taste.
 # All text following the "Method:" keyword will be regarded as part of your free text methods description.
 Method:
-Host, Guest, and Complex Preparation
-1) Host and Guest files were charged (AM1-BCC) and a reasonable protonation state (@ pH 11.7) for ionizable groups was assigned using Openeye toolkits
-2) Host and guest were docked using AutoDock/Vina, and the top scored guest was selected for minimization and simulations. 
-3) Host, guest, and complex were made and parameterized with tleap from AmberTools, and solvated with ~2000 TIP3P waters in a cubic box approximately
-41 x 41 x 41 cubic Angstroms. Sodium and Chloride counterions were used to neutralize the system, and additional ions were added to acheive a 
-concentration of 10mM.  
+Host and guest files in several forms (mol2,pdb, and sdf) were provided from SAMPL7 organizers via Github, and we utilized mol2. 
+The protonation state(s) of each molecule were assigned at experimental pH of 11.7 and AM1-BCC charges were added 
+using Openeye toolkits when necessary. The updated host and guest mol2 files were converted to PDBQT and the guests were 
+docked using AutoDock/Vina. We utilized a docking protocol with a grid search box of 40 cubic Angstroms from the center of the host,
+a global search exhaustiveness of 80, and an energy range of 30 kcal/mol between the best and worst binding modes, all to generate
+at most 100 binding modes. The grid center was placed at x_y_z coordinates -0.001, -0.435, and -0.004 respectively. Upon completion,
+the pose with the highest docking score was selected for simulations. The docked guest PDBQT file was converted to PDB 
+via PyMol. Subsequently, the new guest PDB was processed with the chimera program, implicent hydrogens added, protonation states
+were inspected, and saved as a mol2. 
 
-Simulations
-All simulations were performed with YANK using its OpenMM dependency package as its simulation engine with CUDA platform
-4) Explicit absolute free energy simulations were performed in NPT with temperature control using Langivin thermostat at 298 K and pressure control by Monte Carlo barostat at 1 atm. 
-Long and short range nonbonded interactions were set at a 11 Angstrom cutoff, a solvent clearance of 12 Angstroms, ewald error tolerance of 0.0001, 
-and switch distance of 10 Angstroms using the PME method. Harmonic restraints were applied to all systems. 
+Afterwords, openeye tools was used once again to perceive bonds, determine connectivity, and compute atomic formal charges. 
+The host, guest, and complex files were parameterized, solvated with TIP3P water model in a cubic box approximately 41 x 41 x 41 cubic
+Angstroms via AmberTools antechamber and tleap respectively. In addition to solvation, sodium and chloride counterions were added to 
+neutralize the molecules and additional ions were added to the 10mM experimental concentration. The topology and coordinate 
+files (with and without solvent) of the host, guest, and complex were saved as our simulation input files.
 
-5) An initial minimization with YANK was conducted for 500 ps. All simulations included sampling windows of 26 ns to bring the free energy prediction standard error 
-below 0.5 kcal/mol (this was not achieved for all simulations).     
- 
-We used 61 lambda windows, where the lambda values were identified using YANKs auto pipeline. 
+All simulations were performed with YANK which uses OpenMM as its simulation engine with CUDA platform in the University of California, San
+Diego super computing cluster (TSCC). Explicit absolute free energy calculations were performed using the PMT method at NPT, with temperature 
+control using Langevin thermostat at 298K and pressure control by Monte Carlo barostat at 1 atmosphere. Long and short range nonbonded interactions
+were set at an 11 Angstrom cutoff, the edge of the solvation box 12 Angstroms away from any atom of host or guest, ewald error tolerance of 0.0001, 
+and Lennard-Jones interactions turned on at 10 Angstroms. Harmonic restraints were applied to all systems to keep the ligand from migrating 
+away from the "binding" region of the host, yet still be able to explore the area around it. Electrostatic, steric, and restraint lambda values were
+determined using YANKs automatic pipeline in a test run with bCD-g2. The lambda values were extracted and incorporated as our protocol for all systems
+with a charged guest. 
+
+An initial 500 ps simulation was used to minimize and relax all systems. The simulations contained 61 lambda windows runnning up to 26 ns per window 
+to bring the free energy prediction uncertainty below 0.5 kcal/mol. 
 
 
 #
