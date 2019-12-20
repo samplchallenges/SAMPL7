@@ -11,7 +11,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 
 ## What's here
 - [Challenge Overview](#challenge-overview)
-- Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory, and experimental values in the `host_guest/Analysis/ExperimentalMeasurements` directory.
+- Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory, and experimental values in the `host_guest/Analysis/ExperimentalMeasurements` directory. The Isaacs' group's publication on this is in the *New Journal of Chemistry*, [DOI 10.1039/C9NJ05336K](https://dx.doi.org/10.1039/C9NJ05336K)
 - Final information on the Gibb octa acid-based challenge ("Gibb deep cavity cavitand" (GDCC) challenge) in the `host_guest/GDCC_and_guests` directory.
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
@@ -52,7 +52,7 @@ All three host-guest challenges are now closed, as are the first and second stag
 - (12/11/2019): Update PHIP2 stage 2 deadline to noon US Pacific time Dec. 14.
 - (12/12/2019): Correct a single exoOA value (for G2) binding, per e-mail from Bruce Gibb.
 - (2019-12-14): Add crystal structures of PHIP2 hits, instructions for stage 3.
-
+- (2019-12-20): Add Isaacs' [TrimerTrip reference](https://dx.doi.org/10.1039/C9NJ05336K)
 
 ## Challenge overview
 
