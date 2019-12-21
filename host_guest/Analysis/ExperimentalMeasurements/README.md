@@ -11,7 +11,7 @@
 
 Experimental conditions/details for these cases are available in the above provided files, the [host guest challenge desription](https://github.com/samplchallenges/SAMPL7/blob/master/host_guest_description.md) (especially for the Gilson CD data), the [Isaacs' clip README](https://github.com/samplchallenges/SAMPL7/blob/master/host_guest/Isaacs_clip/README.md), and the [GDCC README](https://github.com/samplchallenges/SAMPL7/blob/master/host_guest/GDCC_and_guests/README.md). Note that host/guest concentrations in the cyclodextrin derivatives case are actually provided in the [ITC results file](SAMPL7_Gilson_data.xlsx).
 
-Raw ITC/NOESY data for the Gilson lab's CD work will also be provided here via link shortly.
+Raw ITC/NOESY data for the Gilson lab's CD work is also available via Zenodo at [DOI: 10.5281/zenodo.3588628](https://dx.doi.org/10.5281/zenodo.3588628).
 
 ## Notes on error propagation
 

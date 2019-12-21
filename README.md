@@ -52,7 +52,7 @@ All three host-guest challenges are now closed, as are the first and second stag
 - (12/11/2019): Update PHIP2 stage 2 deadline to noon US Pacific time Dec. 14.
 - (12/12/2019): Correct a single exoOA value (for G2) binding, per e-mail from Bruce Gibb.
 - (2019-12-14): Add crystal structures of PHIP2 hits, instructions for stage 3.
-- (2019-12-20): Add Isaacs' [TrimerTrip reference](https://dx.doi.org/10.1039/C9NJ05336K)
+- (2019-12-20): Add Isaacs' [TrimerTrip reference](https://dx.doi.org/10.1039/C9NJ05336K). Add Zenodo DOI for modified cyclodextrin raw experimental data.
 
 ## Challenge overview
 
