@@ -203,6 +203,36 @@ class HostGuestSubmission(SamplSubmission):
         merged_submission.data = pd.concat([merged_submission.data, other.data])
         return merged_submission
 
+    def split(self, names_to_separate):
+        """Take a host-guest submission that spans multiple hosts (with system IDs including host name and guest name), and split it into multiple submissions
+        which have the same metadata but only contain the data for the individual hosts. The resulting submissions have updated `host_name` fields also.
+
+        Takes a list of host names (as used for the individual data points) to separate based on.
+
+        Returns a list of the new HostGuestSubmission objects, of length equal to `names_to_separate`"""
+
+        # Find how many submissions we're making and make new submissions, duplicating old
+        n_submissions = len(names_to_separate)
+        new_submissions = [copy.deepcopy(self) for i in range(n_submissions)]
+
+
+
+        # Build list of system IDs we want
+        for (idx, submission) in enumerate(new_submissions):
+            desired_IDs = []
+            for system_id, series in submission.data[['$\Delta$G', 'd$\Delta$G', '$\Delta$H']].iterrows():
+                tmp = system_id.split('-')
+                if tmp[0] == names_to_separate[idx]:
+                    desired_IDs.append( system_id )
+
+            # Grab just that data and store
+            new_submissions[idx].data = submission.data.loc[desired_IDs]
+            # Change the host name to what's correct for this host
+            new_submissions[idx].data.host_name = tmp[0]
+
+        return new_submissions
+
+
 
 # =============================================================================
 # UTILITY FUNCTIONS
@@ -1079,6 +1109,17 @@ if __name__ == '__main__':
     submissions_oa_exooa = load_submissions(HostGuestSubmission, HOST_GUEST_GDCC_SUBMISSIONS_DIR_PATH, user_map)
     print()
 
+    # Make split submissions for the two hosts within GDCC
+    submissions_oa = []
+    submissions_exooa = []
+    for submission in submissions_oa_exooa:
+        a, b = submission.split(['OA', 'exoOA'])
+        submissions_oa.append(a)
+        submissions_exooa.append(b)
+    print(submissions_oa, submissions_oa_exooa)
+
+
+    # Make a set of all the submissions
     submissions_all = submissions_trimertrip + submissions_oa_exooa
 
     if not os.path.isdir('../Accuracy'): os.mkdir('../Accuracy')
