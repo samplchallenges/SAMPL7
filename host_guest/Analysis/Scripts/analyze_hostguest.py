@@ -228,8 +228,9 @@ class HostGuestSubmission(SamplSubmission):
             # Grab just that data and store
             new_submissions[idx].data = submission.data.loc[desired_IDs]
             # Change the host name to what's correct for this host
-            new_submissions[idx].data.host_name = tmp[0]
-
+            new_submissions[idx].data.host_name = names_to_separate[idx]
+            new_submissions[idx].host_name = names_to_separate[idx]
+    
         return new_submissions
 
 
@@ -294,7 +295,7 @@ class HostGuestSubmissionCollection:
                     #'method': self._assign_paper_method_name(submission.name),
                     'method': submission.name, # Make this duplicate name for now, as right now name does somewhat describe method. TO DO
                     'system_id': system_id,
-                    'host_name': submission.data.loc[system_id, 'host_name'],
+                    'host_name': submission.host_name,
                     '$\Delta$G (calc) [kcal/mol]': free_energy_calc,
                     'd$\Delta$G (calc) [kcal/mol]': free_energy_calc_sem,
                     '$\Delta$G (expt) [kcal/mol]': free_energy_expt,
@@ -812,7 +813,7 @@ class HostGuestSubmissionCollection:
             # Compute bootstrap statistics.
             data = data[['$\Delta$G (expt) [kcal/mol]', '$\Delta$G (calc) [kcal/mol]']]
             new_bootstrap_statistics = compute_bootstrap_statistics(data.as_matrix(), group_stats_funcs, sems=sems,
-                                                                    n_bootstrap_samples=100000)
+                                                                    n_bootstrap_samples=10000)
 
             # Update the returned value with the statistics just computed.
             new_boostrap_statistics = {group_stats_names[i]: new_bootstrap_statistics[i]
@@ -1116,8 +1117,6 @@ if __name__ == '__main__':
         a, b = submission.split(['OA', 'exoOA'])
         submissions_oa.append(a)
         submissions_exooa.append(b)
-    print(submissions_oa, submissions_oa_exooa)
-
 
     # Make a set of all the submissions
     submissions_all = submissions_trimertrip + submissions_oa_exooa
@@ -1130,9 +1129,16 @@ if __name__ == '__main__':
     print("Creating submission collection for TrimerTrip")
     collection_trimertrip = HostGuestSubmissionCollection(submissions_trimertrip, experimental_data,
                                                   output_directory_path='../Accuracy/TrimerTrip')
-    print("Creating submission collection for GDCC")
+    print("Creating submission collection for GDCC collectively")
     collection_oa_exooa = HostGuestSubmissionCollection(submissions_oa_exooa, experimental_data,
                                                         output_directory_path='../Accuracy/GDCC')
+
+    print("Creating submission collection for exoOA and OA")
+    collection_exooa = HostGuestSubmissionCollection(submissions_exooa, experimental_data,
+                                                        output_directory_path='../Accuracy/exoOA')
+    collection_oa = HostGuestSubmissionCollection(submissions_oa, experimental_data,
+                                                            output_directory_path='../Accuracy/OA')
+
     #collection_cb_oa_temoa = HostGuestSubmissionCollection(submissions_cb_oa_temoa, experimental_data,
     #                                                       output_directory_path='../Accuracy/CB8-OA-TEMOA')
     print("Creating submission collection for combined set of hosts")
@@ -1156,7 +1162,7 @@ if __name__ == '__main__':
     sns.set_style('whitegrid')
 
     # Generate correlation plots and statistics.
-    for collection in [collection_trimertrip, collection_oa_exooa]:
+    for collection in [collection_trimertrip, collection_oa_exooa, collection_oa, collection_exooa]:
     #DEBUG: Following line triggers problems
     #for collection in [collection_trimertrip, collection_oa_exooa]:
     #for collection in [collection_cb, collection_cb_no_bonus, collection_oa, collection_temoa,
@@ -1322,8 +1328,6 @@ if __name__ == '__main__':
         plt.tight_layout(pad=0.9, rect=[0.0, 0.025, 1.0, 1.0])
         plt.savefig('../Accuracy/PaperImages/{}.pdf'.format(file_name))
 
-    #DEBUG
-    print(set(all_methods))
     correlation_plots(
         #plotted_methods = sorted(set(all_methods) - set(exclusions) - {'NULL'}),
         plotted_methods = sorted(set(all_methods) - set(exclusions)),
