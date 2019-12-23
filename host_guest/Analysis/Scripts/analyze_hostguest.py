@@ -230,7 +230,7 @@ class HostGuestSubmission(SamplSubmission):
             # Change the host name to what's correct for this host
             new_submissions[idx].data.host_name = names_to_separate[idx]
             new_submissions[idx].host_name = names_to_separate[idx]
-    
+
         return new_submissions
 
 
@@ -1082,11 +1082,11 @@ if __name__ == '__main__':
         'kendall_tau': '$\\tau$',
     }
     stats_limits = {
-        'RMSE': (0, 50.0),
-        'MAE': (0, 40),
-        'ME': (-20, 40),
+        'RMSE': (0, 10.0),
+        'MAE': (0, 10),
+        'ME': (-10, 10),
         'R2': (0, 1),
-        'm': (-10, 10),
+        'm': (-5, 5),
         'kendall_tau': (-1, 1),
     }
 
