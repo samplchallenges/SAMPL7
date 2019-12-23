@@ -218,7 +218,10 @@ class HostGuestSubmissionCollection:
     _ROW_HEIGHT = 0.25
 
 
-    def __init__(self, submissions, experimental_data, output_directory_path, ignore_refcalcs = True, ranked_only = True):
+    def __init__(self, submissions, experimental_data, output_directory_path, ignore_refcalcs = True, ranked_only = True, allow_multiple = False):
+        # Use "allow_multiple" if we're using a submission collection which is aggregated across several hosts
+        # in which case participants may have a ranked submission in each separate host.
+
         # Build full free energy table.
         data = []
 
@@ -233,12 +236,10 @@ class HostGuestSubmissionCollection:
                 continue
 
             if ranked_only and not submission.ranked:
-                #DEBUG
-                print("Skipping non-ranked submission")
                 continue
 
-            # Store names associated with ranked submission, skip if they submitted multiple
-            if submission.ranked:
+            # Store names associated with ranked submission, skip if they submitted multiple (only if we need to check for duplicate authors)
+            if submission.ranked and not allow_multiple:
                 if not submission.participant in self.participant_names_ranked:
                     self.participant_names_ranked.append(submission.participant)
                 else:
@@ -1072,8 +1073,11 @@ if __name__ == '__main__':
 
 
     # Load submissions data. We do OA and TEMOA together.
+    print("Loading TrimerTrip submissions")
     submissions_trimertrip = load_submissions(HostGuestSubmission, HOST_GUEST_TRIMERTRIP_SUBMISSIONS_DIR_PATH, user_map)
+    print("Loading GDCC submissions")
     submissions_oa_exooa = load_submissions(HostGuestSubmission, HOST_GUEST_GDCC_SUBMISSIONS_DIR_PATH, user_map)
+    print()
 
     submissions_all = submissions_trimertrip + submissions_oa_exooa
 
@@ -1082,14 +1086,17 @@ if __name__ == '__main__':
     if not os.path.isdir('../Accuracy/PaperImages'): os.mkdir('../Accuracy/PaperImages')
 
     # Create submission collections
+    print("Creating submission collection for TrimerTrip")
     collection_trimertrip = HostGuestSubmissionCollection(submissions_trimertrip, experimental_data,
                                                   output_directory_path='../Accuracy/TrimerTrip')
+    print("Creating submission collection for GDCC")
     collection_oa_exooa = HostGuestSubmissionCollection(submissions_oa_exooa, experimental_data,
                                                         output_directory_path='../Accuracy/GDCC')
     #collection_cb_oa_temoa = HostGuestSubmissionCollection(submissions_cb_oa_temoa, experimental_data,
     #                                                       output_directory_path='../Accuracy/CB8-OA-TEMOA')
+    print("Creating submission collection for combined set of hosts")
     collection_all = HostGuestSubmissionCollection(submissions_all, experimental_data,
-                                                   output_directory_path='../Accuracy/MoleculesStatistics')
+                                                   output_directory_path='../Accuracy/MoleculesStatistics', allow_multiple = True)
 
     # Create a CB8 collection excluding the bonus challenges.
     #def remove_bonus(submission_collection_data):
