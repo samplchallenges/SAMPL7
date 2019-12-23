@@ -1,0 +1,124 @@
+# Results for PHIP2 virtual screening
+
+Predictions:
+F197, true, true, true, false, true
+F436, true, true, true, false, true
+F448, true, true, true, false, true
+F442, true, false, false, false, true
+F720, true, false, false, false, true
+F273, true, false, false, false, true
+F716, true, false, false, false, true
+F372, true, false, false, false, true
+F118, true, false, false, false, true
+F439, true, false, false, false, true
+F484, true, false, true, false, true
+F743, true, false, false, false, true
+F481, true, false, false, false, true
+F437, true, false, false, false, true
+F756, true, false, false, false, true
+F494, true, false, false, false, true
+F523, true, false, false, false, true
+F167, true, false, false, false, true
+F721, true, false, false, false, true
+F109, true, false, false, false, true
+F572, true, false, false, false, true
+F486, true, false, false, false, true
+F362, true, false, false, false, true
+F636, true, false, false, false, true
+F548, true, false, false, false, true
+F74, true, false, false, false, true
+F131, true, false, false, false, true
+F216, true, false, false, false, true
+F25, true, false, false, false, true
+F357, true, false, false, false, true
+F719, true, false, false, false, true
+F111, true, false, false, true, true
+F630, true, false, false, false, true
+F257, true, false, false, false, true
+F37, true, false, false, false, true
+F345, true, false, false, false, true
+F449, false, true, true, false, true
+F235, false, true, false, false, true
+F488, false, true, false, false, true
+F59, false, false, true, false, true
+F142, false, true, false, false, true
+F754, false, true, false, false, true
+F561, false, true, false, false, true
+F492, false, true, false, false, true
+F349, false, true, true, false, true
+F387, false, false, false, true, true
+F588, false, true, false, false, true
+F515, false, false, false, true, true
+F757, false, true, false, false, true
+F710, false, true, false, false, true
+F450, false, true, false, false, true
+F134, false, true, true, false, true
+F101, false, true, false, false, true
+F31, false, false, false, true, true
+F390, false, false, false, true, true
+F794, false, true, false, false, true
+F709, false, true, false, false, true
+F491, false, true, false, false, true
+F405, false, true, false, false, true
+F272, false, false, false, true, true
+F58, false, true, false, false, true
+F49, false, false, false, true, true
+F725, false, true, false, false, true
+F666, false, true, false, false, true
+F556, false, true, false, false, true
+F283, false, true, false, false, true
+F562, false, true, true, false, true
+F551, false, true, false, false, true
+F565, false, false, false, true, true
+F133, false, true, true, false, true
+F704, false, true, false, false, true
+F576, false, true, false, false, true
+F388, false, false, false, true, true
+F389, false, false, false, true, true
+
+
+# PARTICIPANT INFORMATION SECTION
+
+Participant name:
+Suleyman Selim Cinaroglu
+
+Participant organization:
+University of Oxford, UK
+
+
+# METHOD NAME SECTION
+
+Name:
+Molecular Docking with MM-GBSA Scoring
+
+
+# SOFTWARE SECTION
+
+Software:
+OpenBabel v3.0
+UCSF Chimera v1.12
+PDB2PQR v2.1
+SPORES v1.3
+PLANTS v1.2
+DOCK v6.8
+AmberTools v2019
+
+
+# METHOD CATEGORY SECTION
+
+Category:
+Docking, MD
+
+
+# RANKING INFORMATION SECTION
+
+Ranked:
+True
+
+
+# METHOD DESCRIPTION SECTION
+
+Method:
+The receptor structures were prepared, first by removing the water except from five water molecules located in the binding pocket. All of the receptor structures were processed by the DockPrep tool of the UCSF Chimera to repair/model the truncated side chains, hydrogens were added. The protonation states of the ionizable amino acids were determined by the PDB2PQR tool. Ligand files were prepared by the OpenBabel accessory tools.
+The receptor and the ligand files were processed by the SPORES tool with the application of the complete mode for molecular docking. During docking with PLANTS, the search speed was set to 1 and the scoring function was selected as ChemPLP.
+The generalized Born/surface area (GB/SA) continuum model was implemented by the Amber score function in the program DOCK6. The Amber score module performs minimization, MD simulation at constant temperature and pressure and more minimization on the individual ligand, the individual receptor and the ligand–receptor complex. 

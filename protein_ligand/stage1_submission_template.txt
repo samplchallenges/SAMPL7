@@ -13,7 +13,7 @@
 # PREDICTIONS SECTION
 #
 # The data in each prediction line should be structured as follows:
-# Fragment identifier, binding in S1 (true/false), binds in S2 (true/false), binds in S3 (true/false), binds in S4 (true/false), binds overall (true/false).
+# Fragment identifier, binding in S1 (true/false), binds in S2 (true/false), binds in S3 (true/false), binds in S4 (true/false), binds in any site (true/false).
 # Any compounds not listed are assumed to be predicted as nonbinders.
 # The list of predictions must begin with the "Predictions:" keyword, as illustrated here.
 Predictions:
@@ -58,15 +58,15 @@ OpenEye docking toolkit v1.1
 
 # METHOD CATEGORY SECTION
 #
-# State which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`. 
-# If your method takes advantage of multiple approaches please report more than one category label, separated by comma.  
+# State which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`.
+# If your method takes advantage of multiple approaches please report more than one category label, separated by comma.
 # `Docking` category refers to structure-based virtual screening methods that model the structure of the receptor binding pocket and pose of the ligand followed by an scoring the goodness of the fit .
 # `Ligand-based` methods are virtual screening methods that do not rely on protein structure such as pharmacophore modeling, ligand shape-based, 2D or 3D structural similarity based methods.
 # `MD` methods utilize molecular dynamics simulations based on molecular mechanics including free energy calculations.
 # `ML` category includes machine learning, QSPR approaches, and all prediction methods trained on empirical knowledge.
 # `Null` predictions employ a model which is not expected to produce useful predictions, however,  can provide a simple comparison point for more sophisticated methods, as ideally, good methods should outperform the null model.
 # If these categories do not match your method, report as “Other”.
-# If you choose the `Other` category, please explain your decision in the beginning of Method Description section.  
+# If you choose the `Other` category, please explain your decision in the beginning of Method Description section.
 # The `Category:` keyword is required.
 Category:
 Docking, MD

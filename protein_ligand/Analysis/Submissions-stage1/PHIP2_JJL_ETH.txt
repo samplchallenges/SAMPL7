@@ -1,0 +1,136 @@
+# Results for PHIP2 virtual screening
+#
+# This file will be automatically parsed.  It must contain the following eight elements:
+# predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
+# These elements must be provided in the order shown.
+# The file name must begin with the letters "PHIP2" and then be followed by an underscore or dash.
+#
+# FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
+# Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
+# contains a non-UTF-8 character, you may note it in comments near that entry.
+
+
+# PREDICTIONS SECTION
+#
+Predictions:
+F243, true, false, false, false, true
+F285, true, false, false, false, true
+F296, true, false, false, false, true
+F37, true, false, false, false, true
+F667, true, false, false, false, true
+F683, true, false, false, false, true
+F718, true, false, false, false, true
+F744, true, false, false, false, true
+
+
+# PARTICIPANT INFORMATION SECTION
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Jose Jimenez-Luna
+# Co-participants:
+# Francesca Grisoni
+# Alissa Goetzinger
+# Gisbert Schneider
+
+
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+Department of Chemistry and Applied Biosciences, RETHINK, ETH Zurich, Switzerland.
+
+
+# METHOD NAME SECTION
+Name:
+AvalonECFP4rdkit-RF
+
+
+# SOFTWARE SECTION
+Software:
+MOE 2016.08
+python 3.6.9
+rdkit 2019.09.1.0
+scikit-learn 0.21.3
+
+
+# METHOD CATEGORY SECTION
+Category:
+ML, Ligand-based
+
+
+# RANKING INFORMATION SECTION
+Ranked:
+False
+
+
+# METHOD DESCRIPTION SECTION
+Method:
+
+To predict binding to PHIP2 we trained a random forest classifier. We only attempted to predict binders for the S1 pocket.
+Other pockets (S2, S3, S4) are on the outside surface of the protein and are affected by crystal packing. When we generated
+crystal lattice for the provided template PDB structure we could see that pockets S2, S3 and S4 were formed at the interface
+of neighboring macromolecules.
+
+DATA COLLECTION
+
+We sourced the data from 3 sources: PDB, ChEMBL and publication featuring X-ray structures for PHIP2 (Cox, Oakley B., et al.
+"A poised fragment library enables rapid synthetic expansion yielding the first reported inhibitors of PHIP (2), an atypical bromodomain."
+Chemical science 7.3 (2016): 2322-2330.)
+
+DATASETS FROM PUBLICATIONS
+
+First part of the data was sourced from a publication on X-ray fragment screening on PHIP2 (Cox, Oakley B., et al. "A poised fragment
+library enables rapid synthetic expansion yielding the first reported inhibitors of PHIP (2), an atypical bromodomain." Chemical
+science 7.3 (2016): 2322-2330.). The sdf file with DSPL1 library containing 407 fragments was downloaded from the supplementary
+information of the publication. 4 fragments were X-ray binders and the remaining 403 were non-binders. This data set was later expanded
+with additional follow-up molecules sourced from the same publication, resulting in 6 additional binders and 45 non-binders.
+
+PDB
+
+Due to the lack of available structural data for PHIP2, we extended data collection to other representatives of bromodomain family
+that possessed x-ray structure in PDB. The selection was made based on Pfam database (http://pfam.xfam.org/family/Bromodomain)
+
+List of selected Uniprot entries: [ASH1L_HUMAN, ATAD2_HUMAN, ATD2B_HUMAN, BAZ1A_HUMAN, BAZ2A_HUMAN, BAZ2B_HUMAN, BDF1_CANAL,
+BPTF_HUMAN, BRD1_HUMAN, BRD2_HUMAN, BRD3_HUMAN, BRD3_MOUSE, BRD4_HUMAN, BRD4_MOUSE, BRD7_HUMAN, BRD9_HUMAN, BRDT_HUMAN, BRDT_MOUSE,
+BRPF1_HUMAN, BRWD1_HUMAN, CBP_HUMAN, CBP_MOUSE, CECR2_HUMAN, D0A3H5_TRYB9, D0A8L1_TRYB9, E9BA17_LEIDB, E9BU22_LEIDB, E9BU61_LEIDB,
+EP300_HUMAN, F0X3M9_CRYPV, GCN5_YEAST, H0Y4R8_HUMAN, KAT2A_HUMAN, KAT2B_HUMAN, KAT2B_MOUSE, PB1_HUMAN, PB1_MOUSE, PHIP_HUMAN,
+PKCB1_HUMAN, Q382J7_TRYB2, Q38AE9_TRYB2, Q38AM1_TRYB2, Q5CQB7_CRYPI, Q5CUE2_CRYPI, Q8IJ72_PLAF7, Q8IK82_PLAF7, RSC4_YEAST, SMCA2_HUMAN,
+SMCA4_HUMAN, SP140_HUMAN, TAF1_HUMAN, TAF1L_HUMAN, TIF1A_HUMAN, TRI33_HUMAN, ZMY11_HUMAN, ZMY11_MOUSE]
+
+
+1214 PDB structures corresponding to listed Uniprot entries were downloaded and all non-protein residues were extracted from the PDB
+structures. For further analyses we excluded modified amino-acids, metal ions and molecules with less than 3 heavy atoms. All associated
+SDF files meeting these requirements were retrieved.
+
+ChEMBL
+
+For the same Uniprot codes all available activity data in ChEMBL was collected.
+
+DATA PROCESSING
+
+The molecules provided in SAMPL were prepared using MOE. Protomers and tautomers were enumerated at pH = 6. Stereoisomers were
+enumerated if chirality of molecule was not indicated in SMILES. In the end we made a prediction for each of the isomers.
+
+TRAINING SET
+
+Molecules sourced from the publication and PDB molecules were protonated at pH = 6 (as indicated in publication) using MOE. Tautomers and
+protomers were enumerated. For the ligands from the publication stereoisomers were enumerated if chirality of molecule was not indicated
+in its SMILES. Tautomers and protomers of ChEMBL ligands were enumerated at the pH = 7 using MOE. Due to the size of this data set
+(>70k mols) chirality was not considered.
+
+Molecules from both training and test set were represented as a combination of Morgan & Avalon fingerprints (both with nBits=4096)
+and all available 2d rdkit descriptors.
+
+MODEL TRAINING
+
+Molecules form the publication were classified as binders based on the information from the paper. All the PDB ligands were
+classified as such. All ChEMBL ligands with pAcc > 5.5 were also considered, where pAcc is a negative base 10 logarithm
+of an activity measurement (IC50, EC50, Ki, Kd, etc.). All the remaining ChEMBL ligands were considered nonbinders.
+
+As a classifier we used the RandomForestClassifier class as available in the scikit-learn python package, with
+n_estimators = 10000, and other hyperparameters set to their default.
+
+PREDICTION
+
+We compute predictions for the augmented test set, selecting those with an associated probabiligy higher than 0.5. Predictions were made
+individually for all isomers: a molecule considered active if the maximum predicted probability for any of the isomers was beyond
+our defined threshold.

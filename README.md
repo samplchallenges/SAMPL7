@@ -11,22 +11,22 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 
 ## What's here
 - [Challenge Overview](#challenge-overview)
-- Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory, and experimental values in the `host_guest/Analysis/ExperimentalMeasurements` directory.
+- Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory, and experimental values in the `host_guest/Analysis/ExperimentalMeasurements` directory. The Isaacs' group's publication on this is in the *New Journal of Chemistry*, [DOI 10.1039/C9NJ05336K](https://dx.doi.org/10.1039/C9NJ05336K)
 - Final information on the Gibb octa acid-based challenge ("Gibb deep cavity cavitand" (GDCC) challenge) in the `host_guest/GDCC_and_guests` directory.
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
-- Protein-ligand details on the [PHIP2 challenge](protein_ligand/README.md), in the `protein_ligand` directory.
-- [PHIP2 challenge submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file. Our submission system is not yet available.
+- Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
+- [PHIP2 challenge stage 1-3 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
 
-All three host-guest components of this challenge are now final and launched, though additional supporting files may be added at a later date. **The submission deadline is Oct. 4 for the TrimerTrip host-guest challenge and Nov. 4 for the cyclodextrin derivatives and GDCC challenges**, due to timescales for data collection and publication of the experimental data. The **first stage of the protein-ligand challenge is due Nov. 28, 2019.**
+All three host-guest challenges are now closed, as are the first and second stages of the PHIP2 protein-ligand challenge. The **third stage of the protein-ligand challenge is due Jan. 13, 2019 by midnight (24:00) US Pacific time.**
 
 ## What's coming
 - GSK logD challenge information as soon as available
 - Results (and inputs for) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
 - Experimental results for the host-guest challenge (except for TrimerTrip, which is available now)
 - Analysis of submissions for the host-guest challenge
-- PHIP2 protein-ligand challenge details on Stage 2 and Stage 3.
+- PHIP2 protein-ligand challenge submission format and URL.
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -41,13 +41,19 @@ All three host-guest components of this challenge are now final and launched, th
 - **Release 0.1.2** (Sept. 16, 2019, DOI [10.5281/zenodo.3432298](https://dx.doi.org/10.5281/zenodo.3432298)): Fixes protonation states for three "modified cyclodextrin" hosts which had accidentally been prepared (and drawn in ChemDraw) with charged groups present as neutral -- specifically terminal -NH3 groups were provided as -NH2. This affected MGLab19, 24 and 34. Also includes minor maintenance fixes -- listing final rather than tentative buffer conditions for GDCC case (just removing the "tentative" on the buffer identity, and correcting pH from 11.5 to 11.7); updates submission deadlines; fixes missing coordinates in TrimerTrip `g11`; fixing breakdown into residues in a couple modified cyclodextrin host PDB/mol2 files.
 - **Release 0.2** (Sept. 24, 2019, DOI [10.5281/zenodo.3459975](https://dx.doi.org/10.5281/zenodo.3459975)): Adds host-guest submission template files and instructions; makes more clear which compounds/cases are optional; makes clear that free energy predictions (and uncertainties) are required; enthalpies optional; adds links to [host-guest submission system](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/)
 - **Release 0.3** (Sept. 26, 2019, DOI [10.5281/zenodo.3462865](https://dx.doi.org/10.5281/zenodo.3462865)): Corrected likely charges/protonation states for MGLab23 and MGLab24 in overview table and in jpg and PDF files. Updated corresponding coded and noncoded CDX files. Fixed a mixture of UNK and MGO residue names. Eliminates all instances of atom name HQ which should correspond to a carbon (which for some reason was instead named HX in some hosts, likely causing problems for some workflows). This has been mapped to atom name C9. Reconnects missing bonds in the PDB section of several models. See [PR 42](https://github.com/MobleyLab/SAMPL7/pull/42) for full details. Also removes outdated info in README.md and removes extra guest listed in TrimerTrip submission template.
-- **Release 0.4** (Oct. 30, 2019)): Adds Isaacs' group TrimerTrip binding data (in `host_guest/analysis/ExperimentalMeasurements`); adds TrimerTrip submissions; adds PHIP2 protein-ligand challenge Stage 1 details.
+- **Release 0.4** (Oct. 30, 2019): Adds Isaacs' group TrimerTrip binding data (in `host_guest/analysis/ExperimentalMeasurements`); adds TrimerTrip submissions; adds PHIP2 protein-ligand challenge Stage 1 details.
+- **Release 0.4.1** (Nov. 27, 2019, DOI [10.5281/zenodo.3555601](https://dx.doi.org/10.5281/zenodo.3555601)): Fixes and corrects some SMILES formatting errors (see release notes) for protein-ligand challenge, adds host-guest experimental data, adds submission instructions for stage 1 protein-ligand challenge.
 
 ### Changes not in a release
-- (11/2/19, PHIP2) Fix misformatted SMILES line on line 620 of `fragments_screened.csv` for PHIP2 screening challenge.
-- (11/11/19, PHIP2) Fix an incorrect SMILES for fragment F62 in the PHIP2 screening challenge.
-- (11/12/19, PHIP2) Add participation instructions and submission format for PHIP2 virtual screening component (Stage 1).
-- (11/15/19, host-guest) Add TrimerTrip and cyclodextrin experimental binding data (first draft). Update Gibb data with additional precision/correct rounding errors.
+- (12/2/2019): Add PHIP2 Stage 2 inputs
+- (12/5/2019): Add PHIP2 Stage 2 submission format. Submission link still to come.
+- (12/7/2019): Add PHIP2 example submission package.
+- (12/7/2019): Add link to bare-bones [PHIP2 Stage 2 submission uploads](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/) -- open for submissions.
+- (12/11/2019): Update PHIP2 stage 2 deadline to noon US Pacific time Dec. 14.
+- (12/12/2019): Correct a single exoOA value (for G2) binding, per e-mail from Bruce Gibb.
+- (2019-12-14): Add crystal structures of PHIP2 hits, instructions for stage 3.
+- (2019-12-20): Add Isaacs' [TrimerTrip reference](https://dx.doi.org/10.1039/C9NJ05336K). Add Zenodo DOI for modified cyclodextrin raw experimental data.
+- (2019-12-20): Add Stage 2 submissions for PHIP2.
 
 ## Challenge overview
 
@@ -65,7 +71,7 @@ This challenge breaks out into at least three stages on a tight timeline:
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database
 
-Stage 1 is now open and focuses on identification of binders. Unfortunately, the timeline for stages 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3). See [protein_ligand/README.md](protein_ligand/README.md) for full details.
+Stage 2 is now open and focuses on identification of binders (and Stage 1 is closed). Unfortunately, the timeline for stages 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3). See [protein_ligand/README.md](protein_ligand/README.md) for full details.
 
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests

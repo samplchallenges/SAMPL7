@@ -10,7 +10,7 @@ This challenge breaks out into at least three stages on a tight timeline:
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database
 
-Stage 1 is now open and focuses on identification of binders. Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3).
+Stage 2 is now open and focuses on identification of binders (Stage 1 is now closed). Unfortunately, the timeline for components 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3).
 
 If you plan to participate, please [join our SAMPL7 e-mail list](http://eepurl.com/gpBBun) so we can keep you updated.
 
@@ -83,9 +83,9 @@ We are asking you to submit both site-specific binding predictions (whether each
 
 **Start date**: Tuesday, October 29, 2019
 
-**Submissions due**: Thursday, Nov. 28, 2019, at midnight US Pacific Time
+**Submissions due**: Thursday, Nov. 28, 2019, at midnight (24:00) US Pacific Time
 
-Your predictions must be uploaded via our web form (to be linked from here as soon as it is available) before midnight US Pacific time on the due date. The experimental results will be available as soon as possible after SAMPL closes. Please refer to the [../protein_ligand_instructions.md](../protein_ligand_instructions.md) for information on uploading.
+Your predictions must be uploaded via [our web form](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit) before midnight US Pacific time on the due date. The experimental results will be available as soon as possible after SAMPL closes. Please refer to the [../protein_ligand_instructions.md](../protein_ligand_instructions.md) for information on uploading.
 
 You must use the [provided template](stage1_submission_template.txt) to upload your predictions, and the file must have a filename beginning with `PHIP2`. We will be asking you to submit the compound identifier for each compound you predict to bind, along with a designation of which specific sites you predict it to bind to, if you are able to assess binding to specific subsites. Details as to how to submit this information are given in the [format file](stage1_submission_template.txt). Note that each submission must also be accompanied by a variety of methodological details, etc., as given in the submission format. Please refer to the [submission instructions](../protein_ligand_instructions.md) for details on what your method description should contain and how to upload.
 
@@ -102,26 +102,122 @@ If multiple submissions are incorrectly provided as "ranked" by a single partici
 
 ## Stage 2: Prediction of binding poses for binding fragment
 
-Plans for stage 2 are still being finalized, but this is planned to involve predicting the bound structures of the compounds which bind, the identity of which will be released at the end of the first stage.
+### Setup and description of Stage 2
+
+**Aim**: The second part of the SAMPL7 challenge builds onto the first stage. The objective is to correctly predict the binding pose for the protein-fragment complexes identified by [PanDDA](https://pandda.bitbucket.io/). In total, 52 fragments were found to bind to the C2 crystal form described in stage 1. 45 hits were identified at the first site (denoted by a helium atom `S1` in the provided structure (`PHIPA_C2_apo_sites.pdb`)). 4 were found at the second site (denoted by a neon atom `S2`). The third (denoted by an argon atom `S3`) and the fourth site (denoted by a krypton atom `S4`) were each found to bind to a single distinct fragment.
+
+The *apo* structure of PHIP2 that was provided in stage 1 (`PHIPA_C2_Apo.pdb`) may be used along with the [isomeric SMILES strings](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html) of the fragments identified (`stage2-input-data/site-1_fragment-hits.csv`) to carry out pose predictions, and **must be used to define the frame of reference for your pose predictions**. The acetylated-lysine binding site, being the most populated and pharmacologically relevant, will be the focus of the second stage. Optionally, participants may also try to extend their predictions to the other sites (Site 2:`stage2-input-data/site-2_fragment-hits.csv`, Site 3:`stage2-input-data/site-3_fragment-hits.csv`, Site 4:`stage2-input-data/site-4_fragment-hits.csv`). Other structures and information may also be used in the predictions. However, the predicted protein-ligand poses must be aligned to the reference structure (`PHIPA_C2_Apo.pdb`) for assessment purposes.
+
+Please, note that predictions should be done considering the C2 crystal form and soaking method described in Stage 1. Other structures are available in the PDB but were crystallized in another crystal form. Screening against different crystal forms often leads to differential fragment-hit identification due to solution and solid state effects such as pH and crystal packing. Thus, if you choose to use PDB structures you should pay particular attention to the possibility of such differences.
+
+Here, compound stocks were purchased as as racemic mixes; the higher affinity conformer should be revealed in the electron density. However, the both stereoisomers can also bind the target resulting in an average density. Participants may wish to take this information into account.
+
+### Provided data for Stage 2
+
+- Apo structure of the protein: See Manifest below
+- isomeric SMILES strings for the binding fragments for each site: See Manifest below
+- Coordinates of atoms marking the binding sites are provided in the `PHIPA_C2_apo_sites.pdb` file, as described above
+- Rules: See below
+- Submission format: Provided below.
+- Submission link: [A preliminary submission handling page is available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). This is open for submissions, but does not yet validate that provided poses are valid. Use at your own risk. We hope to update by Tuesday with additional checking that ensures we can read the molecules/poses you provide; currently we only check that you have provided all required files and we can parse your description.
+
+### Rules for Stage 2
 
 **Start date:** Friday the 29th of November 2019
 
-**End date:**  Thursday the 12th of December 2019
+**Submissions due:**  Saturday the 14th of December 2019, noon (12:00) US Pacific time. (Submissions are now closed.)
+
+In brief, expect to submit a detailed text format method description similar to that used in Stage 1, as well as poses for all of your predicted binders in the same frame of reference as the provided apo structure (`PHIPA_C2_Apo.pdb`), along with the corresponding protein structure for each pose, as further detailed below.
+
+If you choose to use other protein structures other than the provided apo structure in making your predictions, these should be described in your Method description. You may draw on any existing literature data that you wish, just make sure to clearly describe any data utilized in your Methods.
+
+You must predict binding modes for all 45 hits binding in site S1 for your submission to be ranked. Prediction of poses in the alternate sites is optional and pose predictions for alternate sites will be ranked separately for those submissions predicting poses for those compounds.
+
+As in Stage 1, while you are welcome to submit multiple entries in order to test diverse methods, as per our [policy on multiple submissions](https://samplchallenges.github.io/roadmap/submissions/), each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form.
+We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
+
+If multiple submissions are incorrectly provided as "ranked" by a single participant, we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
+
+**Submission format**: Your submissions be provided in a single compressed, archived `.tar.gz` file which contains a set of files described below. This file name should have the prefix `PHIP2` followed by a dash or underscore and end with `.tar.gz`. This file should contain a single compressed directory including pose predictions and a completed submission description file named `PHIP2_2-description.txt` based on [our format](stage2_submission_template.txt). This file is used to submit one set of predicted protein-ligand poses, where up to five poses are permitted for each protein-ligand pair (if multiple poses are submitted, your poses are expected to be submitted in ranked order, with pose 1 being the top-scoring pose and pose 5 being the worst scoring pose). Each pose `.tar.gz` file must contain, for each ligand, a minimum of one and up to 5 protein structure PDB files and 5 corresponding ligand poses (in MDL `.mol`, format, `.sdf` format, or `.mol2` format) predicted by a method described in the separately uploaded pose prediction description file.  
+
+**Each pose prediction must be provided in the form of a protein structure PDB file and a corresponding ligand structure file (`.sdf`, `.mol2`, or MDL `.mol`) with all-atom 3D atomic coordinates for the pose, where the coordinates in the protein PDB file and the ligand molfile are in the same frame of reference**. Any ligand coordinates provided in PDB format or included in the protein PDB files will be ignored. You may treat the protein as rigid or flexible, but you must rotationally and translationally superimpose all of your final structure predictions, onto the [reference protein structure provided](PHIPA_C2_Apo.pdb) in the challenge data package in order to facilitate evaluation of your predictions.
+
+The file names of your pose prediction protein PDB and ligand mol files must be constructed as follows:
+
+```
+PHIP2-<LigandID>-<poseRank>.pdb
+PHIP2-<LigandID>-<poseRank>.mol (or .sdf or .mol2)
+```
+So for example for ligand F13, you might submit:
+- PHIP2-F13-1.pdb
+- PHIP2-F13-1.sdf
+- PHIP2-F13-2.pdb
+- PHIP2-F13-2.sdf
+if you were submitting two poses. (The lowest numbered poses will be assumed to be those predicted to be most favorable.) These would be placed into a single directory along with any other files to be submitted (minimally, poses for [all compounds binding in S1](Stage-2-input-data/site-1_fragment_hits.csv)) along with your `PHIP2_2-description.txt` file, then tarred, gzipped, and uploaded to our submission site. An example submission package is provided in [Examples/stage2_docking/PHIP2_2_poses.tar.gz](`Examples/stage2_docking/PHIP2_2_poses.tar.gz`). Submissions must be uploaded via the link above.
+
+We anticipate judging poses in two ways -- first, considering only the top-scoring (first) pose from each submission and, second, considering the lowest-RMSD pose out of all submitted poses. These results will be analyzed and presented separately.
+
+If your submissions are incomplete (e.g. you omit required ligands, are missing required files, or do not use the correct frame of reference) we reserve the right not to evaluate them, though we hope our submission system will be able to provide a preliminary assessment of whether we can parse your submissions.
+
+Please do not use negative residue numbers in submitted PDB files, and avoid nonstandard characters in your submitted files.
 
 ## Stage 3: Selection of novel binders from a database
 
-Plans for Stage 3 are still being finalized. However, a brief summary follows below, which will be updated as plans are solidified.
+### Setup and description of Stage 3
 
-**Aim**: The third stage of the SAMPL7 challenge will offer the unique opportunity to select new candidate ligands from a database of purchasable compounds. Cocrystal structures will have been released at the end of Stage 2, allowing participants to exploit that information to predict which new compounds bind to the target as well as their associated binding modes. Selected proposed ligands will be validated experimentally by X-ray crystallography at the Diamond Light Source using the C2 crystal form described in stage 1, but the number of ligands from each submission which are tested will depend on participation numbers.
+**Aim**: Fragment based-drug design aims to elaborate and/ or merge small drug-like compounds into more potent and specific binders. Data-base mining is an essential part of this process as it enables to identify follow-up compounds based on criteria such as biological activity or chemical synthesizability.
 
-Crystallography will be used to assay compounds for activity. Follow-up compounds should aim to improve biding and/or (predicted) potency from the hit they originated from.
+Stage 3 focuses on the selection of fragment follow-up compounds from a database for experimental screening via X-ray crystallography (with potential further validation by ITC). The proposed compounds should bind Site 1 and aim at increasing affinity for the receptor. Participants will be provided with the co-crystal structures of the 52 fragment-protein complexes identified by the method described in Stages 1 and 2. We also provide a compound database (and several subsets) from which compounds must be selected for screening.
 
-**Provided data**: Cocrystal structures, list of candidate compounds, possibly directing participants to predict binders to the main binding site of interest, rules for stage 3 of the challenge, and submission instructions.
+For the [compound databases](https://dx.doi.org/10.5281/zenodo.3576140
+), we provide a large compound database (`full.txt`) which consists of more than 40M compounds. We additionally provide several subsets of this database if participants would prefer to work with fewer compounds. Participants may recommend any compound(s) from the full database (or its subsets) for screening.
 
-**Start date:** Friday the 13th of December 2019
+Our full database is a combination of MolPort ["AllStockCompounds"](https://www.molport.com/shop/database-download) from July 2019 (~7.5M molecules), plus the SUBSET of [Enamine REAL](https://enamine.net/library-synthesis/real-compounds/real-database) that is based around the [DSI-Poised fragment library](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Fragment-Libraries/DSI-poised-library.html) and is approximately rule of 5 compliant (~40M molecules). All the compounds are purchasable and predicted binders must be selected from these databases.
 
-**End date:**  Monday the 13th of January 2020
+Subsets of the full database were selected via a fragment network approach, and are provided in case participants prefer to work with smaller numbers of compounds. The fragment network ([Hall, Murray and Verdonk, 2017](https://pubs.acs.org/doi/10.1021/acs.jmedchem.7b00809)) provides a convenient way to filter-out compounds that are dissimilar to the input hit(s). Overall, this search algorithm requires a compound input and 3 parameters: 1- the number of graph traversals (hops), 2- number of changes in heavy atom count (hac), 3- number of changes in ring atoms counts (rac).  Please, read the above reference for the specifics of the methods. Here, 51 hits were used in the query and the resulting files aggregate the results for all query hits (`output-hops[1;4]-hac[3;5]-rac[1;2].txt`).
+
+Please note that the compound `F763 (O=C1N(CCO)C=CC(Br)=C1)` cannot be found in the aggregated results (`output-hops[1;4]-hac[3;5]-rac[1;2].txt`) because it belongs to the FragLites library which was not included in the initial database refinement.
+
+The participants are asked to submit a ranked list of the top compounds they would recommend for purchase and assay for binding via crystallography. This list must consist of at least 10 compounds, but no more than 100. The number of compounds we actually consider will depend on participation, as explained below. For screening, we will employ the same crystallographic assay used in Stages 1 and 2. Thus, the predictions should take into consideration the associated experimental constraints. In addition, participants will be asked to submit confidence estimates along with their predictions. These may be used to help inform selection of compounds for screening, but also to rank final performance -- methods which predict with high confidence that compounds bind will be penalized more if these compounds do not bind.
+
+**Provided data**:
+- Cocrystal structure for each hit
+- The full compounds database and various fragment network aggregated results for all hits -- [DOI 10.5281/zenodo.3576140
+](https://dx.doi.org/10.5281/zenodo.3576140)
+
+### Rules for Stage 3
+
+**Start date:** Saturday the 14th of December 2019
+
+**Submission due:**  Monday the 13th of January 2020
+
+Predictions must be carried out against Site 1 and should aim at increasing the affinity of the follow-up compound(s) with respect to the original hit(s). The proposed compounds must be members of the database (`full.txt`) for purchase purposes. Participants may or may not choose to use the cocrystal-structures and the subsets generated by the fragment network. They should also keep into consideration the experimental set-up.
+
+Because this challenge involves actually purchasing compounds for experimental screening, we will incur significant costs in the process, so the challenge involves a number of unusual aspects and caveats:
+- We reserve the right to decline to purchase compounds proposed by any participant
+- Depending on participation numbers, we may be limited in whether we can purchase compounds proposed by all participants
+- We expect to likely purchase an upper limit of 50-100 compounds in total for screening, though we are pursuing options that might allow us to expand this number. This means that, in all likelihood, not all proposed compounds will be screened.
+- We plan to consider at least the first 10 compounds in each submission for potential screening; depending on participation, our judges may consider additional compounds, but certainly not more than 100 per submission, and we may only consider the first 10 if participation is high.
+- Because of compound limits, submissions are restricted:
+  - No submissions of null models are allowed
+  - No participant may make more than one submission
+- We will likely filter submissions prior to compound selection:
+  - We plan to have several computational experts read provided method descriptions and ensure the approach applied seems reasonable, well justified, and thoroughly described before selecting compounds for screening.
+  - Several chemists will then judge predictions to determine whether, if they were working on this project, they would judge the proposed compounds worth pursuing synthetically for this target, given your provided justification and any proposed rationale or structure activity relationships. (You may address your justification for your choices in your method selection.)
+- If participants are concerned about these filtering steps, we are open to partnerships where participants might pay for the purchase of their proposed compounds from Enamine to ensure we screen them.
+
+We encourage participants to submit suggested poses of compounds along with their submitted compound choices, especially when using structure-based methods like docking and MD. While such poses will not be judged, participants are welcome to uses these poses as part of their justification for selecting these compounds. Additionally, SAMPL will be able to verify that these predictions were made in advance of experiment.
+
+### Manifest for Stage 3:
+- `stage-3-input-data/cocrystals`: Contains co-crystal structures for the various hits from Stage 1-2, by fragment ID
+- [fragment database and subsets](https://dx.doi.org/10.5281/zenodo.3576140): Available on Zenodo and citable via the DOI `10.5281/zenodo.3576140`.
+
+**Submission format**: The submission format will be announced shortly.
 
 ## Later stages
 
 Depending on the outcome of potential affinity measurements and other details, we may further extend this challenge by adding more stages. This remains to be determined.
+
+## Additional manifest
+- `Analysis`: Submissions and analysis for the various challenges
+- `Examples`: Example submission(s).

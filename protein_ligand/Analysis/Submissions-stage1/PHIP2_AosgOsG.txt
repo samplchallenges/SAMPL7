@@ -1,0 +1,223 @@
+# Results for PHIP2 virtual screening
+#
+# This file will be automatically parsed.  It must contain the following eight elements:
+# predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
+# These elements must be provided in the order shown.
+# The file name must begin with the letters "PHIP2" and then be followed by an underscore or dash.
+#
+# FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
+# Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
+# contains a non-UTF-8 character, you may note it in comments near that entry.
+
+
+# PREDICTIONS SECTION
+#
+# The data in each prediction line should be structured as follows:
+# Fragment identifier, binding in S1 (true/false), binds in S2 (true/false), binds in S3 (true/false), binds in S4 (true/false), binds in any site (true/false).
+# Any compounds not listed are assumed to be predicted as nonbinders.
+# The list of predictions must begin with the "Predictions:" keyword, as illustrated here.
+Predictions:
+F10, false, false, false, true, true
+F11, false, false, true, true, true
+F33, true, true, true, true, true
+F40, true, false, true, true, true
+F42, true, false, false, false, true
+F58, true, false, false, false, true
+F65, true, false, false, false, true
+F68, true, false, false, false, true
+F71, true, false, false, false, true
+F72, true, false, true, false, true
+F77, true, false, true, true, true
+F79, true, false, false, false, true
+F80, false, false, false, true, true
+F81, false, false, false, true, true
+F87, true, true, true, true, true
+F95, true, false, true, false, true
+F97, true, false, false, false, true
+F101, false, false, true, false, true
+F112, true, false, false, false, true
+F115, true, false, false, false, true
+F123, true, false, false, false, true
+F124, true, false, false, false, true
+F125, true, false, false, false, true
+F127, true, false, false, false, true
+F129, true, false, true, true, true
+F130, true, false, false, false, true
+F146, true, false, true, true, true
+F156, true, false, true, false, true
+F166, true, true, true, true, true
+F186, true, true, true, false, true
+F199, true, false, false, false, true
+F203, true, false, false, false, true
+F204, false, false, true, true, true
+F227, false, false, false, true, true
+F250, false, false, true, false, true
+F272, false, true, true, false, true
+F273, false, true, true, true, true
+F275, false, false, false, true, true
+F285, true, false, true, false, true
+F290, true, false, true, false, true
+F291, true, false, false, false, true
+F292, true, false, true, false, true
+F293, true, false, true, true, true
+F294, true, true, true, true, true
+F296, true, false, false, false, true
+F297, true, false, true, true, true
+F300, false, false, true, false, true
+F302, true, true, true, true, true
+F304, false, true, true, true, true
+F306, true, false, false, true, true
+F307, false, false, true, false, true
+F308, true, false, false, false, true
+F317, false, true, true, true, true
+F320, true, false, false, true, true
+F322, true, false, true, true, true
+F325, true, false, false, false, true
+F326, true, false, false, false, true
+F327, true, false, false, true, true
+F328, false, false, false, true, true
+F350, false, false, false, true, true
+F351, false, false, true, false, true
+F352, true, false, false, false, true
+F354, true, true, true, true, true
+F355, true, false, false, false, true
+F356, true, false, false, false, true
+F386, true, false, true, false, true
+F397, true, false, false, false, true
+F401, true, false, false, false, true
+F418, true, false, false, false, true
+F434, true, false, false, false, true
+F474, true, false, true, false, true
+F481, false, false, true, false, true
+F500, true, false, false, false, true
+F504, true, false, true, true, true
+F513, true, false, true, false, true
+F518, true, false, false, false, true
+F542, false, false, false, true, true
+F550, true, false, false, false, true
+F551, true, false, true, false, true
+F557, true, false, false, false, true
+F558, true, false, true, false, true
+F567, true, false, true, true, true
+F576, true, true, true, true, true
+F577, true, true, true, true, true
+F579, true, false, true, false, true
+F582, true, false, true, true, true
+F589, false, false, true, true, true
+F621, true, false, false, false, true
+F624, true, false, false, false, true
+F625, false, false, false, true, true
+F627, true, false, false, false, true
+F647, true, false, false, true, true
+F668, false, true, true, true, true
+F670, false, true, true, true, true
+F671, false, false, true, true, true
+F675, false, false, true, false, true
+F676, false, false, false, true, true
+F679, true, true, true, true, true
+F682, false, false, true, true, true
+F683, false, true, true, true, true
+F684, false, false, true, true, true
+F685, true, false, true, false, true
+F686, false, false, false, true, true
+F687, false, true, false, true, true
+F692, false, false, false, true, true
+F695, false, true, true, true, true
+F697, false, false, true, true, true
+F711, true, true, true, true, true
+F716, true, false, false, false, true
+F717, true, true, true, true, true
+F718, true, true, true, true, true
+F719, true, true, true, true, true
+F721, false, true, true, true, true
+F729, false, true, true, true, true
+F730, true, false, false, false, true
+F737, true, false, false, false, true
+F740, true, false, false, false, true
+F744, false, false, true, false, true
+F746, true, false, true, true, true
+F747, false, false, true, false, true
+F748, false, false, true, false, true
+F752, false, false, true, true, true
+F771, true, true, true, true, true
+F773, true, true, true, true, true
+F781, false, true, true, false, true
+F783, false, false, true, true, true
+F784, false, false, true, false, true
+F786, true, false, true, false, true
+F788, false, false, true, true, true
+F790, true, true, true, true, true
+F791, true, false, false, false, true
+F792, true, false, false, true, true
+F795, true, true, true, true, true
+
+# PARTICIPANT INFORMATION SECTION
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Chunyu Yu
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+Institute of Systems Biomedicine, Peking University
+
+
+# METHOD NAME SECTION
+#
+# Please provide a brief (40 character limit) informal yet informative name of the method used.
+# Following is sample text; please edit to your taste.
+# The "Name:" keyword is required, as shown here.
+# 40 character limit.
+Name:
+Test_Yu
+
+
+# SOFTWARE SECTION
+#
+# All major software packages used and their versions.
+# Please use a new line for each software.
+# Following is sample text; please edit to your taste.
+# The "Software:" keyword is required.
+Software:
+Test
+
+
+# METHOD CATEGORY SECTION
+#
+# State which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`.
+# If your method takes advantage of multiple approaches please report more than one category label, separated by comma.
+# `Docking` category refers to structure-based virtual screening methods that model the structure of the receptor binding pocket and pose of the ligand followed by an scoring the goodness of the fit .
+# `Ligand-based` methods are virtual screening methods that do not rely on protein structure such as pharmacophore modeling, ligand shape-based, 2D or 3D structural similarity based methods.
+# `MD` methods utilize molecular dynamics simulations based on molecular mechanics including free energy calculations.
+# `ML` category includes machine learning, QSPR approaches, and all prediction methods trained on empirical knowledge.
+# `Null` predictions employ a model which is not expected to produce useful predictions, however,  can provide a simple comparison point for more sophisticated methods, as ideally, good methods should outperform the null model.
+# If these categories do not match your method, report as “Other”.
+# If you choose the `Other` category, please explain your decision in the beginning of Method Description section.
+# The `Category:` keyword is required.
+Category:
+Docking, ML
+
+
+# RANKING INFORMATION SECTION
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+False
+
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of detail should be at least that used in a publication.
+# Please include the values of key parameters, with units, and explain how any
+# statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# Please explicitly describe how you handle ions (e.g. counterions) and pKa effects
+# Following is sample text; please edit to your taste.
+# All text following the "Method:" keyword will be regarded as part of your free text methods description.
+Method:
+Test
