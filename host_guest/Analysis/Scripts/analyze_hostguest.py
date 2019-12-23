@@ -76,6 +76,7 @@ EXPERIMENTAL_DATA_FILE_PATH = '../ExperimentalMeasurements/experimental_measurem
 HOST_PALETTE = {
     'OA': '#FFBE0C',
     'exoOA': '#FF0C0C', #First pass
+    'GDCC': '#FFBE0C',
     'CLIP': 'C0',
     'clip': 'C0',
     'CD': 'C2',
@@ -157,6 +158,7 @@ class HostGuestSubmission(SamplSubmission):
         except KeyError:
             self.name = sections['Name'][0]
 
+
         # Add host name column to predictions.
         self.host_name = file_data[0].upper()
         self.data['host_name'] = self.host_name
@@ -191,7 +193,6 @@ class HostGuestSubmission(SamplSubmission):
         """Merge the data of the two submission."""
         merged_submission = copy.deepcopy(self)
         merged_submission.sid = '{} + {}'.format(*sorted([self.sid, other.sid]))
-        merged_submission.index = '{} + {}'.format(*sorted([self.index, other.index]))
         merged_submission.host_name = '{} + {}'.format(*sorted([self.host_name, other.host_name]))
 
         # Check if this is already a merged submission.
@@ -1074,21 +1075,7 @@ if __name__ == '__main__':
     submissions_trimertrip = load_submissions(HostGuestSubmission, HOST_GUEST_TRIMERTRIP_SUBMISSIONS_DIR_PATH, user_map)
     submissions_oa_exooa = load_submissions(HostGuestSubmission, HOST_GUEST_GDCC_SUBMISSIONS_DIR_PATH, user_map)
 
-    # Separate OA submissions from TEMOA submissions.
-    submissions_oa = [submission for submission in submissions_oa_exooa if submission.host_name == 'OA']
-    submissions_exooa = [submission for submission in submissions_oa_exooa if submission.host_name == 'exoOA']
-
-    # Merge methods that were run on both OA and exoOA.
-    submissions_oa_exooa = merge_submissions(submissions_oa, submissions_exooa)
-
-    # Merge all methods that were run on all hosts.
-    #submissions_cb_oa_temoa = merge_submissions(submissions_oa_temoa + submissions_cb)
-
-    # Merge all methods to obtain molecule statistics.
-    submissions_all = merge_submissions(submissions_trimertrip + submissions_oa + submissions_exooa)
-    print("Warning: Fix this to merge submissions")
-    #submissions_all = merge_submissions(submissions_oa + submissions_temoa + submissions_cb,
-    #                                    discard_not_matched=False)
+    submissions_all = submissions_trimertrip + submissions_oa_exooa
 
     if not os.path.isdir('../Accuracy'): os.mkdir('../Accuracy')
     if not os.path.isdir('../Accuracy/MoleculesStatistics'): os.mkdir('../Accuracy/MoleculesStatistics')
@@ -1097,10 +1084,6 @@ if __name__ == '__main__':
     # Create submission collections
     collection_trimertrip = HostGuestSubmissionCollection(submissions_trimertrip, experimental_data,
                                                   output_directory_path='../Accuracy/TrimerTrip')
-    collection_oa = HostGuestSubmissionCollection(submissions_oa, experimental_data,
-                                                  output_directory_path='../Accuracy/OA')
-    collection_exooa = HostGuestSubmissionCollection(submissions_exooa, experimental_data,
-                                                     output_directory_path='../Accuracy/exoOA')
     collection_oa_exooa = HostGuestSubmissionCollection(submissions_oa_exooa, experimental_data,
                                                         output_directory_path='../Accuracy/GDCC')
     #collection_cb_oa_temoa = HostGuestSubmissionCollection(submissions_cb_oa_temoa, experimental_data,
@@ -1125,7 +1108,7 @@ if __name__ == '__main__':
     sns.set_style('whitegrid')
 
     # Generate correlation plots and statistics.
-    for collection in [collection_trimertrip]:
+    for collection in [collection_trimertrip, collection_oa_exooa]:
     #DEBUG: Following line triggers problems
     #for collection in [collection_trimertrip, collection_oa_exooa]:
     #for collection in [collection_cb, collection_cb_no_bonus, collection_oa, collection_temoa,
@@ -1196,7 +1179,7 @@ if __name__ == '__main__':
     # Create a set of all the methods.
     #all_methods = set(collection_oa.data.method.unique())
     all_methods = set(collection_trimertrip.data.method.unique())
-    all_methods.update(set(collection_exooa.data.method.unique()))
+    all_methods.update(set(collection_oa_exooa.data.method.unique()))
     #all_methods.update(set(collection_cb.data.method.unique()))
 
     # Submissions using experimental corrections.

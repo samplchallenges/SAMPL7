@@ -1,0 +1,29 @@
+\documentclass[8pt]{article}
+\usepackage[a4paper,margin=0.2in,tmargin=0.5in,bmargin=0.5in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\begin{footnotesize}
+\begin{longtable}{|cccccccc|}
+\toprule
+                                 ID & sid &  RMSE [kcal/mol] &   MAE [kcal/mol] &     ME [kcal/mol] &            R$^2$ &                 m &            $\tau$ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+               RESP/GAFF/MMPBSA-Cor &  20 &  nan [1.22, nan] &  nan [0.97, nan] &   nan [0.38, nan] &  nan [0.12, nan] &   nan [0.29, nan] &   nan [0.14, nan] \\
+                     AMOEBA/DDM/BAR &  29 &  nan [0.93, nan] &  nan [0.73, nan] &  nan [-0.94, nan] &  nan [0.53, nan] &   nan [0.81, nan] &   nan [0.48, nan] \\
+                       B2PLYPD3/SMD &  23 &  nan [2.90, nan] &  nan [2.15, nan] &   nan [0.46, nan] &  nan [0.08, nan] &   nan [0.59, nan] &   nan [0.06, nan] \\
+ xtb-GNF/Machine Learning/CORINA MD &  28 &  nan [1.38, nan] &  nan [1.04, nan] &  nan [-0.48, nan] &  nan [0.00, nan] &  nan [-0.05, nan] &  nan [-0.09, nan] \\
+\end{longtable}
+\end{footnotesize}
+\end{center}
+
+\end{document}
