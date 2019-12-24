@@ -278,14 +278,15 @@ class HostGuestSubmissionCollection:
                     continue
 
             for system_id, series in submission.data[['$\Delta$G', 'd$\Delta$G', '$\Delta$H']].iterrows():
-                free_energy_expt = experimental_data.loc[system_id, '$\Delta$G']
-                enthalpy_expt = experimental_data.loc[system_id, '$\Delta$H']
+                try: #Load experimental data
+                    free_energy_expt = experimental_data.loc[system_id, '$\Delta$G']
+                    enthalpy_expt = experimental_data.loc[system_id, '$\Delta$H']
+                except KeyError: #But if there's no data for this one, skip
+                    continue
                 free_energy_calc = series['$\Delta$G']
                 free_energy_calc_sem = series['d$\Delta$G']
                 enthalpy_calc = series['$\Delta$H']
                 ranked = submission.ranked
-
-
 
 
                 data.append({
@@ -1042,6 +1043,8 @@ if __name__ == '__main__':
                  'T$\Delta$S', 'dT$\Delta$S', 'n', '$Ka_1$', 'd$Ka_1$', '$Ka_2$', 'd$Ka_2$', '$Ka$','d$Ka','$\Delta$H', 'd$\Delta$H',
                  '$\Delta$G', 'd$\Delta$G')
         experimental_data = pd.read_csv(f, sep=';', names=names, index_col='System ID', skiprows=1)
+        #Don't read experimental values which are non-numeric -- e.g. the experiments didn't work/weren't done
+        experimental_data = experimental_data.dropna(subset=['$\Delta$G'])
 
     # Convert numeric values to dtype float.
     for col in experimental_data.columns[3:]:
