@@ -216,15 +216,15 @@ EXPERIMENTAL_DATA = OrderedDict([
         ('n', 1)
     ])),
     ('exoOA-g1', OrderedDict([
-        ('DG', 'ND'), ('dDG', 'ND'),
-        ('DH', 'ND'), ('dDH', 'ND'),
-        ('TDS', 'ND'), ('dTDS', 'ND'),
+        ('DG', 'NaN'), ('dDG', 'NaN'),
+        ('DH', 'NaN'), ('dDH', 'NaN'),
+        ('TDS', 'NaN'), ('dTDS', 'NaN'),
         ('n', 1)
     ])),
     ('exoOA-g2', OrderedDict([
         ('DG', -5.5 * u.kilojoules_per_mole), ('dDG', 1.2 * u.kilojoules_per_mole),
-        ('DH', 'ND'), ('dDH', 'ND'),
-        ('TDS', 'ND'), ('dTDS', 'ND'),
+        ('DH', 'NaN'), ('dDH', 'NaN'),
+        ('TDS', 'NaN'), ('dTDS', 'NaN'),
         ('n', 1)
     ])),
     ('exoOA-g3', OrderedDict([
@@ -704,15 +704,15 @@ if __name__ == '__main__':
             try:
                 system_data['Ka'], system_data['dKa'] = compute_Ka(system_data['DG'], system_data['dDG'])
             except TypeError:
-                if system_data['DG']=='ND':
-                    system_data['Ka']='ND'
-                    system_data['dKa']='ND'
+                if system_data['DG']=='NaN':
+                    system_data['Ka']='NaN'
+                    system_data['dKa']='NaN'
 
         # Strip units.
         strip_units(system_data)
 
         # Consistency checks.
-        if system_data['TDS']!='ND' and system_data['DG']!='ND' and system_data['DH']!='ND':
+        if system_data['TDS']!='NaN' and system_data['DG']!='NaN' and system_data['DH']!='NaN':
             assert np.isclose(system_data['DG'], system_data['DH'] - system_data['TDS'], atol=0.10000000000001, rtol=0.0)
 
             if DG is not None:

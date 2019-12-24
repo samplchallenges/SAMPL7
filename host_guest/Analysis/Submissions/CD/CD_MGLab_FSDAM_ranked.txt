@@ -1,0 +1,203 @@
+Predictions: 
+#host        DG(bind) dDG  dmodel
+bCD-g2,       -5.3,  0.8, 2.0   ,,,  
+MGLab_8-g2,   -5.5,  1.2, 2.0   ,,,  
+MGLab_9-g2,   -5.8,  0.9, 2.0   ,,,  
+MGLab_19-g2,  -5.2,  1.0, 2.0   ,,,  
+MGLab_23-g2,  -5.9,  1.5, 2.0   ,,,  
+MGLab_24-g2,  -4.2,  1.2, 2.0   ,,,  
+MGLab_34-g2,  -4.5,  0.9, 2.0   ,,,  
+MGLab_35-g2,  -4.3,  1.0, 2.0   ,,,  
+MGLab_36-g2,  -6.1,  1.1, 2.0   ,,,  
+bCD-g1,       -3.9,  0.5, 2.0   ,,,  
+MGLab_8-g1,   -3.7,  0.5, 2.0   ,,,  
+MGLab_9-g1,   -3.9,  0.5, 2.0   ,,,  
+MGLab_19-g1,  -3.9,  0.5, 2.0   ,,,  
+MGLab_23-g1,  -3.7,  0.8, 2.0   ,,,  
+MGLab_24-g1,  -3.5,  0.8, 2.0   ,,,  
+MGLab_34-g1,  -3.8,  0.4, 2.0   ,,,  
+MGLab_35-g1,  -4.1,  0.6, 2.0   ,,,  
+MGLab_36-g1,  -4.5,  0.7, 2.0   ,,,  
+
+#
+Participant name:
+Piero Procacci
+
+#
+Participant organization:
+University of Florence, Italy
+
+#
+Name:
+FSDAM/GAFF2/OPC3
+
+#
+Software:
+Orac 6.1
+Primadorac 1.0
+OpenBabel 2.4.1
+Mopac2016 Version: 18.305L
+
+#
+Method:
+
+All simulations were performed with the ORAC6.1 program using the fast
+switching double annihilation method (FSDAM) as described in doi:
+10.1039/c5cp05521k. Briefly, in FSDAM the dissociation free energy is
+determined in two consecutive stages: in the first stage (REST), the
+bound and unbound state are sampled at full coupling using replica
+exchange with solute tempering; in the second stage (fast switching,
+FS), starting from the canonical sampling at full coupling, we launch
+a swarm of independent and concurrent non-equilibrium trajectories
+where the ligand-environment alchemical coupling parameter is rapidly
+switched off to zero coupling (ligand in the gas phase). The
+annihilation free energy in the two branch of the alchemical
+thermodynamic cycle is recovered from the work distribution exploiting
+the Crooks and Jarzynski non-equilibrium theorems.
+
+The FF parameters (bonded, charges and LJ) and topology of the host
+and guests molecules were prepared using the Primadorac interface (
+doi: 10.1021/acs.jcim.7b00145).  Primadorac uses GAFF2 and AM1/BCC
+charges. Protonation states of guest and host molecules are predicted
+by OpenBabel at pH 7.4.  No counterions were used.  A background
+neutralizing plasma was assumed within the PBC Ewald method
+(PME). Each system was solvated in about ~1000 OPC3 water molecules in
+a cubic box of ~31 side-length. 
+
+The initial configurations were prepared by molecular docking using a
+SASA approach for implicit solvation, using the following scheme: the
+guest molecule was inserted with random orientations by placing its
+COM with uniform probability within a sphere of 6 Angs centered at the
+COM of the host in the configuration provided by the organizer. Form
+these randomly generated starting configurations ( 500 hundreds), the
+system was minimized assuming full flexibility and SASA correction to
+the local minimum using CG. The starting configuration for the
+challenge is that with the smallest dissociation energy among the 500
+docking runs with the R group of the guest molecule pointing upward 
+towards the wider edge of the truncated cone. In six cases,
+g2-24 g2-g35 g2-g36 g1-bcd g1-g09 g1-g35, we tested
+also the other pose with the R group pointing downward on the narrow
+edge, obtaining in most cases a negligible contribution to the binding
+free energy.  
+
+Production MD simulations (both REST and FS) were run in the NPT
+ensemble, with temperature control (T=298 K) using Nose-Hoover
+thermostat and pressure control (P=1 atm) provided a Parrinello-Rahman
+barostat with cubic constraints. LJ non-bonded interactions were
+truncated with a 13.0 Angstrom cutoff, whereas long-range
+electrostatics were handled with the PME method using alpha=0.37 and 1
+Angs grid spacing in the direct space.  SHAKE constraints were applied
+to bonds involving hydrogen atoms, and the simulation was integrated
+using a five step RESPA integrator as described in
+DOI:10.1021/jp960295w.
+
+In the REST stage (Replica exchange with solute tempering) we scaled
+the torsional ad 14 non bonded interactions of the solute (host+guest)
+up to 0.1 (i.e. 3000 K) using 8 replicas with the scaling protocol
+described in 10.1002/jcc.21388. Average exchange rate was 30%. The
+REST simulations lasted (per replica state) 30 ns, sampling 480
+configurations for the bound host-guest state and for the free guest
+in bulk.  In the bound state, a weak COM-COM harmonic tethering
+potential (k=0.026 kcal mol-1 Angs^2 ) was imposed to prevent the guest
+to drifting off in the solvent. In the FS stage, the guest, in the
+bound and unbound state, was annihilated in 0.36 and 0.24 ns,
+respectively,  in 480 independent annihilation trajectories starting
+form the corresponding points sampled in the REST stage.
+
+Annihilation free energy estimates (bound and unbound states) are
+based on the work distribution produced in the FS stage.  Before
+processing the work distribution for the bound state, correlation
+between work values and corresponding starting COM-COM distance was
+checked to ensure that in none of the initial REST states the ligand
+left the binding pocket (when this happens an outlier lower work value
+is associated to an unbound state with outlier COM-COM distance). In
+three cases (g2-35, g1-19, g1-36) we discarded a small fraction work
+values corresponding to under-sampled secondary poses.
+
+If the work distribution passed the Anderson-Darling and the
+Jarque-Bera test, the annihilation free energy is calculated using the
+Gaussian estimator. In this ranked submission, all estimates are based
+on the Gaussian assumption as all distribution (bound or unbound)
+passed the AD test normality tests after checking COM-COM distance
+work correlation.
+
+A finite size correction to the dissociation free energy due to net
+charges has been calculated as described in DOI: 10.1063/1.477788.
+The standard state correction to the dissociation free energy DG for
+translational restraint is given by DG_ssc=RT ln(V_site/V_0), where
+V_site (the binding site volume, see 10.1021/acs.jctc.6b01192 ) is
+computed from the variance of the guest-host COM-COM distances
+monitored during the REST stage as V=4*pi*(2*\sigma^3/3) in the
+primary pose.  Error on DG was computed by bootstrapping with
+re-sampling in all cases.  Details of the various contributions to the
+dissociation free energy DG are provided in the Table below (produced
+by an application script processing the raw FS work data and raw
+COM-COM REST time record).
+
+#name  nl  ql  qp DGexp  dgq  dqv nb nu    DG1   +/-    DGj   +/-    dGq   +/-    W_b   s_b    W_u   s_u   ADb   ADu      Rb    Ru	pose
+nbcd  35   1   0  6.42  0.0 -3.5  1  1    5.30  0.80   4.20  0.10   -5.40  0.30  67.50  2.10  56.30  1.30  0.28  0.34   -0.11  0.10    up
+ng08  35   1  -1  6.00 -0.3 -3.7  2  1    5.50  1.20   6.70  0.20   -5.30  1.10  73.00  3.20  56.30  1.30  0.43  0.34   -0.13  0.10    up
+ng09  35   1  -1  6.00 -0.3 -3.6  2  1    5.80  0.90   5.10  0.30   -5.90  1.10  69.50  2.40  56.30  1.30  0.44  0.34   -0.02  0.10    up
+ng19  35   1   1  6.00  0.4 -3.8  2  1    5.20  1.00   5.20  0.10   -6.00  0.70  68.50  2.40  56.30  1.30  0.76  0.34   -0.05  0.10    up
+ng23  35   1  -2  6.00 -0.5 -3.6  1  1    5.90  1.50   7.30  0.20   -4.70  0.60  74.10  3.30  56.30  1.30  0.19  0.34   -0.08  0.10    up
+ng24  35   1   0  6.00  0.0 -3.1  2  1    4.20  1.20   4.90  0.30   -6.10  0.70  69.70  3.00  56.30  1.30  0.56  0.34   -0.05  0.10    up
+ng34  35   1   1  6.00  0.1 -3.6  1  1    4.50  0.90   4.80  0.10   -6.00  0.30  67.70  2.40  56.30  1.30  0.40  0.34    0.09  0.10    up
+ng35  35   1  -1  6.00 -0.3 -2.9  1  1    4.30  1.00   3.70  0.10   -5.30  0.40  67.10  2.40  56.30  1.30  0.44  0.34   -0.06  0.10    up
+ng36  35   1   0  6.00 -0.0 -3.5  1  1    6.10  1.10   6.70  0.10   -6.60  0.30  71.20  2.80  56.30  1.30  0.41  0.34   -0.23  0.10    up
+obcd  22   0   0  4.54  0.0 -2.6  1  1    3.90  0.50   4.00  0.00   -2.70  0.10  11.60  1.60   3.90  0.90  0.40  0.43    0.05 -0.04    two poses 
+og08  22   0  -1  6.00  0.0 -3.0  2  1    3.70  0.50   4.40  0.00   -3.20  0.10  13.30  2.00   3.90  0.90  0.42  0.43   -0.02 -0.04    up
+og09  22   0  -1  6.00  0.0 -3.2  2  1    3.90  0.50   4.00  0.00   -3.50  0.10  12.70  1.80   3.90  0.90  0.56  0.43    0.01 -0.04    two poses 
+og19  22   0   1  6.00  0.0 -2.4  2  1    3.90  0.50   4.20  0.00   -2.50  0.10  11.60  1.60   3.90  0.90  0.30  0.43    0.05 -0.04    up 
+og23  22   0  -2  6.00  0.0 -2.8  1  1    3.70  0.80   3.80  0.10   -3.50  0.10  13.10  2.00   3.90  0.90  0.23  0.43   -0.07 -0.04    up
+og24  22   0   0  6.00  0.0 -2.6  1  1    3.50  0.80   4.30  0.00   -3.00  0.10  13.20  2.20   3.90  0.90  0.67  0.43    0.00 -0.04    up
+og34  22   0   1  6.00  0.0 -2.7  2  1    3.80  0.40   3.00  0.10   -3.40  0.30  11.80  1.60   3.90  0.90  0.57  0.43   -0.20 -0.04    up
+og35  22   0  -1  6.00  0.0 -2.4  1  1    4.10  0.60   2.50  0.00   -2.60  0.10  11.90  1.60   3.90  0.90  0.57  0.43   -0.11 -0.04    up
+og36  22   0   0  6.00  0.0 -2.6  1  1    4.50  0.70   4.20  0.10   -3.50  0.10  15.00  2.40   3.90  0.90  0.38  0.43   -0.38 -0.04    up
+
+where
+nl = number of guest atoms 
+qg = charge on ligand
+qh = charge on host
+DGexp = unknown experimental value for binding free energy (kcal/mol) 
+dgq = finite size correction due to ligand charge (kcal/mol)
+dgv = standard state volume correction (kcal/mol)
+nb  = Jarque-Bera based test for the bound state (normality is 1) 
+nu  = Jarque-Bera based test for the unbound state (normality is 1) 
+DG1 = Gaussian estimate for the dissociation free energy (kcal/mol)
+DGj = Statistically boosted Jarzynski estimate for the dissociation free energy (kcal/mol)
+dGq = Electrostatic contribution to the dissociation free energy
+W_b = Mean annihilation work for the bound state
+s_b = variance (sigma) of the annihilation work for the bound state 
+W_u = Mean annihilation work for the unbound state
+s_u = variance (sigma) of the annihilation work for the unbound state
+ADb = Anderson Darling test for the bound state 
+ADu = Anderson Darling test for the unbound state
+Rb  = Pearson correlation coefficient between discharging and Lennard-Jones work for the bound state
+Ru  = Pearson correlation coefficient between discharging and Lennard-Jon work for the unbound state
+pose = type of pose considered. up means R hydrophilic group of the host towards the largest base of the truncated cone  
+
+Computational efficiency:
+
+For each guest-host pair, the REST stage produced for the bound and
+unbound state a total of 134.4 and 67.2 ns (16.8 and 8.4 on the target
+state), respectively. On HPC system equipped with Intel(R) Xeon(R)
+Platinum 8160 CPU @ 2.10GHz (also known as "skylake"), the
+calculation (8 REST batteries) required about 4 to 3 wall clock hours
+using 384 cores (64 MPI process and 6 OpenMP thread for each
+trajectory).  The FS stage produced a total 172.8 and 115.2 ns for the
+bound and unbound state respectively, requiring about 1 wall clock
+hour and using in both cases 2880 cores. The total cost of the
+prediction for all the 16 guest-host pairs was 7833.6 nanosecond, delivered in
+about 60 wall clock hours with jobs engaging from 1536 to 2280
+cores. All calculations have been done on the Skylake-CRESCO6 HPC
+platform in Portici (Italy) provided by ENEA. 
+
+Notes on prediction:
+
+# METHOD CATEGORY SECTION
+Category:
+Alchemical 
+
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True

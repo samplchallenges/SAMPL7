@@ -1,0 +1,96 @@
+#
+# Results for GDCC
+#
+# PREDICTIONS
+#
+Predictions:
+OA-g1,     -5.00, 0.30, 1.0,,,
+OA-g2,     -6.01, 0.30, 1.0,,,
+OA-g3,     -8.70, 0.30, 1.0,,,
+OA-g4,     -7.25, 0.30, 1.0,,,
+OA-g5,     -3.95, 0.30, 1.0,,,
+OA-g6,     -4.20, 0.30, 1.0,,,
+OA-g7,     -7.71, 0.30, 1.0,,,
+OA-g8,     -8.01, 0.30, 1.0,,,
+exoOA-g1,  -0.98, 0.40, 1.5,,,
+exoOA-g2,  -1.92, 0.40, 1.0,,,
+exoOA-g3,  -2.16, 0.40, 1.0,,,
+exoOA-g4,  -0.67, 0.40, 1.0,,,
+exoOA-g5,  -5.09, 0.40, 1.0,,,
+exoOA-g6,  -5.59, 0.40, 1.0,,,
+exoOA-g7,  -7.23, 0.40, 1.0,,,
+exoOA-g8,  -7.04, 0.40, 1.0,,,
+#
+# PARTICIPANT NAME
+#
+Participant name:
+Jay Ponder
+#
+# PARTICIPANT ORGANIZATION
+#
+Participant organization:
+Washington University in Saint Louis
+#
+# NAME OF METHOD
+#
+Name:
+AMOEBA/DDM/BAR
+#
+# SOFTWARE USED
+#
+Software:
+Tinker 8.7
+Tinker-OpenMM 8.7
+Psi4 1.3
+#
+# METHODOLOGY
+#
+Method:
+All simulations were performed with the Tinker and Tinker-OpenMM
+software using the AMOEBA force field. AMOEBA parameters were generated
+by the AMOEBA FORGE parameterization engine developed by Dr. Chris Ho
+in collaboration with the Ponder lab. For each guest, a series of MD
+simulations were run starting from the guest in water (solvation leg)
+and from the host-guest complex in water (host-guest leg). In both
+legs a series windows were used to first annihilate electrostatics in
+the guest, followed by annihilation of guest vdw interactions. The
+simulations were for 40-50 Ang systems, run under NPT, and with eight
+sodium ions added to the host-guest runs to neutralize the host. No
+other ions were added, and no attempt was made to neutralize the guest.
+Simulations used PME for long range electrostatics, and a 9 Ang cutoff
+on vdw terms incremented by an isotropic vdw long range correction.
+A two-stage RESPA-style integrator was used for the MD with a 2 fs time
+step. Trajectory snapshots were save every 1 ps. For host-guest MD,
+a single flat-bottomed harmonic distance restraint between groups of
+atoms was used to maintain binding of the guest. These restraints were
+chosen such that they were not violated during long unrestrained MD
+runs on the bound host-guest complex.
+
+Each sampling window was simulated for 10 ns and the initial 1 ns was
+discarded as equilibration. The 9 ns of production simulation for each
+window were then analyzed using the standard BAR method between adjacent
+windows to compute free energy differences. The difference between the
+sum of the solvation and host-guest legs, after correction of the host-
+guest sum for release of the flat-bottomed harmonic restraint, was
+taken as the binding energy estimate. Statistical error was estimated
+for each BAR calculation, and these errors were summed to get a total
+error for each binding free energy prediction.
+
+All 16 binding free energies were computed independently using two different
+sets of AMOEBA force field parameters for the host molecules. These two
+parameter sets differed almost entirely in two key torsional parameters
+that control flexibility of the hosts through the middle of the cavity and
+around the upper rim of the cavity. The predictions submitted here are a
+combination of these two sets of free energy results, biased toward the
+set performing better on analogous known systems such as OA with G01 to G06.
+
+#
+# METHOD CATEGORY SECTION
+#
+Category:
+Alchemical
+#
+# RANKED PREDICTION
+#
+Ranked:
+True

@@ -1,0 +1,28 @@
+\documentclass[8pt]{article}
+\usepackage[a4paper,margin=0.2in,tmargin=0.5in,bmargin=0.5in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\begin{footnotesize}
+\begin{longtable}{|cccccccc|}
+\toprule
+                       ID & sid &    RMSE [kcal/mol] &     MAE [kcal/mol] &         ME [kcal/mol] &              R$^2$ &                    m &               $\tau$ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+           AMOEBA/DDM/BAR &   6 &  2.76 [1.85, 3.97] &  2.12 [1.36, 3.33] &  -1.69 [-2.98, -0.43] &  0.50 [0.13, 0.77] &    1.25 [0.53, 2.04] &    0.47 [0.12, 0.74] \\
+         FSDAM/GAFF2/OPC3 &   4 &  2.97 [2.05, 5.16] &  2.24 [1.58, 4.23] &    0.43 [-1.59, 2.39] &  0.12 [0.00, 0.57] &   0.60 [-0.54, 1.60] &   0.24 [-0.22, 0.62] \\
+ MD/DOCKING/GAFF/xtb-GNF/ &   5 &  5.65 [3.90, 7.35] &  4.51 [3.00, 6.40] &  -4.23 [-6.20, -2.29] &  0.00 [0.00, 0.25] &  -0.10 [-1.00, 0.79] &  -0.05 [-0.41, 0.34] \\
+\end{longtable}
+\end{footnotesize}
+\end{center}
+
+\end{document}
