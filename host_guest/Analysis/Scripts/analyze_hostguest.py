@@ -37,10 +37,6 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 # - Remove stray DEBUG items in code
 # - Deal with non-numeric ("ND") experimental data
 
-# NEXT:
-# - Bring on GDCC analysis (will require dealing with "ND" data)
-#    And at a later time, removing non-required data
-
 # EXTENSIONS
 # - (DONE) Update to allow single ranked submission per group (additional submissions go into separate category)
 #    - Optionally additional submissions can get analyzed/plotted separately, on plots with reference calculations.
@@ -1111,6 +1107,8 @@ if __name__ == '__main__':
     submissions_trimertrip = load_submissions(HostGuestSubmission, HOST_GUEST_TRIMERTRIP_SUBMISSIONS_DIR_PATH, user_map)
     print("Loading GDCC submissions")
     submissions_oa_exooa = load_submissions(HostGuestSubmission, HOST_GUEST_GDCC_SUBMISSIONS_DIR_PATH, user_map)
+    print("Loading CD submissions")
+    submissions_cd = load_submissions(HostGuestSubmission, HOST_GUEST_CD_SUBMISSIONS_DIR_PATH, user_map)
     print()
 
     # Make split submissions for the two hosts within GDCC
@@ -1122,7 +1120,7 @@ if __name__ == '__main__':
         submissions_exooa.append(b)
 
     # Make a set of all the submissions
-    submissions_all = submissions_trimertrip + submissions_oa_exooa
+    submissions_all = submissions_trimertrip + submissions_oa_exooa + submissions_cd
 
     if not os.path.isdir('../Accuracy'): os.mkdir('../Accuracy')
     if not os.path.isdir('../Accuracy/MoleculesStatistics'): os.mkdir('../Accuracy/MoleculesStatistics')
@@ -1141,6 +1139,10 @@ if __name__ == '__main__':
                                                         output_directory_path='../Accuracy/exoOA')
     collection_oa = HostGuestSubmissionCollection(submissions_oa, experimental_data,
                                                             output_directory_path='../Accuracy/OA')
+
+    print("Creating submission collection for CD")
+    collection_cd = HostGuestSubmissionCollection(submissions_cd, experimental_data,
+                                                            output_directory_path='../Accuracy/CD')
 
     #collection_cb_oa_temoa = HostGuestSubmissionCollection(submissions_cb_oa_temoa, experimental_data,
     #                                                       output_directory_path='../Accuracy/CB8-OA-TEMOA')
@@ -1165,7 +1167,7 @@ if __name__ == '__main__':
     sns.set_style('whitegrid')
 
     # Generate correlation plots and statistics.
-    for collection in [collection_trimertrip, collection_oa_exooa, collection_oa, collection_exooa]:
+    for collection in [collection_trimertrip, collection_oa_exooa, collection_oa, collection_exooa, collection_cd]:
     #DEBUG: Following line triggers problems
     #for collection in [collection_trimertrip, collection_oa_exooa]:
     #for collection in [collection_cb, collection_cb_no_bonus, collection_oa, collection_temoa,
