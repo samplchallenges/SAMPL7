@@ -55,6 +55,7 @@ All three host-guest challenges are now closed, as are the first and second stag
 - (2019-12-20): Add Isaacs' [TrimerTrip reference](https://dx.doi.org/10.1039/C9NJ05336K). Add Zenodo DOI for modified cyclodextrin raw experimental data.
 - (2019-12-20): Add Stage 2 submissions for PHIP2.
 - (2019-12-23): Add Stage 3 submission format for PHIP2.
+- (2019-12-23): Add preliminary host-guest analysis (ranked submissions only, for now) for GDCC and TrimerTrip; add preliminary first pass at CD analysis.
 
 ## Challenge overview
 
