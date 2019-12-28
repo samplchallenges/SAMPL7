@@ -184,6 +184,7 @@ The participants are asked to submit a ranked list of the top compounds they wou
 - Cocrystal structure for each hit
 - The full compounds database and various fragment network aggregated results for all hits -- [DOI 10.5281/zenodo.3576140
 ](https://dx.doi.org/10.5281/zenodo.3576140)
+- Submission format: `stage3_submission_template.txt`
 
 ### Rules for Stage 3
 
@@ -211,8 +212,9 @@ We encourage participants to submit suggested poses of compounds along with thei
 ### Manifest for Stage 3:
 - `stage-3-input-data/cocrystals`: Contains co-crystal structures for the various hits from Stage 1-2, by fragment ID
 - [fragment database and subsets](https://dx.doi.org/10.5281/zenodo.3576140): Available on Zenodo and citable via the DOI `10.5281/zenodo.3576140`.
+- `stage3_submission_template.txt`: Required submission template for use in stage 3.
 
-**Submission format**: The submission format will be announced shortly.
+**Submission format**: [`stage3_submission_template.txt`](stage3_submission_template.txt)
 
 ## Later stages
 
