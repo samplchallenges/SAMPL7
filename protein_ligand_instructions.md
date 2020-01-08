@@ -10,7 +10,8 @@ Your predictions must be uploaded via our [web form](http://sampl-submission.us-
 
 You must use the provided templates to upload your predictions. Templates are:
 - [protein_ligand/stage1_submission_template.txt](protein_ligand/stage1_submission_template.txt) for the virtual screening component
-- (to be updated)
+- [protein_ligand/stage2_submission_template.txt](protein_ligand/stage2_submission_template.txt) for the pose prediction component; must be uploaded along with pose predictions in a tar.gz file; see [instructions](protein_ligand/README.md) for full details.
+- [protein_ligand/stage3_submission_template.txt](protein_ligand/stage3_submission_template.txt) for the compound selection component.
 
 File names must begin with the letters "PHIP2" and the additional details provided in the submission template.
 
