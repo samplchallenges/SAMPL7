@@ -19,14 +19,12 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
 - [PHIP2 challenge stage 1-3 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
 
-All three host-guest challenges are now closed, as are the first and second stages of the PHIP2 protein-ligand challenge. The **third stage of the protein-ligand challenge is due Jan. 13, 2019 by midnight (24:00) US Pacific time.**
+All three host-guest challenges are now closed, as are the first and second stages of the PHIP2 protein-ligand challenge. The **third stage of the protein-ligand challenge is due Jan. 13, 2019 by midnight (24:00) US Pacific time. Our [submission uploads are now live](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/).**
 
 ## What's coming
 - GSK logD challenge information as soon as available
 - Results (and inputs for) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
-- Experimental results for the host-guest challenge (except for TrimerTrip, which is available now)
-- Analysis of submissions for the host-guest challenge
-- PHIP2 protein-ligand challenge submission format and URL.
+- Final analysis of submissions for the host-guest challenge
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -56,6 +54,7 @@ All three host-guest challenges are now closed, as are the first and second stag
 - (2019-12-20): Add Stage 2 submissions for PHIP2.
 - (2019-12-23): Add Stage 3 submission format for PHIP2.
 - (2019-12-23): Add preliminary host-guest analysis (ranked submissions only, for now) for GDCC and TrimerTrip; add preliminary first pass at CD analysis.
+- (2020-01-08): Add PHIP2 Stage 3 submission upload.
 
 ## Challenge overview
 
@@ -73,7 +72,7 @@ This challenge breaks out into at least three stages on a tight timeline:
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database
 
-Stage 2 is now open and focuses on identification of binders (and Stage 1 is closed). Unfortunately, the timeline for stages 1 and 2 has to be tight given the timeframe for experimental compound screening (Stage 3). See [protein_ligand/README.md](protein_ligand/README.md) for full details.
+Stage 3 is now open and focuses selection of possible new binders from a library. See [protein_ligand/README.md](protein_ligand/README.md) for full details.
 
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
