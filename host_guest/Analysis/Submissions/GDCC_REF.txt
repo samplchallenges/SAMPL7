@@ -28,6 +28,7 @@
 # are optional as literature values are available.
 #
 # The list of predictions must begin with the "Prediction:" keyword, as illustrated here.
+# THESE PREDICTION ARE REFERENCE CALCULATIONS AND ARE NOT FORMAL SUBMISSIONS FOR SAMPL7
 Predictions:
 OA-g1, 
 OA-g2, -10.082, 0.671, 0.133, 
@@ -68,12 +69,15 @@ Docking/BCC/GAFF/TIP3P
 # Following is sample text; please edit to your taste.
 # The "Software:" keyword is required.
 Software:
-ADT/Vina version 1.5.6
+AutoDock Vina version 1.1.2
+AutoDock Tools (ADT) version 1.5.6
 YANK version 23.7
+OpenMM version 7.1
 AmberTools18
 Chimera candidate version 1.13.1
 PyMol version 1.7.4
-Openeye (QuacpacTK version 2.0.2, OEChemTK version 2.3.0)
+Openeye Tools (QuacpacTK version 2.0.2, OEChemTK version 2.3.0)
+
 #
 # Methodology and computational details.
 # Level of detail should be at least that used in a publication.
@@ -84,33 +88,39 @@ Openeye (QuacpacTK version 2.0.2, OEChemTK version 2.3.0)
 # Following is sample text; please edit to your taste.
 # All text following the "Method:" keyword will be regarded as part of your free text methods description.
 Method:
+
 Host and guest files in several forms (mol2,pdb, and sdf) were provided from SAMPL7 organizers via Github, and we utilized mol2. 
-The protonation state(s) of each molecule were assigned at experimental pH of 11.7 and AM1-BCC charges were added 
-using Openeye toolkits when necessary. The updated host and guest mol2 files were converted to PDBQT and the guests were 
-docked using AutoDock/Vina. We utilized a docking protocol with a grid search box of 40 cubic Angstroms from the center of the host,
+The protonation state(s) of each molecule were assigned with Chimera (1.13.1) at experimental pH of 11.7 and AM1-BCC charges were added 
+using Openeye toolkits when necessary. The updated host and guest mol2 files were then processed and converted to PDBQT with 
+AutoDock Tools (ADT 1.5.6). The ADT grid box feature by default identifies the grid center x_y_z coordinates of the hosts "binding
+site" with a starting grid search box of 40 cubic Angstroms, and adjusted to fit the entire host. The grid box size and coordinates 
+were added to relevant host-guest system script for docking with AutoDock Vina (1.1.2). In addition, our docking protocol had
 a global search exhaustiveness of 80, and an energy range of 30 kcal/mol between the best and worst binding modes, all to generate
-at most 100 binding modes. The grid center was placed at x_y_z coordinates -0.001, -0.435, and -0.004 respectively. Upon completion,
-the pose with the highest docking score was selected for simulations. The docked guest PDBQT file was converted to PDB 
-via PyMol. Subsequently, the new guest PDB was processed with the chimera program, implicent hydrogens added, protonation states
-were inspected, and saved as a mol2. 
+at most 100 binding modes. The grid center was placed at x_y_z coordinates -0.001, -0.435, and -0.004 respecitively. Upon docking 
+completion, the pose with the highest docking score was selected for simulations. Upon completion, the docked guest PDBQT files were processed, 
+inspected, and converted to PDB using PyMOL (1.7.4). Subsequently, the new guest PDB was processed, implicit hydrogens 
+added, protonation states inspected, and saved as a mol2 with Chimera (1.13.1). 
 
 Afterwords, openeye tools was used once again to perceive bonds, determine connectivity, and compute atomic formal charges. 
 The host, guest, and complex files were parameterized, solvated with TIP3P water model in a cubic box approximately 41 x 41 x 41 cubic
 Angstroms via AmberTools antechamber and tleap respectively. In addition to solvation, sodium and chloride counterions were added to 
-neutralize the molecules and additional ions were added to the 10mM experimental concentration. The topology and coordinate 
+neutralize the system and and additional ions were added to achieve the 10mM experimental concentration. The topology and coordinate 
 files (with and without solvent) of the host, guest, and complex were saved as our simulation input files.
 
-All simulations were performed with YANK which uses OpenMM as its simulation engine with CUDA platform in the University of California, San
+All simulations were performed with YANK (23.7) which uses OpenMM (1.7.1) as its simulation engine with CUDA platform in the University of California, San
 Diego super computing cluster (TSCC). Explicit absolute free energy calculations were performed using the PMT method at NPT, with temperature 
 control using Langevin thermostat at 298K and pressure control by Monte Carlo barostat at 1 atmosphere. Long and short range nonbonded interactions
 were set at an 11 Angstrom cutoff, the edge of the solvation box 12 Angstroms away from any atom of host or guest, ewald error tolerance of 0.0001, 
-and Lennard-Jones interactions turned on at 10 Angstroms. Harmonic restraints were applied to all systems to keep the ligand from migrating 
-away from the "binding" region of the host, yet still be able to explore the area around it. Electrostatic, steric, and restraint lambda values were
+and Lennard-Jones interactions turing on at 10 Angstroms. Harmonic restraints were applied to all systems to keep the ligand from migrating 
+away from the "binding" region of the host, yet still be able to explore the area around it. (See naharm.yaml script) Electrostatic, steric, and restraint lambda values were
 determined using YANKs automatic pipeline in a test run with bCD-g2. The lambda values were extracted and incorporated as our protocol for all systems
 with a charged guest. 
 
-An initial 500 ps simulation was used to minimize and relax all systems. The simulations contained 61 lambda windows runnning up to 26 ns per window 
-to bring the free energy prediction uncertainty below 0.5 kcal/mol. 
+An initial 500 ps simulation was used to minimize and relax all systems. The simulations contained 61 lambda windows runnning up to 26 ns per window in
+an attempt to reduce the free energy prediction uncertainty below 0.5 kcal/mol. Total run lengths were adjusted on a system-by-system basis by monitoring the uncertainty associated with binding free energies as calculations progressed.  
+
+In our initial test similations we observed poor overlap between states and replica mixing for systems with charged guests when conducting the simulations with 29 lambda windows. This 29 lambda window protocol was also tested on a GDCC and Clip system (all have charged guests), and we observed poor overlap between states and replica mixing. In Clip systems, YANKs mixing statistics section of the simulation health report returned a warning. 
+Therefore, we decided to include a separate protocol with additional lambda windows for systems with charged guests. The number of windows and the lambda values were determined using YANKs automatic pipline in a test simulation with bCD-g2, Clip-g11, and OA-g2. The values were extracted and utilized for all systems with charged guests as noted above.
 
 
 #
@@ -129,5 +139,6 @@ Alchemical
 # Multiple ranked submissions from the same participant will not be judged.
 # Non-ranked submissions are accepted so we can verify that they were made before the deadline.
 # The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+# THIS IS NOT A FORMAL SUBMISSION
 Ranked:
 False
