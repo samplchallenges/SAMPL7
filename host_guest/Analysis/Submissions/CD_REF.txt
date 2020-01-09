@@ -1,4 +1,4 @@
-# Results for clip
+# Results for CD
 #
 # This file will be automatically parsed.  It must contain the following seven elements:
 # predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
