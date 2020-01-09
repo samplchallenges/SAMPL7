@@ -116,10 +116,11 @@ away from the "binding" region of the host, yet still be able to explore the are
 
 An initial 500 ps simulation was used to minimize and relax all systems. Hosts with g1 contained 29 lambda windows simulated for 16 ns per window. (See boresch.yaml script [FILE LINK HERE]) Electrostatic,
 steric, and restraint lambda values from previous free energy calculations with bCD were used. Simulations for all hosts with g2 contained 61 lambda windows 
-runnning up to 26 ns per window to bring the free energy prediction uncertainty below 0.5 kcal/mol. Total run lengths were adjusted on a system-by-system basis by monitoring the uncertainty associated with binding free energies as calculations progressed.
-Electrostatic, steric, and restraint lambda values were determined 
-using YANKs automatic pipeline in a test run with bCD-g2. The lambda values were extracted and incorporated as our protocol for all systems with a charged guest. (See naharm_%_.yaml script [FILE LINK HERE])
- 
+runnning up to 26 ns per window to bring the free energy prediction uncertainty below 0.5 kcal/mol (See NOTE below). Total run lengths were adjusted on a system-by-system basis by monitoring the uncertainty associated with binding free energies as calculations progressed.
+Electrostatic, steric, and restraint lambda values for systems with guest g2 were determined using YANKs automatic pipeline in a test run with bCD-g2. The lambda values were extracted and incorporated as our protocol for all systems with a charged guest. (See naharm_%_.yaml script [FILE LINK HERE])
+
+NOTE: We observed poor overlap between states and replica mixing for systems with charged guests when conducting the simulations with 29 lambda windows. This 29 lambda window protocol was also tested on a GDCC and Clip system (which all have charged guests), and we observed poor overlap between states and replica mixing. In Clip systems even more so, YANKs mixing statistics section of the simulation health report returned a warning. 
+Therefore, we decided to include a separate protocol with additional lambda windows for systems with charged guests. The number of windows and the lambda values were determined using YANKs automatic pipline in a test simulation with bCD-g2, Clip-g11, and OA-g2. The values were extracted and utilized for all systems with charged guests as noted above.  
 #
 #
 # METHOD CATEGORY SECTION
