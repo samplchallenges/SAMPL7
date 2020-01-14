@@ -15,7 +15,7 @@
 # The data in each prediction line should be structured as follows:
 # Rank (1 through N, with N >= 100; and 1 being the top predicted compound),
 # Compound ID (eg "REAL:Z1545197621"; use an ID from REAL or MOLPORT but not both),
-# SMILES string, source file (e.g. "all.txt" or "output-hops1-hac3-rac1.txt"),
+# SMILES string, 
 # confidence that binding is improved (1-10, with 10 being most confident)
 #
 # Note that you will likely want to justify your specific predictions/choices in your Method section, as our
