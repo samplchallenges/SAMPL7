@@ -55,6 +55,7 @@ All three host-guest challenges are now closed, as are the first and second stag
 - (2019-12-23): Add Stage 3 submission format for PHIP2.
 - (2019-12-23): Add preliminary host-guest analysis (ranked submissions only, for now) for GDCC and TrimerTrip; add preliminary first pass at CD analysis.
 - (2020-01-08): Add PHIP2 Stage 3 submission upload.
+- (2020-01-17): Add PHIP2 Stage 3 submissions.
 
 ## Challenge overview
 
