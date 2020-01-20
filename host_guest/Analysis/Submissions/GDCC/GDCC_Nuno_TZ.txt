@@ -1,0 +1,107 @@
+# Results for GDCC
+#
+# This file will be automatically parsed.  It must contain the following seven elements:
+# predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
+# These elements must be provided in the order shown.
+# The file name must begin with the letters "GDCC" and then be followed by an underscore or dash.
+#
+# FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
+# Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
+# contains a non-UTF-8 character, you may note it in comments near that entry.
+#
+#
+# PREDICTIONS
+# Please explicitly describe how you handle ions and pKa effects.
+#
+# The data in each prediction line should be structured as follows, with all (up to six) numbers in kcal/mol.
+# host-guest ID (note that the host varies!), Free energy, free energy SEM, free energy model uncertainty,
+# enthalpy, enthalpy SEM, enthalpy model uncertainty
+# The free energy, free energy SEM, and free energy model uncertainty are REQUIRED.
+# The corresponding quantities for binding enthalpy are optional.
+#
+# Note that the "model uncertainty" should be your estimate of ACCURACY of this particular approach
+# for the compound considered.
+#
+# For the CD challenge, beta CD (bCD) is optional and will not be judged, as
+# literature values are available.
+# Likewise, for the GDCC challenge, OA binding values for guests 1-6 (but not 7-8)
+# are optional as literature values are available.
+#
+# The list of predictions must begin with the "Prediction:" keyword, as illustrated here.
+Predictions:
+OA-g1, 4.2 , 0.00,1.0,,,
+OA-g2, -25.2 ,0.00,1.0,,,
+OA-g3, -8.0 ,0.00,1.0,,,
+OA-g4, -7.9 ,0.00,1.0,,,
+OA-g5, -6.3 ,0.00,1.0,,,
+OA-g6, -9.4  ,0.00,1.0,,,
+OA-g7, -11.6 ,0.00,1.0,,,
+OA-g8, -7.8 ,0.00,1.0,,,
+exoOA-g1, 5.8 ,0.00,1.0,,,
+exoOA-g2, 1.4 ,0.00,1.0,,,
+exoOA-g3, -6.2 ,0.00,1.0,,,
+exoOA-g4, -2.9  ,0.00,1.0,,,
+exoOA-g5, -11.1 ,0.00,1.0,,,
+exoOA-g6, -14.1  ,0.00,1.0,,,
+exoOA-g7, -15.7  ,0.00,1.0,,,
+exoOA-g8, -10.9  ,0.00,1.0,,,
+#
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Nuno Miguel da Silva Almeida
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+Michigan State University, East Lansing
+#
+#
+# Please provide an informal yet informative name of the method used.
+# The "Name:" keyword is required, as shown here.
+Name:
+B2PLYPD3/SMD  
+#
+# All major software packages used and their versions
+# The "Software:" keyword is required.
+Software:
+Gaussian 16
+#
+# Methodology and computational details.
+# Level of detail should be at least that used in a publication.
+# Please include the values of key parameters, with units, and explain how any statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# All text following the "Method:" keyword will be regarded as part of your free text methods description.
+Method:
+All simulations were performed with the Gaussian 16, Revision A.03 software package.
+
+The guest molecules geometry was optimised using Gaussian 16 software package, version A.03. 
+Due to the size of the system, DFT (Density Functional Theory) was used.
+The method of choice was B3PW91, with GD3BJ (DOI: 10.1002/jcc.21759), which was deemed necessary to obtain the correct description of disperson forces.
+For exoG3, B97D was employed for the geometry optimisation step instead of B3PW91, due to convergence issues.
+The choice of basis sets for the geometry optimisation was cc-pVDZ for all atoms in each of the complexes.
+
+After this step, single point energy calculations were carrired out with an implict solvation model discussed below. The host and ligand were not re-optimised.
+The single points were performed using B2PLYPD3 (DOI: 10.1021/ct10046k), which has GD3BJ dispersion (DOI: 10.1002/jcc.21759).  This DFT method is a double-hybrid that combines exact Hartree-Fock exchange in an MP2-like correlation. Unfortunately, due to the size of the system it was not possible to take into account the MP2 correction.
+On top of this correction, the SMD solvation model was employed (DOI: 10.1021/jp810292n).
+
+Regarding basis sets, triple zeta correlated consistent sets were used (cc-pVTZ). For oxygen and chlorine atoms augmentation functions were deemed necessary, due to the negative charge located on oxygens, due to the deprotonation, and electronegativity nature of chlorine. For carbon, hydrogen and nitrogen, cc-pVTZ basis sets were employed.
+#
+#
+# METHOD CATEGORY SECTION
+#
+# State which method category your prediction method is better described as:
+# `Alchemical`, `Quantum`, `Other Physical` `Empirical`, `Mixed`, or `Other`.
+# Pick only one category label.
+# The `Category:` keyword is required.
+Category:
+Quantum
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+False
+

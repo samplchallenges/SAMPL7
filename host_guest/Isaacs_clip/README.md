@@ -2,6 +2,8 @@
 
 For SAMPL7, the Isaacs group is contributing binding data for roughly ten guests to a CB-like clip molecule highlighted in the attached documents. This host is codenamed TrimerTrip.
 
+The Isaacs' group's publication on this is in the *New Journal of Chemistry*, [DOI 10.1039/C9NJ05336K](https://dx.doi.org/10.1039/C9NJ05336K).
+
 ## Challenge timing details
 
 Data collection for the TrimerTrip challenge is complete or nearly so, as of Aug. 2019, and a paper is to be submitted this fall. The challenge deadline (so as to not delay publication) is therefore Oct. 4, 2019.
