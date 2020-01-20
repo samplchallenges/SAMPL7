@@ -14,6 +14,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory, and experimental values in the `host_guest/Analysis/ExperimentalMeasurements` directory.
 - Final information on the Gibb octa acid-based challenge ("Gibb deep cavity cavitand" (GDCC) challenge) in the `host_guest/GDCC_and_guests` directory.
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
+- Results for host-guest reference calculations (alchemical binding free energy calculations with YANK) conducted by Mobley lab in the `host_guest/Analysis/Submissions/TrimerTrip`, `host_guest/Analysis/Submissions/GDCC`, and `host_guest/Analysis/Submissions/CD`. Reference calculations were not formal challenge submissions. 
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
 - Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
@@ -23,7 +24,7 @@ All three host-guest challenges are now closed, as are the first and second stag
 
 ## What's coming
 - GSK logD challenge information as soon as available
-- Results (and inputs for) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
+- Results (input files) host-guest reference calculations as conducted by Mobley lab, as soon as available. We are conducting alchemical binding free energy calculations with Yank.
 - Experimental results for the host-guest challenge (except for TrimerTrip, which is available now)
 - Analysis of submissions for the host-guest challenge
 - PHIP2 protein-ligand challenge submission format and URL.
