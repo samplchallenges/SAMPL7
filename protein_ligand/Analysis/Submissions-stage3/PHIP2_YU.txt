@@ -15,7 +15,7 @@
 # The data in each prediction line should be structured as follows:
 # Rank (1 through N, with N >= 100; and 1 being the top predicted compound),
 # Compound ID (eg "REAL:Z1545197621"; use an ID from REAL or MOLPORT but not both),
-# SMILES string, 
+# SMILES string, source file (e.g. "all.txt" or "output-hops1-hac3-rac1.txt"),
 # confidence that binding is improved (1-10, with 10 being most confident)
 #
 # Note that you will likely want to justify your specific predictions/choices in your Method section, as our
@@ -27,21 +27,66 @@
 #
 # The list of predictions must begin with the "Predictions:" keyword, as illustrated here.
 Predictions:
-1, REAL:Z1545197621, Fc1ccccc1NCc1cn[nH]c1, 3
-2, REAL:PV-001924679156, CCCn1cc(CNc2ccccc2F)c(C)n1, 2
-3, REAL:Z3075424149, O=C(C1CC1F)N1CCN(c2ccc(F)cc2)CC1, 2
-
+1, MOLPORT:000-796-582, CCC(=NNC(=O)c1cc(C2CC2)nc2ccccc12)c1ccccc1, 10
+2, MOLPORT:007-564-137, CCOC(=O)NN=Cc1cn(CCOc2ccccc2)c2ccccc12, 10
+3, MOLPORT:002-568-963, CCOC(=O)NN=Cc1cn(CCCOc2ccccc2)c2ccccc12, 10
+4, MOLPORT:000-827-347, CCOC(=O)NN=Cc1cn(CCOc2ccc(Cl)cc2)c2ccccc12, 10
+5, REAL:PV-001818177585, CCOC(=O)c1cnn2ccc(NC(=O)CCCc3ccccc3)cc12, 9
+6, REAL:PV-000010447219, CCOc1cc(N2CCC3(CNC(=O)c4cn[nH]c4)CCCC23)ncn1, 9
+7, MOLPORT:044-730-763, CN(C(=O)OCC1c2ccccc2-c2ccccc21)C1(C(=O)O)CC1, 9
+8, REAL:PV-000011799512, CCOc1cc(NCC23CCCC2CN(C(=O)c2cn[nH]c2)C3)ncn1, 9
+9, REAL:PV-000019326486, CCOc1cc(N2CC3C(C2)C3NC(=O)c2cn[nH]c2)ncn1, 9
+10, MOLPORT:010-790-580, CCc1cc(C(=O)NC2CC2)nc2cc(-c3ccccn3)nn12, 8
+11, REAL:PV-001419644392, CCC(CC(F)F)C(=O)N1CCC(CNC(=O)c2cn[nH]c2)C1, 8
+12, MOLPORT:002-623-645, CCOC(=O)NN=Cc1cn(CCOc2ccc(Br)cc2)c2ccccc12, 8
+13, MOLPORT:000-719-196, CCOC(=O)NN=Cc1cn(Cc2ccc([N+](=O)[O-])cc2)c2ccccc12, 8
+14, MOLPORT:009-756-151, CCc1cc(C(=O)NC2CC2)c2c(C3CC3)nn(-c3ccc(F)cc3)c2n1, 8
+15, MOLPORT:044-533-652, CCNC(=O)N1CCC(c2cc(-c3ccncc3)[nH]n2)CC1, 7
+16, REAL:Z2051870693, CCOc1ccc(NC(=O)NCCc2ccc3cn[nH]c3c2)cc1, 7
+17, REAL:Z941126514, CCn1ncc2ccc(NC(=O)N3CCCC3)cc21, 7
+18, MOLPORT:028-727-597, CCc1cc(C(=O)N2CCC(C(=O)Nc3cccc(-c4ccn[nH]4)c3)CC2)on1, 7
+19, MOLPORT:027-935-886, CCOc1cccc(C2CC2Nc2ccc3nnc(C(F)(F)F)n3n2)c1, 7
+20, MOLPORT:009-756-134, CCc1cc(C(=O)NC2CCCCC2)c2c(C3CC3)nn(-c3ccccc3)c2n1, 6
+21, REAL:PV-001912480823, CCOc1ccc(Nc2c3c(nc4ncnn24)CCC3)cc1, 6
+22, REAL:PV-001420473597, CCOC(C(=O)N1CCC(CNC(=O)c2cn[nH]c2)C1)C1CCCC1, 6
+23, REAL:PV-001404686160, CCC(CC1CCCC1)C(=O)NC1C2CN(C(=O)c3cn[nH]c3)CC21, 6
+24, REAL:PV-000455535988, CCC(C)c1cc(C(=O)N2CC3C(C2)C3NC(=O)c2cn[nH]c2)on1, 6
+25, MOLPORT:019-947-838, CCOC(=O)NN=Cc1cn(Cc2ccccc2)c2ccccc12, 5
+26, REAL:PV-000131745757, CCn1cc(CCN2CC3C(C2)C3NC(=O)c2cn[nH]c2)cn1, 5
+27, REAL:PV-000456667420, CCn1cc(C(=O)N2CC3C(C2)C3NC(=O)c2cn[nH]c(=O)c2)cn1, 5
+28, REAL:PV-001403088287, CCC(CC(F)F)C(=O)NC1C2CN(C(=O)c3cn[nH]c3)CC21, 5
+29, REAL:Z2358439902, O=c1[nH]c2ccc(S(=O)(=O)NCC3CC3)cc2o1, 5
+30, REAL:Z1799317669, CCN(Cc1cc[nH]n1)Cc1c[nH]c2ccccc12, 4
+31, MOLPORT:044-266-493, CCCC(=NNC(=O)NCC1CC1)c1cccc([N+](=O)[O-])c1, 4
+32, MOLPORT:046-736-908, OC12c3cc(Br)ccc3CCC1C2(F)F, 4
+33, REAL:PV-001924975582, CCn1cc(NCc2cccc3cn[nH]c23)cn1, 4
+34, MOLPORT:002-564-149, CCOC(=O)NN=Cc1cn(Cc2ccc(F)cc2)c2ccccc12, 4
+35, REAL:PV-001402313164, CCOC(C(=O)N1CC2C(C1)C2NC(=O)c1cn[nH]c1)C1CCCC1, 3
+36, MOLPORT:029-889-641, CCN(CC(F)(F)F)C(=O)Nc1ccc2[nH]ncc2c1, 3
+37, REAL:PV-000500028112, CCOc1cccc(C(=O)NCC2CN(C(=O)c3cn[nH]c3)C2)c1, 3
+38, REAL:PV-001941572194, CCOc1ccc(NC(=O)N2CCCC(c3cc(-c4ccccc4)n[nH]3)C2)cc1, 3
+39, MOLPORT:005-619-267, CCN(c1ccccc1)S(=O)(=O)c1ccc(C(=O)NNC(=O)C2CC2)cc1, 3
+40, MOLPORT:009-512-239, CCNS(=O)(=O)c1ccc(C(=O)NNC(=O)C2CC2)cc1, 2
+41, REAL:PV-000370325733, CCc1ccc(C(=O)N2CCC3(CNC(=O)c4cn[nH]c4)CCCC23)cc1, 2
+42, REAL:PV-000139933339, CCn1cc(CCN2CCC(CNC(=O)c3cn[nH]c3)C2)cn1, 2
+43, REAL:Z1537354324, CCn1cc(NCc2n[nH]c3ccccc23)cn1, 2
+44, MOLPORT:001-529-774, CCn1c2ccccc2c2cc(C=NNC(=O)C3CC3)ccc21, 2
+45, MOLPORT:000-106-601, CCOc1ccccc1Nc1c2c(nc3ncnn13)CCC2, 1
+46, REAL:Z1823159566, CCN(Cc1cc[nH]n1)c1ccc2[nH]ccc2c1, 1
+47, REAL:Z641428294, CCc1cc(NC2CC2)n2ncnc2n1, 1
+48, REAL:PV-001278973144, CCC(CC(F)F)C(=O)N1CCC2(CNC(=O)c3cn[nH]c3)CCCC12, 1
+49, REAL:Z3087184160, CCOC(=O)c1cnn2ccc(NC(=O)C3CC3)cc12, 1
+50, REAL:PV-001291679424, CCOCC1(C(=O)NCC23CCCC2CN(C(=O)c2cn[nH]c2)C3)CC1, 1
 
 # PARTICIPANT INFORMATION SECTION
 #
 # Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
 Participant name:
-David Mobley
+Chunyu Yu
 #
 # Please list your organization/affiliation, using only UTF-8 characters as described above.
 Participant organization:
-University of California, Irvine
-
+Peking University
 
 # METHOD NAME SECTION
 #
@@ -50,7 +95,7 @@ University of California, Irvine
 # The "Name:" keyword is required, as shown here.
 # 40 character limit.
 Name:
-OEDocking-template
+XGboost_gnina_Yu
 
 
 # SOFTWARE SECTION
@@ -60,7 +105,9 @@ OEDocking-template
 # Following is sample text; please edit to your taste.
 # The "Software:" keyword is required.
 Software:
-OpenEye docking toolkit v1.1
+rdkit
+xgboost
+gnina
 
 
 # METHOD CATEGORY SECTION
@@ -76,7 +123,7 @@ OpenEye docking toolkit v1.1
 # If you choose the `Other` category, please explain your decision in the beginning of Method Description section.
 # The `Category:` keyword is required.
 Category:
-Docking, MD
+Docking, ML
 
 
 # RANKING INFORMATION SECTION
@@ -101,13 +148,7 @@ True
 # Following is sample text; please edit to your taste.
 # All text following the "Method:" keyword will be regarded as part of your free text methods description.
 Method:
-A subset of provided compounds (explain how selected/from which set) were docked into the PHIP2 binding site
-using (describe which) docking software and sorted by score. The most promising compounds were then subjected
-to short MD simulations with OpenMM using the AMBER (explain which) protein force field and the OpenFF 1.0 small molecule force field
-with additional details provided in (link to simulation setup script). Following simulation, we looked at compound RMSD in the binding site
-and retained those compounds with low RMSD (< X angstroms) relative to their starting binding mode and low RMS fluctuations.
-These binding modes were then manually inspected for stability and sensible contacts, and compared with known binding modes
-of fragments from Stage 3. Based on this, we retained N of the M resulting low RMSD compounds.
 
-Our final list of N compounds contains the following compounds and binding modes, which we rationalize as follows:
-(Provide a list of the compounds selected and why they were selected).
+We build a XGboost classifier to classify ligands and non-ligands in stage2; each molecules were represented as their MACCS fingerprint; default parameters were used. The classifier had a mean AUC of 0.73 with 10-fold CV.
+We used the whole 40M dataset to screen the molecules with our classifier; the top 200 scored molecules were selected.
+We used the scoring function of gnina to go into the energy minimization subroutine on given poses. Molecules were ranked by their mean affinities in all provides PDBs.

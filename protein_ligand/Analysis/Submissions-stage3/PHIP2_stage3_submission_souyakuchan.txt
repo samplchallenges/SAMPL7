@@ -15,7 +15,7 @@
 # The data in each prediction line should be structured as follows:
 # Rank (1 through N, with N >= 100; and 1 being the top predicted compound),
 # Compound ID (eg "REAL:Z1545197621"; use an ID from REAL or MOLPORT but not both),
-# SMILES string, 
+# SMILES string, source file (e.g. "all.txt" or "output-hops1-hac3-rac1.txt"),
 # confidence that binding is improved (1-10, with 10 being most confident)
 #
 # Note that you will likely want to justify your specific predictions/choices in your Method section, as our
@@ -27,20 +27,37 @@
 #
 # The list of predictions must begin with the "Predictions:" keyword, as illustrated here.
 Predictions:
-1, REAL:Z1545197621, Fc1ccccc1NCc1cn[nH]c1, 3
-2, REAL:PV-001924679156, CCCn1cc(CNc2ccccc2F)c(C)n1, 2
-3, REAL:Z3075424149, O=C(C1CC1F)N1CCN(c2ccc(F)cc2)CC1, 2
+1, REAL:PV-000076313713, Cc1cc[nH]c1C(=O)N1CCC(C)CC1CNCc1nnsc1Cl, 5
+2, REAL:PV-002045872457, O=C1CN(c2nnc(CCCc3ccccc3)n2CC2CCC(=O)N2)CCN1, 5
+3, REAL:PV-000062484624, CC1CN(C(=O)c2c[nH]nc2C2CC2)CC1NCc1nnsc1Cl, 4
+4, REAL:PV-002002900770, CC(=O)Nc1ccc(CCn2c(C3CCC(=O)N3)nnc2N2CCCC(C)CC2)cc1, 4
+5, REAL:PV-002045938857, OC1(Cn2c(-c3cc(Br)c[nH]3)nnc2N2CCCC2)CCSC1, 3
+6, REAL:PV-002030117876, CCOC1CC(O)(Cn2c(Nc3ccn(C)n3)nnc2-c2ccc(C)o2)C1, 3
+7, REAL:PV-000075137018, CN1CCCC(NC2CN(C(=O)c3cc[nH]n3)CC2c2cnn(C)c2)C1=O, 3
+8, REAL:PV-002045955111, OCC1CCN(c2nnc(-c3cc(Br)c[nH]3)n2CCCC2CCCC2)CC1, 3
+9, MOLPORT:027-823-837, O=C(c1c[nH]nc1-n1cnnn1)N1CC(CO)CC(CN2CCCC2)C1, 3
+10, REAL:PV-002034310941, CN(CCc1nccs1)c1nnc(-c2ccc[nH]2)n1CC1(O)CCCC1, 3
+11, MOLPORT:007-948-271, O=[N+]([O-])c1ccc(Nc2nc(NC3CCCCC3)nc(N3CCCC3)n2)cc1, 3
+12, REAL:PV-000006166350, Cn1cc(C2CN(C(=O)C3CCNC(=O)C3)CC2Nc2ncccn2)cn1, 3
+13, REAL:PV-002010547421, Cc1ccc(-c2nnc(N3CCC(CO)CC3)n2CC2CCC(CO)O2)o1, 3
+14, REAL:PV-002027220619, CCN(CC1CCCO1)c1nnc(C2CCC(=O)N2)n1CCc1ccc(O)cc1, 3
+15, MOLPORT:030-036-518, O=[N+]([O-])c1ccn(C2CCCCC2NCc2ccccc2CN2CCC(O)CC2)n1, 3
+16, REAL:PV-002045961938, OCC1CCN(c2nnc(CCOc3ccccc3)n2CC2(O)CCCCCC2)CC1, 3
+
 
 
 # PARTICIPANT INFORMATION SECTION
 #
 # Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
 Participant name:
-David Mobley
+Kazuki Yamamoto
+
+
 #
 # Please list your organization/affiliation, using only UTF-8 characters as described above.
 Participant organization:
-University of California, Irvine
+The University of Tokyo, Japan
+SHaLX Inc.
 
 
 # METHOD NAME SECTION
@@ -50,7 +67,7 @@ University of California, Irvine
 # The "Name:" keyword is required, as shown here.
 # 40 character limit.
 Name:
-OEDocking-template
+Template filtering then template docking
 
 
 # SOFTWARE SECTION
@@ -60,7 +77,8 @@ OEDocking-template
 # Following is sample text; please edit to your taste.
 # The "Software:" keyword is required.
 Software:
-OpenEye docking toolkit v1.1
+RDKit (2018.09.1)
+Molegro Virtual Docker (7.0.0)
 
 
 # METHOD CATEGORY SECTION
@@ -76,7 +94,7 @@ OpenEye docking toolkit v1.1
 # If you choose the `Other` category, please explain your decision in the beginning of Method Description section.
 # The `Category:` keyword is required.
 Category:
-Docking, MD
+Docking
 
 
 # RANKING INFORMATION SECTION
@@ -101,13 +119,36 @@ True
 # Following is sample text; please edit to your taste.
 # All text following the "Method:" keyword will be regarded as part of your free text methods description.
 Method:
-A subset of provided compounds (explain how selected/from which set) were docked into the PHIP2 binding site
-using (describe which) docking software and sorted by score. The most promising compounds were then subjected
-to short MD simulations with OpenMM using the AMBER (explain which) protein force field and the OpenFF 1.0 small molecule force field
-with additional details provided in (link to simulation setup script). Following simulation, we looked at compound RMSD in the binding site
-and retained those compounds with low RMSD (< X angstroms) relative to their starting binding mode and low RMS fluctuations.
-These binding modes were then manually inspected for stability and sensible contacts, and compared with known binding modes
-of fragments from Stage 3. Based on this, we retained N of the M resulting low RMSD compounds.
+To assure the accuracy of docking simulation in consideration of fragment follow-up, the all.txt compounds were filtered by the following conditions.
+(20 <= heavy atoms <= 34) and (2 <= hydrogen bond donors) and (0.5 <= Fsp3 <= 1.0) and (3 <= rotatable bonds <= 10) and (2 <= aromatic rings <= 3) and (1 <= aromatic heterocycles) and (1 <= aliphatic rings <=2) and (((aromatic rings)+(aliphatic rings)) <= 4) and (360 < molecular weight < 440),
+which resulted in 163125 compounds.
+Then, to reduce the number of compounds further, those compounds which contain amide bonds were excluded except tertiary amides and lactams, which resulted in 27207 compounds in total.
 
-Our final list of N compounds contains the following compounds and binding modes, which we rationalize as follows:
-(Provide a list of the compounds selected and why they were selected).
+The 27207 compounds were then filtered by template filtering. Among the cocrystal structures of the Stage 2, the binding poses of F367, F389, F558 and F584 were chosen and merged to construct the pharmacophore template using Molegro Virtual Docker. Using Ligand Evaluator mode, the 27207 compounds were filtered by the template and top 10% (2750 compounds) of those were selected.
+
+Finally, the 2750 compounds were scored by template docking using above-mentioned template and the apo structure of PHIP2.
+The final list of 16 compounds were selected followingly.
+
+1, REAL:PV-000076313713, Best in ((3*LE3)+(SimilarityScore/HeavyAtoms))
+2, REAL:PV-002045872457, Best in (SimilarityScore/HeavyAtoms) and DockingScore and SimilarityScore
+3, REAL:PV-000062484624, Best in LE3
+4, REAL:PV-002002900770, Best in RerankScore
+5, REAL:PV-002045938857, Other outliers in LE3-SS/HA plot
+6, REAL:PV-002030117876, Other outliers in LE3-SS/HA plot
+7, REAL:PV-000075137018, Other outliers in LE3-SS/HA plot
+8, REAL:PV-002045955111, Other outliers in LE3-SS/HA plot
+9, MOLPORT:027-823-837, Other outliers in LE3-SS/HA plot
+10, REAL:PV-002034310941, Other outliers in LE3-SS/HA plot
+11, MOLPORT:007-948-271, Other outliers in LE3-SS plot
+12, REAL:PV-000006166350, Other outliers in LE3-SS plot
+13, REAL:PV-002010547421, Other outliers in LE3-SS plot
+14, REAL:PV-002027220619, Other outliers in LE3-SS plot
+15, MOLPORT:030-036-518, Other outliers in LE3-SS plot
+16, REAL:PV-002045961938, Other outliers in LE3-SS plot
+* SS/HA: SimilarityScore/HeavyAtoms
+
+The docking structures are included in the "docked.mol2" file.
+The "docked_submitted_16.mol2" file includes only the submitted 16 compounds.
+The calculated scores are shown in the "docked.mdm" file (Molegro Data Modeller file).
+These files are archived in "PHIP2_stage3_submission_souyakuchan.tar.gz" which is uploaded at:
+https://github.com/souyakuchan/SAMPL7/tree/master/protein_ligand/souyakuchan_data/Submissions-stage3
