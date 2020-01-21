@@ -41,7 +41,7 @@ from pkganalysis.stats import (compute_bootstrap_statistics, rmse, mae,
 # - (DONE) Update to allow single ranked submission per group (additional submissions go into separate category)
 #    - Optionally additional submissions can get analyzed/plotted separately, on plots with reference calculations.
 #      This gets handled at the analysis stage at the very end (next bullet point).
-# - Handling of ranked vs non-ranked and reference submissions will be done at the end of the code via
+# - (Maybe DONE) Handling of ranked vs non-ranked and reference submissions will be done at the end of the code via
 #     options to the HostGuestSubmissionCollection class (ignore_refcalcs, etc.)
 
 # FIRST TESTS:
@@ -110,10 +110,12 @@ class HostGuestSubmission(SamplSubmission):
     """
 
     # The IDs of the submissions used for testing the validation. Should be strings of submission IDs
-    TEST_SUBMISSION_SIDS = {}
+    #TEST_SUBMISSION_SIDS = {'4', '5', '6', '8', '9', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'} # Error:dataframe does not contain sid (only when using list or dic of strings) 
 
+    TEST_SUBMISSION_SIDS = {}
     # The IDs of submissions for reference calculations. Should be strings of submission IDs
-    REF_SUBMISSION_SIDS = []
+    REF_SUBMISSION_SIDS = ['REF1', 'REF2', 'REF3', 'REF4'] # this with an empty DIC of TEST_SUB_SIDS works. 
+    #REF_SUBMISSION_SIDS = []
 
     # Section of the submission file.
     SECTIONS = {'Predictions', 'Participant name', 'Participant organization', 'Name', 'Software', 'Method', 'Category', 'Ranked'}
@@ -1081,13 +1083,13 @@ if __name__ == '__main__':
         'kendall_tau': '$\\tau$',
     }
     stats_limits = {
-        'RMSE': (0, 10.0),
-        'MAE': (0, 10),
-        'ME': (-10, 10),
+        'RMSE': (0, 20.0),
+        'MAE': (0, 20),
+        'ME': (-15, 15),
         'R2': (0, 1),
-        'm': (-5, 5),
+        'm': (-10, 10),
         'kendall_tau': (-1, 1),
-    }
+    } # INCREASED LIMIT FOR RMSE WAS (0,10.0). ME was (-10,10). m was (-5,5). MAE was (0,10)
 
     # Statistics by molecule.
     stats_funcs_molecules = collections.OrderedDict([
@@ -1126,6 +1128,8 @@ if __name__ == '__main__':
     if not os.path.isdir('../Accuracy/MoleculesStatistics'): os.mkdir('../Accuracy/MoleculesStatistics')
     if not os.path.isdir('../Accuracy/PaperImages'): os.mkdir('../Accuracy/PaperImages')
 
+    # if need reference directories, then need to make them here
+
     # Create submission collections
     print("Creating submission collection for TrimerTrip")
     collection_trimertrip = HostGuestSubmissionCollection(submissions_trimertrip, experimental_data,
@@ -1150,6 +1154,23 @@ if __name__ == '__main__':
     collection_all = HostGuestSubmissionCollection(submissions_all, experimental_data,
                                                    output_directory_path='../Accuracy/MoleculesStatistics', allow_multiple = True)
 
+    # Create submission collections (include reference calculations and non-ranked
+    print("Creating submission collection for TrimerTrip, including non-ranked")
+    collection_trimertrip_nonranked = HostGuestSubmissionCollection(submissions_trimertrip, experimental_data, output_directory_path='../Reference/Accuracy/TrimerTrip', ignore_refcalcs = False, ranked_only = False)
+   
+    print("Creating submission collection for GDCC collectively, including non-ranked")
+    collection_oa_exooa_nonranked = HostGuestSubmissionCollection(submissions_oa_exooa, experimental_data, output_directory_path='../Reference/Accuracy/GDDC', ignore_refcalcs = False, ranked_only = False)
+    
+    print("Creating submission collection for exoOA and OA, including non-ranked")
+    collection_exooa_nonranked = HostGuestSubmissionCollection(submissions_exooa, experimental_data, output_directory_path='../Reference/Accuracy/exoOA', ignore_refcalcs = False, ranked_only = False)
+    collection_oa_nonranked = HostGuestSubmissionCollection(submissions_oa, experimental_data, output_directory_path='../Reference/Accuracy/OA', ignore_refcalcs = False, ranked_only = False)
+
+    print("Creating submission collection for CD, including non-ranked")
+    collection_cd_nonranked = HostGuestSubmissionCollection(submissions_cd, experimental_data, output_directory_path='../Reference/Accuracy/CD', ignore_refcalcs = False, ranked_only = False)
+
+    print("Creating submission collection for combined set of hosts, including non-ranked")
+    collection_all_nonranked = HostGuestSubmissionCollection(submissions_all, experimental_data, output_directory_path='../Reference/Accuracy/MoleculesStatistics', allow_multiple = True, ignore_refcalcs = False, ranked_only = False)
+
     # Create a CB8 collection excluding the bonus challenges.
     #def remove_bonus(submission_collection_data):
     #    return submission_collection_data[(submission_collection_data.system_id != 'CB8-G11') &
@@ -1166,8 +1187,9 @@ if __name__ == '__main__':
 
     sns.set_style('whitegrid')
 
-    # Generate correlation plots and statistics.
-    for collection in [collection_trimertrip, collection_oa_exooa, collection_oa, collection_exooa, collection_cd]:
+    # NOTE: Do not include collection_all or collection_all_nonranked here.
+    # Generate correlation plots and statistics.  
+    for collection in [collection_trimertrip, collection_oa_exooa, collection_oa, collection_exooa, collection_cd, collection_trimertrip_nonranked, collection_oa_exooa_nonranked, collection_exooa_nonranked, collection_oa_nonranked, collection_cd_nonranked]:
     #DEBUG: Following line triggers problems
     #for collection in [collection_trimertrip, collection_oa_exooa]:
     #for collection in [collection_cb, collection_cb_no_bonus, collection_oa, collection_temoa,
@@ -1239,7 +1261,7 @@ if __name__ == '__main__':
     #all_methods = set(collection_oa.data.method.unique())
     all_methods = set(collection_trimertrip.data.method.unique())
     all_methods.update(set(collection_oa_exooa.data.method.unique()))
-    #all_methods.update(set(collection_cb.data.method.unique()))
+    #all_methods.update(set(collection_cd.data.method.unique())) # INCLUDE ONE FOR CD 
 
     # Submissions using experimental corrections.
     #is_corrected = lambda m: ('MovTyp' in m and m[-1] != 'N') or 'SOMD-D' in m or 'RFEC' in m or 'US-GAFF-C' == m
@@ -1390,9 +1412,9 @@ if __name__ == '__main__':
     #)
 
     # TO DO:
-    # currently we break before figure 5
+    # currently we break before figure 5. 
     import sys
-    sys.exit('Stopping before trying to generate figure 5; that needs updating.')
+    sys.exit('Stopping before trying to generate figure 5: that needs updating.')
 
 
     # FIGURE 5: Figure statistics by molecule.
@@ -1411,7 +1433,8 @@ if __name__ == '__main__':
     stats_names = ['RMSE', 'ME']
     fig, axes = plt.subplots(ncols=len(stats_names), figsize=(7.25/3.1*2, 5), sharey=True)
     statistics = pd.read_json('../Accuracy/MoleculesStatistics/StatisticsTables/statistics.json', orient='index')
-    # Remove bonus challenges.
+
+    # Remove bonus challenges. MAYBE  HERE INCLUDE OPTIONALS (I.E. bCD) 
     statistics = statistics[~statistics.index.isin({'CB8-G11', 'CB8-G12', 'CB8-G13'})]
     statistics.sort_values(by='RMSE', inplace=True)
     for ax, stats_name in zip(axes, stats_names):
@@ -1441,6 +1464,7 @@ if __name__ == '__main__':
     data = collections.OrderedDict()  # Data in dict format.
     # Tightest binders and columns of the Pandas Dataframe.
     tighest_binders = ['OA-G2', 'TEMOA-G4', 'CB8-G8']
+    #tighest_binders = ['CLIP-g17', 'MGLab35-g2', 'OA-g8', 'exoOA-g8']
     for method in plotted_methods:
         data[method] = []
 
@@ -1478,13 +1502,14 @@ if __name__ == '__main__':
     data = sorted(data.items(), key=lambda d: rank_method(d), reverse=True)
     data = collections.OrderedDict(data)
 
-    # Convert table to dataframe.
+    # Convert table to dataframe. TO DO: UPDATE THIS TO REFLECT TIGHTERS BINDERS ABOVE FOR SAMPL7
     columns = ['OA-G2', 'OA-G2-incorrect', 'OA-G2-notsubmitted',
                'TEMOA-G4', 'TEMOA-G4-incorrect', 'TEMOA-G4-notsubmitted',
                'CB8-G8', 'CB8-G8-incorrect', 'CB8-G8-notsubmitted']
+    
     palette = [sns.desaturate(color, 0.75) for color in [HOST_PALETTE['OA'], '0.7', 'white',
                                                          HOST_PALETTE['CD'], '0.7', 'white',
-                                                         HOST_PALETTE['CLIP'], '0.7', 'white']]
+                                                         HOST_PALETTE['CLIP'], '0.7', 'white']] 
     data = pd.DataFrame.from_dict(data, orient='index', columns=columns)
 
     # Plot percentage of correct binders across methods.
@@ -1497,7 +1522,8 @@ if __name__ == '__main__':
     # Plot table.
     ax = data.plot.barh(stacked=True, color=palette, figsize=(7.25/3.1,5))
     ax.xaxis.set_ticks([0.5, 1.5, 2.5])
-    ax.xaxis.set_ticklabels(['OA', 'TEMOA', 'CB8'])
+    ax.xaxis.set_ticklabels(['OA', 'TEMOA', 'CB8']) # TO DO: UPDATE THIS TO REFLECT TIGHTEST BINDERS ABOVE FOR SAMPL7
+    #ax.xaxis.set_ticklabels(['CLIP', 'CD', 'OA', 'exoOA'])
     ax.set_title('Methods predicting the tightest binders')
 
     # Configure lengend to hide the missing/incorrect labels.
@@ -1519,6 +1545,10 @@ if __name__ == '__main__':
     # plt.show()
     plt.savefig('../Accuracy/PaperImages/Figure5_molecule_statistics/tightest_binders.pdf')
 
+    # TO DO: STOP HERE TO TEST ALL OF THE ABOVE
+    # break before figure 6
+    #import sys
+    #sys.exit('Stopping before tyring to generate figure 6; that needs updating')
 
     # FIGURE 6: Distribution of RMSE and R2 in previous SAMPL challenges.
     # --------------------------------------------------------------------
