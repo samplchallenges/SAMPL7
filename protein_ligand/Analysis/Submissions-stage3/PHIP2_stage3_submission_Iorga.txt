@@ -1,0 +1,207 @@
+# Results for PHIP2 library selection
+#
+# This file will be automatically parsed.  It must contain the following eight elements:
+# predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
+# These elements must be provided in the order shown.
+# The file name must begin with the letters "PHIP2" and then be followed by an underscore or dash.
+#
+# FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
+# Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
+# contains a non-UTF-8 character, you may note it in comments near that entry.
+
+
+# PREDICTIONS SECTION
+#
+# The data in each prediction line should be structured as follows:
+# Rank (1 through N, with N >= 100; and 1 being the top predicted compound),
+# Compound ID (eg "REAL:Z1545197621"; use an ID from REAL or MOLPORT but not both),
+# SMILES string, source file (e.g. "all.txt" or "output-hops1-hac3-rac1.txt"),
+# confidence that binding is improved (1-10, with 10 being most confident)
+#
+# Note that you will likely want to justify your specific predictions/choices in your Method section, as our
+# evaluators will read there to determine why you have made the choices you did.
+#
+# As per challenge rules, depending on participation, we may be considering only your top 10 ranked compounds, and
+# selection for screening will depend on whether the compounds seem reasonable and on your justification for
+# your choices. 
+#
+# The list of predictions must begin with the "Predictions:" keyword, as illustrated here.
+Predictions:
+1, MOLPORT:000-800-360, O=C(c1ccccc1)c1ccc(-c2nc(-c3ccccc3)[nH]c2-c2ccccc2)cc1, 5
+2, MOLPORT:001-732-911, Cc1cccc(-c2nc(-c3cccc4ccccc34)c(-c3ccccc3)[nH]2)c1, 5
+3, MOLPORT:002-129-897, CC1(C)C=C(c2ccccc2)c2c(c3ccccc3c3ccccc23)C(c2ccccc2)=C1, 5
+4, MOLPORT:002-231-584, O=C1C(=Cc2c(-c3ccccc3)[nH]c3ccccc23)SC(=S)N1c1cccc([N+](=O)[O-])c1, 5
+5, MOLPORT:001-732-911, Cc1cccc(-c2nc(-c3cccc4ccccc34)c(-c3ccccc3)[nH]2)c1, 5
+6, MOLPORT:000-702-788, CC=C1CN2CCC34C(=C(C=O)C1CC23)Nc1ccccc14, 5
+7, MOLPORT:000-815-332, CC1=NN(c2ccccc2)C(=O)C1=Cc1cn(CC(O)CNc2ccccc2)c2ccccc12, 5
+8, MOLPORT:000-701-509, CC=C1C[N+]2(CC)CCC34C(=C(C=O)C1CC32)Nc1c(O)cccc14, 5
+9, MOLPORT:000-784-522, CC1(C)Nc2ccc(C(c3ccccc3)(c3ccccc3)c3ccccc3)cc2-c2c1ssc2=S, 5
+10, REAL:Z2439864311, Cc1ccc(C(=O)N2CCCNCC2)cc1NC(=O)Nc1ccccc1, 5
+11, MOLPORT:008-322-386, O=C1C(=Cc2ccc(-c3cccc(Cl)c3Cl)o2)CCCC1=Cc1ccc(-c2cccc(Cl)c2Cl)o1, 5
+12, MOLPORT:001-632-582, O=C(Nc1ccc2c(c1)oc1ccccc12)c1ccccc1-c1ccccc1, 5
+13, MOLPORT:027-966-935, NS(=O)(=O)c1ccc(-c2nc(-c3c(-c4ccccc4)[nH]c4ccccc34)cs2)cc1, 5
+14, MOLPORT:001-732-710, Fc1ccccc1-c1nc(-c2ccc3sc4ccccc4c3c2)c(-c2ccccc2)[nH]1, 5
+15, MOLPORT:001-732-662, c1ccc(Oc2ccc(-c3nc(-c4c[nH]c5ccccc45)[nH]c3-c3ccccc3)cc2)cc1, 5
+16, MOLPORT:008-138-931, Cc1nc(N2CCCC2)ncc1-c1cc(=O)[nH]c(Nc2ccccc2)n1, 5
+17, MOLPORT:008-138-972, Cc1nc(N2CCN(C)CC2)ncc1-c1cc(=O)[nH]c(Nc2ccccc2)n1, 5
+18, MOLPORT:010-969-368, O=[N+]([O-])c1ccc(-c2ccc(-c3[nH]c(-c4c[nH]c5ccccc45)nc3-c3ccccc3)cc2)cc1, 5
+19, MOLPORT:000-784-263, CCCCn1c(-c2ccc(OC)cc2)cn2c(-c3ccccc3)c(-c3ccccc3)nc12, 5
+20, MOLPORT:001-733-004, Clc1cccc(-c2nc(-c3ccc(Br)s3)[nH]c2-c2ccccc2)c1Cl, 5
+21, MOLPORT:044-831-117, Cc1ccc(C(=Nc2sc(-c3ccccc3)nc2-c2ccccc2)N2CCCCC2C)cc1, 5
+22, MOLPORT:002-613-680, c1ccc(-c2cn3c(-c4ccccc4)c(-c4ccccc4)nc3s2)cc1, 5
+23, MOLPORT:004-922-900, Cc1cc(C)c2oc(-c3cccc(NC(=O)c4cccc5c(Cl)cccc45)c3)nc2c1, 5
+24, MOLPORT:000-779-504, N#Cc1ccc(Oc2ccc(-c3nc4ccccc4nc3-c3ccccc3)cc2)cc1C#N, 5
+25, MOLPORT:001-732-932, Brc1ccc(-c2nc(-c3cccc4ccccc34)[nH]c2-c2ccccc2)cc1, 5
+26, MOLPORT:000-845-250, Clc1cccc(-c2[nH]c(-c3cccc4ccccc34)nc2-c2ccccc2)c1Cl, 5
+27, MOLPORT:010-689-084, Oc1ccc(-c2nc3cnc(Br)cn3c2Nc2ccc3c(c2)OCCO3)cc1, 5
+28, MOLPORT:002-164-092, COc1ccc(-c2cc(C(=O)Nc3nc(-c4ccc(Cl)cc4)cs3)c3ccccc3n2)cc1OC, 5
+29, MOLPORT:001-733-576, Cc1cc(-c2nc(-c3ccccc3)c(-c3ccccc3)[nH]2)c(C)n1-c1ccc(Br)cc1, 5
+30, MOLPORT:001-505-925, COc1ccc(C2CC(=O)C=C(Nc3ccc(C)c(C)c3)C2)cc1OC, 5
+31, MOLPORT:002-154-273, O=[N+]([O-])c1cc(-c2nc(-c3cccc4ccccc34)c(-c3ccccc3)[nH]2)ccc1Br, 5
+32, MOLPORT:001-017-849, O=C1C2C3c4ccccc4C(c4ccccc43)C2C(=O)N1c1ccc2c(c1)oc1ccccc12, 5
+33, MOLPORT:001-537-208, COc1ccc(NC(=O)c2ccccc2-c2ccccc2C(=O)OCC(=O)c2ccc(Cl)cc2)cc1, 5
+34, MOLPORT:001-732-792, Clc1cccc(-c2nc(-c3cccc4ccccc34)[nH]c2-c2ccccc2)c1, 5
+35, MOLPORT:006-382-718, Cc1ccc(-c2nc3ccccc3s2)cc1NC(=O)C=Cc1ccc(-c2ccccc2[N+](=O)[O-])o1, 5
+36, MOLPORT:045-901-519, O=[N+]([O-])c1cccc(-c2nc3ccccc3n2-c2cccc([N+](=O)[O-])c2)c1, 5
+37, MOLPORT:002-996-546, O=C1CC(c2ccco2)CC2=C1C(c1ccccc1)N(C(=O)NC1CCCCC1)c1ccccc1N2, 5
+38, MOLPORT:006-827-746, Cc1ccc(-c2[nH]c3ccccc3c2C2CCC(=O)N2Cc2ccccc2)cc1, 5
+39, MOLPORT:005-037-296, CC(C)(O)C#Cc1cccc(C(=O)N2CCc3c([nH]c4ccccc34)C2c2ccccn2)c1, 5
+40, MOLPORT:000-776-606, Clc1ccc(-c2nc(-c3cccc4ccccc34)[nH]c2-c2ccccc2)cc1, 5
+41, MOLPORT:005-867-759, O=C(COC(=O)C12CC3CC(C1)CC(c1ccccc1)(C3)C2)c1c[nH]c2ccccc12, 5
+42, MOLPORT:001-733-072, Cc1cccc(-c2nc(-c3ccc(Cl)cc3)c(-c3ccccc3)[nH]2)c1, 5
+43, MOLPORT:021-763-864, COc1ccc(-c2nc3cc(C)ccc3cc2CN2CCNC(=O)CC2)cc1, 5
+44, MOLPORT:002-875-610, Cc1nc(-c2ccc(Cl)cc2)sc1C(=O)C=CNc1ccc(Cl)cc1Cl, 5
+45, MOLPORT:001-732-728, Fc1ccc(-c2nc(-c3ccccc3)c(-c3ccc(Cl)cc3)[nH]2)cc1Br, 5
+46, MOLPORT:030-083-871, Cc1ccc(S(=O)(=O)N2CCOc3ccc(COCc4ccccc4)cc3C2)cc1C, 5
+47, MOLPORT:003-050-428, Cc1ccc(C(=O)c2ccccc2C(=O)Nc2cccc(-c3nc4cccnc4s3)c2)cc1, 5
+48, MOLPORT:046-591-029, O=[N+]([O-])c1cc2c(cc1CBr)c(Br)nn2C(c1ccccc1)(c1ccccc1)c1ccccc1, 5
+49, MOLPORT:005-842-082, c1ccc(-c2nc(-c3ccc(N4CCOCC4)s3)[nH]c2-c2ccccc2)cc1, 5
+50, MOLPORT:000-798-126, Fc1ccc(-c2nc(-c3ccccc3)c(-c3cccc(Cl)c3Cl)[nH]2)cc1, 5
+51, MOLPORT:007-682-409, Cc1ccc(S(=O)(=O)c2c(Nc3ccccc3)sc(C(=O)c3ccc(F)cc3)c2N)cc1, 5
+52, MOLPORT:002-723-638, Fc1ccc(-c2cn3c(-c4ccccc4)c(-c4ccccc4)nc3[nH]2)cc1, 5
+53, MOLPORT:002-172-266, Cc1ccc2[nH]c(=O)c(-c3cc(-c4ccccc4)c4ccccc4n3)c(-c3ccccc3)c2c1, 5
+54, MOLPORT:002-597-741, O=C1NC(=O)N(c2ccc(F)cc2)C(=O)C1=Cc1c(-c2ccccc2)[nH]c2ccccc12, 5
+55, MOLPORT:004-922-721, Cc1ccc(-c2nc3cc(Cl)ccc3o2)cc1NC(=O)C=Cc1ccc(-c2ccccc2)o1, 5
+56, MOLPORT:002-597-635, O=C1NC(=O)N(c2ccccc2)C(=O)C1=Cc1c(-c2ccccc2)[nH]c2ccccc12, 5
+57, MOLPORT:002-186-197, CC12c3ccccc3C(c3ccccc31)C1C(=O)N(c3ccc(-c4ccccc4)cc3)C(=O)C12, 5
+58, MOLPORT:007-573-092, Cc1ccc2nc(-c3ccc(C)c(NC(=O)c4cccc5c(Cl)cccc45)c3)oc2c1, 5
+59, MOLPORT:005-864-291, N#Cc1c(-c2ccco2)cc(-c2cccc(S(=O)(=O)N3CCCCC3)c2)n2c1nc1ccccc12, 5
+60, MOLPORT:002-743-316, Cc1ccc(NC(=O)c2ccccc2-c2ccccc2C(=O)O)cc1, 5
+61, MOLPORT:001-732-944, O=C(c1ccc(F)cc1)c1ccc(-c2nc(-c3ccc(F)cc3)[nH]c2-c2ccccc2)cc1, 5
+62, MOLPORT:008-138-882, Cc1nc(N2CCCCC2)ncc1-c1cc(=O)[nH]c(Nc2ccc(F)cc2)n1, 5
+63, MOLPORT:027-714-141, Cc1ccc(C)c(N2C(=O)C(=Cc3c(-c4ccccc4)[nH]c4ccccc34)C(=O)NC2=S)c1, 5
+64, MOLPORT:000-843-437, Fc1cccc(-c2nc(-c3ccccc3)c(-c3cccc(Cl)c3)[nH]2)c1, 5
+65, MOLPORT:000-736-332, O=C(c1ccc(F)cc1)c1ccc(-c2[nH]c(-c3ccccc3[N+](=O)[O-])nc2-c2ccccc2)cc1, 5
+66, MOLPORT:002-599-110, COc1ccc(CN2C(=O)NC(=O)C(=Cc3c(-c4ccccc4)[nH]c4ccccc34)C2=O)cc1, 5
+67, MOLPORT:007-559-111, Cc1ccc(-c2cc(C(=O)Nc3ccc(F)c([N+](=O)[O-])c3)c3ccccc3n2)cc1, 5
+68, MOLPORT:003-715-139, CC1=CC2=C(c3cc(-c4ccccc4)[o+]c(-c4ccccc4)c3)CCCC2=C(c2ccccc2)O1, 5
+69, MOLPORT:001-733-122, O=[N+]([O-])c1cccc(-c2nc(-c3cccc4ccccc34)c(-c3ccccc3)[nH]2)c1, 5
+70, REAL:Z2447962873, CC1(C)C(=O)Nc2ccccc2N1C(=O)CN1CCCC(N)C1, 5
+71, MOLPORT:002-163-748, O=C(c1ccccc1)c1ccc(-c2nc(-c3ccc(F)cc3)[nH]c2-c2ccccc2)cc1, 5
+72, REAL:Z257980446, CN(C(=O)c1ccccc1NS(=O)(=O)c1ccc2[nH]c(=O)[nH]c2c1)c1ccccc1, 5
+73, MOLPORT:002-707-914, c1ccc(-c2cc(-c3cc(-c4ccccc4)nn3-c3ccccc3)n(-c3ccccc3)n2)cc1, 5
+74, MOLPORT:002-875-611, Cc1nc(-c2ccc(Cl)cc2)sc1C(=O)C=CNc1ccc(Br)cc1, 5
+75, MOLPORT:005-889-502, O=C(c1ccc(Cl)c(S(=O)(=O)N2CCOCC2)c1)c1c(-c2ccccc2)cc2ccccn12, 5
+76, MOLPORT:002-330-947, CCOC(=O)c1ccc(NC2=CC(=O)CC(c3ccc(OC)cc3)C2)cc1, 5
+77, MOLPORT:000-421-199, CCCCC(CC)CN1C(=O)C(=Cc2cn(-c3ccccc3)nc2-c2ccc([N+](=O)[O-])cc2)SC1=S, 5
+78, MOLPORT:001-732-721, O=C(c1ccc(F)cc1)c1ccc(-c2nc(-c3cccc4ccccc34)[nH]c2-c2ccccc2)cc1, 5
+79, MOLPORT:001-732-909, CCOc1ccc(-c2nc(-c3cccc4ccccc34)[nH]c2-c2ccccc2)cc1, 5
+80, MOLPORT:006-597-384, Cc1ccc(C2c3cc(OCc4nc(C(=O)NCC(C)C)cs4)ccc3CCN2C(=O)C2CC2)cc1, 5
+81, MOLPORT:000-774-472, COc1cccc(N2C(=O)C(=Cc3c(-c4ccccc4)[nH]c4ccccc34)C(=O)N=C2S)c1, 5
+82, MOLPORT:002-168-777, Cc1cc2nc(-c3ccc(C)c(NC(=O)c4cc(Cl)ccc4Cl)c3)oc2cc1C, 5
+83, MOLPORT:000-701-711, C1=CC2(Oc3ccc4ccccc4c31)c1ccccc1Nc1ccccc12, 5
+84, MOLPORT:000-811-367, COc1ccc(-c2nc(-c3ccc(F)c(Br)c3)[nH]c2-c2ccccc2)cc1, 5
+85, MOLPORT:001-743-917, O=C(c1cnccn1)N1CC2CC(C1)c1c(-c3cc4ccccc4s3)ccc(=O)n1C2, 5
+86, MOLPORT:002-330-229, CC1CC(C)(C)Nc2cc(C(c3ccccc3)(c3ccccc3)c3ccccc3)ccc21, 5
+87, MOLPORT:001-732-935, Brc1ccc(-c2nc(-c3cccc4ccccc34)c(-c3ccccc3)[nH]2)cc1, 5
+88, MOLPORT:001-732-754, Fc1ccc(-c2nc(-c3cccc(Cl)c3)c(-c3ccccc3)[nH]2)cc1Br, 5
+89, MOLPORT:010-738-439, Cc1ccc(S(=O)(=O)N2CCC3(CC2)Nc2cc(C)ccc2-n2cccc23)c(C)c1, 5
+90, MOLPORT:000-841-795, CCCn1c(-c2ccccc2)cn2c(-c3ccccc3)c(-c3ccccc3)nc12, 5
+91, MOLPORT:002-725-272, Cc1ccc(S(=O)(=O)N2CC3=Cc4c(ccc5ccccc45)Oc4cc([N+](=O)[O-])cc2c43)cc1, 5
+92, MOLPORT:000-839-463, Cc1ccc(C)c(-c2nc(-c3ccccc3)c(-c3ccc(Br)cc3)[nH]2)c1, 5
+93, MOLPORT:000-413-725, O=C1C2=C(Nc3ccccc3SC2c2cccc(OCc3ccc(F)cc3)c2)c2ccccc21, 5
+94, MOLPORT:001-732-954, Clc1ccc(-c2nc(-c3ccc(Oc4ccccc4)cc3)c(-c3ccccc3)[nH]2)cc1, 5
+95, MOLPORT:044-397-347, Cc1ccc(-c2nn(-c3ccccc3)cc2C=CC(=O)Nc2cc(C)cc(C)c2)cc1, 5
+96, MOLPORT:000-851-736, Oc1cccc(-n2c(-c3ccc(Cl)cc3)cn3c(-c4ccccc4)c(-c4ccccc4)nc23)c1, 5
+97, MOLPORT:003-717-573, Cc1ccc2cc(C3CC(c4ccc(Br)cc4)=NN3C(=O)c3ccccc3)c(Cl)nc2c1, 5
+98, MOLPORT:019-798-873, O=C(c1n[nH]c2c1CCCC2)N1CCCC(c2[nH]ncc2Cc2ccccc2)C1, 5
+99, MOLPORT:005-766-356, O=C(NNC(=O)c1cccc(S(=O)(=O)Nc2ccc(Cl)cc2)c1)Nc1ccc(Cl)cc1, 5
+100, MOLPORT:008-330-448, Cc1ccc(C(=O)C=CNc2cc(Cl)ccc2Cl)cc1C, 5
+
+
+# PARTICIPANT INFORMATION SECTION
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Bogdan I. Iorga
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+Institut de Chimie des Substances Naturelles, CNRS, Gif-sur-Yvette, France
+
+
+# METHOD NAME SECTION
+#
+# Please provide a brief (40 character limit) informal yet informative name of the method used.
+# Following is sample text; please edit to your taste.
+# The "Name:" keyword is required, as shown here.
+# 40 character limit.
+Name:
+ranking_stage3
+
+
+# SOFTWARE SECTION
+#
+# All major software packages used and their versions.
+# Please use a new line for each software.
+# Following is sample text; please edit to your taste.
+# The "Software:" keyword is required.
+Software:
+Schrodinger LigPrep v48012 
+CACTVS Chemoinformatics Toolkit V3.4.6.26
+CORINA v4.2.0
+CCDC GOLD v5.7.1 (CSDS-2019-1)
+
+
+# METHOD CATEGORY SECTION
+#
+# State which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`.
+# If your method takes advantage of multiple approaches please report more than one category label, separated by comma.
+# `Docking` category refers to structure-based virtual screening methods that model the structure of the receptor binding pocket and pose of the ligand followed by an scoring the goodness of the fit .
+# `Ligand-based` methods are virtual screening methods that do not rely on protein structure such as pharmacophore modeling, ligand shape-based, 2D or 3D structural similarity based methods.
+# `MD` methods utilize molecular dynamics simulations based on molecular mechanics including free energy calculations.
+# `ML` category includes machine learning, QSPR approaches, and all prediction methods trained on empirical knowledge.
+# `Null` predictions employ a model which is not expected to produce useful predictions, however,  can provide a simple comparison point for more sophisticated methods, as ideally, good methods should outperform the null model.
+# If these categories do not match your method, report as “Other”.
+# If you choose the `Other` category, please explain your decision in the beginning of Method Description section.
+# The `Category:` keyword is required.
+Category:
+Docking
+
+
+# RANKING INFORMATION SECTION
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True
+
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of detail should be at least that used in a publication.
+# Please include the values of key parameters, with units, and explain how any
+# statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# Please explicitly describe how you handle ions (e.g. counterions) and pKa effects
+# Following is sample text; please edit to your taste.
+# All text following the "Method:" keyword will be regarded as part of your free text methods description.
+Method:
+We have used the input file 'all.txt' (41,647,357 compounds).
+The 3D conformations of all compounds were generated from SMILES using CORINA  v4.2.0, then protonated to physiological pH with Schrodinger LigPrep v48012.
+Then we applied the same docking protocol as in stage1, with two exceptions: ligand efficiency was 30% instead of 200% and only one pose was generated for each ligand.
+The 100 best scoring compounds were selected and submitted without any additional filtering or validation.
