@@ -86,11 +86,6 @@ class Stage1Submission(SamplSubmission):
             self.name = sections['Name'][0]
 
 
-        # Add host name column to predictions.
-        #self.host_name = file_data[0].upper()
-        #self.data['host_name'] = self.host_name
-        #assert self.host_name in self.HOST_NAMES
-
         # Store participant name, organization, method category
         self.participant = sections['Participant name'][0].strip()
         self.category = sections['Category'][0].strip()
@@ -98,16 +93,6 @@ class Stage1Submission(SamplSubmission):
         self.organization = sections['Participant organization'][0].strip()
         self.ranked = sections['Ranked'][0].strip() =='True'
 
-
-        ## Required system System IDs
-        #clip_guests = ['g1', 'g2', 'g3', 'g5', 'g6', 'g7', 'g8', 'g9', 'g10', 'g11', 'g12', 'g15', 'g16', 'g17', 'g18', 'g19']
-        #CD_guests = ['g1','g2']
-        #GDCC_guests = ['g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'g7', 'g8']
-        #CD_hosts = copy.copy(self.HOST_NAMES['CD'])
-        #CD_hosts.remove('bCD')
-        #self.REQUIRED_SYSTEM_IDs = {'CLIP':[f'clip-{guest}' for guest in clip_guests],
-                                #'CD':[f'{host}-{guest}' for guest in CD_guests for host in CD_hosts],
-                                 #'GDCC':[f'exoOA-{guest}' for guest in GDCC_guests] + ['OA-g7', 'OA-g8']}
 
         # Check if this is a test submission.
         if self.sid in self.TEST_SUBMISSION_SIDS:
@@ -118,6 +103,127 @@ class Stage1Submission(SamplSubmission):
         if self.sid in self.REF_SUBMISSION_SIDS:
             self.reference_submission = True
 
+# =============================================================================
+# UTILITY FUNCTIONS
+# =============================================================================
+
+class Stage1SubmissionCollection:
+    """A collection of Stage 1 submissions."""
+
+    # Path to directories for organizing plots
+    #STAGE1_ACCURACY_PLOT_PATH_DIR = 'Accuracy'
+
+
+    def __init__(self, submissions, experimental_data, output_directory_path, stage1_submission_collection_file_path, ignore_refcalcs = False):
+
+
+        # Check if submission collection file already exists.
+        if os.path.isfile(stage1_submission_collection_file_path):
+            print("Analysis will be done using the existing submission collection file: {}".format(stage1_submission_collection_file_path))
+
+            self.data = pd.read_csv(stage1_submission_collection_file_path)
+            print("\n SubmissionCollection: \n")
+            print(self.data)
+
+            # Populate submission.data dataframes parsing sections of collection file.
+            for submission in submissions:
+                data = []
+
+                # To ignore reference calculations, when necessary
+                if submission.reference_submission and ignore_refcalcs:
+                    continue
+
+                df_collection_of_each_submission = self.data.loc[self.data["SID"] == submission.sid ]
+                print("df_collection_of_each_submission:\n",df_collection_of_each_submission)
+
+                #import pdb;
+                #pdb.set_trace()
+
+                # Transform into Pandas DataFrame.
+                submission.data = pd.DataFrame()
+                submission.data["Site 1"] = df_collection_of_each_submission["Site 1 (pred)"]
+                submission.data["Site 2"] = df_collection_of_each_submission["Site 2 (pred)"]
+                submission.data["Site 3"] = df_collection_of_each_submission["Site 3 (pred)"]
+                submission.data["Site 4"] = df_collection_of_each_submission["Site 4 (pred)"]
+                submission.data["All Sites"] = df_collection_of_each_submission["All Sites (pred)"]
+                submission.data["Fragment ID"] = df_collection_of_each_submission["Fragment ID"]
+
+                submission.data.set_index("Fragment ID", inplace=True)
+
+            # Transform into Pandas DataFrame.
+            self.output_directory_path = output_directory_path
+
+            print("submission.sid:\n", submission.sid)
+            print("submission.name:\n", submission.name)
+            print("submission.data:\n", submission.data)
+
+        else: # Build collection dataframe from the beginning.
+            # Build full stage 1 collection table.
+            data = []
+
+            # Submissions for stage 1.
+            for submission in submissions:
+                if submission.reference_submission and ignore_refcalcs:
+                    continue
+
+                print("submission.sid:\n", submission.sid)
+                print("submission.name:\n", submission.name)
+                print("submission.data:\n", submission.data)
+
+
+                for fragment_ID, series in submission.data.iterrows():
+                    #print("fragment_ID:", fragment_ID)
+                    #print("series:\n", series)
+                    #site1_pred = series["Site 1"]
+                    #print("site1_pred: ", site1_pred)
+
+                    # Predicted data
+                    site1_pred = series["Site 1"]
+                    site2_pred = series["Site 2"]
+                    site3_pred = series["Site 3"]
+                    site4_pred = series["Site 4"]
+                    all_sites_pred = series["All Sites"]
+
+                    # Experimental data
+                    site1_exp = experimental_data.loc[fragment_ID, 'Site 1']
+                    site2_exp = experimental_data.loc[fragment_ID, 'Site 2']
+                    site3_exp = experimental_data.loc[fragment_ID, 'Site 3']
+                    site4_exp = experimental_data.loc[fragment_ID, 'Site 4']
+                    all_sites_exp = experimental_data.loc[fragment_ID, 'All Sites']
+
+
+                    data.append({
+                        'SID': submission.sid,  # Previously receipt_ID
+                        'Participant': submission.participant,
+                        'Organization': submission.organization,
+                        'Name': submission.name,
+                        'Category': submission.category,
+                        'Ranked': submission.ranked,
+                        'Fragment ID': fragment_ID,
+                        'Site 1 (pred)': site1_pred,
+                        'Site 1 (exp)': site1_exp,
+                        'Site 2 (pred)': site2_pred,
+                        'Site 2 (exp)': site2_exp,
+                        'Site 3 (pred)': site3_pred,
+                        'Site 3 (exp)': site3_exp,
+                        'Site 4 (pred)': site4_pred,
+                        'Site 4 (exp)': site4_exp,
+                        'All Sites (pred)': all_sites_pred,
+                        'All Sites (exp)': all_sites_exp
+                    })
+
+            # Transform into Pandas DataFrame.
+            self.data = pd.DataFrame(data=data)
+            self.output_directory_path = output_directory_path
+
+            print("\n SubmissionCollection: \n")
+            print(self.data)
+
+            # Create general output directory.
+            os.makedirs(self.output_directory_path, exist_ok=True)
+
+            # Save collection.data dataframe in a CSV file.
+            self.data.to_csv(stage1_submission_collection_file_path, index=False)
 
 
 # =============================================================================
@@ -156,4 +262,8 @@ if __name__ == '__main__':
 
 
 # Create submission collection
-    #collection = Stage1SubmissionCollection(submissions, experimental_data, output_directory_path='../analysis_outputs')
+    OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1'
+    stage1_submission_collection_file_path = '{}/stage1_submission_collection.csv'.format(OUTPUT_DIRECTORY_PATH)
+    collection = Stage1SubmissionCollection(submissions, experimental_data, OUTPUT_DIRECTORY_PATH,
+                                            stage1_submission_collection_file_path, ignore_refcalcs = False)
+    print("collection:\n", collection)
