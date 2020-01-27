@@ -18,6 +18,9 @@ import pandas as pd
 from pkganalysis.submission import (SamplSubmission, IgnoredSubmissionError,
                                     load_submissions, plot_correlation)
 
+from pkganalysis.stats import (calc_confusion_matrix, accuracy, f1_score, \
+                                sensitivity, specificity, precision)
+
 # =============================================================================
 # CONSTANTS
 # =============================================================================

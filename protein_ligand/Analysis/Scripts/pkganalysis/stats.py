@@ -10,10 +10,10 @@
 import numpy as np
 import scipy.stats
 import scipy.special
-
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
 
 # =============================================================================
-# STATISTIC ESTIMATORS
+# STATISTIC ESTIMATORS FOR CONTINUOUS PREDICTIONS
 # =============================================================================
 
 def kendall_tau(data):
@@ -51,6 +51,52 @@ def rmse(data):
     error = np.array(x) - np.array(y)
     rmse = np.sqrt((error**2).mean())
     return rmse
+
+
+# =============================================================================
+# STATISTIC ESTIMATORS FOR CATEGORICAL PREDICTIONS
+# =============================================================================
+
+def calc_confusion_matrix(data):
+    # x: true values, y: predicted values
+    x, y = data.T
+    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    return [tn, fp, fn, tp]
+
+def accuracy(data):
+    x, y = data.T
+    accuracy = accuracy_score(x, y)
+    return accuracy
+
+def f1_score(data):
+    x, y = data.T
+    f1 = f1_score(x,y)
+    return f1
+
+def sensitivity(data):
+    """
+    True Positive Rate, Recall, Sensitivity
+    """
+    x, y = data.T
+    sensitivity = recall_score(x,y)
+    return sensitivity
+
+def specificity(data):
+    """
+    True Negative Rate, Specificity
+    """
+    x, y = data.T
+    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    specificity = tn / (tn + fp)
+    return specificity
+
+def precision(data):
+    """
+    positive predictive value, precision
+    """
+    x, y = data.T
+    precision = precision_score(x, y)
+    return precision
 
 
 # =============================================================================
