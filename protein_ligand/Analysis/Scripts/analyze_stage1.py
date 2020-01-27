@@ -24,7 +24,7 @@ from pkganalysis.submission import (SamplSubmission, IgnoredSubmissionError,
 
 # Paths to input data.
 STAGE_1_SUBMISSIONS_DIR_PATH = '../Submissions-stage1/'
-EXPERIMENTAL_DATA_FILE_PATH = '../experiment_data/stage_1/hits_verification.csv'
+EXPERIMENTAL_DATA_FILE_PATH = '../../experimental-data/stage-1/hits_verification.csv'
 USER_MAP_FILE_PATH = '../SAMPL7-user-map-PL-stage1.csv'
 
 # =============================================================================
@@ -126,14 +126,12 @@ class Stage1Submission(SamplSubmission):
 
 if __name__ == '__main__':
 
-    # PUT THIS SECTION BACK ONCE THE EXPERIMENTAL DATA FILE IS AVAILABLE
-    # # Read experimental data.
-    # with open(EXPERIMENTAL_DATA_FILE_PATH, 'r') as f:
-    #     # experimental_data = pd.read_json(f, orient='index')
-    #     names = ('Fragment ID', 'Site 1', 'Site 2', 'Site 3', 'Site 4', 'All Sites')
-    #     experimental_data = pd.read_csv(f, sep=',', index_col='Fragment ID', header=0)
-    #
-    #     print(experimental_data)
+
+    # Read experimental data.
+    with open(EXPERIMENTAL_DATA_FILE_PATH, 'r') as f:
+        #names = ('Fragment ID', 'Site 1', 'Site 2', 'Site 3', 'Site 4', 'All Sites')
+        experimental_data = pd.read_csv(f, sep=',', index_col='Fragment ID', header=0)
+        print("Experimental data of stage 1:\n",experimental_data)
 
 
     #Import user map.
@@ -146,22 +144,16 @@ if __name__ == '__main__':
         print("Warning: No user map found.")
 
 
-# Load submission: add from line 1073
-    #need to define stage_1_Submission class\
-    # Load submissions data.
-
 # Load submissions data.
     print("Loading submissions")
     submissions = load_submissions(Stage1Submission, STAGE_1_SUBMISSIONS_DIR_PATH, user_map)
     print("Submissions:\n", submissions)
 
-#
-#
-# #Try print after defining submission class
-#     # submissions_stage1= load_submissions(Stage1Submission, ????_SUBMISSIONS_DIR_PATH, user_map)
-#     #
-#     # for submission in submissions_stage1:
-#     #     print(submission.data)
-#     #     print(submission.name)
+# Try print after defining submission class
+    # for submission in submissions:
+    #     print("submission.name:\n", submission.name)
+    #     print("submission.data:\n", submission.data)
 
-#create submission collection: see line 1097
+
+# Create submission collection
+    #collection = Stage1SubmissionCollection(submissions, experimental_data, output_directory_path='../analysis_outputs')
