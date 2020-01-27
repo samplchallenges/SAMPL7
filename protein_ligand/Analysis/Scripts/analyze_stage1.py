@@ -127,17 +127,13 @@ class Stage1SubmissionCollection:
 
             # Populate submission.data dataframes parsing sections of collection file.
             for submission in submissions:
-                data = []
 
                 # To ignore reference calculations, when necessary
                 if submission.reference_submission and ignore_refcalcs:
                     continue
 
-                df_collection_of_each_submission = self.data.loc[self.data["SID"] == submission.sid ]
-                print("df_collection_of_each_submission:\n",df_collection_of_each_submission)
-
-                #import pdb;
-                #pdb.set_trace()
+                df_collection_of_each_submission = self.data.loc[self.data["SID"] == int(submission.sid) ]
+                #print("df_collection_of_each_submission:\n",df_collection_of_each_submission)
 
                 # Transform into Pandas DataFrame.
                 submission.data = pd.DataFrame()
@@ -153,9 +149,6 @@ class Stage1SubmissionCollection:
             # Transform into Pandas DataFrame.
             self.output_directory_path = output_directory_path
 
-            print("submission.sid:\n", submission.sid)
-            print("submission.name:\n", submission.name)
-            print("submission.data:\n", submission.data)
 
         else: # Build collection dataframe from the beginning.
             # Build full stage 1 collection table.
@@ -166,9 +159,9 @@ class Stage1SubmissionCollection:
                 if submission.reference_submission and ignore_refcalcs:
                     continue
 
-                print("submission.sid:\n", submission.sid)
-                print("submission.name:\n", submission.name)
-                print("submission.data:\n", submission.data)
+                #print("submission.sid:\n", submission.sid)
+                #print("submission.name:\n", submission.name)
+                #print("submission.data:\n", submission.data)
 
 
                 for fragment_ID, series in submission.data.iterrows():
@@ -225,6 +218,8 @@ class Stage1SubmissionCollection:
             # Save collection.data dataframe in a CSV file.
             self.data.to_csv(stage1_submission_collection_file_path, index=False)
 
+            print("Stage1 submission collection file generated:\n", stage1_submission_collection_file_path)
+
 
 # =============================================================================
 # MAIN
@@ -240,6 +235,7 @@ if __name__ == '__main__':
         print("Experimental data of stage 1:\n",experimental_data)
 
 
+
     #Import user map.
     try:
         with open(USER_MAP_FILE_PATH, 'r') as f:
@@ -250,20 +246,20 @@ if __name__ == '__main__':
         print("Warning: No user map found.")
 
 
-# Load submissions data.
-    print("Loading submissions")
+    # Load submissions data.
+    print("Loading submissions...")
     submissions = load_submissions(Stage1Submission, STAGE_1_SUBMISSIONS_DIR_PATH, user_map)
-    print("Submissions:\n", submissions)
+    #print("Submissions:\n", submissions)
 
-# Try print after defining submission class
+    # Try print after defining submission class
     # for submission in submissions:
     #     print("submission.name:\n", submission.name)
     #     print("submission.data:\n", submission.data)
 
 
 # Create submission collection
+    print("Generating collection file...")
     OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1'
     stage1_submission_collection_file_path = '{}/stage1_submission_collection.csv'.format(OUTPUT_DIRECTORY_PATH)
     collection = Stage1SubmissionCollection(submissions, experimental_data, OUTPUT_DIRECTORY_PATH,
                                             stage1_submission_collection_file_path, ignore_refcalcs = False)
-    print("collection:\n", collection)
