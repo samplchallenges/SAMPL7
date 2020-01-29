@@ -28,7 +28,7 @@ from pkganalysis.stats import (calc_confusion_matrix, accuracy, f1_score, \
 # Paths to input data.
 STAGE_1_SUBMISSIONS_DIR_PATH = '../Submissions-stage1/'
 EXPERIMENTAL_DATA_FILE_PATH = '../../experimental-data/stage-1/hits_verification.csv'
-USER_MAP_FILE_PATH = '../SAMPL7-user-map-PL-stage1.csv'
+USER_MAP_FILE_PATH = '../Analysis-outputs-stage1/SAMPL7-user-map-PL-stage1.csv'
 
 # =============================================================================
 # MAIN CHALLENGE SUBMISSION 1
