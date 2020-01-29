@@ -10,7 +10,7 @@
 import numpy as np
 import scipy.stats
 import scipy.special
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, balanced_accuracy_score
 
 # =============================================================================
 # STATISTIC ESTIMATORS FOR CONTINUOUS PREDICTIONS
@@ -63,6 +63,44 @@ def calc_confusion_matrix(data):
     tn, fp, fn, tp = confusion_matrix(x, y).ravel()
     return [tn, fp, fn, tp]
 
+def TN(data):
+    """
+    True negative
+    """
+    x, y = data.T
+    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    return tn
+
+def FP(data):
+    """
+    False positive
+    """
+    x, y = data.T
+    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    return fp
+
+def FN(data):
+    """
+    False negative
+    """
+    x, y = data.T
+    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    return fn
+
+def TP(data):
+    """
+    True positive
+    """
+    x, y = data.T
+    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    return tp
+
+
+def balanced_accuracy(data):
+    x, y = data.T
+    balanced_accuracy = balanced_accuracy_score(x,y)
+    return balanced_accuracy
+
 def accuracy(data):
     x, y = data.T
     accuracy = accuracy_score(x, y)
@@ -70,7 +108,7 @@ def accuracy(data):
 
 def f1_score(data):
     x, y = data.T
-    f1 = f1_score(x,y)
+    f1 = f1_score(y_true=x, y_pred=y)
     return f1
 
 def sensitivity(data):

@@ -12,14 +12,14 @@ import pickle
 
 import numpy as np
 import pandas as pd
-# import seaborn as sns
-# from matplotlib import pyplot as plt
+import seaborn as sns
+from matplotlib import pyplot as plt
 
 from pkganalysis.submission import (SamplSubmission, IgnoredSubmissionError,
                                     load_submissions, plot_correlation)
 
-from pkganalysis.stats import (calc_confusion_matrix, accuracy, f1_score, \
-                                sensitivity, specificity, precision)
+from pkganalysis.stats import (compute_bootstrap_statistics, calc_confusion_matrix,
+                               accuracy, f1_score, sensitivity, specificity, precision, balanced_accuracy)
 
 # =============================================================================
 # CONSTANTS
@@ -224,6 +224,228 @@ class Stage1SubmissionCollection:
             print("Stage1 submission collection file generated:\n", stage1_submission_collection_file_path)
 
 
+    # TO DO: The following function does not pertain to this challenge/needs updating if we even retain
+    @staticmethod
+    def _assign_paper_method_name(name):
+        return name
+
+
+    def generate_statistics_tables(self, stats_funcs, subdirectory_path, groupby,
+                                   extra_fields=None, sort_stat=None,
+                                   ordering_functions=None, latex_header_conversions=None,
+                                   caption='', ignore_refcalcs = True):
+        """Generate statistics tables in CSV, JSON, and LaTex format.
+        Parameters
+        ----------
+        groupby : str
+            The name of the data column to be used to compute the statistics.
+            For example, 'name' to obtain statistics about individual methods,
+            'system_id' to compute statistics by molecules.
+        ordering_functions : dict
+            Dictionary statistic_name -> ordering_function(stats), where
+            ordering_function determines how to rank the the groups by
+            statistics.
+        """
+
+        if extra_fields is None:
+            extra_fields = []
+
+        def escape(s):
+        #    return s.replace('_', '\_')
+            return s
+
+        extra_fields_latex = [escape(extra_field) for extra_field in extra_fields]
+
+        file_base_name = 'statistics'
+        directory_path = os.path.join(self.output_directory_path, subdirectory_path)
+
+        stats_names, stats_funcs = zip(*stats_funcs.items())
+        ci_suffixes = ('', '_lower_bound', '_upper_bound')
+
+        # Compute or read the bootstrap statistics from the cache.
+        cache_file_path = os.path.join(self.output_directory_path, 'bootstrap_distributions.p')
+        all_bootstrap_statistics = self._get_bootstrap_statistics(groupby, stats_names, stats_funcs,
+                                                                  cache_file_path=cache_file_path)
+
+        # Collect the records for the DataFrames.
+        statistics_csv = []
+        statistics_latex = []
+
+        groups = self.data[groupby].unique()
+        for i, group in enumerate(groups):
+            print('\rGenerating bootstrap statistics tables for {} {} ({}/{})'
+                  ''.format(groupby, group, i+1, len(groups)), end='')
+
+            # Isolate bootstrap statistics.
+            bootstrap_statistics = all_bootstrap_statistics[group]
+
+            # Select the group.
+            data = self.data[self.data[groupby] == group]
+
+            # Isolate the extra field.
+            group_fields = {}
+            latex_group_fields = {}
+            for extra_field, extra_field_latex in zip(extra_fields, extra_fields_latex):
+                assert len(data[extra_field].unique()) == 1
+                extra_field_value = data[extra_field].values[0]
+                group_fields[extra_field] = extra_field_value
+                latex_group_fields[extra_field_latex] = escape(extra_field_value)
+
+            record_csv = {}
+            record_latex = {}
+            for stats_name, (stats, (lower_bound, upper_bound), bootstrap_samples) in bootstrap_statistics.items():
+                # For CSV and JSON we put confidence interval in separate columns.
+                for suffix, info in zip(ci_suffixes, [stats, lower_bound, upper_bound]):
+                    record_csv[stats_name + suffix] = info
+
+                # For the PDF, print bootstrap CI in the same column.
+                stats_name_latex = latex_header_conversions.get(stats_name, stats_name)
+                record_latex[stats_name_latex] = '{:.2f} [{:.2f}, {:.2f}]'.format(stats, lower_bound, upper_bound)
+
+            statistics_csv.append({'ID': group, **group_fields, **record_csv})
+            statistics_latex.append({'ID': escape(group), **latex_group_fields,
+                                     **record_latex})
+        print()
+
+        # Convert dictionary to Dataframe to create tables/plots easily.
+        statistics_csv = pd.DataFrame(statistics_csv)
+        statistics_csv.set_index('ID', inplace=True)
+        statistics_latex = pd.DataFrame(statistics_latex)
+
+        # Sort by the given statistics.
+        if sort_stat is not None:
+            ordering_function = ordering_functions.get(sort_stat, lambda x: x)
+            order = sorted(statistics_csv[sort_stat].items(), key=lambda x: ordering_function(x[1]))
+            order = [k for k, value in order]
+            statistics_csv = statistics_csv.reindex(order)
+            latex_order = [escape(k) for k in order]
+            statistics_latex.ID = statistics_latex.ID.astype('category')
+            statistics_latex.ID.cat.set_categories(latex_order, inplace=True)
+            statistics_latex.sort_values(by='ID', inplace=True)
+
+        # Reorder columns that were scrambled by going through a dictionaries.
+        stats_names_csv = [name + suffix for name in stats_names for suffix in ci_suffixes]
+        stats_names_latex = [latex_header_conversions.get(name, name) for name in stats_names]
+        statistics_csv = statistics_csv[extra_fields + stats_names_csv]
+        statistics_latex = statistics_latex[['ID'] + extra_fields_latex + stats_names_latex]
+
+        # Create CSV and JSON tables (correct LaTex syntax in column names).
+        os.makedirs(directory_path, exist_ok=True)
+        file_base_path = os.path.join(directory_path, file_base_name)
+        with open(file_base_path + '.csv', 'w') as f:
+            statistics_csv.to_csv(f)
+        with open(file_base_path + '.json', 'w') as f:
+            statistics_csv.to_json(f, orient='index')
+
+        # Create LaTex table.
+        latex_directory_path = os.path.join(directory_path, file_base_name + 'LaTex')
+        os.makedirs(latex_directory_path, exist_ok=True)
+        with open(os.path.join(latex_directory_path, file_base_name + '.tex'), 'w') as f:
+            f.write('\\documentclass[8pt]{article}\n'
+                    '\\usepackage[a4paper,margin=0.2in,tmargin=0.5in,bmargin=0.5in,landscape]{geometry}\n'
+                    '\\usepackage{booktabs}\n'
+                    '\\usepackage{longtable}\n'
+                    '\\pagenumbering{gobble}\n'
+                    '\\begin{document}\n'
+                    '\\begin{center}\n'
+                    '\\begin{footnotesize}\n')
+            statistics_latex.to_latex(f, column_format='|' + 'c'*(2 + len(stats_funcs)) + '|',
+                                      escape=False, index=False, longtable=True, bold_rows=True)
+            f.write('\end{footnotesize}\n'
+                    '\end{center}\n')
+            f.write(caption + '\n')
+            f.write('\end{document}\n')
+
+
+
+    def _get_bootstrap_statistics(self, groupby, stats_names, stats_funcs, cache_file_path):
+        """Generate the bootstrap distributions of all groups and cache them.
+        If cached values are found on disk, the distributions are not recomputed.
+        Returns
+        -------
+        all_bootstrap_statistics : collections.OrderedDict
+            group -> {stats_name -> (statistics, confidence_interval, bootstrap_samples)}
+            confidence_interval is a pair (lower_bound, upper_bound), and bootstrap_samples
+            are the (ordered) bootstrap statistics used to compute the confidence interval.
+        """
+        # Identify all the groups (e.g. methods/molecules).
+        groups = self.data[groupby].unique()
+
+        # Initialize returned value. The OrderedDict maintains the order of statistics.
+        all_bootstrap_statistics = collections.OrderedDict([(name, None) for name in stats_names])
+        all_bootstrap_statistics = collections.OrderedDict(
+            [(group, copy.deepcopy(all_bootstrap_statistics)) for group in groups]
+        )
+
+        # Load the statistics that we have already computed.
+        try:
+            with open(cache_file_path, 'rb') as f:
+                print('Loading cached bootstrap distributions from {}'.format(cache_file_path))
+                cached_bootstrap_statistics = pickle.load(f)
+        except FileNotFoundError:
+            cached_bootstrap_statistics = None
+
+        # Create a map from paper method name to submission method name.
+        try:
+            paper_to_submission_name = {self._assign_paper_method_name(submission_name): submission_name
+                                        for submission_name in cached_bootstrap_statistics}
+        except (UnboundLocalError, TypeError):
+            # cached_bootstrap_statistics is None or group is not a method.
+            paper_to_submission_name = {}
+
+        cache_updated = False
+        for i, (group, group_bootstrap_statistics) in enumerate(all_bootstrap_statistics.items()):
+            # Check which statistics we still need to compute for this group.
+            if cached_bootstrap_statistics is not None:
+                group_stats_names = []
+                group_stats_funcs = []
+                for stats_name, stats_func in zip(stats_names, stats_funcs):
+                    try:
+                        all_bootstrap_statistics[group][stats_name] = cached_bootstrap_statistics[group][stats_name]
+                    except KeyError:
+                        try:
+                            # method_name = self._assign_paper_method_name(group)
+                            method_name = paper_to_submission_name[group]
+                            all_bootstrap_statistics[group][stats_name] = cached_bootstrap_statistics[method_name][
+                                stats_name]
+                        except KeyError:
+                            group_stats_names.append(stats_name)
+                            group_stats_funcs.append(stats_func)
+            else:
+                # Compute everything.
+                group_stats_names = stats_names
+                group_stats_funcs = stats_funcs
+
+            if len(group_stats_names) == 0:
+                continue
+            cache_updated = True  # Update the cache on disk later.
+
+            print('\rGenerating bootstrap statistics for {} {} ({}/{})'
+                  ''.format(groupby, group, i + 1, len(groups)), end='')
+
+            # Select the group data.
+            data = self.data[self.data[groupby] == group]
+            print("data:\n", data)
+
+            # Compute bootstrap statistics.
+            data = data[['All Sites (exp)', 'All Sites (pred)']]
+            new_bootstrap_statistics = compute_bootstrap_statistics(data.as_matrix(), group_stats_funcs, sems=None,
+                                                                    n_bootstrap_samples=10000) #10000
+
+            # Update the returned value with the statistics just computed.
+            new_boostrap_statistics = {group_stats_names[i]: new_bootstrap_statistics[i]
+                                       for i in range(len(group_stats_funcs))}
+            group_bootstrap_statistics.update(new_boostrap_statistics)
+
+        # Cache the computed statistics on disk. Create output directory if necessary.
+        if cache_updated:
+            os.makedirs(os.path.dirname(cache_file_path), exist_ok=True)
+            with open(cache_file_path, 'wb') as f:
+                pickle.dump(all_bootstrap_statistics, f)
+
+        return all_bootstrap_statistics
+
+
 # =============================================================================
 # MAIN
 # =============================================================================
@@ -249,6 +471,33 @@ if __name__ == '__main__':
         print("Warning: No user map found.")
 
 
+    # Configuration: statistics to compute.
+    stats_funcs = collections.OrderedDict([
+        ('Sensitivity', sensitivity),
+        ('Specificity', specificity),
+        ('Precision', precision),
+        ('Balanced Accuracy', balanced_accuracy),
+        ('Accuracy', accuracy),
+        #('F1 Score', f1_score),
+    ])
+    ordering_functions = {
+        'Sensitivity': lambda x: -x,
+        'Specificity': lambda x: -x,
+        'Precision': lambda x: -x,
+        'Balanced Accuracy': lambda x: -x,
+        'Accuracy': lambda x: -x,
+        #'F1 Score': lambda x: -x,
+
+    }
+    latex_header_conversions = {
+        'Sensitivity': 'Sensitivity (TPR)',
+        'Specificity': 'Specificity (TNR)',
+        'Precision': 'Precision',
+        'Balanced Accuracy': 'Balanced Accuracy',
+        'Accuracy': 'Accuracy',
+        #'F1 Score': 'F1 Score',
+    }
+
     # Load submissions data.
     print("Loading submissions...")
     submissions = load_submissions(Stage1Submission, STAGE_1_SUBMISSIONS_DIR_PATH, user_map)
@@ -260,9 +509,19 @@ if __name__ == '__main__':
     #     print("submission.data:\n", submission.data)
 
 
-# Create submission collection
+    # Create submission collection
     print("Generating collection file...")
     OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1'
     stage1_submission_collection_file_path = '{}/stage1_submission_collection.csv'.format(OUTPUT_DIRECTORY_PATH)
     collection = Stage1SubmissionCollection(submissions, experimental_data, OUTPUT_DIRECTORY_PATH,
                                             stage1_submission_collection_file_path, ignore_refcalcs = False)
+
+    # Generate statistics tables
+    sns.set_context('talk')
+    caption=''
+    collection.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
+                                          groupby='SID', extra_fields=None,
+                                          sort_stat='Sensitivity', ordering_functions=ordering_functions,
+                                          latex_header_conversions=latex_header_conversions,
+                                          caption=caption, ignore_refcalcs=False)
+
