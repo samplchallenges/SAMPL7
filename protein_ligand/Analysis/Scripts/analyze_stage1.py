@@ -19,7 +19,8 @@ from pkganalysis.submission import (SamplSubmission, IgnoredSubmissionError,
                                     load_submissions, plot_correlation)
 
 from pkganalysis.stats import (compute_bootstrap_statistics, calc_confusion_matrix,
-                               accuracy, f1_score, sensitivity, specificity, precision, balanced_accuracy)
+                               accuracy, f1_score, sensitivity, specificity, precision, balanced_accuracy,
+                               TP, TN, FP, FN)
 
 # =============================================================================
 # CONSTANTS
@@ -479,6 +480,10 @@ if __name__ == '__main__':
         ('Balanced Accuracy', balanced_accuracy),
         ('Accuracy', accuracy),
         #('F1 Score', f1_score),
+        ('True Positive', TP),
+        ('False Negative', FN),
+        ('True Negative', TN),
+        ('False Positive', FP),
     ])
     ordering_functions = {
         'Sensitivity': lambda x: -x,
@@ -487,22 +492,28 @@ if __name__ == '__main__':
         'Balanced Accuracy': lambda x: -x,
         'Accuracy': lambda x: -x,
         #'F1 Score': lambda x: -x,
-
+        'True Positive': lambda x: -x,
+        'False Negative': lambda x: x,
+        'True Negative': lambda x: -x,
+        'False Positive': lambda x: x,
     }
     latex_header_conversions = {
         'Sensitivity': 'Sensitivity (TPR)',
         'Specificity': 'Specificity (TNR)',
-        'Precision': 'Precision',
+        'Precision': 'Precision (PPV)',
         'Balanced Accuracy': 'Balanced Accuracy',
         'Accuracy': 'Accuracy',
         #'F1 Score': 'F1 Score',
+        'True Positive': 'True Positive',
+        'False Negative': 'False Negative',
+        'True Negative': 'True Negative',
+        'False Positive': 'False Positive',
     }
 
     # Load submissions data.
     print("Loading submissions...")
     submissions = load_submissions(Stage1Submission, STAGE_1_SUBMISSIONS_DIR_PATH, user_map)
     #print("Submissions:\n", submissions)
-
     # Try print after defining submission class
     # for submission in submissions:
     #     print("submission.name:\n", submission.name)
@@ -516,7 +527,10 @@ if __name__ == '__main__':
     collection = Stage1SubmissionCollection(submissions, experimental_data, OUTPUT_DIRECTORY_PATH,
                                             stage1_submission_collection_file_path, ignore_refcalcs = False)
 
-    # Generate statistics tables
+    # Supplement submission collection with missing fragments predicted as non-binders
+    # TO-DO
+
+    # Generate statistics tables for all submissions
     sns.set_context('talk')
     caption=''
     collection.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
@@ -524,4 +538,7 @@ if __name__ == '__main__':
                                           sort_stat='Sensitivity', ordering_functions=ordering_functions,
                                           latex_header_conversions=latex_header_conversions,
                                           caption=caption, ignore_refcalcs=False)
+
+    # Generate statistics tables for only ranked submissions
+    # TO-DO
 
