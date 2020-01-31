@@ -641,10 +641,31 @@ if __name__ == '__main__':
                                           groupby='SID', extra_fields=None,
                                           sort_stat='Sensitivity', ordering_functions=ordering_functions,
                                           latex_header_conversions=latex_header_conversions,
-                                          caption=caption, ignore_refcalcs=False)
+                                          caption=caption, ignore_refcalcs=False) #ignore_nonranked=False
 
+    # TO-DO 1: Create separate analysis for only ranked submission
 
     # Generate statistics tables for only ranked submissions
-    # TO-DO
-    #OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1-ranked-only'
+    #
+    # Create new output directory
+    # OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1-ranked-only'
+    #
+    # Create prefiltered ranked-only collection file
+    # Suggestion: create a collection.filter_for_ranked() function to do this. It should output to the new directory.
+    #
+    # Read new submission collection for analysis
+    # ranked_collection = Stage1SubmissionCollection(...) using prefiltered collection file
+    #
+    # Create new collection object for ranked-only analysis
+    # ranked_collection.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
+    #                                       groupby='SID', extra_fields=None,
+    #                                       sort_stat='Sensitivity', ordering_functions=ordering_functions,
+    #                                       latex_header_conversions=latex_header_conversions,
+    #                                       caption=caption, ignore_refcalcs=False), # ignore_nonranked=True
 
+
+    # TO-DO 2: Adapt both analysis of stage1 and stage1-ranked-only to create separate statistic tables for sites1-4, and all sites
+
+
+
+    # TO-DO 3: Create plots for evaluation statistics
