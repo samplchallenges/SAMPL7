@@ -54,7 +54,7 @@ A total of 799 unique fragments were screened at the [XChem facility](https://ww
 This will be validated by both positive hit data for PHIPA, and negative data where crystals were soaked and screened, but no readout identified binding.
 Fragment binding predictions here are important because accurate predictions could improve library design, including the ability to design bespoke libraries for specific targets.
 
-PHIP2 was crystallized in space group C2 at 4C by vapour diffusion in ~230 nL sitting drops, by mixing 100 nL protein (in 10 mM HEPES, 5% glycerol, 500 mM NaCl and 0.5 mM TCEP pH 7.5) with 100 nL reservoir buffer (20% PEG8000 and 0.4 M potassium phosphate) and 30 nL seeds of the same composition.
+PHIP2 was crystallized in space group C2 at 4C by vapour diffusion in ~230 nL sitting drops, by mixing 100 nL protein (in 10 mM HEPES, 5% glycerol, 500 mM NaCl and 0.5 mM TCEP pH 7.5) with 100 nL reservoir buffer (20% PEG8000 and 0.04 M potassium phosphate) and 30 nL seeds of the same composition.
 The final pH was measured to be about 5.6.
 The resulting crystals were soaked with 20 mM final concentration of each fragment and 20%(v/v) ethylene glycol, plunged into liquid nitrogen and shot at the i04-1 beamline located at the Diamond Light Source (Harwell, UK).
 The diffraction data were analyzed with [PanDDA](https://pandda.bitbucket.io/) ([Pearce et al., 2017](https://www.nature.com/articles/ncomms15123)) which revealed a number of fragments located across four distinct sites.
