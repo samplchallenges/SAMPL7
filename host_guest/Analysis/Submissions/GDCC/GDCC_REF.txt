@@ -1,9 +1,9 @@
-# Results for clip
+# Results for GDCC
 #
 # This file will be automatically parsed.  It must contain the following seven elements:
 # predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
 # These elements must be provided in the order shown.
-# The file name must begin with the word "Clip" and then be followed by an underscore or dash.
+# The file name must begin with the letters "GDCC" and then be followed by an underscore or dash.
 #
 # FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
 # Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
@@ -30,22 +30,22 @@
 # The list of predictions must begin with the "Prediction:" keyword, as illustrated here.
 # THESE PREDICTION ARE REFERENCE CALCULATIONS AND ARE NOT FORMAL SUBMISSIONS FOR SAMPL7
 Predictions:
-clip-g1, 3.741, 0.172, 0.369
-clip-g2, -1.962, 0.864, 0.447  
-clip-g3, -7.396, 2.221, 0.653   
-clip-g5, -1.715, 0.667, 0.401   
-clip-g6, -4.228, 0.380, 0.502   
-clip-g7, -3.039, 2.348, 0.435   
-clip-g8, -2.833, 1.868, 0.493
-clip-g9, -2.538, 0.405, 0.330   
-clip-g10, -1.826, 2.124, 0.587   
-clip-g11, -4.417, 0.368, 0.433   
-clip-g12, -3.581, 0.405, 0.656  
-clip-g15, -1.543, 1.099, 0.686   
-clip-g16, 1.816, 1.481, 0.675   
-clip-g17, -3.436, 0.507, 0.690  
-clip-g18, -2.119, 0.512, 0.726   
-clip-g19, -9.098, 0.719, 0.624   
+OA-g1, , , ,,, 
+OA-g2, -10.082, 0.671, 0.133,,, 
+OA-g3, , , ,,,   
+OA-g4, , , ,,,
+OA-g5, , , ,,,
+OA-g6, , , ,,,
+OA-g7, -8.511, 0.319, 0.553,,,   
+OA-g8, -9.205, 0.356, 0.356,,,
+exoOA-g1, -7.629, 1.388, 0.090,,,   
+exoOA-g2, -8.857, 0.954, 0.398,,,   
+exoOA-g3, -11.520, 1.060, 0.282,,,   
+exoOA-g4, -7.361, 0.317, 0.216,,,  
+exoOA-g5, -4.913, 0.280, 0.353,,,   
+exoOA-g6, -6.844, 0.435, 0.355,,,  
+exoOA-g7, -5.996, 0.287, 0.496,,, 
+exoOA-g8, -7.064, 0.355, 0.565,,,   
 #
 #
 # Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
@@ -63,14 +63,14 @@ University of California, Irvine
 # The "Name:" keyword is required, as shown here.
 # 40 character limit.
 Name:
-Docking/BCC/GAFF/TIP3P
+Docking/GAFF/YANK_REF
 #
 # All major software packages used and their versions
 # Following is sample text; please edit to your taste.
 # The "Software:" keyword is required.
 Software:
 AutoDock Vina version 1.1.2
-AutoDock Tools version 1.5.6
+AutoDock Tools (ADT) version 1.5.6
 YANK version 23.7
 OpenMM version 7.1
 AmberTools18
@@ -90,13 +90,13 @@ Openeye Tools (QuacpacTK version 2.0.2, OEChemTK version 2.3.0)
 Method:
 
 Host and guest files in several forms (mol2,pdb, and sdf) were provided from SAMPL7 organizers via Github, and we utilized mol2. 
-The protonation state(s) of each molecule were assigned with Chimera (1.13.1) at experimental pH of 7.4 and AM1-BCC charges were added 
+The protonation state(s) of each molecule were assigned with Chimera (1.13.1) at experimental pH of 11.7 and AM1-BCC charges were added 
 using Openeye toolkits when necessary. The updated host and guest mol2 files were then processed and converted to PDBQT with 
 AutoDock Tools (ADT 1.5.6). The ADT grid box feature by default identifies the grid center x_y_z coordinates of the hosts "binding
 site" with a starting grid search box of 40 cubic Angstroms, and adjusted to fit the entire host. The grid box size and coordinates 
 were added to relevant host-guest system script for docking with AutoDock Vina (1.1.2). In addition, our docking protocol had
-a global search exhaustiveness of 100, and an energy range of 30 kcal/mol between the best and worst binding modes, all to generate
-at most 100 binding modes. The grid center was placed at x_y_z coordinates 0.522, 26.377, and 23.956 respecitively. Upon docking 
+a global search exhaustiveness of 80, and an energy range of 30 kcal/mol between the best and worst binding modes, all to generate
+at most 100 binding modes. The grid center was placed at x_y_z coordinates -0.001, -0.435, and -0.004 respecitively. Upon docking 
 completion, the pose with the highest docking score was selected for simulations. Upon completion, the docked guest PDBQT files were processed, 
 inspected, and converted to PDB using PyMOL (1.7.4). Subsequently, the new guest PDB was processed, implicit hydrogens 
 added, protonation states inspected, and saved as a mol2 with Chimera (1.13.1). 
@@ -104,7 +104,7 @@ added, protonation states inspected, and saved as a mol2 with Chimera (1.13.1).
 Afterwords, openeye tools was used once again to perceive bonds, determine connectivity, and compute atomic formal charges. 
 The host, guest, and complex files were parameterized, solvated with TIP3P water model in a cubic box approximately 41 x 41 x 41 cubic
 Angstroms via AmberTools antechamber and tleap respectively. In addition to solvation, sodium and chloride counterions were added to 
-neutralize the system and and additional ions were added to achieve the 20mM experimental concentration. The topology and coordinate 
+neutralize the system and and additional ions were added to achieve the 10mM experimental concentration. The topology and coordinate 
 files (with and without solvent) of the host, guest, and complex were saved as our simulation input files.
 
 All simulations were performed with YANK (23.7) which uses OpenMM (1.7.1) as its simulation engine with CUDA platform in the University of California, San
@@ -116,15 +116,12 @@ away from the "binding" region of the host, yet still be able to explore the are
 determined using YANKs automatic pipeline in a test run with bCD-g2. The lambda values were extracted and incorporated as our protocol for all systems
 with a charged guest. 
 
-An initial 500 ps simulation was used to minimize and relax all systems. The simulations contained 61 lambda windows runnning up to 30 ns per window in
-an attempt to reduce the free energy prediction uncertainty below 0.5 kcal/mol. Total run lengths were adjusted on a system-by-system basis by monitoring the uncertainty associated with binding free energies as calculations progressed. The only exception was clip-g1, appeared to be converged by 26 ns. 
+An initial 500 ps simulation was used to minimize and relax all systems. The simulations contained 61 lambda windows runnning up to 26 ns per window in
+an attempt to reduce the free energy prediction uncertainty below 0.5 kcal/mol. Total run lengths were adjusted on a system-by-system basis by monitoring the uncertainty associated with binding free energies as calculations progressed.  
 
 In our initial test similations we observed poor overlap between states and replica mixing for systems with charged guests when conducting the simulations with 29 lambda windows. This 29 lambda window protocol was also tested on a GDCC and Clip system (all have charged guests), and we observed poor overlap between states and replica mixing. In Clip systems, YANKs mixing statistics section of the simulation health report returned a warning. 
 Therefore, we decided to include a separate protocol with additional lambda windows for systems with charged guests. The number of windows and the lambda values were determined using YANKs automatic pipline in a test simulation with bCD-g2, Clip-g11, and OA-g2. The values were extracted and utilized for all systems with charged guests as noted above.
 
-NOTE-The majority of the guests that were docked to the "pocket" of the host were linear / aliphatic guests g1-g5, g12, and g16. The remaining guests, majority 
-cyclic and aromatic, seem to interact with the "flap" and sulfonic acids on the surface of the host. Therefore, a separate experiment was run on clip-g11, where 
-an open conformer of trimertrip was extracted, guest g1was docked and simulated following the same protocol.
 
 #
 #

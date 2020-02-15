@@ -60,7 +60,7 @@ Michigan State University, East Lansing
 # Please provide an informal yet informative name of the method used.
 # The "Name:" keyword is required, as shown here.
 Name:
-B2PLYPD3/SMD 
+B2PLYPD3/SMD_QZ-NR 
 #
 # All major software packages used and their versions
 # The "Software:" keyword is required.

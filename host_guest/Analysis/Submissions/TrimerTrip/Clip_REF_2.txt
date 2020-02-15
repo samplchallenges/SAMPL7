@@ -39,7 +39,7 @@ clip-g7, -3.039, 2.348, 0.435
 clip-g8, -2.833, 1.868, 0.493
 clip-g9, -2.538, 0.405, 0.330   
 clip-g10, -1.826, 2.124, 0.587   
-clip-g11, -5.310, 1.045, 0.228   
+clip-g11, -4.417, 0.368, 0.433   
 clip-g12, -3.581, 0.405, 0.656  
 clip-g15, -1.543, 1.099, 0.686   
 clip-g16, 1.816, 1.481, 0.675   
@@ -63,14 +63,14 @@ University of California, Irvine
 # The "Name:" keyword is required, as shown here.
 # 40 character limit.
 Name:
-Docking/BCC/GAFF/TIP3P
+Docking/GAFF/YANK_REF_2
 #
 # All major software packages used and their versions
 # Following is sample text; please edit to your taste.
 # The "Software:" keyword is required.
 Software:
 AutoDock Vina version 1.1.2
-AutoDock Tools (ADT) version 1.5.6
+AutoDock Tools version 1.5.6
 YANK version 23.7
 OpenMM version 7.1
 AmberTools18
@@ -124,8 +124,7 @@ Therefore, we decided to include a separate protocol with additional lambda wind
 
 NOTE-The majority of the guests that were docked to the "pocket" of the host were linear / aliphatic guests g1-g5, g12, and g16. The remaining guests, majority 
 cyclic and aromatic, seem to interact with the "flap" and sulfonic acids on the surface of the host. Therefore, a separate experiment was run on clip-g11, where 
-an open conformer of trimertrip was extracted, guest g1was docked and simulated following the same protocol.     
-
+an open conformer of trimertrip was extracted, guest g1was docked and simulated following the same protocol.
 
 #
 #
