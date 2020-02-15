@@ -65,7 +65,7 @@ University of California, Irvine
 # The "Name:" keyword is required, as shown here.
 # 40 character limit.
 Name:
-Docking/BCC/GAFF/TIP3P
+Docking/GAFF/YANK_REF
 #
 # All major software packages used and their versions
 # Following is sample text; please edit to your taste.
