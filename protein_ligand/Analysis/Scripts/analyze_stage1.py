@@ -138,6 +138,7 @@ class Stage1SubmissionCollection:
                     continue
 
                 df_collection_of_each_submission = self.data.loc[self.data["SID"] == int(submission.sid) ]
+
                 #print("df_collection_of_each_submission:\n",df_collection_of_each_submission)
 
                 # Transform into Pandas DataFrame.
@@ -226,12 +227,12 @@ class Stage1SubmissionCollection:
             print("Stage1 submission collection file generated:\n", stage1_submission_collection_file_path)
 
 
-    def complete_predictions_with_missing_fragments(self, fragments_file_path):
+    def complete_predictions_with_missing_fragments(self, fragments_file_path, filter_nonranked=False):
         """ Adds missing non-binder predictions to collection. Assumes
         Parameters
         ----------
         fragments_file_path: Path to CSV file with fragment IDs in the first column
-
+        filter_nonranked: filters out non ranked results
         """
 
         # Read fragments file to extract full list of screened fragment list IDs
@@ -317,6 +318,12 @@ class Stage1SubmissionCollection:
             # Transform into Pandas DataFrame.
             self.data = pd.DataFrame(data=data)
 
+            #filters OUT non-ranked data if filter_nonranked == True
+            #allow outputting submission collection with just ranked data
+            if filter_nonranked:
+                self.data = self.data[self.data.Ranked == True]
+
+
             print("\n SubmissionCollection: \n")
             print(self.data)
 
@@ -333,7 +340,6 @@ class Stage1SubmissionCollection:
     @staticmethod
     def _assign_paper_method_name(name):
         return name
-
 
     def generate_statistics_tables(self, stats_funcs, subdirectory_path, groupby,
                                    extra_fields=None, sort_stat=None,
@@ -473,6 +479,8 @@ class Stage1SubmissionCollection:
             confidence_interval is a pair (lower_bound, upper_bound), and bootstrap_samples
             are the (ordered) bootstrap statistics used to compute the confidence interval.
         """
+
+
         # Identify all the groups (e.g. methods/molecules).
         groups = self.data[groupby].unique()
 
@@ -533,7 +541,9 @@ class Stage1SubmissionCollection:
             print("data:\n", data)
 
             # Compute bootstrap statistics.
+            # Modify here to do per-site statistic
             data = data[['All Sites (exp)', 'All Sites (pred)']]
+
             new_bootstrap_statistics = compute_bootstrap_statistics(data.as_matrix(), group_stats_funcs, sems=None,
                                                                     n_bootstrap_samples=10000) #10000
 
@@ -625,19 +635,21 @@ if __name__ == '__main__':
 
     # Create submission collection
     print("Generating collection file...")
-    OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1'
-    stage1_submission_collection_file_path = '{}/stage1_submission_collection.csv'.format(OUTPUT_DIRECTORY_PATH)
-    collection = Stage1SubmissionCollection(submissions, experimental_data, OUTPUT_DIRECTORY_PATH,
+
+    #Directory for all submissions together
+    #OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1'
+
+    #Directory for ranked submissions only
+    OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1-ranked'
+    stage1_submission_collection_file_path = '{}/stage1_submission_collection-ranked.csv'.format(OUTPUT_DIRECTORY_PATH)
+    ranked_collection = Stage1SubmissionCollection(submissions, experimental_data, OUTPUT_DIRECTORY_PATH,
                                             stage1_submission_collection_file_path, ignore_refcalcs = False)
-
     # Supplement submission collection with missing fragments predicted as non-binders
-    collection.complete_predictions_with_missing_fragments(fragments_file_path=FRAGMENTS_FILE_PATH)
-
-
+    ranked_collection.complete_predictions_with_missing_fragments(fragments_file_path=FRAGMENTS_FILE_PATH, filter_nonranked=True)
     # Generate statistics tables for all submissions
     sns.set_context('talk')
     caption=''
-    collection.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
+    ranked_collection.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
                                           groupby='SID', extra_fields=None,
                                           sort_stat='Sensitivity', ordering_functions=ordering_functions,
                                           latex_header_conversions=latex_header_conversions,
