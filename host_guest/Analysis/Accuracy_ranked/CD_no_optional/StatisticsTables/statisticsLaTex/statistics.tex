@@ -1,0 +1,27 @@
+\documentclass[8pt]{article}
+\usepackage[a4paper,margin=0.2in,tmargin=0.5in,bmargin=0.5in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\begin{footnotesize}
+\begin{longtable}{|cccccccc|}
+\toprule
+                       ID & sid &    RMSE [kcal/mol] &     MAE [kcal/mol] &       ME [kcal/mol] &              R$^2$ &                   m &               $\tau$ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+ FSDAM/GAFF2/OPC3\_ranked &  12 &  1.28 [1.32, 3.51] &  1.04 [1.04, 2.95] &  0.63 [-0.84, 2.10] &  0.01 [0.00, 0.50] &  0.12 [-1.62, 2.30] &   0.21 [-0.46, 0.57] \\
+  Noneq/Alchemy/consensus &  27 &  1.70 [1.27, 2.28] &  1.48 [1.03, 2.04] &   1.21 [0.52, 1.87] &  0.02 [0.00, 0.29] &  0.16 [-0.48, 0.93] &  -0.02 [-0.43, 0.45] \\
+\end{longtable}
+\end{footnotesize}
+\end{center}
+
+\end{document}

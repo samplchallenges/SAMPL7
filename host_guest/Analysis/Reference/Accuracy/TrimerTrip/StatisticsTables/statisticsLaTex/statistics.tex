@@ -1,0 +1,32 @@
+\documentclass[8pt]{article}
+\usepackage[a4paper,margin=0.2in,tmargin=0.5in,bmargin=0.5in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\begin{footnotesize}
+\begin{longtable}{|cccccccc|}
+\toprule
+                        ID &   sid &    RMSE [kcal/mol] &     MAE [kcal/mol] &         ME [kcal/mol] &              R$^2$ &                    m &               $\tau$ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+      AMOEBA/DDM/BAR/ALT-2 &     9 &  1.58 [1.19, 2.56] &  1.39 [0.95, 2.23] &   -0.36 [-1.36, 0.68] &  0.63 [0.18, 0.83] &    1.14 [0.54, 1.76] &    0.60 [0.17, 0.80] \\
+       AMOEBA/DDM/BAR-ALT1 &     8 &  1.68 [1.28, 2.64] &  1.56 [1.03, 2.34] &   -0.70 [-1.71, 0.32] &  0.70 [0.26, 0.88] &    1.28 [0.70, 1.88] &    0.67 [0.23, 0.85] \\
+            AMOEBA/DDM/BAR &     6 &  2.76 [1.83, 3.98] &  2.12 [1.35, 3.33] &  -1.69 [-2.98, -0.44] &  0.50 [0.13, 0.77] &    1.25 [0.53, 2.06] &    0.47 [0.12, 0.74] \\
+          FSDAM/GAFF2/OPC3 &     4 &  2.97 [2.11, 5.13] &  2.24 [1.62, 4.22] &    0.43 [-1.59, 2.33] &  0.12 [0.00, 0.56] &   0.60 [-0.51, 1.60] &   0.24 [-0.23, 0.61] \\
+  MD/DOCKING/GAFF/xtb-GNF/ &     5 &  5.65 [3.87, 7.36] &  4.51 [3.01, 6.40] &  -4.23 [-6.19, -2.23] &  0.00 [0.00, 0.26] &  -0.10 [-1.02, 0.80] &  -0.05 [-0.41, 0.35] \\
+    Docking/GAFF/YANK\_REF &  REF2 &  7.18 [5.63, 8.71] &  6.57 [5.16, 8.10] &  -6.57 [-8.09, -5.16] &  0.11 [0.00, 0.59] &   0.57 [-0.56, 1.55] &   0.12 [-0.35, 0.56] \\
+ Docking/GAFF/YANK\_REF\_2 &  REF3 &  7.21 [5.73, 8.75] &  6.63 [5.26, 8.13] &  -6.63 [-8.12, -5.26] &  0.12 [0.00, 0.59] &   0.57 [-0.55, 1.54] &   0.12 [-0.34, 0.57] \\
+\end{longtable}
+\end{footnotesize}
+\end{center}
+
+\end{document}
