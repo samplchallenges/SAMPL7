@@ -110,11 +110,10 @@ class HostGuestSubmission(SamplSubmission):
     """
 
     # The IDs of the submissions used for testing the validation. Should be strings of submission IDs
-    #TEST_SUBMISSION_SIDS = {'4', '5', '6', '8', '9', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'} # Error:dataframe does not contain sid (only when using list or dic of strings) 
 
-    TEST_SUBMISSION_SIDS = {}
+    TEST_SUBMISSION_SIDS = {'15'}
     # The IDs of submissions for reference calculations. Should be strings of submission IDs
-    REF_SUBMISSION_SIDS = ['REF1', 'REF2', 'REF3', 'REF4'] # this with an empty DIC of TEST_SUB_SIDS works. 
+    REF_SUBMISSION_SIDS = ['REF1', 'REF2', 'REF3', 'REF4']  
     #REF_SUBMISSION_SIDS = []
 
     # Section of the submission file.
@@ -1083,13 +1082,14 @@ if __name__ == '__main__':
         'kendall_tau': '$\\tau$',
     }
     stats_limits = {
-        'RMSE': (0, 20.0),
-        'MAE': (0, 20),
-        'ME': (-15, 15),
+        'RMSE': (0, 15.0),
+        'MAE': (0, 15),
+        'ME': (-10, 15),
         'R2': (0, 1),
-        'm': (-10, 10),
+        'm': (-5, 5),
         'kendall_tau': (-1, 1),
-    } # INCREASED LIMIT FOR RMSE WAS (0,10.0). ME was (-10,10). m was (-5,5). MAE was (0,10)
+        } # WHEN EXCLUDING CD METHOD: RMSE(0,15.0), ME(-10,15), m(-5,5), MAE(0,15)
+    # INCREASE STATS LIMITS TO INCLUDE CD METHOD: RMSE(0,30.0), MAE(0,30), ME(-10.30), m(-10,20)
 
     # Statistics by molecule.
     stats_funcs_molecules = collections.OrderedDict([
@@ -1179,6 +1179,51 @@ if __name__ == '__main__':
     #collection_cb_no_bonus = HostGuestSubmissionCollection(submissions_cb, experimental_data,
     #                                                       output_directory_path='../Accuracy/CB8-NOBONUS')
     #collection_cb_no_bonus.data = remove_bonus(collection_cb_no_bonus.data)
+    # Systems to be excluded (optionals)
+    def remove_optional(submission_collection_data):
+        return submission_collection_data[(submission_collection_data.system_id != 'OA-g1') &
+                (submission_collection_data.system_id != 'OA-g2') &
+                (submission_collection_data.system_id != 'OA-g3') &
+                (submission_collection_data.system_id != 'OA-g4') &
+                (submission_collection_data.system_id != 'OA-g5') &
+                (submission_collection_data.system_id != 'OA-g6') &
+                (submission_collection_data.system_id != 'bCD-g1') &
+                (submission_collection_data.system_id != 'bCD-g2')]
+    #make new collections and remove optionals    
+    print("Making new collection set & removing optional host-guest systems from OA collection")
+    collection_oa_no_optional = HostGuestSubmissionCollection(submissions_oa, experimental_data,
+                                                                    output_directory_path='../Accuracy/OA_no_optional')
+    collection_oa_no_optional.data = remove_optional(collection_oa_no_optional.data)
+
+    print("Making new collection set & removing optional host-guest systems from collective OA & exoOA collection")
+    collection_oa_exooa_no_optional = HostGuestSubmissionCollection(submissions_oa_exooa, experimental_data,
+                                                                    output_directory_path='../Accuracy/GDCC_no_optional')
+    collection_oa_exooa_no_optional.data = remove_optional(collection_oa_exooa_no_optional.data)
+    
+    print("Making new collection set & removing optional host-guest systems from OA (including nonranked) collection")
+    collection_oa_nonranked_no_optional = HostGuestSubmissionCollection(submissions_oa, experimental_data, output_directory_path='../Reference/Accuracy/OA_no_optional', ignore_refcalcs = False, ranked_only = False)
+    collection_oa_nonranked_no_optional.data = remove_optional(collection_oa_nonranked_no_optional.data)
+
+    print("Making new collection set & removing optional host-guest systems from OA & exoOA (including non-ranked) collection")
+    collection_oa_exooa_nonranked_no_optional = HostGuestSubmissionCollection(submissions_oa_exooa, experimental_data, output_directory_path='../Reference/Accuracy/GDCC_no_optional', ignore_refcalcs = False, ranked_only = False)
+    collection_oa_exooa_nonranked_no_optional.data = remove_optional(collection_oa_exooa_nonranked_no_optional.data)
+
+    print("Making new collection set and removing optional host-guest systems from CD collection")
+    collection_cd_no_optional = HostGuestSubmissionCollection(submissions_cd, experimental_data,
+                                                                    output_directory_path='../Accuracy/CD_no_optional')
+    collection_cd_no_optional.data = remove_optional(collection_cd_no_optional.data)
+
+    print("Making new collection set and removing optional host-guest systems from CD (including non-ranked) collection")
+    collection_cd_nonranked_no_optional = HostGuestSubmissionCollection(submissions_cd, experimental_data, output_directory_path='../Reference/Accuracy/CD_no_optional', ignore_refcalcs = False, ranked_only = False)
+    collection_cd_nonranked_no_optional.data = remove_optional(collection_cd_nonranked_no_optional.data)
+
+    print("Making new collection set and removing optional host-guest systems from all (ranked and ranked/nonranked) collections")
+    collection_all_no_optional = HostGuestSubmissionCollection(submissions_all, experimental_data,
+                                                               output_directory_path='../Accuracy/MoleculesStatistics', allow_multiple = True)
+    collection_all_no_optional.data = remove_optional(collection_all_no_optional.data)
+
+    collection_all_nonranked_no_optional = HostGuestSubmissionCollection(submissions_all, experimental_data, output_directory_path='../Reference/Accuracy/MoleculesStatistics', allow_multiple = True, ignore_refcalcs = False, ranked_only = False)
+    collection_all_nonranked_no_optional.data = remove_optional(collection_all_nonranked_no_optional.data)
 
 
     # =============================================================================
@@ -1188,8 +1233,9 @@ if __name__ == '__main__':
     sns.set_style('whitegrid')
 
     # NOTE: Do not include collection_all or collection_all_nonranked here.
-    # Generate correlation plots and statistics.  
-    for collection in [collection_trimertrip, collection_oa_exooa, collection_oa, collection_exooa, collection_cd, collection_trimertrip_nonranked, collection_oa_exooa_nonranked, collection_exooa_nonranked, collection_oa_nonranked, collection_cd_nonranked]:
+    # Generate correlation plots and statistics
+    for collection in [collection_trimertrip, collection_oa_exooa, collection_oa, collection_exooa, collection_cd, collection_trimertrip_nonranked, collection_oa_exooa_nonranked, collection_exooa_nonranked, collection_oa_nonranked, collection_cd_nonranked, collection_oa_exooa_no_optional, collection_oa_no_optional, collection_cd_no_optional, collection_oa_exooa_nonranked_no_optional, collection_oa_nonranked_no_optional, collection_cd_nonranked_no_optional]:
+    #for collection in [collection_trimertrip, collection_oa_exooa, collection_oa, collection_exooa, collection_cd, collection_trimertrip_nonranked, collection_oa_exooa_nonranked, collection_exooa_nonranked, collection_oa_nonranked, collection_cd_nonranked]:
     #DEBUG: Following line triggers problems
     #for collection in [collection_trimertrip, collection_oa_exooa]:
     #for collection in [collection_cb, collection_cb_no_bonus, collection_oa, collection_temoa,
@@ -1214,9 +1260,9 @@ if __name__ == '__main__':
                                                 latex_header_conversions=latex_header_conversions,
                                                 stats_limits=stats_limits)
 
-    # Generate molecule statistics and plots.
+    # Generate molecule statistics and plots. 
     # Don't modify original collection_all as we'll use it later.
-    collection = copy.deepcopy(collection_all)
+    collection = copy.deepcopy(collection_all_nonranked_no_optional)
     # Include only the top 10 methods on the merged OA/TEMOA and CB8 datasets.
     #included_methods = {
     #    'ForceMatch',
@@ -1235,15 +1281,15 @@ if __name__ == '__main__':
     #    'US-GAFF-C'
     #}
     #collection.data = collection.data[collection.data.method.isin(included_methods)]
-    # Exclude bonus challenges.
-    #collection.data = collection.data[~collection.data.system_id.isin({'CB8-G11', 'CB8-G12', 'CB8-G13'})]
-    #collection.generate_molecules_plot()
-    #collection.generate_statistics_tables(stats_funcs_molecules, 'StatisticsTables', groupby='system_id',
-    #                                      sort_stat='MAE', ordering_functions=ordering_functions,
-    #                                      latex_header_conversions=latex_header_conversions)
-    #collection.plot_bootstrap_distributions(stats_funcs_molecules, subdirectory_path='StatisticsPlots',
-    #                                        groupby='system_id', ordering_functions=ordering_functions,
-    #                                        latex_header_conversions=latex_header_conversions)
+    # Exclude bonus challenges. IN THIS CASE REMOVING "OPTIONAL" HOST-GUEST SYSTEMS bCD's and OA-g1-6
+    collection.data = collection.data[~collection.data.system_id.isin({'bCD-g1','bCD-g2','OA-g1', 'OA-g2', 'OA-g3', 'OA-g4', 'OA-g5', 'OA-g6'})]
+    collection.generate_molecules_plot()
+    collection.generate_statistics_tables(stats_funcs_molecules, 'StatisticsTables', groupby='system_id',
+                                          sort_stat='MAE', ordering_functions=ordering_functions,
+                                          latex_header_conversions=latex_header_conversions)
+    collection.plot_bootstrap_distributions(stats_funcs_molecules, subdirectory_path='StatisticsPlots',
+                                            groupby='system_id', ordering_functions=ordering_functions,
+                                            latex_header_conversions=latex_header_conversions)
 
 
     # =============================================================================
@@ -1258,17 +1304,22 @@ if __name__ == '__main__':
     #                                                    output_directory_path='../Accuracy/OA-TEMOA')
 
     # Create a set of all the methods.
-    #all_methods = set(collection_oa.data.method.unique())
-    all_methods = set(collection_trimertrip.data.method.unique())
-    all_methods.update(set(collection_oa_exooa.data.method.unique()))
-    #all_methods.update(set(collection_cd.data.method.unique())) # INCLUDE ONE FOR CD 
+    all_methods = set(collection_oa_no_optional.data.method.unique())
+    all_methods.update(set(collection_oa_nonranked_no_optional.data.method.unique()))
+    all_methods.update(set(collection_trimertrip.data.method.unique()))
+    all_methods.update(set(collection_trimertrip_nonranked.data.method.unique()))
+    #all_methods.update(set(collection_oa_exooa.data.method.unique()))
+    all_methods.update(set(collection_exooa.data.method.unique()))
+    all_methods.update(set(collection_exooa_nonranked.data.method.unique()))
+    all_methods.update(set(collection_cd_no_optional.data.method.unique()))
+    all_methods.update(set(collection_cd_nonranked_no_optional.data.method.unique()))
 
     # Submissions using experimental corrections.
     #is_corrected = lambda m: ('MovTyp' in m and m[-1] != 'N') or 'SOMD-D' in m or 'RFEC' in m or 'US-GAFF-C' == m
     #corrected_methods = {m for m in all_methods if is_corrected(m)}
 
     # For movable type we plot only GE3N, GE3O, GE3L, KT1N, KT1L, GT1N, GT1L.
-    exclusions = {}
+    exclusions = {} 
     #exclusions = {
     #    'MovTyp-GD1N', 'MovTyp-GD1O', 'MovTyp-GD1L', 'MovTyp-GD3N', 'MovTyp-GD3L',
     #    'MovTyp-GE3S', 'MovTyp-GE3U', 'MovTyp-GE3Z', 'MovTyp-GT1O', 'MovTyp-GT3N',
@@ -1353,6 +1404,7 @@ if __name__ == '__main__':
         fig.text(0.5, 0.015, '$\Delta$G (exp) [kcal/mol]', ha='center', size='large')
 
         plt.tight_layout(pad=0.9, rect=[0.0, 0.025, 1.0, 1.0])
+        #plt.tight_layout(pad=0.2) THIS WORKED, BUT FIGURE3_CORRELATION_PLOTS WAS NOT ENTIRELY CORRECT
         plt.savefig('../Accuracy/PaperImages/{}.pdf'.format(file_name))
 
     correlation_plots(
@@ -1413,8 +1465,8 @@ if __name__ == '__main__':
 
     # TO DO:
     # currently we break before figure 5. 
-    import sys
-    sys.exit('Stopping before trying to generate figure 5: that needs updating.')
+    #import sys
+    #sys.exit('Stopping before trying to generate figure 5: that needs updating.')
 
 
     # FIGURE 5: Figure statistics by molecule.
@@ -1432,10 +1484,13 @@ if __name__ == '__main__':
 
     stats_names = ['RMSE', 'ME']
     fig, axes = plt.subplots(ncols=len(stats_names), figsize=(7.25/3.1*2, 5), sharey=True)
-    statistics = pd.read_json('../Accuracy/MoleculesStatistics/StatisticsTables/statistics.json', orient='index')
+    #statistics = pd.read_json('../Accuracy/MoleculesStatistics/StatisticsTables/statistics.json', orient='index')
+    #include nonranked
+    statistics = pd.read_json('../Reference/Accuracy/MoleculesStatistics/StatisticsTables/statistics.json', orient='index')
 
     # Remove bonus challenges. MAYBE  HERE INCLUDE OPTIONALS (I.E. bCD) 
-    statistics = statistics[~statistics.index.isin({'CB8-G11', 'CB8-G12', 'CB8-G13'})]
+    #statistics = statistics[~statistics.index.isin({'CB8-G11', 'CB8-G12', 'CB8-G13'})]
+    statistics = statistics[~statistics.index.isin({'bCD-g1','bCD-g2','OA-g1', 'OA-g2', 'OA-g3', 'OA-g4', 'OA-g5', 'OA-g6'})]
     statistics.sort_values(by='RMSE', inplace=True)
     for ax, stats_name in zip(axes, stats_names):
         # Build palette.
@@ -1450,7 +1505,8 @@ if __name__ == '__main__':
 
     plt.tight_layout(pad=0.3)
     # plt.show()
-    plt.savefig('../Accuracy/PaperImages/Figure5_molecule_statistics/error_by_molecule.pdf')
+    #plt.savefig('../Accuracy/PaperImages/Figure5_molecule_statistics/error_by_molecule.pdf')
+    plt.savefig('../Accuracy/PaperImages/error_by_molecule.pdf')
 
     # Create table presenting which methods got the tightest binders.
     # ---------------------------------------------------------------
@@ -1463,13 +1519,15 @@ if __name__ == '__main__':
     # Create a Dataframe summarizing if a method got the tightest binders correctly for each guest set.
     data = collections.OrderedDict()  # Data in dict format.
     # Tightest binders and columns of the Pandas Dataframe.
-    tighest_binders = ['OA-G2', 'TEMOA-G4', 'CB8-G8']
-    #tighest_binders = ['CLIP-g17', 'MGLab35-g2', 'OA-g8', 'exoOA-g8']
+    #tighest_binders = ['OA-G2', 'TEMOA-G4', 'CB8-G8']
+    tighest_binders =['CLIP-g19', 'MGLab35-g2', 'OA-g8', 'exoOA-g8']
     for method in plotted_methods:
         data[method] = []
 
-        for collection, tighest_binder in zip([collection_oa, collection_temoa, collection_cb_no_bonus],
-                                              tighest_binders):
+        #for collection, tighest_binder in zip([collection_oa, collection_temoa, collection_cb_no_bonus],
+        #                                      tighest_binders):
+        #for collection, tighest_binder in zip([collection_trimertrip, collection_cd, collection_oa, collection_exooa], tighest_binders ):
+        for collection, tighest_binder in zip([collection_trimertrip, collection_cd_no_optional, collection_oa_no_optional, collection_exooa, collection_trimertrip_nonranked, collection_cd_nonranked_no_optional, collection_oa_nonranked_no_optional, collection_exooa_nonranked], tighest_binders):
             method_data = collection.data[collection.data.method == method]
 
             # Get the tightest binder predicted by the method for the set.
@@ -1503,13 +1561,19 @@ if __name__ == '__main__':
     data = collections.OrderedDict(data)
 
     # Convert table to dataframe. TO DO: UPDATE THIS TO REFLECT TIGHTERS BINDERS ABOVE FOR SAMPL7
-    columns = ['OA-G2', 'OA-G2-incorrect', 'OA-G2-notsubmitted',
-               'TEMOA-G4', 'TEMOA-G4-incorrect', 'TEMOA-G4-notsubmitted',
-               'CB8-G8', 'CB8-G8-incorrect', 'CB8-G8-notsubmitted']
-    
-    palette = [sns.desaturate(color, 0.75) for color in [HOST_PALETTE['OA'], '0.7', 'white',
+    #columns = ['OA-G2', 'OA-G2-incorrect', 'OA-G2-notsubmitted',
+    #           'TEMOA-G4', 'TEMOA-G4-incorrect', 'TEMOA-G4-notsubmitted',
+    #           'CB8-G8', 'CB8-G8-incorrect', 'CB8-G8-notsubmitted']
+
+    columns = ['CLIP-g19', 'CLIP-g19-incorrect', 'CLIP-g19-notsubmitted',
+            'MGLab35-g2', 'MGLab35-g2-incorrect', 'MGLab35-g2-notsubmitted', 
+            'OA-g8', 'OA-g8-incorrect', 'OA-g8-notsubmitted',
+            'exoOA-g8', 'exoOA-g8-incorrect', 'exoOA-g8-notsubmitted']
+    #columns = ['Clip-g17', 'MGLab35-g2', 'OA-g8', 'exoOA-g8']
+    palette = [sns.desaturate(color, 0.75) for color in [HOST_PALETTE['CLIP'], '0.7', 'white',
                                                          HOST_PALETTE['CD'], '0.7', 'white',
-                                                         HOST_PALETTE['CLIP'], '0.7', 'white']] 
+                                                         HOST_PALETTE['OA'], '0.7', 'white',
+                                                         HOST_PALETTE['exoOA'], '0.7', 'white']] #make OA, exoOA 
     data = pd.DataFrame.from_dict(data, orient='index', columns=columns)
 
     # Plot percentage of correct binders across methods.
@@ -1520,10 +1584,11 @@ if __name__ == '__main__':
                                         correct_predictions/tot_predictions*100))
 
     # Plot table.
-    ax = data.plot.barh(stacked=True, color=palette, figsize=(7.25/3.1,5))
-    ax.xaxis.set_ticks([0.5, 1.5, 2.5])
-    ax.xaxis.set_ticklabels(['OA', 'TEMOA', 'CB8']) # TO DO: UPDATE THIS TO REFLECT TIGHTEST BINDERS ABOVE FOR SAMPL7
-    #ax.xaxis.set_ticklabels(['CLIP', 'CD', 'OA', 'exoOA'])
+    #ax = data.plot.barh(stacked=True, color=palette, figsize=(7.25/3.1,5))
+    ax = data.plot.barh(stacked=True, color=palette, figsize=(10, 10)) # TRY NEW FIG SIZE HERE
+    ax.xaxis.set_ticks([0.5, 1.5, 2.5, 3.5]) # ADD ANOTHER TICK 3.5
+    #ax.xaxis.set_ticklabels(['OA', 'TEMOA', 'CB8']) # TO DO: UPDATE THIS TO REFLECT TIGHTEST BINDERS ABOVE FOR SAMPL7
+    ax.xaxis.set_ticklabels(['CLIP', 'CD', 'OA', 'exoOA'])
     ax.set_title('Methods predicting the tightest binders')
 
     # Configure lengend to hide the missing/incorrect labels.
@@ -1543,12 +1608,15 @@ if __name__ == '__main__':
 
     plt.tight_layout(rect=[0, 0.0, 1, 1], pad=0.1)
     # plt.show()
-    plt.savefig('../Accuracy/PaperImages/Figure5_molecule_statistics/tightest_binders.pdf')
+    #plt.savefig('../Accuracy/PaperImages/Figure5_molecule_statistics/tightest_binders.pdf')
+    plt.savefig('../Accuracy/PaperImages/tightest_binders.pdf') #FOR NOW
+
+    # NEXT MAKE A "TIGHTEST BINDERS" PLOT FOR ALL SUBMISSIONS (INCLUDING NON-RANKED)
 
     # TO DO: STOP HERE TO TEST ALL OF THE ABOVE
     # break before figure 6
-    #import sys
-    #sys.exit('Stopping before tyring to generate figure 6; that needs updating')
+    import sys
+    sys.exit('Stopping before tyring to generate figure 6; that needs updating')
 
     # FIGURE 6: Distribution of RMSE and R2 in previous SAMPL challenges.
     # --------------------------------------------------------------------
