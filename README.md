@@ -24,8 +24,6 @@ All three host-guest challenges are now closed, as are the first and second stag
 
 ## What's coming
 - GSK logD challenge information as soon as available
-- Analysis of submissions for the host-guest challenge
-- Final analysis of submissions for the host-guest challenge
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -59,6 +57,7 @@ All three host-guest challenges are now closed, as are the first and second stag
 - (2020-01-14): Include informal reference calculations for trimertrip, GDCC, CD.
 - (2020-01-17): Add PHIP2 Stage 3 submissions.
 - (2020-02-14): Add additional host-guest analysis/updates to analysis. Include reference calculations in analysis, clean up files.
+- (2020-04-10): Add [link to host-guest virtual workshop program/video](http://dx.doi.org/10.5281/zenodo.3674155)
 
 ## Challenge overview
 
