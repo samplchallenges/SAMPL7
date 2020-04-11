@@ -7,3 +7,5 @@
 - `Analysis`: Eventually will hold experimental results, and analysis of the host-guest challenges. Currently only TrimerTrip experimental results are available.
 
 Note that we have typically selected reasonable protonation states and conformers of the hosts and guests, but these may be controversial, uncertain, or change upon binding, so participants are encouraged to exercise care in selecting which states are modeled.
+
+We had a recent [SAMPL7 host-guest virtual workshop](10.5281/zenodo.3674155) and video is available online.
