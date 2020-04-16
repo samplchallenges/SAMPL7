@@ -227,7 +227,7 @@ class Stage1SubmissionCollection:
             print("Stage1 submission collection file generated:\n", stage1_submission_collection_file_path)
 
 
-    def complete_predictions_with_missing_fragments(self, fragments_file_path, filter_nonranked=False):
+    def complete_predictions_with_missing_fragments(self, fragments_file_path, submission_collection_file_path,ranking):
         """ Adds missing non-binder predictions to collection. Assumes
         Parameters
         ----------
@@ -318,11 +318,15 @@ class Stage1SubmissionCollection:
             # Transform into Pandas DataFrame.
             self.data = pd.DataFrame(data=data)
 
-            #filters OUT non-ranked data if filter_nonranked == True
-            #allow outputting submission collection with just ranked data
-            if filter_nonranked:
-                self.data = self.data[self.data.Ranked == True]
+            #filters or not filter ranked and non-ranked submissions given the following list
+            #    rankings = ["Ranked_and_non-ranked", "Ranked", "Non-ranked"]
 
+            if ranking == ('Ranked_and_non-ranked' or None):
+                self.data = self.data
+            if ranking == 'Ranked':
+                self.data = self.data[self.data.Ranked == True]
+            if ranking == 'Non-ranked':
+                self.data = self.data[self.data.Ranked == False]
 
             print("\n SubmissionCollection: \n")
             print(self.data)
@@ -331,8 +335,8 @@ class Stage1SubmissionCollection:
             os.makedirs(self.output_directory_path, exist_ok=True)
 
             # Save completed collection.data dataframe in a CSV file.
-            self.data.to_csv(stage1_submission_collection_file_path, index=False)
-            print("Stage1 submission collection file updated with missing predictions:\n", stage1_submission_collection_file_path)
+            self.data.to_csv(submission_collection_file_path, index=False)
+            print("Stage1 submission collection file updated with missing predictions:\n", submission_collection_file_path)
 
 
 
@@ -341,10 +345,10 @@ class Stage1SubmissionCollection:
     def _assign_paper_method_name(name):
         return name
 
-    def generate_statistics_tables(self, stats_funcs, subdirectory_path, groupby,
+    def generate_statistics_tables(self, stats_funcs, subdirectory_path, groupby, site,
                                    extra_fields=None, sort_stat=None,
                                    ordering_functions=None, latex_header_conversions=None,
-                                   caption='', ignore_refcalcs = True):
+                                   caption=''):
         """Generate statistics tables in CSV, JSON, and LaTex format.
         Parameters
         ----------
@@ -375,7 +379,7 @@ class Stage1SubmissionCollection:
 
         # Compute or read the bootstrap statistics from the cache.
         cache_file_path = os.path.join(self.output_directory_path, 'bootstrap_distributions.p')
-        all_bootstrap_statistics = self._get_bootstrap_statistics(groupby, stats_names, stats_funcs,
+        all_bootstrap_statistics = self._get_bootstrap_statistics(groupby, site, stats_names, stats_funcs,
                                                                   cache_file_path=cache_file_path)
 
         # Collect the records for the DataFrames.
@@ -469,7 +473,7 @@ class Stage1SubmissionCollection:
 
 
 
-    def _get_bootstrap_statistics(self, groupby, stats_names, stats_funcs, cache_file_path):
+    def _get_bootstrap_statistics(self, groupby, site, stats_names, stats_funcs, cache_file_path):
         """Generate the bootstrap distributions of all groups and cache them.
         If cached values are found on disk, the distributions are not recomputed.
         Returns
@@ -542,7 +546,25 @@ class Stage1SubmissionCollection:
 
             # Compute bootstrap statistics.
             # Modify here to do per-site statistic
-            data = data[['All Sites (exp)', 'All Sites (pred)']]
+            #loop iterates over: sites = ["site-1", "site-2", "site-3", "site-4", "all-sites"]
+
+            if site == "site-1":
+                data = data[['Site 1 (exp)', 'Site 1 (pred)']]
+
+            if site == "site-2":
+                data = data[['Site 2 (exp)', 'Site 2 (pred)']]
+
+            if site == "site-3":
+                data = data[['Site 3 (exp)', 'Site 3 (pred)']]
+
+            if site == "site-4":
+                data = data[['Site 4 (exp)', 'Site 4 (pred)']]
+
+            if site == "all-sites":
+                data = data[['All Sites (exp)', 'All Sites (pred)']]
+
+            print(site)
+            print(data)
 
             new_bootstrap_statistics = compute_bootstrap_statistics(data.as_matrix(), group_stats_funcs, sems=None,
                                                                     n_bootstrap_samples=10000) #10000
@@ -632,52 +654,37 @@ if __name__ == '__main__':
     #     print("submission.name:\n", submission.name)
     #     print("submission.data:\n", submission.data)
 
-
     # Create submission collection
     print("Generating collection file...")
 
-    #Directory for all submissions together
-    #OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1'
 
-    #Directory for ranked submissions only
-    OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1-ranked'
-    stage1_submission_collection_file_path = '{}/stage1_submission_collection-ranked.csv'.format(OUTPUT_DIRECTORY_PATH)
-    ranked_collection = Stage1SubmissionCollection(submissions, experimental_data, OUTPUT_DIRECTORY_PATH,
-                                            stage1_submission_collection_file_path, ignore_refcalcs = False)
-    # Supplement submission collection with missing fragments predicted as non-binders
-    ranked_collection.complete_predictions_with_missing_fragments(fragments_file_path=FRAGMENTS_FILE_PATH, filter_nonranked=True)
-    # Generate statistics tables for all submissions
-    sns.set_context('talk')
-    caption=''
-    ranked_collection.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
-                                          groupby='SID', extra_fields=None,
-                                          sort_stat='Sensitivity', ordering_functions=ordering_functions,
+    #Create list of all rankings and sites to iterate over
+    rankings = ["Ranked_and_non-ranked", "Ranked", "Non-ranked"]
+    sites = ["site-1", "site-2", "site-3", "site-4", "all-sites"]
+
+    #iterates over lists to create statistics for each combination idenpedently
+    for ranking in rankings:
+        for site in sites:
+            OUTPUT_DIRECTORY_PATH_SPECIFIC = '../Analysis-outputs-stage1/{}/{}'.format(ranking,site)
+            stage1_submission_collection_specific_file_path = '{}/stage1_submission_collection_{}_{}.csv'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC,ranking,site)
+
+            collection_specific = Stage1SubmissionCollection(submissions,
+                                                             experimental_data,
+                                                             OUTPUT_DIRECTORY_PATH_SPECIFIC,
+                                                            stage1_submission_collection_specific_file_path,
+                                                            ignore_refcalcs=False)
+
+            collection_specific.complete_predictions_with_missing_fragments(fragments_file_path=FRAGMENTS_FILE_PATH,
+                                                                           submission_collection_file_path=stage1_submission_collection_specific_file_path,
+                                                                            ranking=ranking)
+            sns.set_context('talk')
+            collection_specific.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
+                                         groupby='SID', site = site, extra_fields=None,
+                                         sort_stat='Sensitivity', ordering_functions=ordering_functions,
                                           latex_header_conversions=latex_header_conversions,
-                                          caption=caption, ignore_refcalcs=False) #ignore_nonranked=False
+                                         caption='')
 
-    # TO-DO 1: Create separate analysis for only ranked submission
-
-    # Generate statistics tables for only ranked submissions
-    #
-    # Create new output directory
-    # OUTPUT_DIRECTORY_PATH = '../Analysis-outputs-stage1-ranked-only'
-    #
-    # Create prefiltered ranked-only collection file
-    # Suggestion: create a collection.filter_for_ranked() function to do this. It should output to the new directory.
-    #
-    # Read new submission collection for analysis
-    # ranked_collection = Stage1SubmissionCollection(...) using prefiltered collection file
-    #
-    # Create new collection object for ranked-only analysis
-    # ranked_collection.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
-    #                                       groupby='SID', extra_fields=None,
-    #                                       sort_stat='Sensitivity', ordering_functions=ordering_functions,
-    #                                       latex_header_conversions=latex_header_conversions,
-    #                                       caption=caption, ignore_refcalcs=False), # ignore_nonranked=True
-
-
-    # TO-DO 2: Adapt both analysis of stage1 and stage1-ranked-only to create separate statistic tables for sites1-4, and all sites
-
-
-
-    # TO-DO 3: Create plots for evaluation statistics
+    # TO-DO : verify the calculations (do one set by hand)
+    # TO-DO : Create plots for evaluation statistics
+    #position of each group on ROC space
+        #color by method?

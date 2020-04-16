@@ -17,37 +17,37 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 # =============================================================================
 
 def kendall_tau(data):
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     correlation, p_value = scipy.stats.kendalltau(x, y)
     return correlation
 
 
 def r2(data):
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     slope, intercept, r_value, p_value, stderr = scipy.stats.linregress(x, y)
     return r_value**2
 
 
 def slope(data):
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     slope, intercept, r_value, p_value, stderr = scipy.stats.linregress(x, y)
     return slope
 
 
 def me(data):
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     error = np.array(x) - np.array(y)
     return error.mean()
 
 
 def mae(data):
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     error = np.abs(np.array(x) - np.array(y))
     return error.mean()
 
 
 def rmse(data):
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     error = np.array(x) - np.array(y)
     rmse = np.sqrt((error**2).mean())
     return rmse
@@ -59,55 +59,55 @@ def rmse(data):
 
 def calc_confusion_matrix(data):
     # x: true values, y: predicted values
-    x, y = data.T
-    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    x, y = (data.astype(bool)).T
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
     return [tn, fp, fn, tp]
 
 def TN(data):
     """
     True negative
     """
-    x, y = data.T
-    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    x, y = (data.astype(bool)).T
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
     return tn
 
 def FP(data):
     """
     False positive
     """
-    x, y = data.T
-    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    x, y = (data.astype(bool)).T
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
     return fp
 
 def FN(data):
     """
     False negative
     """
-    x, y = data.T
-    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    x, y = (data.astype(bool)).T
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
     return fn
 
 def TP(data):
     """
     True positive
     """
-    x, y = data.T
-    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    x, y = (data.astype(bool)).T
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
     return tp
 
 
 def balanced_accuracy(data):
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     balanced_accuracy = balanced_accuracy_score(x,y)
     return balanced_accuracy
 
 def accuracy(data):
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     accuracy = accuracy_score(x, y)
     return accuracy
 
 def f1_score(data):
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     f1 = f1_score(y_true=x, y_pred=y)
     return f1
 
@@ -115,16 +115,16 @@ def sensitivity(data):
     """
     True Positive Rate, Recall, Sensitivity
     """
-    x, y = data.T
-    sensitivity = recall_score(x,y)
+    x, y = (data.astype(bool)).T
+    sensitivity = recall_score(x, y)
     return sensitivity
 
 def specificity(data):
     """
     True Negative Rate, Specificity
     """
-    x, y = data.T
-    tn, fp, fn, tp = confusion_matrix(x, y).ravel()
+    x, y = (data.astype(bool)).T
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
     specificity = tn / (tn + fp)
     return specificity
 
@@ -132,7 +132,7 @@ def precision(data):
     """
     positive predictive value, precision
     """
-    x, y = data.T
+    x, y = (data.astype(bool)).T
     precision = precision_score(x, y)
     return precision
 
