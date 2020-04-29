@@ -427,6 +427,36 @@ class Stage1SubmissionCollection:
         statistics_csv.set_index('ID', inplace=True)
         statistics_latex = pd.DataFrame(statistics_latex)
 
+        #Add ROC space figure?
+        #print(statistics_csv)
+        #ROC_df = statistics_csv[['Specificity','Sensitivity']]
+        #print(ROC_df)
+        #statistics_csv.plot(kind='scatter', x='Specificity', y='Sensitivity')
+        #plt.xlabel('False positive rate (specificity)')
+        #plt.ylabel('True positive rate (sensitivity)')
+        #plt.plot([0, 1], [0, 1], color='orange', linestyle='--')
+        #plt.title('{} predictions for {} in ROC space'.format(ranking,site), loc='center')
+
+        #Add bar plot of balanced accuracy
+        print('PLOT HERE')
+        #print(statistics_csv.index)
+
+        balanced_accuracies = statistics_csv[['Balanced Accuracy']]
+        balanced_accuracies = np.array(balanced_accuracies).flatten()
+        IDs = statistics_csv.index
+        plt.figure(figsize=(20, 10))
+        plt.bar(IDs, balanced_accuracies)
+        plt.axhline(y=0.5, color='orange', linestyle='--', label='Random')
+        plt.legend()
+        plt.ylabel("Balanced accuracy")
+        plt.ylim(0, 1)
+        plt.xlabel("SID")
+        plt.title('{} predictions for {}'.format(ranking, site), loc='center')
+        plt.savefig('{}/{} predictions for {}'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC,ranking, site))
+        plt.close()
+
+
+
         # Sort by the given statistics.
         if sort_stat is not None:
             ordering_function = ordering_functions.get(sort_stat, lambda x: x)
