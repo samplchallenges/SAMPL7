@@ -1,0 +1,101 @@
+# Results (entry description) for PHIP2 pose prediction
+#
+# This file will be automatically parsed.  It must contain the following seven elements:
+# participant name, participant organization, name of method, software listing, method, method category, and ranked.
+# These elements must be provided in the order shown.
+# The file name must begin with the letters "PHIP2_2" and then be followed by an additional underscore or dash
+# along with whatever characters you like, and end with ".txt"
+#
+# Please refer to https://github.com/samplchallenges/SAMPL7/blob/master/protein_ligand/README.md for a full
+# description of how to format your submissions.
+#
+# FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
+# Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
+# contains a non-UTF-8 character, you may note it in comments near that entry.
+#
+#
+# NOTE: Unlike the Stage 1 submission, this file does NOT provide your entries. Rather, it must be
+# included in the .tar.gz file you upload which contains your submissions. Thus, no "predictions" section
+# is required.
+
+# PARTICIPANT INFORMATION SECTION
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Maicol Bissaro
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+Molecular Modeling Section Lab (Prof. Stefano Moro)
+University of Padova, Italy
+
+
+# METHOD NAME SECTION
+#
+# Please provide a brief (40 character limit) informal yet informative name of the method used.
+# Following is sample text; please edit to your taste.
+# The "Name:" keyword is required, as shown here.
+# 40 character limit.
+Name:
+HT-SuMD
+
+
+# SOFTWARE SECTION
+#
+# All major software packages used and their versions.
+# Please use a new line for each software.
+# Following is sample text; please edit to your taste.
+# The "Software:" keyword is required.
+Software:
+MOE 2019.01
+Acemd3
+VMD
+Python 3.6
+scikit-learn 0.21.3
+AmberTools 2016
+
+# METHOD CATEGORY SECTION
+#
+# State which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`.
+# If your method takes advantage of multiple approaches please report more than one category label, separated by comma.
+# `Docking` category refers to structure-based virtual screening methods that model the structure of the receptor binding pocket and pose of the ligand followed by an scoring the goodness of the fit .
+# `Ligand-based` methods are virtual screening methods that do not rely on protein structure such as pharmacophore modeling, ligand shape-based, 2D or 3D structural similarity based methods.
+# `MD` methods utilize molecular dynamics simulations based on molecular mechanics including free energy calculations.
+# `ML` category includes machine learning, QSPR approaches, and all prediction methods trained on empirical knowledge.
+# `Null` predictions employ a model which is not expected to produce useful predictions, however,  can provide a simple comparison point for more sophisticated methods, as ideally, good methods should outperform the null model.
+# If these categories do not match your method, report as “Other”.
+# If you choose the `Other` category, please explain your decision in the beginning of Method Description section.
+# The `Category:` keyword is required.
+Category:
+Other
+
+
+
+# RANKING INFORMATION SECTION
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True
+
+
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of detail should be at least that used in a publication.
+# Please include the values of key parameters, with units, and explain how any
+# statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# Please explicitly describe how you handle ions (e.g. counterions) and pKa effects
+# Following is sample text; please edit to your taste.
+# All text following the "Method:" keyword will be regarded as part of your free text methods description.
+Method:
+Supervised molecular dynamics simulations (SuMD)  have been exploited to sample possible recognition trajectories between the 46 fragments and PHIP2 site 1
+For each fragment molecule three SuMD replicas were collected, using Acemd3 as MD engine. 
+Each binding trajectory was geometrically analyzed to identify the most relevant fragmens conformation sampled, through a DBSCAN clustering algorithm.
+The identified clusters were ranked exploiting a consensus strategy, which has taken into consideration for each cluster the population (MD frames), an energy estimation (MMGBSA) and an estimation of the hydrophobic contribution to binding (MOE-Hyd).
+The top scoring clusters were selected and the centroids were provided as our prediction.

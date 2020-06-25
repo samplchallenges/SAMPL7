@@ -60,7 +60,7 @@ def rmse(data):
 def calc_confusion_matrix(data):
     # x: true values, y: predicted values
     x, y = (data.astype(bool)).T
-    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[False, True]).ravel()
     return [tn, fp, fn, tp]
 
 def TN(data):
@@ -68,7 +68,7 @@ def TN(data):
     True negative
     """
     x, y = (data.astype(bool)).T
-    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[False, True]).ravel()
     return tn
 
 def FP(data):
@@ -76,7 +76,7 @@ def FP(data):
     False positive
     """
     x, y = (data.astype(bool)).T
-    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[False, True]).ravel()
     return fp
 
 def FN(data):
@@ -84,7 +84,7 @@ def FN(data):
     False negative
     """
     x, y = (data.astype(bool)).T
-    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[False, True]).ravel()
     return fn
 
 def TP(data):
@@ -92,7 +92,7 @@ def TP(data):
     True positive
     """
     x, y = (data.astype(bool)).T
-    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[False, True]).ravel()
     return tp
 
 
@@ -124,7 +124,7 @@ def specificity(data):
     True Negative Rate, Specificity
     """
     x, y = (data.astype(bool)).T
-    tn, fp, fn, tp = confusion_matrix(x, y, labels=[True, False]).ravel()
+    tn, fp, fn, tp = confusion_matrix(x, y, labels=[False, True]).ravel()
     specificity = tn / (tn + fp)
     return specificity
 
@@ -278,7 +278,6 @@ def compute_bootstrap_statistics(samples, stats_funcs, percentile=0.95,
         stat_higher_percentile = samples_statistics[-percentile_index+1]
         confidence_interval = (stat_lower_percentile, stat_higher_percentile)
         bootstrap_statistics.append([statistics[stats_func_idx], confidence_interval, samples_statistics])
-
     return bootstrap_statistics
 
 

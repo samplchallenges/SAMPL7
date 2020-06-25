@@ -21,16 +21,36 @@ from .stats import mean_confidence_interval
 # UTILITY FUNCTIONS
 # =============================================================================
 
+def untar_file(file_path):
+    import tarfile
+    output_directory = file_path.replace('.tar', '').replace('.gz', '')
+    tar = tarfile.open(file_path, "r:gz")
+    tar.extractall(output_directory)
+    tar.close()
+    #subdir = os.listdir(output_directory)[0]
+    #new_path = str(output_directory+ '/' + subdir + '/PHIP2_2-description.txt')
+    #return new_path
+
 def load_submissions(submission_cls, directory_path, user_map):
     submissions = []
-    for file_path in glob.glob(os.path.join(directory_path, '*.txt')):
-        try:
-            submission = submission_cls(file_path, user_map)
-        except IgnoredSubmissionError:
-            continue
-        submissions.append(submission)
-    return submissions
+    for file in user_map['file_name']:
+        for file_path in glob.glob(os.path.join(directory_path, file)):
+            if file_path.endswith('.txt'):
+                try:
+                    submission = submission_cls(file_path, user_map)
+                except IgnoredSubmissionError:
+                    continue
+                submissions.append(submission)
 
+            if file_path.endswith('.gz'):
+                 try:
+                     untar_file(file_path)
+                     submission = submission_cls(file_path, user_map)
+                 except IgnoredSubmissionError:
+                     continue
+                 submissions.append(submission)
+
+    return submissions
 
 # =============================================================================
 # PLOTTING FUNCTIONS
@@ -130,14 +150,19 @@ class SamplSubmission:
     CSV_SECTIONS = {}
 
     def __init__(self, file_path, user_map):
+        #print('User map file path is' + file_path)
+
         file_name = os.path.basename(file_path)
         file_prefix = os.path.splitext(file_name)[0]
         self.file_name = file_name
 
+        #NEED TO MODIFY FILEPATH SO THAT IT FITS IN TO MATCH THE ONE USERMAP
+
         # Store user map information.
         if user_map is not None:
             user_map_record = user_map[user_map.file_name == self.file_name]
-
+            #print('len is : ' + str(len(user_map_record)))
+            #print('user_map_record is ' + str(user_map_record))
             assert len(user_map_record) == 1
             user_map_record = user_map_record.iloc[0]
 
@@ -199,3 +224,4 @@ class SamplSubmission:
         experimental_series.name += ' (expt)'
         # Concatenate the two columns into a single dataframe.
         return pd.concat([experimental_series, submission_series], axis=1)
+

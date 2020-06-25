@@ -1,0 +1,149 @@
+F600
+     RDKit          3D
+
+ 16 16  0  0  0  0  0  0  0  0999 V2000
+  -17.6665   11.0942   22.9349 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.2088   12.2300   23.5736 O   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.0574   12.1207   24.9755 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.3309   13.4354   25.6353 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -19.0259   13.5616   26.7887 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -19.1465   14.8242   27.1946 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.5470   15.7017   26.3626 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.5387   17.1092   26.5827 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -17.8215   14.9342   25.0521 S   0  0  0  0  0  0  0  0  0  0  0  0
+  -16.5632   11.0521   23.0701 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -17.8690   11.1699   21.8469 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.1388   10.1553   23.3005 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.6897   11.3164   25.4197 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -17.0039   11.8441   25.1890 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.0599   17.7455   25.9076 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -19.0115   17.5139   27.4208 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0
+  2  3  1  0
+  3  4  1  0
+  4  5  2  0
+  5  6  1  0
+  6  7  2  0
+  7  8  1  0
+  7  9  1  0
+  9  4  1  0
+  1 10  1  0
+  1 11  1  0
+  1 12  1  0
+  3 13  1  0
+  3 14  1  0
+  8 15  1  0
+  8 16  1  0
+M  END
+>  <CHROM.1>  (1) 
+166.84442267,139.05633794,-1.12866340,1.01445161,0.16403012
+
+>  <Name>  (1) 
+F600
+
+>  <RI>  (1) 
+1.79388e+07
+
+>  <Rbt.Current_Directory>  (1) 
+/data/out
+
+>  <Rbt.Executable>  (1) 
+rbdock ($Id: //depot/dev/client3/rdock/2013.1/src/exe/rbdock.cxx#4 $)
+
+>  <Rbt.Library>  (1) 
+libRbt.so (2013.1, Build901 2013/11/27)
+
+>  <Rbt.Parameter_File>  (1) 
+/python_libraries/phenodiscovery/docking/templates/RDOCK_TETHER.conf
+
+>  <Rbt.Receptor>  (1) 
+/data/out/rdock-opt/grid/rdock-grid.prm
+
+>  <SCORE>  (1) 
+-1.19129
+
+>  <SCORE.INTER>  (1) 
+-0.883334
+
+>  <SCORE.INTER.CONST>  (1) 
+1
+
+>  <SCORE.INTER.POLAR>  (1) 
+0
+
+>  <SCORE.INTER.REPUL>  (1) 
+0.279008
+
+>  <SCORE.INTER.ROT>  (1) 
+2
+
+>  <SCORE.INTER.VDW>  (1) 
+-9.67837
+
+>  <SCORE.INTER.norm>  (1) 
+-0.0981482
+
+>  <SCORE.INTRA>  (1) 
+-0.30796
+
+>  <SCORE.INTRA.DIHEDRAL>  (1) 
+-2.00567
+
+>  <SCORE.INTRA.DIHEDRAL.0>  (1) 
+3.92659
+
+>  <SCORE.INTRA.POLAR>  (1) 
+0
+
+>  <SCORE.INTRA.POLAR.0>  (1) 
+0
+
+>  <SCORE.INTRA.REPUL>  (1) 
+0
+
+>  <SCORE.INTRA.REPUL.0>  (1) 
+0
+
+>  <SCORE.INTRA.VDW>  (1) 
+0.694875
+
+>  <SCORE.INTRA.VDW.0>  (1) 
+0.0887105
+
+>  <SCORE.INTRA.norm>  (1) 
+-0.0342177
+
+>  <SCORE.RESTR>  (1) 
+0
+
+>  <SCORE.RESTR.CAVITY>  (1) 
+0
+
+>  <SCORE.RESTR.norm>  (1) 
+0
+
+>  <SCORE.SYSTEM>  (1) 
+0
+
+>  <SCORE.SYSTEM.CONST>  (1) 
+0
+
+>  <SCORE.SYSTEM.DIHEDRAL>  (1) 
+0
+
+>  <SCORE.SYSTEM.norm>  (1) 
+0
+
+>  <SCORE.heavy>  (1) 
+9
+
+>  <SCORE.norm>  (1) 
+-0.132366
+
+>  <TETHERED ATOMS>  (1) 
+4,7,6
+
+>  <skeledock_score>  (1) 
+15
+
+$$$$

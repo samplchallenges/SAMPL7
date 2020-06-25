@@ -381,7 +381,6 @@ class Stage1SubmissionCollection:
         cache_file_path = os.path.join(self.output_directory_path, 'bootstrap_distributions.p')
         all_bootstrap_statistics = self._get_bootstrap_statistics(groupby, site, stats_names, stats_funcs,
                                                                   cache_file_path=cache_file_path)
-
         # Collect the records for the DataFrames.
         statistics_csv = []
         statistics_latex = []
@@ -396,6 +395,7 @@ class Stage1SubmissionCollection:
 
             # Select the group.
             data = self.data[self.data[groupby] == group]
+
 
             # Isolate the extra field.
             group_fields = {}
@@ -420,42 +420,11 @@ class Stage1SubmissionCollection:
             statistics_csv.append({'ID': group, **group_fields, **record_csv})
             statistics_latex.append({'ID': escape(group), **latex_group_fields,
                                      **record_latex})
-        print()
 
         # Convert dictionary to Dataframe to create tables/plots easily.
         statistics_csv = pd.DataFrame(statistics_csv)
         statistics_csv.set_index('ID', inplace=True)
         statistics_latex = pd.DataFrame(statistics_latex)
-
-        #Add ROC space figure?
-        #print(statistics_csv)
-        #ROC_df = statistics_csv[['Specificity','Sensitivity']]
-        #print(ROC_df)
-        #statistics_csv.plot(kind='scatter', x='Specificity', y='Sensitivity')
-        #plt.xlabel('False positive rate (specificity)')
-        #plt.ylabel('True positive rate (sensitivity)')
-        #plt.plot([0, 1], [0, 1], color='orange', linestyle='--')
-        #plt.title('{} predictions for {} in ROC space'.format(ranking,site), loc='center')
-
-        #Add bar plot of balanced accuracy
-        print('PLOT HERE')
-        #print(statistics_csv.index)
-
-        balanced_accuracies = statistics_csv[['Balanced Accuracy']]
-        balanced_accuracies = np.array(balanced_accuracies).flatten()
-        IDs = statistics_csv.index
-        plt.figure(figsize=(20, 10))
-        plt.bar(IDs, balanced_accuracies)
-        plt.axhline(y=0.5, color='orange', linestyle='--', label='Random')
-        plt.legend()
-        plt.ylabel("Balanced accuracy")
-        plt.ylim(0, 1)
-        plt.xlabel("SID")
-        plt.title('{} predictions for {}'.format(ranking, site), loc='center')
-        plt.savefig('{}/{} predictions for {}'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC,ranking, site))
-        plt.close()
-
-
 
         # Sort by the given statistics.
         if sort_stat is not None:
@@ -500,6 +469,52 @@ class Stage1SubmissionCollection:
                     '\end{center}\n')
             f.write(caption + '\n')
             f.write('\end{document}\n')
+
+        #Plot Balanced accuracies
+        balanced_accuracies = statistics_csv[['Balanced Accuracy']]
+        balanced_accuracies = np.array(balanced_accuracies).flatten()
+        balanced_accuracy_lower_bound = statistics_csv[['Balanced Accuracy_lower_bound']]
+        balanced_accuracy_lower_bound = np.array(balanced_accuracy_lower_bound).flatten()
+        balanced_accuracy_upper_bound = statistics_csv[['Balanced Accuracy_upper_bound']]
+        balanced_accuracy_upper_bound = np.array(balanced_accuracy_upper_bound).flatten()
+
+        IDs = statistics_csv.index
+        plt.figure(figsize=(20, 10))
+        plt.bar(IDs, balanced_accuracies, yerr = [(balanced_accuracies - balanced_accuracy_lower_bound), (balanced_accuracy_upper_bound - balanced_accuracies)])
+        plt.axhline(y=0.5, color='orange', linestyle='--', label='Random')
+        plt.legend()
+        plt.ylabel("Balanced accuracy")
+        plt.ylim(0, 1)
+        plt.xlabel("SID")
+        plt.title('balanced_accuracy_barplot_of_{}_predictions_for_{}'.format(ranking, site), loc='center')
+        plt.savefig('{}/balanced_accuracy_barplot_of_{}_predictions_for_{}'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC,ranking, site))
+        plt.close()
+
+        # Plot precision
+        precision = statistics_csv[['Precision']]
+        precision = np.array(precision).flatten()
+        precision_lower_bound = statistics_csv[['Precision_lower_bound']]
+        precision_lower_bound = np.array(precision_lower_bound).flatten()
+        precision_upper_bound = statistics_csv[['Precision_upper_bound']]
+        precision_upper_bound = np.array(precision_upper_bound).flatten()
+
+        IDs = statistics_csv.index
+        plt.figure(figsize=(20, 10))
+        plt.bar(IDs, precision, yerr = [(precision - precision_lower_bound), (precision_upper_bound - precision)])
+
+
+        site_modified = site.split('-')
+        site_modified = site_modified[0][0].upper() + site_modified[0][1:] + ' ' + site_modified[1][0].upper() + site_modified[1][1:]
+
+        hit_ratio = experimental_data[site_modified].value_counts()[1]/experimental_data[site_modified].value_counts()[0]
+        plt.axhline(y=hit_ratio, color='orange', linestyle='--', label='Experimental hit rate')
+        plt.legend()
+        plt.ylabel("precision")
+        plt.ylim(0, 1)
+        plt.xlabel("SID")
+        plt.title('precision_of_barplot_of_{} predictions_for_{}'.format(ranking, site), loc='center')
+        plt.savefig('{}/precision_of_barplot_of_{} predictions_for_{}'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC, ranking, site))
+        plt.close()
 
 
 
@@ -572,7 +587,8 @@ class Stage1SubmissionCollection:
 
             # Select the group data.
             data = self.data[self.data[groupby] == group]
-            print("data:\n", data)
+            print(type(data))
+            #print("data:\n", data)
 
             # Compute bootstrap statistics.
             # Modify here to do per-site statistic
@@ -593,16 +609,23 @@ class Stage1SubmissionCollection:
             if site == "all-sites":
                 data = data[['All Sites (exp)', 'All Sites (pred)']]
 
-            print(site)
-            print(data)
 
-            new_bootstrap_statistics = compute_bootstrap_statistics(data.as_matrix(), group_stats_funcs, sems=None,
+            #mixutre of strings and bools present in df. Converts everything into bools.
+            data = data.replace([0.00000, 0, 'False', 'FALSE', 'false'], False)
+            data = data.replace([1.00000, 1, 'True', 'TRUE', 'true'], True)
+
+            new_bootstrap_statistics = compute_bootstrap_statistics(data.to_numpy(), group_stats_funcs, sems=None,
                                                                     n_bootstrap_samples=10000) #10000
 
+            #new_bootstrap_statistics returns correct values
             # Update the returned value with the statistics just computed.
             new_boostrap_statistics = {group_stats_names[i]: new_bootstrap_statistics[i]
                                        for i in range(len(group_stats_funcs))}
+
+
+            print(new_bootstrap_statistics)
             group_bootstrap_statistics.update(new_boostrap_statistics)
+
 
         # Cache the computed statistics on disk. Create output directory if necessary.
         if cache_updated:
@@ -678,7 +701,7 @@ if __name__ == '__main__':
     # Load submissions data.
     print("Loading submissions...")
     submissions = load_submissions(Stage1Submission, STAGE_1_SUBMISSIONS_DIR_PATH, user_map)
-    #print("Submissions:\n", submissions)
+    print("Submissions:\n", submissions)
     # Try print after defining submission class
     # for submission in submissions:
     #     print("submission.name:\n", submission.name)
@@ -714,7 +737,28 @@ if __name__ == '__main__':
                                           latex_header_conversions=latex_header_conversions,
                                          caption='')
 
-    # TO-DO : verify the calculations (do one set by hand)
-    # TO-DO : Create plots for evaluation statistics
-    #position of each group on ROC space
-        #color by method?
+    # ranking = "Ranked"
+    # site = "site-1"
+    # OUTPUT_DIRECTORY_PATH_SPECIFIC = '../Analysis-outputs-stage1/{}/{}'.format(ranking, site)
+    # stage1_submission_collection_specific_file_path = '{}/stage1_submission_collection_{}_{}.csv'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC,ranking,site)
+    #
+    # OUTPUT_DIRECTORY_PATH_SPECIFIC = '../Analysis-outputs-stage1/{}/{}'.format(ranking, site)
+    # collection_specific = Stage1SubmissionCollection(submissions,
+    #                                                           experimental_data,
+    #                                                           OUTPUT_DIRECTORY_PATH_SPECIFIC,
+    #                                                          stage1_submission_collection_specific_file_path,
+    #                                                          ignore_refcalcs=False)
+    # collection_specific.complete_predictions_with_missing_fragments(fragments_file_path=FRAGMENTS_FILE_PATH,
+    #                                                                         submission_collection_file_path=stage1_submission_collection_specific_file_path,
+    #                                                                          ranking=ranking)
+    #
+    # sns.set_context('talk')
+    # collection_specific.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
+    #                                       groupby='SID', site = site, extra_fields=None,
+    #                                       sort_stat='Sensitivity', ordering_functions=ordering_functions,
+    #                                        latex_header_conversions=latex_header_conversions,
+    #                                       caption='')
+
+    #   TO-DO 1: UPDATE BINDER FOR SITE 1 AND RERUN ANALYSIS
+    #   TO-DO 2: REPLACE STRUCTURES WITH LATEST PDB
+    #   TO-DO 2:

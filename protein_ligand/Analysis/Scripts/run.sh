@@ -15,4 +15,4 @@ python analyze_stage1.py
 
 
 # Compile LaTeX statistic table for each directory
-for i in ../Analysis-outputs-stage1/*/*/StatisticsTables/statisticsLaTex/; do cd $i; pdflatex statistics.tex; cd -; done
+for i in ../Analysis-outputs-stage1/*/*/StatisticsTables/statisticsLaTex/; do cd $i; pdflatex statistics.tex; rm statistics.aux;cd -; done
