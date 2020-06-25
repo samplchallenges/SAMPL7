@@ -1,0 +1,29 @@
+\documentclass[8pt]{article}
+\usepackage[a4paper,margin=0.2in,tmargin=0.5in,bmargin=0.5in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\begin{footnotesize}
+\begin{longtable}{|cccccccc|}
+\toprule
+                                 ID & sid &    RMSE [kcal/mol] &     MAE [kcal/mol] &        ME [kcal/mol] &              R$^2$ &                   m &              $\tau$ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+                     AMOEBA/DDM/BAR &  29 &  0.82 [0.52, 2.09] &  0.68 [0.42, 1.83] &   0.01 [-1.09, 1.10] &  0.78 [0.07, 0.98] &   1.15 [0.26, 2.05] &  0.69 [-0.08, 1.00] \\
+ xtb-GNF/Machine Learning/CORINA MD &  28 &  0.85 [0.47, 2.09] &  0.54 [0.38, 1.74] &  -0.14 [-1.22, 0.92] &  0.64 [0.01, 0.97] &  0.82 [-0.05, 1.87] &  0.76 [-0.25, 1.00] \\
+               RESP/GAFF/MMPBSA-Cor &  20 &  1.55 [0.84, 2.80] &  1.28 [0.66, 2.48] &   1.03 [-0.23, 2.27] &  0.26 [0.00, 0.90] &  0.38 [-0.56, 1.23] &  0.33 [-0.54, 0.96] \\
+                 B2PLYPD3/SMD\_QZ-R &  23 &  2.99 [1.40, 4.62] &  2.22 [1.01, 4.04] &   0.39 [-1.86, 2.61] &  0.09 [0.00, 0.80] &  0.72 [-1.31, 2.94] &  0.08 [-0.68, 0.74] \\
+\end{longtable}
+\end{footnotesize}
+\end{center}
+
+\end{document}

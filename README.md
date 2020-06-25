@@ -4,7 +4,7 @@
 
 Challenge details, inputs, and (eventually) results for the SAMPL7 series (phase) of challenges. Each individual SAMPL7 challenge may be broken up into multiple stages.
 
-See the [SAMPL website](https://samplchallenges.github.io) for information on the Statistical Assessment of the Modeling of Proteins and Ligands (SAMPL) series of challenges as a whole. This repository focuses specifically on the SAMPL7 series of challenges.
+See the [SAMPL website](https://samplchallenges.github.io) for information on the Statistical Assessment of the Modeling of Proteins and Ligands (SAMPL) series of challenges as a whole. This repository focuses specifically on the SAMPL7 series of challenges. Additionally, see the SAMPL community on Zenodo for content related to the SAMPL series of challenges. If you wish to use Zenodo to post your presentation slides, datasets, and/or other SAMPL related material, and get a DOI for them, please upload to the community [here](https://zenodo.org/communities/sampl/?page=1&size=20) so that your content will be listed.
 
 Because these files are available publicly, we have no record of who downloads them. Therefore, you should sign up for notifications. Specifically, if you want to receive updates if we uncover any problems, it is imperative that you either (a) sign up for the SAMPL e-mail list, or (b) sign up for notifications of changes to this GitHub repository (the Watch button, above); ideally you would do both.
 Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMPL7-related announcements.
@@ -14,7 +14,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory, and experimental values in the `host_guest/Analysis/ExperimentalMeasurements` directory. The Isaacs' group's publication on this is in the *New Journal of Chemistry*, [DOI 10.1039/C9NJ05336K](https://dx.doi.org/10.1039/C9NJ05336K)
 - Final information on the Gibb octa acid-based challenge ("Gibb deep cavity cavitand" (GDCC) challenge) in the `host_guest/GDCC_and_guests` directory.
 - Final information on the cyclodextrin derivatives challenge in the `host_guest/cyclodextrin_derivatives` directory and in our [host-guest challenge description](host_guest_description.md).
-- Results for host-guest reference calculations (alchemical binding free energy calculations with YANK) conducted by Mobley lab in the `host_guest/Analysis/Submissions/TrimerTrip`, `host_guest/Analysis/Submissions/GDCC`, and `host_guest/Analysis/Submissions/CD`. Reference calculations were not formal challenge submissions. 
+- Results for host-guest reference calculations (alchemical binding free energy calculations with YANK) conducted by Mobley lab in the `host_guest/Analysis/Submissions/TrimerTrip`, `host_guest/Analysis/Submissions/GDCC`, and `host_guest/Analysis/Submissions/CD`. Reference calculations were not formal challenge submissions.
 - Experimental details for the CD challenge in [host_guest_description.md](host_guest_description.md)
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
 - Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
@@ -24,8 +24,6 @@ All three host-guest challenges are now closed, as are the first and second stag
 
 ## What's coming
 - GSK logD challenge information as soon as available
-- Analysis of submissions for the host-guest challenge
-- Final analysis of submissions for the host-guest challenge
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -56,7 +54,10 @@ All three host-guest challenges are now closed, as are the first and second stag
 - (2019-12-23): Add Stage 3 submission format for PHIP2.
 - (2019-12-23): Add preliminary host-guest analysis (ranked submissions only, for now) for GDCC and TrimerTrip; add preliminary first pass at CD analysis.
 - (2020-01-08): Add PHIP2 Stage 3 submission upload.
+- (2020-01-14): Include informal reference calculations for trimertrip, GDCC, CD.
 - (2020-01-17): Add PHIP2 Stage 3 submissions.
+- (2020-02-14): Add additional host-guest analysis/updates to analysis. Include reference calculations in analysis, clean up files.
+- (2020-04-10): Add [link to host-guest virtual workshop program/video](http://dx.doi.org/10.5281/zenodo.3674155)
 
 ## Challenge overview
 

@@ -24,3 +24,7 @@ sid,file_name
 29,GDCC-ponder.txt
 30,GDCC-ponder-2.txt
 31,GDCC-ponder-3.txt
+REF1,CD_REF.txt
+REF2,Clip_REF.txt
+REF3,Clip_REF_2.txt
+REF4,GDCC_REF.txt
