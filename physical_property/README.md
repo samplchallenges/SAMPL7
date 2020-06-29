@@ -29,7 +29,7 @@ Effective permeability (log *P*<sub>app</sub>) was measured by Parallel Artifici
 ## What's here
 *Under construction*
 - `SAMPL7_molecule_ID_and_SMILES.csv` - CSV file containing SAMPL7 challenge molecule IDs and SMILES provided by the Ballatore lab. Note, compounds SM09 and SM10 were experimental controls and will not be analyzed in the challenge, but they are still provided here.
-- `log *P*`: Folder will be updated soon to contain challenge input files, instructions and a submission template.
-- `pK<sub>a</sub>`: Folder will be updated soon to contain challenge input files, instructions and a submission template.
+- `log P`: Folder will be updated soon to contain challenge input files, instructions and a submission template.
+- `pKa`: Folder will be updated soon to contain challenge input files, instructions and a submission template.
 - `permeability`: Folder will be updated soon to contain challenge input files, instructions and a submission template.
 - `images`: Folder containing images of the molecules for this challenge in PDF and JPEG format.
