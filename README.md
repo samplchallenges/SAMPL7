@@ -58,6 +58,7 @@ All three host-guest challenges are now closed, as are the first and second stag
 - (2020-01-17): Add PHIP2 Stage 3 submissions.
 - (2020-02-14): Add additional host-guest analysis/updates to analysis. Include reference calculations in analysis, clean up files.
 - (2020-04-10): Add [link to host-guest virtual workshop program/video](http://dx.doi.org/10.5281/zenodo.3674155)
+- (2020-06-29): Add preliminary details of the SAMPL7 physical property challenge
 
 ## Challenge overview
 
