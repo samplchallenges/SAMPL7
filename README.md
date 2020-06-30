@@ -72,6 +72,7 @@ Additional details are provided below. Several hosts and/or guests were optional
 A later stage of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
 
 
+
 ### Physical property challenge on pK<sub>a</sub>, partitioning, and (optionally) permeability
 
 We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and (optionally) permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
@@ -79,6 +80,8 @@ We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and (op
 pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates. The partitioning prediction will focus on predicting the octanol-water partition coefficients. Our subsequent analysis will later combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. Additionally, an optional PAMPA permeability prediction challenge will be run in parallel to the pK<sub>a</sub> and partition coefficient challenge. Participants may participate in this challenge additionally, separately, or not at all.
 
 Challenge inputs, submission details and submission templates will be made available [here](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) at a slightly later date.
+
+
 
 ### PHIP2 binding prediction
 
@@ -90,6 +93,7 @@ This challenge breaks out into at least three stages on a tight timeline:
 3) Selection of new compounds for screening from an experimental database
 
 Stage 3 is now open and focuses selection of possible new binders from a library. See [protein_ligand/README.md](protein_ligand/README.md) for full details.
+
 
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
@@ -105,6 +109,7 @@ The Isaacs lab is contributing data on binding of a series of guests to an acycl
 The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges. [Full details](host_guest_description.md) are available. Binding to beta-cyclodextrin can optionally be submitted, but literature values for these compounds are available.
 
 ## MANIFEST
+- `physical_property`: Details on physical_property challenges
 - `host_guest`: Details on host-guest challenges
 - `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Stage 1 is available.
 - `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
