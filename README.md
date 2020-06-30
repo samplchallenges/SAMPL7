@@ -19,10 +19,13 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
 - Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
 - [PHIP2 challenge stage 1-3 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
+- Preliminary [details of the SAMPL7 physical property challenge](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) on log *P*, pK<sub>a</sub> and permeability.
 
-All three host-guest challenges are now closed, as are the first and second stages of the PHIP2 protein-ligand challenge. The **third stage of the protein-ligand challenge is due Jan. 13, 2019 by midnight (24:00) US Pacific time. Our [submission uploads are now live](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/).**
+All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge.
 
 ## What's coming
+- Physical property challenge input and instructions (for log *P*, pK<sub>a</sub>, and permeability)
+- PHIP/PHIP2 stage 1 and stage 2 analysis
 - GSK logD challenge information as soon as available
 
 ## Disclaimers:
@@ -58,13 +61,28 @@ All three host-guest challenges are now closed, as are the first and second stag
 - (2020-01-17): Add PHIP2 Stage 3 submissions.
 - (2020-02-14): Add additional host-guest analysis/updates to analysis. Include reference calculations in analysis, clean up files.
 - (2020-04-10): Add [link to host-guest virtual workshop program/video](http://dx.doi.org/10.5281/zenodo.3674155)
+- (2020-06-29): Add preliminary details of the SAMPL7 physical property challenge on pK<sub>a</sub>, log *P*, and (optionally) permeability.
 
 ## Challenge overview
 
-The SAMPL7 phase of challenges currently includes a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involves a total of 9-20 binding free energy calculations.
-Additional details are provided below. Note that several hosts and/or guests are optional.
+The SAMPL7 phase of challenges currently includes a physical property challenge on pK<sub>a</sub>, partitioning, and (optionally) permeability.
+
+Recently concluded SAMPL7 challenges include a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involved a total of 9-20 binding free energy calculations.
+Additional details are provided below. Several hosts and/or guests were optional.
 
 A later stage of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
+
+
+
+### Physical property challenge on pK<sub>a</sub>, partitioning, and (optionally) permeability
+
+We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and (optionally) permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
+
+pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates. The partitioning prediction will focus on predicting the octanol-water partition coefficients. Our subsequent analysis will later combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. Additionally, an optional PAMPA permeability prediction challenge will be run in parallel to the pK<sub>a</sub> and partition coefficient challenge. Participants may participate in this challenge additionally, separately, or not at all.
+
+Challenge inputs, submission details and submission templates will be made available [here](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) at a slightly later date.
+
+
 
 ### PHIP2 binding prediction
 
@@ -76,6 +94,7 @@ This challenge breaks out into at least three stages on a tight timeline:
 3) Selection of new compounds for screening from an experimental database
 
 Stage 3 is now open and focuses selection of possible new binders from a library. See [protein_ligand/README.md](protein_ligand/README.md) for full details.
+
 
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
@@ -91,6 +110,7 @@ The Isaacs lab is contributing data on binding of a series of guests to an acycl
 The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges. [Full details](host_guest_description.md) are available. Binding to beta-cyclodextrin can optionally be submitted, but literature values for these compounds are available.
 
 ## MANIFEST
+- `physical_property`: Details on physical_property challenge
 - `host_guest`: Details on host-guest challenges
 - `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Stage 1 is available.
 - `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
