@@ -72,7 +72,7 @@ A later stage of SAMPL7 is expected to include logD prediction (hopefully with p
 
 ### Physical property challenges on pK<sub>a</sub>, partitioning, and permeability
 
-We have a new set of SAMPL7 challenges focusing on pK<sub>a</sub>, partitioning, and permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
+We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and (optionally) permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
 
 pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates. The partitioning prediction will focus on predicting the octanol-water partition coefficients. Our subsequent analysis will later combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. Additionally, an optional PAMPA permeability prediction challenge will be run in parallel to the pK<sub>a</sub> and partition coefficient challenge. Participants may participate in this challenge additionally, separately, or not at all.
 
