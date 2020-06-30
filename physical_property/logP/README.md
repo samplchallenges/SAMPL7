@@ -8,6 +8,3 @@ Experimental log *P* measurements will made available after the challenge deadli
 
 ## Manifest
 *Under construction*
-
-## Publication on experimental measurements
-Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres" *(Pending Publication)*

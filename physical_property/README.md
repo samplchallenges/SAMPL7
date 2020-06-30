@@ -27,9 +27,12 @@ Melting points of the crystalline material were taken using Mel-Temp II (Barnste
 Effective permeability (log *P*<sub>app</sub>) was measured by Parallel Artificial Membrane Permeability Assay (PAMPA) using the Corning GentestTM pre-coated PAMPA plate system with quantitation by HPLC-UV (experiments carried out by Analyza, Inc).
 
 ## What's here
-*Under construction*
+
 - `SAMPL7_molecule_ID_and_SMILES.csv` - CSV file containing SAMPL7 challenge molecule IDs and SMILES provided by the Ballatore lab. Note, compounds SM09 and SM10 were experimental controls and will not be analyzed in the challenge, but they are still provided here.
 - `log P`: Folder will be updated soon to contain challenge input files, instructions and a submission template.
 - `pKa`: Folder will be updated soon to contain challenge input files, instructions and a submission template.
 - `permeability`: Folder will be updated soon to contain challenge input files, instructions and a submission template.
 - `images`: Folder containing images of the molecules for this challenge in PDF and JPEG format.
+
+## Publication on experimental measurements
+Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres" *(Pending Publication)*
