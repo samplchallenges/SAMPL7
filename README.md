@@ -19,10 +19,12 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
 - Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
 - [PHIP2 challenge stage 1-3 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
+- Preliminary [details of the SAMPL7 physical property challenge](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) on log *P*, pK<sub>a</sub> and permeability.
 
-All three host-guest challenges are now closed, as are the first and second stages of the PHIP2 protein-ligand challenge. The **third stage of the protein-ligand challenge is due Jan. 13, 2019 by midnight (24:00) US Pacific time. Our [submission uploads are now live](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/).**
+All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge. 
 
 ## What's coming
+- Ballatore logP, pKa and permeability challenge input and instructions
 - GSK logD challenge information as soon as available
 
 ## Disclaimers:
