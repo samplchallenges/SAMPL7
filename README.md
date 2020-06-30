@@ -67,7 +67,7 @@ All three host-guest challenges are now closed, as are the three stages of the P
 
 The SAMPL7 phase of challenges currently includes a physical property challenge on pK<sub>a</sub>, partitioning, and (optionally) permeability.
 
-Recently concluded SAMPL7 phases include a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involved a total of 9-20 binding free energy calculations.
+Recently concluded SAMPL7 challenges include a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involved a total of 9-20 binding free energy calculations.
 Additional details are provided below. Several hosts and/or guests were optional.
 
 A later stage of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
