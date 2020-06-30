@@ -24,7 +24,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge.
 
 ## What's coming
-- Ballatore logP, pKa and permeability challenge input and instructions
+- Physical property challenge input and instructions (for log *P*, pK<sub>a</sub>, and permeability)
 - GSK logD challenge information as soon as available
 
 ## Disclaimers:
