@@ -25,6 +25,7 @@ All three host-guest challenges are now closed, as are the three stages of the P
 
 ## What's coming
 - Physical property challenge input and instructions (for log *P*, pK<sub>a</sub>, and permeability)
+- PHIP/PHIP2 stage 1 and stage 2 analysis
 - GSK logD challenge information as soon as available
 
 ## Disclaimers:
@@ -109,7 +110,7 @@ The Isaacs lab is contributing data on binding of a series of guests to an acycl
 The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges. [Full details](host_guest_description.md) are available. Binding to beta-cyclodextrin can optionally be submitted, but literature values for these compounds are available.
 
 ## MANIFEST
-- `physical_property`: Details on physical_property challenges
+- `physical_property`: Details on physical_property challenge
 - `host_guest`: Details on host-guest challenges
 - `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Stage 1 is available.
 - `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
