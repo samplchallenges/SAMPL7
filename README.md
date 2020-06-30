@@ -60,7 +60,7 @@ All three host-guest challenges are now closed, as are the three stages of the P
 - (2020-01-17): Add PHIP2 Stage 3 submissions.
 - (2020-02-14): Add additional host-guest analysis/updates to analysis. Include reference calculations in analysis, clean up files.
 - (2020-04-10): Add [link to host-guest virtual workshop program/video](http://dx.doi.org/10.5281/zenodo.3674155)
-- (2020-06-29): Add preliminary details of the SAMPL7 physical property challenge
+- (2020-06-29): Add preliminary details of the SAMPL7 physical property challenge on pK<sub>a</sub>, partitioning, and (optionally) permeability
 
 ## Challenge overview
 
@@ -70,7 +70,7 @@ Additional details are provided below. Note that several hosts and/or guests are
 A later stage of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
 
 
-### Physical property challenges on pK<sub>a</sub>, partitioning, and permeability
+### Physical property challenges on pK<sub>a</sub>, partitioning, and (optionally) permeability
 
 We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and (optionally) permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
 
