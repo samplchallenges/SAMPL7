@@ -60,17 +60,19 @@ All three host-guest challenges are now closed, as are the three stages of the P
 - (2020-01-17): Add PHIP2 Stage 3 submissions.
 - (2020-02-14): Add additional host-guest analysis/updates to analysis. Include reference calculations in analysis, clean up files.
 - (2020-04-10): Add [link to host-guest virtual workshop program/video](http://dx.doi.org/10.5281/zenodo.3674155)
-- (2020-06-29): Add preliminary details of the SAMPL7 physical property challenge on pK<sub>a</sub>, partitioning, and (optionally) permeability
+- (2020-06-29): Add preliminary details of the SAMPL7 physical property challenge on pK<sub>a</sub>, log *P*, and (optionally) permeability.
 
 ## Challenge overview
 
-The SAMPL7 phase of challenges currently includes a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involves a total of 9-20 binding free energy calculations.
-Additional details are provided below. Note that several hosts and/or guests are optional.
+The SAMPL7 phase of challenges currently includes a physical property challenge on pK<sub>a</sub>, partitioning, and (optionally) permeability.
+
+Recently concluded SAMPL7 phases include a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involved a total of 9-20 binding free energy calculations.
+Additional details are provided below. Several hosts and/or guests were optional.
 
 A later stage of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
 
 
-### Physical property challenges on pK<sub>a</sub>, partitioning, and (optionally) permeability
+### Physical property challenge on pK<sub>a</sub>, partitioning, and (optionally) permeability
 
 We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and (optionally) permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
 
