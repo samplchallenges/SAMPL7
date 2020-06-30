@@ -21,7 +21,7 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - [PHIP2 challenge stage 1-3 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
 - Preliminary [details of the SAMPL7 physical property challenge](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) on log *P*, pK<sub>a</sub> and permeability.
 
-All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge. 
+All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge.
 
 ## What's coming
 - Ballatore logP, pKa and permeability challenge input and instructions
@@ -68,6 +68,15 @@ The SAMPL7 phase of challenges currently includes a protein-ligand component on 
 Additional details are provided below. Note that several hosts and/or guests are optional.
 
 A later stage of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
+
+
+### Physical property challenges on pK<sub>a</sub>, partitioning, and permeability
+
+We have a new set of SAMPL7 challenges focusing on pK<sub>a</sub>, partitioning, and permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
+
+pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates. The partitioning prediction will focus on predicting the octanol-water partition coefficients. Our subsequent analysis will later combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. Additionally, an optional PAMPA permeability prediction challenge will be run in parallel to the pK<sub>a</sub> and partition coefficient challenge. Participants may participate in this challenge additionally, separately, or not at all.
+
+Challenge inputs, submission details and submission templates will be made available [here](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) at a slightly later date.
 
 ### PHIP2 binding prediction
 
