@@ -29,7 +29,7 @@ Effective permeability (log *P*<sub>app</sub>) was measured by Parallel Artifici
 
 ## What's here
 
-- [`SAMPL7_molecule_ID_and_SMILES.csv`](SAMPL7_molecule_ID_and_SMILES.csv): CSV file containing SAMPL7 challenge molecule IDs and SMILES provided by the Ballatore lab.
+- [`SAMPL7_molecule_ID_and_SMILES.csv`](SAMPL7_molecule_ID_and_SMILES.csv): CSV file containing SAMPL7 challenge molecule IDs and SMILES. SMILES were provided by the Ballatore lab.
 - [`logP`](logP): Folder will be updated soon to contain challenge input files, instructions and a submission template.
 - [`pKa`](pKa): Folder will be updated soon to contain challenge input files, instructions and a submission template.
 - [`permeability`](permeability): Folder will be updated soon to contain challenge input files, instructions and a submission template.
