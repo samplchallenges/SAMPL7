@@ -62,6 +62,7 @@ All three host-guest challenges are now closed, as are the three stages of the P
 - (2020-02-14): Add additional host-guest analysis/updates to analysis. Include reference calculations in analysis, clean up files.
 - (2020-04-10): Add [link to host-guest virtual workshop program/video](http://dx.doi.org/10.5281/zenodo.3674155)
 - (2020-06-29): Add preliminary details of the SAMPL7 physical property challenge on pK<sub>a</sub>, log *P*, and permeability.
+(2020-07-07): Compounds renumbered for the SAMPL7 physical property challenge on pKa, log P, and permeability.
 
 ## Challenge overview
 
