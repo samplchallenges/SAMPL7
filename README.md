@@ -112,11 +112,11 @@ The Isaacs lab is contributing data on binding of a series of guests to an acycl
 The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges. [Full details](host_guest_description.md) are available. Binding to beta-cyclodextrin can optionally be submitted, but literature values for these compounds are available.
 
 ## MANIFEST
-- `physical_property`: Details on the physical property challenge
-- `host_guest`: Details on host-guest challenges
-- `protein_ligand`: Details on/inputs for PHIP2 bromodomain challenge. Currently Stage 1 is available.
-- `host_guest_description.md`: Detailed description of aspects of the host-guest challenges
-- `protein_ligand_instructions.md`: Detailed instructions for participation in the protein-ligand challenge.
+- [`physical_property`](physical_property): Details on the physical property challenge
+- [`host_guest`](host_guest): Details on host-guest challenges
+- [`protein_ligand`](protein_ligand): Details on/inputs for PHIP2 bromodomain challenge. Currently Stage 1 is available.
+- [`host_guest_description.md`](host_guest_description.md): Detailed description of aspects of the host-guest challenges
+- [`protein_ligand_instructions.md`](protein_ligand_instructions.md): Detailed instructions for participation in the protein-ligand challenge.
 
 ## SAMPL-related content
 
