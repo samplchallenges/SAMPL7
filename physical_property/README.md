@@ -13,7 +13,7 @@ Submission details and a submission template will be posted here at a slightly l
 
 ## A view of the compounds
 
-![](images/compounds-2d-depiction.jpeg)
+![22 SAMPL7 molecules](images/compounds-2d-depiction.jpeg)
 
 **Fig 1. SAMPL7 Challenge molecules.** Log of the partition coefficient between n-octanol and water was determined via potentiometric titrations using a Sirius T3 instrument. pK<sub>a</sub> values were determined by potentiometric titrations using a Sirius T3 instrument. Log of the distribution coefficient between n-octanol and aqueous buffer at pH 7.4 were determined via potentiometric titrations using a Sirius T3 instrument, except for compounds SM27, SM28, SM30-SM34, SM36-SM39 which had log *D*<sub>7.4</sub> values determined via shake-flask assay. PAMPA assay data includes effective permeability, membrane retention, and log of the apparent permeability coefficient. Permeabilities for compounds SM33, SM35, and SM39 were not determined.
 
