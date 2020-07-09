@@ -37,4 +37,4 @@ Effective permeability (log *P*<sub>app</sub>) was measured by Parallel Artifici
 - [`experimental_data`](experimental_data): Folder will contain experimental measurements of pK<sub>a</sub>, partitioning and permeability values after the SAMPL7 challenge submission deadline.
 
 ## Publication on experimental measurements
-Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres" *(Pending Publication)*
+Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres" *(Details to be announced)*
