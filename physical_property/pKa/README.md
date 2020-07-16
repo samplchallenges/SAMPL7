@@ -9,4 +9,3 @@ Experimental pK<sub>a</sub> measurements will made available after the challenge
 
 ## Manifest
 - [`microstates/`](microstates/) - This directory contains `.CSV` files that list microstate IDs and canonical isomeric SMILES of microstates. Files are separated by molecule ID. Updated microstates and their microstate IDs can be found in SMXX_microstates.csv files.
-- [`microstates/SAMPL7_molecule_ID_and_SMILES.csv`](microstates/SAMPL7_molecule_ID_and_SMILES.csv) - `.CSV` file that indicates SAMPL7 pKa challenge molecule IDs and canonical isomeric SMILES.
