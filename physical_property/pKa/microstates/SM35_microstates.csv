@@ -1,0 +1,5 @@
+microstate ID,canonical isomeric SMILES
+SM35_micro000,CS(=O)(=O)N[C@]1(CCc2ccccc2)CS(=O)C1
+SM35_micro001,CS(=O)(=O)[N-][C@]1(CCc2ccccc2)CS(=O)C1
+SM35_micro002,CS(=O)(=O)N[C@]1(CCC2=CC=CC=C2)C[S@](=O)C1
+SM35_micro003,CS(=O)(=O)[N-][C@]1(CCC2=CC=CC=C2)C[S@](=O)C1
