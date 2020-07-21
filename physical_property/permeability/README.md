@@ -7,4 +7,4 @@ Detailed instructions and a submission template for the permeability challenge w
 Experimental permeability data will made available after the challenge deadline.
 
 ## Manifest
-- `SAMPL7_molecule_ID_and_SMILES.csv` - A `.CSV` files containing SMILES strings. Additionally, the pK<sub>a</sub> challenge has [enumerated microstates for each molecule](../pKa/microstates/).
+- `SAMPL7_molecule_ID_and_SMILES.csv` - A `.CSV` files containing SMILES strings. Additionally, the pK<sub>a</sub> challenge has [enumerated microstates for each molecule](physical_property/pKa/microstates/).
