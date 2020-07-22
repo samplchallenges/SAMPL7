@@ -31,12 +31,12 @@ Effective permeability (log *P*<sub>app</sub>) was measured by Parallel Artifici
 
 ## What's here
 
-- [`SAMPL7_molecule_ID_and_SMILES.csv`](SAMPL7_molecule_ID_and_SMILES.csv): CSV file containing SAMPL7 challenge molecule IDs and SMILES. SMILES were provided by the Ballatore lab.
-- [`logP`](logP): Folder will be updated soon to contain challenge input files, instructions and a submission template.
-- [`pKa`](pKa): Folder will be updated soon to contain challenge input files, instructions and a submission template.
-- [`permeability`](permeability): Folder will be updated soon to contain challenge input files, instructions and a submission template.
+- [`SAMPL7_molecule_ID_and_SMILES.csv`](SAMPL7_molecule_ID_and_SMILES.csv): A `.CSV` file containing SAMPL7 challenge molecule IDs and SMILES. SMILES were provided by the [Ballatore lab](https://pharmacy.ucsd.edu/faculty/ballatore).
+- [`logP`](logP): Folder contains an input file in `.CSV` format with SMILES strings of the neutral states of the molecules. This folder will be updated soon to contain instructions and a submission template.
+- [`pKa`](pKa): Folder contains input files and will be updated soon to contain instructions and a submission template.
+- [`permeability`](permeability): Folder contains input files in `.CSV` format with SMILES of enumerated microstates. This folder will be updated soon with instructions and a submission template.
 - [`images`](images): Folder containing images of the molecules for this challenge in PDF and JPEG format.
-- [`experimental_data`](experimental_data): Folder will contain experimental measurements of pK<sub>a</sub>, partitioning and permeability values after the SAMPL7 challenge submission deadline.
+- [`experimental_data`](experimental_data): Folder will contain experimental measurements of pK<sub>a</sub>, partitioning, permeability and melting point values after the SAMPL7 challenge submission deadline.
 
 ## Publication on experimental measurements
 Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres" *(Details to be announced)*
