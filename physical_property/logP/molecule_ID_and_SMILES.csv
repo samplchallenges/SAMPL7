@@ -1,0 +1,23 @@
+microstate ID,canonical isomeric SMILES
+SM25_micro000,c1ccc(cc1)CCC(=O)[N-]S(=O)(=O)c2ccccc2
+SM26_micro000,CC(=O)[N-]S(=O)(=O)CCc1ccccc1
+SM27_micro000,CC1(COC1)NS(=O)(=O)CCc2ccccc2
+SM28_micro000,CC(=O)NC1(CS(=O)(=O)C1)CCc2ccccc2
+SM29_micro000,CS(=O)(=O)NC1(COC1)CCc2ccccc2
+SM30_micro000,c1ccc(cc1)CCC2(COC2)NS(=O)(=O)c3ccccc3
+SM31_micro000,CN(C)S(=O)(=O)NC1(COC1)CCc2ccccc2
+SM32_micro000,CS(=O)(=O)NC1(CSC1)CCc2ccccc2
+SM33_micro000,c1ccc(cc1)CCC2(CSC2)NS(=O)(=O)c3ccccc3
+SM34_micro000,CN(C)S(=O)(=O)NC1(CSC1)CCc2ccccc2
+SM35_micro000,CS(=O)(=O)N[C@]1(CCc2ccccc2)CS(=O)C1
+SM36_micro000,O=S1C[C@](CCc2ccccc2)(C1)NS(=O)(=O)c1ccccc1
+SM37_micro000,CN(C)S(=O)(=O)N[C@]1(CCc2ccccc2)CS(=O)C1
+SM38_micro000,CS(=O)(=O)NC1(CS(=O)(=O)C1)CCc2ccccc2
+SM39_micro000,c1ccc(cc1)CCC2(CS(=O)(=O)C2)NS(=O)(=O)c3ccccc3
+SM40_micro000,CN(C)S(=O)(=O)NC1(CS(=O)(=O)C1)CCc2ccccc2
+SM41_micro000,CS(=O)(=O)[N-]c1cc(on1)c2ccccc2
+SM42_micro000,O=S(=O)([N-]c1cc(on1)-c1ccccc1)c1ccccc1
+SM43_micro000,CN(C)S(=O)(=O)[N-]c1cc(on1)-c1ccccc1
+SM44_micro000,CS(=O)(=O)[N-]C1=CN(N=N1)c1ccccc1
+SM45_micro000,O=S(=O)([N-]C1=CN(N=N1)C1=CC=CC=C1)C1=CC=CC=C1
+SM46_micro000,CN(C)S(=O)(=O)[N-]C1=CN(N=N1)c1ccccc1

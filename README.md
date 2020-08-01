@@ -77,10 +77,12 @@ A later stage of SAMPL7 is expected to include logD prediction (hopefully with p
 
 ### Physical property challenge on pK<sub>a</sub>, partitioning, and permeability
 
-We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
+We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provided PAMPA permeability and melting point values they measured.
 
 pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates. We choose free energies rather than pK<sub>a</sub> values given the recent work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf). For the purposes of the pK<sub>a</sub> challenge all possible tautomers of each ionization (charge) state are defined as distinct protonation microstates. The partitioning prediction will focus on predicting the octanol-water partition coefficients. As a part of post prediction analysis challenge oraginzers will combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. A [PAMPA permeability](https://pubs.acs.org/doi/10.1021/jm060230%2B) prediction challenge will also be run in parallel to the pK<sub>a</sub> and partition coefficient challenge.
 All three challenges are optional, so participants may participate in all or any combination of these challenges.
+
+Since melting points were also measured, there's the opportunity to predict melting points. Please let us know if you are interested in this; we will run a challenging on melting points if there is sufficient interest.
 
 Challenge inputs, submission details and submission templates will be made available [here](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) at a slightly later date.
 
