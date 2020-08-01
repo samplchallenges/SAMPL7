@@ -7,4 +7,4 @@ Detailed instructions and a submission template for the log *P* challenge will b
 Experimental log *P* measurements will made available after the challenge deadline.
 
 ## Manifest
-*Under construction*
+ - [`molecule_ID_and_SMILES.csv`](molecule_ID_and_SMILES.csv) - A `.CSV` file that contains SAMPL7 log *P* challenge molecule IDs and isomeric SMILES. These were selected from the enumerated microstates from the pK<sub>a</sub> challenge.
