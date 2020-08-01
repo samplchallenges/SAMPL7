@@ -9,3 +9,5 @@ Experimental pK<sub>a</sub> measurements will made available after the challenge
 
 ## Manifest
 - [`microstates/`](microstates/) - This directory contains `.CSV` files that list microstate IDs and canonical isomeric SMILES of microstates. Files are separated by molecule ID. Updated microstates and their microstate IDs can be found in `SMXX_microstates.csv` files.
+- [`/submission_template/pKa_prediction_template.csv`](/submission_template/pKa_prediction_template.csv) - An empty prediction submission template file.
+- [`/example_submission_file/pKa-DanielleBergazinExampleFile-1.csv`](/example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) - An example submission file filled with random values to illustrate expected format.

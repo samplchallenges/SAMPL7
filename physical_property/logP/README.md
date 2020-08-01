@@ -8,3 +8,5 @@ Experimental log *P* measurements will made available after the challenge deadli
 
 ## Manifest
  - [`molecule_ID_and_SMILES.csv`](molecule_ID_and_SMILES.csv) - A `.CSV` file that contains SAMPL7 log *P* challenge molecule IDs and isomeric SMILES. These were selected from the enumerated microstates from the pK<sub>a</sub> challenge.
+ - [`/submission_template/TFE_prediction_template.csv`](/submission_template/TFE_prediction_template.csv) - An empty prediction submission template file.
+ - [`/example_submission_file/TFE-DanielleBergazinExampleFile-1.csv`](/example_submission_file/TFE-DanielleBergazinExampleFile-1.csv) - An example submission file filled with random values to illustrate expected format.
