@@ -10,9 +10,11 @@
 #
 # It is mandatory to submit relative free energy (RFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
 # Please report RFE standard error of the mean (SEM) and RFE model uncertainty.
-# Add new lines for each microstate pair.
 # The data in each prediction line should be structured as follows:
-# Molecule ID, total charge, and relative free energy of microstates
+# Molecule ID, total charge, RFE, RFE SEM, RFE model uncertainty
+# If you have evaluated additional microstates, include the following:
+# Molecule ID, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string
+# Also send us a `.mol2` file with explicit hydrogens and correct bond orders.
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
 SM25_micro001,2.25,0.02
