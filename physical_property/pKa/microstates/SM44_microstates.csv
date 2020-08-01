@@ -1,0 +1,4 @@
+microstate ID,canonical isomeric SMILES
+SM44_micro000,CS(=O)(=O)Nc1cn(nn1)c2ccccc2
+SM44_micro001,CS(=O)(=O)[N-]C1=CN(N=N1)c1ccccc1
+SM44_micro002,CS(=O)(=O)NC1=CN(N=[NH+]1)c1ccccc1

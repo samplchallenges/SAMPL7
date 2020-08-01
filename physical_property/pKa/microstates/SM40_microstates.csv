@@ -1,0 +1,4 @@
+microstate ID,canonical isomeric SMILES
+SM40_micro000,CN(C)S(=O)(=O)NC1(CS(=O)(=O)C1)CCc2ccccc2
+SM40_micro001,CN(C)S(=O)(=O)[N-]C1(CS(=O)(=O)C1)CCc2ccccc2
+SM40_micro002,C[NH+](C)S(=O)(=O)NC1(CCc2ccccc2)CS(=O)(=O)C1
