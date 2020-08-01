@@ -1,6 +1,6 @@
 ## pKa Microstates of SAMPL7 Molecules
 
-24 small molecules are assigned moleculed IDs in the form of SMXX from SM25 to SM46. This directory includes their enumerated microstates.
+22 small molecules are assigned moleculed IDs in the form of SMXX from SM25 to SM46. This directory includes their enumerated microstates.
 
 Please note, the microstate lists provided here may not be comprehensive.
 
