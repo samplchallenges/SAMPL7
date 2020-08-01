@@ -1,0 +1,5 @@
+microstate ID,canonical isomeric SMILES
+SM36_micro000,O=S1C[C@](CCc2ccccc2)(C1)NS(=O)(=O)c1ccccc1
+SM36_micro001,O=S1C[C@](CCc2ccccc2)(C1)[N-]S(=O)(=O)c1ccccc1
+SM36_micro002,O=[S@]1C[C@](CCC2=CC=CC=C2)(C1)NS(=O)(=O)C1=CC=CC=C1
+SM36_micro003,O=[S@]1C[C@](CCC2=CC=CC=C2)(C1)[N-]S(=O)(=O)C1=CC=CC=C1
