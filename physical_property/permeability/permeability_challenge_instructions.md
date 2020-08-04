@@ -1,14 +1,13 @@
 ## PAMPA permeability Challenge Instructions
 
-A submission template file can be found in the [`submission_template/`](submission_template/) directory and an example submission file can be found in [`submission_template/`](example_submission_file/).
-
+A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [submission_template/](example_submission_file/).
 
 For each molecule, we are asking participants to predict the log<sub>*P*<sub>*app*</sub></sub>, but we also have access to effective permeability and membrane retention values. If you are interested in those, please email us.
 
 
 - Fill one [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
-- You may report only 1 log<sub>*P*<sub>*app*</sub></sub> value for each molecule per method.
+- You may report only 1 log<sub>*P*<sub>*app*</sub></sub> value per molecule per method.
 
 - It is mandatory to submit predictions for all 22 molecules. Incomplete submissions will not be accepted.
 
