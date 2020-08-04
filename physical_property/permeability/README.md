@@ -2,7 +2,7 @@
 
 The SAMPL7 PAMPA Permeability Challenge consists of predicting the permeabilities of 22 molecules. This challenge is *optional* and will be run at the same time as the pK<sub>a</sub> and partition coefficient challenge (both of which are also optional).
 
-Provided is a `.CSV` file containing IDs and SMILES strings for each molecule in the form of SMXX from SM25 to SM46. Also available are the enumerated microstates for each molecule and the `.MOL2` and `.SDF` files for each microstate, which can be found [`here`](physical_property/pKa/microstates/).
+Provided is a `.CSV` file containing IDs and SMILES strings for each molecule in the form of SMXX from SM25 to SM46. The enumerated microstates for each molecule and the `.MOL2` and `.SDF` files for each microstate can be found [`here`](physical_property/pKa/microstates/).
 
 Instructions for the pKa challenge: [`permeability_challenge_instructions.md`](permeability_challenge_instructions.md)
 
