@@ -11,19 +11,20 @@
 # It is mandatory to submit relative free energy (RFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
 # Please report RFE standard error of the mean (SEM) and RFE model uncertainty.
 # The data in each prediction line should be structured as follows:
-# Molecule ID, total charge, RFE, RFE SEM, RFE model uncertainty
+# Molecule ID of reference state, Molecule ID of other microstate, total charge, RFE, RFE SEM, RFE model uncertainty
 # If you have evaluated additional microstates, include the following:
-# Molecule ID, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string
+# Molecule ID of reference state, Molecule ID of other microstate, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string
 # Also send us a `.mol2` file with explicit hydrogens and correct bond orders.
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
-SM25_micro001,2.25,0.02
-SM25_micro002,1.01,0.08
-SM25_micro003,4.32,1.02
-SM26_micro001,4.21,0.12
-SM26_micro002,7.01,0.58
-SM26_micro003,4.35,1.95
-SM27_micro001,2.25,0.02
+SM25_micro000,SM25_micro001,-1,2.25,0.02,0.02
+SM25_micro000,SM25_micro002,0,1.01,0.08,0.02
+SM25_micro000,SM25_micro003,-1,4.32,1.02,0.02
+SM26_micro000,SM26_micro001,-1,4.21,0.12,0.02
+SM26_micro000,SM26_micro002,0,7.01,0.58,0.02
+SM26_micro000,SM26_micro003,-1,4.35,1.95,0.02
+SM27_micro000,SM27_micro001,0,2.25,0.02,0.02
+SM27_micro000,SM27_micro002,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 #Example of including an additonal microstate
 
 
 # NAME SECTION
