@@ -14,7 +14,9 @@
 # Molecule ID of reference state, Molecule ID of other microstate, total charge, RFE, RFE SEM, RFE model uncertainty
 # If you have evaluated additional microstates, include the following:
 # Molecule ID of reference state, Molecule ID of other microstate, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string
-# Also send us a `.mol2` file with explicit hydrogens and correct bond orders.
+# The molecule ID of the other microstate needs to be in the format: `SMXX_extra001`  (number can vary)
+# Also email us the `.mol2` file of your microstate with explicit hydrogens and correct bond orders,
+# Please send the `.mol2` file to the email listed on the instructions page.
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
 SM25_micro000,SM25_micro001,-1,2.25,0.02,0.02
@@ -24,7 +26,7 @@ SM26_micro000,SM26_micro001,-1,4.21,0.12,0.02
 SM26_micro000,SM26_micro002,0,7.01,0.58,0.02
 SM26_micro000,SM26_micro003,-1,4.35,1.95,0.02
 SM27_micro000,SM27_micro001,0,2.25,0.02,0.02
-SM27_micro000,SM27_micro002,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 #Example of including an additonal microstate
+SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 #Example of including an additonal microstate
 
 
 # NAME SECTION

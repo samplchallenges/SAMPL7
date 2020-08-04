@@ -14,7 +14,9 @@
 # Molecule ID of reference state, Molecule ID of other microstate, total charge, RFE, RFE SEM, RFE model uncertainty
 # If you have evaluated additional microstates, include the following:
 # Molecule ID of reference state, Molecule ID of other microstate, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string
-# Also email us the `.mol2` file of your microstate with explicit hydrogens and correct bond orders as per the [challenge instructions page](../pKa_challenge_instructions.md).
+# The molecule ID of the other microstate needs to be in the format: `SMXX_extra001` (number can vary)
+# Also email us the `.mol2` file of your microstate with explicit hydrogens and correct bond orders,
+# Please send the `.mol2` file to the email listed on the instructions page.
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
 

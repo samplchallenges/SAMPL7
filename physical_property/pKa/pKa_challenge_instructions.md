@@ -1,14 +1,18 @@
 ## pKa Challenge Instructions
 
+The SAMPL7 pK<sub>a</sub> Challenge consists of predicting relative free energies between microstates to determine the pK<sub>a</sub>. Free energies were chosen rather than pKa values given the recent work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf). The paper also details how to convert pK<sub>a</sub> predictions to relative free energies.
+
 A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [submission_template/](example_submission_file/).
 
 For each molecule, the relative free energy must be predicted between the reference microstate and the rest of the enumerated microstates for that molecule. The first microstate in each CSV file indicated by `SMXX_000` is our selected neutral reference state. For example, for molecule SM25, if the reference microstate is SM25_micro000, then relative free energies must be computed between SM25_micro000 and SM25_micro001, SM25_micro000 and SM25_micro002, and SM25_micro000 and SM25_micro003.
+
+All possible tautomers of each ionization (charge) state are defined as distinct protonation microstates.
 
 - Fill one [`submission_template/pKa_prediction_template.csv`](submission_template/pKa_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
 - Record the pair of microstates IDs associated with each relative free energy calculation between the reference state and the other microstates. Enumerated microstates, IDs, SMILES strings and SDF/MOL2 files can be found in https://github.com/samplchallenges/SAMPL7/tree/master/physical_property/pKa/microstates.
 
-- If you have evaluated additional microstates, we ask that you include the same information as the other challenge molecules, but include the SMILES string in your submission and email a `.mol2` file of the microstate with explicit hydrogens and correct bond orders to `bergazin@uci.edu`. See [`example_submission_file/pKa-DanielleBergazinExampleFile-1.csv`](example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) for an example.
+- If you have evaluated additional microstates, we ask that you include the same information as the other challenge molecules, but include the SMILES string in your submission and email a `.mol2` file of the microstate with explicit hydrogens and correct bond orders to `bergazin@uci.edu`. See [`example_submission_file/pKa-DanielleBergazinExampleFile-1.csv`](example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) for an example. Additonal microstate molecule ID's must be in the form `SMXX_extra001`, where the molecule tag is followed by `_extra` and some number `001`.
 
 - You may report only 1 relative free energy value per molecule per method.
 
