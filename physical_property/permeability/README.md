@@ -4,9 +4,9 @@ The SAMPL7 PAMPA Permeability Challenge consists of predicting the permeabilitie
 
 Provided is a `.CSV` file containing IDs and SMILES strings for each molecule in the form of SMXX from SM25 to SM46. The enumerated microstates for each molecule and the `.MOL2` and `.SDF` files for each microstate can be found [`here`](physical_property/pKa/microstates/).
 
-Instructions for the pKa challenge: [`permeability_challenge_instructions.md`](permeability_challenge_instructions.md)
+Instructions for the permeability challenge: [`permeability_challenge_instructions.md`](permeability_challenge_instructions.md)
 
-Submission template for the pKa challenge: [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv)
+Submission template for the permeability challenge: [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv)
 
 Please note that permeabilities for compounds `SM33`, `SM35`, and `SM39` were not determined.
 
