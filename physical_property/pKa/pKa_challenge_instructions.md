@@ -10,7 +10,7 @@ For each molecule, the relative free energy must be predicted between the refere
 
 - If you have evaluated additional microstates, we ask that you include the same information as the other challenge molecules, but include the SMILES string in your submission and send us a `.mol2` file of the microstate with explicit hydrogens and correct bond orders. See [`example_submission_file/pKa-DanielleBergazinExampleFile-1.csv`](example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) for an example.
 
-- You may report only 1 difference in free energy value for each molecule per method.
+- You may report only 1 relative free energy value for each microstate per method.
 
 - It is mandatory to submit predictions for all 22 molecules. Incomplete submissions will not be accepted.
 
@@ -26,7 +26,7 @@ For each molecule, the relative free energy must be predicted between the refere
 
 - For Method Category section please state if your prediction method can be better classified as an empirical modeling method, physical quantum mechanics (QM) modeling method, physical molecular mechanics (MM) modeling method, or mixed (both empirical and physical), using the category labels `Empirical`, `Physical (MM)`, `Physical (QM)`, or `Mixed`. Empirical models are prediction methods that are trained on experimental data, such as QSPR, machine learning models, artificial neural networks etc. Physical models are prediction methods that rely on the physical principles of the system, such as molecular mechanics or quantum mechanics based methods to predict molecular properties. If your method takes advantage of both kinds of approaches please report it as “Mixed”. If you choose the “Mixed” category, please explain your decision in the beginning of Method Description section.
 
-- Names of the prediction files must have three sections separated by a `-`: predicted property `logP`, and your name and must end with an integer indicating the number of prediction set. For example, if you want to submit one prediction, you would name it `pKa-myname-1.csv`, where `myname` is arbitrary text of your choice. If you submit three prediction files, you would name them `pKa-myname-1.csv`, `pKa-myname-2.csv`, and `lpKa-myname-3.csv`.
+- Names of the prediction files must have three sections separated by a `-`: predicted property `logP`, and your name and must end with an integer indicating the number of prediction set. For example, if you want to submit one prediction, you would name it `pKa-myname-1.csv`, where `myname` is arbitrary text of your choice. If you submit three prediction files, you would name them `pKa-myname-1.csv`, `pKa-myname-2.csv`, and `pKa-myname-3.csv`.
 
 - Prediction files will be machine parsed, so correct formatting is essential. Files with the wrong format will not be accepted.
 
