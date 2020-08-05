@@ -1,10 +1,10 @@
 ## pKa Challenge Instructions
 
-The SAMPL7 pK<sub>a</sub> Challenge consists of predicting relative free energies between microstates to determine the pK<sub>a</sub>. Free energies were chosen rather than pKa values given the recent work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf). The paper also details how to convert pK<sub>a</sub> predictions to relative free energies.
+The SAMPL7 pK<sub>a</sub> Challenge consists of predicting microscopic pK<sub>a</sub>'s of small molecules. Participants are asked to report relative free energies of protonation microstates calculated based on a reference state and pH. Relative free energies of microstates were chosen as the reporting format rather than the microscopic pKa values given the recent work of Gunner et al.[4]
 
 A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [submission_template/](example_submission_file/).
 
-For each molecule, the relative free energy must be predicted between the reference microstate and the rest of the enumerated microstates for that molecule. The first microstate in each CSV file indicated by `SMXX_000` is our selected neutral reference state. For example, for molecule SM25, if the reference microstate is SM25_micro000, then relative free energies must be computed between SM25_micro000 and SM25_micro001, SM25_micro000 and SM25_micro002, and SM25_micro000 and SM25_micro003.
+For each molecule, the relative free energy must be predicted between the reference microstate and the rest of the enumerated microstates for that molecule at a reference pH of 0. The first microstate in each CSV file indicated by `SMXX_micro000` is our selected neutral reference state. For example, for molecule SM25, if the reference microstate is SM25_micro000, then relative free energies must be computed between SM25_micro000 and SM25_micro001, SM25_micro000 and SM25_micro002, and SM25_micro000 and SM25_micro003.
 
 All possible tautomers of each ionization (charge) state are defined as distinct protonation microstates.
 
@@ -16,6 +16,8 @@ All possible tautomers of each ionization (charge) state are defined as distinct
 
 - You may report only 1 relative free energy value per molecule per method.
 
+- The energy units must be in kcal/mol.
+
 - It is mandatory to submit predictions for all 22 molecules. Incomplete submissions will not be accepted.
 
 - Report relative free energy values to two decimal places (e.g. 13.71).
@@ -26,9 +28,10 @@ All possible tautomers of each ionization (charge) state are defined as distinct
 
 - Lines beginning with a hash-tag (#) may be included as comments. These and blank lines will be ignored during analysis.
 
-- The file must contain the following four components in the following order: your predictions, a name for your computational protocol, a list of the major software packages used, prediction method category, and a long-form methods description. Each of these components must begin with a line containing only the corresponding keyword: `Predictions:`, `Name:`, `Software:`, `Category:`, and `Method:`, as illustrated in the example files. An example submission files can be found [`here`]['example_submission_file/pKa-DanielleBergazinExampleFile-1.csv'] to illustrate expected format when filling submission templates.
+- The file must contain the following four components in the following order: your predictions, a name for your computational protocol (that is 40 characters or less), a list of the major software packages used, prediction method category, and a long-form methods description. Each of these components must begin with a line containing only the corresponding keyword: `Predictions:`, `Name:`, `Software:`, `Category:`, and `Method:`, as illustrated in the example files. An example submission file can be found [`here`]['example_submission_file/pKa-DanielleBergazinExampleFile-1.csv'] to illustrate expected format when filling submission templates.
 
-- For Method Category section please state if your prediction method can be better classified as an empirical modeling method, physical quantum mechanics (QM) modeling method, physical molecular mechanics (MM) modeling method, or mixed (both empirical and physical), using the category labels `Empirical`, `Physical (MM)`, `Physical (QM)`, or `Mixed`. Empirical models are prediction methods that are trained on experimental data, such as QSPR, machine learning models, artificial neural networks etc. Physical models are prediction methods that rely on the physical principles of the system, such as molecular mechanics or quantum mechanics based methods to predict molecular properties. If your method takes advantage of both kinds of approaches please report it as “Mixed”. If you choose the “Mixed” category, please explain your decision in the beginning of Method Description section.
+- For Method Category section please state if your prediction method can be better classified as an
+experimental database lookup (DL), linear free energy relationship (LFER)[3], quantitative structure-property relationship or machine learning (QSPR/ML)[3], quantum mechanics without empirical correction (QM) models, quantum mechanics with linear empirical correction (QM+LEC), and combined quantum mechanics and molecular mechanics (QM+MM), or Other, using the category labels `DL`, `LFER`, `QSPR/ML`, `QM`, `QM+LEC`, `QM+MM` or `Other`. If you choose the “Other” category, please explain your decision in the beginning of Method Description section.
 
 - Names of the prediction files must have three sections separated by a `-`: predicted property `pKa`, and your name and must end with an integer indicating the number of prediction set. For example, if you want to submit one prediction, you would name it `pKa-myname-1.csv`, where `myname` is arbitrary text of your choice. If you submit three prediction files, you would name them `pKa-myname-1.csv`, `pKa-myname-2.csv`, and `pKa-myname-3.csv`.
 
@@ -42,4 +45,8 @@ You may use any method(s) you like to generate your predictions; e.g., molecular
 ## References
 [1] Bannan, Caitlin C., Kalistyn H. Burley, Michael Chiu, Michael R. Shirts, Michael K. Gilson, and David L. Mobley. “Blind Prediction of Cyclohexane–water Distribution Coefficients from the SAMPL5 Challenge.” Journal of Computer-Aided Molecular Design 30, no. 11 (November 2016): 927–44.
 
-[2] Mobley, David L., Karisa L. Wymer, Nathan M. Lim, and J. Peter Guthrie. “Blind Prediction of Solvation Free Energies from the SAMPL4 Challenge.” Journal of Computer-Aided Molecular Design 28, no. 3 (March 2014): 135–50. https://doi.org/10.1007/s10822-014-9718-2.
+[2] Mobley, David L., Karisa L. Wymer, Nathan M. Lim, and J. Peter Guthrie. “Blind Prediction of Solvation Free Energies from the SAMPL4 Challenge.” Journal of Computer-Aided Molecular Design 28, no. 3 (March 2014): 135–50. https://doi.org/10.1007/s10822-014-9718-2
+
+[3] U. A. Chaudry and P. L. A. Popelier. “Estimation of pKa Using Quantum Topological Molecular Similarity Descriptors:  Application to Carboxylic Acids, Anilines and Phenols.” The Journal of Organic Chemistry 2004 69 (2), 233-241. https://doi.org/10.1021/jo0347415
+
+[4] Gunner, M.R., Murakami, T., Rustenburg, A.S. et al. "Standard state free energies, not pKas, are ideal for describing small molecule protonation and tautomeric states." Journal of Computer-Aided Molecular Design 34, 561–573 (2020). https://doi.org/10.1007/s10822-020-00280-7

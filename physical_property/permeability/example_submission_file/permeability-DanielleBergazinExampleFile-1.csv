@@ -42,6 +42,7 @@ SM46,1.05,2.09,1.5
 # NAME SECTION
 #
 # Please provide an informal but informative name of the method used.
+# The character limit for the name should not exceed 40 characters.
 # The 'Name:' keyword is required as shown here.
 Name:
 permeability-prediction-method-name

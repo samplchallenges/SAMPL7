@@ -10,13 +10,17 @@
 #
 # It is mandatory to submit relative free energy (RFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
 # Please report RFE standard error of the mean (SEM) and RFE model uncertainty.
+#
 # The data in each prediction line should be structured as follows:
-# Molecule ID of reference state, Molecule ID of other microstate, total charge, RFE, RFE SEM, RFE model uncertainty
+# Microstate ID of reference state, Microstate ID of the predicted microstate, total charge, RFE, RFE SEM, RFE model uncertainty
+#
 # If you have evaluated additional microstates, include the following:
-# Molecule ID of reference state, Molecule ID of other microstate, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string
-# The molecule ID of the other microstate needs to be in the format: `SMXX_extra001`  (number can vary)
+# Microstate ID of reference state, Microstate ID of the predicted microstate, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string of the predicted microstate
+#
+# The molecule ID of the other microstate needs to be in the format: `SMXX_extra001` (number can vary)
 # Also email us the `.mol2` file of your microstate with explicit hydrogens and correct bond orders,
 # Please send the `.mol2` file to the email listed on the instructions page.
+#
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
 SM25_micro000,SM25_micro001,-1,2.25,0.02,0.02
@@ -32,6 +36,7 @@ SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 #
 # NAME SECTION
 #
 # Please provide an informal but informative name of the method used.
+# The name of the method should not exceed 40 characters.
 # The 'Name:' keyword is required as shown here.
 Name:
 RFE-prediction-method-name
@@ -49,12 +54,18 @@ Software B 2.4
 
 # METHOD CATEGORY SECTION
 #
-# State which method category your prediction method is better described as:
-# `Physical (MM)`, `Physical (QM)`, `Empirical`, or `Mixed`.
+# State if your prediction method is better classified as an
+# experimental database lookup (DL), linear free energy relationship (LFER),
+# quantitative structure-property relationship or machine learning (QSPR/ML),
+# quantum mechanics without empirical correction (QM) model, quantum mechanics with
+# linear empirical correction (QM+LEC), and combined quantum mechanics and molecular
+# mechanics (QM+MM), or Other, using the following category labels:
+# `DL`, `LFER`, `QSPR/ML`, `QM`, `QM+LEC`, `QM+MM` or `Other`.
+#
 # Pick only one category label.
 # The `Category:` keyword is required.
 Category:
-Physical (MM)
+QSPR/ML
 
 
 # METHOD DESCRIPTION SECTION

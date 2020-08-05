@@ -1,4 +1,4 @@
-# TRANSFER FREE ENERGY PREDICTIONS
+# OCTANOL TO WATER (ΔG_octanol - ΔG_water) TRANSFER FREE ENERGY PREDICTIONS
 #
 # This file will be automatically parsed. It must contain the following four elements:
 # predictions, name of method, software listing, and method description.
@@ -8,7 +8,8 @@
 #
 # PREDICTION SECTION
 #
-# It is mandatory to submit transfer free energy (TFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
+# It is mandatory to submit  water to octanol (ΔG_octanol - ΔG_water) transfer free energy (TFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
+# The energy units must be in kcal/mol.
 # Please report TFE standard error of the mean (SEM) and TFE model uncertainty.
 # The data in each prediction line should be structured as follows:
 # Molecule ID, TFE, TFE SEM, TFE model uncertainty
@@ -42,6 +43,7 @@ SM46_micro000,1.05,2.09,1.5
 # NAME SECTION
 #
 # Please provide an informal but informative name of the method used.
+# The name must not exceed 40 characters.
 # The 'Name:' keyword is required as shown here.
 Name:
 TFE-prediction-method-name

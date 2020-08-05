@@ -2,11 +2,13 @@
 
 A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/).
 
-For each molecule, participants must predict the difference in free energy (the transfer free energy) for the neutral form between water and octanol. The transfer free energy can be calculated from the difference in solvation free energy into octanol and hydration free energy: ΔG<sub>*transfer*</sub> = <\Delta>G<sub>*octanol*</sub>-ΔG<sub>*water*</sub>[1,2].
+For each molecule, participants must predict the difference in free energy (the transfer free energy) for the neutral form between water and octanol. The transfer free energy can be calculated from the difference in solvation free energy into octanol and hydration free energy: ΔG<sub>*transfer*</sub> = ΔG<sub>*octanol*</sub>-ΔG<sub>*water*</sub>[1,2].
 
 - Fill one [`submission_template/logP_prediction_template.csv`](submission_template/logP_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
 - You may report only 1 transfer free energy value per molecule per method.
+
+- The energy units must be in kcal/mol.
 
 - It is mandatory to submit predictions for all 22 molecules. Incomplete submissions will not be accepted.
 
@@ -18,7 +20,7 @@ For each molecule, participants must predict the difference in free energy (the 
 
 - Lines beginning with a hash-tag (#) may be included as comments. These and blank lines will be ignored during analysis.
 
-- The file must contain the following four components in the following order: your predictions, a name for your computational protocol, a list of the major software packages used, prediction method category, and a long-form methods description. Each of these components must begin with a line containing only the corresponding keyword: `Predictions:`, `Name:`, `Software:`, `Category:`, and `Method:`, as illustrated in the example files. An example submission files can be found [here](example_submission_file/logP-DanielleBergazinExampleFile-1.csv) to illustrate expected format when filling submission templates.
+- The file must contain the following four components in the following order: your predictions, a name for your computational protocol (that is 40 characters or less), a list of the major software packages used, prediction method category, and a long-form methods description. Each of these components must begin with a line containing only the corresponding keyword: `Predictions:`, `Name:`, `Software:`, `Category:`, and `Method:`, as illustrated in the example files. An example submission files can be found [here](example_submission_file/logP-DanielleBergazinExampleFile-1.csv) to illustrate expected format when filling submission templates.
 
 
 - For Method Category section please state if your prediction method can be better classified as an empirical modeling method, physical quantum mechanics (QM) modeling method, physical molecular mechanics (MM) modeling method, or mixed (both empirical and physical), using the category labels `Empirical`, `Physical (MM)`, `Physical (QM)`, or `Mixed`. Empirical models are prediction methods that are trained on experimental data, such as QSPR, machine learning models, artificial neural networks etc. Physical models are prediction methods that rely on the physical principles of the system, such as molecular mechanics or quantum mechanics based methods to predict molecular properties. If your method takes advantage of both kinds of approaches please report it as “Mixed”. If you choose the “Mixed” category, please explain your decision in the beginning of Method Description section.
@@ -42,3 +44,5 @@ Some participants use SAMPL to help evaluate various computational methods. To a
 [3] Bannan, Caitlin C., Kalistyn H. Burley, Michael Chiu, Michael R. Shirts, Michael K. Gilson, and David L. Mobley. “Blind Prediction of Cyclohexane–water Distribution Coefficients from the SAMPL5 Challenge.” Journal of Computer-Aided Molecular Design 30, no. 11 (November 2016): 927–44.
 
 [4] Mobley, David L., Karisa L. Wymer, Nathan M. Lim, and J. Peter Guthrie. “Blind Prediction of Solvation Free Energies from the SAMPL4 Challenge.” Journal of Computer-Aided Molecular Design 28, no. 3 (March 2014): 135–50. https://doi.org/10.1007/s10822-014-9718-2.
+
+[5] Mehtap Işık, Dorothy Levorse, David L. Mobley, Timothy Rhodes, John D. Chodera. "Octanol–water partition coefficient measurements for the SAMPL6 blind prediction challenge". J Comput Aided Mol Des (2019). https://doi.org/10.1007/s10822-019-00271-3
