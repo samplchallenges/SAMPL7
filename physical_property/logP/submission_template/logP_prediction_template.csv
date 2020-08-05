@@ -6,13 +6,16 @@
 #
 # Any line that begins with a # is considered a comment and will be ignored when parsing.
 #
+#
 # PREDICTION SECTION
 #
 # It is mandatory to submit water to octanol (ΔG_octanol - ΔG_water) transfer free energy (TFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
 # The energy units must be in kcal/mol.
 # Please report TFE standard error of the mean (SEM) and TFE model uncertainty.
+#
 # The data in each prediction line should be structured as follows:
 # Molecule ID, TFE, TFE SEM, TFE model uncertainty
+#
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
 

@@ -9,9 +9,11 @@
 # PREDICTION SECTION
 #
 # It is mandatory to submit permeability predictions for all 22 molecules. Incomplete submissions will not be accepted.
-# Please report permeability standard error of the mean (SEM) and permeability model uncertainty.
+# Please report apparent permeability coefficient (logPapp) standard error of the mean (SEM) and logPapp model uncertainty.
+#
 # The data in each prediction line should be structured as follows:
-# Molecule ID, permeability, permeability SEM, permeability model uncertainty
+# Molecule ID, logPapp, logPapp SEM, logPapp model uncertainty
+#
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
 
