@@ -1,6 +1,6 @@
-## pKa Challenge Instructions
+## pK<sub>a</sub> Challenge Instructions
 
-The SAMPL7 pK<sub>a</sub> Challenge consists of predicting microscopic pK<sub>a</sub>'s of small molecules. Participants are asked to report relative free energies of protonation microstates calculated based on a reference state and pH. Relative free energies of microstates were chosen as the reporting format rather than the microscopic pKa values given the recent work of Gunner et al.[1]
+The SAMPL7 pK<sub>a</sub> Challenge consists of predicting microscopic pK<sub>a</sub>'s of small molecules. Participants are asked to report relative free energies of protonation microstates calculated based on a reference state and pH. Relative free energies of microstates were chosen as the reporting format rather than the microscopic pK<sub>a</sub> values given the recent work of Gunner et al.[1]
 
 A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [submission_template/](example_submission_file/).
 
@@ -39,7 +39,7 @@ experimental database lookup (DL), linear free energy relationship (LFER)[3], qu
 
 
 ## Computational prediction methods
-You may use any method(s) you like to generate your predictions; e.g., molecular mechanics or quantum mechanics based methods, QSPR, empirical pKa prediction tools etc.
+You may use any method(s) you like to generate your predictions; e.g., molecular mechanics or quantum mechanics based methods, QSPR, empirical pK<sub>a</sub> prediction tools etc.
 
 
 ## Submission of multiple predictions
