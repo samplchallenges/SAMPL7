@@ -4,6 +4,8 @@ A submission template file can be found in the [submission_template/](submission
 
 For each molecule, participants must predict the difference in free energy (the transfer free energy) for the neutral form between water and octanol. The transfer free energy can be calculated from the difference in solvation free energy into octanol and hydration free energy: ΔG<sub>*transfer*</sub> = ΔG<sub>*octanol*</sub>-ΔG<sub>*water*</sub>[1,2].
 
+Octanol may be found in the aqueous phase. The mole fraction of water in octanol was measured as 0.2705 ± 0.0028 at 25°C[6].
+
 - Fill one [`submission_template/logP_prediction_template.csv`](submission_template/logP_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
 - You may report only 1 transfer free energy value per molecule per method.
@@ -46,3 +48,5 @@ Some participants use SAMPL to help evaluate various computational methods. To a
 [4] Mobley, David L., Karisa L. Wymer, Nathan M. Lim, and J. Peter Guthrie. “Blind Prediction of Solvation Free Energies from the SAMPL4 Challenge.” Journal of Computer-Aided Molecular Design 28, no. 3 (March 2014): 135–50. https://doi.org/10.1007/s10822-014-9718-2.
 
 [5] Mehtap Işık, Dorothy Levorse, David L. Mobley, Timothy Rhodes, John D. Chodera. "Octanol–water partition coefficient measurements for the SAMPL6 blind prediction challenge". J Comput Aided Mol Des (2019). https://doi.org/10.1007/s10822-019-00271-3
+
+[6] Lang, Brian E. “Solubility of Water in Octan-1-Ol from (275 to 369) K.” Journal of Chemical & Engineering Data 57, no. 8 (August 9, 2012): 2221–26. https://doi.org/10.1021/je3001427
