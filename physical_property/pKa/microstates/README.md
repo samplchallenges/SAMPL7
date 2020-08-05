@@ -1,8 +1,8 @@
 ## pKa Microstates of SAMPL7 Molecules
 
-22 small molecules are assigned moleculed IDs in the form of SMXX from SM25 to SM46. This directory includes their enumerated microstates.
+22 small molecules are assigned moleculed IDs in the form of `SMXX` from SM25 to SM46. This directory includes their enumerated microstates.
 
-Also provided are the microstates in Tripos MOL2 and SDF file format.
+Also provided are the microstates in Tripos MOL2 (`.mol2`) and SDF (`.sdf`) file format.
 
 Please note, the microstate lists provided here may not be comprehensive.
 
