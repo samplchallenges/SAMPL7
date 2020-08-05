@@ -1,8 +1,8 @@
 ## logP Challenge Instructions
 
-A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file//](example_submission_file/).
+A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/).
 
-For each molecule, participants will be asked to predict the difference in free energy (the transfer free energy) for the neutral form between water and octanol. The transfer free energy can be calculated from the difference in solvation free energy into octanol and hydration free energy: ΔG<sub>*transfer*</sub> = ΔG<sub>*octanol*</sub>-ΔG<sub>*water*</sub>[1,2].
+For each molecule, participants must predict the difference in free energy (the transfer free energy) for the neutral form between water and octanol. The transfer free energy can be calculated from the difference in solvation free energy into octanol and hydration free energy: ΔG<sub>*transfer*</sub> = \DeltaG<sub>*octanol*</sub>-ΔG<sub>*water*</sub>[1,2].
 
 - Fill one [`submission_template/logP_prediction_template.csv`](submission_template/logP_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
