@@ -27,8 +27,14 @@ For each molecule, we are asking participants to predict the log of the apparent
 
 - Prediction files will be machine parsed, so correct formatting is essential. Files with the wrong format will not be accepted.
 
+## Experimental details
+Effective permeability (log<sub>*P*<sub>*app*</sub></sub>) was measured by Parallel Artificial Membrane Permeability Assay (PAMPA) using the Corning GentestTM pre-coated PAMPA plate system with quantitation by HPLC-UV (experiments carried out by Analyza, Inc).
 
+Samples were prepared as DMSO stock solutions and sonicated in a 40°C water bath to facilitate dissolution. Dilutions (50-fold) of the DMSO stocks were prepared in PBS, 7.4 for a dose concentration of 200μM in a volume of 300μL directly in the Donor compartment of the Corning GentestTM Pre-coated PAMPA plate. After preparation of the Donor plate, any precipitation was noted. The Acceptor compartment was filled with 1xPBS (200μL), pH 7.4. After PAMPA plate assembly, it was incubated for five hours in the dark at ambient temperature. A sister plate was created (50x dilution of 10mM test articles was prepared in 1xPBS, pH 7.4) directly in a Millipore solubility filter plate to measure the initial concentration of the sample in buffer (C0). Following incubation, the PAMPA plate was disassembled, and the samples were transferred from the Donor and Acceptor plates to 96-well plates for analysis. The C0 plate was filtered prior to analysis
 
+The concentration values from the Donor and Acceptor compartment are used in the calculation of the effective permeability (Pe) of the compound. A mass balance equation is used to calculate the amount of compound retained in the membrane (%R). A high %R indicates either that the compound is bound to the PAMPA membrane, or that the compound is precipitating in the donor compartment. The equations for permeability and membrane retention are shown below. Note that the Ballatore lab experimentally determined Co, instead of assuming the full solubility of the compound. Pe values less than 1.5E-6 cm/s correlate with human fraction absorbed (%FA) less than 80%, a generally accepted cutoff for low permeability.
+
+![permeability equations](../images/permeability_equations.jpeg)
 
 ## Computational prediction methods
 You may use any method(s) you like to generate your predictions; e.g., molecular mechanics or quantum mechanics based methods, QSPR, empirical pKa prediction tools etc.
