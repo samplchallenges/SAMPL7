@@ -1,0 +1,84 @@
+# OCTANOL TO WATER (ΔG_octanol - ΔG_water) TRANSFER FREE ENERGY PREDICTIONS
+#
+# This file will be automatically parsed. It must contain the following four elements:
+# predictions, name of method, software listing, and method description.
+# These elements must be provided in the order shown with their respective headers.
+#
+# Any line that begins with a # is considered a comment and will be ignored when parsing.
+#
+#
+# PREDICTION SECTION
+#
+# It is mandatory to submit  water to octanol (ΔG_octanol - ΔG_water) transfer free energy (TFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
+# The energy units must be in kcal/mol.
+# Please report TFE standard error of the mean (SEM) and TFE model uncertainty.
+#
+# The data in each prediction line should be structured as follows:
+# Molecule ID, TFE, TFE SEM, TFE model uncertainty
+#
+# The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
+Predictions:
+SM25_micro000,2.25,1.02,2
+SM26_micro000,5.14,3.46,2
+SM27_micro000,0.41,0.88,2
+SM28_micro000,1.28,1.34,2
+SM29_micro000,6.4,0.75,2
+SM30_micro000,2.07,1.04,2
+SM31_micro000,-0.75,2.43,1.5
+SM32_micro000,2.19,1.09,1.5
+SM33_micro000,4.05,0.82,1.5
+SM34_micro000,1.51,1.88,1.5
+SM35_micro000,3.31,2.22,1.5
+SM36_micro000,2.07,1.04,2
+SM37_micro000,4.05,0.82,1.5
+SM38_micro000,0.41,0.88,2
+SM39_micro000,2.25,1.02,2
+SM40_micro000,1.28,1.34,2
+SM41_micro000,6.4,0.75,2
+SM42_micro000,0.41,0.88,2
+SM43_micro000,3.01,1.09,1.5
+SM44_micro000,2.09,0.09,1.5
+SM45_micro000,1.19,1.04,1.5
+SM46_micro000,1.05,2.09,1.5
+
+
+
+# NAME SECTION
+#
+# Please provide an informal but informative name of the method used.
+# The name must not exceed 40 characters.
+# The 'Name:' keyword is required as shown here.
+Name:
+TFE-prediction-method-name
+
+
+# SOFTWARE SECTION
+#
+# List all major software packages used and their versions.
+# Create a new line for each software.
+# The 'Software:' keyword is required.
+Software:
+Software A 1.0
+Software B 2.4
+
+
+# METHOD CATEGORY SECTION
+#
+# State which method category your prediction method is better described as:
+# `Physical (MM)`, `Physical (QM)`, `Empirical`, or `Mixed`.
+# Pick only one category label.
+# The `Category:` keyword is required.
+Category:
+Physical (MM)
+
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of details should be roughly equivalent to that used in a publication.
+# Please include the values of key parameters with units.
+# Please explain how statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# All text following the 'Method:' keyword will be regarded as part of your free text methods description.
+Method:
+Free text methods section describing the approach and calculations in full detail.
