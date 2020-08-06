@@ -38,11 +38,9 @@ experimental database lookup (DL), linear free energy relationship (LFER)[3], qu
 - Prediction files will be machine parsed, so correct formatting is essential. Files with the wrong format will not be accepted.
 
 ## Experimental details
-pK<sub>a</sub> measurements were obtained via automated potentiometric titrations using a Sirius T3 instrument (Pion, Inc). Three titrations were performed from pH 1.8 to pH 12.2 using ionic strength adjusted water (0.15 M KCl), acid (0.5 M HCl, 0.15 M KCl) and base (0.5 M KOH, 0.15 M KCl). The pK<sub>a</sub>s of select compounds (Compounds SM30 and SM39) with low aqueous solubility were measured using a cosolvent protocol; Yasuda-Shedlovsky extrapolation method was used to estimate the pK<sub>a</sub> at 0% cosolvent.
+pK<sub>a</sub> measurements were obtained via automated potentiometric titrations using a Sirius T3 instrument (Pion, Inc)[5]. Three titrations were performed from pH 1.8 to pH 12.2 using ionic strength adjusted water (0.15 M KCl), acid (0.5 M HCl, 0.15 M KCl) and base (0.5 M KOH, 0.15 M KCl). The pK<sub>a</sub>s of select compounds (Compounds SM30 and SM39) with low aqueous solubility were measured using a cosolvent protocol; Yasuda-Shedlovsky extrapolation method was used to estimate the pK<sub>a</sub> at 0% cosolvent.
 
-Experiments using the Sirius T3 were done at 25°C.
-
-pKa determination with the Sirius T3 were done using solid samples, not in solutions of specific concentration, so the concentrations were different per compound. pK<sub>a</sub>'s were determined from 3 or more titrations.
+Experiments using the Sirius T3 were done at 25°C. pKa determination with the Sirius T3 were done using solid samples, not in solutions of specific concentration, so the concentrations were different per compound. pK<sub>a</sub>'s were determined from 3 or more titrations.
 
 
 
@@ -61,3 +59,5 @@ Some participants use SAMPL to help evaluate various computational methods. To a
 [3] Mobley, David L., Karisa L. Wymer, Nathan M. Lim, and J. Peter Guthrie. “Blind Prediction of Solvation Free Energies from the SAMPL4 Challenge.” Journal of Computer-Aided Molecular Design 28, no. 3 (March 2014): 135–50. https://doi.org/10.1007/s10822-014-9718-2
 
 [4] U. A. Chaudry and P. L. A. Popelier. “Estimation of pKa Using Quantum Topological Molecular Similarity Descriptors:  Application to Carboxylic Acids, Anilines and Phenols.” The Journal of Organic Chemistry 2004 69 (2), 233-241. https://doi.org/10.1021/jo0347415
+
+[5] Işık, M., Levorse, D., Rustenburg, A.S. et al. "pKa measurements for the SAMPL6 prediction challenge for a set of kinase inhibitor-like fragments." Journal of Computer-Aided Molecular Design 32, 1117–1138 (2018). https://doi.org/10.1007/s10822-018-0168-0
