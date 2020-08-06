@@ -36,7 +36,7 @@ Log *P* measurements of compounds with known experimental pK<sub>a</sub> were ob
 
 For experiments that used a Sirius T3, ionic strength adjusted water (0.15 M KCI) was used. Shake-flask log *D*<sub>7.4</sub> determinations use 1X-PBS buffer (pH 7.4) and a 10 mM stock solution in DMSO diluted to 10% DMSO by volume.
 
-All experiments using the Sirius T3 were done at 25 degrees Celsius. Shake-flask log *D*<sub>7.4</sub> experiments (run by Analiza, Inc) were done at ambient temperature (room temperature).
+All experiments using the Sirius T3 were done at 25°C. Shake-flask log *D*<sub>7.4</sub> experiments (run by Analiza, Inc) were done at ambient temperature (room temperature).
 
 Log *P*/*D* measurements using the Sirius T3 were done using solid samples and the concentrations were different per compound.  
 

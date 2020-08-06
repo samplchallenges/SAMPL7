@@ -37,6 +37,14 @@ experimental database lookup (DL), linear free energy relationship (LFER)[3], qu
 
 - Prediction files will be machine parsed, so correct formatting is essential. Files with the wrong format will not be accepted.
 
+## Experimental details
+pK<sub>a</sub> measurements were obtained via automated potentiometric titrations using a Sirius T3 instrument (Pion, Inc). Three titrations were performed from pH 1.8 to pH 12.2 using ionic strength adjusted water (0.15 M KCl), acid (0.5 M HCl, 0.15 M KCl) and base (0.5 M KOH, 0.15 M KCl). The pK<sub>a</sub>s of select compounds (Compounds SM30 and SM39) with low aqueous solubility were measured using a cosolvent protocol; Yasuda-Shedlovsky extrapolation method was used to estimate the pK<sub>a</sub> at 0% cosolvent.
+
+Experiments using the Sirius T3 were done at 25°C.
+
+pKa determination with the Sirius T3 were done using solid samples, not in solutions of specific concentration, so the concentrations were different per compound. pK<sub>a</sub>'s were determined from 3 or more titrations.
+
+
 
 ## Computational prediction methods
 You may use any method(s) you like to generate your predictions; e.g., molecular mechanics or quantum mechanics based methods, QSPR, empirical pK<sub>a</sub> prediction tools etc.
