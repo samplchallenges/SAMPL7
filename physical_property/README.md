@@ -11,7 +11,7 @@ Please sign up for our [e-mail list](https://mailchi.mp/272a7816e925/sampl7-phys
 ## Challenge timing details
 Submissions to the SAMPL7 physical property challenge will be due September 30, 2020. Challenge participants will have the option of predicting relative free energies between microstates to determine pK<sub>a</sub><sup>[1](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf)</sup>, and/or the difference in free energy of the neutral molecules between water and octanol to determine partition coefficients, and/or the log<sub>*P*<sub>*app*</sub></sub> to determine permeabilities of 22 compounds.
 
-Submission details, templates and instructions are linked to in the manifest.
+Submission details, templates and instructions are linked to in the manifest. We will be updating this repository with links to the submission server as soon as it is available.
 
 ## A view of the compounds
 

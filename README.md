@@ -19,14 +19,13 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
 - Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
 - [PHIP2 challenge stage 1-3 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
-- Preliminary [details of the SAMPL7 physical property challenge](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) on log *P*, pK<sub>a</sub> and permeability.
+- [Details of the SAMPL7 physical property challenge](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) on log *P*, pK<sub>a</sub> and permeability.
 
 All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge.
 
 ## What's coming
-- Physical property challenge input and instructions (for log *P*, pK<sub>a</sub>, and permeability)
-- PHIP/PHIP2 stage 1 and stage 2 analysis
-- GSK logD challenge information as soon as available
+- SAMPL7 physical property submission server links/final submission instructions
+- PHIPA analysis
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -62,7 +61,8 @@ All three host-guest challenges are now closed, as are the three stages of the P
 - (2020-02-14): Add additional host-guest analysis/updates to analysis. Include reference calculations in analysis, clean up files.
 - (2020-04-10): Add [link to host-guest virtual workshop program/video](http://dx.doi.org/10.5281/zenodo.3674155)
 - (2020-06-29): Add preliminary details of the SAMPL7 physical property challenge on pK<sub>a</sub>, log *P*, and permeability.
-(2020-07-07): Compounds renumbered for the SAMPL7 physical property challenge on pKa, log P, and permeability.
+- (2020-07-07): Compounds renumbered for the SAMPL7 physical property challenge on pKa, log P, and permeability.
+- (2020-08-06): Submission templates for the physical property challenge.
 
 ## Challenge overview
 
