@@ -4,7 +4,7 @@ The SAMPL7 pK<sub>a</sub> Challenge consists of predicting microscopic pK<sub>a<
 
 A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [submission_template/](example_submission_file/).
 
-For each molecule, the relative free energy must be predicted between the reference microstate and the rest of the enumerated microstates for that molecule at a reference pH of 0. The first microstate in each CSV file indicated by `SMXX_micro000` is our selected neutral reference state. For example, for molecule SM25, if the reference microstate is SM25_micro000, then relative free energies must be computed between SM25_micro000 and SM25_micro001, SM25_micro000 and SM25_micro002, and SM25_micro000 and SM25_micro003.
+For each molecule, the relative free energy must be predicted between the reference microstate and the rest of the enumerated microstates for that molecule at a reference pH of 0. The first microstate in each CSV file indicated by `SMXX_micro000` is our selected neutral reference state. For example, for molecule SM25, if the reference microstate is `SM25_micro000`, then relative free energies must be computed between `SM25_micro000` and `SM25_micro001`, `SM25_micro000` and `SM25_micro002`, and `SM25_micro000` and `SM25_micro003` (at a pH of 0).
 
 All possible tautomers of each ionization (charge) state are defined as distinct protonation microstates.
 
