@@ -8,7 +8,7 @@ Instructions for the permeability challenge: [`permeability_challenge_instructio
 
 Submission template for the permeability challenge: [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv)
 
-Please note that permeabilities for compounds `SM33`, `SM35`, and `SM39` were *not* determined.
+Please note that permeabilities for compounds `SM33`, `SM35`, and `SM39` were *not* determined, so these compounds are optional.
 
 Experimental permeability data will made available after the challenge deadline.
 

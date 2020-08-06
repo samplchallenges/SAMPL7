@@ -9,7 +9,7 @@ For each molecule, we are asking participants to predict the log of the apparent
 
 - You may report only 1 log<sub>*P*<sub>*app*</sub></sub> value per molecule per method.
 
-- It is mandatory to submit predictions for all 22 molecules. Incomplete submissions will not be accepted.
+- It is mandatory to submit predictions for all molecules except `SM33`, `SM35`, and `SM39`, which are optional (since values were not determined). Incomplete submissions will not be accepted.
 
 - Report log<sub>*P*<sub>*app*</sub></sub> values to two decimal places (e.g. 3.71).
 
