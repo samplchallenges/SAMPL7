@@ -27,7 +27,7 @@ Log *P* measurements of compounds with known experimental pK<sub>a</sub> were ob
 
 Melting points of the crystalline material were taken using Mel-Temp II (Barnstead Thermolyne). Crystals were grown by slow evaporation in a single solvent (dichloromethane) or by vapor diffusion (hexanes/dichloromethane or dichloromethane/methanol). Intrinsic solubilities were obtained using the experimental log *P* and the melting point via Yalkowski intrinsic solubility equation (log *S* = –log *P* – 0.01 ´ (mp – 25) + 0.5).
 
-Effective permeability (log<sub>*P*<sub>*app*</sub></sub>) was measured by Parallel Artificial Membrane Permeability Assay (PAMPA) using the Corning GentestTM pre-coated PAMPA plate system with quantitation by HPLC-UV (experiments carried out by Analyza, Inc).
+Effective permeability (log<sub>*P*<sub>*app*</sub></sub>) was measured by PAMPA using the Corning GentestTM pre-coated PAMPA plate system with quantitation by HPLC-UV (experiments carried out by Analyza, Inc).
 
 ## What's here
 
