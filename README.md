@@ -9,6 +9,10 @@ See the [SAMPL website](https://samplchallenges.github.io) for information on th
 Because these files are available publicly, we have no record of who downloads them. Therefore, you should sign up for notifications. Specifically, if you want to receive updates if we uncover any problems, it is imperative that you either (a) sign up for the SAMPL e-mail list, or (b) sign up for notifications of changes to this GitHub repository (the Watch button, above); ideally you would do both.
 Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMPL7-related announcements.
 
+## Upcoming workshop
+
+We're running a [2020 SAMPL virtual workshop on Nov. 4](https://www.gdch.de/gcc2020) in combination with the GCC.  It’s timed so both European and US folks can join, and will be hot on the heels of the current SAMPL7 physical properties challenge. Sign up if you're interested in attending.
+
 ## What's here
 - [Challenge Overview](#challenge-overview)
 - Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory, and experimental values in the `host_guest/Analysis/ExperimentalMeasurements` directory. The Isaacs' group's publication on this is in the *New Journal of Chemistry*, [DOI 10.1039/C9NJ05336K](https://dx.doi.org/10.1039/C9NJ05336K)
@@ -42,27 +46,10 @@ All three host-guest challenges are now closed, as are the three stages of the P
 - **Release 0.3** (Sept. 26, 2019, DOI [10.5281/zenodo.3462865](https://dx.doi.org/10.5281/zenodo.3462865)): Corrected likely charges/protonation states for MGLab23 and MGLab24 in overview table and in jpg and PDF files. Updated corresponding coded and noncoded CDX files. Fixed a mixture of UNK and MGO residue names. Eliminates all instances of atom name HQ which should correspond to a carbon (which for some reason was instead named HX in some hosts, likely causing problems for some workflows). This has been mapped to atom name C9. Reconnects missing bonds in the PDB section of several models. See [PR 42](https://github.com/MobleyLab/SAMPL7/pull/42) for full details. Also removes outdated info in README.md and removes extra guest listed in TrimerTrip submission template.
 - **Release 0.4** (Oct. 30, 2019): Adds Isaacs' group TrimerTrip binding data (in `host_guest/analysis/ExperimentalMeasurements`); adds TrimerTrip submissions; adds PHIP2 protein-ligand challenge Stage 1 details.
 - **Release 0.4.1** (Nov. 27, 2019, DOI [10.5281/zenodo.3555601](https://dx.doi.org/10.5281/zenodo.3555601)): Fixes and corrects some SMILES formatting errors (see release notes) for protein-ligand challenge, adds host-guest experimental data, adds submission instructions for stage 1 protein-ligand challenge.
+- **Relase 0.5** (Aug. 6, 2020): Adds PHIP2 components from 2019; corrects an OctaAcid value; brings in host-guest challenge results and reference calculations; adds details on SAMPL7 physical property (pKa, logP, logD, PAMPA permeability) challenge along with inputs and submission formats.
 
 ### Changes not in a release
-- (12/2/2019): Add PHIP2 Stage 2 inputs
-- (12/5/2019): Add PHIP2 Stage 2 submission format. Submission link still to come.
-- (12/7/2019): Add PHIP2 example submission package.
-- (12/7/2019): Add link to bare-bones [PHIP2 Stage 2 submission uploads](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/) -- open for submissions.
-- (12/11/2019): Update PHIP2 stage 2 deadline to noon US Pacific time Dec. 14.
-- (12/12/2019): Correct a single exoOA value (for G2) binding, per e-mail from Bruce Gibb.
-- (2019-12-14): Add crystal structures of PHIP2 hits, instructions for stage 3.
-- (2019-12-20): Add Isaacs' [TrimerTrip reference](https://dx.doi.org/10.1039/C9NJ05336K). Add Zenodo DOI for modified cyclodextrin raw experimental data.
-- (2019-12-20): Add Stage 2 submissions for PHIP2.
-- (2019-12-23): Add Stage 3 submission format for PHIP2.
-- (2019-12-23): Add preliminary host-guest analysis (ranked submissions only, for now) for GDCC and TrimerTrip; add preliminary first pass at CD analysis.
-- (2020-01-08): Add PHIP2 Stage 3 submission upload.
-- (2020-01-14): Include informal reference calculations for trimertrip, GDCC, CD.
-- (2020-01-17): Add PHIP2 Stage 3 submissions.
-- (2020-02-14): Add additional host-guest analysis/updates to analysis. Include reference calculations in analysis, clean up files.
-- (2020-04-10): Add [link to host-guest virtual workshop program/video](http://dx.doi.org/10.5281/zenodo.3674155)
-- (2020-06-29): Add preliminary details of the SAMPL7 physical property challenge on pK<sub>a</sub>, log *P*, and permeability.
-- (2020-07-07): Compounds renumbered for the SAMPL7 physical property challenge on pKa, log P, and permeability.
-- (2020-08-06): Submission templates for the physical property challenge.
+
 
 ## Challenge overview
 
@@ -70,8 +57,9 @@ The SAMPL7 phase of challenges currently includes a physical property challenge 
 
 Recently concluded SAMPL7 challenges include a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involved a total of 9-20 binding free energy calculations.
 Additional details are provided below. Several hosts and/or guests were optional.
+Note that the [SAMPL8 host-guest challenge is commencing](https://github.com/samplchallenges/SAMPL8)
 
-A later stage of SAMPL7 is expected to include logD prediction (hopefully with pKa values provided) for a series of small moleculs in several solvents; data is currently being collected in partnership with GSK.
+The planned later stage of SAMPL7 focused on GSK physical property data is being shifted to SAMPL8 because of availability of a more time-sensitive physical property dataset.
 
 
 
