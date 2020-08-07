@@ -2,7 +2,7 @@
 
 The SAMPL7 pK<sub>a</sub> Challenge consists of predicting microscopic pK<sub>a</sub>'s of small molecules. Participants are asked to report relative free energies of protonation microstates calculated based on a reference state and pH. Relative free energies of microstates were chosen as the reporting format rather than the microscopic pK<sub>a</sub> values given the recent work of Gunner et al.[1]
 
-A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [submission_template/](example_submission_file/).
+A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/).
 
 For each molecule, the relative free energy must be predicted between the reference microstate and the rest of the enumerated microstates for that molecule at a reference pH of 0. The first microstate in each CSV file indicated by `SMXX_micro000` is our selected neutral reference state. For example, for molecule SM25, if the reference microstate is `SM25_micro000`, then relative free energies must be computed between `SM25_micro000` and `SM25_micro001`, `SM25_micro000` and `SM25_micro002`, and `SM25_micro000` and `SM25_micro003` (at a pH of 0).
 
@@ -12,7 +12,7 @@ All possible tautomers of each ionization (charge) state are defined as distinct
 
 - Record the pair of microstates IDs associated with each relative free energy calculation between the reference state and the predicted microstates. Enumerated microstates, IDs, SMILES strings and SDF/MOL2 files can be found in https://github.com/samplchallenges/SAMPL7/tree/master/physical_property/pKa/microstates.
 
-- If you have evaluated additional microstates, we ask that you include the same information as the other challenge molecules, but include the SMILES string in your submission and email a `.mol2` file of the microstate with explicit hydrogens and correct bond orders to `bergazin@uci.edu`. See [`example_submission_file/pKa-DanielleBergazinExampleFile-1.csv`](example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) for an example. Additonal microstate molecule ID's must be in the form `SMXX_extra001`, where the molecule tag is followed by `_extra` and some number `001`.
+- If you have evaluated additional microstates, we ask that you include the same information as the other challenge molecules, but include the SMILES string in your submission and email a `.mol2` file of the microstate with explicit hydrogens and correct bond orders to `bergazin@uci.edu`. Additonal microstate molecule ID's must be in the form `SMXX_extra001`, where the molecule tag `SMXX` is followed by `_extra` and some number `001` with three characters. See [`here`](example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) for an example.
 
 - You may report only 1 relative free energy value per molecule per method.
 
@@ -38,7 +38,7 @@ experimental database lookup (DL), linear free energy relationship (LFER)[3], qu
 - Prediction files will be machine parsed, so correct formatting is essential. Files with the wrong format will not be accepted.
 
 ## Experimental details
-pK<sub>a</sub> measurements were obtained via automated potentiometric titrations using a Sirius T3 instrument (Pion, Inc)[5]. Three titrations were performed from pH 1.8 to pH 12.2 using ionic strength adjusted water (0.15 M KCl), acid (0.5 M HCl, 0.15 M KCl) and base (0.5 M KOH, 0.15 M KCl). The pK<sub>a</sub>s of select compounds (Compounds SM30 and SM39) with low aqueous solubility were measured using a cosolvent protocol; Yasuda-Shedlovsky extrapolation method was used to estimate the pK<sub>a</sub> at 0% cosolvent.
+pK<sub>a</sub> measurements were obtained via automated potentiometric titrations using a Sirius T3 instrument (Pion, Inc)[5] by the [Ballatore lab at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore). Three titrations were performed from pH 1.8 to pH 12.2 using ionic strength adjusted water (0.15 M KCl), acid (0.5 M HCl, 0.15 M KCl) and base (0.5 M KOH, 0.15 M KCl). The pK<sub>a</sub>s of select compounds (Compounds SM30 and SM39) with low aqueous solubility were measured using a cosolvent protocol; Yasuda-Shedlovsky extrapolation method was used to estimate the pK<sub>a</sub> at 0% cosolvent.
 
 Experiments using the Sirius T3 were done at 25°C. pKa determination with the Sirius T3 were done using solid samples, not in solutions of specific concentration, so the concentrations were different per compound. pK<sub>a</sub>'s were determined from 3 or more titrations.
 

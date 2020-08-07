@@ -32,7 +32,7 @@ Octanol may be found in the aqueous phase. The mole fraction of water in octanol
 - Prediction files will be machine parsed, so correct formatting is essential. Files with the wrong format will not be accepted.
 
 ## Experimental details
-Log *P* measurements of compounds with known experimental pK<sub>a</sub> were obtained via potentiometric titrations using a Sirius T3 instrument[5]. Log *D*<sub>7.4</sub> values were extrapolated from the measured log *P* and pH. Compounds with pK<sub>a</sub> >10 had log *D*<sub>7.4</sub> measured via shake-flask method (shake-flask log *D*<sub>7.4</sub> carried out by Analyza, Inc). Some of the log *P* values are considered equal to the Log *D*<sub>7.4</sub>, as these compounds exhibit pKa values >10.
+Log *P* measurements of compounds with known experimental pK<sub>a</sub> were obtained via potentiometric titrations using a Sirius T3 instrument[5] by the [Ballatore lab at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore). Log *D*<sub>7.4</sub> values were extrapolated from the measured log *P* and pH. Compounds with pK<sub>a</sub> >10 had log *D*<sub>7.4</sub> measured via shake-flask method (shake-flask log *D*<sub>7.4</sub> carried out by Analyza, Inc). Some of the log *P* values are considered equal to the Log *D*<sub>7.4</sub>, as these compounds exhibit pKa values >10.
 
 For experiments that used a Sirius T3, ionic strength adjusted water (0.15 M KCI) was used. Shake-flask log *D*<sub>7.4</sub> determinations use 1X-PBS buffer (pH 7.4) and a 10 mM stock solution in DMSO diluted to 10% DMSO by volume.
 
