@@ -23,9 +23,9 @@ We're running a [2020 SAMPL virtual workshop on Nov. 4](https://www.gdch.de/gcc2
 - [Host-guest participation instructions](host_guest_instructions.md) with information on the submission format, etc. Our submission system is also [now available](http://sampl-submission.us-west-1.elasticbeanstalk.com/submit/). Submission formats are available in the subdirectories for the individual host-guest systems.
 - Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
 - [PHIP2 challenge stage 1-3 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
-- [Details of the SAMPL7 physical property challenge](https://github.com/samplchallenges/SAMPL7/tree/physical_property/physical_property) on log *P*, pK<sub>a</sub> and permeability.
+- [Details of the SAMPL7 physical property challenge](physical_property/) on log *P*, pK<sub>a</sub> and permeability. Input files, instructions, submission formats, and example submission formats are available in the subdirectories for the individual challenges.
 
-All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge.
+The SAMPL7 physical property challenge is now open! All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge.
 
 ## What's coming
 - SAMPL7 physical property submission server links/final submission instructions
