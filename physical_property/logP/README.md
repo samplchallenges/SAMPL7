@@ -4,9 +4,9 @@ The SAMPL7 log *P* Challenge consists of predicting the octanol-water partition 
 
 Tripos MOL2 and SDF files for the molecules can be found [here](../pKa/microstates) and are indicated by the ID tag `SMXX_micro000`.
 
-Instructions for the pKa challenge: [`logP_challenge_instructions.md`](logP_challenge_instructions.md)
+Instructions for the log *P* challenge: [`logP_challenge_instructions.md`](logP_challenge_instructions.md)
 
-Submission template for the pKa challenge: [`submission_template/logP_prediction_template.csv`](submission_template/logP_prediction_template.csv)
+Submission template for the log *P* challenge: [`submission_template/logP_prediction_template.csv`](submission_template/logP_prediction_template.csv)
 
 Experimental log *P* measurements will made available after the challenge deadline.
 
