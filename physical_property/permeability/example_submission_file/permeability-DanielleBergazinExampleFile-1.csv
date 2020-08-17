@@ -50,14 +50,17 @@ Name:
 permeability-prediction-method-name
 
 
+
 # SOFTWARE SECTION
 #
 # List all major software packages used and their versions.
 # Create a new line for each software.
 # The 'Software:' keyword is required.
 Software:
-Software A 1.0
-Software B 2.4
+OpenMM 7.1.1
+OpenMMTools 0.13.4
+YANK 0.19.4
+
 
 
 # METHOD CATEGORY SECTION
@@ -68,6 +71,7 @@ Software B 2.4
 # The `Category:` keyword is required.
 Category:
 Physical (MM)
+
 
 
 # METHOD DESCRIPTION SECTION
