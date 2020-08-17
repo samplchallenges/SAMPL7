@@ -42,7 +42,7 @@ Compute time:
 # COMPUTING AND HARDWARE SECTION
 #
 # Please provide details of the computing resources that were used to train models and make predictions.
-# Provide a detailed description of the hardware used to run the simulations.
+# Provide a detailed description of the hardware used.
 # The 'Computing and hardware:' keyword is required as shown here.
 Computing and hardware:
 

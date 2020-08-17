@@ -39,13 +39,13 @@ Name:
 # For physical methods, report the GPU and/or CPU compute time in hours.
 # For empirical methods, report the query time in hours.
 # The 'Compute time:' keyword is required as shown here.
-
+Compute time:
 
 
 # COMPUTING AND HARDWARE SECTION
 #
 # Please provide details of the computing resources that were used to train models and make predictions.
-# Provide a detailed description of the hardware used to run the simulations.
+# Provide a detailed description of the hardware used.
 # The 'Computing and hardware:' keyword is required as shown here.
 Computing and hardware:
 
