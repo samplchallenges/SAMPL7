@@ -52,6 +52,7 @@ Name:
 TFE-prediction-method-name
 
 
+
 # COMPUTE TIME SECTION
 #
 # Please provide the average compute time across all of the molecules.
@@ -62,6 +63,7 @@ TFE-prediction-method-name
 Compute time:
 28 hours, CPU
 5.5 hours, GPU
+
 
 
 # COMPUTING AND HARDWARE SECTION
@@ -77,6 +79,7 @@ stage was performed serially. We estimate the total wall-clock time spent doing 
 approximately 95%/5% respectively.
 
 
+
 # SOFTWARE SECTION
 #
 # List all major software packages used and their versions.
@@ -88,6 +91,7 @@ OpenMMTools 0.13.4
 YANK 0.19.4
 
 
+
 # METHOD CATEGORY SECTION
 #
 # State which method category your prediction method is better described as:
@@ -96,6 +100,7 @@ YANK 0.19.4
 # The `Category:` keyword is required.
 Category:
 Physical (MM)
+
 
 
 # METHOD DESCRIPTION SECTION

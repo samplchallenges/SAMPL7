@@ -33,6 +33,7 @@ Predictions:
 Name:
 
 
+
 # COMPUTE TIME SECTION
 #
 # Please provide the average compute time across all of the molecules.
@@ -41,6 +42,7 @@ Name:
 # Create a new line for each processor type.
 # The 'Compute time:' keyword is required as shown here.
 Compute time:
+
 
 
 # COMPUTING AND HARDWARE SECTION

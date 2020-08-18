@@ -29,6 +29,7 @@ Predictions:
 Name:
 
 
+
 # COMPUTE TIME SECTION
 #
 # Please provide the average compute time across all of the molecules.
@@ -47,6 +48,7 @@ Compute time:
 # Provide a detailed description of the hardware used.
 # The 'Computing and hardware:' keyword is required as shown here.
 Computing and hardware:
+
 
 
 # SOFTWARE SECTION

@@ -33,6 +33,7 @@ SM27_micro000,SM27_micro001,0,2.25,0.02,0.02
 SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 #Example of including an additonal microstate
 
 
+
 # NAME SECTION
 #
 # Please provide an informal but informative name of the method used.
@@ -81,6 +82,7 @@ OpenMMTools 0.13.4
 YANK 0.19.4
 
 
+
 # METHOD CATEGORY SECTION
 #
 # State if your prediction method is better classified as an
@@ -95,6 +97,7 @@ YANK 0.19.4
 # The `Category:` keyword is required.
 Category:
 QSPR/ML
+
 
 
 # METHOD DESCRIPTION SECTION
