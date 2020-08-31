@@ -39,8 +39,18 @@ SM44,2.09,0.09,1.5
 SM45,1.19,1.04,1.5
 SM46,1.05,2.09,1.5
 
+#
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
 
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
 
+#
+#
 # NAME SECTION
 #
 # Please provide an informal but informative name of the method used.
@@ -49,8 +59,8 @@ SM46,1.05,2.09,1.5
 Name:
 permeability-prediction-method-name
 
-
-
+#
+#
 # COMPUTE TIME SECTION
 #
 # Please provide the average compute time across all of the molecules.
@@ -62,8 +72,7 @@ Compute time:
 28 hours, CPU
 5.5 hours, GPU
 
-
-
+#
 # COMPUTING AND HARDWARE SECTION
 #
 # Please provide details of the computing resources that were used to train models and make predictions.
@@ -76,8 +85,6 @@ The replicas were divided into two sets of the same size and propagated in paral
 stage was performed serially. We estimate the total wall-clock time spent doing parallel/serial work to be
 approximately 95%/5% respectively.
 
-
-
 # SOFTWARE SECTION
 #
 # List all major software packages used and their versions.
@@ -88,8 +95,6 @@ OpenMM 7.1.1
 OpenMMTools 0.13.4
 YANK 0.19.4
 
-
-
 # METHOD CATEGORY SECTION
 #
 # State which method category your prediction method is better described as:
@@ -98,8 +103,6 @@ YANK 0.19.4
 # The `Category:` keyword is required.
 Category:
 Physical (MM)
-
-
 
 # METHOD DESCRIPTION SECTION
 #
@@ -111,3 +114,14 @@ Physical (MM)
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
 Free text methods section describing the approach and calculations in full detail.
+
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True

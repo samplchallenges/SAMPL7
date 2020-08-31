@@ -24,16 +24,27 @@
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
 
+#
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
 
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
 
+#
+#
 # NAME SECTION
+#
 # Please provide an informal but informative name of the method used.
 # The name of the method should not exceed 40 characters.
 # The 'Name:' keyword is required as shown here.
 Name:
 
-
-
+#
+#
 # COMPUTE TIME SECTION
 #
 # Please provide the average compute time across all of the molecules.
@@ -43,8 +54,7 @@ Name:
 # The 'Compute time:' keyword is required as shown here.
 Compute time:
 
-
-
+#
 # COMPUTING AND HARDWARE SECTION
 #
 # Please provide details of the computing resources that were used to train models and make predictions.
@@ -53,16 +63,12 @@ Compute time:
 # The 'Computing and hardware:' keyword is required as shown here.
 Computing and hardware:
 
-
-
 # SOFTWARE SECTION
 #
 # List all major software packages used and their versions.
 # Create a new line for each software.
 # The 'Software:' keyword is required.
 Software:
-
-
 
 # METHOD CATEGORY SECTION
 #
@@ -78,8 +84,6 @@ Software:
 # The `Category:` keyword is required.
 Category:
 
-
-
 # METHOD DESCRIPTION SECTION
 #
 # Methodology and computational details.
@@ -89,3 +93,14 @@ Category:
 # Use as many lines of text as you need.
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
+
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True

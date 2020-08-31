@@ -32,8 +32,20 @@ SM26_micro000,SM26_micro003,-1,4.35,1.95,0.02
 SM27_micro000,SM27_micro001,0,2.25,0.02,0.02
 SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 #Example of including an additonal microstate
 
+#
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Teresa Danielle Bergazin
 
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+University of California Irvine
 
+#
+#
 # NAME SECTION
 #
 # Please provide an informal but informative name of the method used.
@@ -42,8 +54,8 @@ SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 #
 Name:
 RFE-prediction-method-name
 
-
-
+#
+#
 # COMPUTE TIME SECTION
 #
 # Please provide the average compute time across all of the molecules.
@@ -55,8 +67,7 @@ Compute time:
 28 hours, CPU
 5.5 hours, GPU
 
-
-
+#
 # COMPUTING AND HARDWARE SECTION
 #
 # Please provide details of the computing resources that were used to train models and make predictions.
@@ -69,8 +80,6 @@ The replicas were divided into two sets of the same size and propagated in paral
 stage was performed serially. We estimate the total wall-clock time spent doing parallel/serial work to be
 approximately 95%/5% respectively.
 
-
-
 # SOFTWARE SECTION
 #
 # List all major software packages used and their versions.
@@ -80,8 +89,6 @@ Software:
 OpenMM 7.1.1
 OpenMMTools 0.13.4
 YANK 0.19.4
-
-
 
 # METHOD CATEGORY SECTION
 #
@@ -98,8 +105,6 @@ YANK 0.19.4
 Category:
 QSPR/ML
 
-
-
 # METHOD DESCRIPTION SECTION
 #
 # Methodology and computational details.
@@ -110,3 +115,14 @@ QSPR/ML
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
 Free text methods section describing the approach and calculations in full detail.
+
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True
