@@ -34,6 +34,27 @@ Name:
 
 
 
+# COMPUTE TIME SECTION
+#
+# Please provide the average compute time across all of the molecules.
+# For physical methods, report the GPU and/or CPU compute time in hours.
+# For empirical methods, report the query time in hours.
+# Create a new line for each processor type.
+# The 'Compute time:' keyword is required as shown here.
+Compute time:
+
+
+
+# COMPUTING AND HARDWARE SECTION
+#
+# Please provide details of the computing resources that were used to train models and make predictions.
+# Please specify compute time for training models and querying separately for empirical prediction methods.
+# Provide a detailed description of the hardware used.
+# The 'Computing and hardware:' keyword is required as shown here.
+Computing and hardware:
+
+
+
 # SOFTWARE SECTION
 #
 # List all major software packages used and their versions.

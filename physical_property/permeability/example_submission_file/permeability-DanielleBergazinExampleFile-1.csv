@@ -50,14 +50,44 @@ Name:
 permeability-prediction-method-name
 
 
+
+# COMPUTE TIME SECTION
+#
+# Please provide the average compute time across all of the molecules.
+# For physical methods, report the GPU and/or CPU compute time in hours.
+# For empirical methods, report the query time in hours.
+# Create a new line for each processor type.
+# The 'Compute time:' keyword is required as shown here.
+Compute time:
+28 hours, CPU
+5.5 hours, GPU
+
+
+
+# COMPUTING AND HARDWARE SECTION
+#
+# Please provide details of the computing resources that were used to train models and make predictions.
+# Please specify compute time for training models and querying separately for empirical prediction methods.
+# Provide a detailed description of the hardware used to run the simulations.
+# The 'Computing and hardware:' keyword is required as shown here.
+Computing and hardware:
+All the simulations were performed on two GeForce GTX 1080 on a single machine hosting an Intel Xeon Processor E5-2697 v4.
+The replicas were divided into two sets of the same size and propagated in parallel on the two GPUs, while the exchange
+stage was performed serially. We estimate the total wall-clock time spent doing parallel/serial work to be
+approximately 95%/5% respectively.
+
+
+
 # SOFTWARE SECTION
 #
 # List all major software packages used and their versions.
 # Create a new line for each software.
 # The 'Software:' keyword is required.
 Software:
-Software A 1.0
-Software B 2.4
+OpenMM 7.1.1
+OpenMMTools 0.13.4
+YANK 0.19.4
+
 
 
 # METHOD CATEGORY SECTION
@@ -68,6 +98,7 @@ Software B 2.4
 # The `Category:` keyword is required.
 Category:
 Physical (MM)
+
 
 
 # METHOD DESCRIPTION SECTION
