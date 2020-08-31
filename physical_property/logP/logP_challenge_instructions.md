@@ -10,6 +10,10 @@ Octanol may be found in the aqueous phase. The mole fraction of water in octanol
 
 - You may report only 1 transfer free energy value per molecule per method.
 
+- Each participant or organization is allowed only one ranked submission.
+
+- Anonymous participation is not allowed.
+
 - The energy units must be in kcal/mol.
 
 - It is mandatory to submit predictions for all 22 molecules. Incomplete submissions will not be accepted.
@@ -18,18 +22,22 @@ Octanol may be found in the aqueous phase. The mole fraction of water in octanol
 
 - Report the standard error of the mean (SEM) as a measure of statistical uncertainty (imprecision) for your method. The SEM should capture variation of predicted values of the same method over repeated calculations.
 
-- Report the model uncertainty of your difference in free energy prediction --- the predicted accuracy of your method [3,4]. This is not a statistical uncertainty. Rather, the model uncertainty is an estimate of how well your predicted values are expected to agree with experimental values. For example, for classical simulation approaches based on force fields, this could measure how well you expect the force field will agree with experiment for this compound. The model uncertainty could be global or different for each molecule. For example, reference calculations in SAMPL5 log D challenge estimated the model uncertainty as the root mean squared error (RMSE) between predicted and experimental values for a set of molecules with published cyclohexane-water partition coefficients.
+- Report the model uncertainty of your difference in free energy prediction --- the predicted accuracy of your method [3,4]. This is not a statistical uncertainty. Rather, the model uncertainty is an estimate of how well your predicted values are expected to agree with experimental values. For example, for classical simulation approaches based on force fields, this could measure how well you expect the force field will agree with experiment for this compound. The model uncertainty could be global or different for each molecule. For example, reference calculations in SAMPL5 log *D* challenge estimated the model uncertainty as the root mean squared error (RMSE) between predicted and experimental values for a set of molecules with published cyclohexane-water partition coefficients.
 
 - Lines beginning with a hash-tag (#) may be included as comments. These and blank lines will be ignored during analysis.
 
-- The file must contain the following four components in the following order: your predictions, a name for your computational protocol (that is 40 characters or less), the average compute time across all of the molecules in hours (GPU/CPU time for physical methods, query time for empirical methods), details of the computing resources and hardware used to make predictions, a list of the major software packages used, prediction method category, and a long-form methods description. Each of these components must begin with a line containing only the corresponding keyword: `Predictions:`, `Name:`, `Compute time:`, `Computing and hardware:`, `Software:`, `Category:`, and `Method:`, as illustrated in the example file. An example submission file can be found [here](example_submission_file/logP-DanielleBergazinExampleFile-1.csv) to illustrate expected format when filling submission templates.
-
+- The file must contain the following four components in the following order: your predictions, a name for your computational protocol (that is 40 characters or less), the average compute time across all of the molecules in hours (GPU/CPU time for physical methods, query time for empirical methods), details of the computing resources and hardware used to make predictions, a list of the major software packages used, prediction method category, and a long-form methods description. Each of these components must begin with a line containing only the corresponding keyword: `Predictions:`, `Participant name:`, `Participant organization:`, `Name:`, `Compute time:`, `Computing and hardware:`, `Software:`, `Category:`, `Method:`, and `Ranked:`, as illustrated in the example file. An example submission file can be found [here](example_submission_file/logP-DanielleBergazinExampleFile-1.csv) to illustrate expected format when filling submission templates.
 
 - For Method Category section please state if your prediction method can be better classified as an empirical modeling method, physical quantum mechanics (QM) modeling method, physical molecular mechanics (MM) modeling method, or mixed (both empirical and physical), using the category labels `Empirical`, `Physical (MM)`, `Physical (QM)`, or `Mixed`. Empirical models are prediction methods that are trained on experimental data, such as QSPR, machine learning models, artificial neural networks etc. Physical models are prediction methods that rely on the physical principles of the system, such as molecular mechanics or quantum mechanics based methods to predict molecular properties. If your method takes advantage of both kinds of approaches please report it as “Mixed”. If you choose the “Mixed” category, please explain your decision in the beginning of Method Description section.
 
 - Names of the prediction files must have three sections separated by a `-`: predicted property `logP`, and your name and must end with an integer indicating the number of prediction set. For example, if you want to submit one prediction, you would name it `logP-myname-1.csv`, where `myname` is arbitrary text of your choice. If you submit three prediction files, you would name them `logP-myname-1.csv`, `logP-myname-2.csv`, and `logP-myname-3.csv`.
 
 - Prediction files will be machine parsed, so correct formatting is essential. Files with the wrong format will not be accepted.
+
+## Multiple submissions
+As per our policy on multiple submissions, each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form. We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
+
+If multiple submissions are incorrectly provided as "ranked" by a single participant, we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
 
 ## Experimental details
 Log *P* measurements of compounds with known experimental pK<sub>a</sub> were obtained via potentiometric titrations using a Sirius T3 instrument[5] by the [Ballatore lab at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore). Log *D*<sub>7.4</sub> values were extrapolated from the measured log *P* and pH. Compounds with pK<sub>a</sub> >10 had log *D*<sub>7.4</sub> measured via shake-flask method (shake-flask log *D*<sub>7.4</sub> carried out by Analyza, Inc). Some of the log *P* values are considered equal to the Log *D*<sub>7.4</sub>, as these compounds exhibit pKa values >10.
@@ -42,10 +50,11 @@ Log *P*/*D* measurements using the Sirius T3 were done using solid samples, so t
 
 Log *P*’s were determined from 3 or more titrations.
 
+## Method descriptions
+Your method descriptions should give a detailed description of your approach, ideally with enough detail that someone could reproduce the work. These often serve to allow researchers to coordinate on why calculations which seem similar performed quite different in practice, so you should be sure to address how you generated poses, selected protonation states and tautomers if applicable, dealt with counterions, and various other aspects that might be important, as well as any method-specific details that, if varied, might result in different performance. For example, with MD simulations, the amount of equilibration might impact performance significantly in some cases, so this should also be included.
 
 ## Computational prediction methods
 You may use any method(s) you like to generate your predictions; e.g., molecular mechanics or quantum mechanics based methods, QSPR, empirical pKa prediction tools etc.
-
 
 ## Submission of multiple predictions
 Some participants use SAMPL to help evaluate various computational methods. To accommodate this, multiple prediction sets from a single research group or company are allowed, even for the same type of predictions if they are made by different methods. If you would like to submit predictions from multiple methods, you should fill a separate submission template files for each different method.

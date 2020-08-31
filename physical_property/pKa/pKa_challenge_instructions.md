@@ -16,6 +16,10 @@ All possible tautomers of each ionization (charge) state are defined as distinct
 
 - You may report only 1 relative free energy value per molecule per method.
 
+- Each participant or organization is allowed only one ranked submission.
+
+- Anonymous participation is not allowed.
+
 - The energy units must be in kcal/mol.
 
 - It is mandatory to submit predictions for all 22 molecules. Incomplete submissions will not be accepted.
@@ -28,7 +32,7 @@ All possible tautomers of each ionization (charge) state are defined as distinct
 
 - Lines beginning with a hash-tag (#) may be included as comments. These and blank lines will be ignored during analysis.
 
-- The file must contain the following four components in the following order: your predictions, a name for your computational protocol (that is 40 characters or less), the average compute time across all of the molecules in hours (GPU/CPU time for physical methods, query time for empirical methods), details of the computing resources and hardware used to make predictions, a list of the major software packages used, prediction method category, and a long-form methods description. Each of these components must begin with a line containing only the corresponding keyword: `Predictions:`, `Name:`, `Compute time:`, `Computing and hardware:`, `Software:`, `Category:`, and `Method:`, as illustrated in the example file. An example submission file can be found [here](example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) to illustrate expected format when filling submission templates.
+- The file must contain the following four components in the following order: your predictions, a name for your computational protocol (that is 40 characters or less), the average compute time across all of the molecules in hours (GPU/CPU time for physical methods, query time for empirical methods), details of the computing resources and hardware used to make predictions, a list of the major software packages used, prediction method category, and a long-form methods description. Each of these components must begin with a line containing only the corresponding keyword: `Predictions:`, `Participant name:`, `Participant organization:`, `Name:`, `Compute time:`, `Computing and hardware:`, `Software:`, `Category:`, `Method:`, and `Ranked:`, as illustrated in the example file. An example submission file can be found [here](example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) to illustrate expected format when filling submission templates.
 
 - For Method Category section please state if your prediction method can be better classified as an
 experimental database lookup (DL), linear free energy relationship (LFER)[3], quantitative structure-property relationship or machine learning (QSPR/ML)[3], quantum mechanics without empirical correction (QM) models, quantum mechanics with linear empirical correction (QM+LEC), and combined quantum mechanics and molecular mechanics (QM+MM), or Other, using the category labels `DL`, `LFER`, `QSPR/ML`, `QM`, `QM+LEC`, `QM+MM` or `Other`. If you choose the “Other” category, please explain your decision in the beginning of Method Description section.
@@ -37,16 +41,21 @@ experimental database lookup (DL), linear free energy relationship (LFER)[3], qu
 
 - Prediction files will be machine parsed, so correct formatting is essential. Files with the wrong format will not be accepted.
 
+## Multiple submissions
+As per our policy on multiple submissions, each participant or organization is allowed only one ranked submission, which must be clearly indicated as such by filling the appropriate field in the submission form. We also accept non-ranked submissions, which we will not formally judge. These allow us to certify that your calculations were done without knowing the answers, but do not receive formal ranking, as discussed at the link above.
+
+If multiple submissions are incorrectly provided as "ranked" by a single participant, we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
+
 ## Experimental details
 pK<sub>a</sub> measurements were obtained via automated potentiometric titrations using a Sirius T3 instrument (Pion, Inc)[5] by the [Ballatore lab at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore). Three titrations were performed from pH 1.8 to pH 12.2 using ionic strength adjusted water (0.15 M KCl), acid (0.5 M HCl, 0.15 M KCl) and base (0.5 M KOH, 0.15 M KCl). The pK<sub>a</sub>s of select compounds (Compounds SM30 and SM39) with low aqueous solubility were measured using a cosolvent protocol; Yasuda-Shedlovsky extrapolation method was used to estimate the pK<sub>a</sub> at 0% cosolvent.
 
 Experiments using the Sirius T3 were done at 25°C. pKa determination with the Sirius T3 were done using solid samples, not in solutions of specific concentration, so the concentrations were different per compound. pK<sub>a</sub>'s were determined from 3 or more titrations.
 
-
+## Method descriptions
+Your method descriptions should give a detailed description of your approach, ideally with enough detail that someone could reproduce the work. These often serve to allow researchers to coordinate on why calculations which seem similar performed quite different in practice, so you should be sure to address how you generated poses, selected protonation states and tautomers if applicable, dealt with counterions, and various other aspects that might be important, as well as any method-specific details that, if varied, might result in different performance. For example, with MD simulations, the amount of equilibration might impact performance significantly in some cases, so this should also be included.
 
 ## Computational prediction methods
 You may use any method(s) you like to generate your predictions; e.g., molecular mechanics or quantum mechanics based methods, QSPR, empirical pK<sub>a</sub> prediction tools etc.
-
 
 ## Submission of multiple predictions
 Some participants use SAMPL to help evaluate various computational methods. To accommodate this, multiple prediction sets from a single research group or company are allowed, even for the same type of predictions if they are made by different methods. If you would like to submit predictions from multiple methods, you should fill a separate submission template files for each different method.
