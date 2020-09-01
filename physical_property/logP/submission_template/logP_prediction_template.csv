@@ -1,4 +1,4 @@
-# OCTANOL TO WATER (ΔG_octanol - ΔG_water) TRANSFER FREE ENERGY PREDICTIONS (for logP prediction)
+# OCTANOL TO WATER (ΔG_octanol - ΔG_water) TRANSFER FREE ENERGY PREDICTIONS
 #
 # This file will be automatically parsed. It must contain the following four elements:
 # predictions, name of method, software listing, and method description.
@@ -9,39 +9,41 @@
 #
 # PREDICTION SECTION
 #
-# It is mandatory to submit  water to octanol (ΔG_octanol - ΔG_water) transfer free energy (TFE) predictions for all 22 molecules.
+# It is mandatory to submit water to octanol (ΔG_octanol - ΔG_water) transfer free energy (TFE) predictions for all 22 molecules.
 # Incomplete submissions will not be accepted.
 # The energy units must be in kcal/mol.
+
+# Please report the general molecule `ID tag` in the form of `SMXX` (e.g. SM25, SM26, etc).
+# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section (e.g. `SM25_micro000`, SM25_extra001`)
 # Please report TFE standard error of the mean (SEM) and TFE model uncertainty.
 #
 # The data in each prediction line should be structured as follows:
-# ID tag, Molecule ID, TFE, TFE SEM, TFE model uncertainty
+# ID tag, Molecule ID/IDs considered (no commas), TFE, TFE SEM, TFE model uncertainty
 #
-# Your transfer free energy prediction for the neutral form does NOT have to be `microstate000` (the challenge provided microstate).
-# If you use a microstate other than the challenge provided microstate, please use a different `Molecule ID` in the form of `SMXX_extra001` (number can vary) and include the smiles string in your methods description.
+# Your transfer free energy prediction for the neutral form does NOT have to be `SMXX_micro000` (which is the challenge provided neutral microstate).
+# If you use a microstate other than the challenge provided microstate, please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form of `SMXX_extra001` (number can vary) and please list the molecule ID and it's SMILES string in your methods description in the `METHOD DESCRIPTION SECTION`.
 #
-# If you have evaluated additional microstates, include the following:
-# ID tag, Molecule ID Molecule ID of additional microstate, TFE, TFE SEM, TFE model uncertainty
-# Note, there is no comma between "Molecule ID" and "Molecule ID of additional microstate", this is for submission handling purposes.
+# Only one entry in the second column (`Molecule ID/IDs considered (no commas)`) is required, but you should list all IDs considered/input to your calculations. See challenge instructions.
 #
-# Only the first entry in the second column (Molecule ID) is required.
-#
-# If you have evaluated additional microstates then the `Molecule ID` of the additional microstate needs to be in the format: `SMXX_extra001` (number can vary)
+# If you have evaluated additional microstates then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_extra001` (number can vary).
 # If multiple microstates are used, please report the order of population in the aqueous phase in descending order.
-# Please list microstate populations and SMILES strings in the `METHOD DESCRIPTION SECTION` section further below.
+# Please list microstate populations, SMILES strings and the molecule IDs in the `METHOD DESCRIPTION SECTION` section further below.
 #
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
+
 
 #
 #
 # Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
 Participant name:
 
+
 #
 #
 # Please list your organization/affiliation, using only UTF-8 characters as described above.
 Participant organization:
+
 
 #
 #
@@ -51,6 +53,7 @@ Participant organization:
 # The name must not exceed 40 characters.
 # The 'Name:' keyword is required as shown here.
 Name:
+
 
 #
 #
@@ -63,14 +66,16 @@ Name:
 # The 'Compute time:' keyword is required as shown here.
 Compute time:
 
+
 #
 # COMPUTING AND HARDWARE SECTION
 #
 # Please provide details of the computing resources that were used to train models and make predictions.
 # Please specify compute time for training models and querying separately for empirical prediction methods.
-# Provide a detailed description of the hardware used.
+# Provide a detailed description of the hardware used to run the simulations.
 # The 'Computing and hardware:' keyword is required as shown here.
 Computing and hardware:
+
 
 # SOFTWARE SECTION
 #
@@ -78,6 +83,7 @@ Computing and hardware:
 # Create a new line for each software.
 # The 'Software:' keyword is required.
 Software:
+
 
 # METHOD CATEGORY SECTION
 #
@@ -87,6 +93,7 @@ Software:
 # The `Category:` keyword is required.
 Category:
 
+
 # METHOD DESCRIPTION SECTION
 #
 # Methodology and computational details.
@@ -95,7 +102,7 @@ Category:
 # Please explain how statistical uncertainties were estimated.
 #
 # If you have evaluated additional microstates, please report their SMILES strings and populations of all the microstates in this section.
-# If you used a microstate other than the challenge provided microstate (`microstate000`), please list your chosen `Molecule ID` (in the form of `SMXX_extra001`) along with the SMILES string in your methods description.
+# If you used a microstate other than the challenge provided microstate (`SMXX_micro000`), please list your chosen `Molecule ID` (in the form of `SMXX_extra001`) along with the SMILES string in your methods description.
 #
 # Use as many lines of text as you need.
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
@@ -110,4 +117,3 @@ Method:
 # Non-ranked submissions are accepted so we can verify that they were made before the deadline.
 # The "Ranked:" keyword is required, and expects a Boolean value (True/False)
 Ranked:
-True
