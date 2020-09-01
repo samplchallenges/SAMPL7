@@ -129,7 +129,7 @@ Physical (MM)
 # Please include the values of key parameters with units.
 # Please explain how statistical uncertainties were estimated.
 #
-# If you have evaluated additional microstates, please report their SMILES strings and populations of all the microstates in this section.
+# If you have evaluated additional microstates, please report the "Molecule ID of additional microstate" used, the SMILES strings and populations of all the microstates in this section.
 # If you used a microstate other than the challenge provided microstate (`microstate000`), please list your chosen `Molecule ID` (in the form of `SMXX_extra001`) along with the SMILES string in your methods description.
 #
 # Use as many lines of text as you need.
