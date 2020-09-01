@@ -8,7 +8,7 @@ Octanol may be found in the aqueous phase. The mole fraction of water in octanol
 
 - Fill one [`submission_template/logP_prediction_template.csv`](submission_template/logP_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
-- Your transfer free energy prediction for the neutral form does NOT have to be `microstate000` (the challenge provided microstate). If you use a microstate other than the challenge provided microstate, please use a different `Molecule ID` in the form of `SMXX_extra001` (number can vary).
+- Your transfer free energy prediction for the neutral form does NOT have to be `microstate000` (the challenge provided microstate). If you use a microstate other than the challenge provided microstate, please use a different `Molecule ID` in the form of `SMXX_extra001` (number can vary). In the `METHOD DESCRIPTION SECTION` in the submission file, please include the `Molecule ID` and SMILES string of the microstate that was used.
 
 - You may report only 1 transfer free energy value per molecule per method.
 
@@ -43,7 +43,7 @@ If multiple submissions are incorrectly provided as "ranked" by a single partici
 
 ## Predictions using multiple microstates
 If you have evaluated additional microstates for some of the molecules, we ask that you use the following formating for these predictions:
-`ID tag`, `Molecule ID` `Molecule ID of additional microstate`, `TFE`, `TFE SEM`, `TFE model uncertainty`
+`ID tag`, `Molecule ID` `Molecule ID of additional microstate`, `TFE`, `TFE SEM`, `TFE model uncertainty`.
 Note, there is no comma between `Molecule ID` and `Molecule ID of additional microstate`, this is for submission handling purposes. If you have evaluated additional microstates then the molecule ID of the additional microstate needs to be in the format: `SMXX_extra001` (number can vary). If multiple microstates are used, please report the order of population in the aqueous phase in descending order. Please list your chosen microstate populations and SMILES strings in the `METHOD DESCRIPTION SECTION` in your submission file.
 
 ## Experimental details
