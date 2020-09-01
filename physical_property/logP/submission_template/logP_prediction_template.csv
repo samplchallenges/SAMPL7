@@ -9,12 +9,26 @@
 #
 # PREDICTION SECTION
 #
-# It is mandatory to submit water to octanol (ΔG_octanol - ΔG_water) transfer free energy (TFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
+# It is mandatory to submit  water to octanol (ΔG_octanol - ΔG_water) transfer free energy (TFE) predictions for all 22 molecules.
+# Incomplete submissions will not be accepted.
 # The energy units must be in kcal/mol.
 # Please report TFE standard error of the mean (SEM) and TFE model uncertainty.
 #
 # The data in each prediction line should be structured as follows:
-# Molecule ID, TFE, TFE SEM, TFE model uncertainty
+# ID tag, Molecule ID, TFE, TFE SEM, TFE model uncertainty
+#
+# Your transfer free energy prediction for the neutral form does NOT have to be `microstate000` (the challenge provided microstate).
+# If you use a microstate other than the challenge provided microstate, please use a different `Molecule ID` in the form of `SMXX_extra001` (number can vary) and include the smiles string in your methods description.
+#
+# If you have evaluated additional microstates, include the following:
+# ID tag, Molecule ID Molecule ID of additional microstate, TFE, TFE SEM, TFE model uncertainty
+# Note, there is no comma between "Molecule ID" and "Molecule ID of additional microstate", this is for submission handling purposes.
+#
+# Only the first entry in the second column (Molecule ID) is required.
+#
+# If you have evaluated additional microstates then the `Molecule ID` of the additional microstate needs to be in the format: `SMXX_extra001` (number can vary)
+# If multiple microstates are used, please report the order of population in the aqueous phase in descending order.
+# Please list microstate populations and SMILES strings in the `METHOD DESCRIPTION SECTION` section further below.
 #
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
@@ -79,6 +93,10 @@ Category:
 # Level of details should be roughly equivalent to that used in a publication.
 # Please include the values of key parameters with units.
 # Please explain how statistical uncertainties were estimated.
+#
+# If you have evaluated additional microstates, please report their SMILES strings and populations of all the microstates in this section.
+# If you used a microstate other than the challenge provided microstate (`microstate000`), please list your chosen `Molecule ID` (in the form of `SMXX_extra001`) along with the SMILES string in your methods description.
+#
 # Use as many lines of text as you need.
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
