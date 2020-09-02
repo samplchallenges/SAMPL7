@@ -2,7 +2,7 @@
 
 The SAMPL7 pK<sub>a</sub> Challenge consists of predicting microscopic pK<sub>a</sub>'s of small molecules. Participants are asked to report relative free energies of protonation microstates calculated based on a reference state and pH. Relative free energies of microstates were chosen as the reporting format rather than the microscopic pK<sub>a</sub> values given the recent work of Gunner et al.[1]
 
-A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/).
+A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/). Predictions must be submitted via our AWS submissions server, [http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa).
 
 For each molecule, the relative free energy must be predicted between the reference microstate and the rest of the enumerated microstates for that molecule at a reference pH of 0. The first microstate in each CSV file indicated by `SMXX_micro000` is our selected neutral reference state. For example, for molecule SM25, if the reference microstate is `SM25_micro000`, then relative free energies must be computed between `SM25_micro000` and `SM25_micro001`, `SM25_micro000` and `SM25_micro002`, and `SM25_micro000` and `SM25_micro003` (at a pH of 0).
 

@@ -1,6 +1,6 @@
 ## log *P* Challenge Instructions
 
-A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/).
+A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/). Predictions must be submitted via our AWS submissions server, [http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop).
 
 For each molecule, participants must predict the difference in free energy (the transfer free energy) for the neutral form between water and octanol. The transfer free energy can be calculated from the difference in solvation free energy into octanol and hydration free energy: ΔG<sub>*transfer*</sub> = ΔG<sub>*octanol*</sub>-ΔG<sub>*water*</sub>[1,2].
 
