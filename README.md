@@ -24,11 +24,11 @@ We're running a [2020 SAMPL virtual workshop on Nov. 4](https://www.gdch.de/gcc2
 - Protein-ligand details on the [PHIP2 stage 1-3 challenges](protein_ligand/README.md), in the `protein_ligand` directory.
 - [PHIP2 challenge stage 1-3 submission instructions](protein_ligand_instructions.md), in the `protein_ligand_instructions.md` file.
 - [Details of the SAMPL7 physical property challenge](physical_property/) on log *P*, pK<sub>a</sub> and permeability. Input files, instructions, submission formats, and example submission formats are available in the subdirectories for the individual challenges.
+- SAMPL7 physical property submission instructions and submission server links ([SAMPL7 pKa submission](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa), [SAMPL7 logP/permeability submission](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop))
 
-The SAMPL7 physical property challenge is now open! All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge.
+The SAMPL7 physical property challenge is now open! All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge. Note the first phase of the SAMPL8 host-guest challenge is now open on the SAMPL8 GitHub repo.
 
 ## What's coming
-- SAMPL7 physical property submission server links/final submission instructions
 - PHIPA analysis
 
 ## Disclaimers:
@@ -50,6 +50,7 @@ The SAMPL7 physical property challenge is now open! All three host-guest challen
 
 ### Changes not in a release
 - **Finalize physical property format** (Sept. 1, 2020): Update submission formats to include some required fields that had previously been left out (e.g. participant name/organization, and whether submission is ranked). **Changed required format for logP and permeability to better handle molecule ID/choice of tautomer.**
+- **Add SAMPL7 physical property submission links** (Sept. 2, 2020)
 
 
 ## Challenge overview

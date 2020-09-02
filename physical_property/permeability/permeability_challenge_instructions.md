@@ -1,6 +1,6 @@
 ## PAMPA permeability Challenge Instructions
 
-A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/).
+A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/). Predictions must be submitted via our AWS submissions server, [http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop).
 
 For each molecule, we are asking participants to predict the log of the apparent permeability coefficient  log<sub>*P*<sub>*app*</sub></sub>. Experimental PAMPA permeability measurements include effective permeability and membrane retention.
 
