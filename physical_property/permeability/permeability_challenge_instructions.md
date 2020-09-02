@@ -8,9 +8,9 @@ For each molecule, we are asking participants to predict the log of the apparent
 - Fill one [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
 
-- Your logPapp predictions do NOT have to use the challenge provided molecules in the `SAMPL7_molecule_ID_and_SMILES.csv` file. If you use a microstate other than the challenge provided microstate, please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form of `SMXX_ext001` (number can vary). In the `METHOD DESCRIPTION SECTION` in the submission file, please list the molecule ID and the SMILES string of the microstate that was used.
+- Your logPapp predictions do NOT have to use the challenge provided molecules in the `SAMPL7_molecule_ID_and_SMILES.csv` file. If you used the permeability challenge provided molecule (as found in the `SAMPL7_molecule_ID_and_SMILES.csv` file) then please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form `SMXX`. If you used a microstate that was provided in the pKa challenge please use that name in the `Molecule ID/IDs considered (no commas)` section (e.g. SM26_micro000, SM26_micro001, etc.). If you used a microstate NOT provided in any of the current SAMPL challenges you must use the form `SMXX_extraXXX` (where XXX can be any number).
 
-- If multiple microstates are used, please report the order of population in the aqueous phase in descending order. See further below for more info regarding predictions using multiple microstates.
+- If you have evaluated additional microstates that are not found in the SAMPL challenge then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_extXXX` (number can vary). If multiple microstates are used, please report the order of population in the aqueous phase in descending order. Please list your chosen molecule ID, microstate populations and SMILES strings in the `METHOD DESCRIPTION SECTION` in your submission file.
 
 - You may report only 1 log<sub>*P*<sub>*app*</sub></sub> value per molecule per method.
 
@@ -41,9 +41,6 @@ As per our policy on multiple submissions, each participant or organization is a
 
 If multiple submissions are incorrectly provided as "ranked" by a single participant, we will judge only one of them; likely this will be the first submitted, but it may be a random submission.
 
-## Predictions using multiple microstates
-If you have evaluated additional microstates for some of the molecules, we ask that you use the following formating for these predictions:
-`ID tag`, `Molecule ID/IDs considered (no commas)`, `TFE`, `TFE SEM`, `TFE model uncertainty`. If you have evaluated additional microstates then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_ext001` (number can vary). If multiple microstates are used, please report the order of population in the aqueous phase in descending order. Please list your chosen molecule ID, microstate populations and SMILES strings in the `METHOD DESCRIPTION SECTION` in your submission file.
 
 ## Experimental details
 Effective permeability (log<sub>*P*<sub>*app*</sub></sub>) was measured by Parallel Artificial Membrane Permeability Assay (PAMPA) using the Corning GentestTM pre-coated PAMPA plate system with quantitation by HPLC-UV (experiments carried out by Analyza, Inc).
