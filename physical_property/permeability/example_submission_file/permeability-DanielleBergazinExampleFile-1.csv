@@ -12,48 +12,55 @@
 # Incomplete submissions will not be accepted.
 #
 # Please report the general molecule `ID tag` in the form of `SMXX` (e.g. SM25, SM26, etc).
-# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section (e.g. `SM25_mol000`, `SM26_mol000 SM26_ext001`)
+# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section- if you used
+# the the challenge provided molecule (as found in the `SAMPL7_molecule_ID_and_SMILES.csv` file in the permeability repo) use the form `SMXX`,
+# if you used a microstate that was provided in the pKa challenge please use that name here (e.g. SM26_micro000, SM26_micro001, etc), and
+# if you used a microstate not provided in the sampl challenge you must use the form `SMXX_extraXXX` (where XXX can be any number).
+#
 # Please report apparent permeability coefficient (logPapp) standard error of the mean (SEM) and logPapp model uncertainty.
 #
 # The data in each prediction line should be structured as follows:
 # ID tag, Molecule ID/IDs considered (no commas), logPapp, logPapp SEM, logPapp model uncertainty
 #
 # Your logPapp predictions do NOT have to use the challenge provided molecules in the `SAMPL7_molecule_ID_and_SMILES.csv` file.
-# If you use a microstate other than the one listed in the challenge provided files, please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form of `SMXX_ext001` (number can vary) and please list the molecule ID and it's SMILES string in your methods description in the `METHOD DESCRIPTION SECTION`.
+# If you use a microstate other than the one listed in the challenge provided files, please fill out the `Molecule ID/IDs considered (no commas)`
+# section using a molecule ID in the form of `SMXX_extra001` (number can vary) and please list the molecule ID and it's SMILES string in your methods
+# description in the `METHOD DESCRIPTION SECTION`.
 #
 # Only one entry in the second column (`Molecule ID/IDs considered (no commas)`) is required, but you should list all IDs considered/input to your calculations. See challenge instructions.
 #
-# If you have evaluated additional microstates then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_ext001` (number can vary).
+# If you have evaluated additional microstates then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_extra001` (number can vary).
 # If multiple microstates are used, please report the order of population in the aqueous phase in descending order.
 # Please list microstate populations, SMILES strings and the molecule IDs in the `METHOD DESCRIPTION SECTION` section further below.
 #
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
-# Example of a submission that only used the challenge provided microstate (from the `SAMPL7_molecule_ID_and_SMILES.csv` file) is indicated by `SM25_mol000`.
-SM25,SM25_mol000,2.25,1.02,2
-# Example of a submission that used the challenge provided microstate (indicated by the form `SMXX_mol000`) and an additional two microstates (indicated by SM26_ext001 and SM26_ext002)
-SM26,SM26_mol000 SM26_ext001 SM26_ext002,5.14,3.46,2
-# Example of a submission that did not use the challenge provided microstate, but used a different microstate (indicated bby the form SMXX_ext001)
-SM27,SM27_ext001,0.41,0.88,2
-SM28,SM28_mol000,1.28,1.34,2
-SM29,SM29_mol000,6.4,0.75,2
-SM30,SM30_mol000,2.07,1.04,2
-SM31,SM31_mol000,-0.75,2.43,1.5
-SM32,SM32_mol000,2.19,1.09,1.5
-SM33,SM33_mol000,4.05,0.82,1.5
-SM34,SM34_mol000,1.51,1.88,1.5
-SM35,SM35_mol000,3.31,2.22,1.5
-SM36,SM36_mol000,2.07,1.04,2
-SM37,SM37_mol000,4.05,0.82,1.5
-SM38,SM38_mol000,0.41,0.88,2
-SM39,SM39_mol000,2.25,1.02,2
-SM40,SM40_mol000,1.28,1.34,2
-SM41,SM41_mol000,6.4,0.75,2
-SM42,SM42_mol000,0.41,0.88,2
-SM43,SM43_mol000,3.01,1.09,1.5
-SM44,SM44_mol000,2.09,0.09,1.5
-SM45,SM45_mol000,1.19,1.04,1.5
-SM46,SM46_mol000,1.05,2.09,1.5
+# Example of a submission that only used the challenge provided microstate (from the `SAMPL7_molecule_ID_and_SMILES.csv` file and indicated by the form `SMXX`).
+SM25,SM25,2.25,1.02,2
+# Example of a submission that used the challenge provided microstate (from the `SAMPL7_molecule_ID_and_SMILES.csv` file and indicated by the form
+# `SMXX`) and an additional two microstates (in the form SMXX_extraXXX and SMXX_extraXXX)
+SM26,SM26 SM26_extra001 SM26_extra002,5.14,3.46,2
+# Example of a submission that did not use a SAMPL provided microstate, but used a different microstate (indicated by the form SMXX_extraXXX)
+SM27,SM27_extra001,0.41,0.88,2
+SM28,SM28,1.28,1.34,2
+SM29,SM29,6.4,0.75,2
+SM30,SM30,2.07,1.04,2
+SM31,SM31,-0.75,2.43,1.5
+SM32,SM32,2.19,1.09,1.5
+SM33,SM33,4.05,0.82,1.5
+SM34,SM34,1.51,1.88,1.5
+SM35,SM35,3.31,2.22,1.5
+SM36,SM36,2.07,1.04,2
+SM37,SM37,4.05,0.82,1.5
+SM38,SM38,0.41,0.88,2
+SM39,SM39,2.25,1.02,2
+SM40,SM40,1.28,1.34,2
+SM41,SM41,6.4,0.75,2
+SM42,SM42,0.41,0.88,2
+SM43,SM43,3.01,1.09,1.5
+SM44,SM44,2.09,0.09,1.5
+SM45,SM45,1.19,1.04,1.5
+SM46,SM46,1.05,2.09,1.5
 
 #
 #
@@ -129,16 +136,18 @@ Physical (MM)
 # Please include the values of key parameters with units.
 # Please explain how statistical uncertainties were estimated.
 #
-# If you have evaluated additional microstates, please report their SMILES strings and populations of all the microstates in this section.
-# If you used a microstate other than the challenge provided microstate found in the `SAMPL7_molecule_ID_and_SMILES.csv` file, please list your chosen molecule ID (in the form of `SMXX_extra001`) along with the SMILES string in your methods description.
+# If you have evaluated additional microstates (that are not found in the separate pKa challenge), please report their SMILES strings
+# and populations in this section.
+# If you used a microstate other than the challenge provided microstate found in the `SAMPL7_molecule_ID_and_SMILES.csv` file, please
+# list your chosen molecule ID (in the form of `SMXX_extraXXX`) along with the SMILES string in your methods description.
 #
 # Use as many lines of text as you need.
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
 Free text methods section describing the approach and calculations in full detail.
-SM26_mol000, challenge provided SMILES string for SM25, 60% population
-SM26_ext001, CS(=O)(=O)Nc1, 25% population
-SM26_ext002, CS(=O)(=O)[N-], 15% population
+SM26, challenge provided SMILES string for SM25, 60% population
+SM26_extra001, CS(=O)(=O)Nc1, 25% population
+SM26_extra002, CS(=O)(=O)[N-], 15% population
 
 #
 #
