@@ -14,7 +14,7 @@
 # The energy units must be in kcal/mol.
 
 # Please report the general molecule `ID tag` in the form of `SMXX` (e.g. SM25, SM26, etc).
-# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section (e.g. `SM25_micro000`, SM25_extra001`)
+# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section (e.g. `SM25_micro000`, `SM26_micro000 SM26_extra001`)
 # Please report TFE standard error of the mean (SEM) and TFE model uncertainty.
 #
 # The data in each prediction line should be structured as follows:
