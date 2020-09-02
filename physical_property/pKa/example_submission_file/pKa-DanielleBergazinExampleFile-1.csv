@@ -30,10 +30,61 @@ SM26_micro000,SM26_micro001,-1,4.21,0.12,0.02
 SM26_micro000,SM26_micro002,0,7.01,0.58,0.02
 SM26_micro000,SM26_micro003,-1,4.35,1.95,0.02
 SM27_micro000,SM27_micro001,0,2.25,0.02,0.02
-SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 #Example of including an additonal microstate
+# Example of including an extra microstate
+SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 
+SM28_micro000,SM28_micro001,-1,2.25,0.02,0.02
+SM28_micro000,SM28_micro002,0,1.01,0.08,0.02
+SM28_micro000,SM28_micro003,-1,4.32,1.02,0.02
+SM29_micro000,SM29_micro001,-1,2.12,0.02,0.02
+SM30_micro000,SM30_micro001,-1,3.89,0.02,0.02
+SM31_micro000,SM31_micro001,-1,1.67,0.02,0.02
+SM32_micro000,SM32_micro001,-1,2.25,0.02,0.02
+SM33_micro000,SM33_micro001,-1,2.36,0.02,0.02
+SM34_micro000,SM34_micro001,-1,3.32,0.02,0.02
+SM35_micro000,SM35_micro001,-1,1.76,0.02,0.02
+SM35_micro000,SM35_micro002,0,1.01,0.08,0.02
+SM35_micro000,SM35_micro003,1,3.02,0.38,0.32
+SM36_micro000,SM36_micro001,-1,2.25,0.02,0.02
+SM36_micro000,SM36_micro002,0,1.01,0.08,0.02
+SM36_micro000,SM36_micro003,1,1.01,0.08,0.02
+SM37_micro000,SM37_micro001,+1,2.25,0.02,0.02
+SM37_micro000,SM37_micro002,0,1.01,0.78,0.02
+SM37_micro000,SM37_micro003,0,1.41,0.08,0.33
+SM37_micro000,SM37_micro004,-1,1.41,0.08,0.02
+SM37_micro000,SM37_micro005,+1,1.06,0.08,0.01
+SM38_micro000,SM38_micro001,-1,2.25,0.02,0.07
+SM39_micro000,SM39_micro001,-1,2.23,0.12,0.04
+SM40_micro000,SM40_micro001,-1,2.25,0.32,0.03
+SM40_micro000,SM40_micro002,+1,1.01,0.08,0.05
+SM41_micro000,SM41_micro001,-1,2.25,0.02,0.22
+SM41_micro000,SM41_micro002,+1,1.05,0.89,0.54
+SM42_micro000,SM42_micro001,-1,2.25,0.02,0.23
+SM42_micro000,SM42_micro002,+1,1.03,0.45,0.77
+SM43_micro000,SM43_micro001,-1,2.25,0.02,0.54
+SM43_micro000,SM43_micro002,+1,1.01,0.08,0.99
+SM43_micro000,SM43_micro003,+2,3.76,0.76,0.21
+SM44_micro000,SM44_micro001,-1,2.25,0.02,0.34
+SM44_micro000,SM44_micro002,+1,1.45,0.08,0.12
+SM45_micro000,SM45_micro001,-1,3.25,0.45,0.02
+SM45_micro000,SM45_micro002,+1,1.32,0.08,0.87
+SM46_micro000,SM46_micro001,-1,2.89,0.02,0.44
+SM46_micro000,SM46_micro002,+1,1.01,0.21,0.02
+SM46_micro000,SM46_micro003,+2,1.67,0.08,0.56
 
+#
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Teresa Danielle Bergazin
 
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+University of California Irvine
 
+#
+#
 # NAME SECTION
 #
 # Please provide an informal but informative name of the method used.
@@ -42,8 +93,8 @@ SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 #
 Name:
 RFE-prediction-method-name
 
-
-
+#
+#
 # COMPUTE TIME SECTION
 #
 # Please provide the average compute time across all of the molecules.
@@ -55,8 +106,7 @@ Compute time:
 28 hours, CPU
 5.5 hours, GPU
 
-
-
+#
 # COMPUTING AND HARDWARE SECTION
 #
 # Please provide details of the computing resources that were used to train models and make predictions.
@@ -69,8 +119,6 @@ The replicas were divided into two sets of the same size and propagated in paral
 stage was performed serially. We estimate the total wall-clock time spent doing parallel/serial work to be
 approximately 95%/5% respectively.
 
-
-
 # SOFTWARE SECTION
 #
 # List all major software packages used and their versions.
@@ -80,8 +128,6 @@ Software:
 OpenMM 7.1.1
 OpenMMTools 0.13.4
 YANK 0.19.4
-
-
 
 # METHOD CATEGORY SECTION
 #
@@ -98,8 +144,6 @@ YANK 0.19.4
 Category:
 QSPR/ML
 
-
-
 # METHOD DESCRIPTION SECTION
 #
 # Methodology and computational details.
@@ -110,3 +154,14 @@ QSPR/ML
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
 Free text methods section describing the approach and calculations in full detail.
+
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True

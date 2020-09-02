@@ -8,39 +8,67 @@
 #
 # PREDICTION SECTION
 #
-# It is mandatory to submit permeability predictions for all 22 molecules. Incomplete submissions will not be accepted.
+# It is mandatory to submit permeability predictions for all 22 molecules.
+# Incomplete submissions will not be accepted.
+#
+# Please report the general molecule `ID tag` in the form of `SMXX` (e.g. SM25, SM26, etc).
+# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section (e.g. `SM25_mol000`, `SM26_mol000 SM26_ext001`)
 # Please report apparent permeability coefficient (logPapp) standard error of the mean (SEM) and logPapp model uncertainty.
 #
 # The data in each prediction line should be structured as follows:
-# Molecule ID, logPapp, logPapp SEM, logPapp model uncertainty
+# ID tag, Molecule ID/IDs considered (no commas), logPapp, logPapp SEM, logPapp model uncertainty
+#
+# Your logPapp predictions do NOT have to use the challenge provided molecules in the `SAMPL7_molecule_ID_and_SMILES.csv` file.
+# If you use a microstate other than the one listed in the challenge provided files, please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form of `SMXX_ext001` (number can vary) and please list the molecule ID and it's SMILES string in your methods description in the `METHOD DESCRIPTION SECTION`.
+#
+# Only one entry in the second column (`Molecule ID/IDs considered (no commas)`) is required, but you should list all IDs considered/input to your calculations. See challenge instructions.
+#
+# If you have evaluated additional microstates then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_ext001` (number can vary).
+# If multiple microstates are used, please report the order of population in the aqueous phase in descending order.
+# Please list microstate populations, SMILES strings and the molecule IDs in the `METHOD DESCRIPTION SECTION` section further below.
 #
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
-SM25,2.25,1.02,2
-SM26,5.14,3.46,2
-SM27,0.41,0.88,2
-SM28,1.28,1.34,2
-SM29,6.4,0.75,2
-SM30,2.07,1.04,2
-SM31,-0.75,2.43,1.5
-SM32,2.19,1.09,1.5
-SM33,4.05,0.82,1.5
-SM34,1.51,1.88,1.5
-SM35,3.31,2.22,1.5
-SM36,2.07,1.04,2
-SM37,4.05,0.82,1.5
-SM38,0.41,0.88,2
-SM39,2.25,1.02,2
-SM40,1.28,1.34,2
-SM41,6.4,0.75,2
-SM42,0.41,0.88,2
-SM43,3.01,1.09,1.5
-SM44,2.09,0.09,1.5
-SM45,1.19,1.04,1.5
-SM46,1.05,2.09,1.5
+# Example of a submission that only used the challenge provided microstate (from the `SAMPL7_molecule_ID_and_SMILES.csv` file) is indicated by `SM25_mol000`.
+SM25,SM25_mol000,2.25,1.02,2
+# Example of a submission that used the challenge provided microstate (indicated by the form `SMXX_mol000`) and an additional two microstates (indicated by SM26_ext001 and SM26_ext002)
+SM26,SM26_mol000 SM26_ext001 SM26_ext002,5.14,3.46,2
+# Example of a submission that did not use the challenge provided microstate, but used a different microstate (indicated bby the form SMXX_ext001)
+SM27,SM27_ext001,0.41,0.88,2
+SM28,SM28_mol000,1.28,1.34,2
+SM29,SM29_mol000,6.4,0.75,2
+SM30,SM30_mol000,2.07,1.04,2
+SM31,SM31_mol000,-0.75,2.43,1.5
+SM32,SM32_mol000,2.19,1.09,1.5
+SM33,SM33_mol000,4.05,0.82,1.5
+SM34,SM34_mol000,1.51,1.88,1.5
+SM35,SM35_mol000,3.31,2.22,1.5
+SM36,SM36_mol000,2.07,1.04,2
+SM37,SM37_mol000,4.05,0.82,1.5
+SM38,SM38_mol000,0.41,0.88,2
+SM39,SM39_mol000,2.25,1.02,2
+SM40,SM40_mol000,1.28,1.34,2
+SM41,SM41_mol000,6.4,0.75,2
+SM42,SM42_mol000,0.41,0.88,2
+SM43,SM43_mol000,3.01,1.09,1.5
+SM44,SM44_mol000,2.09,0.09,1.5
+SM45,SM45_mol000,1.19,1.04,1.5
+SM46,SM46_mol000,1.05,2.09,1.5
 
+#
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Teresa Danielle Bergazin
 
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+University of California Irvine
 
+#
+#
 # NAME SECTION
 #
 # Please provide an informal but informative name of the method used.
@@ -49,8 +77,8 @@ SM46,1.05,2.09,1.5
 Name:
 permeability-prediction-method-name
 
-
-
+#
+#
 # COMPUTE TIME SECTION
 #
 # Please provide the average compute time across all of the molecules.
@@ -62,8 +90,7 @@ Compute time:
 28 hours, CPU
 5.5 hours, GPU
 
-
-
+#
 # COMPUTING AND HARDWARE SECTION
 #
 # Please provide details of the computing resources that were used to train models and make predictions.
@@ -76,8 +103,6 @@ The replicas were divided into two sets of the same size and propagated in paral
 stage was performed serially. We estimate the total wall-clock time spent doing parallel/serial work to be
 approximately 95%/5% respectively.
 
-
-
 # SOFTWARE SECTION
 #
 # List all major software packages used and their versions.
@@ -88,8 +113,6 @@ OpenMM 7.1.1
 OpenMMTools 0.13.4
 YANK 0.19.4
 
-
-
 # METHOD CATEGORY SECTION
 #
 # State which method category your prediction method is better described as:
@@ -99,15 +122,30 @@ YANK 0.19.4
 Category:
 Physical (MM)
 
-
-
 # METHOD DESCRIPTION SECTION
 #
 # Methodology and computational details.
 # Level of details should be roughly equivalent to that used in a publication.
 # Please include the values of key parameters with units.
 # Please explain how statistical uncertainties were estimated.
+#
+# If you have evaluated additional microstates, please report their SMILES strings and populations of all the microstates in this section.
+# If you used a microstate other than the challenge provided microstate found in the `SAMPL7_molecule_ID_and_SMILES.csv` file, please list your chosen molecule ID (in the form of `SMXX_extra001`) along with the SMILES string in your methods description.
+#
 # Use as many lines of text as you need.
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
 Free text methods section describing the approach and calculations in full detail.
+SM26_mol000, challenge provided SMILES string for SM25, 60% population
+SM26_ext001, CS(=O)(=O)Nc1, 25% population
+SM26_ext002, CS(=O)(=O)[N-], 15% population
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True

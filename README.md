@@ -49,6 +49,7 @@ The SAMPL7 physical property challenge is now open! All three host-guest challen
 - **Relase 0.5** (Aug. 6, 2020, DOI [10.5281/zenodo.3975152](https://dx.doi.org/10.5281/zenodo.3975152)): Adds PHIP2 components from 2019; corrects an OctaAcid value; brings in host-guest challenge results and reference calculations; adds details on SAMPL7 physical property (pKa, logP, logD, PAMPA permeability) challenge along with inputs and submission formats.
 
 ### Changes not in a release
+- **Finalize physical property format** (Sept. 1, 2020): Update submission formats to include some required fields that had previously been left out (e.g. participant name/organization, and whether submission is ranked). **Changed required format for logP and permeability to better handle molecule ID/choice of tautomer.**
 
 
 ## Challenge overview
