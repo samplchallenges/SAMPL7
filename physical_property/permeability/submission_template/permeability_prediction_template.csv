@@ -8,11 +8,24 @@
 #
 # PREDICTION SECTION
 #
-# It is mandatory to submit permeability predictions for all 22 molecules. Incomplete submissions will not be accepted.
+# It is mandatory to submit permeability predictions for all 22 molecules.
+# Incomplete submissions will not be accepted.
+#
+# Please report the general molecule `ID tag` in the form of `SMXX` (e.g. SM25, SM26, etc).
+# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section (e.g. `SM25_mol000`, `SM26_mol000 SM26_ext001`)
 # Please report apparent permeability coefficient (logPapp) standard error of the mean (SEM) and logPapp model uncertainty.
 #
 # The data in each prediction line should be structured as follows:
-# Molecule ID, logPapp, logPapp SEM, logPapp model uncertainty
+# ID tag, Molecule ID/IDs considered (no commas), logPapp, logPapp SEM, logPapp model uncertainty
+#
+# Your logPapp predictions do NOT have to use the challenge provided molecules in the `SAMPL7_molecule_ID_and_SMILES.csv` file.
+# If you use a microstate other than the one listed in the challenge provided files, please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form of `SMXX_ext001` (number can vary) and please list the molecule ID and it's SMILES string in your methods description in the `METHOD DESCRIPTION SECTION`.
+#
+# Only one entry in the second column (`Molecule ID/IDs considered (no commas)`) is required, but you should list all IDs considered/input to your calculations. See challenge instructions.
+#
+# If you have evaluated additional microstates then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_ext001` (number can vary).
+# If multiple microstates are used, please report the order of population in the aqueous phase in descending order.
+# Please list microstate populations, SMILES strings and the molecule IDs in the `METHOD DESCRIPTION SECTION` section further below.
 #
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
@@ -77,6 +90,10 @@ Category:
 # Level of details should be roughly equivalent to that used in a publication.
 # Please include the values of key parameters with units.
 # Please explain how statistical uncertainties were estimated.
+#
+# If you have evaluated additional microstates, please report their SMILES strings and populations of all the microstates in this section.
+# If you used a microstate other than the challenge provided microstate found in the `SAMPL7_molecule_ID_and_SMILES.csv` file, please list your chosen molecule ID (in the form of `SMXX_extra001`) along with the SMILES string in your methods description.
+#
 # Use as many lines of text as you need.
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
