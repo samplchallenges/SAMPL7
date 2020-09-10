@@ -63,7 +63,7 @@ The following materials may be useful:
  (2) [Automation of Pre-coated PAMPA Plates Improves Predictability, Reproducibility, and Efficiency (Application Note 475)](experimental_resources/Application-Note-475.pdf)
  (3) [A Novel Design of Artificial Membrane for Improving the PAMPA Model](experimental_resources/A-Novel-Design-of-Artificial-Membrane-for-Improving-the-PAMPA-Model.pdf)
  (4) Supporting documents for the “Corning® Gentest™ Pre-coated PAMPA Plate System” can be found on the Corning website [here](https://ecatalog.corning.com/life-sciences/b2c/US/en/Microplates/Assay-Microplates/96-Well-Microplates/Corning%C2%AE-Gentest%E2%84%A2-Pre-coated-PAMPA-Plate-System,-with-Lid,-1-Pack,-5-Case/p/353015)
- (5) [Corning® Gentest™ PAMPA Plate System (Frequently Asked Questions)](Corning-GentestTM-PAMPA-Plate-System.pdf)
+ (5) [Corning® Gentest™ PAMPA Plate System (Frequently Asked Questions)](experimental_resources/Corning-GentestTM-PAMPA-Plate-System.pdf)
  (6) [Paper showing there may be regions of non-lamellar lipids](experimental_resources/molpharmaceut.2017.pdf)
 
 ## Method descriptions
