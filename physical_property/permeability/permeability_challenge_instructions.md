@@ -53,6 +53,19 @@ The concentration values from the Donor and Acceptor compartment are used in the
 
 ![permeability equations](../images/permeability_equations.jpeg)
 
+
+These experiments used the “Corning GentestTM pre-coated PAMPA plate system,” with a “lipid-oil-lipid” trilayer in the artificial membrane. The artificial membrane was composed of 40 µg of DOPC on both sides of the plate with a 1 µL deposit of hexadecane in the center, as indicated [here](experimental_resources/Application-Note-475.pdf).
+
+One problem is that we’re not sure how close this artificial bilayer is to a pure lipid bilayer. Some groups chose to use an unstressed DOPC bilayer for calculations.  However, there may be regions of non-lamellar lipids (as shown by Assmus et al. [3](experimental_resources/molpharmaceut.2017.pdf) or the surface area of the DOPC could be substantially changed by the formulation.
+
+The following materials may be useful:
+ (1) [Automation of Pre-coated PAMPA Plates Improves Predictability, Reproducibility, and Efficiency (Application Note 479)](experimental_resources/Application-Note-479.pdf)
+ (2) [Automation of Pre-coated PAMPA Plates Improves Predictability, Reproducibility, and Efficiency (Application Note 475)](experimental_resources/Application-Note-475.pdf)
+ (3) [A Novel Design of Artificial Membrane for Improving the PAMPA Model](experimental_resources/A-Novel-Design-of-Artificial-Membrane-for-Improving-the-PAMPA-Model.pdf)
+ (4) Supporting documents for the “Corning® Gentest™ Pre-coated PAMPA Plate System” can be found on the Corning website [here](https://ecatalog.corning.com/life-sciences/b2c/US/en/Microplates/Assay-Microplates/96-Well-Microplates/Corning%C2%AE-Gentest%E2%84%A2-Pre-coated-PAMPA-Plate-System,-with-Lid,-1-Pack,-5-Case/p/353015)
+ (5) [Corning® Gentest™ PAMPA Plate System (Frequently Asked Questions)](Corning-GentestTM-PAMPA-Plate-System.pdf)
+ (6) [Paper showing there may be regions of non-lamellar lipids](experimental_resources/molpharmaceut.2017.pdf)
+
 ## Method descriptions
 Your method descriptions should give a detailed description of your approach, ideally with enough detail that someone could reproduce the work. These often serve to allow researchers to coordinate on why calculations which seem similar performed quite different in practice, so you should be sure to address how you generated poses, selected protonation states and tautomers if applicable, dealt with counterions, and various other aspects that might be important, as well as any method-specific details that, if varied, might result in different performance. For example, with MD simulations, the amount of equilibration might impact performance significantly in some cases, so this should also be included.
 
@@ -66,3 +79,6 @@ Some participants use SAMPL to help evaluate various computational methods. To a
 [1] Bannan, Caitlin C., Kalistyn H. Burley, Michael Chiu, Michael R. Shirts, Michael K. Gilson, and David L. Mobley. “Blind Prediction of Cyclohexane–water Distribution Coefficients from the SAMPL5 Challenge.” Journal of Computer-Aided Molecular Design 30, no. 11 (November 2016): 927–44.
 
 [2] Comer, John, and Kin Tam. Lipophilicity Profiles: Theory and Measurement. Wiley-VCH: Zürich, Switzerland, 2001.
+
+[3] Assmus, Frauke, Alfred Ross, Holger Fischer, Joachim Seelig, and Anna Seelig. "31P and 1H NMR Studies of the Molecular Organization of Lipids in the Parallel Artificial Membrane Permeability Assay"
+Molecular Pharmaceutics 2017 14 (1), 284-295. DOI: 10.1021/acs.molpharmaceut.6b00889
