@@ -2,13 +2,14 @@
 
 A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/).
 
-For each molecule, we are asking participants to predict the log of the apparent permeability coefficient  log<sub>*P*<sub>*app*</sub></sub>. Experimental PAMPA permeability measurements include effective permeability and membrane retention.
+For each molecule, we are asking participants to predict the log of the apparent permeability coefficient log<sub>*P*<sub>*app*</sub></sub>. Experimental PAMPA permeability measurements include effective permeability and membrane retention.
 
 
 - Fill one [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
+- log<sub>*P*<sub>*app*</sub></sub> is unitless.
 
-- Your logPapp predictions do NOT have to use the challenge provided molecules in the `SAMPL7_molecule_ID_and_SMILES.csv` file. If you used the permeability challenge provided molecule (as found in the `SAMPL7_molecule_ID_and_SMILES.csv` file) then please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form `SMXX`. If you used a microstate that was provided in the pKa challenge please use that name in the `Molecule ID/IDs considered (no commas)` section (e.g. SM26_micro000, SM26_micro001, etc.). If you used a microstate NOT provided in any of the current SAMPL challenges you must use the form `SMXX_extraXXX` (where XXX can be any number).
+- Your log<sub>*P*<sub>*app*</sub></sub> predictions do NOT have to use the challenge provided molecules in the `SAMPL7_molecule_ID_and_SMILES.csv` file. If you used the permeability challenge provided molecule (as found in the `SAMPL7_molecule_ID_and_SMILES.csv` file) then please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form `SMXX`. If you used a microstate that was provided in the pKa challenge please use that name in the `Molecule ID/IDs considered (no commas)` section (e.g. SM26_micro000, SM26_micro001, etc.). If you used a microstate NOT provided in any of the current SAMPL challenges you must use the form `SMXX_extraXXX` (where XXX can be any number).
 
 - If you have evaluated additional microstates that are not found in the SAMPL challenge then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_extraXXX` (number can vary). If multiple microstates are used, please report the order of population in the aqueous phase in descending order. Please list your chosen molecule ID, microstate populations and SMILES strings in the `METHOD DESCRIPTION SECTION` in your submission file.
 
@@ -54,9 +55,9 @@ The concentration values from the Donor and Acceptor compartment are used in the
 ![permeability equations](../images/permeability_equations.jpeg)
 
 
-These experiments used the “Corning GentestTM pre-coated PAMPA plate system,” with a “lipid-oil-lipid” trilayer in the artificial membrane. The artificial membrane was composed of 40 µg of DOPC on both sides of the plate with a 1 µL deposit of hexadecane in the center, as indicated [here](experimental_resources/Application-Note-475.pdf).
+These experiments used the “Corning GentestTM pre-coated PAMPA plate system,” with a “lipid-oil-lipid” trilayer in the artificial membrane. The artificial membrane was composed of 40 µg of DOPC on both sides of the plate with a 1 µL deposit of hexadecane in the center, as indicated [here](https://www.corning.com/catalog/cls/documents/application-notes/an_DL_GT_053_Automation_of_Pre-coated_PAMPA_Plates_Improves_Predictability_Reproducibility_Efficiency.pdf).
 
-One problem is that we’re not sure how close this artificial bilayer is to a pure lipid bilayer. Some groups chose to use an unstressed DOPC bilayer for calculations.  However, there may be regions of non-lamellar lipids (as shown by Assmus et al. [3](experimental_resources/molpharmaceut.2017.pdf) or the surface area of the DOPC could be substantially changed by the formulation. This is an active topic of research and one where further work is needed.
+One problem is that we’re not sure how close this artificial bilayer is to a pure lipid bilayer. Some groups chose to use an unstressed DOPC bilayer for calculations. However, there may be regions of non-lamellar lipids (as shown by Assmus et al. [3]) or the surface area of the DOPC could be substantially changed by the formulation. This is an active topic of research and one where further work is needed.
 
 The following materials may be useful:
 1. Supporting documents for the “Corning® Gentest™ Pre-coated PAMPA Plate System” can be found on the [Corning website](https://ecatalog.corning.com/life-sciences/b2c/US/en/Microplates/Assay-Microplates/96-Well-Microplates/Corning%C2%AE-Gentest%E2%84%A2-Pre-coated-PAMPA-Plate-System,-with-Lid,-1-Pack,-5-Case/p/353015)
