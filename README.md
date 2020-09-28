@@ -51,6 +51,7 @@ The SAMPL7 physical property challenge is now open! All three host-guest challen
 ### Changes not in a release
 - **Finalize physical property format** (Sept. 1, 2020): Update submission formats to include some required fields that had previously been left out (e.g. participant name/organization, and whether submission is ranked). **Changed required format for logP and permeability to better handle molecule ID/choice of tautomer.**
 - **Add SAMPL7 physical property submission links** (Sept. 2, 2020)
+- Update physical property submission deadline to Oct. 8. (Sept. 28, 2020). **Format still to change.**
 
 
 ## Challenge overview
