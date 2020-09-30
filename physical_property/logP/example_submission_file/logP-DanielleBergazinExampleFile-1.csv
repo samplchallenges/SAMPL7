@@ -23,7 +23,7 @@
 # Your transfer free energy prediction for the neutral form does NOT have to be `SMXX_micro000` (which is the challenge provided neutral microstate).
 # If you use a microstate other than the challenge provided microstate, please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form of `SMXX_extra001` (number can vary) and please list the molecule ID and it's SMILES string in your methods description in the `METHOD DESCRIPTION SECTION`.
 #
-# You may optionally provide predicted logD values; these will be used as a consistency check on our estimated logD values sif you submit both logP and pKa values.
+# You may optionally provide predicted logD values; these will be used as a consistency check on our estimated logD values if you submit both logP and pKa values.
 #
 # Only one entry in the second column (`Molecule ID/IDs considered (no commas)`) is required, but you should list all IDs considered/input to your calculations. See challenge instructions.
 #
