@@ -51,7 +51,9 @@ The SAMPL7 physical property challenge is now open! All three host-guest challen
 ### Changes not in a release
 - **Finalize physical property format** (Sept. 1, 2020): Update submission formats to include some required fields that had previously been left out (e.g. participant name/organization, and whether submission is ranked). **Changed required format for logP and permeability to better handle molecule ID/choice of tautomer.**
 - **Add SAMPL7 physical property submission links** (Sept. 2, 2020)
-- Update physical property submission deadline to Oct. 8. (Sept. 28, 2020). **Format still to change.**
+- Update physical property submission deadline to Oct. 8 (Sept. 28, 2020).
+- Update physical property instructions for pKa, logP to clarify (Sept. 30, 2020). Format still the same, but now clarified -- especially for the pKa challenge. We also now highly encourage submission of (optional) logD predictions for the logP challenge.
+- **Added additional microstates for pKa challenge**, from Bogdan Iorga (Sept. 30, 2020). Updated instructions to clarify that any states not included in pKa predictions will be assumed to be unpopulated (so participants can omit these states). Updated pKa instructions/template to allow optional submission of macro pKa values.
 
 
 ## Challenge overview
@@ -70,7 +72,11 @@ The planned later stage of SAMPL7 focused on GSK physical property data is being
 
 We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
 
-pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates. We choose free energies rather than pK<sub>a</sub> values given the recent work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf). For the purposes of the pK<sub>a</sub> challenge all possible tautomers of each ionization (charge) state are defined as distinct protonation microstates. The partitioning prediction challenge will focus on predicting the difference in free energy for the neutral form between water and octanol. As a part of post prediction analysis challenge oraginzers will combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. A [PAMPA permeability](https://pubs.acs.org/doi/10.1021/jm060230%2B) prediction challenge will also be run in parallel to the pK<sub>a</sub> and partition coefficient challenge.
+pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates (which could be also thought of as the reaction free energy for that particular microstate transition; [see pKa instructions](https://github.com/samplchallenges/SAMPL7/blob/master/physical_property/pKa/pKa_challenge_instructions.md)). We choose free energies rather than pK<sub>a</sub> values given the recent work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf). For the purposes of the pK<sub>a</sub> challenge all possible tautomers of each ionization (charge) state are defined as distinct protonation microstates. Macro pK<sub>a</sub> values may be submitted to allow for a consistency check.
+
+The partitioning prediction challenge will focus on predicting the difference in free energy for the neutral form between water and octanol. As a part of post prediction analysis challenge oraginzers will combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. Participants may optionally submit their own log *D* values for a consistency check.
+
+A [PAMPA permeability](https://pubs.acs.org/doi/10.1021/jm060230%2B) prediction challenge will also be run in parallel to the pK<sub>a</sub> and partition coefficient challenge.
 
 All three challenges are optional, so participants may participate in all or any combination of these challenges.
 

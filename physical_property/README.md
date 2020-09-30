@@ -1,15 +1,21 @@
 # The SAMPL7 physical property challenge
 We are excited to announce a new set of SAMPL7 challenges focusing on pK<sub>a</sub>, partitioning, and permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provided Parallel Artificial Membrane Permeability Assay (PAMPA) permeability and melting point values they measured.
 
-pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates. We choose free energies rather than pK<sub>a</sub> values given the recent work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf). For the purposes of the pK<sub>a</sub> challenge all possible tautomers of each ionization (charge) state are defined as distinct protonation microstates. The partitioning prediction will focus on predicting the octanol-water partition coefficients. As a part of post prediction analysis challenge oraginzers will combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. A [PAMPA permeability](https://pubs.acs.org/doi/10.1021/jm970530e) prediction challenge will also be run in parallel to the pK<sub>a</sub> and partition coefficient challenge.
+
+pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates (which could be also thought of as the reaction free energy for that particular microstate transition; [see pKa instructions](https://github.com/samplchallenges/SAMPL7/blob/master/physical_property/pKa/pKa_challenge_instructions.md)). We choose free energies rather than pK<sub>a</sub> values given the recent work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf). For the purposes of the pK<sub>a</sub> challenge all possible tautomers of each ionization (charge) state are defined as distinct protonation microstates. Macro pK<sub>a</sub> values may be submitted to allow for a consistency check.
+
+The partitioning prediction challenge will focus on predicting the difference in free energy for the neutral form between water and octanol. As a part of post prediction analysis challenge oraginzers will combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. Participants may optionally submit their own log *D* values for a consistency check.
+
+A [PAMPA permeability](https://pubs.acs.org/doi/10.1021/jm970530e) prediction challenge will also be run in parallel to the pK<sub>a</sub> and partition coefficient challenge.
+
 All three challenges are optional, so participants may participate in all or any combination of these challenges.
 
 Additionally, there’s the opportunity to predict melting points. Please let us know if you are interested in this.
 
-Please sign up for our [e-mail list](https://mailchi.mp/272a7816e925/sampl7-physical-properties) for announcements of any changes. Be sure to also “watch” this GitHub repository.
+Please sign up for our [e-mail list](http://eepurl.com/dPj11j) for announcements of any changes (be sure to indicate interest in SAMPL7 physical properties). Be sure to also “watch” this GitHub repository.
 
 ## Challenge timing details
-Submissions to the SAMPL7 physical property challenge will be due September 30, 2020. Challenge participants will have the option of predicting relative free energies between microstates to determine pK<sub>a</sub><sup>[1](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf)</sup>, and/or the difference in free energy of the neutral molecules between water and octanol to determine partition coefficients, and/or the log<sub>*P*<sub>*app*</sub></sub> to determine permeabilities of 22 compounds.
+Submissions to the SAMPL7 physical property challenge will be due October 8, 2020. Challenge participants will have the option of predicting relative free energies between microstates to determine pK<sub>a</sub><sup>[1](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf)</sup>, and/or the difference in free energy of the neutral molecules between water and octanol to determine partition coefficients, and/or the log<sub>*P*<sub>*app*</sub></sub> to determine permeabilities of 22 compounds.
 
 Submission details, templates and instructions are linked to in the manifest.
 
