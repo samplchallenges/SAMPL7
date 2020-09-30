@@ -9,7 +9,7 @@ The first microstate in each CSV file indicated by `SMXX_micro000` is our select
 
 All possible tautomers of each ionization (charge) state are defined as distinct protonation microstates.
 
-If you are following the work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf) to understand this format, please note that the study contains some sign errors for DeltaG values, and indexing could perhaps use some clarification. In the notation of that paper, DeltaG<sub>ij</sub> is the free energy for the transition where state j is the reference state, e.g. the free energy for the reaction where j is a reactant and i is a product. Here we are asking for that same reaction free energy, where state j is `SMXX_micro000` and the other states you consider are compared relative to this state.
+If you are following the work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf) to understand this format, please note that the study contains some sign errors for ΔG values, and indexing could perhaps use some clarification. In the notation of that paper, ΔG<sub>ij</sub> is the free energy for the transition where state j is the reference state, e.g. the free energy for the reaction where j is a reactant and i is a product. Here we are asking for that same reaction free energy, where state j is `SMXX_micro000` and the other states you consider are compared relative to this state.
 
 On Sept. 30, 2020, we updated this repo to add some additional potential microstates identified by Bogdan Iorga. You are at liberty to include or neglect these microstates in your submission. However, please note that any microstates neglected in your submissions will be assumed to have *negligible population* relative to those included -- i.e. we will assume that the free energy for transition to those microstates is large and unfavorable.
 
@@ -67,7 +67,7 @@ Experiments using the Sirius T3 were done at 25°C. pKa determination with the S
 ## Method descriptions
 Your method descriptions should give a detailed description of your approach, ideally with enough detail that someone could reproduce the work. These often serve to allow researchers to coordinate on why calculations which seem similar performed quite different in practice, so you should be sure to address how you generated poses, selected protonation states and tautomers if applicable, dealt with counterions, and various other aspects that might be important, as well as any method-specific details that, if varied, might result in different performance. For example, with MD simulations, the amount of equilibration might impact performance significantly in some cases, so this should also be included.
 
-As per above, we are also highly recommending you include your predicted macro pKa values in this section in the specified format (see template) to allow us to use these for consistency checking later. 
+As per above, we are also highly recommending you include your predicted macro pKa values in this section in the specified format (see template) to allow us to use these for consistency checking later.
 
 ## Computational prediction methods
 You may use any method(s) you like to generate your predictions; e.g., molecular mechanics or quantum mechanics based methods, QSPR, empirical pK<sub>a</sub> prediction tools etc.
