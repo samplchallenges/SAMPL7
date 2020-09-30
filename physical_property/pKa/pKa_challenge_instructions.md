@@ -1,16 +1,29 @@
 ## pK<sub>a</sub> Challenge Instructions
 
-The SAMPL7 pK<sub>a</sub> Challenge consists of predicting microscopic pK<sub>a</sub>'s of small molecules. Participants are asked to report relative free energies of protonation microstates calculated based on a reference state and pH. Relative free energies of microstates were chosen as the reporting format rather than the microscopic pK<sub>a</sub> values given the recent work of Gunner et al.[1] **The submission deadline is Oct. 8, 2020**. **Submission instructions/formats are currently in flux; read below for more.**
+The SAMPL7 pK<sub>a</sub> Challenge consists of predicting microscopic pK<sub>a</sub>'s of small molecules. Participants are asked to report relative free energies of protonation microstates calculated based on a provided reference state and pH detailed below. Relative free energies of microstates were chosen as the reporting format rather than the microscopic pK<sub>a</sub> values given the recent work of Gunner et al.[1] **The submission deadline is Oct. 8, 2020**.
 
-A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/). Predictions must be submitted via our AWS submissions server, [http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa). **Note that as of Sept. 28, 2020, this format is being corrected/changed/clarified. Please follow our [email list](http://eepurl.com/dPj11j) (be sure to indicate interest in SAMPL7 and pKa) to get a notification when we fix the format and update instructions, likely Sept. 30 or Oct. 1**.
+### Specifying relative free energies
+For each molecule, the relative free energy must be predicted between the reference microstate and the rest of the enumerated microstates for that molecule at a reference pH of 0. In this case, we are after the relative state free energy including the proton free energy (if that is helpful in clarifying), which could also be called the reaction free energy for the microstate transition which has the reference state (`SMXX_micro000`) as the reactant and the alternate state as one of the products. If
 
-For each molecule, the relative free energy must be predicted between the reference microstate and the rest of the enumerated microstates for that molecule at a reference pH of 0. The first microstate in each CSV file indicated by `SMXX_micro000` is our selected neutral reference state. For example, for molecule SM25, if the reference microstate is `SM25_micro000`, then relative free energies must be computed between `SM25_micro000` and `SM25_micro001`, `SM25_micro000` and `SM25_micro002`, and `SM25_micro000` and `SM25_micro003` (at a pH of 0).
+The first microstate in each CSV file indicated by `SMXX_micro000` is our selected neutral reference state. For example, for molecule SM25, if the reference microstate is `SM25_micro000`, then relative free energies must be computed between `SM25_micro000` and `SM25_micro001`, `SM25_micro000` and `SM25_micro002`, and `SM25_micro000` and `SM25_micro003` (at a pH of 0).
 
 All possible tautomers of each ionization (charge) state are defined as distinct protonation microstates.
+
+If you are following the work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf) to understand this format, please note that the study contains some sign errors for DeltaG values, and indexing could perhaps use some clarification. In the notation of that paper, DeltaG<sub>ij</sub> is the free energy for the transition where state j is the reference state, e.g. the free energy for the reaction where j is a reactant and i is a product. Here we are asking for that same reaction free energy, where state j is `SMXX_micro000` and the other states you consider are compared relative to this state.
+
+On Sept. 30, 2020, we updated this repo to add some additional potential microstates identified by Bogdan Iorga. You are at liberty to include or neglect these microstates in your submission. However, please note that any microstates neglected in your submissions will be assumed to have *negligible population* relative to those included -- i.e. we will assume that the free energy for transition to those microstates is large and unfavorable.
+
+
+### Submitting your predictions
+A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/). Predictions must be submitted via our AWS submissions server, [http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa). **Note that as of Sept. 28, 2020, this format is being corrected/changed/clarified. Please follow our [email list](http://eepurl.com/dPj11j) (be sure to indicate interest in SAMPL7 and pKa) to get a notification when we fix the format and update instructions, likely Sept. 30 or Oct. 1**.
+
+### Filling out the submission file
 
 - Fill one [`submission_template/pKa_prediction_template.csv`](submission_template/pKa_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
 - Record the pair of microstates IDs associated with each relative free energy calculation between the reference state and the predicted microstates. Enumerated microstates, IDs, SMILES strings and SDF/MOL2 files can be found in https://github.com/samplchallenges/SAMPL7/tree/master/physical_property/pKa/microstates.
+
+- We **highly recommend including your predicted macroscopic pKa values for each compound in your `Method` section** in the specified format; see template. (We added this suggestion Sept. 30, as it will allow us to check that our analysis arrives at the same macro pKa values as yours does.)
 
 - If you have evaluated additional microstates, we ask that you include the same information as the other challenge molecules, but include the SMILES string in your submission and email a `.mol2` file of the microstate with explicit hydrogens and correct bond orders to `bergazin@uci.edu`. Additonal microstate molecule ID's must be in the form `SMXX_extra001`, where the molecule tag `SMXX` is followed by `_extra` and some number `001` with three characters. See [`here`](example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) for an example.
 
@@ -53,6 +66,8 @@ Experiments using the Sirius T3 were done at 25°C. pKa determination with the S
 
 ## Method descriptions
 Your method descriptions should give a detailed description of your approach, ideally with enough detail that someone could reproduce the work. These often serve to allow researchers to coordinate on why calculations which seem similar performed quite different in practice, so you should be sure to address how you generated poses, selected protonation states and tautomers if applicable, dealt with counterions, and various other aspects that might be important, as well as any method-specific details that, if varied, might result in different performance. For example, with MD simulations, the amount of equilibration might impact performance significantly in some cases, so this should also be included.
+
+As per above, we are also highly recommending you include your predicted macro pKa values in this section in the specified format (see template) to allow us to use these for consistency checking later. 
 
 ## Computational prediction methods
 You may use any method(s) you like to generate your predictions; e.g., molecular mechanics or quantum mechanics based methods, QSPR, empirical pK<sub>a</sub> prediction tools etc.
