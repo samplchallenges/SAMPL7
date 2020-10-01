@@ -6,6 +6,8 @@ For each molecule, participants must predict the difference in free energy (the 
 
 Octanol may be found in the aqueous phase. The mole fraction of water in octanol was measured as 0.2705 ± 0.0028 at 25°C[6].
 
+We would like to note that compounds `SM35`, `SM36` and `SM37` are enantiopure and have a chiral center. All other compounds are not chiral. **The files provided in this repository provided versions of these compounds with both specified and unspecified stereochemistry for these compounds** because we were not clear that they had been tested in enantiopure form. This was corrected on Oct. 1, 2020. We retain the full set of files here for historical reasons, but predictions should use the files with specified chirality.
+
 - Fill one [`submission_template/logP_prediction_template.csv`](submission_template/logP_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 
 - Your transfer free energy prediction for the neutral form does NOT have to be `SMXX_micro000` (the challenge provided microstate). If you use a microstate other than the challenge provided microstate, please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form of `SMXX_extra001` (number can vary). In the `METHOD DESCRIPTION SECTION` in the submission file, please list the molecule ID and the SMILES string of the microstate that was used.

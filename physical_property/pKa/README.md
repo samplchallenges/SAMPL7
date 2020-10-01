@@ -6,6 +6,7 @@ Instructions for the pK<sub>a</sub> challenge: [`pKa_challenge_instructions.md`]
 
 Submission template for the pK<sub>a</sub> challenge: [`submission_template/pKa_prediction_template.csv`](submission_template/pKa_prediction_template.csv)
 
+We would like to note that compounds `SM35`, `SM36` and `SM37` are enantiopure and have a chiral center. All other compounds are not chiral. The version of these compounds with specified chirality should be used; refer to challenge instructions for more details.
 
 Experimental pK<sub>a</sub> measurements will made available after the challenge deadline.
 
