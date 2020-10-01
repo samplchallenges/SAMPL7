@@ -4,6 +4,8 @@ A submission template file can be found in the [submission_template/](submission
 
 For each molecule, we are asking participants to predict the log of the apparent permeability coefficient log<sub>*P*<sub>*app*</sub></sub>. Experimental PAMPA permeability measurements include effective permeability and membrane retention.
 
+We would like to note that compounds `SM35`, `SM36` and `SM37` are enantiopure and have a chiral center. All other compounds are not chiral.
+
 
 - Fill one [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv) template for all molecules predicted with one method. You may submit predictions from multiple methods, but you should fill a separate template file for each different method.
 

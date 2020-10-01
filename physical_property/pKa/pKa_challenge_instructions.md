@@ -13,6 +13,8 @@ If you are following the work of [Gunner et al.](https://link.springer.com/conte
 
 On Sept. 30, 2020, we updated this repo to add some additional potential microstates identified by Bogdan Iorga. You are at liberty to include or neglect these microstates in your submission. However, please note that any microstates neglected in your submissions will be assumed to have *negligible population* relative to those included -- i.e. we will assume that the free energy for transition to those microstates is large and unfavorable.
 
+We also wanted to note that compounds `SM35`, `SM36` and `SM37` are enantiopure and have a chiral center. All other compounds are not chiral.
+
 
 ### Submitting your predictions
 A submission template file can be found in the [submission_template/](submission_template/) directory and an example submission file can be found in [example_submission_file/](example_submission_file/). Predictions must be submitted via our AWS submissions server, [http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa). **Note that as of Sept. 28, 2020, this format is being corrected/changed/clarified. Please follow our [email list](http://eepurl.com/dPj11j) (be sure to indicate interest in SAMPL7 and pKa) to get a notification when we fix the format and update instructions, likely Sept. 30 or Oct. 1**.
