@@ -54,6 +54,7 @@ The SAMPL7 physical property challenge is now open! All three host-guest challen
 - Update physical property submission deadline to Oct. 8 (Sept. 28, 2020).
 - Update physical property instructions for pKa, logP to clarify (Sept. 30, 2020). Format still the same, but now clarified -- especially for the pKa challenge. We also now highly encourage submission of (optional) logD predictions for the logP challenge.
 - **Added additional microstates for pKa challenge**, from Bogdan Iorga (Sept. 30, 2020). Updated instructions to clarify that any states not included in pKa predictions will be assumed to be unpopulated (so participants can omit these states). Updated pKa instructions/template to allow optional submission of macro pKa values.
+- **Note that experiments used specified chirality for certain physical property compounds**, `SM35`, `SM36` and `SM37`. So only the structures with specified chirality for these compounds should be used.
 
 
 ## Challenge overview

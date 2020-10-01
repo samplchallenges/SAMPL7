@@ -8,7 +8,7 @@ Instructions for the permeability challenge: [`permeability_challenge_instructio
 
 Submission template for the permeability challenge: [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv)
 
-Please note that permeabilities for compounds `SM33`, `SM35`, and `SM39` were *not* determined, so these compounds are optional. Additionally, compounds `SM35`, `SM36` and `SM37` are enantiopure and have a chiral center. All other compounds are not chiral.
+Please note that permeabilities for compounds `SM33`, `SM35`, and `SM39` were *not* determined, so these compounds are optional. Additionally, compounds `SM35`, `SM36` and `SM37` are enantiopure and have a chiral center. All other compounds are not chiral. The version of these compounds with specified chirality should be used; refer to challenge instructions for more details.
 
 Experimental permeability data will made available after the challenge deadline.
 
