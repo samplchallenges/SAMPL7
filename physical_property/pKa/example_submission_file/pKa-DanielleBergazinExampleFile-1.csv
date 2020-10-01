@@ -31,7 +31,7 @@ SM26_micro000,SM26_micro002,0,7.01,0.58,0.02
 SM26_micro000,SM26_micro003,-1,4.35,1.95,0.02
 SM27_micro000,SM27_micro001,0,2.25,0.02,0.02
 # Example of including an extra microstate
-SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2 
+SM27_micro000,SM27_extra001,-1,2.25,0.02,0.02,CC1(COC1)[N-]S(=O)(=O)CCc2ccccc2
 SM28_micro000,SM28_micro001,-1,2.25,0.02,0.02
 SM28_micro000,SM28_micro002,0,1.01,0.08,0.02
 SM28_micro000,SM28_micro003,-1,4.32,1.02,0.02
@@ -151,10 +151,21 @@ QSPR/ML
 # Please include the values of key parameters with units.
 # Please explain how statistical uncertainties were estimated.
 # Use as many lines of text as you need.
+#
+# We strongly encourage you to submit your predicted macro pKa values in this section in consecutive lines following this format:
+# compound name, macro pKa, initial formal charge, formal charge after transition, e.g.:
+# SM25, 3.5, 0, +1
+# This will allow us to check that our analysis of your free energies leads to the same endpoint as your analysis.
+#
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
 Free text methods section describing the approach and calculations in full detail.
 
+Macro pKa values (these are purely an example and have no bearing on reality)
+SM25, 3.5, 0, +1
+SM26, 9.8, -1, 0
+...
+SM45, 11.0, 0, +1
 
 #
 #

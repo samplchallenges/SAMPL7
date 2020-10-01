@@ -10,6 +10,8 @@ Octanol may be found in the aqueous phase. The mole fraction of water in octanol
 
 - Your transfer free energy prediction for the neutral form does NOT have to be `SMXX_micro000` (the challenge provided microstate). If you use a microstate other than the challenge provided microstate, please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form of `SMXX_extra001` (number can vary). In the `METHOD DESCRIPTION SECTION` in the submission file, please list the molecule ID and the SMILES string of the microstate that was used.
 
+- We highly encourage (optional) submission of your predicted logD value also in an optional field (see template). If you predict both pKa and logP values, we will attempt to estimate logD from your predictions, but this will allow us to do a consistency check.
+
 - If multiple microstates are used, please report the order of population in the aqueous phase in descending order. See further below for more info regarding predictions using multiple microstates.
 
 - You may report only 1 transfer free energy value per molecule per method.
