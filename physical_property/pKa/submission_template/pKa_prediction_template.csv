@@ -91,6 +91,12 @@ Category:
 # Please include the values of key parameters with units.
 # Please explain how statistical uncertainties were estimated.
 # Use as many lines of text as you need.
+#
+# We strongly encourage you to submit your predicted macro pKa values in this section in consecutive lines following this format:
+# compound name, macro pKa, initial formal charge, formal charge after transition, e.g.:
+# SM25, 3.5, 0, +1
+# This will allow us to check that our analysis of your free energies leads to the same endpoint as your analysis.
+#
 # All text following the 'Method:' keyword will be regarded as part of your free text methods description.
 Method:
 
