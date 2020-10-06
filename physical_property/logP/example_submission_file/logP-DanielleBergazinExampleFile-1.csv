@@ -34,7 +34,7 @@
 # The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
 Predictions:
 # Example of a submission that used only challenge provided neutral microstate (`SMXX_micro000` from the provided input files)
-SM25,SM25_micro000,5.14,3.46,2, 4.09, 0.1
+SM25,SM25_micro000,5.14,3.46,2
 # Example of a submission that used the challenge provided neutral microstate (`SMXX_micro000`) and an additional two microstates (SM26_extra001 and SM26_extra002)
 SM26,SM26_micro000 SM26_extra001 SM26_extra002,2,2.25,1.02,2
 # Example of a submission that did not use the challenge provided neutral microstate, but used a different microstate (indicated bby the form SM27_extra001)
