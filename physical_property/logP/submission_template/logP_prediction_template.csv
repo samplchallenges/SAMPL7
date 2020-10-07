@@ -1,4 +1,4 @@
-# OCTANOL TO WATER (ΔG_octanol - ΔG_water) TRANSFER FREE ENERGY PREDICTIONS
+# WATER-OCTANOL (ΔG_octanol - ΔG_water) TRANSFER FREE ENERGY PREDICTIONS
 #
 # This file will be automatically parsed. It must contain the following four elements:
 # predictions, name of method, software listing, and method description.
@@ -6,7 +6,7 @@
 #
 # Any line that begins with a # is considered a comment and will be ignored when parsing.
 #
-#
+# 
 # PREDICTION SECTION
 #
 # It is mandatory to submit water to octanol (ΔG_octanol - ΔG_water) transfer free energy (TFE) predictions for all 22 molecules.
