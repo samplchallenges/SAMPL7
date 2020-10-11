@@ -17,3 +17,4 @@ Experimental log *P* measurements will made available after the challenge deadli
  - [`submission_template/logP_prediction_template.csv`](submission_template/logP_prediction_template.csv) - An empty prediction submission template file.
  - [`example_submission_file/logP-DanielleBergazinExampleFile-1.csv`](example_submission_file/logP-DanielleBergazinExampleFile-1.csv) - An example submission file filled with random values to illustrate expected format.
 - [`logP_challenge_instructions.md`](logP_challenge_instructions.md) - Instructions for the log *P* challenge.
+- `Analysis`: Contains submissions, and will eventually contain results of analysis.

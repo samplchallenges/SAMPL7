@@ -17,3 +17,4 @@ Experimental permeability data will made available after the challenge deadline.
 - [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv) - An empty prediction submission template file.
 - [`example_submission_file/permeability-DanielleBergazinExampleFile-1.csv`](example_submission_file/permeability-DanielleBergazinExampleFile-1.csv) - An example submission file filled with random values to illustrate expected format.
 - [`permeability_challenge_instructions.md`](permeability_challenge_instructions.md) - Instructions for permeability challenge.
+- `Analysis`: Contains submissions, and will eventually contain results of analysis.

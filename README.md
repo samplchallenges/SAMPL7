@@ -59,6 +59,7 @@ The SAMPL7 physical property challenge is now open! All three host-guest challen
 - **Added additional microstates for pKa challenge**, from Bogdan Iorga (Sept. 30, 2020). Updated instructions to clarify that any states not included in pKa predictions will be assumed to be unpopulated (so participants can omit these states). Updated pKa instructions/template to allow optional submission of macro pKa values.
 - **Note that experiments used specified chirality for certain physical property compounds**, `SM35`, `SM36` and `SM37`. So only the structures with specified chirality for these compounds should be used.
 - **Add SAMPL7 physical properties experimental values** (Oct. 10, 2020).
+- Add SAMPL7 physical properties submissions (Oct. 10, 2020)
 
 ## Challenge overview
 
