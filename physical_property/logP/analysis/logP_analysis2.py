@@ -55,11 +55,11 @@ def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, x_label, y_label, y_low
     #current_palette = sns.color_palette("deep")
 
     # Zesty colorblind-friendly color palette
-    color0 = "#0F2080"
-    color1 = "#F5793A"
-    color2 = "#A95AA1"
-    color3 = "#85C0F9"
-    current_palette = [color0, color1, color2, color3]
+    color0 = "#0F2080" #dark blue
+    color1 = "#F5793A" #orange
+    #color2 = "#A95AA1" #purple
+    color3 = "#85C0F9" #light blue
+    current_palette = [color0, color1, color3]#, color2, color3]
     error_color = 'gray'
 
 
@@ -127,8 +127,8 @@ def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, x_label, y_label, y_low
     from matplotlib.lines import Line2D
     custom_lines = [Line2D([0], [0], color=current_palette[0], lw=5),
                     Line2D([0], [0], color=current_palette[1], lw=5),
-                    Line2D([0], [0], color=current_palette[2], lw=5),
-                    Line2D([0], [0], color=current_palette[3], lw=5)]
+                    Line2D([0], [0], color=current_palette[2], lw=5)]
+                    #, Line2D([0], [0], color=current_palette[3], lw=5)]
     ax.legend(custom_lines, group_labels)
 
 
