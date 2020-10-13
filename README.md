@@ -13,6 +13,15 @@ Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMP
 
 We're running a [2020 SAMPL virtual workshop on Nov. 4](https://www.gdch.de/gcc2020) in combination with the GCC.  It’s timed so both European and US folks can join, and will be hot on the heels of the current SAMPL7 physical properties challenge. Sign up if you're interested in attending.
 
+
+## Acknowledging and citing SAMPL
+
+If you've benefitted from our work on the SAMPL series of challenges, please be sure to acknowledge our SAMPL NIH grant in any publications/presentations. This funded host-guest experiments, as well as our work organizing and administrating these challenges. You may acknowledge SAMPL by saying something like, "We appreciate the National Institutes of Health for its support of the SAMPL project via R01GM124270 to David L. Mobley (UC Irvine)."
+
+We also ask you to cite the SAMPL dataset(s) you used. These are versioned on Zenodo, and the latest DOI is here: [![DOI](https://zenodo.org/badge/184310568.svg)](https://zenodo.org/badge/latestdoi/184310568) . Click through for access to all data releases. You may cite these sets by their DOI.
+
+Of course, we also appreciate it if you cite any overview/experimental papers relevant to the particular SAMPL challenge you participated in.
+
 ## What's here
 - [Challenge Overview](#challenge-overview)
 - Final information on the TrimerTrip host-guest challenge components in the `host_guest/Isaacs_clip` directory, and experimental values in the `host_guest/Analysis/ExperimentalMeasurements` directory. The Isaacs' group's publication on this is in the *New Journal of Chemistry*, [DOI 10.1039/C9NJ05336K](https://dx.doi.org/10.1039/C9NJ05336K)
@@ -31,7 +40,6 @@ The SAMPL7 physical property challenge is now open! All three host-guest challen
 
 ## What's coming
 - PHIPA analysis
-- Physical properties submissions
 - Physical properties analysis
 
 ## Disclaimers:
@@ -50,16 +58,9 @@ The SAMPL7 physical property challenge is now open! All three host-guest challen
 - **Release 0.4** (Oct. 30, 2019): Adds Isaacs' group TrimerTrip binding data (in `host_guest/analysis/ExperimentalMeasurements`); adds TrimerTrip submissions; adds PHIP2 protein-ligand challenge Stage 1 details.
 - **Release 0.4.1** (Nov. 27, 2019, DOI [10.5281/zenodo.3555601](https://dx.doi.org/10.5281/zenodo.3555601)): Fixes and corrects some SMILES formatting errors (see release notes) for protein-ligand challenge, adds host-guest experimental data, adds submission instructions for stage 1 protein-ligand challenge.
 - **Relase 0.5** (Aug. 6, 2020, DOI [10.5281/zenodo.3975152](https://dx.doi.org/10.5281/zenodo.3975152)): Adds PHIP2 components from 2019; corrects an OctaAcid value; brings in host-guest challenge results and reference calculations; adds details on SAMPL7 physical property (pKa, logP, logD, PAMPA permeability) challenge along with inputs and submission formats.
+- **Release 0.6** (Oct. 13, 2020, DOI [10.5281/zenodo.4086044](https://dx.doi.org/10.5281/zenodo.3975152)):  Release the finalized the physical properties challenge inputs, formats, submissions and experimental results. A later release will include the results of analysis. These changes were all available in master earlier (see detailed changelog in release notes), but this provides an official release. Analysis of physical properties results will come at a later date.
 
 ### Changes not in a release
-- **Finalize physical property format** (Sept. 1, 2020): Update submission formats to include some required fields that had previously been left out (e.g. participant name/organization, and whether submission is ranked). **Changed required format for logP and permeability to better handle molecule ID/choice of tautomer.**
-- **Add SAMPL7 physical property submission links** (Sept. 2, 2020)
-- Update physical property submission deadline to Oct. 8 (Sept. 28, 2020).
-- Update physical property instructions for pKa, logP to clarify (Sept. 30, 2020). Format still the same, but now clarified -- especially for the pKa challenge. We also now highly encourage submission of (optional) logD predictions for the logP challenge.
-- **Added additional microstates for pKa challenge**, from Bogdan Iorga (Sept. 30, 2020). Updated instructions to clarify that any states not included in pKa predictions will be assumed to be unpopulated (so participants can omit these states). Updated pKa instructions/template to allow optional submission of macro pKa values.
-- **Note that experiments used specified chirality for certain physical property compounds**, `SM35`, `SM36` and `SM37`. So only the structures with specified chirality for these compounds should be used.
-- **Add SAMPL7 physical properties experimental values** (Oct. 10, 2020).
-- Add SAMPL7 physical properties submissions (Oct. 10, 2020)
 
 ## Challenge overview
 
@@ -69,21 +70,21 @@ Recently concluded SAMPL7 challenges include a protein-ligand component on PHIP2
 Additional details are provided below. Several hosts and/or guests were optional.
 Note that the [SAMPL8 host-guest challenge is commencing](https://github.com/samplchallenges/SAMPL8)
 
-The planned later stage of SAMPL7 focused on GSK physical property data is being shifted to SAMPL8 because of availability of a more time-sensitive physical property dataset.
+The planned later stage of SAMPL7 focused on GSK physical property data is being shifted to SAMPL8 because of availability of a more time-sensitive physical property dataset which was used here.
 
 
 
 ### Physical property challenge on pK<sub>a</sub>, partitioning, and permeability
 
-We have a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provide PAMPA permeability values they measured.
+We recently ran a new SAMPL7 challenge focusing on pK<sub>a</sub>, partitioning, and permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) contributed a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provided PAMPA permeability values they measured.
 
-pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates (which could be also thought of as the reaction free energy for that particular microstate transition; [see pKa instructions](https://github.com/samplchallenges/SAMPL7/blob/master/physical_property/pKa/pKa_challenge_instructions.md)). We choose free energies rather than pK<sub>a</sub> values given the recent work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf). For the purposes of the pK<sub>a</sub> challenge all possible tautomers of each ionization (charge) state are defined as distinct protonation microstates. Macro pK<sub>a</sub> values may be submitted to allow for a consistency check.
+pK<sub>a</sub> prediction will consist of predicting relative free energies between compound microstates (which could be also thought of as the reaction free energy for that particular microstate transition; [see pKa instructions](https://github.com/samplchallenges/SAMPL7/blob/master/physical_property/pKa/pKa_challenge_instructions.md)). We chose free energies rather than pK<sub>a</sub> values given the recent work of [Gunner et al.](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf). For the purposes of the pK<sub>a</sub> challenge all possible tautomers of each ionization (charge) state are defined as distinct protonation microstates. Macro pK<sub>a</sub> values may be submitted to allow for a consistency check.
 
 The partitioning prediction challenge will focus on predicting the difference in free energy for the neutral form between water and octanol. As a part of post prediction analysis challenge oraginzers will combine participant-predicted pK<sub>a</sub> and log *P* values to obtain estimated distribution coefficients, which will also be compared against experimental values. Participants may optionally submit their own log *D* values for a consistency check.
 
-A [PAMPA permeability](https://pubs.acs.org/doi/10.1021/jm060230%2B) prediction challenge will also be run in parallel to the pK<sub>a</sub> and partition coefficient challenge.
+A [PAMPA permeability](https://pubs.acs.org/doi/10.1021/jm060230%2B) prediction challenge was run in parallel to the pK<sub>a</sub> and partition coefficient challenge.
 
-All three challenges are optional, so participants may participate in all or any combination of these challenges.
+All three challenges were optional.
 
 Challenge inputs, submission details and submission templates can be found [here](physical_property/).
 
@@ -91,28 +92,27 @@ Challenge inputs, submission details and submission templates can be found [here
 
 ### PHIP2 binding prediction
 
-We are excited to announce a new set of SAMPL7 challenges focusing on protein-ligand binding, in partnership with the XChem facility for fragment screening at Diamond Light Source. The second bromodomain of PHIP (PHIP2) was targeted in an extensive X-ray crystallographic fragment screening experiment, leading to the 3D structures of multiple hits. This SAMPL7 challenge will take advantage of this dataset, addressing computational methods for the discrimination of binders from non-binders, binding pose predictions, and the unique opportunity to select new candidate ligands from a database, to be validated experimentally by X-ray crystallography at the Diamond Light Source (Harwell, UK).   
+We recently ran a set of SAMPL7 challenges focusing on protein-ligand binding, in partnership with the XChem facility for fragment screening at Diamond Light Source. The second bromodomain of PHIP (PHIP2) was targeted in an extensive X-ray crystallographic fragment screening experiment, leading to the 3D structures of multiple hits. This SAMPL7 challenge will take advantage of this dataset, addressing computational methods for the discrimination of binders from non-binders, binding pose predictions, and the unique opportunity to select new candidate ligands from a database, to be validated experimentally by X-ray crystallography at the Diamond Light Source (Harwell, UK).   
 
-This challenge breaks out into at least three stages on a tight timeline:
+This challenge was broken out into at least three stages on a tight timeline:
 1) Identification of binders from fragment screening
 2) Prediction of fragment binding modes
 3) Selection of new compounds for screening from an experimental database
 
-Stage 3 is now open and focuses selection of possible new binders from a library. See [protein_ligand/README.md](protein_ligand/README.md) for full details.
 
 
 
 ### Gibb Deep Cavity Cavitand (GDCC) binding of guests
 
-One host-guest series is based on the Gibb Deep Cavity Cavitands (GDCCs), familiar from SAMPL4-6. However, this challenge we swap one of the hosts; previously, we used octa acid (OA) and tetramethyl octa acid (TEMOA); this challenge revisits OA but also utilizes a variant which changes the location of the carboxylates.  Both were developed in the laboratory of Dr. Bruce Gibb (Tulane U), who will provide binding free energies and enthalpies, measured by ITC. In this case the challenge is to predict binding of eight compounds to *exo*-OA (a new host created and studied by the Gibb group and first disclosed in this challenge), and two of these to OA; the other six have been studied previously in OA and can *optionally* be submitted. Existing benchmark datasets based on the OA host may be of interest for those preparing to tackle these new complexes: https://github.com/MobleyLab/benchmarksets; this perpetual review paper also provides a good introduction to the sampling and experimental issues which are known to be relevant in these systems. See the [README on this challenge](host_guest/GDCC_and_guests/README.md) for more details.
+One host-guest series was based on the Gibb Deep Cavity Cavitands (GDCCs), familiar from SAMPL4-6. However, this challenge we swap one of the hosts; previously, we used octa acid (OA) and tetramethyl octa acid (TEMOA); this challenge revisits OA but also utilizes a variant which changes the location of the carboxylates.  Both were developed in the laboratory of Dr. Bruce Gibb (Tulane U), who will provide binding free energies and enthalpies, measured by ITC. In this case the challenge is to predict binding of eight compounds to *exo*-OA (a new host created and studied by the Gibb group and first disclosed in this challenge), and two of these to OA; the other six have been studied previously in OA and can *optionally* be submitted. Existing benchmark datasets based on the OA host may be of interest for those preparing to tackle these new complexes: https://github.com/MobleyLab/benchmarksets; this perpetual review paper also provides a good introduction to the sampling and experimental issues which are known to be relevant in these systems. See the [README on this challenge](host_guest/GDCC_and_guests/README.md) for more details.
 
 ### Modified acyclic cucurbituril (TrimerTrip) binding of guests
 
-The Isaacs lab is contributing data on binding of a series of guests to an acyclic cucubituril host, codenamed "TrimerTrip", as detailed in `host_guest/Isaacs_clip`. Guests include compounds which overlap with the GDCC and cyclodextrin-derivative challenges, with a total of roughly 15 complexes being examined. See the [README on this challenge](host_guest/Isaacs_clip/README.md) for more details.
+The Isaacs lab contributed data on binding of a series of guests to an acyclic cucubituril host, codenamed "TrimerTrip", as detailed in `host_guest/Isaacs_clip`. Guests include compounds which overlap with the GDCC and cyclodextrin-derivative challenges, with a total of roughly 15 complexes being examined. See the [README on this challenge](host_guest/Isaacs_clip/README.md) for more details.
 
 ### The cyclodextrin derivatives challenge
 
-The Gilson lab is measuring binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges. [Full details](host_guest_description.md) are available. Binding to beta-cyclodextrin can optionally be submitted, but literature values for these compounds are available.
+The Gilson lab imeasured binding of two guests to ten different hosts, comprising beta-cyclodextrin as well as nine different cyclodextrin derivatives which have a single functional group added at one location around the rim of the cavity. Binding is being characterized via ITC and NMR. The two guest compounds (R-rimantadine and trans-4-methylcyclohexanol) overlap with those used in the TrimerTrip and GDCC challenges. [Full details](host_guest_description.md) are available. Binding to beta-cyclodextrin can optionally be submitted, but literature values for these compounds are available.
 
 ## MANIFEST
 - [`physical_property`](physical_property): Details on the physical property challenge
