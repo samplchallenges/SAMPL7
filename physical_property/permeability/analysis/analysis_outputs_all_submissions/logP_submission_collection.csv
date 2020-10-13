@@ -1,4 +1,4 @@
-,receipt_id,participant,name,category,reassigned category,Molecule ID,logPapp (calc),logPapp SEM (calc),logPapp (exp),logPapp SEM (exp),$\Delta$logP error (calc - exp),logP model uncertainty
+,receipt_id,participant,name,category,reassigned category,Molecule ID,logPapp (calc),logPapp SEM (calc),logPapp (exp),logPapp SEM (exp),$\Delta$logPapp error (calc - exp),logP model uncertainty
 0,SGA28,Xiaoyu Ding,GROVER,Empirical,Empirical,SM25,-5.38,1.02,-5.79,,0.41000000000000014,0.62
 1,SGA28,Xiaoyu Ding,GROVER,Empirical,Empirical,SM26,-5.32,1.09,-6.0,,0.6799999999999997,0.62
 2,SGA28,Xiaoyu Ding,GROVER,Empirical,Empirical,SM27,-5.25,1.12,-5.17,,-0.08000000000000007,0.62
