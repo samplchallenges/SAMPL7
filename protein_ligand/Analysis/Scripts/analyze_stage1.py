@@ -31,6 +31,7 @@ STAGE_1_SUBMISSIONS_DIR_PATH = '../Submissions-stage1/'
 EXPERIMENTAL_DATA_FILE_PATH = '../../experimental-data/stage-1/hits_verification.csv'
 USER_MAP_FILE_PATH = '../Analysis-outputs-stage1/SAMPL7-user-map-PL-stage1.csv'
 FRAGMENTS_FILE_PATH = '../../fragments_screened.csv'
+NO_DIFFRACTION_DATA = '../../experimental-data/stage-1/no_diffraction_fragments.csv'
 
 # =============================================================================
 # MAIN CHALLENGE SUBMISSION 1
@@ -227,7 +228,8 @@ class Stage1SubmissionCollection:
             print("Stage1 submission collection file generated:\n", stage1_submission_collection_file_path)
 
 
-    def complete_predictions_with_missing_fragments(self, fragments_file_path, submission_collection_file_path,ranking):
+    def complete_predictions_with_missing_fragments(self, fragments_file_path, submission_collection_file_path,ranking, correction,
+                                                                                no_data_fragments):
         """ Adds missing non-binder predictions to collection. Assumes
         Parameters
         ----------
@@ -328,6 +330,16 @@ class Stage1SubmissionCollection:
             if ranking == 'Non-ranked':
                 self.data = self.data[self.data.Ranked == False]
 
+            #apply correction to dataset for fragment that led to
+            if correction is False:
+                pass
+
+            if correction is True:
+                no_diffraction  = pd.read_csv(no_data_fragments , names=['Fragments', 'Smiles'])
+                no_diffraction_fragments = no_diffraction['Fragments'].tolist()
+                self.data = self.data[~self.data['Fragment ID'].isin(no_diffraction_fragments)]
+
+
             print("\n SubmissionCollection: \n")
             print(self.data)
 
@@ -345,7 +357,7 @@ class Stage1SubmissionCollection:
     def _assign_paper_method_name(name):
         return name
 
-    def generate_statistics_tables(self, stats_funcs, subdirectory_path, groupby, site,
+    def generate_statistics_tables(self, stats_funcs, subdirectory_path, groupby, site, correction,
                                    extra_fields=None, sort_stat=None,
                                    ordering_functions=None, latex_header_conversions=None,
                                    caption=''):
@@ -470,7 +482,28 @@ class Stage1SubmissionCollection:
             f.write(caption + '\n')
             f.write('\end{document}\n')
 
-        #Plot Balanced accuracies
+        #Plot Balanced accuracies, specificity and sensitivity
+        sensitivity_pos = list()
+        start_sen = 1
+        balanced_accuracy_pos = list()
+        start_ba = 2
+        specificity_accuracy_pos = list()
+        start_spe = 3
+        for position in range(len(list(statistics_csv.index))):
+            sensitivity_pos.append(start_sen)
+            start_sen += 4
+            balanced_accuracy_pos.append(start_ba)
+            start_ba += 4
+            specificity_accuracy_pos.append(start_spe)
+            start_spe += 4
+
+        sensitivity_accuracies = statistics_csv[['Sensitivity']]
+        sensitivity_accuracies = np.array(sensitivity_accuracies).flatten()
+        sensitivity_accuracy_lower_bound = statistics_csv[['Sensitivity_lower_bound']]
+        sensitivity_accuracy_lower_bound = np.array(sensitivity_accuracy_lower_bound).flatten()
+        sensitivity_accuracy_upper_bound = statistics_csv[['Sensitivity_upper_bound']]
+        sensitivity_accuracy_upper_bound = np.array(sensitivity_accuracy_upper_bound).flatten()
+
         balanced_accuracies = statistics_csv[['Balanced Accuracy']]
         balanced_accuracies = np.array(balanced_accuracies).flatten()
         balanced_accuracy_lower_bound = statistics_csv[['Balanced Accuracy_lower_bound']]
@@ -478,16 +511,39 @@ class Stage1SubmissionCollection:
         balanced_accuracy_upper_bound = statistics_csv[['Balanced Accuracy_upper_bound']]
         balanced_accuracy_upper_bound = np.array(balanced_accuracy_upper_bound).flatten()
 
+        specificity_accuracies = statistics_csv[['Specificity']]
+        specificity_accuracies = np.array(specificity_accuracies).flatten()
+        specificity_accuracy_lower_bound = statistics_csv[['Specificity_lower_bound']]
+        specificity_accuracy_lower_bound = np.array(specificity_accuracy_lower_bound).flatten()
+        specificity_accuracy_upper_bound = statistics_csv[['Specificity_upper_bound']]
+        specificity_accuracy_upper_bound = np.array(specificity_accuracy_upper_bound).flatten()
+
         IDs = statistics_csv.index
         plt.figure(figsize=(20, 10))
-        plt.bar(IDs, balanced_accuracies, yerr = [(balanced_accuracies - balanced_accuracy_lower_bound), (balanced_accuracy_upper_bound - balanced_accuracies)])
+        plt.bar(sensitivity_pos, sensitivity_accuracies,
+                label='Sensitivity',
+                # width = 0.3,
+                yerr=[(sensitivity_accuracies - sensitivity_accuracy_lower_bound),
+                      (sensitivity_accuracy_upper_bound - sensitivity_accuracies)])
+        plt.bar(balanced_accuracy_pos, balanced_accuracies,
+                label='Balanced Accuracy',
+                # width = 0.3,
+                yerr=[(balanced_accuracies - balanced_accuracy_lower_bound),
+                      (balanced_accuracy_upper_bound - balanced_accuracies)])
+        plt.bar(specificity_accuracy_pos, specificity_accuracies,
+                label='Specificity',
+                # width = 0.3,
+                yerr=[(specificity_accuracies - specificity_accuracy_lower_bound),
+                      (specificity_accuracy_upper_bound - specificity_accuracies)])
         plt.axhline(y=0.5, color='orange', linestyle='--', label='Random')
-        plt.legend()
-        plt.ylabel("Balanced accuracy")
+        plt.legend(bbox_to_anchor=(0.5, 1.05),
+                   ncol=4, fancybox=True, shadow=True)
         plt.ylim(0, 1)
         plt.xlabel("SID")
-        plt.title('balanced_accuracy_barplot_of_{}_predictions_for_{}'.format(ranking, site), loc='center')
-        plt.savefig('{}/balanced_accuracy_barplot_of_{}_predictions_for_{}'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC,ranking, site))
+        plt.ylabel("Rate")
+        plt.xticks(balanced_accuracy_pos, statistics_csv.index)
+        plt.title('True positive and negative rates for {} binders ({} set)'.format(site, correction), loc='center')
+        plt.savefig('{}/ROC_points_barplot_of_{}_predictions_for_{}'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC, ranking, site))
         plt.close()
 
         # Plot precision
@@ -609,7 +665,6 @@ class Stage1SubmissionCollection:
             if site == "all-sites":
                 data = data[['All Sites (exp)', 'All Sites (pred)']]
 
-
             #mixutre of strings and bools present in df. Converts everything into bools.
             data = data.replace([0.00000, 0, 'False', 'FALSE', 'false'], False)
             data = data.replace([1.00000, 1, 'True', 'TRUE', 'true'], True)
@@ -718,24 +773,36 @@ if __name__ == '__main__':
     #iterates over lists to create statistics for each combination idenpedently
     for ranking in rankings:
         for site in sites:
-            OUTPUT_DIRECTORY_PATH_SPECIFIC = '../Analysis-outputs-stage1/{}/{}'.format(ranking,site)
-            stage1_submission_collection_specific_file_path = '{}/stage1_submission_collection_{}_{}.csv'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC,ranking,site)
+            for correction in [True, False]:
 
-            collection_specific = Stage1SubmissionCollection(submissions,
-                                                             experimental_data,
-                                                             OUTPUT_DIRECTORY_PATH_SPECIFIC,
-                                                            stage1_submission_collection_specific_file_path,
-                                                            ignore_refcalcs=False)
+                if correction is True:
+                    status = 'corrected'
+                if correction is False:
+                    status = 'full'
 
-            collection_specific.complete_predictions_with_missing_fragments(fragments_file_path=FRAGMENTS_FILE_PATH,
-                                                                           submission_collection_file_path=stage1_submission_collection_specific_file_path,
-                                                                            ranking=ranking)
-            sns.set_context('talk')
-            collection_specific.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
-                                         groupby='SID', site = site, extra_fields=None,
-                                         sort_stat='Sensitivity', ordering_functions=ordering_functions,
-                                          latex_header_conversions=latex_header_conversions,
-                                         caption='')
+                OUTPUT_DIRECTORY_PATH_SPECIFIC = '../Analysis-outputs-stage1/{}/{}/{}'.format(ranking,site,str(status))
+                stage1_submission_collection_specific_file_path = '{}/stage1_submission_collection_{}_{}_{}.csv'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC,ranking,site,status)
+
+                collection_specific = Stage1SubmissionCollection(submissions,
+                                                                 experimental_data,
+                                                                 OUTPUT_DIRECTORY_PATH_SPECIFIC,
+                                                                stage1_submission_collection_specific_file_path,
+                                                                ignore_refcalcs=False)
+
+                collection_specific.complete_predictions_with_missing_fragments(fragments_file_path=FRAGMENTS_FILE_PATH,
+                                                                               submission_collection_file_path=stage1_submission_collection_specific_file_path,
+                                                                                ranking=ranking,  correction= correction,
+                                                                                no_data_fragments = NO_DIFFRACTION_DATA,)
+                sns.set_context('talk')
+                collection_specific.generate_statistics_tables(stats_funcs, subdirectory_path='StatisticsTables',
+                                            groupby='SID', site = site, correction=status,
+                                            extra_fields=None, sort_stat='Sensitivity',
+                                            ordering_functions=ordering_functions,
+                                            latex_header_conversions=latex_header_conversions,
+                                            caption='')
+    # TO DO: UPDATE ANALYSIS/ NUMBERS WITH FRAGMENT THAT DID NOT LEAD TO CRYSTALS AND THEREFORE NO-DATA ABOUT BINDING
+
+
 
     # ranking = "Ranked"
     # site = "site-1"

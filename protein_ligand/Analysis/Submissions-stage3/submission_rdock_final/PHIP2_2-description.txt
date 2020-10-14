@@ -1,0 +1,236 @@
+# Results for PHIP2 library selection
+#
+# This file will be automatically parsed.  It must contain the following eight elements:
+# predictions, participant name, participant organization, name of method, software listing, method, method category, and ranked.
+# These elements must be provided in the order shown.
+# The file name must begin with the letters "PHIP2" and then be followed by an underscore or dash.
+#
+# FILE FORMAT: All comment lines in this file (which begin with #) will be ignored.
+# Please use only UTF-8 characters in the non-comment fields. If your information (e.g. your name, etc.)
+# contains a non-UTF-8 character, you may note it in comments near that entry.
+
+
+# PREDICTIONS SECTION
+#
+# The data in each prediction line should be structured as follows:
+# Rank (1 through N, with N >= 100; and 1 being the top predicted compound),
+# Compound ID (eg "REAL:Z1545197621"; use an ID from REAL or MOLPORT but not both),
+# SMILES string, source file (e.g. "all.txt" or "output-hops1-hac3-rac1.txt"),
+# confidence that binding is improved (1-10, with 10 being most confident)
+#
+# Note that you will likely want to justify your specific predictions/choices in your Method section, as our
+# evaluators will read there to determine why you have made the choices you did.
+#
+# As per challenge rules, depending on participation, we may be considering only your top 10 ranked compounds, and
+# selection for screening will depend on whether the compounds seem reasonable and on your justification for
+# your choices. 
+#
+# The list of predictions must begin with the "Predictions:" keyword, as illustrated here.
+Predictions:
+1, REAL:Z2897472896, CCn1cc(NC(=O)[C@@H]2CC[C@H]2C(=O)O)cn1, 10
+2, REAL:PV-001941530881, CCC(C)(NC(=O)Nc1nc2ccc(OC)cc2s1)C1CC1, 8
+3, REAL:Z1727122569, Cc1nc2ccccc2n1CCC(=O)NCCC(C)O, 8
+4, REAL:Z2433636166, NCC(=O)NCC(=O)N1CCN(C(=O)c2ccco2)CC1, 7
+5, REAL:Z1727485589, Cc1nc2ccccc2n1CCC(=O)NC(CO)CO, 7
+6, REAL:Z1975353425, O=C(NCCO)c1ccc(NCc2cc[nH]n2)cc1, 7
+7, REAL:Z1195969280, CCOCC(O)CN1CCN(c2ccc(F)cc2)CC1, 7
+8, REAL:Z927289330, CNS(=O)(=O)c1ccc(C(=O)N2CCNCC2)o1, 7
+9, REAL:Z1614521200, O=C(Cn1cc(NC(=O)C2CCC2)cn1)NCCO, 7
+10, REAL:Z751931838, Cc1n[nH]cc1CNc1ccc(CC(N)=O)cc1, 7
+11, MOLPORT:001-973-109, O=C(CSS(=O)(=O)O)N1CCN(C(=O)c2ccco2)CC1, 6
+12, REAL:Z1536551002, CNC(=O)NCC(=O)Nc1ccc(Cc2ccncc2)cc1, 6
+13, REAL:Z1400851069, CCn1cc(NC(=O)C2(CC(C)C)CCC2)cn1, 6
+14, REAL:Z2017635090, NC(=O)NC(=O)c1cccc(NCc2cc[nH]n2)c1, 6
+15, REAL:Z2363974279, NC(CNC(=O)N1CCN(c2ccc(F)cc2)CC1)C1CC1, 6
+16, REAL:Z1462422416, CS(=O)(=O)Nc1cccc(NCc2cc[nH]n2)c1, 6
+17, REAL:Z2897918785, O=C(O)c1n[nH]cc1NC(=O)C1CCC1, 6
+18, REAL:Z1724557342, Cc1nc2ccccc2n1CCC(=O)NC(C)CO, 6
+19, REAL:Z1726405125, Cc1nc2ccccc2n1CCC(=O)NCCC(N)=O, 6
+20, REAL:Z1727122569, Cc1nc2ccccc2n1CCC(=O)NCC[C@@H](C)O, 6
+21, MOLPORT:028-912-611, O=[N+]([O-])c1c(Br)cnn1CCO, 6
+22, REAL:Z2445838424, NS(=O)(=O)c1ccc(C(=O)N2CCNCC2)o1, 6
+23, REAL:Z1725887228, Cc1nc2ccccc2n1CCC(=O)NCC(C)C#N, 6
+24, REAL:Z1231172791, CCn1cc(NC(=O)C2(C#N)CCC2)cn1, 6
+25, MOLPORT:005-306-690, CCOC(=O)c1c(N)n[nH]c1N, 6
+26, REAL:Z2443234861, Cc1nc2ccccc2n1CCC(=O)NC(C)C(=O)O, 6
+27, REAL:Z1724257853, Cc1nc2ccccc2n1CCC(=O)NC(C)C(N)=O, 6
+28, REAL:Z1727559645, CCC(CO)NC(=O)CCn1c(C)nc2ccccc21, 6
+29, REAL:Z2439795623, Cc1nc2ccccc2n1CCC(=O)NCCN, 6
+30, REAL:PV-001925565151, CN(C(N)=O)c1cccc(NCc2cc[nH]n2)c1, 6
+31, REAL:Z2440453608, Cc1nc2ccccc2n1CCC(=O)NCC(C)(C)N, 6
+32, MOLPORT:046-629-289, N#CCNC(=O)c1ccc2c(c1)NC(=O)C2, 6
+33, REAL:PV-001924872680, C[S+]([O-])Cc1cccc(NCc2cc[nH]n2)c1, 6
+34, REAL:Z2443083083, Cc1nc2ccccc2n1CCC(=O)NCCC(=O)O, 6
+35, REAL:Z1462365279, CNC(=O)c1cccc(NCc2cc[nH]n2)c1, 6
+36, REAL:Z1727061975, Cc1nc2ccccc2n1CCC(=O)NC(C)CCO, 6
+37, REAL:Z1726295393, CSCC(C)NC(=O)CCn1c(C)nc2ccccc21, 6
+38, REAL:Z1271705182, CC(C)C(=O)Nc1cccc(NCc2cc[nH]n2)c1, 6
+39, REAL:Z1129926447, NS(=O)(=O)CCCN1CCN(C(=O)c2ccco2)CC1, 6
+40, REAL:Z2440837389, Cc1nc2ccccc2n1CCC(=O)NC(C)CN, 6
+41, REAL:Z2464342666, CNCC(C)C(=O)Nc1ccccn1, 6
+42, REAL:Z2443234861, Cc1nc2ccccc2n1CCC(=O)N[C@H](C)C(=O)O, 6
+43, REAL:Z1607696306, COC[C@@H](O)CN1CCN(c2ccc(F)cc2)CC1, 6
+44, REAL:Z1727499472, Cc1nc2ccccc2n1CCC(=O)NC[C@@H](C)O, 6
+45, REAL:Z2796593120, CCn1cc(NC(=O)[C@@H]2C[C@H](O)C2)cn1, 6
+46, MOLPORT:013-304-955, O=C(O)CCNC(=O)CCn1cnc2ccccc21, 6
+47, REAL:Z2363819528, CC(C)(N)CNC(=O)N1CCN(c2ccc(F)cc2)CC1, 6
+48, REAL:PV-000725309319, COC[C@H](O)CN1CCN(C(=O)c2ccco2)CC1, 6
+49, REAL:Z755054352, O=C(c1nc(=O)[nH][nH]1)N1CCN(c2ccc(F)cc2)CC1, 6
+50, REAL:Z33560529, CC(=O)NCC(=O)Nc1ccc(Cc2ccncc2)cc1, 6
+51, REAL:Z1626088718, Cc1cc(N(C)CC(O)CO)n2ncnc2n1, 6
+52, MOLPORT:009-460-556, CS(=O)(=O)Nc1ccsc1C(=O)O, 6
+53, MOLPORT:022-906-741, CS(=O)(=O)c1cccc(CS(=O)(=O)Cl)c1, 6
+54, REAL:Z2904180232, CCCNC(=O)C[S+]([O-])Cc1nc2ccccc2[nH]1, 6
+55, REAL:Z1331888650, Cn1cc(NC(=O)c2cc(CO)on2)cn1, 6
+56, REAL:PV-001925975019, OCCc1cccc(NCc2cc[nH]n2)c1, 6
+57, REAL:Z1574945981, COC(=O)c1cccc(NCc2cc[nH]n2)c1, 6
+58, REAL:Z1727498938, Cc1nc2ccccc2n1CCC(=O)NCC(C)O, 6
+59, REAL:Z33560013, NC(=O)NCC(=O)Nc1ccc(Cc2ccncc2)cc1, 6
+60, REAL:Z1497083934, Cc1cc(F)cc(S(=O)(=O)NC(C)CCO)c1, 6
+61, REAL:Z1727559645, CC[C@H](CO)NC(=O)CCn1c(C)nc2ccccc21, 6
+62, REAL:Z2904260639, O=S(=O)(CCCO)Cc1nc2ccccc2[nH]1, 6
+63, REAL:Z1521822010, CCNC(=O)CN(C)c1ncccc1F, 6
+64, REAL:PV-001925716883, N#CCc1cccc(NCc2cc[nH]n2)c1, 6
+65, REAL:PV-001926687054, CS(=O)(=O)c1cccc(NCc2cc[nH]n2)c1, 6
+66, REAL:Z2179566784, CCCCN(CC(N)=O)c1ncccc1F, 6
+67, REAL:Z1497266713, Cc1cc(F)cc(S(=O)(=O)NCC[C@@H](C)O)c1, 6
+68, REAL:Z2904260989, CC(O)CCS(=O)(=O)Cc1nc2ccccc2[nH]1, 5
+69, REAL:Z2433392485, CS(=O)(=O)NCc1ccc(C(=O)N2CCNCC2)o1, 5
+70, REAL:Z2448313315, CCn1cc(NC(=O)[C@@H]2C[C@H](N)C2)cn1, 5
+71, REAL:Z2078986941, Cc1nc2ccccc2n1CCC(=O)N(C)[C@H](C)CO, 5
+72, REAL:PV-001924695529, CS(=O)(=O)Cc1cccc(NCc2cc[nH]n2)c1, 5
+73, REAL:Z2113038425, Cc1n[nH]cc1CNc1ccc(S(N)(=O)=O)cc1, 5
+74, REAL:Z2605953509, CCn1cc(NC(=O)C2CC(N)C2)cn1, 5
+75, REAL:Z101338588, C[C@H](NC(N)=O)C(=O)Nc1ccc(Cc2ccncc2)cc1, 5
+76, REAL:Z2658090888, C[C@H](N)CCNC(=O)N1CCN(c2ccc(F)cc2)CC1, 5
+77, MOLPORT:008-558-602, O=C(O)CNC(=O)CN1CCN(c2ccc(F)cc2)CC1, 5
+78, REAL:Z2645532235, CC[C@@H](O)CNC(=O)CCn1c(C)nc2ccccc21, 5
+79, REAL:Z1532007579, Cc1cc(F)cc(S(=O)(=O)NC(C)C(=O)O)c1, 5
+80, REAL:PV-000638942081, CC(=O)NCC[C@H](C)Nc1cc(C)nc2ncnn12, 5
+81, REAL:Z1496760344, Cc1cc(F)cc(S(=O)(=O)N(C)CCO)c1, 5
+82, REAL:Z2476965957, C[C@H](O)COc1cccc(S(C)(=O)=O)c1, 5
+83, REAL:Z2440837389, Cc1nc2ccccc2n1CCC(=O)N[C@H](C)CN, 5
+84, MOLPORT:029-931-627, CCS(=O)(=O)c1cccc(NCc2cc[nH]n2)c1, 5
+85, REAL:Z1532014116, Cc1cc(F)cc(S(=O)(=O)N[C@@H](C)C(=O)O)c1, 5
+86, REAL:Z1725280219, Cc1nc2ccccc2n1CCC(=O)NC(C)CC#N, 5
+87, REAL:Z1832180818, OCc1cccc(NCc2cc[nH]n2)c1, 5
+88, REAL:Z1208245891, COCc1cccc(NCc2cc[nH]n2)c1, 5
+89, MOLPORT:012-652-316, O=C(O)CNC(=O)N1CCN(c2ccc(F)cc2)CC1, 5
+90, REAL:Z1949839234, CCn1cc(NC(=O)C2(S(C)(=O)=O)CCC2)cn1, 5
+91, REAL:Z1863654882, CCCC(C)S(=O)(=O)NCCc1ccc(F)cc1, 5
+92, REAL:Z1702887380, CN(C)S(=O)(=O)c1cccc(NCc2cc[nH]n2)c1, 5
+93, REAL:Z3102453511, NC(CO)C(=O)N1CCN(c2ccc(F)cc2)CC1, 5
+94, REAL:Z1629260833, CC(NC(=O)NCc1ccc(S(N)(=O)=O)cc1)C(=O)O, 5
+95, REAL:Z32325093, NC(=O)NCC(=O)N1CCN(c2ccc(F)cc2)CC1, 5
+96, REAL:Z1985024980, CCn1ncc(NC(=O)C2CCC2)c1C(F)(F)F, 5
+97, REAL:Z101339144, NC(=O)NCCC(=O)Nc1ccc(Cc2ccncc2)cc1, 5
+98, REAL:Z1614522608, O=C(Cn1cc(NC(=O)C2CCCC2)cn1)NCCO, 5
+99, REAL:Z1724436669, Cc1nc2ccccc2n1CCC(=O)NCC(N)=O, 5
+100, REAL:PV-001924893519, NC(=O)CCSc1ccccc1NCc1cc[nH]n1, 5
+
+
+# PARTICIPANT INFORMATION SECTION
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Alejandro Varela
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+Acellera
+
+# Full list of affiliations:
+# 1. ﻿Acellera, Barcelona, Spain
+# 2. ﻿Computational Science Laboratory, Universitat Pompeu Fabra, PRBB, Barcelona, Spain
+# 3. ﻿Institucio Catalana de Recerca i Estudis Avancats (ICREA), Barcelona, Spain
+
+# Full list of contributors:
+# Alejandro Varela 1, 2
+# Maciej Majewski 2
+﻿# Alberto Cuzzolin 1
+# Gerard Martinez 1
+﻿# Gianni De Fabritiis 1, 2, 3
+
+
+# METHOD NAME SECTION
+#
+# Please provide a brief (40 character limit) informal yet informative name of the method used.
+# Following is sample text; please edit to your taste.
+# The "Name:" keyword is required, as shown here.
+# 40 character limit.
+Name:
+SkeleDock-rDock
+
+
+# SOFTWARE SECTION
+#
+# All major software packages used and their versions.
+# Please use a new line for each software.
+# Following is sample text; please edit to your taste.
+# The "Software:" keyword is required.
+Software:
+SkeleDock
+RDKit
+HTMD
+rDock
+
+# METHOD CATEGORY SECTION
+#
+# State which of the method category labels describe your prediction the best: `Docking`, `Ligand-based`, `MD`, `ML`, `Other`, `Null`.
+# If your method takes advantage of multiple approaches please report more than one category label, separated by comma.
+# `Docking` category refers to structure-based virtual screening methods that model the structure of the receptor binding pocket and pose of the ligand followed by an scoring the goodness of the fit .
+# `Ligand-based` methods are virtual screening methods that do not rely on protein structure such as pharmacophore modeling, ligand shape-based, 2D or 3D structural similarity based methods.
+# `MD` methods utilize molecular dynamics simulations based on molecular mechanics including free energy calculations.
+# `ML` category includes machine learning, QSPR approaches, and all prediction methods trained on empirical knowledge.
+# `Null` predictions employ a model which is not expected to produce useful predictions, however,  can provide a simple comparison point for more sophisticated methods, as ideally, good methods should outperform the null model.
+# If these categories do not match your method, report as “Other”.
+# If you choose the `Other` category, please explain your decision in the beginning of Method Description section.
+# The `Category:` keyword is required.
+Category:
+Docking
+
+
+# RANKING INFORMATION SECTION
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True
+
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of detail should be at least that used in a publication.
+# Please include the values of key parameters, with units, and explain how any
+# statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# Please explicitly describe how you handle ions (e.g. counterions) and pKa effects
+# Following is sample text; please edit to your taste.
+# All text following the "Method:" keyword will be regarded as part of your free text methods description.
+Method:
+We used the "output-hops2-hac5-rac2.txt" database to screen against the target protein. This set of compounds provides a good balance between
+similarity to the cocrystallized compounds and increased molecular size. This balance is key to us, as we wanted to use the cocrystallized poses
+as a guide to improve docking and, ideally, increase the number of favourable contacts with the pocket, for which we need more atoms.
+First, among all the compounds found in this set, we discard those which, according to their morgan fingerprint, had a similarity
+smaller than 0.7 (DiceSimilarity from RDKit) to the cocrystallized fragments. Later, we checked if a common substructure was present
+between the query compound and its most similar cocrystal.
+Finally, for those compounds which did have a large common substructure (>8000 molecules), we used our SkeleDock tool to guide the docking
+in a way that the common atoms are forced to overlap with the cocrystal, while the non-common are free to explore different conformations.
+When two alternative binding modes or alternative locations were reported, both were used as template or as protein.
+Once we had the poses for all these compounds, the score that rDock gives to each of them was used to sort the compounds.
+The best 100 compounds were selected and their predicted binding modes were manually inspected
+to see if new contacts were present and old ones were conserved, which was the case.
+Among the top 10 compounds, we find particularly interesting the following molecules:
+rank3: PHIP2-rank3-1.sdf,(REAL:Z1727122569), this molecule introduces three hydrogen bonds, two with backbone atoms and one with a tyrosine side chain.
+rank5: PHIP2-rank5-1.sdf, (REAL:Z1727485589), similar to rank3, with one extra hydrogen bond which might involve a carboxylic group, increasing its strength.
+These two compounds are good examples of our approach: take a fragment, "grow it" using SkeleDock, and evaluate its predicted affinity using rDock.
+
+
+
+
+
+
