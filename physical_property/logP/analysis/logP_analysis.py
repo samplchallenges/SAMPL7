@@ -920,6 +920,38 @@ def load_submissions(directory_path, user_map, method_map):
 
 
 
+def load_ranked_submissions(directory_path, user_map, method_map):
+    """
+    Load submissions from a specified directory using a specified user map.
+    Optional argument:
+        ref_ids: List specifying submission IDs (alphanumeric, typically) of
+        reference submissions which are to be ignored/analyzed separately.
+    Returns: submissions
+    """
+    submissions = []
+
+    for file_path in glob.glob(os.path.join(directory_path, '*.csv')):
+        try:
+            submission = logPSubmission(file_path, user_map, method_map)
+            #print("submission.receipt_id:", submission.receipt_id[0:3])
+        except IgnoredSubmissionError:
+            continue
+        # only continue if submission is ranked
+        if not submission.ranked:
+            continue
+        if submission.receipt_id[0:3] == "NUL" or submission.receipt_id[0:3] == "REF" :
+            continue
+        submissions.append(submission)
+
+    receipt_ids = []
+    for submission in submissions:
+        receipt_ids.append(submission.receipt_id)
+    print("Ranked submissions:", receipt_ids)
+
+    return submissions
+
+
+
 class logPSubmissionCollection:
     """A collection of logP submissions."""
 
@@ -933,7 +965,7 @@ class logPSubmissionCollection:
     ignore_refcalcs = True, ranked_only = True):
         # Build collection dataframe from the beginning.
         # Build full logP collection table.
-        print('submissions',submissions)
+
         data = []
 
         # Participant names we've found so far; tracked to ensure no one has more than one
@@ -1627,19 +1659,26 @@ if __name__ == '__main__':
 
 
     #==========================================================================================
+    #==========================================================================================
     # Analysis of ranked blind submissions only (no nonranked or ref)
     #==========================================================================================
+    #==========================================================================================
+
     # Load submissions data.
-    submissions_logP = load_submissions(LOGP_SUBMISSIONS_DIR_PATH, user_map, method_map)
+    ranked_submissions_logP = load_ranked_submissions(LOGP_SUBMISSIONS_DIR_PATH, user_map, method_map)
 
     # Perform the analysis
-
     output_directory_path='./analysis_outputs_ranked_submissions'
     logP_submission_collection_file_path = '{}/logP_submission_collection.csv'.format(output_directory_path)
 
-    collection_logP= logPSubmissionCollection(submissions_logP, experimental_data,
-                                            output_directory_path, logP_submission_collection_file_path,
-                                            ignore_refcalcs = True, ranked_only = True)
+    collection_logP = logPSubmissionCollection(ranked_submissions_logP,
+                                               experimental_data,
+                                               output_directory_path,
+                                               logP_submission_collection_file_path,
+                                               ignore_refcalcs = True,
+                                               ranked_only = True)
+
+    #print("collection_logP: \n", collection_logP)
 
     # Generate plots and tables.
     for collection in [collection_logP]:
@@ -1648,26 +1687,30 @@ if __name__ == '__main__':
         collection.generate_molecules_plot()
         collection.generate_absolute_error_vs_molecule_ID_plot()
 
+
     import shutil
 
     if os.path.isdir('{}/StatisticsTables'.format(output_directory_path)):
         shutil.rmtree('{}/StatisticsTables'.format(output_directory_path))
 
 
-    for submissions, type in zip([submissions_logP], ['logP']):
-        generate_statistics_tables(submissions, stats_funcs, directory_path=output_directory_path + '/StatisticsTables',
-                                    file_base_name='statistics', sort_stat='RMSE',
-                                    ordering_functions=ordering_functions,
-                                    latex_header_conversions=latex_header_conversions,
+    for ranked_submissions, type in zip([ranked_submissions_logP], ['logP']):
+        generate_statistics_tables(ranked_submissions,
+                                    stats_funcs,
+                                    directory_path = output_directory_path + '/StatisticsTables',
+                                    file_base_name = 'statistics',
+                                    sort_stat = 'RMSE',
+                                    ordering_functions = ordering_functions,
+                                    latex_header_conversions = latex_header_conversions,
                                     ignore_refcalcs = True)
 
-
-    # Generate RMSE, MAE, and Kendall's Tau comparison plots.
+    # Generate RMSE, MAE, Kendall's Tau comparison plots.
     statistics_directory_path = os.path.join(output_directory_path, "StatisticsTables")
     generate_performance_comparison_plots(statistics_filename="statistics.csv",
                                             directory_path=statistics_directory_path,
-                                            ignore_refcalcs = False)
+                                            ignore_refcalcs = True)
 
     # Generate QQ-Plots for model uncertainty predictions
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
-    generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle", directory_path=QQplot_directory_path)
+    generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
+                                            directory_path=QQplot_directory_path)
