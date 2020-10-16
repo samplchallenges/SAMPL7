@@ -14,7 +14,8 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 import scipy.stats
 from pylab import rcParams
-from stats import *
+#import pandas.util.testing as tm
+#from stats import *
 
 # =============================================================================
 # STATS FUNCTIONS
@@ -235,7 +236,7 @@ def getQQdata(calc, expt, dcalc, dexpt, boot_its):
 LOGP_SUBMISSIONS_DIR_PATH = './permeability_predictions'
 EXPERIMENTAL_DATA_FILE_PATH = './permeability_experimental_values.csv'
 USER_MAP_FILE_PATH = './SAMPL7-user-map-permeability.csv'
-METHOD_MAP_FILE_PATH = './SAMPL7-permeability-method-map.csv'
+#METHOD_MAP_FILE_PATH = './SAMPL7-permeability-method-map.csv'
 
 
 # =============================================================================
@@ -343,6 +344,7 @@ def barplot_with_CI_errorbars(df, x_label, y_label, y_lower_label, y_upper_label
     plt.rcParams['ytick.labelsize'] = 18 #16
     plt.rcParams['legend.fontsize'] = 16
     plt.rcParams['legend.handlelength'] = 2
+    plt.rcParams['figure.autolayout'] = True
     #plt.tight_layout()
 
     # If figsize is specified
@@ -353,11 +355,12 @@ def barplot_with_CI_errorbars(df, x_label, y_label, y_lower_label, y_upper_label
     x = range(len(data[y_label]))
     y = data[y_label]
     plt.bar(x, y)
-    plt.xticks(x, data[x_label], rotation=90)
+    plt.xticks(x, data[x_label], rotation=45, horizontalalignment='right' )
     plt.errorbar(x, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
                  fmt="none", ecolor=sns_color, capsize=3, capthick=True)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
+    #plt.tight_layout()
 
 
 def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_label, y_upper_label, color_label, figsize=False):
@@ -397,9 +400,9 @@ def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_lab
     if color_label == "category":
         #category_list = ["Physical", "Empirical", "Mixed", "Other"]
         category_list = ["Empirical"]
-    elif color_label == "reassigned_category":
+    #elif color_label == "reassigned_category":
         #category_list = ["Physical (MM)", "Empirical", "Mixed", "Physical (QM)"]
-        category_list = ["Empirical"]
+        #category_list = ["Empirical"]
     elif color_label == "type":
         category_list = ["Standard", "Reference"]
     else:
@@ -449,9 +452,9 @@ def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_lab
                         Line2D([0], [0], color=bar_color_dict["Empirical"], lw=5)]
                         #Line2D([0], [0], color=bar_color_dict["Mixed"], lw=5),
                         #Line2D([0], [0], color=bar_color_dict["Other"], lw=5)]
-    elif color_label == 'reassigned_category':
-        custom_lines = [#Line2D([0], [0], color=bar_color_dict["Physical (MM)"], lw=5),
-                        Line2D([0], [0], color=bar_color_dict["Empirical"], lw=5)]#,
+    #elif color_label == 'reassigned_category':
+    #    custom_lines = [#Line2D([0], [0], color=bar_color_dict["Physical (MM)"], lw=5),
+    #                    Line2D([0], [0], color=bar_color_dict["Empirical"], lw=5)]#,
                         #Line2D([0], [0], color=bar_color_dict["Mixed"], lw=5),
                         #Line2D([0], [0], color=bar_color_dict["Physical (QM)"], lw=5)]
     elif color_label == 'type':
@@ -574,12 +577,8 @@ class SamplSubmission:
     # The D3R challenge IDs that are handled by this class.
     CHALLENGE_IDS = {1559}
 
-    # The IDs of the submissions used for testing the validation.
-    TEST_SUBMISSIONS = {}
-
     # The IDs of submissions used for reference calculations
     REF_SUBMISSIONS = ['REF00', 'NULL0']
-
 
     # Section of the submission file.
     SECTIONS = {}
@@ -587,41 +586,50 @@ class SamplSubmission:
     # Sections in CSV format with columns names.
     CSV_SECTIONS = {}
 
-    def __init__(self, file_path, user_map, method_map):
+
+    def __init__(self, file_path, user_map):#, method_map):
         file_name = os.path.splitext(os.path.basename(file_path))[0]
         file_data = file_name.split('-')
+        print("file_name",file_name)
+        print("file_data",file_data)
 
-        # Check if this is a deleted submission.
-        if file_data[0] == 'DELETED':
-            raise IgnoredSubmissionError('This submission was deleted.')
+        # Load predictions.
+        sections = self._load_sections(file_path)  # From parent-class.
+        self.data = sections['Predictions']  # This is a list
+        self.data = pd.DataFrame(data=self.data) # Now a DataFrame
+        self.name = sections['Name'][0] #want this to take the place of the 5 letter code
 
-        # Check if this is a test submission.
-        self.receipt_id = file_data[0]
-        if self.receipt_id in self.TEST_SUBMISSIONS:
-            raise IgnoredSubmissionError('This submission has been used for tests.')
+        self.receipt_id = self.name #file_data[0]
+        #clean up the name
+        self.receipt_id = self.receipt_id.replace('permeability-', '')
+        self.receipt_id = self.receipt_id.replace(" ", "_")
 
         # Check if this is a reference submission
         self.reference_submission = False
-        if self.receipt_id in self.REF_SUBMISSIONS:
+        #if self.receipt_id in self.REF_SUBMISSIONS:
+        if "REF" in self.receipt_id or "NULL" in self.receipt_id:
+            print("REF found: ", self.receipt_id)
             self.reference_submission = True
 
         # Check this is the correct challenge.
-        self.challenge_id = int(file_data[1])
-        assert self.challenge_id in self.CHALLENGE_IDS
+        #self.challenge_id = int(file_data[1])
+        #assert self.challenge_id in self.CHALLENGE_IDS
 
         # Store user map information.
-        user_map_record = user_map[user_map.receipt_id == self.receipt_id]
-        assert len(user_map_record) == 1
-        user_map_record = user_map_record.iloc[0]
+        #print("self.receipt_id",self.receipt_id)
+        #user_map_record = user_map[user_map.receipt_id == self.receipt_id]
 
-        self.id = user_map_record.id
-        self.participant = user_map_record.firstname + ' ' + user_map_record.lastname
-        self.participant_id = user_map_record.uid
+        #assert len(user_map_record) == 1
+        #user_map_record = user_map_record.iloc[0]
+
+        #self.id = user_map_record.id
+        #self.participant = user_map_record.firstname + ' ' + user_map_record.lastname
+        #self.participant_id = user_map_record.uid
 
         # Store method map information
-        method_map_record = method_map[method_map.receipt_id == self.receipt_id]
+        '''method_map_record = method_map[method_map.receipt_id == self.receipt_id]
         method_map_record = method_map_record.iloc[0]
-        self.reassigned_category = method_map_record.reassigned_category
+        self.reassigned_category = method_map_record.reassigned_category'''
 
     @classmethod
     def _read_lines(cls, file_path):
@@ -726,26 +734,30 @@ class logPSubmission(SamplSubmission):
     CSV_SECTIONS = {'Predictions': ("Molecule ID", "ID tag", "logP mean", "logP SEM", "logP model uncertainty")}
 
 
-    def __init__(self, file_path, user_map, method_map):
-        super().__init__(file_path, user_map, method_map)
+    def __init__(self, file_path, user_map):#, method_map):
+        super().__init__(file_path, user_map)#, method_map)
 
         file_name = os.path.splitext(os.path.basename(file_path))[0]
         file_data = file_name.split('-')
 
-        # Check if this is a type III submission
-        self.submission_type = file_data[2]
-        assert self.submission_type in ['permeability']
-
-        self.file_name, self.index = file_data[3:]
-        self.index = int(self.index)
+        '''self.file_name, self.index = file_data[3:]
+        self.index = int(self.index)'''
 
         # Load predictions.
         sections = self._load_sections(file_path)  # From parent-class.
         self.data = sections['Predictions']  # This is a pandas DataFrame.
         self.name = sections['Name'][0]
         self.category = sections['Category'][0] # New section for logP challenge.
+        self.participant = sections['Participant name'][0].strip()
+        self.organization = sections['Participant organization'][0].strip()
 
         self.ranked = sections['Ranked'][0].strip() =='True'
+
+         # Check if this is a reference submission
+        self.reference_submission = False
+        if "REF" in self.receipt_id or "NULL" in self.receipt_id:
+            self.reference_submission = True
+
 
     def compute_logP_statistics(self, experimental_data, stats_funcs):
         data = self._create_comparison_dataframe('logP mean', self.data, experimental_data)
@@ -776,7 +788,8 @@ class logPSubmission(SamplSubmission):
         data_mod_unc = data_mod_unc.rename(index=str, columns={"logP mean (calc)": "logP mean (calc)",
                                                                 "logP SEM": "logP SEM (calc)",
                                                                 "logP model uncertainty": "logP model uncertainty"})
-        #print("data_mod_unc:\n", data_mod_unc)
+
+        print("data_mod_unc:\n", data_mod_unc)
 
         # Compute QQ-Plot Error Slope (ES)
         calc = data_mod_unc.loc[:, "logP mean (calc)"].values
@@ -800,7 +813,7 @@ class logPSubmission(SamplSubmission):
         confidence_interval = (stat_lower_percentile, stat_higher_percentile)
 
         model_uncertainty_statistics = [error_slope, confidence_interval, samples_statistics]
-
+        print("model_uncertainty_statistics \n",model_uncertainty_statistics)
 
         return model_uncertainty_statistics, QQplot_data
 
@@ -810,7 +823,7 @@ class logPSubmission(SamplSubmission):
 # =============================================================================
 
 
-def load_submissions(directory_path, user_map, method_map):
+def load_submissions(directory_path, user_map):#, method_map):
     """
     Load submissions from a specified directory using a specified user map.
     Optional argument:
@@ -822,7 +835,7 @@ def load_submissions(directory_path, user_map, method_map):
 
     for file_path in glob.glob(os.path.join(directory_path, '*.csv')):
         try:
-            submission = logPSubmission(file_path, user_map, method_map)
+            submission = logPSubmission(file_path, user_map) #, method_map)
         except IgnoredSubmissionError:
             continue
 
@@ -835,7 +848,7 @@ def load_submissions(directory_path, user_map, method_map):
 
     return submissions
 
-def load_ranked_submissions(directory_path, user_map, method_map):
+def load_ranked_submissions(directory_path, user_map): #, method_map):
     """
     Load submissions from a specified directory using a specified user map.
     Optional argument:
@@ -847,15 +860,18 @@ def load_ranked_submissions(directory_path, user_map, method_map):
 
     for file_path in glob.glob(os.path.join(directory_path, '*.csv')):
         try:
-            submission = logPSubmission(file_path, user_map, method_map)
+            submission = logPSubmission(file_path, user_map)#, method_map)
             #print("submission.receipt_id:", submission.receipt_id[0:3])
         except IgnoredSubmissionError:
             continue
         # only continue if submission is ranked
         if not submission.ranked:
             continue
-        if submission.receipt_id[0:3] == "NUL" or submission.receipt_id[0:3] == "REF" :
+        #if submission.receipt_id[0:3] == "NUL" or submission.receipt_id[0:3] == "REF" :
+        if "REF" in submission.receipt_id or "NULL" in submission.receipt_id:
+            print("Found REF/NULL")
             continue
+
         submissions.append(submission)
 
     receipt_ids = []
@@ -877,8 +893,7 @@ class logPSubmissionCollection:
 
 
     def __init__(self, submissions, experimental_data, output_directory_path,
-    logP_submission_collection_file_path, ignore_refcalcs = True, ranked_only = True,
-    allow_multiple = False):
+    logP_submission_collection_file_path, ignore_refcalcs = True, ranked_only = True, allow_multiple = True):
         # Build collection dataframe from the beginning.
         # Build full logP collection table.
         data = []
@@ -913,10 +928,10 @@ class logPSubmissionCollection:
 
                 data.append({
                     'receipt_id': submission.receipt_id,
-                    'participant': submission.participant,
-                    'name': submission.name,
+                    #'participant': submission.participant,
+                    #'name': submission.name,
                     'category': submission.category,
-                    'reassigned category': submission.reassigned_category,
+                    #'reassigned category': submission.reassigned_category,
                     'Molecule ID': mol_ID,
                     'logPapp (calc)': logP_mean_pred,
                     'logPapp SEM (calc)': logP_SEM_pred,
@@ -925,7 +940,7 @@ class logPSubmissionCollection:
                     '$\Delta$logPapp error (calc - exp)': logP_mean_pred - logP_mean_exp,
                     'logPapp model uncertainty': logP_model_uncertainty
                 })
-        print("self.participant_names_ranked",self.participant_names_ranked)
+
         # Transform into Pandas DataFrame.
         self.data = pd.DataFrame(data=data)
         self.output_directory_path = output_directory_path
@@ -947,11 +962,12 @@ class logPSubmissionCollection:
 
         for receipt_id in self.data.receipt_id.unique():
             # Skip NULL0 submission
-            if receipt_id == "NULL0":
+            if "NULL" in receipt_id:# == "NULL0":
                 continue
 
             data = self.data[self.data.receipt_id == receipt_id]
-            title = '{} ({})'.format(receipt_id, data.name.unique()[0])
+            #title = '{} ({})'.format(receipt_id, data.name.unique()[0])
+            title = '{}'.format(receipt_id)
 
             plt.close('all')
             plot_correlation(x='logPapp (exp)', y='logPapp (calc)',
@@ -970,11 +986,11 @@ class logPSubmissionCollection:
         for receipt_id in self.data.receipt_id.unique():
 
             # Skip NULL0 submission
-            if receipt_id == "NULL0":
+            if "NULL" in receipt_id:# == "NULL0":
                 continue
 
             data = self.data[self.data.receipt_id == receipt_id]
-            title = '{} ({})'.format(receipt_id, data.name.unique()[0])
+            title = '{}'.format(receipt_id)#, data.name.unique()[0])
 
             plt.close('all')
             plot_correlation_with_SEM(x_lab='logPapp (exp)', y_lab='logPapp (calc)',
@@ -1012,7 +1028,7 @@ class logPSubmissionCollection:
         # Create a separate plot for each submission.
         for receipt_id in self.data.receipt_id.unique():
             data = self.data[self.data.receipt_id == receipt_id]
-            title = '{} ({})'.format(receipt_id, data.name.unique()[0])
+            title = '{}'.format(receipt_id)#, data.name.unique()[0])
 
             plt.close('all')
             barplot(df=data, x_label="Molecule ID", y_label="absolute error", title=title)
@@ -1037,7 +1053,7 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
     for i, submission in enumerate(submissions):
         receipt_id = submission.receipt_id
         category = submission.category
-        reassigned_category = submission.reassigned_category
+        #reassigned_category = submission.reassigned_category
 
         # Pull submission type
         type = 'Standard'
@@ -1084,12 +1100,18 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
             # For the violin plot, we need all the bootstrap statistics series.
             for bootstrap_sample in bootstrap_samples:
-                statistics_plot.append(dict(ID=receipt_id, name=submission.name, category=category,
+                #statistics_plot.append(dict(ID=receipt_id, name=submission.name, category=category,
+                #                            statistics=stats_name_latex, value=bootstrap_sample))
+                statistics_plot.append(dict(ID=receipt_id, category=category,
                                             statistics=stats_name_latex, value=bootstrap_sample))
 
-        statistics_csv.append({'ID': receipt_id, 'name': submission.name, 'category': category, 'reassigned_category': reassigned_category, 'type': type, **record_csv})
+        #statistics_csv.append({'ID': receipt_id, 'name': submission.name, 'category': category, 'reassigned_category': reassigned_category, 'type': type, **record_csv})
+        #escaped_name = submission.name.replace('_', '\_')
+        #statistics_latex.append({'ID': receipt_id, 'name': escaped_name, 'category': category, 'reassigned_category': reassigned_category, 'type':type, **record_latex})
+
+        statistics_csv.append({'ID': receipt_id, 'name': receipt_id, 'category': category, 'type': type, **record_csv})
         escaped_name = submission.name.replace('_', '\_')
-        statistics_latex.append({'ID': receipt_id, 'name': escaped_name, 'category': category, 'reassigned_category': reassigned_category, 'type':type, **record_latex})
+        statistics_latex.append({'ID': receipt_id, 'name': receipt_id,'category': category, 'type':type, **record_latex})
     print()
     print("statistics_csv:\n",statistics_csv)
     print()
@@ -1109,6 +1131,10 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
     statistics_csv.set_index('ID', inplace=True)
     statistics_latex = pd.DataFrame(statistics_latex)
     statistics_plot = pd.DataFrame(statistics_plot)
+    print("statistics_csv: \n", statistics_csv)
+    print(statistics_csv)
+    print("statistics_latex: \n", statistics_latex)
+    print(statistics_latex)
 
     # Sort by the given statistics.
     if sort_stat is not None:
@@ -1121,8 +1147,14 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
     #print("stats_names_csv:", stats_names_csv)
     stats_names_latex = [latex_header_conversions.get(name, name) for name in stats_names]
     #print("stats_names_latex:", stats_names_latex)
-    statistics_csv = statistics_csv[['name', "category", "reassigned_category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
+    #old
+    #statistics_csv = statistics_csv[['name', "category", "reassigned_category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
+    statistics_csv = statistics_csv[['name', "category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
+    print("statistics_csv: \n", statistics_csv)
     statistics_latex = statistics_latex[['ID', 'name'] + stats_names_latex + ["ES"]] ## Add error slope(ES)
+    #new
+    #statistics_csv = statistics_csv[['ID', "category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
+    #statistics_latex = statistics_latex[['receipt_id', 'receipt_id'] + stats_names_latex + ["ES"]] ## Add error slope(ES)
 
     # Create CSV and JSON tables (correct LaTex syntax in column names).
     os.makedirs(directory_path)
@@ -1168,6 +1200,7 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
     for ax, stats_name in zip(axes, stats_names):
         stats_name_latex = latex_header_conversions.get(stats_name, stats_name)
         data = statistics_plot[statistics_plot.statistics == stats_name_latex]
+
         # Plot ordering submission by statistics.
         ordering_function = ordering_functions.get(stats_name, lambda x: x)
         order = sorted(statistics_csv[stats_name].items(), key=lambda x: ordering_function(x[1]))
@@ -1180,172 +1213,6 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
     plt.tight_layout()
     # plt.show()
     plt.savefig(file_base_path + '_bootstrap_distributions.pdf')
-
-'''def generate_statistics_tables(submissions, stats_funcs, directory_path, file_base_name,
-                                sort_stat=None, ordering_functions=None, latex_header_conversions=None,
-                                ignore_refcalcs = True):
-    stats_names = list(stats_funcs.keys())
-    print("stats_funcs",stats_funcs)
-    ci_suffixes = ('', '_lower_bound', '_upper_bound')
-
-    # Collect the records for the DataFrames.
-    statistics_csv = []
-    statistics_latex = []
-    statistics_plot = []
-
-    # Collect the records for QQ Plot
-    # Dictionary of receipt ID: [X, Y, error_slope]
-    QQplot_dict = {}
-
-    for i, submission in enumerate(submissions):
-        receipt_id = submission.receipt_id
-        category = submission.category
-        reassigned_category = submission.reassigned_category
-
-        # Pull submission type
-        type = 'Standard'
-        if submission.reference_submission:
-            type = 'Reference'
-
-        # Ignore reference calculation, if applicable
-        if submission.reference_submission and ignore_refcalcs:
-            print("submission.reference_submission",submission.reference_submission)
-            continue
-
-        # Include ranked submissions
-        #if ranked_only:
-        #    continue
-
-        print('\rGenerating bootstrap statistics for submission {} ({}/{})'
-                  ''.format(receipt_id, i + 1, len(submissions)), end='')
-
-        bootstrap_statistics = submission.compute_logP_statistics(experimental_data, stats_funcs)
-
-        # Compute error slope
-        error_slope_bootstrap_statistics, QQplot_data = submission.compute_logP_model_uncertainty_statistics(experimental_data)
-        #print("error_slope_bootstrap_statistics:\n")
-        #print(error_slope_bootstrap_statistics)
-
-        # Add data to to QQplot dictionary
-        QQplot_dict.update({receipt_id : QQplot_data})
-
-        # Add error slope and CI to bootstrap_statistics
-        bootstrap_statistics.update({'ES' : error_slope_bootstrap_statistics })
-        #print("bootstrap_statistics:\n", bootstrap_statistics)
-
-        # Organize data to construct CSV and PDF versions of statistics tables
-        record_csv = {}
-        record_latex = {}
-        for stats_name, (stats, (lower_bound, upper_bound), bootstrap_samples) in bootstrap_statistics.items():
-            # For CSV and JSON we put confidence interval in separate columns.
-            for suffix, info in zip(ci_suffixes, [stats, lower_bound, upper_bound]):
-                record_csv[stats_name + suffix] = info
-
-            # For the PDF, print bootstrap CI in the same column.
-            stats_name_latex = latex_header_conversions.get(stats_name, stats_name)
-            record_latex[stats_name_latex] = '{:.2f} [{:.2f}, {:.2f}]'.format(stats, lower_bound, upper_bound)
-
-            # For the violin plot, we need all the bootstrap statistics series.
-            for bootstrap_sample in bootstrap_samples:
-                statistics_plot.append(dict(ID=receipt_id, name=submission.name, category=category,
-                                            statistics=stats_name_latex, value=bootstrap_sample))
-
-        statistics_csv.append({'ID': receipt_id, 'name': submission.name, 'category': category, 'reassigned_category': reassigned_category, 'type': type, **record_csv})
-        escaped_name = submission.name.replace('_', '\_')
-        statistics_latex.append({'ID': receipt_id, 'name': escaped_name, 'category': category, 'reassigned_category': reassigned_category, 'type':type, **record_latex})
-    print()
-    print("statistics_csv:\n",statistics_csv)
-    print()
-
-    # Write QQplot_dict to a JSON file for plotting later
-    #print("QQplot_dict:\n", QQplot_dict)
-    QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
-    os.makedirs(QQplot_directory_path, exist_ok=True)
-    QQplot_dict_filename = os.path.join(QQplot_directory_path, 'QQplot_dict.pickle')
-
-    with open(QQplot_dict_filename, 'wb') as outfile:
-        pickle.dump(QQplot_dict, outfile)
-
-
-    # Convert dictionary to Dataframe to create tables/plots easily.
-    statistics_csv = pd.DataFrame(statistics_csv)
-    statistics_csv.set_index('ID', inplace=True)
-    statistics_latex = pd.DataFrame(statistics_latex)
-    statistics_plot = pd.DataFrame(statistics_plot)
-
-    # Sort by the given statistics.
-    if sort_stat is not None:
-        statistics_csv.sort_values(by=sort_stat, inplace=True)
-        statistics_latex.sort_values(by=latex_header_conversions.get(sort_stat, sort_stat),
-                                     inplace=True)
-
-    # Reorder columns that were scrambled by going through a dictionaries.
-    stats_names_csv = [name + suffix for name in stats_names for suffix in ci_suffixes]
-    #print("stats_names_csv:", stats_names_csv)
-    stats_names_latex = [latex_header_conversions.get(name, name) for name in stats_names]
-    #print("stats_names_latex:", stats_names_latex)
-    statistics_csv = statistics_csv[['name', "category", "reassigned_category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
-    statistics_latex = statistics_latex[['ID', 'name'] + stats_names_latex + ["ES"]] ## Add error slope(ES)
-
-    # Create CSV and JSON tables (correct LaTex syntax in column names).
-    os.makedirs(directory_path)
-    file_base_path = os.path.join(directory_path, file_base_name)
-    with open(file_base_path + '.csv', 'w') as f:
-        statistics_csv.to_csv(f)
-    with open(file_base_path + '.json', 'w') as f:
-        statistics_csv.to_json(f, orient='index')
-
-    # Create LaTex table.
-    latex_directory_path = os.path.join(directory_path, file_base_name + 'LaTex')
-    os.makedirs(latex_directory_path, exist_ok=True)
-    with open(os.path.join(latex_directory_path, file_base_name + '.tex'), 'w') as f:
-        f.write('\\documentclass{article}\n'
-                '\\usepackage[a4paper,margin=0.005in,tmargin=0.5in,lmargin=0.5in,rmargin=0.5in,landscape]{geometry}\n'
-                '\\usepackage{booktabs}\n'
-                '\\usepackage{longtable}\n'
-                '\\pagenumbering{gobble}\n'
-                '\\begin{document}\n'
-                '\\begin{center}\n'
-                '\\scriptsize\n')
-        statistics_latex.to_latex(f, column_format='|ccccccccc|', escape=False, index=False, longtable=True)
-        f.write('\end{center}\n'
-                '\nNotes\n\n'
-                '- RMSE: Root mean square error\n\n'
-                '- MAE: Mean absolute error\n\n'
-                '- ME: Mean error\n\n'
-                '- R2: R-squared, square of Pearson correlation coefficient\n\n'
-                '- m: slope of the line fit to predicted vs experimental logP values\n\n'
-                '- $\\tau$:  Kendall rank correlation coefficient\n\n'
-                '- ES: error slope calculated from the QQ Plots of model uncertainty predictions\n\n'
-                '- Mean and 95\% confidence intervals of RMSE, MAE, ME, R2, and m were calculated by bootstrapping with 10000 samples.\n\n'
-                '- 95\% confidence intervals of ES were calculated by bootstrapping with 1000 samples.'
-                #'- Some logP predictions were submitted after the submission deadline to be used as a reference method.\n\n'
-                '\end{document}\n')
-
-    # Violin plots by statistics across submissions.
-    plt.close('all')
-
-    #fig, axes = plt.subplots(ncols=len(stats_names), figsize=(12, 0.375 * len(submissions)))
-
-    fig, axes = plt.subplots(ncols=len(stats_names), figsize=(15, 6))
-    for ax, stats_name in zip(axes, stats_names):
-        stats_name_latex = latex_header_conversions.get(stats_name, stats_name)
-        data = statistics_plot[statistics_plot.statistics == stats_name_latex]
-        # Plot ordering submission by statistics.
-        ordering_function = ordering_functions.get(stats_name, lambda x: x)
-        order = sorted(statistics_csv[stats_name].items(), key=lambda x: ordering_function(x[1]))
-        order = [receipt_id for receipt_id, value in order]
-        sns.violinplot(x='value', y='ID', data=data, ax=ax,
-                        order=order, palette='PuBuGn_r', linewidth=0.5, width=1)
-        ax.set_xlabel(stats_name_latex)
-        ax.set_ylabel('')
-        sns.set_style("whitegrid")
-    plt.tight_layout()
-    # plt.show()
-    plt.savefig(file_base_path + '_bootstrap_distributions.pdf')'''
-
-
-
 
 
 
@@ -1471,26 +1338,31 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
         category_list = ["Empirical"] # Reassigned categories
 
         # New labels for file naming for reassigned categories
-        reassigned_category_path_label_dict = {"Empirical": "Empirical"}
+        category_path_label_dict = {"Empirical": "Empirical"}
 
 
         for category in category_list:
             print("Reassigned category: ",category)
             #print("df_statistics.columns:\n", df_statistics.columns)
 
-            # Take subsection of dataframe for each category
+            '''# Take subsection of dataframe for each category
             df_statistics_1category = df_statistics.loc[df_statistics['reassigned_category'] == category]
             df_statistics_MAE_1category = df_statistics_MAE.loc[df_statistics_MAE['reassigned_category'] == category]
             df_statistics_tau_1category = df_statistics_tau.loc[df_statistics_tau['reassigned_category'] == category]
-            df_statistics_R2_1category = df_statistics_R2.loc[df_statistics_R2['reassigned_category'] == category]
+            df_statistics_R2_1category = df_statistics_R2.loc[df_statistics_R2['reassigned_category'] == category]'''
 
+            # Take subsection of dataframe for each category
+            df_statistics_1category = df_statistics.loc[df_statistics['category'] == category]
+            df_statistics_MAE_1category = df_statistics_MAE.loc[df_statistics_MAE['category'] == category]
+            df_statistics_tau_1category = df_statistics_tau.loc[df_statistics_tau['category'] == category]
+            df_statistics_R2_1category = df_statistics_R2.loc[df_statistics_R2['category'] == category]
 
             # RMSE comparison plot for each category
             barplot_with_CI_errorbars(df=df_statistics_1category, x_label="ID", y_label="RMSE", y_lower_label="RMSE_lower_bound",
                                       y_upper_label="RMSE_upper_bound", figsize=(12, 10))
             plt.title("Method category: {}".format(category), fontdict={'fontsize': 22})
             plt.ylim(0.0,1.0)
-            plt.savefig(directory_path + "/RMSE_vs_method_plot_for_{}_category.pdf".format(reassigned_category_path_label_dict[category]))
+            plt.savefig(directory_path + "/RMSE_vs_method_plot_for_{}_category.pdf".format(category_path_label_dict[category]))
 
 
             # MAE comparison plot for each category
@@ -1499,7 +1371,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                       y_upper_label="MAE_upper_bound", figsize=(12, 10))
             plt.title("Method category: {}".format(category), fontdict={'fontsize': 22})
             plt.ylim(0.0, 1.0)
-            plt.savefig(directory_path + "/MAE_vs_method_plot_for_{}_category.pdf".format(reassigned_category_path_label_dict[category]))
+            plt.savefig(directory_path + "/MAE_vs_method_plot_for_{}_category.pdf".format(category_path_label_dict[category]))
 
 
             # Kendall's Tau  comparison plot for each category
@@ -1507,7 +1379,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                       y_lower_label="kendall_tau_lower_bound",
                                       y_upper_label="kendall_tau_upper_bound", figsize=(12, 10))
             plt.title("Method category: {}".format(category), fontdict={'fontsize': 22})
-            plt.savefig(directory_path + "/kendalls_tau_vs_method_plot_for_{}_category.pdf".format(reassigned_category_path_label_dict[category]))
+            plt.savefig(directory_path + "/kendalls_tau_vs_method_plot_for_{}_category.pdf".format(category_path_label_dict[category]))
 
 
             # R-squared comparison plot for each category
@@ -1516,7 +1388,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                       y_upper_label="R2_upper_bound", figsize=(12, 10))
             plt.title("Method category: {}".format(category), fontdict={'fontsize': 22})
             plt.ylim(-0.1, 1.0)
-            plt.savefig(directory_path + "/Rsquared_vs_method_plot_for_{}_category.pdf".format(reassigned_category_path_label_dict[category]))
+            plt.savefig(directory_path + "/Rsquared_vs_method_plot_for_{}_category.pdf".format(category_path_label_dict[category]))
 
 
 
@@ -1567,8 +1439,8 @@ if __name__ == '__main__':
         user_map = pd.read_csv(f)
 
     # Import method map
-    with open(METHOD_MAP_FILE_PATH, 'r') as f:
-        method_map = pd.read_csv(f)
+    '''with open(METHOD_MAP_FILE_PATH, 'r') as f:
+        method_map = pd.read_csv(f)'''
 
     # Configuration: statistics to compute.
     stats_funcs = collections.OrderedDict([
@@ -1604,15 +1476,17 @@ if __name__ == '__main__':
     #==========================================================================================
 
     # Load submissions data.
-    submissions_logP = load_submissions(LOGP_SUBMISSIONS_DIR_PATH, user_map, method_map)
+    submissions_logP = load_submissions(LOGP_SUBMISSIONS_DIR_PATH, user_map)#, method_map)
 
     # Perform the analysis
     output_directory_path='./analysis_outputs_all_submissions'
     logP_submission_collection_file_path = '{}/logP_submission_collection.csv'.format(output_directory_path)
 
-    collection_logP= logPSubmissionCollection(submissions_logP, experimental_data,
-                                              output_directory_path, logP_submission_collection_file_path,
-                                              ignore_refcalcs = True, ranked_only = False)
+    collection_logP= logPSubmissionCollection(submissions_logP, experimental_data, output_directory_path,
+                                              logP_submission_collection_file_path,
+                                              ignore_refcalcs = False,
+                                              ranked_only = False,
+                                              allow_multiple = True)
 
     # Generate plots and tables.
     for collection in [collection_logP]:
@@ -1634,13 +1508,13 @@ if __name__ == '__main__':
                                     sort_stat='RMSE',
                                     ordering_functions=ordering_functions,
                                     latex_header_conversions=latex_header_conversions,
-                                    ignore_refcalcs = True)
+                                    ignore_refcalcs = False)
 
     # Generate RMSE, MAE, Kendall's Tau comparison plots.
     statistics_directory_path = os.path.join(output_directory_path, "StatisticsTables")
     generate_performance_comparison_plots(statistics_filename="statistics.csv",
                                             directory_path=statistics_directory_path,
-                                            ignore_refcalcs = True)
+                                            ignore_refcalcs = False)
 
     # Generate QQ-Plots for model uncertainty predictions
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
@@ -1656,7 +1530,7 @@ if __name__ == '__main__':
     #==========================================================================================
 
     # Load submissions data.
-    ranked_submissions_logP = load_ranked_submissions(LOGP_SUBMISSIONS_DIR_PATH, user_map, method_map)
+    ranked_submissions_logP = load_ranked_submissions(LOGP_SUBMISSIONS_DIR_PATH, user_map)
 
     # Perform the analysis
     output_directory_path='./analysis_outputs_ranked_submissions'
@@ -1668,7 +1542,7 @@ if __name__ == '__main__':
                                                logP_submission_collection_file_path,
                                                ignore_refcalcs = True,
                                                ranked_only = True,
-                                               allow_multiple = False)
+                                               allow_multiple = True)
 
     #print("collection_logP: \n", collection_logP)
 

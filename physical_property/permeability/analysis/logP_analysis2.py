@@ -213,7 +213,8 @@ def select_subsection_of_collection(collection_df, method_group):
     #print("Collection_df:\n",collection_df)
 
     # Filter collection dataframe based on method category
-    collection_df_of_selected_method_group = collection_df.loc[collection_df["reassigned category"] == method_group]
+    #collection_df_of_selected_method_group = collection_df.loc[collection_df["reassigned category"] == method_group]
+    collection_df_of_selected_method_group = collection_df.loc[collection_df["category"] == method_group]
     collection_df_of_selected_method_group = collection_df_of_selected_method_group.reset_index(drop=True)
     print("collection_df_of_selected_method_group: \n {}".format(collection_df_of_selected_method_group))
 
@@ -290,7 +291,9 @@ def create_molecular_error_distribution_plots(collection_df, directory_path, fil
 def create_category_error_distribution_plots(collection_df, directory_path, file_base_name):
 
     # Ridge plot using all predictions
-    ridge_plot_wo_overlap(df=collection_df, by = "reassigned category", column = "$\Delta$logPapp error (calc - exp)", figsize=(4, 4),
+    #ridge_plot_wo_overlap(df=collection_df, by = "reassigned category", column = "$\Delta$logPapp error (calc - exp)", figsize=(4, 4),
+    #            colormap=cm.plasma)
+    ridge_plot_wo_overlap(df=collection_df, by = "category", column = "$\Delta$logPapp error (calc - exp)", figsize=(4, 4),
                 colormap=cm.plasma)
     plt.savefig(directory_path + "/" + file_base_name +".pdf")
 
@@ -491,6 +494,7 @@ if __name__ == '__main__':
     create_category_error_distribution_plots(collection_df=collection_data,
                                               directory_path=category_comparison_directory_path,
                                               file_base_name="error_distribution_of_method_categories_ridge_plot")
+
 
     '''# Calculate mean and standard deviation of performance statistics of top 10 methods of each category.
     statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
