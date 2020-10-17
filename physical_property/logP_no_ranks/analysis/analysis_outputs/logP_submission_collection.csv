@@ -1,0 +1,155 @@
+,receipt_id,participant,name,category,reassigned category,Molecule ID,logP (calc),logP SEM (calc),logP (exp),logP SEM (exp),$\Delta$logP error (calc - exp),logP model uncertainty
+0,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM25,2.51,0.36,2.67,0.01,-0.16000000000000014,0.5
+1,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM26,0.99,0.0,1.04,0.01,-0.050000000000000044,0.5
+2,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM27,1.59,0.15,1.56,,0.030000000000000027,0.5
+3,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM28,0.84,0.36,1.18,,-0.33999999999999997,0.5
+4,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM29,1.55,0.39,1.61,0.03,-0.06000000000000005,0.5
+5,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM30,2.68,0.43,2.76,,-0.07999999999999963,0.5
+6,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM31,1.91,0.45,1.96,,-0.050000000000000044,0.5
+7,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM32,2.29,0.13,2.44,,-0.1499999999999999,0.5
+8,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM33,3.64,0.27,2.96,,0.6800000000000002,0.5
+9,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM34,2.74,0.28,2.83,,-0.08999999999999986,0.5
+10,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM35,1.46,0.34,0.88,0.02,0.58,0.5
+11,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM36,2.59,0.36,0.76,,1.8299999999999998,0.5
+12,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM37,1.85,0.52,1.45,,0.40000000000000013,0.5
+13,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM38,0.75,0.2,1.03,,-0.28,0.5
+14,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM39,2.02,0.2,1.89,,0.13000000000000012,0.5
+15,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM40,1.09,0.21,1.83,0.05,-0.74,0.5
+16,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM41,1.9,0.0,0.58,0.02,1.3199999999999998,0.5
+17,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM42,3.6,0.0,1.76,0.03,1.84,0.5
+18,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM43,2.41,0.08,0.85,0.01,1.56,0.5
+19,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM44,0.85,0.0,1.16,0.03,-0.30999999999999994,0.5
+20,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM45,2.42,0.1,2.55,0.04,-0.1299999999999999,0.5
+21,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM46,1.28,0.16,1.72,0.01,-0.43999999999999995,0.5
+22,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM25,2.21,0.08,2.67,0.01,-0.45999999999999996,0.5
+23,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM26,0.86,0.08,1.04,0.01,-0.18000000000000005,0.5
+24,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM27,1.46,0.12,1.56,,-0.10000000000000009,0.5
+25,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM28,1.0,0.28,1.18,,-0.17999999999999994,0.5
+26,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM29,1.42,0.05,1.61,0.03,-0.19000000000000017,0.5
+27,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM30,2.62,0.07,2.76,,-0.13999999999999968,0.5
+28,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM31,1.88,0.23,1.96,,-0.08000000000000007,0.5
+29,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM32,1.9,0.15,2.44,,-0.54,0.5
+30,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM33,3.34,0.1,2.96,,0.3799999999999999,0.5
+31,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM34,2.32,0.2,2.83,,-0.5100000000000002,0.5
+32,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM35,1.44,0.12,0.88,0.02,0.5599999999999999,0.5
+33,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM36,2.83,0.36,0.76,,2.0700000000000003,0.5
+34,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM37,1.93,0.44,1.45,,0.48,0.5
+35,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM38,0.81,0.02,1.03,,-0.21999999999999997,0.5
+36,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM39,2.05,0.09,1.89,,0.15999999999999992,0.5
+37,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM40,1.26,0.37,1.83,0.05,-0.5700000000000001,0.5
+38,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM41,2.04,0.08,0.58,0.02,1.46,0.5
+39,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM42,3.32,0.0,1.76,0.03,1.5599999999999998,0.5
+40,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM43,2.44,0.32,0.85,0.01,1.5899999999999999,0.5
+41,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM44,0.79,0.31,1.16,0.03,-0.3699999999999999,0.5
+42,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM45,2.13,0.1,2.55,0.04,-0.41999999999999993,0.5
+43,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM46,1.44,0.05,1.72,0.01,-0.28,0.5
+44,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM25,2.32,0.19,2.67,0.01,-0.3500000000000001,0.41
+45,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM26,1.06,0.19,1.04,0.01,0.020000000000000018,0.41
+46,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM27,1.54,0.24,1.56,,-0.020000000000000018,0.41
+47,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM28,1.44,0.24,1.18,,0.26,0.41
+48,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM29,1.52,0.31,1.61,0.03,-0.09000000000000008,0.41
+49,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM30,2.81,0.31,2.76,,0.050000000000000266,0.41
+50,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM31,1.68,0.28,1.96,,-0.28,0.41
+51,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM32,2.24,0.41,2.44,,-0.19999999999999973,0.41
+52,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM33,3.58,0.38,2.96,,0.6200000000000001,0.41
+53,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM34,2.36,0.29,2.83,,-0.4700000000000002,0.41
+54,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM35,1.46,0.61,0.88,0.02,0.58,0.41
+55,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM36,2.81,0.75,0.76,,2.05,0.41
+56,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM37,1.56,0.37,1.45,,0.1100000000000001,0.41
+57,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM38,0.98,0.25,1.03,,-0.050000000000000044,0.41
+58,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM39,2.46,0.41,1.89,,0.5700000000000001,0.41
+59,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM40,1.28,0.37,1.83,0.05,-0.55,0.41
+60,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM41,1.61,0.17,0.58,0.02,1.0300000000000002,0.41
+61,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM42,3.02,0.2,1.76,0.03,1.26,0.41
+62,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM43,1.97,0.36,0.85,0.01,1.12,0.41
+63,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM44,0.95,0.19,1.16,0.03,-0.20999999999999996,0.41
+64,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM45,2.15,0.3,2.55,0.04,-0.3999999999999999,0.41
+65,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM46,1.28,0.31,1.72,0.01,-0.43999999999999995,0.41
+66,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM25,3.14,0.27,2.67,0.01,0.4700000000000002,0.49
+67,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM26,0.89,0.0,1.04,0.01,-0.15000000000000002,0.49
+68,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM27,1.57,0.06,1.56,,0.010000000000000009,0.49
+69,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM28,0.9,0.34,1.18,,-0.2799999999999999,0.49
+70,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM29,1.74,0.07,1.61,0.03,0.1299999999999999,0.49
+71,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM30,3.1,0.16,2.76,,0.3400000000000003,0.49
+72,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM31,2.16,0.24,1.96,,0.20000000000000018,0.49
+73,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM32,2.37,0.05,2.44,,-0.06999999999999984,0.49
+74,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM33,3.8,0.18,2.96,,0.8399999999999999,0.49
+75,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM34,2.84,0.21,2.83,,0.009999999999999787,0.49
+76,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM35,1.33,0.32,0.88,0.02,0.45000000000000007,0.49
+77,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM36,2.73,0.24,0.76,,1.97,0.49
+78,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM37,1.73,0.34,1.45,,0.28,0.49
+79,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM38,1.0,0.16,1.03,,-0.030000000000000027,0.49
+80,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM39,2.35,0.08,1.89,,0.4600000000000002,0.49
+81,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM40,1.15,0.35,1.83,0.05,-0.6800000000000002,0.49
+82,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM41,2.02,0.0,0.58,0.02,1.44,0.49
+83,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM42,3.69,0.0,1.76,0.03,1.93,0.49
+84,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM43,2.49,0.2,0.85,0.01,1.6400000000000001,0.49
+85,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM44,0.91,0.0,1.16,0.03,-0.2499999999999999,0.49
+86,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM45,2.4,0.06,2.55,0.04,-0.1499999999999999,0.49
+87,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM46,1.25,0.07,1.72,0.01,-0.47,0.49
+88,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM25,2.32,0.19,2.67,0.01,-0.3500000000000001,0.41
+89,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM26,1.06,0.19,1.04,0.01,0.020000000000000018,0.41
+90,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM27,1.54,0.24,1.56,,-0.020000000000000018,0.41
+91,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM28,1.44,0.24,1.18,,0.26,0.41
+92,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM29,1.52,0.31,1.61,0.03,-0.09000000000000008,0.41
+93,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM30,2.81,0.31,2.76,,0.050000000000000266,0.41
+94,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM31,1.68,0.28,1.96,,-0.28,0.41
+95,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM32,2.24,0.41,2.44,,-0.19999999999999973,0.41
+96,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM33,3.58,0.38,2.96,,0.6200000000000001,0.41
+97,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM34,2.36,0.29,2.83,,-0.4700000000000002,0.41
+98,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM35,1.46,0.61,0.88,0.02,0.58,0.41
+99,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM36,2.81,0.75,0.76,,2.05,0.41
+100,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM37,1.56,0.37,1.45,,0.1100000000000001,0.41
+101,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM38,0.98,0.25,1.03,,-0.050000000000000044,0.41
+102,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM39,2.46,0.41,1.89,,0.5700000000000001,0.41
+103,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM40,1.28,0.37,1.83,0.05,-0.55,0.41
+104,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM41,1.61,0.17,0.58,0.02,1.0300000000000002,0.41
+105,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM42,3.02,0.2,1.76,0.03,1.26,0.41
+106,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM43,1.97,0.36,0.85,0.01,1.12,0.41
+107,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM44,0.95,0.19,1.16,0.03,-0.20999999999999996,0.41
+108,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM45,2.15,0.3,2.55,0.04,-0.3999999999999999,0.41
+109,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM46,1.28,0.31,1.72,0.01,-0.43999999999999995,0.41
+110,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM25,3.89,0.1,2.67,0.01,1.2200000000000002,0.6
+111,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM26,2.04,0.1,1.04,0.01,1.0,0.6
+112,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM27,2.53,0.1,1.56,,0.9699999999999998,0.6
+113,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM28,1.47,0.1,1.18,,0.29000000000000004,0.6
+114,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM29,2.15,0.1,1.61,0.03,0.5399999999999998,0.6
+115,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM30,3.46,0.1,2.76,,0.7000000000000002,0.6
+116,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM31,3.28,0.1,1.96,,1.3199999999999998,0.6
+117,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM32,3.23,0.1,2.44,,0.79,0.6
+118,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM33,5.07,0.1,2.96,,2.1100000000000003,0.6
+119,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM34,4.48,0.1,2.83,,1.6500000000000004,0.6
+120,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM35,1.46,0.1,0.88,0.02,0.58,0.6
+121,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM36,3.12,0.1,0.76,,2.3600000000000003,0.6
+122,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM37,2.54,0.1,1.45,,1.09,0.6
+123,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM38,1.52,0.1,1.03,,0.49,0.6
+124,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM39,2.68,0.1,1.89,,0.7900000000000003,0.6
+125,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM40,2.7,0.1,1.83,0.05,0.8700000000000001,0.6
+126,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM41,2.29,0.1,0.58,0.02,1.71,0.6
+127,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM42,4.3,0.1,1.76,0.03,2.54,0.6
+128,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM43,3.42,0.1,0.85,0.01,2.57,0.6
+129,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM44,1.28,0.1,1.16,0.03,0.1200000000000001,0.6
+130,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM45,2.98,0.1,2.55,0.04,0.43000000000000016,0.6
+131,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM46,2.29,0.1,1.72,0.01,0.5700000000000001,0.6
+132,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM25,2.74,0.91,2.67,0.01,0.07000000000000028,1.3
+133,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM26,0.09,0.3,1.04,0.01,-0.9500000000000001,1.3
+134,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM27,1.33,1.11,1.56,,-0.22999999999999998,1.3
+135,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM28,-0.95,0.77,1.18,,-2.13,1.3
+136,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM29,1.19,2.63,1.61,0.03,-0.42000000000000015,1.3
+137,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM30,2.21,1.43,2.76,,-0.5499999999999998,1.3
+138,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM31,2.24,0.35,1.96,,0.28000000000000025,1.3
+139,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM32,-0.07,1.26,2.44,,-2.51,1.3
+140,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM33,4.57,0.41,2.96,,1.6100000000000003,1.3
+141,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM34,3.04,2.23,2.83,,0.20999999999999996,1.3
+142,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM35,0.4,1.66,0.88,0.02,-0.48,1.3
+143,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM36,2.76,1.71,0.76,,1.9999999999999998,1.3
+144,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM37,2.0,2.2,1.45,,0.55,1.3
+145,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM38,3.63,1.97,1.03,,2.5999999999999996,1.3
+146,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM39,3.93,2.69,1.89,,2.04,1.3
+147,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM40,1.58,1.29,1.83,0.05,-0.25,1.3
+148,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM41,3.37,2.16,0.58,0.02,2.79,1.3
+149,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM42,6.2,1.42,1.76,0.03,4.44,1.3
+150,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM43,3.58,1.44,0.85,0.01,2.73,1.3
+151,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM44,5.21,0.56,1.16,0.03,4.05,1.3
+152,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM45,5.64,0.52,2.55,0.04,3.09,1.3
+153,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM46,3.16,1.25,1.72,0.01,1.4400000000000002,1.3

@@ -1,0 +1,173 @@
+# PERMEABILITY PREDICTIONS
+#
+# This file will be automatically parsed. It must contain the following four elements:
+# predictions, name of method, software listing, and method description.
+# These elements must be provided in the order shown with their respective headers.
+#
+# Any line that begins with a # is considered a comment and will be ignored when parsing.
+#
+# PREDICTION SECTION
+#
+# It is mandatory to submit permeability predictions for all 22 molecules.
+# Incomplete submissions will not be accepted.
+#
+# Please report the general molecule `ID tag` in the form of `SMXX` (e.g. SM25, SM26, etc).
+# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section- if you used
+# the the challenge provided molecule (as found in the `SAMPL7_molecule_ID_and_SMILES.csv` file in the permeability repo) use the form `SMXX`,
+# if you used a microstate that was provided in the pKa challenge please use that name here (e.g. SM26_micro000, SM26_micro001, etc), and
+# if you used a microstate not provided in the sampl challenge you must use the form `SMXX_extraXXX` (where XXX can be any number).
+#
+# Please report apparent permeability coefficient (logPapp) standard error of the mean (SEM) and logPapp model uncertainty.
+#
+# The data in each prediction line should be structured as follows:
+# ID tag, Molecule ID/IDs considered (no commas), logPapp, logPapp SEM, logPapp model uncertainty
+#
+# Your logPapp predictions do NOT have to use the challenge provided molecules in the `SAMPL7_molecule_ID_and_SMILES.csv` file.
+# If you use a microstate other than the one listed in the challenge provided files, please fill out the `Molecule ID/IDs considered (no commas)`
+# section using a molecule ID in the form of `SMXX_extra001` (number can vary) and please list the molecule ID and it's SMILES string in your methods
+# description in the `METHOD DESCRIPTION SECTION`.
+#
+# Only one entry in the second column (`Molecule ID/IDs considered (no commas)`) is required, but you should list all IDs considered/input to your calculations. See challenge instructions.
+#
+# If you have evaluated additional microstates then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_extra001` (number can vary).
+# If multiple microstates are used, please report the order of population in the aqueous phase in descending order.
+# Please list microstate populations, SMILES strings and the molecule IDs in the `METHOD DESCRIPTION SECTION` section further below.
+#
+# The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
+Predictions:
+SM25,SM25,-5.38,1.02,0.62
+SM26,SM26,-2.32,1.09,0.62
+SM27,SM27,-5.25,1.12,0.62
+SM28,SM28,-5.24,1.15,0.62
+SM29,SM29,-5.23,1.14,0.62
+SM30,SM30,-4.22,1.12,0.62
+SM31,SM31,-5.25,1.17,0.62
+SM32,SM32,-5.19,1.14,0.62
+SM34,SM34,-5.25,1.13,0.62
+SM36,SM36,-5.39,1.06,0.62
+SM37,SM37,-7.42,1.11,0.62
+SM38,SM38,-5.40,1.08,0.62
+SM40,SM40,-5.42,1.11,0.62
+SM41,SM41,-1.35,1.07,0.62
+SM42,SM42,-3.39,1.00,0.62
+SM43,SM43,-5.30,1.16,0.62
+SM44,SM44,-5.34,1.09,0.62
+SM45,SM45,-5.39,1.01,0.62
+SM46,SM46,-9.30,1.17,0.62
+
+#
+#
+# Please list your name," using only UTF-8 characters as described above. The ""Participant name:"" entry is required."
+Participant name:
+D B
+# , Xutong Li
+
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+Shanghai Institute of Materia Medica
+# University of Chinese Academy of Sciences
+
+#
+#
+# NAME SECTION
+#
+# Please provide an informal but informative name of the method used.
+# The name must not exceed 40 characters.
+# The 'Name:' keyword is required as shown here.
+Name:
+REF method
+
+#
+#
+# COMPUTE TIME SECTION
+#
+# Please provide the average compute time across all of the molecules.
+# For physical methods, report the GPU and/or CPU compute time in hours.
+# For empirical methods, report the query time in hours.
+# Create a new line for each processor type.
+# The 'Compute time:' keyword is required as shown here.
+Compute time:
+0.01 hours
+
+#
+# COMPUTING AND HARDWARE SECTION
+#
+# Please provide details of the computing resources that were used to train models and make predictions.
+# Please specify compute time for training models and querying separately for empirical prediction methods.
+# Provide a detailed description of the hardware used to run the simulations.
+# The 'Computing and hardware:' keyword is required as shown here.
+Computing and hardware:
+GROVER was trained and performed on one NVIDIA P40 on a single machine
+hosting an Intel(R) Xeon(R) Gold 6136 CPU @ 3.00GHz.
+
+
+# SOFTWARE SECTION
+#
+# List all major software packages used and their versions.
+# Create a new line for each software.
+# The 'Software:' keyword is required.
+Software:
+pytorch1.1
+python3.6
+rdkit2019.03.3.0
+
+# METHOD CATEGORY SECTION
+#
+# State which method category your prediction method is better described as:
+# `Physical (MM)`, `Physical (QM)`, `Empirical`, or `Mixed`.
+# Pick only one category label.
+# The `Category:` keyword is required.
+Category:
+Empirical
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of details should be roughly equivalent to that used in a publication.
+# Please include the values of key parameters with units.
+# Please explain how statistical uncertainties were estimated.
+#
+# If you have evaluated additional microstates, please report their SMILES strings and populations of all the microstates in this section.
+# If you used a microstate other than the challenge provided microstate (`SMXX_micro000`), please list your chosen `Molecule ID` (in the form of `SMXX_extra001`) along with the SMILES string in your methods description.
+#
+# Use as many lines of text as you need.
+# All text following the 'Method:' keyword will be regarded as part of your free text methods description.
+Method:
+Data Curation and Preparation
+Data were collected from literature and databases. More detail are not shown.
+The compound structures were cleaned and normalized by our in-house script.
+If a compound had multiple logP, the arithmetic means of all values as the final annotation,
+unless the reported logP values covered a range of more than 0.5.
+Since the number of records is too large, random samping was performed on the full datset.
+About half of the compounds were randomly selected for model buiding within the limited time.
+The final dataset consists of 2942 compounds.
+
+Model building
+All compounds were randomly dividied into training and test set by a ratio of 4:1.
+Five-fold cross-validation was performed within the training dataset during the training process,5 models were build for each fold with different initial parameters for ensemble.
+In detail, training dataset was split into five folds
+and each fold is then used once as a validation, whereas the four remaining folds form the training set.
+Five models were build for each fold with different initial parameters for ensemble.
+For each fold, early stopping was applied and the training process.
+We set a maximum epoch of 80, and if the performance root mean squared error (RMSE) had not improved in 10 epochs on the validation set,
+the training process was terminated early.
+GROVER[1] that have previously reported by Rong et al. was applied to build prediction model.
+The six hyper-parameters were set as following:
+batch_size = 32,
+attn_hidden = 16, L2 weight decay = 10^-7, learning rate = 10^-5, and dropout rate = 0.
+Finally, the predictions of logP were converted into transfer free energy (TFE) through multiplying by -1.364.
+We performed five independent runs with different random seeds to train the model and obtain the standard error of the mean (SEM) as a measure of statistical uncertainty.
+Model uncertainty is calculated as the RMSE between predicted and experiment values for test set.
+[1] Rong Y, Bian Y, Xu T, et al. GROVER: Self-supervised Message Passing Transformer on Large-scale Molecular Data[J]. arXiv preprint arXiv:2007.02835, 2020.
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True

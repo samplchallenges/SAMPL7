@@ -1,0 +1,199 @@
+,receipt_id,participant,name,category,reassigned category,Molecule ID,logP (calc),logP SEM (calc),logP (exp),logP SEM (exp),$\Delta$logP error (calc - exp),logP model uncertainty
+0,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM25,2.51,0.36,2.67,0.01,-0.16000000000000014,0.5
+1,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM26,0.99,0.0,1.04,0.01,-0.050000000000000044,0.5
+2,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM27,1.59,0.15,1.56,,0.030000000000000027,0.5
+3,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM28,0.84,0.36,1.18,,-0.33999999999999997,0.5
+4,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM29,1.55,0.39,1.61,0.03,-0.06000000000000005,0.5
+5,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM30,2.68,0.43,2.76,,-0.07999999999999963,0.5
+6,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM31,1.91,0.45,1.96,,-0.050000000000000044,0.5
+7,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM32,2.29,0.13,2.44,,-0.1499999999999999,0.5
+8,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM33,3.64,0.27,2.96,,0.6800000000000002,0.5
+9,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM34,2.74,0.28,2.83,,-0.08999999999999986,0.5
+10,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM35,1.46,0.34,0.88,0.02,0.58,0.5
+11,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM36,2.59,0.36,0.76,,1.8299999999999998,0.5
+12,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM37,1.85,0.52,1.45,,0.40000000000000013,0.5
+13,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM38,0.75,0.2,1.03,,-0.28,0.5
+14,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM39,2.02,0.2,1.89,,0.13000000000000012,0.5
+15,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM40,1.09,0.21,1.83,0.05,-0.74,0.5
+16,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM41,1.9,0.0,0.58,0.02,1.3199999999999998,0.5
+17,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM42,3.6,0.0,1.76,0.03,1.84,0.5
+18,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM43,2.41,0.08,0.85,0.01,1.56,0.5
+19,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM44,0.85,0.0,1.16,0.03,-0.30999999999999994,0.5
+20,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM45,2.42,0.1,2.55,0.04,-0.1299999999999999,0.5
+21,pqo98,Chris Loschen,ffsampled_deeplearning_cl1,Empirical,Empirical,SM46,1.28,0.16,1.72,0.01,-0.43999999999999995,0.5
+22,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM25,2.92,0.0,2.67,0.01,0.25,0.0
+23,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM26,0.78,0.0,1.04,0.01,-0.26,0.0
+24,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM27,0.83,0.0,1.56,,-0.7300000000000001,0.0
+25,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM28,0.1,0.0,1.18,,-1.0799999999999998,0.0
+26,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM29,0.76,0.0,1.61,0.03,-0.8500000000000001,0.0
+27,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM30,2.81,0.0,2.76,,0.050000000000000266,0.0
+28,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM31,0.89,0.0,1.96,,-1.0699999999999998,0.0
+29,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM32,1.34,0.0,2.44,,-1.0999999999999999,0.0
+30,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM33,3.4,0.0,2.96,,0.43999999999999995,0.0
+31,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM34,1.47,0.0,2.83,,-1.36,0.0
+32,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM35,-0.43,0.0,0.88,0.02,-1.31,0.0
+33,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM36,1.62,0.0,0.76,,0.8600000000000001,0.0
+34,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM37,-0.3,0.0,1.45,,-1.75,0.0
+35,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM38,-0.24,0.0,1.03,,-1.27,0.0
+36,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM39,1.81,0.0,1.89,,-0.07999999999999985,0.0
+37,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM40,-0.11,0.0,1.83,0.05,-1.9400000000000002,0.0
+38,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM41,1.21,0.0,0.58,0.02,0.63,0.0
+39,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM42,3.26,0.0,1.76,0.03,1.4999999999999998,0.0
+40,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM43,1.33,0.0,0.85,0.01,0.4800000000000001,0.0
+41,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM44,0.57,0.0,1.16,0.03,-0.59,0.0
+42,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM45,2.63,0.0,2.55,0.04,0.08000000000000007,0.0
+43,REF00,Danielle Bergazin,ChemAxon,Empirical,Empirical,SM46,0.7,0.0,1.72,0.01,-1.02,0.0
+44,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM25,2.21,0.08,2.67,0.01,-0.45999999999999996,0.5
+45,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM26,0.86,0.08,1.04,0.01,-0.18000000000000005,0.5
+46,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM27,1.46,0.12,1.56,,-0.10000000000000009,0.5
+47,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM28,1.0,0.28,1.18,,-0.17999999999999994,0.5
+48,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM29,1.42,0.05,1.61,0.03,-0.19000000000000017,0.5
+49,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM30,2.62,0.07,2.76,,-0.13999999999999968,0.5
+50,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM31,1.88,0.23,1.96,,-0.08000000000000007,0.5
+51,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM32,1.9,0.15,2.44,,-0.54,0.5
+52,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM33,3.34,0.1,2.96,,0.3799999999999999,0.5
+53,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM34,2.32,0.2,2.83,,-0.5100000000000002,0.5
+54,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM35,1.44,0.12,0.88,0.02,0.5599999999999999,0.5
+55,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM36,2.83,0.36,0.76,,2.0700000000000003,0.5
+56,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM37,1.93,0.44,1.45,,0.48,0.5
+57,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM38,0.81,0.02,1.03,,-0.21999999999999997,0.5
+58,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM39,2.05,0.09,1.89,,0.15999999999999992,0.5
+59,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM40,1.26,0.37,1.83,0.05,-0.5700000000000001,0.5
+60,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM41,2.04,0.08,0.58,0.02,1.46,0.5
+61,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM42,3.32,0.0,1.76,0.03,1.5599999999999998,0.5
+62,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM43,2.44,0.32,0.85,0.01,1.5899999999999999,0.5
+63,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM44,0.79,0.31,1.16,0.03,-0.3699999999999999,0.5
+64,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM45,2.13,0.1,2.55,0.04,-0.41999999999999993,0.5
+65,dci71,Xiaoyu Ding,TFE-prediction-Attentive FP,Empirical,Empirical,SM46,1.44,0.05,1.72,0.01,-0.28,0.5
+66,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM25,2.32,0.19,2.67,0.01,-0.3500000000000001,0.41
+67,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM26,1.06,0.19,1.04,0.01,0.020000000000000018,0.41
+68,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM27,1.54,0.24,1.56,,-0.020000000000000018,0.41
+69,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM28,1.44,0.24,1.18,,0.26,0.41
+70,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM29,1.52,0.31,1.61,0.03,-0.09000000000000008,0.41
+71,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM30,2.81,0.31,2.76,,0.050000000000000266,0.41
+72,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM31,1.68,0.28,1.96,,-0.28,0.41
+73,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM32,2.24,0.41,2.44,,-0.19999999999999973,0.41
+74,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM33,3.58,0.38,2.96,,0.6200000000000001,0.41
+75,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM34,2.36,0.29,2.83,,-0.4700000000000002,0.41
+76,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM35,1.46,0.61,0.88,0.02,0.58,0.41
+77,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM36,2.81,0.75,0.76,,2.05,0.41
+78,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM37,1.56,0.37,1.45,,0.1100000000000001,0.41
+79,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM38,0.98,0.25,1.03,,-0.050000000000000044,0.41
+80,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM39,2.46,0.41,1.89,,0.5700000000000001,0.41
+81,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM40,1.28,0.37,1.83,0.05,-0.55,0.41
+82,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM41,1.61,0.17,0.58,0.02,1.0300000000000002,0.41
+83,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM42,3.02,0.2,1.76,0.03,1.26,0.41
+84,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM43,1.97,0.36,0.85,0.01,1.12,0.41
+85,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM44,0.95,0.19,1.16,0.03,-0.20999999999999996,0.41
+86,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM45,2.15,0.3,2.55,0.04,-0.3999999999999999,0.41
+87,bow02,Xiaoyu Ding,GROVER,Empirical,Empirical,SM46,1.28,0.31,1.72,0.01,-0.43999999999999995,0.41
+88,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM25,3.14,0.27,2.67,0.01,0.4700000000000002,0.49
+89,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM26,0.89,0.0,1.04,0.01,-0.15000000000000002,0.49
+90,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM27,1.57,0.06,1.56,,0.010000000000000009,0.49
+91,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM28,0.9,0.34,1.18,,-0.2799999999999999,0.49
+92,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM29,1.74,0.07,1.61,0.03,0.1299999999999999,0.49
+93,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM30,3.1,0.16,2.76,,0.3400000000000003,0.49
+94,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM31,2.16,0.24,1.96,,0.20000000000000018,0.49
+95,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM32,2.37,0.05,2.44,,-0.06999999999999984,0.49
+96,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM33,3.8,0.18,2.96,,0.8399999999999999,0.49
+97,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM34,2.84,0.21,2.83,,0.009999999999999787,0.49
+98,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM35,1.33,0.32,0.88,0.02,0.45000000000000007,0.49
+99,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM36,2.73,0.24,0.76,,1.97,0.49
+100,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM37,1.73,0.34,1.45,,0.28,0.49
+101,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM38,1.0,0.16,1.03,,-0.030000000000000027,0.49
+102,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM39,2.35,0.08,1.89,,0.4600000000000002,0.49
+103,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM40,1.15,0.35,1.83,0.05,-0.6800000000000002,0.49
+104,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM41,2.02,0.0,0.58,0.02,1.44,0.49
+105,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM42,3.69,0.0,1.76,0.03,1.93,0.49
+106,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM43,2.49,0.2,0.85,0.01,1.6400000000000001,0.49
+107,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM44,0.91,0.0,1.16,0.03,-0.2499999999999999,0.49
+108,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM45,2.4,0.06,2.55,0.04,-0.1499999999999999,0.49
+109,bst66,Chris Loschen,ffsampled_deeplearning_cl2,Empirical,Empirical,SM46,1.25,0.07,1.72,0.01,-0.47,0.49
+110,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM25,2.32,0.19,2.67,0.01,-0.3500000000000001,0.41
+111,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM26,1.06,0.19,1.04,0.01,0.020000000000000018,0.41
+112,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM27,1.54,0.24,1.56,,-0.020000000000000018,0.41
+113,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM28,1.44,0.24,1.18,,0.26,0.41
+114,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM29,1.52,0.31,1.61,0.03,-0.09000000000000008,0.41
+115,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM30,2.81,0.31,2.76,,0.050000000000000266,0.41
+116,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM31,1.68,0.28,1.96,,-0.28,0.41
+117,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM32,2.24,0.41,2.44,,-0.19999999999999973,0.41
+118,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM33,3.58,0.38,2.96,,0.6200000000000001,0.41
+119,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM34,2.36,0.29,2.83,,-0.4700000000000002,0.41
+120,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM35,1.46,0.61,0.88,0.02,0.58,0.41
+121,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM36,2.81,0.75,0.76,,2.05,0.41
+122,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM37,1.56,0.37,1.45,,0.1100000000000001,0.41
+123,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM38,0.98,0.25,1.03,,-0.050000000000000044,0.41
+124,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM39,2.46,0.41,1.89,,0.5700000000000001,0.41
+125,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM40,1.28,0.37,1.83,0.05,-0.55,0.41
+126,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM41,1.61,0.17,0.58,0.02,1.0300000000000002,0.41
+127,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM42,3.02,0.2,1.76,0.03,1.26,0.41
+128,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM43,1.97,0.36,0.85,0.01,1.12,0.41
+129,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM44,0.95,0.19,1.16,0.03,-0.20999999999999996,0.41
+130,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM45,2.15,0.3,2.55,0.04,-0.3999999999999999,0.41
+131,mix00,Xiaoyu Ding,MixedMethod,Mixed,Mixed,SM46,1.28,0.31,1.72,0.01,-0.43999999999999995,0.41
+132,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM25,2.66,0.0,2.67,0.01,-0.009999999999999787,0.0
+133,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM26,2.66,0.0,1.04,0.01,1.62,0.0
+134,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM27,2.66,0.0,1.56,,1.1,0.0
+135,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM28,2.66,0.0,1.18,,1.4800000000000002,0.0
+136,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM29,2.66,0.0,1.61,0.03,1.05,0.0
+137,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM30,2.66,0.0,2.76,,-0.09999999999999964,0.0
+138,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM31,2.66,0.0,1.96,,0.7000000000000002,0.0
+139,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM32,2.66,0.0,2.44,,0.2200000000000002,0.0
+140,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM33,2.66,0.0,2.96,,-0.2999999999999998,0.0
+141,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM34,2.66,0.0,2.83,,-0.16999999999999993,0.0
+142,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM35,2.66,0.0,0.88,0.02,1.7800000000000002,0.0
+143,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM36,2.66,0.0,0.76,,1.9000000000000001,0.0
+144,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM37,2.66,0.0,1.45,,1.2100000000000002,0.0
+145,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM38,2.66,0.0,1.03,,1.6300000000000001,0.0
+146,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM39,2.66,0.0,1.89,,0.7700000000000002,0.0
+147,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM40,2.66,0.0,1.83,0.05,0.8300000000000001,0.0
+148,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM41,2.66,0.0,0.58,0.02,2.08,0.0
+149,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM42,2.66,0.0,1.76,0.03,0.9000000000000001,0.0
+150,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM43,2.66,0.0,0.85,0.01,1.81,0.0
+151,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM44,2.66,0.0,1.16,0.03,1.5000000000000002,0.0
+152,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM45,2.66,0.0,2.55,0.04,0.11000000000000032,0.0
+153,NULL0,Danielle Bergazin,mean clogP of FDA approved oral drugs (1998-2017),Empirical,Empirical,SM46,2.66,0.0,1.72,0.01,0.9400000000000002,0.0
+154,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM25,3.89,0.1,2.67,0.01,1.2200000000000002,0.6
+155,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM26,2.04,0.1,1.04,0.01,1.0,0.6
+156,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM27,2.53,0.1,1.56,,0.9699999999999998,0.6
+157,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM28,1.47,0.1,1.18,,0.29000000000000004,0.6
+158,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM29,2.15,0.1,1.61,0.03,0.5399999999999998,0.6
+159,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM30,3.46,0.1,2.76,,0.7000000000000002,0.6
+160,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM31,3.28,0.1,1.96,,1.3199999999999998,0.6
+161,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM32,3.23,0.1,2.44,,0.79,0.6
+162,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM33,5.07,0.1,2.96,,2.1100000000000003,0.6
+163,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM34,4.48,0.1,2.83,,1.6500000000000004,0.6
+164,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM35,1.46,0.1,0.88,0.02,0.58,0.6
+165,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM36,3.12,0.1,0.76,,2.3600000000000003,0.6
+166,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM37,2.54,0.1,1.45,,1.09,0.6
+167,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM38,1.52,0.1,1.03,,0.49,0.6
+168,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM39,2.68,0.1,1.89,,0.7900000000000003,0.6
+169,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM40,2.7,0.1,1.83,0.05,0.8700000000000001,0.6
+170,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM41,2.29,0.1,0.58,0.02,1.71,0.6
+171,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM42,4.3,0.1,1.76,0.03,2.54,0.6
+172,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM43,3.42,0.1,0.85,0.01,2.57,0.6
+173,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM44,1.28,0.1,1.16,0.03,0.1200000000000001,0.6
+174,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM45,2.98,0.1,2.55,0.04,0.43000000000000016,0.6
+175,sld20,Michael Diedenhofen,COSMO-RS,Physical (QM),Physical (QM),SM46,2.29,0.1,1.72,0.01,0.5700000000000001,0.6
+176,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM25,2.74,0.91,2.67,0.01,0.07000000000000028,1.3
+177,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM26,0.09,0.3,1.04,0.01,-0.9500000000000001,1.3
+178,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM27,1.33,1.11,1.56,,-0.22999999999999998,1.3
+179,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM28,-0.95,0.77,1.18,,-2.13,1.3
+180,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM29,1.19,2.63,1.61,0.03,-0.42000000000000015,1.3
+181,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM30,2.21,1.43,2.76,,-0.5499999999999998,1.3
+182,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM31,2.24,0.35,1.96,,0.28000000000000025,1.3
+183,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM32,-0.07,1.26,2.44,,-2.51,1.3
+184,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM33,4.57,0.41,2.96,,1.6100000000000003,1.3
+185,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM34,3.04,2.23,2.83,,0.20999999999999996,1.3
+186,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM35,0.4,1.66,0.88,0.02,-0.48,1.3
+187,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM36,2.76,1.71,0.76,,1.9999999999999998,1.3
+188,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM37,2.0,2.2,1.45,,0.55,1.3
+189,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM38,3.63,1.97,1.03,,2.5999999999999996,1.3
+190,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM39,3.93,2.69,1.89,,2.04,1.3
+191,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM40,1.58,1.29,1.83,0.05,-0.25,1.3
+192,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM41,3.37,2.16,0.58,0.02,2.79,1.3
+193,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM42,6.2,1.42,1.76,0.03,4.44,1.3
+194,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM43,3.58,1.44,0.85,0.01,2.73,1.3
+195,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM44,5.21,0.56,1.16,0.03,4.05,1.3
+196,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM45,5.64,0.52,2.55,0.04,3.09,1.3
+197,hcd32,Fabio Falcioni,MD-EE-MCC (GAFF-TIP4P-Ew),Physical (MM),Physical (MM),SM46,3.16,1.25,1.72,0.01,1.4400000000000002,1.3
