@@ -1,37 +1,37 @@
-id,uid,receipt_id,filename,submit_date,firstname,lastname,organization
-1,10000,REF00,REF00-1559-logP-DanielleBergazin-1.csv,deadline,Danielle,Bergazin,University of California Irvine
-2,10000,NULL0,NULL0-1559-logP-DanielleBergazin-2.csv,deadline,Danielle,Bergazin,University of California Irvine
-3,10001,HC032,HC032-1559-logP-chemprop_submission-1.csv,deadline,Bart,Lenselink,Galapagos
-4,10002,0680E,0680E-1559-logP-dddc-1.csv,deadline,Xiaoyu,Ding,Shanghai Institute of Materia Medica
-5,10002,0A608,0A608-1559-logP-dddc-2.csv,deadline,Xiaoyu,Ding,Shanghai Institute of Materia Medica
-6,10003,063A2,063A2-1559-logP-JudithWarnauDassaultSystemes-1.csv,deadline,Michael,Diedenhofen,COSMO-RS
-7,10004,00EDA,00EDA-1559-logP-ChrisLoschen-1.csv,deadline,Chris,Loschen,not-organized/private
-8,10004,096BB,096BB-1559-logP-ChrisLoschen-2.csv,deadline,Chris,Loschen,not-organized/private
-10,10005,08F3F,08F3F-1559-logP-FabioFalcioni-1.csv,deadline,Fabio,Falcioni,University of Manchester
-11,10006,004AF,004AF-1559-logP-ensemble_logP_model-1.csv,deadline,Jae,Shin,NetTargets Inc.
-12,10006,2DF02,2DF02-1559-logP-ensemble_logP_model-2.csv,deadline,Jae,Shin,NetTargets Inc.
-13,10007,08DA5,08DA5-1559-logP-EvrimArslan-1.csv,deadline,Evrim,Arslan,Bogazici University
-14,10008,02F1F,02F1F-1559-logP-DB-1.csv,deadline,Alex,Dickson,Michigan State University
-15,10008,4K631,4K631-1559-logP-DB-2.csv,deadline,Alex,Dickson,Michigan State University
-16,10008,43M66,43M66-1559-logP-DB-3.csv,deadline,Alex,Dickson,Michigan State University
-17,10008,847L9,847L9-1559-logP-DB-4.csv,deadline,Alex,Dickson,Michigan State University
-18,10009,0357F,0357F-1559-logP-IEFPCMMST-1.csv,deadline,CBDD,Group,University of Barcelona and University of Costa Rica
-19,10010,047D4,047D4-1559-logP-ECRISM-1.csv,deadline,Stefan,Kast,TU Dortmund University
-20,10011,D4406,D4406-1559-logP-AndrewPaluch_MD-1.csv,deadline,Andrew,Paluch,Miami University
-21,10011,065C7,065C7-1559-logP-AndrewPaluch_MD-2.csv,deadline,Andrew,Paluch,Miami University
-22,10012,07B59,07B59-1559-logP-PieroProcacci_NES1_B-1.csv,deadline,Piero,Procacci,Universita' di Firenze
-23,10012,F46P0,F46P0-1559-logP-PieroProcacci_NES1_G-2.csv,deadline,Piero,Procacci,Universita' di Firenze
-24,10012,C4A03,C4A03-1559-logP-PieroProcacci_NES1_J-3.csv,deadline,Piero,Procacci,Universita' di Firenze
-25,10013,09F0E,09F0E-1559-logP-DavyGuan-1.csv,deadline,Davy,Guan,The University of Sydney
-27,10014,02BF8,02BF8-1559-logP-RodriguezPaluch_SM12_1-1.csv,deadline,Sergio,Rodriguez,"University of Santiago del Estero, Argentina"
-28,10014,006AC,006AC-1559-logP-RodriguezPaluch_SM8_1-2.csv,deadline,Sergio,Rodriguez,"University of Santiago del Estero, Argentina"
-29,10014,7RS67,7RS67-1559-logP-RodriguezPaluch_SM8_2-3.csv,deadline,Sergio,Rodriguez,"University of Santiago del Estero, Argentina"
-30,10014,0A274,0A274-1559-logP-RodriguezPaluch_SMD_1-4.csv,deadline,Sergio,Rodriguez,"University of Santiago del Estero, Argentina"
-31,10014,085FC,085FC-1559-logP-RodriguezPaluch_SMD_2-5.csv,deadline,Sergio,Rodriguez,"University of Santiago del Estero, Argentina"
-32,10015,5W956,5W956-1559-logP-MLRUCR-1.csv,deadline,CB3,Group,University of Costa Rica
-33,10016,0636A,0636A-1559-logP-nhlbi-1.csv,deadline,Michael,Jones,NIH NHLBI
-34,10016,03F9F,03F9F-1559-logP-nhlbi-2.csv,deadline,Samar,Prasad,NIH NHLBI
-35,10017,6Q594,6Q594-1559-logP-prediction_Iorga_Beckstein_LigParGen-1.csv,deadline,Bogdan,Iorga,"ICSN, CNRS, Gif-sur-Yvette, France/Arizona State University, USA"
-36,10017,0T68C,0T68C-1559-logP-prediction_Iorga_Beckstein_CGenFF-2.csv,deadline,Bogdan,Iorga,"ICSN, CNRS, Gif-sur-Yvette, France/Arizona State University, USA"
-37,10017,043B8,043B8-1559-logP-prediction_Iorga_Beckstein_GAFF-3.csv,deadline,Bogdan,Iorga,"ICSN, CNRS, Gif-sur-Yvette, France/Arizona State University, USA"
-38,10017,0B909,0B909-1559-logP-prediction_Iorga_Beckstein_OPLS_AA-4.csv,deadline,Bogdan,Iorga,"ICSN, CNRS, Gif-sur-Yvette, France/Arizona State University, USA"
+21,logP-dddc-1.csv
+23,logP-dddc-2.csv
+25,logP-JudithWarnauDassaultSystemes.csv
+26,logP-ChrisLoschen-1.csv
+27,logP-ChrisLoschen-2.csv
+28,logP-FabioFalcioni-1.csv
+29,logp_ensemble_logp_model1.csv
+30,logp_ensemble_logp_model2.csv
+31,logP-EvrimArslan-6.csv
+32,logP-ChrisLoschen-1_5l9kQR3.csv
+33,logp_DB1.csv
+34,logp_DB2.csv
+35,logp_DB3.csv
+36,logp_DB4.csv
+37,logP-IEFPCMMST-1.csv
+38,logP-ECRISM-1.csv
+39,logP_AndrewPaluch_MD_1.csv
+40,logP_AndrewPaluch_MD_2.csv
+41,logP-PieroProcacci-NES1-B.csv
+42,logP-PieroProcacci-NES1-G.csv
+43,logP-PieroProcacci-NES1-J.csv
+44,logP-DavyGuan-1.csv
+45,LogP_chemprop_submission.csv
+46,logP_RodriguezPaluch_SM12_1.csv
+47,logP_RodriguezPaluch_SM8_1.csv
+48,logP_RodriguezPaluch_SM8_2.csv
+49,logP_RodriguezPaluch_SMD_1.csv
+50,logP_RodriguezPaluch_SMD_2.csv
+51,logP-MLRUCR-1.csv
+52,logp-nhlbi-1.csv
+53,logp-nhlbi-2.csv
+54,logP_prediction_Iorga_Beckstein_LigParGen.csv
+55,logP_prediction_Iorga_Beckstein_CGenFF.csv
+56,logP_prediction_Iorga_Beckstein_GAFF.csv
+57,logP_prediction_Iorga_Beckstein_OPLS-AA.csv
+58,REF00-logP-DanielleBergazin-1.csv
+59,NULL0-logP-DanielleBergazin-2.csv
