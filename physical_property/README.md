@@ -40,9 +40,15 @@ Effective permeability (log<sub>*P*<sub>*app*</sub></sub>) was measured by PAMPA
 ## What's here
 
 - [`SAMPL7_molecule_ID_and_SMILES.csv`](SAMPL7_molecule_ID_and_SMILES.csv): A `.CSV` file containing SAMPL7 challenge molecule IDs and SMILES. SMILES were provided by the [Ballatore lab](https://pharmacy.ucsd.edu/faculty/ballatore).
+<<<<<<< HEAD
 - [`logP/`](logP/): Folder contains an input file in `.CSV` format with SMILES strings of the neutral states of the molecules. This folder contains participant submissions, analysis, instructions and a submission template for the logP challenge.
 - [`pKa/`](pKa/): Folder contains challenge input files in `.CSV` format with SMILES of enumerated microstates. `.MOL2` and `.SDF` files of each microstate are also provided. This folder contains instructions and a submission template for the pKa challenge. Microstates (tautomers and protomers) were generated with a notebook wich uses RDKit and OpenEye tools. Additional microstates were enumerated using Chemicalize (Chemaxon) and Epik (Schrodinger) and added to the notebook generated `.CSV` files.  
 - [`permeability/`](permeability/): Folder contains input files in `.CSV` format with SMILES strings of molecules. This folder contains instructions and a submission template for the permeability challenge.
+=======
+- [`logP/`](logP/): Folder contains an input file in `.CSV` format with SMILES strings of the neutral states of the molecules. This folder contains instructions and a submission template for the logP challenge. Also contains submission files for submitted predictions.
+- [`pKa/`](pKa/): Folder contains challenge input files in `.CSV` format with SMILES of enumerated microstates. `.MOL2` and `.SDF` files of each microstate are also provided. This folder contains instructions and a submission template for the pKa challenge. Microstates (tautomers and protomers) were generated with a notebook wich uses RDKit and OpenEye tools. Additional microstates were enumerated using Chemicalize (Chemaxon) and Epik (Schrodinger) and added to the notebook generated `.CSV` files. Also contains submission files for submitted predictions. 
+- [`permeability/`](permeability/): Folder contains input files in `.CSV` format with SMILES strings of molecules. This folder contains instructions and a submission template for the permeability challenge. Also contains submission files for submitted predictions. 
+>>>>>>> 8e5c13a668db05a85c3685db9acb06c556ba66ba
 - [`images/`](images): Folder containing images related to this challenge in PDF and/or JPEG format.
 - [`experimental_data/`](experimental_data/): Folder contains experimental measurements of pK<sub>a</sub>, partitioning, and permeability values.
 
