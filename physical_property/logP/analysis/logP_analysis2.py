@@ -296,12 +296,12 @@ def calc_MAE_for_molecules_across_selected_predictions(collection_df, selected_m
     #                                        "Empirical": "Empirical",
     #                                        "Mixed": "Mixed",
     #                                        "Physical (QM)": "Physical_QM"}
-    print("collection_df_subset DONE")
+
     subset_directory_path = os.path.join(directory_path, category_path_label_dict[selected_method_group])
     print("calc_MAE_for_molecules_across_all_predictions STARTING")
     # Calculate MAE using subsection of collection database
     calc_MAE_for_molecules_across_all_predictions(collection_df=collection_df_subset, directory_path=subset_directory_path, file_base_name=file_base_name)
-    print("calc_MAE_for_molecules_across_all_predictions DONE")
+
 
 #def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path, group1, group2, group3, group4, file_base_name):
 def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path, group1, group2, group3, file_base_name):
@@ -481,7 +481,7 @@ if __name__ == '__main__':
                                                                  group3='Physical (QM)',
                                                                  file_base_name="molecular_MAE_comparison_between_method_categories")
 
-    # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
+    # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods (found consistently in the top 15 across 4 metrics)
     #well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
     well_performing_method_ids = ["Chemprop", "ClassicalGSG DB2", "ClassicalGSG DB3", "ClassicalGSG DB4",
                                   "TFE MLR", "TFE-SM8-solvent-opt", "TFE-SM8-vacuum-opt"]
@@ -558,9 +558,10 @@ if __name__ == '__main__':
                                                                  file_base_name="molecular_MAE_comparison_between_method_categories")
 
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
+    #  (found consistently in the top 10 across 4 metrics)
     #well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
-    well_performing_method_ids = ["Chemprop", "ClassicalGSG DB2", "ClassicalGSG DB3", "ClassicalGSG DB4",
-                                  "TFE MLR", "TFE-SM8-solvent-opt", "TFE-SM8-vacuum-opt"]
+    well_performing_method_ids = ["Chemprop", "ClassicalGSG DB3", "COSMO-RS",
+                                  "MD (CGenFF/TIP3P)", "TFE MLR"]
     create_molecular_error_distribution_plots(collection_df=collection_data,
                                               directory_path=molecular_statistics_directory_path,
                                               subset_of_method_ids=well_performing_method_ids,
