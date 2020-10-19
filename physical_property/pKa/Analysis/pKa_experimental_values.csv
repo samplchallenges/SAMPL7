@@ -1,0 +1,23 @@
+Molecule ID,pKa,pKa error,Assay Type,Isomeric SMILES
+SM25,4.49,0.04,"potentiometric titrations using a Sirius T3, Pion ",O=C(NS(C1=CC=CC=C1)(=O)=O)CCC2=CC=CC=C2
+SM26,4.91,0.01,"potentiometric titrations using a Sirius T3, Pion ",O=S(CCC1=CC=CC=C1)(NC(C)=O)=O
+SM27,10.45,0.01,"potentiometric titrations using a Sirius T3, Pion ",O=S(CCC1=CC=CC=C1)(NC2(C)COC2)=O
+SM28,>12,,"potentiometric titrations using a Sirius T3, Pion ",O=S(CC1(NC(C)=O)CCC2=CC=CC=C2)(C1)=O
+SM29,10.05,0.01,"potentiometric titrations using a Sirius T3, Pion ",CS(NC1(COC1)CCC2=CC=CC=C2)(=O)=O
+SM30,10.29,0.12,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC1(COC1)CCC2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM31,11.02,0.01,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC1(COC1)CCC2=CC=CC=C2)(N(C)C)=O
+SM32,10.45,0.02,"potentiometric titrations using a Sirius T3, Pion ",CS(NC1(CSC1)CCC2=CC=CC=C2)(=O)=O
+SM33,>12,,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC1(CSC1)CCC2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM34,11.93,0.05,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC1(CSC1)CCC2=CC=CC=C2)(N(C)C)=O
+SM35,9.87,0.01,"potentiometric titrations using a Sirius T3, Pion ",CS(N[C@@]1(C[S+]([O-])C1)CCC2=CC=CC=C2)(=O)=O
+SM36,9.8,0.06,"potentiometric titrations using a Sirius T3, Pion ",O=S(N[C@@]1(C[S+]([O-])C1)CCC2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM37,10.33,0.02,"potentiometric titrations using a Sirius T3, Pion ",O=S(N[C@@]1(C[S+]([O-])C1)CCC2=CC=CC=C2)(N(C)C)=O
+SM38,9.44,0.02,"potentiometric titrations using a Sirius T3, Pion ",CS(NC1(CS(C1)(=O)=O)CCC2=CC=CC=C2)(=O)=O
+SM39,10.22,0.15,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC1(CS(C1)(=O)=O)CCC2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM40,9.58,0.01,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC1(CS(C1)(=O)=O)CCC2=CC=CC=C2)(N(C)C)=O
+SM41,5.22,0.01,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(C)=O
+SM42,6.62,0.02,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(C3=CC=CC=C3)=O
+SM43,5.62,0.02,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(N(C)C)=O
+SM44,6.34,0.01,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC(N=N1)=CN1C2=CC=CC=C2)(C)=O
+SM45,5.93,0.05,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC(N=N1)=CN1C2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM46,6.42,0.01,"potentiometric titrations using a Sirius T3, Pion ",O=S(NC(N=N1)=CN1C2=CC=CC=C2)(N(C)C)=O
