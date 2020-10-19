@@ -268,7 +268,8 @@ def select_subsection_of_collection(collection_df, method_group):
     #print("Collection_df:\n",collection_df)
 
     # Filter collection dataframe based on method category
-    collection_df_of_selected_method_group = collection_df.loc[collection_df["reassigned category"] == method_group]
+    #collection_df_of_selected_method_group = collection_df.loc[collection_df["reassigned category"] == method_group]
+    collection_df_of_selected_method_group = collection_df.loc[collection_df["category"] == method_group]
     collection_df_of_selected_method_group = collection_df_of_selected_method_group.reset_index(drop=True)
     print("collection_df_of_selected_method_group: \n {}".format(collection_df_of_selected_method_group))
 
@@ -291,12 +292,12 @@ def calc_MAE_for_molecules_across_selected_predictions(collection_df, selected_m
     print("collection_df...", collection_df)
     collection_df_subset = select_subsection_of_collection(collection_df=collection_df, method_group=selected_method_group)
 
-    # reassigned_category_path_label_dict ={ "Physical (MM)": "Physical_MM",
+    # category_path_label_dict ={ "Physical (MM)": "Physical_MM",
     #                                        "Empirical": "Empirical",
     #                                        "Mixed": "Mixed",
     #                                        "Physical (QM)": "Physical_QM"}
     print("collection_df_subset DONE")
-    subset_directory_path = os.path.join(directory_path, reassigned_category_path_label_dict[selected_method_group])
+    subset_directory_path = os.path.join(directory_path, category_path_label_dict[selected_method_group])
     print("calc_MAE_for_molecules_across_all_predictions STARTING")
     # Calculate MAE using subsection of collection database
     calc_MAE_for_molecules_across_all_predictions(collection_df=collection_df_subset, directory_path=subset_directory_path, file_base_name=file_base_name)
@@ -304,10 +305,10 @@ def calc_MAE_for_molecules_across_selected_predictions(collection_df, selected_m
 
 #def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path, group1, group2, group3, group4, file_base_name):
 def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path, group1, group2, group3, file_base_name):
-    label1 = reassigned_category_path_label_dict[group1]
-    label2 = reassigned_category_path_label_dict[group2]
-    label3 = reassigned_category_path_label_dict[group3]
-    #label4 = reassigned_category_path_label_dict[group4]
+    label1 = category_path_label_dict[group1]
+    label2 = category_path_label_dict[group2]
+    label3 = category_path_label_dict[group3]
+    #label4 = category_path_label_dict[group4]
 
     # Read molecular_error_statistics table
     df_gr1 = pd.read_csv(directory_path + "/" + label1 + "/molecular_error_statistics_for_{}_methods.csv".format(label1))
@@ -356,7 +357,7 @@ def create_molecular_error_distribution_plots(collection_df, directory_path, fil
     plt.savefig(directory_path + "/" + file_base_name +"_all_methods.pdf")
 
     # Ridge plot using only consistently well-performing methods
-    collection_subset_df =  collection_df[collection_df["receipt_id"].isin(subset_of_method_ids)].reset_index(drop=True)
+    collection_subset_df =  collection_df[collection_df["method_name"].isin(subset_of_method_ids)].reset_index(drop=True)
     ridge_plot(df=collection_subset_df, by = "Molecule ID", column = "$\Delta$logP error (calc - exp)", figsize=(4, 6),
                 colormap=cm.plasma)
     plt.savefig(directory_path + "/" + file_base_name +"_well_performing_methods.pdf")
@@ -365,7 +366,9 @@ def create_molecular_error_distribution_plots(collection_df, directory_path, fil
 def create_category_error_distribution_plots(collection_df, directory_path, file_base_name):
 
     # Ridge plot using all predictions
-    ridge_plot_wo_overlap(df=collection_df, by = "reassigned category", column = "$\Delta$logP error (calc - exp)", figsize=(4, 4),
+    '''ridge_plot_wo_overlap(df=collection_df, by = "reassigned category", column = "$\Delta$logP error (calc - exp)", figsize=(4, 4),
+                colormap=cm.plasma)'''
+    ridge_plot_wo_overlap(df=collection_df, by = "category", column = "$\Delta$logP error (calc - exp)", figsize=(4, 4),
                 colormap=cm.plasma)
     plt.savefig(directory_path + "/" + file_base_name +".pdf")
 
@@ -379,7 +382,8 @@ def calculate_summary_statistics_of_top_methods_of_each_category(statistics_df, 
         #print(category)
         #is_cat = (df_stat["category"] == "Physical")
         #print(is_cat)
-        df_cat = df_stat[df_stat["reassigned_category"] == category].reset_index(drop=False)
+        #df_cat = df_stat[df_stat["reassigned_category"] == category].reset_index(drop=False)
+        df_cat = df_stat[df_stat["category"] == category].reset_index(drop=False)
 
         # Already ordered by RMSE
         df_cat_top = df_cat.head(top).reset_index(drop=False)
@@ -408,7 +412,7 @@ def calculate_summary_statistics_of_top_methods_of_each_category(statistics_df, 
         num_predictions =df_cat_top.shape[0]
 
         data.append({
-            'reassigned_category': category,
+            'category': category,
             'RMSE_mean': RMSE_mean,
             'RMSE_std': RMSE_std,
             'MAE_mean': MAE_mean,
@@ -458,13 +462,13 @@ if __name__ == '__main__':
     #list_of_method_categories = ["Physical (MM)", "Empirical", "Mixed", "Physical (QM)"]
     list_of_method_categories = ["Physical (MM)", "Empirical", "Physical (QM)"]
     # New labels for file naming for reassigned categories
-    reassigned_category_path_label_dict = {"Physical (MM)": "Physical_MM",
+    category_path_label_dict = {"Physical (MM)": "Physical_MM",
                                            "Empirical": "Empirical",
                                            #"Mixed": "Mixed",
                                            "Physical (QM)": "Physical_QM"}
 
     for category in list_of_method_categories:
-        category_file_label = reassigned_category_path_label_dict[category]
+        category_file_label = category_path_label_dict[category]
         calc_MAE_for_molecules_across_selected_predictions(collection_df=collection_data,
                                                        selected_method_group=category,
                                                        directory_path=molecular_statistics_directory_path,
@@ -478,7 +482,9 @@ if __name__ == '__main__':
                                                                  file_base_name="molecular_MAE_comparison_between_method_categories")
 
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
-    well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
+    #well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
+    well_performing_method_ids = ["Chemprop", "ClassicalGSG DB2", "ClassicalGSG DB3", "ClassicalGSG DB4",
+                                  "TFE MLR", "TFE-SM8-solvent-opt", "TFE-SM8-vacuum-opt"]
     create_molecular_error_distribution_plots(collection_df=collection_data,
                                               directory_path=molecular_statistics_directory_path,
                                               subset_of_method_ids=well_performing_method_ids,
@@ -532,13 +538,13 @@ if __name__ == '__main__':
     #list_of_method_categories = ["Physical (MM)", "Empirical", "Mixed", "Physical (QM)"]
     list_of_method_categories = ["Physical (MM)", "Empirical", "Physical (QM)"]
     # New labels for file naming for reassigned categories
-    reassigned_category_path_label_dict = {"Physical (MM)": "Physical_MM",
+    category_path_label_dict = {"Physical (MM)": "Physical_MM",
                                            "Empirical": "Empirical",
                                            #"Mixed": "Mixed",
                                            "Physical (QM)": "Physical_QM"}
 
     for category in list_of_method_categories:
-        category_file_label = reassigned_category_path_label_dict[category]
+        category_file_label = category_path_label_dict[category]
         calc_MAE_for_molecules_across_selected_predictions(collection_df=collection_data,
                                                        selected_method_group=category,
                                                        directory_path=molecular_statistics_directory_path,
@@ -552,7 +558,9 @@ if __name__ == '__main__':
                                                                  file_base_name="molecular_MAE_comparison_between_method_categories")
 
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
-    well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
+    #well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
+    well_performing_method_ids = ["Chemprop", "ClassicalGSG DB2", "ClassicalGSG DB3", "ClassicalGSG DB4",
+                                  "TFE MLR", "TFE-SM8-solvent-opt", "TFE-SM8-vacuum-opt"]
     create_molecular_error_distribution_plots(collection_df=collection_data,
                                               directory_path=molecular_statistics_directory_path,
                                               subset_of_method_ids=well_performing_method_ids,

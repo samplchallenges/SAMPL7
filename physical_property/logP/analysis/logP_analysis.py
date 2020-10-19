@@ -14,6 +14,7 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 import scipy.stats
 from pylab import rcParams
+import math
 #import pandas.util.testing as tm
 #from stats import *
 
@@ -346,7 +347,7 @@ def barplot_with_CI_errorbars(df, x_label, y_label, y_lower_label, y_upper_label
     plt.close()
     plt.style.use(["seaborn-talk", "seaborn-whitegrid"])
     plt.rcParams['axes.labelsize'] = 20 # 18
-    plt.rcParams['xtick.labelsize'] = 14
+    plt.rcParams['xtick.labelsize'] = 16 #14
     plt.rcParams['ytick.labelsize'] = 18 #16
     plt.rcParams['legend.fontsize'] = 16
     plt.rcParams['legend.handlelength'] = 2
@@ -361,7 +362,7 @@ def barplot_with_CI_errorbars(df, x_label, y_label, y_lower_label, y_upper_label
     x = range(len(data[y_label]))
     y = data[y_label]
     plt.bar(x, y)
-    plt.xticks(x, data[x_label], rotation=45)
+    plt.xticks(x, data[x_label], rotation=45, horizontalalignment='right')
     plt.errorbar(x, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
                  fmt="none", ecolor=sns_color, capsize=3, capthick=True)
     plt.xlabel(x_label)
@@ -438,7 +439,7 @@ def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_lab
     fig, ax = plt.subplots(figsize=figsize)
     barlist = ax.bar(x, y)
 
-    plt.xticks(x, data[x_label], rotation=45)
+    plt.xticks(x, data[x_label], rotation=45, horizontalalignment='right')
     plt.errorbar(x, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
                  fmt="none", ecolor=error_color, capsize=3, elinewidth=2, capthick=True)
     plt.xlabel(x_label)
@@ -761,8 +762,20 @@ class logPSubmission(SamplSubmission):
         # Load predictions.
         sections = self._load_sections(file_path)  # From parent-class.
         self.data = sections['Predictions']  # This is a pandas DataFrame.
+
         #self.name = sections['Name'][0]
         self.method_name = sections['Name'][0]
+
+        #Convert dG predictions to logPs (skip Ref/NULL)
+        if "REF" in self.method_name or "NULL" in self.method_name:
+            self.data = sections['Predictions']
+        else:
+            print("self.method_name",self.method_name)
+            self.data = sections['Predictions']
+            print("self.data before: \n",self.data)
+            self.data["logP mean"] = self.data["logP mean"].apply(get_logP)
+            print("self.data after: \n",self.data)
+
         self.category = sections['Category'][0] # New section for logP challenge.
         self.participant = sections['Participant name'][0].strip()
         self.organization = sections['Participant organization'][0].strip()
@@ -772,6 +785,9 @@ class logPSubmission(SamplSubmission):
         self.reference_submission = False
         if "REF" in self.method_name or "NULL" in self.method_name:
             self.reference_submission = True
+
+
+
 
     def compute_logP_statistics(self, experimental_data, stats_funcs):
         data = self._create_comparison_dataframe('logP mean', self.data, experimental_data)
@@ -926,11 +942,28 @@ class logPSubmissionCollection:
                     print(f"Error: {submission.participant} submitted multiple ranked submissions.")
                     continue
 
+
+
             for mol_ID, series in submission.data.iterrows():
                 logP_mean_exp = experimental_data.loc[mol_ID, 'logP mean']
                 logP_SEM_exp = experimental_data.loc[mol_ID, 'logP SEM']
+                #dG_mean_pred = submission.data.loc[mol_ID, "dG mean"]
+
+
+                '''#Convert dG predictions to logPs (skip Ref/NULL)
+                if "REF" in submission.method_name or "NULL" in submission.method_name:
+                    logP_mean_pred = submission.data.loc[mol_ID, "logP mean"]
+
+                else:
+                    self.data = sections['Predictions']
+                    print("self.data before: \n",self.data)
+                    self.data["logP mean"] = self.data["logP mean"].apply(get_logP)
+                    print("self.data after: \n",self.data)'''
+
                 logP_mean_pred = submission.data.loc[mol_ID, "logP mean"]
                 logP_SEM_pred = submission.data.loc[mol_ID, "logP SEM"]
+                print("logP_mean_pred \n",logP_mean_pred)
+
                 logP_model_uncertainty =  submission.data.loc[mol_ID, "logP model uncertainty"]
                 ranked = submission.ranked
 
@@ -941,6 +974,7 @@ class logPSubmissionCollection:
                     'category': submission.category,
                     #'reassigned category': submission.reassigned_category,
                     'Molecule ID': mol_ID,
+                    #'dG (calc)': dG_mean_pred,
                     'logP (calc)': logP_mean_pred,
                     'logP SEM (calc)': logP_SEM_pred,
                     'logP (exp)': logP_mean_exp,
@@ -1161,11 +1195,9 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
     file_base_path = os.path.join(directory_path, file_base_name)
     with open(file_base_path + '.csv', 'w') as f:
         statistics_csv.to_csv(f)
-    with open(file_base_path + '.json', 'w') as f:
-        try:
-            statistics_csv.to_json(f, orient='index')
-        except ValueError:
-            statistics_csv.to_json(f)
+    '''with open(file_base_path + '.json', 'w') as f:
+        statistics_csv.to_json(f, orient='index')'''
+
 
     # Create LaTex table.
     latex_directory_path = os.path.join(directory_path, file_base_name + 'LaTex')
@@ -1196,7 +1228,7 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
     # Violin plots by statistics across submissions.
     plt.close('all')
-    fig, axes = plt.subplots(ncols=len(stats_names), figsize=(12, 0.375 * len(submissions)))
+    fig, axes = plt.subplots(ncols=len(stats_names), figsize=(28, 10))
     for ax, stats_name in zip(axes, stats_names):
         stats_name_latex = latex_header_conversions.get(stats_name, stats_name)
         data = statistics_plot[statistics_plot.statistics == stats_name_latex]
@@ -1576,7 +1608,7 @@ if __name__ == '__main__':
 
     collection_logP = logPSubmissionCollection(submissions_logP,experimental_data,
                                                output_directory_path,logP_submission_collection_file_path,
-                                               ignore_refcalcs = False, ranked_only = False,allow_multiple = True)
+                                               ignore_refcalcs = False, ranked_only = False, allow_multiple = True)
 
 
     # Generate plots and tables.
@@ -1620,7 +1652,7 @@ if __name__ == '__main__':
     #==========================================================================================
     #==========================================================================================
 
-    '''# Load submissions data.
+    # Load submissions data.
     ranked_submissions_logP = load_ranked_submissions(LOGP_SUBMISSIONS_DIR_PATH, user_map)
 
     # Perform the analysis
@@ -1631,8 +1663,7 @@ if __name__ == '__main__':
                                                experimental_data,
                                                output_directory_path,
                                                logP_submission_collection_file_path,
-                                               ignore_refcalcs = True,
-                                               ranked_only = True, allow_multiple = True)
+                                               ignore_refcalcs = True, ranked_only = True, allow_multiple = False)
 
     #print("collection_logP: \n", collection_logP)
 
@@ -1669,4 +1700,4 @@ if __name__ == '__main__':
     # Generate QQ-Plots for model uncertainty predictions
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
-                                            directory_path=QQplot_directory_path)'''
+                                            directory_path=QQplot_directory_path)
