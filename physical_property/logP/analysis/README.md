@@ -1,24 +1,23 @@
-# Analysis of log *P* predictions with reassigned method categories
+# Analysis of log *P* predictions
 
 General analysis of log *P* predictions include calculated vs predicted log *P* correlation plots and 6 performance statistics (RMSE, MAE, ME, R^2, linear regression slope(m), and error slope(ES)) for all the submissions.
 95%-percentile bootstrap confidence intervals of all the statistics were reported.
 
-Molecular statistics analysis was performed to indicate which SAMPL7 logP Challenge molecules were more difficult to predict accurately across submitted methods. Error statistics (MAE and RMSE) were calculated for each molecule averaging across all methods or for all methods within a method category.
+Molecular statistics analysis was performed to indicate which molecules were more difficult to predict accurately across submitted methods. Error statistics (MAE and RMSE) were calculated for each molecule averaging across all methods or for all methods within a method category.
 
 ## Manifest
 - [`logP_analysis.py`](logP_analysis.py) - Python script that parses submissions and performs the analysis. Provides two separate treatment for ranked blind predictions alone (output directory: [`analysis_outputs_ranked_submissions/`](analysis_outputs_ranked_submissions/)) and blind ranked and non-ranked predictions together with reference calculations (output directory: [`analysis_outputs_all_submissions/`](analysis_outputs_all_submissions/)). Reference calculations are not formally part of the challenge but are provided as reference/comparison methods.
 - [`logP_analysis2.py`](logP_analysis2.py) - Python script that performs the analysis of molecular statistics (Error statistics, MAE and RMSE, calculated across methods for each molecule.)
-- [`logP_predictions/`](logP_predictions/) - This directory includes SAMPL7 logP submission files. Also includes submission IDs assigned to each submission.
+- [`logP_predictions/`](logP_predictions/) - This directory includes SAMPL7 logP submission files.
 - [`logP_experimental_values.csv`](logP_experimental_values.csv) -  CSV table of potentiometric and shake-flask log *P* measurements of 22 molecules and their SMILES.
 - [`SAMPL7-user-map-logP.csv`](SAMPL7-user-map-logP.csv) - User map of all submissions.
-- [`SAMPL7-logP-method-map.csv`](SAMPL7-logP-method-map.csv) - Method map of all submissions.
+- [`get_usermap.py`](get_usermap.py) - Python script used to create the user map..
 - [`analysis_outputs_ranked_submissions/`](analysis_outputs_ranked_submissions/) - This directory contain analysis outputs of ranked submissions only.
     - `error_for_each_logP.pdf` - Violin plots that show error distribution of predictions related to each experimental log *P*.
-    - `logPCorrelationPlots/` - This directory contains plots of predicted vs. experimental log *P* values with linear regression line (blue) for each method. Files are named by submission ID of each method, which can be found in `statistics_table.pdf`. In correlation plots, the dashed black line has a slope of 1. Dark and light green shaded areas indicate +-0.5 and +-1.0 log *P* unit error regions, respectively.
-    - `logPCorrelationPlotsWithSEM/` - This directory contains similar plots to the `logPCorrelationPlots/` directory with error bars added for Standard Error of the Mean(SEM) of experimental and predicted values for submissions that reported these values. Experimental log *P* SEM values are either to small to be able to see the horizontal error bars, or some of the experimental log *P* SEM values were not collected.
+    - `logPCorrelationPlots/` - This directory contains plots of predicted vs. experimental log *P* values with linear regression line (blue) for each method. Files are named according to the submitted method name of each subission, which can be found in `statistics_table.csv`. In correlation plots, the dashed black line has a slope of 1. Dark and light green shaded areas indicate +-0.5 and +-1.0 log *P* unit error regions, respectively.
+    - `logPCorrelationPlotsWithSEM/` - This directory contains similar plots to the `logPCorrelationPlots/` directory with error bars added for Standard Error of the Mean (SEM) of experimental and predicted values for submissions that reported these values. Experimental log *P* SEM values are either too small to be able to see the horizontal error bars, or some of the experimental log *P* SEM values were not collected.
     - `AbsoluteErrorPlots/` - This directory contains a bar plot for each method showing the absolute error for each log *P* prediction compared to the experimental value.
-    - `StatisticsTables/` - This directory contains machine-readable copies of Statistics Table, bootstrap distributions of performance statistics, and overall performance comparison plots based on RMSE and MAE values.
-        - `statistics.pdf` - A table of performance statistics (RMSE, MAE, ME, R^2, linear regression slope(m), Kendall's Tau, and error slope(ES)) for all the submissions.
+    - `StatisticsTables/` - This directory contains machine-readable copies of the Statistics Table, bootstrap distributions of performance statistics, and overall performance comparison plots based on RMSE and MAE values.
         - `statistics.csv`- A table of performance statistics (RMSE, MAE, ME, R^2, linear regression slope(m), Kendall's Tau, and error slope(ES)) for all the submissions.
         - `RMSE_vs_method_plot.pdf`
         - `RMSE_vs_method_plot_colored_by_method_category.pdf`
@@ -49,7 +48,7 @@ Molecular statistics analysis was performed to indicate which SAMPL7 logP Challe
         - `Rsquared_vs_method_plot_for_Physical_MM_category.pdf`
         - `Rsquared_vs_method_plot_for_Physical_QM_category.pdf`
         - `Rsquared_vs_method_plot_physical_methoods_colored_by_method_category.pdf`
-        - `statistics_bootstrap_distributions.pdf` - Violin plots showing bootstrap distributions of performance statistics of each method. Each method is labelled by submission ID.
+        - `statistics_bootstrap_distributions.pdf` - Violin plots showing bootstrap distributions of performance statistics of each method. Each method is labelled according to the method name of the submission.
 
     - `QQPlots/` - Quantile-Quantile plots for the analysis of model uncertainty predictions.
     - `MolecularStatisticsTables/` - This directory contains tables and barplots of molecular statistics analysis (Error statistics, MAE and RMSE, calculated across methods for each molecule.)
@@ -58,7 +57,7 @@ Molecular statistics analysis was performed to indicate which SAMPL7 logP Challe
           - `molecular_error_statistics.csv` - MAE and RMSE statistics calculated for each molecule averaged over all prediction methods. 95% confidence intervals were calculated via bootstrapping (10000 samples).
           - `molecular_MAE_comparison_between_method_categories.pdf` - Barplot of MAE calculated for each method category for each molecule averaging over all predictions in that method category. The colors of the bars indicate method categories.
           - `molecular_error_distribution_ridge_plot_all_methods.pdf`: Error distribution of each molecule, based on predictions from all ranked methods.
-          - `molecular_error_distribution_ridge_plot_well_performing_methods.pdf`: Error distribution of each molecule based on predictions from only methods who are determined as consistently well-performing methods (submission IDs: `4K631`, `006AC`, `43M66`, `5W956`, `847L9`, `HC032`, `7RS67`, `D4406`).
+          - `molecular_error_distribution_ridge_plot_well_performing_methods.pdf`: Error distribution of each molecule based on predictions from only methods who are determined as consistently well-performing methods.
           - `Empirical/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the Empirical method category.
           - `Physical_MM/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the Physical MM method category.
           - `Physical_QM/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the Physical QM method category.
