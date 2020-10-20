@@ -279,7 +279,9 @@ def create_molecular_error_distribution_plots(collection_df, directory_path, fil
 
     # Ridge plot using all predictions
     ridge_plot(df=collection_df, by = "Molecule ID", column = "$\Delta$logPapp error (calc - exp)", figsize=(4, 6), colormap=cm.plasma)
+    print(directory_path + "/" + file_base_name +"_all_methods.pdf")
     plt.savefig(directory_path + "/" + file_base_name +"_all_methods.pdf")
+    
 
     # Ridge plot using only consistently well-performing methods
     #collection_subset_df =  collection_df[collection_df["receipt_id"].isin(subset_of_method_ids)].reset_index(drop=True)
@@ -382,37 +384,13 @@ if __name__ == '__main__':
                                                   file_base_name = "molecular_error_statistics")
 
 
-    # Calculate MAE for each molecule across each method category
-    #list_of_method_categories = ["Physical (MM)", "Empirical", "Mixed", "Physical (QM)"]
-    list_of_method_categories = ["Empirical"]
-
-    # New labels for file naming for reassigned categories
-    '''category_path_label_dict = {"Physical (MM)": "Physical_MM",
-                                           "Empirical": "Empirical",
-                                           "Mixed": "Mixed",
-                                           "Physical (QM)": "Physical_QM"}'''
-    category_path_label_dict = {"Empirical": "Empirical"}
-
-    for category in list_of_method_categories:
-        category_file_label = category_path_label_dict[category]
-        calc_MAE_for_molecules_across_selected_predictions(collection_df=collection_data,
-                                                       selected_method_group=category,
-                                                       directory_path=molecular_statistics_directory_path,
-                                                       file_base_name="molecular_error_statistics_for_{}_methods".format(category_file_label))
-
-    '''# Create comparison plot of MAE for each molecule across method categories
-    create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path=molecular_statistics_directory_path,
-                                                                 group1="Empirical",
-                                                                 file_base_name="molecular_MAE_comparison_between_method_categories")'''
-
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
-    '''well_performing_method_ids = ["hmz0n", "gmoq5", "j8nwc", "hdpuj", "dqxk4", "vzgyt", "qyzjx"]
+    #well_performing_method_ids = ["hmz0n", "gmoq5", "j8nwc", "hdpuj", "dqxk4", "vzgyt", "qyzjx"]
     create_molecular_error_distribution_plots(collection_df=collection_data,
                                               directory_path=molecular_statistics_directory_path,
-                                              subset_of_method_ids=well_performing_method_ids,
-                                              file_base_name="molecular_error_distribution_ridge_plot")'''
+                                              #subset_of_method_ids=well_performing_method_ids,
+                                              file_base_name="molecular_error_distribution_ridge_plot")
 
-    # Compare method categories
 
     # Calculate error distribution plots for each method category
     category_comparison_directory_path = os.path.join(output_directory_path, "StatisticsTables/MethodCategoryComparison")
@@ -421,26 +399,15 @@ if __name__ == '__main__':
                                               directory_path=category_comparison_directory_path,
                                               file_base_name="error_distribution_of_method_categories_ridge_plot")
 
-    '''# Calculate mean and standard deviation of performance statistics of top 10 methods of each category.
-    statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
-    calculate_summary_statistics_of_top_methods_of_each_category(
-        statistics_df= statistics_table_path, categories=list_of_method_categories, top=10,
-        directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top10.csv"
-    )
 
-    # Calculate mean and standard deviation of performance statistics of top 5 methods of each category.
-    statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
-    calculate_summary_statistics_of_top_methods_of_each_category(
-        statistics_df= statistics_table_path, categories=list_of_method_categories, top=5,
-        directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top5.csv"
-    )
-'''
     # ==========================================================================================
     # Repeat analysis for just ranked submissions
     # ==========================================================================================
 
     # Read collection file
     collection_data = read_collection_file(collection_file_path = LOGP_COLLECTION_PATH_RANKED_SUBMISSIONS)
+    print("collection_data \n", collection_data)
+
 
     # Create new directory to store molecular statistics
     output_directory_path = './analysis_outputs_ranked_submissions'
@@ -456,52 +423,16 @@ if __name__ == '__main__':
                                                   file_base_name = "molecular_error_statistics")
 
 
-    # Calculate MAE for each molecule across each method category
-    list_of_method_categories = ["Empirical"]
-
-
-    category_path_label_dict = {"Empirical": "Empirical"}
-
-    for category in list_of_method_categories:
-        category_file_label = category_path_label_dict[category]
-        calc_MAE_for_molecules_across_selected_predictions(collection_df=collection_data,
-                                                       selected_method_group=category,
-                                                       directory_path=molecular_statistics_directory_path,
-                                                       file_base_name="molecular_error_statistics_for_{}_methods".format(category_file_label))
-
-    '''# Create comparison plot of MAE for each molecule across all method categories
-    create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path=molecular_statistics_directory_path,
-                                                                 group1="Empirical",
-                                                                 file_base_name="molecular_MAE_comparison_between_method_categories")'''
-
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
-    #well_performing_method_ids = ["hmz0n", "gmoq5", "j8nwc", "hdpuj", "dqxk4", "vzgyt", "qyzjx", "REF13"]
-    #create_molecular_error_distribution_plots(collection_df=collection_data,
-    #                                          directory_path=molecular_statistics_directory_path,
-    #                                          subset_of_method_ids=well_performing_method_ids,
-    #                                          file_base_name="molecular_error_distribution_ridge_plot")
+    '''create_molecular_error_distribution_plots(collection_df=collection_data,
+                                              directory_path=molecular_statistics_directory_path,
+                                              #subset_of_method_ids=well_performing_method_ids,
+                                              file_base_name="molecular_error_distribution_ridge_plot")'''
 
-    # Compare method categories
 
     # Calculate error distribution plots for each method category
-
     category_comparison_directory_path = os.path.join(output_directory_path, "StatisticsTables/MethodCategoryComparison")
     os.makedirs(category_comparison_directory_path, exist_ok=True)
     create_category_error_distribution_plots(collection_df=collection_data,
                                               directory_path=category_comparison_directory_path,
                                               file_base_name="error_distribution_of_method_categories_ridge_plot")
-
-
-    '''# Calculate mean and standard deviation of performance statistics of top 10 methods of each category.
-    statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
-    calculate_summary_statistics_of_top_methods_of_each_category(
-        statistics_df= statistics_table_path, categories=list_of_method_categories, top=10,
-        directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top10.csv"
-    )
-
-    # Calculate mean and standard deviation of performance statistics of top 5 methods of each category.
-    statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
-    calculate_summary_statistics_of_top_methods_of_each_category(
-        statistics_df= statistics_table_path, categories=list_of_method_categories, top=5,
-        directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top5.csv"
-    )'''

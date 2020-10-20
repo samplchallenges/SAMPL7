@@ -788,7 +788,7 @@ class logPSubmission(SamplSubmission):
         data_mod_unc = data_mod_unc.rename(index=str, columns={"logP mean (calc)": "logP mean (calc)",
                                                                 "logP SEM": "logP SEM (calc)",
                                                                 "logP model uncertainty": "logP model uncertainty"})
-        #print("data_mod_unc:\n", data_mod_unc)
+        print("data_mod_unc:\n", data_mod_unc)
 
         # Compute QQ-Plot Error Slope (ES)
         calc = data_mod_unc.loc[:, "logP mean (calc)"].values
@@ -1069,10 +1069,14 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
         bootstrap_statistics = submission.compute_logP_statistics(experimental_data, stats_funcs)
 
+        print("\n bootstrap_statistics: \n")
+        print(bootstrap_statistics)
+
         # Compute error slope
         error_slope_bootstrap_statistics, QQplot_data = submission.compute_logP_model_uncertainty_statistics(experimental_data)
-        #print("error_slope_bootstrap_statistics:\n")
-        #print(error_slope_bootstrap_statistics)
+
+        print("\n error_slope_bootstrap_statistics: \n")
+        print(error_slope_bootstrap_statistics)
 
         # Add data to to QQplot dictionary
         QQplot_dict.update({method_name : QQplot_data})
@@ -1112,12 +1116,12 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
     # Write QQplot_dict to a JSON file for plotting later
     #print("QQplot_dict:\n", QQplot_dict)
-    QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
+    '''QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     os.makedirs(QQplot_directory_path, exist_ok=True)
     QQplot_dict_filename = os.path.join(QQplot_directory_path, 'QQplot_dict.pickle')
 
     with open(QQplot_dict_filename, 'wb') as outfile:
-        pickle.dump(QQplot_dict, outfile)
+        pickle.dump(QQplot_dict, outfile)'''
 
 
     # Convert dictionary to Dataframe to create tables/plots easily.
@@ -1589,9 +1593,9 @@ if __name__ == '__main__':
                                             ignore_refcalcs = False)
 
     # Generate QQ-Plots for model uncertainty predictions
-    QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
+    '''QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
-                                            directory_path=QQplot_directory_path)
+                                            directory_path=QQplot_directory_path)'''
 
 
     #==========================================================================================
@@ -1646,6 +1650,6 @@ if __name__ == '__main__':
                                             ignore_refcalcs = True)
 
     # Generate QQ-Plots for model uncertainty predictions
-    QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
+    '''QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
-                                            directory_path=QQplot_directory_path)
+                                            directory_path=QQplot_directory_path)'''
