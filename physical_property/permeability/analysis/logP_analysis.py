@@ -266,7 +266,7 @@ def plot_correlation(x, y, data, title=None, color=None, kind='joint', ax=None):
     # Add diagonal line.
     ax.plot(axes_limits, axes_limits, ls='--', c='black', alpha=0.8, lw=0.7)
 
-    # Add shaded area for 0.5-1 logP error.
+    # Add shaded area for 0.5-1 logPapp error.
     palette = sns.color_palette('BuGn_r')
     ax.fill_between(axes_limits, axes_limits - 0.5, axes_limits + 0.5, alpha=0.2, color=palette[2])
     ax.fill_between(axes_limits, axes_limits - 1, axes_limits + 1, alpha=0.2, color=palette[3])
@@ -304,7 +304,7 @@ def plot_correlation_with_SEM(x_lab, y_lab, x_err_lab, y_err_lab, data, title=No
     # Add diagonal line.
     grid.plot(axes_limits, axes_limits, ls='--', c='black', alpha=0.8, lw=0.7)
 
-    # Add shaded area for 0.5-1 logP error.
+    # Add shaded area for 0.5-1 logPapp error.
     palette = sns.color_palette('BuGn_r')
     grid.fill_between(axes_limits, axes_limits - 0.5, axes_limits + 0.5, alpha=0.2, color=palette[2])
     grid.fill_between(axes_limits, axes_limits - 1, axes_limits + 1, alpha=0.2, color=palette[3])
@@ -548,7 +548,14 @@ def makeQQplot(X, Y, slope, title, xLabel ="Expected fraction within range" , yL
         plt.savefig(fileName)
         plt.close(fig1)
 
-
+def name_to_filename(id):
+    for ch in [' ','/']:
+        if ch in id:
+            id=id.replace(ch,"_")
+    for ch in ['(',')']:
+        if ch in id:
+            id=id.replace(ch,"")
+    return id
 # =============================================================================
 # UTILITY CLASSES
 # =============================================================================
@@ -577,8 +584,12 @@ class SamplSubmission:
     # The D3R challenge IDs that are handled by this class.
     CHALLENGE_IDS = {1559}
 
+    # The IDs of the submissions used for testing the validation.
+    TEST_SUBMISSIONS = {}
+
     # The IDs of submissions used for reference calculations
     REF_SUBMISSIONS = ['REF00', 'NULL0']
+
 
     # Section of the submission file.
     SECTIONS = {}
@@ -586,50 +597,25 @@ class SamplSubmission:
     # Sections in CSV format with columns names.
     CSV_SECTIONS = {}
 
-
-    def __init__(self, file_path, user_map):#, method_map):
+    def __init__(self, file_path, user_map):
         file_name = os.path.splitext(os.path.basename(file_path))[0]
         file_data = file_name.split('-')
-        print("file_name",file_name)
-        print("file_data",file_data)
 
         # Load predictions.
         sections = self._load_sections(file_path)  # From parent-class.
         self.data = sections['Predictions']  # This is a list
         self.data = pd.DataFrame(data=self.data) # Now a DataFrame
-        self.name = sections['Name'][0] #want this to take the place of the 5 letter code
+        #self.name = sections['Name'][0] #want this to take the place of the 5 letter code
+        self.file_name = file_name
 
-        self.receipt_id = self.name #file_data[0]
-        #clean up the name
-        self.receipt_id = self.receipt_id.replace('permeability-', '')
-        self.receipt_id = self.receipt_id.replace(" ", "_")
+        self.method_name = sections['Name'][0] #want this to take the place of the 5 letter code
 
         # Check if this is a reference submission
         self.reference_submission = False
-        #if self.receipt_id in self.REF_SUBMISSIONS:
-        if "REF" in self.receipt_id or "NULL" in self.receipt_id:
-            print("REF found: ", self.receipt_id)
+        #if self.method_name in self.REF_SUBMISSIONS:
+        if "REF" in self.method_name or "NULL" in self.method_name:
+            print("REF found: ", self.method_name)
             self.reference_submission = True
-
-        # Check this is the correct challenge.
-        #self.challenge_id = int(file_data[1])
-        #assert self.challenge_id in self.CHALLENGE_IDS
-
-        # Store user map information.
-        #print("self.receipt_id",self.receipt_id)
-        #user_map_record = user_map[user_map.receipt_id == self.receipt_id]
-
-        #assert len(user_map_record) == 1
-        #user_map_record = user_map_record.iloc[0]
-
-        #self.id = user_map_record.id
-        #self.participant = user_map_record.firstname + ' ' + user_map_record.lastname
-        #self.participant_id = user_map_record.uid
-
-        # Store method map information
-        '''method_map_record = method_map[method_map.receipt_id == self.receipt_id]
-        method_map_record = method_map_record.iloc[0]
-        self.reassigned_category = method_map_record.reassigned_category'''
 
     @classmethod
     def _read_lines(cls, file_path):
@@ -645,6 +631,7 @@ class SamplSubmission:
     @classmethod
     def _load_sections(cls, file_path):
         """Load the data in the file and separate it by sections."""
+        #print("file_path",file_path)
         sections = {}
         current_section = None
         for line in cls._read_lines(file_path):
@@ -670,6 +657,7 @@ class SamplSubmission:
             csv_str = io.StringIO('\n'.join(sections[section_name]))
             columns = cls.CSV_SECTIONS[section_name]
             id_column = columns[0]
+            #print("trying", sections)
             section = pd.read_csv(csv_str, index_col=id_column, names=columns, skipinitialspace=True)
             #section = pd.read_csv(csv_str, names=columns, skipinitialspace=True)
             sections[section_name] = section
@@ -682,7 +670,6 @@ class SamplSubmission:
 
 
         experimental_data = experimental_data[experimental_data.index.isin(submission_data.index)] # match by column index
-
         # Fix the names of the columns for labelling.
         submission_series = submission_data[column_name]
         submission_series.name += ' (calc)'
@@ -698,17 +685,14 @@ class SamplSubmission:
 
 class logPSubmission(SamplSubmission):
     """A submission for logP challenge.
-
     Parameters
     ----------
     file_path : str
         The path to the submission file
-
     Raises
     ------
     IgnoredSubmission
         If the submission ID is among the ignored submissions.
-
     """
 
     # The D3R challenge IDs that are handled by this class.
@@ -718,45 +702,58 @@ class logPSubmission(SamplSubmission):
     TEST_SUBMISSIONS = {}
 
     # Section of the submission file.
-    #SECTIONS = {'Predictions', 'Participant name', 'Software', 'Category', 'Method'}
-    SECTIONS = {'Predictions',
-                'Participant name',
-                'Participant organization',
-                'Name',
-                'Compute time',
-                'Computing and hardware',
-                'Software',
-                'Category',
-                'Method',
-                'Ranked'}
+    SECTIONS = {"Predictions",
+                "Participant name",
+                "Participant organization",
+                "Name",
+                "Compute time",
+                "Computing and hardware",
+                "Software",
+                "Category",
+                "Method",
+                "Ranked"}
 
     # Sections in CSV format with columns names.
-    CSV_SECTIONS = {'Predictions': ("Molecule ID", "ID tag", "logP mean", "logP SEM", "logP model uncertainty")}
+    #CSV_SECTIONS = {‘Predictions’: (“Molecule ID”, “logP mean”, “logP SEM”, “logP model uncertainty”)}
+    CSV_SECTIONS = {"Predictions": ("Molecule ID", "ID tag", "logP mean", "logP SEM", "logP model uncertainty", "logD", "logD SEM")}
 
 
-    def __init__(self, file_path, user_map):#, method_map):
-        super().__init__(file_path, user_map)#, method_map)
+    def __init__(self, file_path, user_map):
+        super().__init__(file_path, user_map)
 
         file_name = os.path.splitext(os.path.basename(file_path))[0]
         file_data = file_name.split('-')
 
-        '''self.file_name, self.index = file_data[3:]
-        self.index = int(self.index)'''
 
         # Load predictions.
         sections = self._load_sections(file_path)  # From parent-class.
         self.data = sections['Predictions']  # This is a pandas DataFrame.
-        self.name = sections['Name'][0]
+
+        #self.name = sections['Name'][0]
+        self.method_name = sections['Name'][0]
+
+        self.data = sections['Predictions']
+        '''#Convert dG predictions to logPs (skip Ref/NULL)
+        if "REF" in self.method_name or "NULL" in self.method_name:
+            self.data = sections['Predictions']
+        else:
+            print("self.method_name",self.method_name)
+            self.data = sections['Predictions']
+            print("self.data before: \n",self.data)
+            self.data["logP mean"] = self.data["logP mean"].apply(get_logP)
+            print("self.data after: \n",self.data)'''
+
         self.category = sections['Category'][0] # New section for logP challenge.
         self.participant = sections['Participant name'][0].strip()
         self.organization = sections['Participant organization'][0].strip()
-
         self.ranked = sections['Ranked'][0].strip() =='True'
 
          # Check if this is a reference submission
         self.reference_submission = False
-        if "REF" in self.receipt_id or "NULL" in self.receipt_id:
+        if "REF" in self.method_name or "NULL" in self.method_name:
             self.reference_submission = True
+
+
 
 
     def compute_logP_statistics(self, experimental_data, stats_funcs):
@@ -764,11 +761,14 @@ class logPSubmission(SamplSubmission):
 
         # Create lists of stats functions to pass to compute_bootstrap_statistics.
         stats_funcs_names, stats_funcs = zip(*stats_funcs.items())
-        bootstrap_statistics = compute_bootstrap_statistics(data.to_numpy(), stats_funcs, n_bootstrap_samples=10000) #10000
+        #bootstrap_statistics = compute_bootstrap_statistics(data.as_matrix(), stats_funcs, n_bootstrap_samples=10000) #10000
+
+        bootstrap_statistics = compute_bootstrap_statistics(data.to_numpy(), stats_funcs, n_bootstrap_samples=10000)
 
         # Return statistics as dict preserving the order.
-        return collections.OrderedDict((stats_funcs_names[i], bootstrap_statistics[i])
-                                      for i in range(len(stats_funcs)))
+        return collections.OrderedDict((stats_funcs_names[i],
+                                        bootstrap_statistics[i])
+                                        for i in range(len(stats_funcs)))
 
     def compute_logP_model_uncertainty_statistics(self,experimental_data):
 
@@ -788,8 +788,7 @@ class logPSubmission(SamplSubmission):
         data_mod_unc = data_mod_unc.rename(index=str, columns={"logP mean (calc)": "logP mean (calc)",
                                                                 "logP SEM": "logP SEM (calc)",
                                                                 "logP model uncertainty": "logP model uncertainty"})
-
-        print("data_mod_unc:\n", data_mod_unc)
+        #print("data_mod_unc:\n", data_mod_unc)
 
         # Compute QQ-Plot Error Slope (ES)
         calc = data_mod_unc.loc[:, "logP mean (calc)"].values
@@ -799,6 +798,7 @@ class logPSubmission(SamplSubmission):
         n_bootstrap_samples = 1000 #1000
 
         X, Y, error_slope, error_slope_std, slopes = getQQdata(calc, expt, dcalc, dexpt, boot_its=n_bootstrap_samples)
+
         QQplot_data = [X, Y, error_slope]
 
         # Compute 95% confidence intervals of Error Slope
@@ -813,7 +813,7 @@ class logPSubmission(SamplSubmission):
         confidence_interval = (stat_lower_percentile, stat_higher_percentile)
 
         model_uncertainty_statistics = [error_slope, confidence_interval, samples_statistics]
-        print("model_uncertainty_statistics \n",model_uncertainty_statistics)
+
 
         return model_uncertainty_statistics, QQplot_data
 
@@ -823,32 +823,26 @@ class logPSubmission(SamplSubmission):
 # =============================================================================
 
 
-def load_submissions(directory_path, user_map):#, method_map):
-    """
-    Load submissions from a specified directory using a specified user map.
+def load_submissions(directory_path, user_map):
+    """Load submissions from a specified directory using a specified user map.
     Optional argument:
         ref_ids: List specifying submission IDs (alphanumeric, typically) of
         reference submissions which are to be ignored/analyzed separately.
     Returns: submissions
     """
     submissions = []
-
     for file_path in glob.glob(os.path.join(directory_path, '*.csv')):
         try:
-            submission = logPSubmission(file_path, user_map) #, method_map)
+            submission = logPSubmission(file_path, user_map)
+
         except IgnoredSubmissionError:
             continue
-
         submissions.append(submission)
-
-    receipt_ids = []
-    for submission in submissions:
-        receipt_ids.append(submission.receipt_id)
-    print("All submissions (ranked, nonranked, REF, and NULL):", receipt_ids)
-
     return submissions
 
-def load_ranked_submissions(directory_path, user_map): #, method_map):
+
+
+def load_ranked_submissions(directory_path, user_map):
     """
     Load submissions from a specified directory using a specified user map.
     Optional argument:
@@ -860,24 +854,21 @@ def load_ranked_submissions(directory_path, user_map): #, method_map):
 
     for file_path in glob.glob(os.path.join(directory_path, '*.csv')):
         try:
-            submission = logPSubmission(file_path, user_map)#, method_map)
-            #print("submission.receipt_id:", submission.receipt_id[0:3])
+            submission = logPSubmission(file_path, user_map)
         except IgnoredSubmissionError:
             continue
         # only continue if submission is ranked
         if not submission.ranked:
             continue
-        #if submission.receipt_id[0:3] == "NUL" or submission.receipt_id[0:3] == "REF" :
-        if "REF" in submission.receipt_id or "NULL" in submission.receipt_id:
-            print("Found REF/NULL")
+        if "REF" in submission.method_name or "NULL" in submission.method_name:
             continue
 
         submissions.append(submission)
 
-    receipt_ids = []
+    method_names = []
     for submission in submissions:
-        receipt_ids.append(submission.receipt_id)
-    print("Ranked submissions:", receipt_ids)
+        method_names.append(submission.method_name)
+    print("Ranked submissions: \n", method_names)
 
     return submissions
 
@@ -892,11 +883,13 @@ class logPSubmissionCollection:
     ABSOLUTE_ERROR_VS_LOGP_PLOT_PATH_DIR = 'AbsoluteErrorPlots'
 
 
-    def __init__(self, submissions, experimental_data, output_directory_path,
-    logP_submission_collection_file_path, ignore_refcalcs = True, ranked_only = True, allow_multiple = True):
+    def __init__(self, submissions, experimental_data, output_directory_path, logP_submission_collection_file_path,
+    ignore_refcalcs = True, ranked_only = True, allow_multiple = True):
         # Build collection dataframe from the beginning.
         # Build full logP collection table.
+
         data = []
+
         # Participant names we've found so far; tracked to ensure no one has more than one
         # ranked submission
         self.participant_names_ranked = []
@@ -908,7 +901,6 @@ class logPSubmissionCollection:
 
             if ranked_only and not submission.ranked:
                 continue
-
             # Store names associated with ranked submission, skip if they submitted multiple (only if we need to check for duplicate authors)
             if submission.ranked and not allow_multiple:
                 if not submission.participant in self.participant_names_ranked:
@@ -917,22 +909,24 @@ class logPSubmissionCollection:
                     print(f"Error: {submission.participant} submitted multiple ranked submissions.")
                     continue
 
+
+
             for mol_ID, series in submission.data.iterrows():
                 logP_mean_exp = experimental_data.loc[mol_ID, 'logP mean']
                 logP_SEM_exp = experimental_data.loc[mol_ID, 'logP SEM']
                 logP_mean_pred = submission.data.loc[mol_ID, "logP mean"]
                 logP_SEM_pred = submission.data.loc[mol_ID, "logP SEM"]
                 logP_model_uncertainty =  submission.data.loc[mol_ID, "logP model uncertainty"]
-
                 ranked = submission.ranked
 
                 data.append({
-                    'receipt_id': submission.receipt_id,
+                    'method_name': submission.method_name,
                     #'participant': submission.participant,
-                    #'name': submission.name,
+                    'file name': submission.file_name,
                     'category': submission.category,
                     #'reassigned category': submission.reassigned_category,
                     'Molecule ID': mol_ID,
+                    #'dG (calc)': dG_mean_pred,
                     'logPapp (calc)': logP_mean_pred,
                     'logPapp SEM (calc)': logP_SEM_pred,
                     'logPapp (exp)': logP_mean_exp,
@@ -959,23 +953,24 @@ class logPSubmissionCollection:
         output_dir_path = os.path.join(self.output_directory_path,
                                        self.LOGP_CORRELATION_PLOT_BY_METHOD_PATH_DIR)
         os.makedirs(output_dir_path, exist_ok=True)
-
-        for receipt_id in self.data.receipt_id.unique():
+        print("self.data \n",self.data)
+        print(print("self.data.method_name\n",self.data.method_name))
+        for method_name in self.data.method_name.unique():
             # Skip NULL0 submission
-            if "NULL" in receipt_id:# == "NULL0":
+            if "NULL" in method_name:
                 continue
 
-            data = self.data[self.data.receipt_id == receipt_id]
-            #title = '{} ({})'.format(receipt_id, data.name.unique()[0])
-            title = '{}'.format(receipt_id)
+            data = self.data[self.data.method_name == method_name]
+            print("data \n",data)
+            title = '{}'.format(method_name)
 
             plt.close('all')
             plot_correlation(x='logPapp (exp)', y='logPapp (calc)',
                              data=data, title=title, kind='joint')
-
             plt.tight_layout()
             # plt.show()
-            output_path = os.path.join(output_dir_path, '{}.pdf'.format(receipt_id))
+            method_name = name_to_filename(method_name)
+            output_path = os.path.join(output_dir_path, '{}.pdf'.format(method_name))
             plt.savefig(output_path)
 
     def generate_correlation_plots_with_SEM(self):
@@ -983,14 +978,14 @@ class logPSubmissionCollection:
         output_dir_path = os.path.join(self.output_directory_path,
                                        self.LOGP_CORRELATION_PLOT_WITH_SEM_BY_METHOD_PATH_DIR)
         os.makedirs(output_dir_path, exist_ok=True)
-        for receipt_id in self.data.receipt_id.unique():
+        for method_name in self.data.method_name.unique():
 
             # Skip NULL0 submission
-            if "NULL" in receipt_id:# == "NULL0":
+            if "NULL" in method_name:
                 continue
 
-            data = self.data[self.data.receipt_id == receipt_id]
-            title = '{}'.format(receipt_id)#, data.name.unique()[0])
+            data = self.data[self.data.method_name == method_name]
+            title = '{}'.format(method_name)
 
             plt.close('all')
             plot_correlation_with_SEM(x_lab='logPapp (exp)', y_lab='logPapp (calc)',
@@ -998,11 +993,13 @@ class logPSubmissionCollection:
                                       data=data, title=title)
             plt.tight_layout()
             # plt.show()
-            output_path = os.path.join(output_dir_path, '{}.pdf'.format(receipt_id))
+            method_name = name_to_filename(method_name)
+            output_path = os.path.join(output_dir_path, '{}.pdf'.format(method_name))
             plt.savefig(output_path)
 
     def generate_molecules_plot(self):
         # Correlation plot by molecules.
+        print("self.data \n", self.data)
         plt.close('all')
         data_ordered_by_mol_ID = self.data.sort_values(["Molecule ID"], ascending=["True"])
         sns.set(rc={'figure.figsize': (8.27,11.7)})
@@ -1026,18 +1023,20 @@ class logPSubmissionCollection:
         self.data.loc[:, "absolute error"] = np.absolute(self.data.loc[:, "$\Delta$logPapp error (calc - exp)"])
 
         # Create a separate plot for each submission.
-        for receipt_id in self.data.receipt_id.unique():
-            data = self.data[self.data.receipt_id == receipt_id]
-            title = '{}'.format(receipt_id)#, data.name.unique()[0])
+        for method_name in self.data.method_name.unique():
+            data = self.data[self.data.method_name == method_name]
+            title = '{}'.format(method_name)
 
             plt.close('all')
             barplot(df=data, x_label="Molecule ID", y_label="absolute error", title=title)
-            output_path = os.path.join(output_dir_path, '{}.pdf'.format(receipt_id))
+            method_name = name_to_filename(method_name)
+            output_path = os.path.join(output_dir_path, '{}.pdf'.format(method_name))
             plt.savefig(output_path)
 
+
 def generate_statistics_tables(submissions, stats_funcs, directory_path, file_base_name,
-                                sort_stat=None, ordering_functions=None, latex_header_conversions=None,
-                                ignore_refcalcs = True):
+                                sort_stat=None, ordering_functions=None,
+                                latex_header_conversions=None, ignore_refcalcs = True):
     stats_names = list(stats_funcs.keys())
     ci_suffixes = ('', '_lower_bound', '_upper_bound')
 
@@ -1051,9 +1050,10 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
     QQplot_dict = {}
 
     for i, submission in enumerate(submissions):
-        receipt_id = submission.receipt_id
+        method_name = submission.method_name
         category = submission.category
-        #reassigned_category = submission.reassigned_category
+        file_name = submission.file_name
+
 
         # Pull submission type
         type = 'Standard'
@@ -1062,15 +1062,10 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
         # Ignore reference calculation, if applicable
         if submission.reference_submission and ignore_refcalcs:
-            print("submission.reference_submission",submission.reference_submission)
             continue
 
-        # Include ranked submissions
-        #if ranked_only:
-        #    continue
-
         print('\rGenerating bootstrap statistics for submission {} ({}/{})'
-                  ''.format(receipt_id, i + 1, len(submissions)), end='')
+                  ''.format(method_name, i + 1, len(submissions)), end='')
 
         bootstrap_statistics = submission.compute_logP_statistics(experimental_data, stats_funcs)
 
@@ -1080,7 +1075,7 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
         #print(error_slope_bootstrap_statistics)
 
         # Add data to to QQplot dictionary
-        QQplot_dict.update({receipt_id : QQplot_data})
+        QQplot_dict.update({method_name : QQplot_data})
 
         # Add error slope and CI to bootstrap_statistics
         bootstrap_statistics.update({'ES' : error_slope_bootstrap_statistics })
@@ -1100,21 +1095,20 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
             # For the violin plot, we need all the bootstrap statistics series.
             for bootstrap_sample in bootstrap_samples:
-                #statistics_plot.append(dict(ID=receipt_id, name=submission.name, category=category,
-                #                            statistics=stats_name_latex, value=bootstrap_sample))
-                statistics_plot.append(dict(ID=receipt_id, category=category,
+                statistics_plot.append(dict(ID=method_name, category=category,
                                             statistics=stats_name_latex, value=bootstrap_sample))
 
-        #statistics_csv.append({'ID': receipt_id, 'name': submission.name, 'category': category, 'reassigned_category': reassigned_category, 'type': type, **record_csv})
-        #escaped_name = submission.name.replace('_', '\_')
-        #statistics_latex.append({'ID': receipt_id, 'name': escaped_name, 'category': category, 'reassigned_category': reassigned_category, 'type':type, **record_latex})
+        '''statistics_csv.append({'ID': method_name, 'name': file_name, 'category': category, 'type': type, **record_csv})
+        escaped_name = file_name.replace('_', '\_')
+        statistics_latex.append({'ID': method_name, 'name': escaped_name, 'category': category, 'type':type, **record_latex})'''
 
-        statistics_csv.append({'ID': receipt_id, 'name': receipt_id, 'category': category, 'type': type, **record_csv})
-        escaped_name = submission.name.replace('_', '\_')
-        statistics_latex.append({'ID': receipt_id, 'name': receipt_id,'category': category, 'type':type, **record_latex})
+        statistics_csv.append({'method name': method_name, 'file name': file_name, 'category': category, 'type': type, **record_csv})
+        escaped_name = file_name.replace('_', '\_')
+        statistics_latex.append({'method name': method_name, 'file name': escaped_name, 'category': category, 'type':type, **record_latex})
     print()
     print("statistics_csv:\n",statistics_csv)
     print()
+
 
     # Write QQplot_dict to a JSON file for plotting later
     #print("QQplot_dict:\n", QQplot_dict)
@@ -1128,13 +1122,9 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
     # Convert dictionary to Dataframe to create tables/plots easily.
     statistics_csv = pd.DataFrame(statistics_csv)
-    statistics_csv.set_index('ID', inplace=True)
+    statistics_csv.set_index('method name', inplace=True)
     statistics_latex = pd.DataFrame(statistics_latex)
     statistics_plot = pd.DataFrame(statistics_plot)
-    print("statistics_csv: \n", statistics_csv)
-    print(statistics_csv)
-    print("statistics_latex: \n", statistics_latex)
-    print(statistics_latex)
 
     # Sort by the given statistics.
     if sort_stat is not None:
@@ -1147,22 +1137,20 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
     #print("stats_names_csv:", stats_names_csv)
     stats_names_latex = [latex_header_conversions.get(name, name) for name in stats_names]
     #print("stats_names_latex:", stats_names_latex)
-    #old
-    #statistics_csv = statistics_csv[['name', "category", "reassigned_category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
-    statistics_csv = statistics_csv[['name', "category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
-    print("statistics_csv: \n", statistics_csv)
-    statistics_latex = statistics_latex[['ID', 'name'] + stats_names_latex + ["ES"]] ## Add error slope(ES)
-    #new
-    #statistics_csv = statistics_csv[['ID', "category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
-    #statistics_latex = statistics_latex[['receipt_id', 'receipt_id'] + stats_names_latex + ["ES"]] ## Add error slope(ES)
+    '''statistics_csv = statistics_csv[['name', "category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
+    statistics_latex = statistics_latex[['ID', 'name'] + stats_names_latex + ["ES"]] ## Add error slope(ES)'''
+
+    statistics_csv = statistics_csv[['file name', "category", "type"] + stats_names_csv + ["ES", "ES_lower_bound", "ES_upper_bound"] ]
+    statistics_latex = statistics_latex[['method name', 'file name'] + stats_names_latex + ["ES"]] ## Add error slope(ES)
 
     # Create CSV and JSON tables (correct LaTex syntax in column names).
     os.makedirs(directory_path)
     file_base_path = os.path.join(directory_path, file_base_name)
     with open(file_base_path + '.csv', 'w') as f:
         statistics_csv.to_csv(f)
-    with open(file_base_path + '.json', 'w') as f:
-        statistics_csv.to_json(f, orient='index')
+    '''with open(file_base_path + '.json', 'w') as f:
+        statistics_csv.to_json(f, orient='index')'''
+
 
     # Create LaTex table.
     latex_directory_path = os.path.join(directory_path, file_base_name + 'LaTex')
@@ -1193,18 +1181,15 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
     # Violin plots by statistics across submissions.
     plt.close('all')
-
-    #fig, axes = plt.subplots(ncols=len(stats_names), figsize=(12, 0.375 * len(submissions)))
-
-    fig, axes = plt.subplots(ncols=len(stats_names), figsize=(15, 6))
+    fig, axes = plt.subplots(ncols=len(stats_names), figsize=(28, 10))
     for ax, stats_name in zip(axes, stats_names):
         stats_name_latex = latex_header_conversions.get(stats_name, stats_name)
         data = statistics_plot[statistics_plot.statistics == stats_name_latex]
-
         # Plot ordering submission by statistics.
         ordering_function = ordering_functions.get(stats_name, lambda x: x)
         order = sorted(statistics_csv[stats_name].items(), key=lambda x: ordering_function(x[1]))
-        order = [receipt_id for receipt_id, value in order]
+        order = [method_name for method_name, value in order]
+        #sns.violinplot(x='value', y='ID', data=data, ax=ax,
         sns.violinplot(x='value', y='ID', data=data, ax=ax,
                         order=order, palette='PuBuGn_r', linewidth=0.5, width=1)
         ax.set_xlabel(stats_name_latex)
@@ -1216,89 +1201,85 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
 
 
-def generate_performance_comparison_plots(statistics_filename, directory_path, ignore_refcalcs = False, ranked_only = True):
+
+def generate_performance_comparison_plots(statistics_filename, directory_path, ignore_refcalcs = False):
         # Read statistics table
         statistics_file_path = os.path.join(directory_path, statistics_filename)
         df_statistics = pd.read_csv(statistics_file_path)
-        #print("\n df_statistics \n", df_statistics)
+        print("\n df_statistics \n", df_statistics)
 
         # RMSE comparison plot
-        '''barplot_with_CI_errorbars(df=df_statistics, x_label="ID", y_label="RMSE", y_lower_label="RMSE_lower_bound",
-                                  y_upper_label="RMSE_upper_bound", figsize=(22,10))
-        plt.savefig(directory_path + "/RMSE_vs_method_plot.pdf")'''
+        barplot_with_CI_errorbars(df=df_statistics, x_label="method name", y_label="RMSE", y_lower_label="RMSE_lower_bound",
+                                  y_upper_label="RMSE_upper_bound", figsize=(28,10)) # figsize=(22,10)
+        plt.savefig(directory_path + "/RMSE_vs_method_plot.pdf")
 
-        '''# RMSE comparison plot with each category colored separately
-        barplot_with_CI_errorbars_colored_by_label(df=df_statistics, x_label="ID", y_label="RMSE",
+        # RMSE comparison plot with each category colored separately
+        barplot_with_CI_errorbars_colored_by_label(df=df_statistics, x_label="method name", y_label="RMSE",
                                   y_lower_label="RMSE_lower_bound",
-                                  y_upper_label="RMSE_upper_bound", color_label = "reassigned_category", figsize=(22,10))
+                                  y_upper_label="RMSE_upper_bound", color_label = "category", figsize=(28,10))
         plt.ylim(0.0, 7.0)
-        plt.savefig(directory_path + "/RMSE_vs_method_plot_colored_by_method_category.pdf")'''
+        plt.savefig(directory_path + "/RMSE_vs_method_plot_colored_by_method_category.pdf")
 
-        '''# Do same graph with colorizing by reference calculation
+        # Do same graph with colorizing by reference calculation
         if not ignore_refcalcs:
-            barplot_with_CI_errorbars_colored_by_label(df=df_statistics, x_label="ID", y_label="RMSE",
+            barplot_with_CI_errorbars_colored_by_label(df=df_statistics, x_label="method name", y_label="RMSE",
                                       y_lower_label="RMSE_lower_bound",
-                                      y_upper_label="RMSE_upper_bound", color_label = "type", figsize=(22,10))
+                                      y_upper_label="RMSE_upper_bound", color_label = "type", figsize=(28,10))
             plt.ylim(0.0, 7.0)
-            plt.savefig(directory_path + "/RMSE_vs_method_plot_colored_by_type.pdf")'''
+            plt.savefig(directory_path + "/RMSE_vs_method_plot_colored_by_type.pdf")
 
         # MAE comparison plot
         # Reorder based on MAE value
         df_statistics_MAE = df_statistics.sort_values(by="MAE", inplace=False)
 
-        '''barplot_with_CI_errorbars(df=df_statistics_MAE, x_label="ID", y_label="MAE",
-                                    y_lower_label="MAE_lower_bound",
-                                    y_upper_label="MAE_upper_bound", figsize=(22,10))
-        #plt.title("Method category: Empirical", fontdict={'fontsize': 22})
-        #plt.ylim(0.0, 7.0)
-        plt.savefig(directory_path + "/MAE_vs_method_plot.pdf")'''
+        barplot_with_CI_errorbars(df=df_statistics_MAE, x_label="method name", y_label="MAE", y_lower_label="MAE_lower_bound",
+                                  y_upper_label="MAE_upper_bound", figsize=(28,10))
+        plt.savefig(directory_path + "/MAE_vs_method_plot.pdf")
 
         # MAE comparison plot with each category colored separately
-        '''barplot_with_CI_errorbars_colored_by_label(df=df_statistics_MAE, x_label="ID", y_label="MAE",
+        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_MAE, x_label="method name", y_label="MAE",
                                                    y_lower_label="MAE_lower_bound",
-                                                   y_upper_label="MAE_upper_bound", color_label="reassigned_category",
-                                                   figsize=(22, 10))
+                                                   y_upper_label="MAE_upper_bound", color_label="category",
+                                                   figsize=(28, 10))
         plt.ylim(0.0, 7.0)
-        plt.savefig(directory_path + "/MAE_vs_method_plot_colored_by_method_category.pdf")'''
+        plt.savefig(directory_path + "/MAE_vs_method_plot_colored_by_method_category.pdf")
 
-        '''# Do same graph with colorizing by reference calculation
+        # Do same graph with colorizing by reference calculation
         if not ignore_refcalcs:
             # MAE comparison plot with each category colored separately
-            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_MAE, x_label="ID", y_label="MAE",
+            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_MAE, x_label="method name", y_label="MAE",
                                                        y_lower_label="MAE_lower_bound",
                                                        y_upper_label="MAE_upper_bound", color_label="type",
-                                                       figsize=(22, 10))
+                                                       figsize=(28, 10))
             plt.ylim(0.0, 7.0)
-            plt.savefig(directory_path + "/MAE_vs_method_plot_colored_by_type.pdf")'''
+            plt.savefig(directory_path + "/MAE_vs_method_plot_colored_by_type.pdf")
 
 
         # Kendall's Tau comparison plot
         # Reorder based on Kendall's Tau value
         df_statistics_tau = df_statistics.sort_values(by="kendall_tau", inplace=False, ascending=False)
 
-        '''barplot_with_CI_errorbars(df=df_statistics_tau, x_label="ID", y_label="kendall_tau",
+        barplot_with_CI_errorbars(df=df_statistics_tau, x_label="method name", y_label="kendall_tau",
                                   y_lower_label="kendall_tau_lower_bound",
-                                  y_upper_label="kendall_tau_upper_bound", figsize=(22, 10))
+                                  y_upper_label="kendall_tau_upper_bound", figsize=(28, 10))
         plt.savefig(directory_path + "/kendalls_tau_vs_method_plot.pdf")
 
         # Kendall's Tau  comparison plot with each category colored separately
-        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_tau, x_label="ID", y_label="kendall_tau",
+        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_tau, x_label="method name", y_label="kendall_tau",
                                                    y_lower_label="kendall_tau_lower_bound",
-                                                   y_upper_label="kendall_tau_upper_bound", color_label="reassigned_category",
-                                                   figsize=(22, 10))
-        # plt.ylim(-1.0, 1.0)
-        plt.savefig(directory_path + "/kendalls_tau_vs_method_plot_colored_by_method_category.pdf")'''
+                                                   y_upper_label="kendall_tau_upper_bound", color_label="category",
+                                                   figsize=(28, 10))
+        plt.savefig(directory_path + "/kendalls_tau_vs_method_plot_colored_by_method_category.pdf")
 
 
         # Do same graph with colorizing by reference calculation
-        '''if not ignore_refcalcs:
+        if not ignore_refcalcs:
             # MAE comparison plot with each category colored separately
-            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_tau, x_label="ID", y_label="kendall_tau",
+            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_tau, x_label="method name", y_label="kendall_tau",
                                                        y_lower_label="kendall_tau_lower_bound",
                                                        y_upper_label="kendall_tau_upper_bound", color_label="type",
-                                                       figsize=(22, 10))
-            #plt.ylim(0.0, 7.0)
-            plt.savefig(directory_path + "/kendalls_tau_vs_method_plot_colored_by_type.pdf")'''
+                                                       figsize=(28, 10))
+            plt.savefig(directory_path + "/kendalls_tau_vs_method_plot_colored_by_type.pdf")
 
 
 
@@ -1306,35 +1287,34 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
         # Reorder based on R-squared
         df_statistics_R2 = df_statistics.sort_values(by="R2", inplace=False, ascending=False)
 
-        '''barplot_with_CI_errorbars(df=df_statistics_R2, x_label="ID", y_label="R2",
+        barplot_with_CI_errorbars(df=df_statistics_R2, x_label="method name", y_label="R2",
                                   y_lower_label="R2_lower_bound",
                                   y_upper_label="R2_upper_bound", figsize=(28, 10))
         plt.ylim(0, 1.0)
-        plt.savefig(directory_path + "/Rsquared_vs_method_plot.pdf")'''
+        plt.savefig(directory_path + "/Rsquared_vs_method_plot.pdf")
 
-        '''# R-squared comparison plot with each category colored separately
-        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_R2, x_label="ID", y_label="R2",
+        # R-squared comparison plot with each category colored separately
+        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_R2, x_label="method name", y_label="R2",
                                                    y_lower_label="R2_lower_bound",
-                                                   y_upper_label="R2_upper_bound", color_label="reassigned_category",
+                                                   y_upper_label="R2_upper_bound", color_label="category",
                                                    figsize=(28, 10))
         plt.ylim(0, 1.0)
-        plt.savefig(directory_path + "/Rsquared_vs_method_plot_colored_by_method_category.pdf")'''
+        plt.savefig(directory_path + "/Rsquared_vs_method_plot_colored_by_method_category.pdf")
 
 
         # Do same graph with colorizing by reference calculation
-        '''if not ignore_refcalcs:
+        if not ignore_refcalcs:
             # MAE comparison plot with each category colored separately
-            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_R2, x_label="ID", y_label="R2",
+            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_R2, x_label="method name", y_label="R2",
                                                        y_lower_label="R2_lower_bound",
                                                        y_upper_label="R2_upper_bound", color_label="type",
                                                        figsize=(28, 10))
             plt.ylim(0, 1.0)
-            plt.savefig(directory_path + "/Rsquared_vs_method_plot_colored_by_type.pdf")'''
+            plt.savefig(directory_path + "/Rsquared_vs_method_plot_colored_by_type.pdf")
 
 
 
         # Plot RMSE, MAE, Kendall's Tau, and R-squared comparison plots for each category separately
-        #category_list = ["Physical","Empirical", "Mixed", "Other"]
         category_list = ["Empirical"] # Reassigned categories
 
         # New labels for file naming for reassigned categories
@@ -1342,14 +1322,8 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
 
 
         for category in category_list:
-            print("Reassigned category: ",category)
+            print("category: ",category)
             #print("df_statistics.columns:\n", df_statistics.columns)
-
-            '''# Take subsection of dataframe for each category
-            df_statistics_1category = df_statistics.loc[df_statistics['reassigned_category'] == category]
-            df_statistics_MAE_1category = df_statistics_MAE.loc[df_statistics_MAE['reassigned_category'] == category]
-            df_statistics_tau_1category = df_statistics_tau.loc[df_statistics_tau['reassigned_category'] == category]
-            df_statistics_R2_1category = df_statistics_R2.loc[df_statistics_R2['reassigned_category'] == category]'''
 
             # Take subsection of dataframe for each category
             df_statistics_1category = df_statistics.loc[df_statistics['category'] == category]
@@ -1358,37 +1332,128 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
             df_statistics_R2_1category = df_statistics_R2.loc[df_statistics_R2['category'] == category]
 
             # RMSE comparison plot for each category
-            barplot_with_CI_errorbars(df=df_statistics_1category, x_label="ID", y_label="RMSE", y_lower_label="RMSE_lower_bound",
+            barplot_with_CI_errorbars(df=df_statistics_1category, x_label="method name", y_label="RMSE", y_lower_label="RMSE_lower_bound",
                                       y_upper_label="RMSE_upper_bound", figsize=(12, 10))
             plt.title("Method category: {}".format(category), fontdict={'fontsize': 22})
-            plt.ylim(0.0,1.0)
+            plt.ylim(0.0,7.0)
             plt.savefig(directory_path + "/RMSE_vs_method_plot_for_{}_category.pdf".format(category_path_label_dict[category]))
 
-
             # MAE comparison plot for each category
-            barplot_with_CI_errorbars(df=df_statistics_MAE_1category, x_label="ID", y_label="MAE",
+            barplot_with_CI_errorbars(df=df_statistics_MAE_1category, x_label="method name", y_label="MAE",
                                       y_lower_label="MAE_lower_bound",
                                       y_upper_label="MAE_upper_bound", figsize=(12, 10))
             plt.title("Method category: {}".format(category), fontdict={'fontsize': 22})
-            plt.ylim(0.0, 1.0)
+            plt.ylim(0.0, 7.0)
             plt.savefig(directory_path + "/MAE_vs_method_plot_for_{}_category.pdf".format(category_path_label_dict[category]))
 
-
             # Kendall's Tau  comparison plot for each category
-            barplot_with_CI_errorbars(df=df_statistics_tau_1category, x_label="ID", y_label="kendall_tau",
+            barplot_with_CI_errorbars(df=df_statistics_tau_1category, x_label="method name", y_label="kendall_tau",
                                       y_lower_label="kendall_tau_lower_bound",
                                       y_upper_label="kendall_tau_upper_bound", figsize=(12, 10))
             plt.title("Method category: {}".format(category), fontdict={'fontsize': 22})
             plt.savefig(directory_path + "/kendalls_tau_vs_method_plot_for_{}_category.pdf".format(category_path_label_dict[category]))
 
-
             # R-squared comparison plot for each category
-            barplot_with_CI_errorbars(df=df_statistics_R2_1category, x_label="ID", y_label="R2",
+            barplot_with_CI_errorbars(df=df_statistics_R2_1category, x_label="method name", y_label="R2",
                                       y_lower_label="R2_lower_bound",
                                       y_upper_label="R2_upper_bound", figsize=(12, 10))
             plt.title("Method category: {}".format(category), fontdict={'fontsize': 22})
-            plt.ylim(-0.1, 1.0)
+            plt.ylim(0, 1.0)
             plt.savefig(directory_path + "/Rsquared_vs_method_plot_for_{}_category.pdf".format(category_path_label_dict[category]))
+
+
+        # Create plots for Physical methods (both MM and QM methods)
+
+        df_statistics_MM = df_statistics.loc[df_statistics['category'] == "Physical (MM)"]
+        df_statistics_QM = df_statistics.loc[df_statistics['category'] == "Physical (QM)"]
+        df_statistics_physical = pd.concat([df_statistics_MM, df_statistics_QM])
+
+        # RMSE comparison plot
+        # Reorder based on RMSE value
+        df_statistics_physical_RMSE = df_statistics_physical.sort_values(by="RMSE", inplace=False)
+
+        # RMSE comparison plot with each category colored separately
+        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_physical_RMSE, x_label="method name", y_label="RMSE",
+                                                   y_lower_label="RMSE_lower_bound",
+                                                   y_upper_label="RMSE_upper_bound", color_label="category",
+                                                   figsize=(28, 10))
+        plt.ylim(0.0, 5.0)
+        plt.savefig(directory_path + "/RMSE_vs_method_plot_physical_methoods_colored_by_method_category.pdf")
+
+        # Do same graph with colorizing by reference calculation
+        if not ignore_refcalcs:
+            # RMSE comparison plot with each category colored separately
+            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_physical_RMSE, x_label="method name", y_label="RMSE",
+                                                       y_lower_label="RMSE_lower_bound",
+                                                       y_upper_label="RMSE_upper_bound", color_label="type",
+                                                       figsize=(28, 10))
+            plt.ylim(0.0, 5.0)
+            plt.savefig(directory_path + "/RMSE_vs_method_plot_physical_methods_colored_by_type.pdf")
+
+        # MAE comparison plot
+        # Reorder based on MAE value
+        df_statistics_physical_MAE = df_statistics_physical.sort_values(by="MAE", inplace=False)
+
+        # ME comparison plot with each category colored separately
+        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_physical_MAE, x_label="method name", y_label="MAE",
+                                                   y_lower_label="MAE_lower_bound",
+                                                   y_upper_label="MAE_upper_bound", color_label="category",
+                                                   figsize=(28, 10))
+        plt.ylim(0.0, 5.0)
+        plt.savefig(directory_path + "/MAE_vs_method_plot_physical_methoods_colored_by_method_category.pdf")
+
+        # Do same graph with colorizing by reference calculation
+        if not ignore_refcalcs:
+            # MAE comparison plot with each category colored separately
+            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_physical_MAE, x_label="method name", y_label="MAE",
+                                                       y_lower_label="MAE_lower_bound",
+                                                       y_upper_label="MAE_upper_bound", color_label="type",
+                                                       figsize=(28, 10))
+            plt.ylim(0.0, 5.0)
+            plt.savefig(directory_path + "/MAE_vs_method_plot_physical_methods_colored_by_type.pdf")
+
+        # Kendall's Tau comparison plot
+        # Reorder based on Tau value
+        df_statistics_physical_tau = df_statistics_physical.sort_values(by="kendall_tau", inplace=False, ascending=False)
+
+        # Kendall's Tau comparison plot with each category colored separately
+        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_physical_tau, x_label="method name", y_label="kendall_tau",
+                                                   y_lower_label="kendall_tau_lower_bound",
+                                                   y_upper_label="kendall_tau_upper_bound", color_label="category",
+                                                   figsize=(28, 10))
+        plt.savefig(directory_path + "/kendall_tau_vs_method_plot_physical_methoods_colored_by_method_category.pdf")
+
+        # Do same graph with colorizing by reference calculation
+        if not ignore_refcalcs:
+            # Kendall's Tau comparison plot with each category colored separately
+            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_physical_tau, x_label="method name", y_label="kendall_tau",
+                                                       y_lower_label="kendall_tau_lower_bound",
+                                                       y_upper_label="kendall_tau_upper_bound", color_label="type",
+                                                       figsize=(28, 10))
+            plt.savefig(directory_path + "/kendall_tau_vs_method_plot_physical_methods_colored_by_type.pdf")
+
+
+        # R-squared comparison plot
+        # Reorder based on R-squared value
+        df_statistics_physical_R2 = df_statistics_physical.sort_values(by="R2", inplace=False, ascending=False)
+
+        # R-squared comparison plot with each category colored separately
+        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_physical_R2, x_label="method name", y_label="R2",
+                                                   y_lower_label="R2_lower_bound",
+                                                   y_upper_label="R2_upper_bound", color_label="category",
+                                                   figsize=(28, 10))
+        plt.ylim(0, 1.0)
+        plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methoods_colored_by_method_category.pdf")
+
+        # Do same graph with colorizing by reference calculation
+        if not ignore_refcalcs:
+            # R-Squared comparison plot with each category colored separately
+            barplot_with_CI_errorbars_colored_by_label(df=df_statistics_physical_R2, x_label="method name", y_label="R2",
+                                                       y_lower_label="R2_lower_bound",
+                                                       y_upper_label="R2_upper_bound", color_label="type",
+                                                       figsize=(28, 10))
+            plt.ylim(0, 1.0)
+            plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methods_colored_by_type.pdf")
 
 
 
@@ -1403,12 +1468,23 @@ def generate_QQplots_for_model_uncertainty(input_file_name, directory_path):
     # Iterate through dictionary to create QQ Plot for each submission
     for submission_ID, data in QQplot_dict.items():
         X, Y, slope = data
+        submission_ID = name_to_filename(submission_ID)
         QQplot_output_filename = os.path.join(directory_path, "{}_QQ.pdf".format(submission_ID))
         makeQQplot(X, Y, slope, title=submission_ID, xLabel="Expected fraction within range",
                    yLabel="Fraction of predictions within range", fileName=QQplot_output_filename,
                    uncLabel='Model Unc.', leg=[0.05, 0.975, "upper left", 1], ax1=None)
-    print("QQ Plots for model uncertainty generated.")
+                    # leg=[1.02, 0.98, 2, 1]
 
+    # Replot first item of the dictionary to fix style
+    #submission_ID = list(QQplot_dict.keys())[0] # first submission ID
+    #print("Submission ID:", submission_ID)
+    #data = QQplot_dict.get(submission_ID)
+    #X, Y, slope = data
+    #makeQQplot(X, Y, slope, title=submission_ID, xLabel="Expected fraction within range",
+    #           yLabel="Fraction of predictions within range", fileName=QQplot_output_filename,
+    #           uncLabel='Model Unc.', leg=[0.05, 0.95, "upper left", 1], ax1=None)
+
+    print("QQ Plots for model uncertainty generated.")
 
 
 # =============================================================================
@@ -1422,11 +1498,13 @@ if __name__ == '__main__':
 
     # Read experimental data.
     with open(EXPERIMENTAL_DATA_FILE_PATH, 'r') as f:
-        names = ('Molecule ID', 'logP mean', 'logP SEM', 'Assay Type', 'Isomeric SMILES')
+        # experimental_data = pd.read_json(f, orient='index')
+        names = ('Molecule ID', 'logP mean', 'logP SEM',
+                 'Assay Type', 'Experimental ID', 'Isomeric SMILES')
         experimental_data = pd.read_csv(f, names=names, skiprows=1)
 
     # Convert numeric values to dtype float.
-    for col in experimental_data.columns[1:6]:
+    for col in experimental_data.columns[1:7]:
         experimental_data[col] = pd.to_numeric(experimental_data[col], errors='coerce')
 
 
@@ -1438,9 +1516,7 @@ if __name__ == '__main__':
     with open(USER_MAP_FILE_PATH, 'r') as f:
         user_map = pd.read_csv(f)
 
-    # Import method map
-    '''with open(METHOD_MAP_FILE_PATH, 'r') as f:
-        method_map = pd.read_csv(f)'''
+
 
     # Configuration: statistics to compute.
     stats_funcs = collections.OrderedDict([
@@ -1465,28 +1541,23 @@ if __name__ == '__main__':
         'kendall_tau': '$\\tau$'
     }
 
-
-
-
-
-    #==========================================================================================
-    #==========================================================================================
-    # Analysis of ranked and non-ranked blind submissions
-    #==========================================================================================
-    #==========================================================================================
+    # ==========================================================================================
+    # Analysis of ranked and non-ranked blind submissions WITH reference calculations
+    # ==========================================================================================
 
     # Load submissions data.
-    submissions_logP = load_submissions(LOGP_SUBMISSIONS_DIR_PATH, user_map)#, method_map)
+    submissions_logP = load_submissions(LOGP_SUBMISSIONS_DIR_PATH, user_map)
+
 
     # Perform the analysis
+
     output_directory_path='./analysis_outputs_all_submissions'
     logP_submission_collection_file_path = '{}/logP_submission_collection.csv'.format(output_directory_path)
 
-    collection_logP= logPSubmissionCollection(submissions_logP, experimental_data, output_directory_path,
-                                              logP_submission_collection_file_path,
-                                              ignore_refcalcs = False,
-                                              ranked_only = False,
-                                              allow_multiple = True)
+    collection_logP = logPSubmissionCollection(submissions_logP,experimental_data,
+                                               output_directory_path,logP_submission_collection_file_path,
+                                               ignore_refcalcs = False, ranked_only = False, allow_multiple = True)
+
 
     # Generate plots and tables.
     for collection in [collection_logP]:
@@ -1500,15 +1571,16 @@ if __name__ == '__main__':
     if os.path.isdir('{}/StatisticsTables'.format(output_directory_path)):
         shutil.rmtree('{}/StatisticsTables'.format(output_directory_path))
 
+
     for submissions, type in zip([submissions_logP], ['logP']):
-         generate_statistics_tables(submissions,
-                                    stats_funcs,
-                                    directory_path=output_directory_path + '/StatisticsTables',
-                                    file_base_name='statistics',
-                                    sort_stat='RMSE',
-                                    ordering_functions=ordering_functions,
-                                    latex_header_conversions=latex_header_conversions,
-                                    ignore_refcalcs = False)
+        generate_statistics_tables(submissions,
+                                   stats_funcs,
+                                   directory_path=output_directory_path + '/StatisticsTables',
+                                   file_base_name='statistics',
+                                   sort_stat='RMSE',
+                                   ordering_functions=ordering_functions,
+                                   latex_header_conversions=latex_header_conversions,
+                                   ignore_refcalcs = False)
 
     # Generate RMSE, MAE, Kendall's Tau comparison plots.
     statistics_directory_path = os.path.join(output_directory_path, "StatisticsTables")
@@ -1520,7 +1592,6 @@ if __name__ == '__main__':
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
                                             directory_path=QQplot_directory_path)
-
 
 
     #==========================================================================================
@@ -1540,9 +1611,7 @@ if __name__ == '__main__':
                                                experimental_data,
                                                output_directory_path,
                                                logP_submission_collection_file_path,
-                                               ignore_refcalcs = True,
-                                               ranked_only = True,
-                                               allow_multiple = True)
+                                               ignore_refcalcs = True, ranked_only = True, allow_multiple = False)
 
     #print("collection_logP: \n", collection_logP)
 
