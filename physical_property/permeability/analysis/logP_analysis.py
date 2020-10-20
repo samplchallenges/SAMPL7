@@ -877,9 +877,9 @@ def load_ranked_submissions(directory_path, user_map):
 class logPSubmissionCollection:
     """A collection of logP submissions."""
 
-    LOGP_CORRELATION_PLOT_BY_METHOD_PATH_DIR = 'logPCorrelationPlots'
-    LOGP_CORRELATION_PLOT_WITH_SEM_BY_METHOD_PATH_DIR = 'logPCorrelationPlotsWithSEM'
-    LOGP_CORRELATION_PLOT_BY_LOGP_PATH_DIR = 'error_for_each_logP.pdf'
+    LOGP_CORRELATION_PLOT_BY_METHOD_PATH_DIR = 'logPappCorrelationPlots'
+    LOGP_CORRELATION_PLOT_WITH_SEM_BY_METHOD_PATH_DIR = 'logPappCorrelationPlotsWithSEM'
+    LOGP_CORRELATION_PLOT_BY_LOGP_PATH_DIR = 'error_for_each_logPapp.pdf'
     ABSOLUTE_ERROR_VS_LOGP_PLOT_PATH_DIR = 'AbsoluteErrorPlots'
 
 

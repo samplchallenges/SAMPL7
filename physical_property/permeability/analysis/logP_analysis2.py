@@ -237,12 +237,12 @@ def calc_MAE_for_molecules_across_selected_predictions(collection_df, selected_m
     print("collection_df...", collection_df)
     collection_df_subset = select_subsection_of_collection(collection_df=collection_df, method_group=selected_method_group)
 
-    # reassigned_category_path_label_dict ={ "Physical (MM)": "Physical_MM",
+    # category_path_label_dict ={ "Physical (MM)": "Physical_MM",
     #                                        "Empirical": "Empirical",
     #                                        "Mixed": "Mixed",
     #                                        "Physical (QM)": "Physical_QM"}
     print("collection_df_subset DONE")
-    subset_directory_path = os.path.join(directory_path, reassigned_category_path_label_dict[selected_method_group])
+    subset_directory_path = os.path.join(directory_path, category_path_label_dict[selected_method_group])
     print("calc_MAE_for_molecules_across_all_predictions STARTING")
     # Calculate MAE using subsection of collection database
     calc_MAE_for_molecules_across_all_predictions(collection_df=collection_df_subset, directory_path=subset_directory_path, file_base_name=file_base_name)
@@ -250,7 +250,7 @@ def calc_MAE_for_molecules_across_selected_predictions(collection_df, selected_m
 
 def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path, group1, file_base_name):
 
-    label1 = reassigned_category_path_label_dict[group1]
+    label1 = category_path_label_dict[group1]
 
     # Read molecular_error_statistics table
     df_gr1 = pd.read_csv(directory_path + "/" + label1 + "/molecular_error_statistics_for_{}_methods.csv".format(label1))
@@ -387,23 +387,23 @@ if __name__ == '__main__':
     list_of_method_categories = ["Empirical"]
 
     # New labels for file naming for reassigned categories
-    '''reassigned_category_path_label_dict = {"Physical (MM)": "Physical_MM",
+    '''category_path_label_dict = {"Physical (MM)": "Physical_MM",
                                            "Empirical": "Empirical",
                                            "Mixed": "Mixed",
                                            "Physical (QM)": "Physical_QM"}'''
-    reassigned_category_path_label_dict = {"Empirical": "Empirical"}
+    category_path_label_dict = {"Empirical": "Empirical"}
 
     for category in list_of_method_categories:
-        category_file_label = reassigned_category_path_label_dict[category]
+        category_file_label = category_path_label_dict[category]
         calc_MAE_for_molecules_across_selected_predictions(collection_df=collection_data,
                                                        selected_method_group=category,
                                                        directory_path=molecular_statistics_directory_path,
                                                        file_base_name="molecular_error_statistics_for_{}_methods".format(category_file_label))
 
-    # Create comparison plot of MAE for each molecule across method categories
+    '''# Create comparison plot of MAE for each molecule across method categories
     create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path=molecular_statistics_directory_path,
                                                                  group1="Empirical",
-                                                                 file_base_name="molecular_MAE_comparison_between_method_categories")
+                                                                 file_base_name="molecular_MAE_comparison_between_method_categories")'''
 
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
     '''well_performing_method_ids = ["hmz0n", "gmoq5", "j8nwc", "hdpuj", "dqxk4", "vzgyt", "qyzjx"]
@@ -459,24 +459,20 @@ if __name__ == '__main__':
     # Calculate MAE for each molecule across each method category
     list_of_method_categories = ["Empirical"]
 
-    # New labels for file naming for reassigned categories
-    '''reassigned_category_path_label_dict = {"Physical (MM)": "Physical_MM",
-                                           "Empirical": "Empirical",
-                                           "Mixed": "Mixed",
-                                           "Physical (QM)": "Physical_QM"}'''
-    reassigned_category_path_label_dict = {"Empirical": "Empirical"}
+
+    category_path_label_dict = {"Empirical": "Empirical"}
 
     for category in list_of_method_categories:
-        category_file_label = reassigned_category_path_label_dict[category]
+        category_file_label = category_path_label_dict[category]
         calc_MAE_for_molecules_across_selected_predictions(collection_df=collection_data,
                                                        selected_method_group=category,
                                                        directory_path=molecular_statistics_directory_path,
                                                        file_base_name="molecular_error_statistics_for_{}_methods".format(category_file_label))
 
-    # Create comparison plot of MAE for each molecule across all method categories
+    '''# Create comparison plot of MAE for each molecule across all method categories
     create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path=molecular_statistics_directory_path,
                                                                  group1="Empirical",
-                                                                 file_base_name="molecular_MAE_comparison_between_method_categories")
+                                                                 file_base_name="molecular_MAE_comparison_between_method_categories")'''
 
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
     #well_performing_method_ids = ["hmz0n", "gmoq5", "j8nwc", "hdpuj", "dqxk4", "vzgyt", "qyzjx", "REF13"]
