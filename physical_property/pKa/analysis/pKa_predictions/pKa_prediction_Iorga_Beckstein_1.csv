@@ -97,7 +97,7 @@ ICSN, CNRS, Gif-sur-Yvette, France/Arizona State University, USA
 # The name of the method should not exceed 40 characters.
 # The 'Name:' keyword is required as shown here.
 Name:
-pKa_SAMPL7_Gaussian_corrected
+Gaussian_corrected
 #
 #
 # COMPUTE TIME SECTION

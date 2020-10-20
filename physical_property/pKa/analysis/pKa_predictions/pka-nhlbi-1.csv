@@ -87,12 +87,12 @@ NIH NHLBI
 Name:
 RFE-NHLBI-TZVP-QM
 
-# SOFTWARE SECTION 
-# 
-# List all major software packages used and their versions. 
-# Create a new line for each software. 
-# The 'Software:' keyword is required. 
-Software: 
+# SOFTWARE SECTION
+#
+# List all major software packages used and their versions.
+# Create a new line for each software.
+# The 'Software:' keyword is required.
+Software:
 Gaussian 09/16
 OpenBabel
 MOE 2018
@@ -133,7 +133,17 @@ All calculations were performed on a Biowulf and Lobos clusters at the National 
 # METHOD DESCRIPTION SECTION
 Method:
 Def2-TZVP basis sets were used for all calculations.
-All calculations were performed in either Gaussian 09 or Gaussian 16. All challenge molecules were converted to 3d coordinates using OpenBabel from the SMILES string. Structures were then optimized with the B3LYP density functional and were verified to be local minima via frequency calculations on an ‘ultrafine’ integration grid with harmonic frequencies. Relative Free Energies (RFE) were determined by using the thermodynamic cycle to calculate the "reaction free energies" (i.e., HA-> A- + H+, including the proton free energy of solvation) in both the gas and aqueous phases. Following, the RFE was determined by determining the difference between the enumerated microstate's reaction and the reference microstate (i.e., ∆Gsolv(SMXX_micro001)-∆Gsolv(SMXX_micro000)). All RFE's are reported in kcal/more. 
+All calculations were performed in either Gaussian 09 or Gaussian 16.
+All challenge molecules were converted to 3d coordinates using OpenBabel
+from the SMILES string. Structures were then optimized with the B3LYP density
+ functional and were verified to be local minima via frequency calculations
+ on an ‘ultrafine’ integration grid with harmonic frequencies. Relative Free
+ Energies (RFE) were determined by using the thermodynamic cycle to calculate
+ the "reaction free energies" (i.e., HA-> A- + H+, including the proton
+ free energy of solvation) in both the gas and aqueous phases. Following,
+ the RFE was determined by determining the difference between the enumerated
+ microstate's reaction and the reference microstate (i.e., ∆Gsolv(SMXX_micro001)-∆Gsolv(SMXX_micro000)).
+ All RFE's are reported in kcal/more.
 
 
 #
