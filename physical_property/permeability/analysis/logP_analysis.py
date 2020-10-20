@@ -1214,19 +1214,19 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
         plt.savefig(directory_path + "/RMSE_vs_method_plot.pdf")
 
         # RMSE comparison plot with each category colored separately
-        barplot_with_CI_errorbars_colored_by_label(df=df_statistics, x_label="method name", y_label="RMSE",
+        '''barplot_with_CI_errorbars_colored_by_label(df=df_statistics, x_label="method name", y_label="RMSE",
                                   y_lower_label="RMSE_lower_bound",
                                   y_upper_label="RMSE_upper_bound", color_label = "category", figsize=(28,10))
         plt.ylim(0.0, 7.0)
-        plt.savefig(directory_path + "/RMSE_vs_method_plot_colored_by_method_category.pdf")
+        plt.savefig(directory_path + "/RMSE_vs_method_plot_colored_by_method_category.pdf")'''
 
         # Do same graph with colorizing by reference calculation
-        if not ignore_refcalcs:
+        '''if not ignore_refcalcs:
             barplot_with_CI_errorbars_colored_by_label(df=df_statistics, x_label="method name", y_label="RMSE",
                                       y_lower_label="RMSE_lower_bound",
                                       y_upper_label="RMSE_upper_bound", color_label = "type", figsize=(28,10))
             plt.ylim(0.0, 7.0)
-            plt.savefig(directory_path + "/RMSE_vs_method_plot_colored_by_type.pdf")
+            plt.savefig(directory_path + "/RMSE_vs_method_plot_colored_by_type.pdf")'''
 
         # MAE comparison plot
         # Reorder based on MAE value
@@ -1236,7 +1236,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                   y_upper_label="MAE_upper_bound", figsize=(28,10))
         plt.savefig(directory_path + "/MAE_vs_method_plot.pdf")
 
-        # MAE comparison plot with each category colored separately
+        '''# MAE comparison plot with each category colored separately
         barplot_with_CI_errorbars_colored_by_label(df=df_statistics_MAE, x_label="method name", y_label="MAE",
                                                    y_lower_label="MAE_lower_bound",
                                                    y_upper_label="MAE_upper_bound", color_label="category",
@@ -1252,7 +1252,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                        y_upper_label="MAE_upper_bound", color_label="type",
                                                        figsize=(28, 10))
             plt.ylim(0.0, 7.0)
-            plt.savefig(directory_path + "/MAE_vs_method_plot_colored_by_type.pdf")
+            plt.savefig(directory_path + "/MAE_vs_method_plot_colored_by_type.pdf")'''
 
 
         # Kendall's Tau comparison plot
@@ -1265,7 +1265,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
         plt.savefig(directory_path + "/kendalls_tau_vs_method_plot.pdf")
 
         # Kendall's Tau  comparison plot with each category colored separately
-        barplot_with_CI_errorbars_colored_by_label(df=df_statistics_tau, x_label="method name", y_label="kendall_tau",
+        '''barplot_with_CI_errorbars_colored_by_label(df=df_statistics_tau, x_label="method name", y_label="kendall_tau",
                                                    y_lower_label="kendall_tau_lower_bound",
                                                    y_upper_label="kendall_tau_upper_bound", color_label="category",
                                                    figsize=(28, 10))
@@ -1279,7 +1279,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                        y_lower_label="kendall_tau_lower_bound",
                                                        y_upper_label="kendall_tau_upper_bound", color_label="type",
                                                        figsize=(28, 10))
-            plt.savefig(directory_path + "/kendalls_tau_vs_method_plot_colored_by_type.pdf")
+            plt.savefig(directory_path + "/kendalls_tau_vs_method_plot_colored_by_type.pdf")'''
 
 
 
@@ -1293,7 +1293,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
         plt.ylim(0, 1.0)
         plt.savefig(directory_path + "/Rsquared_vs_method_plot.pdf")
 
-        # R-squared comparison plot with each category colored separately
+        '''# R-squared comparison plot with each category colored separately
         barplot_with_CI_errorbars_colored_by_label(df=df_statistics_R2, x_label="method name", y_label="R2",
                                                    y_lower_label="R2_lower_bound",
                                                    y_upper_label="R2_upper_bound", color_label="category",
@@ -1310,11 +1310,11 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                        y_upper_label="R2_upper_bound", color_label="type",
                                                        figsize=(28, 10))
             plt.ylim(0, 1.0)
-            plt.savefig(directory_path + "/Rsquared_vs_method_plot_colored_by_type.pdf")
+            plt.savefig(directory_path + "/Rsquared_vs_method_plot_colored_by_type.pdf")'''
 
 
 
-        # Plot RMSE, MAE, Kendall's Tau, and R-squared comparison plots for each category separately
+        '''# Plot RMSE, MAE, Kendall's Tau, and R-squared comparison plots for each category separately
         category_list = ["Empirical"] # Reassigned categories
 
         # New labels for file naming for reassigned categories
@@ -1453,7 +1453,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                        y_upper_label="R2_upper_bound", color_label="type",
                                                        figsize=(28, 10))
             plt.ylim(0, 1.0)
-            plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methods_colored_by_type.pdf")
+            plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methods_colored_by_type.pdf")'''
 
 
 
