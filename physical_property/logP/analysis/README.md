@@ -52,15 +52,15 @@ Molecular statistics analysis was performed to indicate which molecules were mor
 
     - `QQPlots/` - Quantile-Quantile plots for the analysis of model uncertainty predictions.
     - `MolecularStatisticsTables/` - This directory contains tables and barplots of molecular statistics analysis (Error statistics, MAE and RMSE, calculated across methods for each molecule.)
-          - `MAE_vs_molecule_ID_plot.pdf` - Barplot of MAE calculated for each molecule averaging over all prediction methods.
-          - `RMSE_vs_molecule_ID_plot.pdf` - Barplot of RMSE calculated for each molecule averaged over all prediction methods
-          - `molecular_error_statistics.csv` - MAE and RMSE statistics calculated for each molecule averaged over all prediction methods. 95% confidence intervals were calculated via bootstrapping (10000 samples).
-          - `molecular_MAE_comparison_between_method_categories.pdf` - Barplot of MAE calculated for each method category for each molecule averaging over all predictions in that method category. The colors of the bars indicate method categories.
-          - `molecular_error_distribution_ridge_plot_all_methods.pdf`: Error distribution of each molecule, based on predictions from all ranked methods.
-          - `molecular_error_distribution_ridge_plot_well_performing_methods.pdf`: Error distribution of each molecule based on predictions from only methods who are determined as consistently well-performing methods.
-          - `Empirical/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the Empirical method category.
-          - `Physical_MM/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the Physical MM method category.
-          - `Physical_QM/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the Physical QM method category.
+        - `MAE_vs_molecule_ID_plot.pdf` - Barplot of MAE calculated for each molecule averaging over all prediction methods.
+        - `RMSE_vs_molecule_ID_plot.pdf` - Barplot of RMSE calculated for each molecule averaged over all prediction methods
+        - `molecular_error_statistics.csv` - MAE and RMSE statistics calculated for each molecule averaged over all prediction methods. 95% confidence intervals were calculated via bootstrapping (10000 samples).
+        - `molecular_MAE_comparison_between_method_categories.pdf` - Barplot of MAE calculated for each method category for each molecule averaging over all predictions in that method category. The colors of the bars indicate method categories.
+        - `molecular_error_distribution_ridge_plot_all_methods.pdf`: Error distribution of each molecule, based on predictions from all ranked methods.
+        - `molecular_error_distribution_ridge_plot_well_performing_methods.pdf`: Error distribution of each molecule based on predictions from only methods who are determined as consistently well-performing methods.
+        - `Empirical/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the Empirical method category.
+        - `Physical_MM/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the Physical MM method category.
+        - `Physical_QM/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the Physical QM method category.
 
 - [`analysis_outputs_all_submissions/`](analysis_outputs_all_submissions/) - Duplicates the [`analysis_outputs_ranked_submissions/`](analysis_outputs_ranked_submissions/) directory, but also includes all non-ranked submissions and reference calculations. Also includes the additional plots:
     - `StatisticsTables/MAE_vs_method_plot_colored_by_type.pdf`: Barplot showing overall performance by MAE, with reference calculations colored differently.
