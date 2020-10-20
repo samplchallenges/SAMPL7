@@ -90,6 +90,7 @@ def ridge_plot(df, by, column, figsize, colormap):
 def ridge_plot_wo_overlap(df, by, column, figsize, colormap):
         plt.rcParams['axes.labelsize'] = 14
         plt.rcParams['xtick.labelsize'] = 14
+        plt.rcParams['figure.autolayout'] = True
         plt.tight_layout()
 
         # Make ridge plot
@@ -281,7 +282,7 @@ def create_molecular_error_distribution_plots(collection_df, directory_path, fil
     ridge_plot(df=collection_df, by = "Molecule ID", column = "$\Delta$logPapp error (calc - exp)", figsize=(4, 6), colormap=cm.plasma)
     print(directory_path + "/" + file_base_name +"_all_methods.pdf")
     plt.savefig(directory_path + "/" + file_base_name +"_all_methods.pdf")
-    
+
 
     # Ridge plot using only consistently well-performing methods
     #collection_subset_df =  collection_df[collection_df["receipt_id"].isin(subset_of_method_ids)].reset_index(drop=True)
