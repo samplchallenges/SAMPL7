@@ -11,6 +11,7 @@ Molecular statistics analysis was performed to indicate which molecules were mor
 - [`logP_predictions/`](logP_predictions/) - This directory includes SAMPL7 logP submission files.
 - [`logP_experimental_values.csv`](logP_experimental_values.csv) -  CSV table of PAMPA log*P*app measurements of 22 molecules and their SMILES.
 - [`SAMPL7-user-map-permeability.csv`](SAMPL7-user-map-permeability.csv) - User map of all submissions.
+- [`get_usermap.py`](get_usermap.py) - Python script to create the user map.
 - [`analysis_outputs_all_submissions/`](analysis_outputs_all_submissions/) - This directory contain analysis outputs of ranked and non-ranked submissions.
     - `error_for_each_logPapp.pdf` - Violin plots that show error distribution of predictions related to each experimental log*P*app.
     - `logPappCorrelationPlots/` - This directory contains plots of predicted vs. experimental log*P*app values with linear regression line (blue) for each method. Files are named according to the method name of each submission, which can be found in `statistics_table.csv`. In correlation plots, the dashed black line has a slope of 1. Dark and light green shaded areas indicate +-0.5 and +-1.0 log*P*app unit error regions, respectively.
