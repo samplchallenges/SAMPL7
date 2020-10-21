@@ -739,7 +739,7 @@ class pKaSubmission(SamplSubmission):
     #CSV_SECTIONS = {‘Predictions’: (“Molecule ID”, “pKa mean”, “pKa SEM”, “pKa model uncertainty”)}
     CSV_SECTIONS = {"Predictions": ("Molecule ID",
                                     "ID tag",
-                                    "total charge"
+                                    "total charge",
                                     "pKa mean",
                                     "pKa SEM",
                                     "pKa model uncertainty",
