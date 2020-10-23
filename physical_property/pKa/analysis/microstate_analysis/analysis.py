@@ -1,15 +1,11 @@
 import os
 import glob
 import io
-import collections
-import pickle
 import pandas as pd
 import numpy as np
 import seaborn as sns
 from matplotlib import pyplot as plt
-import scipy.stats
 from pylab import rcParams
-import math
 from matplotlib import cm
 import joypy
 
