@@ -1,0 +1,143 @@
+# RELATIVE FREE ENERGY PREDICTIONS (for pKa prediction)
+#
+# PREDICTION SECTION
+#
+Predictions:
+SM25_micro001,SM25_micro000,-1,10.49,0,1.02
+SM25_micro002,SM25_micro000,0,-12.80,0,1.02
+SM25_micro003,SM25_micro000,-1,-9.16,0,1.02
+SM26_micro001,SM26_micro000,-1,-5.94,0,1.02
+SM26_micro002,SM26_micro000,0,20.81,0,1.02
+SM26_micro003,SM26_micro000,-1,-22.11,0,1.02
+SM27_micro001,SM27_micro000,-1,-13.86,0,1.02
+SM28_micro001,SM28_micro000,0,25.72,0,1.02
+SM28_micro002,SM28_micro000,-1,-19.08,0,1.02
+SM28_micro003,SM28_micro000,1,7.28,0,1.02
+SM29_micro001,SM29_micro000,-1,-13.60,0,1.02
+SM30_micro001,SM30_micro000,-1,-12.90,0,1.02
+SM31_micro001,SM31_micro000,-1,-13.16,0,1.02
+SM32_micro001,SM32_micro000,-1,-13.74,0,1.02
+SM33_micro001,SM33_micro000,-1,-11.88,0,1.02
+SM34_micro001,SM34_micro000,-1,-14.35,0,1.02
+SM35_micro001,SM35_micro000,-1,-11.70,0,1.02
+SM35_micro002,SM35_micro000,0,-1.12,0,1.02
+SM35_micro003,SM35_micro000,-1,-13.20,0,1.02
+SM36_micro001,SM36_micro000,-1,-9.53,0,1.02
+SM36_micro002,SM36_micro000,0,-3.22,0,1.02
+SM36_micro003,SM36_micro000,-1,-9.51,0,1.02
+SM37_micro001,SM37_micro000,1,8.52,0,1.02
+SM37_micro002,SM37_micro000,-1,-9.07,0,1.02
+SM37_micro003,SM37_micro000,0,-3.03,0,1.02
+SM37_micro004,SM37_micro000,-1,-9.07,0,1.02
+SM37_micro005,SM37_micro000,1,7.72,0,1.02
+SM38_micro001,SM38_micro000,-1,-12.42,0,1.02
+SM39_micro001,SM39_micro000,-1,-10.16,0,1.02
+SM40_micro001,SM40_micro000,-1,-11.46,0,1.02
+SM40_micro002,SM40_micro000,1,11.28,0,1.02
+SM41_micro001,SM41_micro000,-1,-6.21,0,1.02
+SM41_micro002,SM41_micro000,1,9.38,0,1.02
+SM42_micro001,SM42_micro000,-1,-0.39,0,1.02
+SM42_micro002,SM42_micro000,1,4.63,0,1.02
+SM43_micro001,SM43_micro000,-1,-1.72,0,1.02
+SM43_micro002,SM43_micro000,1,8.00,0,1.02
+SM43_micro003,SM43_micro000,2,44.38,0,1.02
+SM44_micro001,SM44_micro000,-1,-8.85,0,1.02
+SM44_micro002,SM44_micro000,1,7.47,0,1.02
+SM45_micro001,SM45_micro000,-1,-8.25,0,1.02
+SM45_micro002,SM45_micro000,1,8.01,0,1.02
+SM46_micro001,SM46_micro000,-1,-8.73,0,1.02
+SM46_micro002,SM46_micro000,1,6.98,0,1.02
+SM46_micro003,SM46_micro000,2,46.30,0,1.02
+#
+Participant name:
+Sergio Antonio Rodriguez
+Andrew S. Paluch
+#
+Participant organization:
+University of Santiago del Estero, Argentina,
+Miami University
+#
+Name:
+RFE-SMD
+#
+# COMPUTE TIME SECTION
+#
+Compute time:
+5 hours, CPU
+#
+# COMPUTING AND HARDWARE SECTION
+#
+Computing and hardware:
+All simulations were performed on the Pitzer Cluster at the Ohio Supercomputer Center
+(https://www.osc.edu/resources/technical_support/supercomputers/pitzer).
+The reported compute time is taken as the walltime times the number of processors (core hours).
+Pitzer has a mix of processors. We did not specify the processor type upon submission, so a mix was used.,
+The original Pitzer cluster was installed in late 2018 and
+is a Dell-built,Intel Xeon Skylake processor-based supercomputer with 260 nodes.,
+In September 2020,OSC installed an additional 398 Intel Xeon Cascade Lake processor-based,
+nodes as part of a Pitzer Expansion cluster.
+
+# SOFTWARE SECTION
+#
+Software:
+Gaussian 16
+
+# METHOD CATEGORY SECTION
+#
+Category:
+QM quantum mechanics
+
+# METHOD DESCRIPTION SECTION
+#
+Method:
+Calculations were performed by the Gaussian 16 revision E01 series of programs using one hybrid density functional M06-2X,6-31+G(d,p) as basis set,
+and the SMD implicit solvation model. Geometries were fully optimized in aqueous solution. Harmonic frequencies were calculated to confirm that
+the structures were minima on the potential energy surface and to obtain the thermal and entropic contributions to the free energies.
+The calculation of pKa was based on the use of the direct approach, given by the proton dissociation reaction. The pKa value of the molecule HA ,
+was calculated according to the following equation
+pKa= G*aq/2.303RT; G*aq=G*aq,A- + G*aq,H+ - G*aq,HA
+where G*aq,A- and G*aq,HA are the standard free energies of the deprotonated and protonated species, respectively,calculated directly in aqueous solution at 298.15 K.,
+
+Macro pKa values
+# compound name, macro pKa, initial formal charge, formal charge after transition, e.g.:,
+SM25,9.16,0,-1
+SM26,5.94,0,-1
+SM26,6.85,0,-1
+SM27,13.86,0,-1
+SM28,19.08,0,-1
+SM28,-7.28,1,0
+SM29,13.60,0,-1
+SM30,12.90,0,-1
+SM31,13.16,0,-1
+SM32,13.74,0,-1
+SM33,11.88,0,-1
+SM34,14.35,0,-1
+SM35,11.70,0,-1
+SM35,14.02,0,-1
+SM36,9.53,0,-1
+SM36,11.87,0,-1
+SM37,9.07,0,-1
+SM37,11.29,0,-1
+SM37,-8.52,1,0
+SM37,-9.94,1,0
+SM38,12.42,0,-1
+SM39,10.16,0,-1
+SM40,11.46,0,-1
+SM40,-11.28,1,0
+SM41,6.21,0,-1
+SM41,-9.38,1,0
+SM42,0.39,0,-1
+SM42,-4.63,1,0
+SM43,1.72,0,-1
+SM43,-8.00,1,0
+SM43,-22.19,2,0
+SM44,8.85,0,-1
+SM44,-7.47,1,0
+SM45,8.25,0,-1
+SM45,-8.01,1,0
+SM46,8.73,0,-1
+SM46,-6.98,1,0
+SM46,-23.15,2,0
+#
+Ranked:
+FALSE
