@@ -40,11 +40,11 @@ SM28_micro000,SM28_micro003,+1,3.91,0.00,0.90
 SM28_micro000,SM28_micro004,-1,18.70,0.00,0.90
 SM29_micro000,SM29_micro001,-1,6.33,0.00,0.90
 SM30_micro000,SM30_micro001,-1,5.86,0.00,0.90
-SM31_micro000,SM31_extra001,+1,4.51,0.00,0.90,C[NH+](S(=O)(NC1(CCc2ccccc2)COC1)=O)C
+SM31_micro000,SM31_micro002,+1,4.51,0.00,0.90 #submitted as an extra microstate
 SM31_micro000,SM31_micro001,-1,6.00,0.00,0.90
 SM32_micro000,SM32_micro001,-1,5.91,0.00,0.90
 SM33_micro000,SM33_micro001,-1,5.17,0.00,0.90
-SM34_micro000,SM34_extra001,+1,4.37,0.00,0.90,C[NH+](S(=O)(NC1(CCc2ccccc2)CSC1)=O)C
+SM34_micro000,SM34_micro002,+1,4.37,0.00,0.90 #submitted as an extra microstate
 SM34_micro000,SM34_micro001,-1,5.73,0.00,0.90
 SM35_micro000,SM35_micro001,-1,3.20,0.00,0.90
 SM35_micro000,SM35_micro002,0,-1.89,0.00,0.90
@@ -164,6 +164,11 @@ With this method we calculated the relative energies for the microstates provide
 The experimental values compared with the energy corresponding to the difference between the experimental and computed pKa values were plotted, and the linear fitting of these values (R2=0.867) using Microsoft Excel provided the correction to be applied to the SAMPL7 pKa calculations.
 Therefore, the microscopic relative free energies and the macroscopic pKa values reported here were corrected using this procedure to remove the systematic error related to the QM calculations.
 #
+
+The two submissions were renamed as SM31_micro002 and SM31_micro002
+SM31_micro000,SM31_extra001,+1,4.51,0.00,0.90,C[NH+](S(=O)(NC1(CCc2ccccc2)COC1)=O)C
+SM34_micro000,SM34_extra001,+1,4.37,0.00,0.90,C[NH+](S(=O)(NC1(CCc2ccccc2)CSC1)=O)C
+
 Macro pKa values:
 SM25, 2.24, -1, 0
 SM26, 2.22, -1, 0
