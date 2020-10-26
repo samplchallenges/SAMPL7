@@ -6,7 +6,7 @@
 import os
 import numpy as np
 import pandas as pd
-from logP_analysis import mae, rmse, barplot_with_CI_errorbars
+from logP_analysis import mae, rmse#, barplot_with_CI_errorbars
 from logP_analysis import compute_bootstrap_statistics
 import shutil
 import seaborn as sns
@@ -19,7 +19,54 @@ import joypy
 # PLOTTING FUNCTIONS
 # =============================================================================
 
-#def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, df4, x_label, y_label, y_lower_label, y_upper_label,group_labels):
+def barplot_with_CI_errorbars(df, x_label, y_label, y_lower_label, y_upper_label, figsize=False):
+    """Creates bar plot of a given dataframe with asymmetric error bars for y axis.
+
+    Args:
+        df: Pandas Dataframe that should have columns with columnnames specified in other arguments.
+        x_label: str, column name of x axis categories
+        y_label: str, column name of y axis values
+        y_lower_label: str, column name of lower error values of y axis
+        y_upper_label: str, column name of upper error values of y axis
+        figsize: tuple, size in inches. Default value is False.
+
+    """
+    # Column names for new columns for delta y_err which is calculated as | y_err - y |
+    delta_lower_yerr_label = "$\Delta$" + y_lower_label
+    delta_upper_yerr_label = "$\Delta$" + y_upper_label
+    data = df  # Pandas DataFrame
+    data.loc[:,delta_lower_yerr_label] = data.loc[:,y_label] - data.loc[:,y_lower_label]
+    data.loc[:,delta_upper_yerr_label] = data.loc[:,y_upper_label] - data.loc[:,y_label]
+
+    # Color
+    current_palette = sns.color_palette()
+    sns_color = current_palette[2]
+
+    # Plot style
+    plt.close()
+    plt.style.use(["seaborn-talk", "seaborn-whitegrid"])
+    plt.rcParams['axes.labelsize'] = 20 # 18
+    plt.rcParams['xtick.labelsize'] = 16 #14
+    plt.rcParams['ytick.labelsize'] = 18 #16
+    plt.rcParams['legend.fontsize'] = 16
+    plt.rcParams['legend.handlelength'] = 2
+    plt.rcParams['figure.autolayout'] = True
+    #plt.tight_layout()
+
+    # If figsize is specified
+    if figsize != False:
+        plt.figure(figsize=figsize)
+
+    # Plot
+    x = range(len(data[y_label]))
+    y = data[y_label]
+    plt.bar(x, y)
+    plt.xticks(x, data[x_label], rotation=90, horizontalalignment='right')
+    plt.errorbar(x, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
+                 fmt="none", ecolor=sns_color, capsize=3, capthick=True)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+
 def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, x_label, y_label, y_lower_label, y_upper_label,group_labels):
     """Creates bar plot of a given dataframe with asymmetric error bars for y axis.
     Args:
