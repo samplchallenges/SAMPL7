@@ -1,4 +1,4 @@
-# The SAMPL7 physical property challenge
+# The SAMPL7 physical property challenge (now closed to submissions)
 We are excited to announce a new set of SAMPL7 challenges focusing on pK<sub>a</sub>, partitioning, and permeability. [The Ballatore group at UCSD](https://pharmacy.ucsd.edu/faculty/ballatore) is contributing a set of measured water-octanol log *P*, log *D*, and pK<sub>a</sub> values for 22 compounds. They also provided Parallel Artificial Membrane Permeability Assay (PAMPA) permeability and melting point values they measured.
 
 
@@ -17,7 +17,7 @@ Please sign up for our [e-mail list](http://eepurl.com/dPj11j) for announcements
 ## Challenge timing details
 Submissions to the SAMPL7 physical property challenge will be due October 8, 2020. Challenge participants will have the option of predicting relative free energies between microstates to determine pK<sub>a</sub><sup>[1](https://link.springer.com/content/pdf/10.1007/s10822-020-00280-7.pdf)</sup>, and/or the difference in free energy of the neutral molecules between water and octanol to determine partition coefficients, and/or the log<sub>*P*<sub>*app*</sub></sub> to determine permeabilities of 22 compounds.
 
-Submission details, templates and instructions are linked to in the manifest.
+Submission details, templates, instructions and analysis are linked to in the manifest.
 
 The submission servers are now live: [SAMPL7 pKa submissions](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa) and [SAMPL7 logP/permeability submissions](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop)). Note that each challenge component has its own format, but logP and permeability share the same submission URL.
 
@@ -40,8 +40,8 @@ Effective permeability (log<sub>*P*<sub>*app*</sub></sub>) was measured by PAMPA
 ## What's here
 
 - [`SAMPL7_molecule_ID_and_SMILES.csv`](SAMPL7_molecule_ID_and_SMILES.csv): A `.CSV` file containing SAMPL7 challenge molecule IDs and SMILES. SMILES were provided by the [Ballatore lab](https://pharmacy.ucsd.edu/faculty/ballatore).
-- [`logP/`](logP/): Folder contains an input file in `.CSV` format with SMILES strings of the neutral states of the molecules. This folder contains participant submissions, analysis, instructions and a submission template for the logP challenge.
-- [`pKa/`](pKa/): Folder contains challenge input files in `.CSV` format with SMILES of enumerated microstates. `.MOL2` and `.SDF` files of each microstate are also provided. This folder contains instructions and a submission template for the pKa challenge. Microstates (tautomers and protomers) were generated with a notebook wich uses RDKit and OpenEye tools. Additional microstates were enumerated using Chemicalize (Chemaxon) and Epik (Schrodinger) and added to the notebook generated `.CSV` files.  
+- [`logP/`](logP/): Folder contains an input file in `.CSV` format with SMILES strings of the neutral states of the molecules. This folder contains participant submissions, instructions, a submission template and the analysis for the logP challenge.
+- [`pKa/`](pKa/): Folder contains challenge input files in `.CSV` format with SMILES of enumerated microstates. `.MOL2` and `.SDF` files of each microstate are also provided. This folder contains instructions and a submission template for the pKa challenge. This folder will be updated to contain analysis. Microstates (tautomers and protomers) were generated with a notebook wich uses RDKit and OpenEye tools. Additional microstates were enumerated using Chemicalize (Chemaxon) and Epik (Schrodinger) and added to the notebook generated `.CSV` files.
 - [`permeability/`](permeability/): Folder contains input files in `.CSV` format with SMILES strings of molecules. This folder contains instructions, a submission template and the analysis for the permeability challenge.
 - [`images/`](images): Folder containing images related to this challenge in PDF and/or JPEG format.
 - [`experimental_data/`](experimental_data/): Folder contains experimental measurements of pK<sub>a</sub>, partitioning, and permeability values.

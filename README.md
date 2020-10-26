@@ -35,6 +35,7 @@ Of course, we also appreciate it if you cite any overview/experimental papers re
 - [Details of the SAMPL7 physical property challenge](physical_property/) on log *P*, pK<sub>a</sub> and permeability. Input files, instructions, submission formats, and example submission formats are available in the subdirectories for the individual challenges.
 - SAMPL7 physical property submission instructions and submission server links ([SAMPL7 pKa submission](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa), [SAMPL7 logP/permeability submission](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop))
 - SAMPL7 physical properties experimental values, in [`physical_property/experimental_data'](physical_property/experimental_data)
+- [SAMPL7 log*P* and permeability analysis](physical_property/) are available in the subdirectories for the individual challenges.
 
 The SAMPL7 physical property challenge is now open! All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge. Note the first phase of the SAMPL8 host-guest challenge is now open on the SAMPL8 GitHub repo.
 
