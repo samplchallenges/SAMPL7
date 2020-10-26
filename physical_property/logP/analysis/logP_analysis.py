@@ -396,9 +396,9 @@ def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_lab
     # Zesty colorblind-friendly color palette
     color0 = "#0F2080"
     color1 = "#F5793A"
-    color2 = "#A95AA1"
+    #color2 = "#A95AA1"
     color3 = "#85C0F9"
-    current_palette = [color0, color1, color2, color3]
+    current_palette = [color0, color1, color3]#color2, color3]
     error_color = 'gray'
 
     # Bar colors
