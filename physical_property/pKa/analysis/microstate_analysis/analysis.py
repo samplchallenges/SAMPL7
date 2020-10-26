@@ -224,14 +224,14 @@ class pKaSubmissionCollection:
                 pKa_model_uncertainty =  submission.data.loc[mol_ID, "pKa model uncertainty"]
 
                 data.append({
-                    'method_name': submission.method_name,
+                    'method name': submission.method_name,
                     'file name': submission.file_name,
-                    'Reference state': ref_state,
+                    'reference state': ref_state,
                     'ID tag': mol_ID,
                     'total charge': total_charge,
-                    'Relative microstate FE predictions': pKa_mean_pred,
-                    'Relative microstate FE SEM': pKa_SEM_pred,
-                    'pKa model uncertainty': pKa_model_uncertainty
+                    'Relative microstate free energy prediction': pKa_mean_pred,
+                    'Relative microstate free energy SEM': pKa_SEM_pred,
+                    'model uncertainty': pKa_model_uncertainty
                 })
 
 
@@ -302,10 +302,12 @@ if __name__ == '__main__':
     def ridge_plot(df, by, column, figsize, colormap, output_directory_path, fig_name):
         print("Making ridge plot")
         plt.close('all')
+        plt.rcParams['axes.labelsize'] = 12
+        plt.rcParams['xtick.labelsize'] = 12
+        plt.rcParams['ytick.labelsize'] = 12
         plt.rcParams['axes.labelsize'] = 14
-        plt.rcParams['xtick.labelsize'] = 14
         #plt.rcParams['figure.autolayout'] = True
-        plt.tight_layout()
+        #plt.tight_layout()
 
         # Make ridge plot
         fig, axes = joypy.joyplot(data=df, by=by, column=column, figsize=figsize, colormap=colormap, linewidth=1)
@@ -338,7 +340,7 @@ if __name__ == '__main__':
         data_ordered_by_mol_ID = df.sort_values(["ID tag"], ascending=["True"])
 
         sns.set(rc={'figure.figsize': (8.27,11.7)})
-        sns.violinplot(y="ID tag", x='Relative microstate FE predictions',
+        sns.violinplot(y="ID tag", x='Relative microstate free energy prediction',
                        data=data_ordered_by_mol_ID, inner='point',
                        linewidth=0.5, width=width)
         plt.tight_layout()
@@ -353,7 +355,7 @@ if __name__ == '__main__':
         data_ordered_by_mol_ID = df.sort_values(["ID tag"], ascending=["True"])
 
         sns.set(rc={'figure.figsize': (12,8)})
-        v = sns.violinplot(x="ID tag", y='Relative microstate FE predictions',
+        v = sns.violinplot(x="ID tag", y='Relative microstate free energy prediction',
                        data=data_ordered_by_mol_ID, inner='point',
                        linewidth=0.5, width=width)
 
@@ -411,8 +413,9 @@ if __name__ == '__main__':
 
 
     # Ridge plot using all predictions
-    ridge_plot(df = collection_logP.data, by = "ID tag", column = "Relative microstate FE predictions", figsize = (4, 7), colormap=cm.plasma,
-               output_directory_path=output_directory_path, fig_name="ridgeplot_all_FE_predictions")
+    ridge_plot(df = collection_logP.data, by = "ID tag", column = "Relative microstate free energy prediction",
+                figsize = (5, 8), colormap=cm.plasma,
+                output_directory_path=output_directory_path, fig_name="ridgeplot_all_FE_predictions")
 
 
     # Violin plot using all predictions
@@ -420,8 +423,8 @@ if __name__ == '__main__':
 
 
     df = collection_logP.data
-    df2=df.groupby("ID tag")["Relative microstate FE predictions"].agg(['count','mean', 'min', 'max','std'])
-    df3=df.groupby("ID tag")["Relative microstate FE SEM"].agg(['mean'])
+    df2=df.groupby("ID tag")["Relative microstate free energy prediction"].agg(['count','mean', 'min', 'max','std'])
+    df3=df.groupby("ID tag")["Relative microstate free energy SEM"].agg(['mean'])
     df4=pd.merge(df2, df3, left_index=True, right_index=True)
     df4.columns = ['prediction count', 'average FE prediction', 'min prediction', 'max prediction', 'prediction STD', 'average SEM']
     #df4['ID tag'] = df4.index
@@ -454,7 +457,8 @@ if __name__ == '__main__':
 
 
     # Ridge plot using all predictions
-    ridge_plot(df = collection_logP_no_outllier.data, by = "ID tag", column = "Relative microstate FE predictions", figsize = (4, 8),
+    ridge_plot(df = collection_logP_no_outllier.data, by = "ID tag", column = "Relative microstate free energy prediction",
+                figsize = (5, 8),
                colormap=cm.plasma, output_directory_path=output_directory_path, fig_name="ridgeplot_all_FE_predictions_no_outlier")
 
 
@@ -462,8 +466,8 @@ if __name__ == '__main__':
     violinplot(df = collection_data_no_outlier, output_directory_path=output_directory_path, width=5, fig_name="violinplot_all_FE_predictions_no_outlier")
 
     df = collection_logP_no_outllier.data
-    df2=df.groupby("ID tag")["Relative microstate FE predictions"].agg(['count','mean', 'min', 'max','std'])
-    df3=df.groupby("ID tag")["Relative microstate FE SEM"].agg(['mean'])
+    df2=df.groupby("ID tag")["Relative microstate free energy prediction"].agg(['count','mean', 'min', 'max','std'])
+    df3=df.groupby("ID tag")["Relative microstate free energy SEM"].agg(['mean'])
     df4=pd.merge(df2, df3, left_index=True, right_index=True)
     df4.columns = ['prediction count', 'average FE prediction', 'min prediction', 'max prediction', 'prediction STD', 'average SEM']
     #df4['ID tag'] = df4.index

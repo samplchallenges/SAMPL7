@@ -1,4 +1,4 @@
-,method_name,file name,Reference state,ID tag,total charge,Relative microstate FE predictions,Relative microstate FE SEM,pKa model uncertainty
+,method name,file name,reference state,ID tag,total charge,Relative microstate free energy prediction,Relative microstate free energy SEM,model uncertainty
 0,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM25_micro000,SM25_micro001,-1,10.49,0.0,1.02
 1,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM25_micro000,SM25_micro002,0,-12.8,0.0,1.02
 2,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM25_micro000,SM25_micro003,-1,-9.16,0.0,1.02
