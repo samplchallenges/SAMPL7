@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[a4paper,margin=0.005in,tmargin=0.5in,lmargin=0.5in,rmargin=0.5in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\scriptsize
+\begin{longtable}{|ccccccccc|}
+\toprule
+                method name &                                   file name &               RMSE &                MAE &                    ME &              R$^2$ &                     m &                $\tau$ &                    ES \\
+\midrule
+\endhead
+\midrule
+\multicolumn{9}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+                    TFE MLR &                               logP-MLRUCR-1 &  0.58 [0.34, 0.83] &  0.41 [0.27, 0.60] &   -0.04 [-0.30, 0.19] &  0.43 [0.07, 0.79] &     0.60 [0.22, 0.96] &     0.56 [0.24, 0.82] &     0.71 [0.13, 0.57] \\
+                   Chemprop &                  LogP\_chemprop\_submission &  0.66 [0.39, 0.88] &  0.48 [0.31, 0.68] &   -0.17 [-0.45, 0.08] &  0.41 [0.11, 0.75] &     0.69 [0.32, 1.08] &     0.54 [0.25, 0.82] &     0.46 [0.06, 0.42] \\
+                     GROVER &                                 logP-dddc-2 &  0.69 [0.40, 0.96] &  0.49 [0.30, 0.71] &   -0.21 [-0.50, 0.05] &  0.33 [0.04, 0.71] &     0.56 [0.18, 0.94] &     0.37 [0.04, 0.66] &     0.35 [0.03, 0.35] \\
+ ffsampled_deeplearning_cl1 &                         logP-ChrisLoschen-1 &  0.77 [0.45, 1.03] &  0.51 [0.29, 0.77] &   -0.25 [-0.57, 0.03] &  0.31 [0.05, 0.69] &     0.63 [0.25, 1.04] &     0.42 [0.06, 0.73] &     0.41 [0.05, 0.38] \\
+           ClassicalGSG DB3 &                                   logp\_DB3 &  0.77 [0.57, 0.95] &  0.62 [0.43, 0.81] &   -0.15 [-0.47, 0.16] &  0.51 [0.18, 0.78] &     1.08 [0.55, 1.57] &     0.48 [0.16, 0.75] &     0.21 [0.01, 0.27] \\
+           TFE_Attentive_FP &                                 logP-dddc-1 &  0.79 [0.47, 1.06] &  0.57 [0.36, 0.81] &   -0.18 [-0.53, 0.12] &  0.19 [0.00, 0.61] &     0.44 [0.05, 0.87] &    0.34 [-0.02, 0.68] &     0.38 [0.05, 0.35] \\
+             TFE IEFPCM MST &                            logP-IEFPCMMST-1 &  1.03 [0.64, 1.40] &  0.80 [0.55, 1.09] &   -0.07 [-0.51, 0.33] &  0.27 [0.01, 0.68] &     0.85 [0.14, 1.50] &     0.42 [0.10, 0.70] &     0.51 [0.10, 0.46] \\
+                   COSMO-RS &           logP-JudithWarnauDassaultSystemes &  1.33 [1.00, 1.65] &  1.12 [0.84, 1.44] &  -1.12 [-1.44, -0.84] &  0.49 [0.18, 0.78] &     0.97 [0.50, 1.43] &     0.53 [0.25, 0.77] &     0.27 [0.02, 0.28] \\
+       NES-1 (GAFF2/OPC3) B &                   logP-PieroProcacci-NES1-B &  1.42 [1.03, 1.81] &  1.13 [0.80, 1.51] &   -0.51 [-1.07, 0.04] &  0.27 [0.02, 0.64] &     1.11 [0.30, 1.91] &     0.36 [0.05, 0.64] &     0.49 [0.09, 0.42] \\
+          MD (CGenFF/TIP3P) &  logP\_prediction\_Iorga\_Beckstein\_CGenFF &  1.63 [1.24, 1.98] &  1.41 [1.07, 1.75] &  -1.38 [-1.74, -1.02] &  0.54 [0.26, 0.82] &     1.26 [0.81, 1.77] &     0.52 [0.26, 0.77] &     0.46 [0.07, 0.39] \\
+                EC_RISM_wet &                               logP-ECRISM-1 &  1.84 [1.29, 2.34] &  1.49 [1.06, 1.96] &  -1.49 [-1.95, -1.06] &  0.29 [0.05, 0.69] &     0.96 [0.35, 1.57] &     0.38 [0.07, 0.68] &     0.34 [0.02, 0.34] \\
+  MD-EE-MCC (GAFF-TIP4P-Ew) &                        logP-FabioFalcioni-1 &  2.06 [1.49, 2.57] &  1.61 [1.08, 2.16] &  -0.93 [-1.71, -0.16] &  0.03 [0.00, 0.28] &    0.47 [-0.49, 1.48] &    0.11 [-0.15, 0.37] &     0.35 [0.02, 0.37] \\
+                TFE b3lypd3 &                          logP-EvrimArslan-6 &  2.19 [1.77, 2.57] &  1.98 [1.59, 2.38] &     1.98 [1.59, 2.38] &  0.40 [0.09, 0.67] &     1.06 [0.45, 1.64] &     0.45 [0.10, 0.71] &    0.04 [-0.00, 0.06] \\
+        TFE-SMD-solvent-opt &               logP\_RodriguezPaluch\_SMD\_2 &  2.39 [1.97, 2.77] &  2.19 [1.79, 2.59] &     2.19 [1.79, 2.59] &  0.40 [0.10, 0.66] &     1.09 [0.47, 1.68] &     0.42 [0.10, 0.68] &     0.20 [0.02, 0.20] \\
+          TFE-NHLBI-TZVP-QM &                                logp-nhlbi-1 &  2.72 [1.93, 3.43] &  2.17 [1.51, 2.89] &     2.08 [1.36, 2.85] &  0.52 [0.18, 0.78] &  -1.16 [-1.64, -0.58] &  -0.51 [-0.78, -0.18] &    0.02 [-0.00, 0.07] \\
+            Ensemble Martel &                logp\_ensemble\_logp\_model1 &  3.29 [2.89, 3.68] &  3.16 [2.79, 3.55] &     3.16 [2.79, 3.55] &  0.39 [0.05, 0.73] &  -0.25 [-0.40, -0.09] &  -0.46 [-0.72, -0.13] &  -0.00 [-0.00, -0.00] \\
+ QSPR_Mordred2D_TPOT_AutoML &                             logP-DavyGuan-1 &  3.64 [3.01, 4.24] &  3.36 [2.80, 3.97] &     3.36 [2.80, 3.97] &  0.39 [0.10, 0.71] &  -0.72 [-1.12, -0.33] &  -0.37 [-0.65, -0.04] &  -0.00 [-0.00, -0.00] \\
+\end{longtable}
+\end{center}
+
+Notes
+
+- RMSE: Root mean square error
+
+- MAE: Mean absolute error
+
+- ME: Mean error
+
+- R2: R-squared, square of Pearson correlation coefficient
+
+- m: slope of the line fit to predicted vs experimental logP values
+
+- $\tau$:  Kendall rank correlation coefficient
+
+- ES: error slope calculated from the QQ Plots of model uncertainty predictions
+
+- Mean and 95\% confidence intervals of RMSE, MAE, ME, R2, and m were calculated by bootstrapping with 10000 samples.
+
+- 95\% confidence intervals of ES were calculated by bootstrapping with 1000 samples.\end{document}
