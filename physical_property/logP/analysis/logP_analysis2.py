@@ -61,7 +61,7 @@ def barplot_with_CI_errorbars(df, x_label, y_label, y_lower_label, y_upper_label
     x = range(len(data[y_label]))
     y = data[y_label]
     plt.bar(x, y)
-    plt.xticks(x, data[x_label], rotation=90, horizontalalignment='right')
+    plt.xticks(x, data[x_label], rotation=90)#, horizontalalignment='right')
     plt.errorbar(x, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
                  fmt="none", ecolor=sns_color, capsize=3, capthick=True)
     plt.xlabel(x_label)
