@@ -1,6 +1,6 @@
 #!/bin/env python
 
-outfile = '../SAMPL7-user-map-HG.csv'
+outfile = '../SAMPL7-user-map-permeability.csv'
 
 # Read user map from submission server
 file = open('/Users/dmobley/github/SAMPL-submission-systems/SAMPL-submission-handling-shared/submissions/downloads/submission_table.txt', 'r')
