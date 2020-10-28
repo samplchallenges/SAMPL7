@@ -204,7 +204,7 @@ class pKaSubmissionCollection:
     """A collection of pKa submissions."""
 
 
-    def __init__(self, submissions, output_directory_path, pKa_submission_collection_file_path, no_outliers = True):
+    def __init__(self, submissions, output_directory_path, pKa_submission_collection_file_path):#, no_outliers = True):
         # Build collection dataframe from the beginning.
         # Build full pKa collection table.
 
@@ -213,8 +213,8 @@ class pKaSubmissionCollection:
         # Submissions for pKa.
         for submission in submissions_RFE:
             #print(submission.method_name)
-            if "RFE-NHLBI-TZVP-QM" in submission.method_name  and no_outliers:
-                continue
+            #if "RFE-NHLBI-TZVP-QM" in submission.method_name and no_outliers:
+            #    continue
             #print(submission.method_name)
             for mol_ID, series in submission.data.iterrows():
                 ref_state = submission.data.loc[mol_ID, "Molecule ID"]
@@ -408,7 +408,7 @@ if __name__ == '__main__':
     submissions_RFE = load_submissions(pKa_SUBMISSIONS_DIR_PATH, user_map)
 
 
-    collection_logP = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path, no_outliers = False)
+    collection_logP = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path)#, no_outliers = False)
     collection_data = read_collection_file(collection_file_path = pKa_submission_collection_file_path)
 
 
@@ -442,7 +442,7 @@ if __name__ == '__main__':
 
 
     # Repeat without outlier
-    output_directory_path = "./plots"
+    '''output_directory_path = "./plots"
     pKa_submission_collection_file_path = "{}/relative_microstate_FE_submissions_no_outlier.csv".format(output_directory_path)
 
     os.makedirs(output_directory_path, exist_ok=True)
@@ -452,7 +452,7 @@ if __name__ == '__main__':
     submissions_RFE = load_submissions(pKa_SUBMISSIONS_DIR_PATH, user_map)
 
 
-    collection_logP_no_outllier = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path, no_outliers = True)
+    collection_logP_no_outllier = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path)#, no_outliers = True)
     collection_data_no_outlier = read_collection_file(collection_file_path = pKa_submission_collection_file_path)
 
 
@@ -475,4 +475,4 @@ if __name__ == '__main__':
     df4.to_csv(output_directory_path+"/numbers_no_outlier.csv")
 
     # Barplot of average FE predictions
-    barplot(df=df4, output_directory_path=output_directory_path, figsize=(28,10), fig_name="barplot_average_FE_predictions_no_outlier")
+    barplot(df=df4, output_directory_path=output_directory_path, figsize=(28,10), fig_name="barplot_average_FE_predictions_no_outlier")'''
