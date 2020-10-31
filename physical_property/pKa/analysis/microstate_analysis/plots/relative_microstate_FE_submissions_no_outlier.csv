@@ -1,364 +1,364 @@
-,method name,file name,reference state,ID tag,total charge,Relative microstate free energy prediction,Relative microstate free energy SEM,model uncertainty
-0,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM25_micro000,SM25_micro001,-1,10.49,0.0,1.02
-1,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM25_micro000,SM25_micro002,0,-12.8,0.0,1.02
-2,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM25_micro000,SM25_micro003,-1,-9.16,0.0,1.02
-3,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM26_micro000,SM26_micro001,-1,-5.94,0.0,1.02
-4,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM26_micro000,SM26_micro002,0,20.81,0.0,1.02
-5,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM26_micro000,SM26_micro003,-1,-22.11,0.0,1.02
-6,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM27_micro000,SM27_micro001,-1,-13.86,0.0,1.02
-7,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM28_micro000,SM28_micro001,0,25.72,0.0,1.02
-8,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM28_micro000,SM28_micro002,-1,-19.08,0.0,1.02
-9,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM28_micro000,SM28_micro003,1,7.28,0.0,1.02
-10,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM29_micro000,SM29_micro001,-1,-13.6,0.0,1.02
-11,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM30_micro000,SM30_micro001,-1,-12.9,0.0,1.02
-12,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM31_micro000,SM31_micro001,-1,-13.16,0.0,1.02
-13,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM32_micro000,SM32_micro001,-1,-13.74,0.0,1.02
-14,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM33_micro000,SM33_micro001,-1,-11.88,0.0,1.02
-15,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM34_micro000,SM34_micro001,-1,-14.35,0.0,1.02
-16,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM35_micro000,SM35_micro001,-1,-11.7,0.0,1.02
-17,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM35_micro000,SM35_micro002,0,-1.12,0.0,1.02
-18,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM35_micro000,SM35_micro003,-1,-13.2,0.0,1.02
-19,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM36_micro000,SM36_micro001,-1,-9.53,0.0,1.02
-20,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM36_micro000,SM36_micro002,0,-3.22,0.0,1.02
-21,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM36_micro000,SM36_micro003,-1,-9.51,0.0,1.02
-22,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro001,1,8.52,0.0,1.02
-23,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro002,-1,-9.07,0.0,1.02
-24,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro003,0,-3.03,0.0,1.02
-25,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro004,-1,-9.07,0.0,1.02
-26,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro005,1,7.72,0.0,1.02
-27,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM38_micro000,SM38_micro001,-1,-12.42,0.0,1.02
-28,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM39_micro000,SM39_micro001,-1,-10.16,0.0,1.02
-29,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM40_micro000,SM40_micro001,-1,-11.46,0.0,1.02
-30,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM40_micro000,SM40_micro002,1,11.28,0.0,1.02
-31,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM41_micro000,SM41_micro001,-1,-6.21,0.0,1.02
-32,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM41_micro000,SM41_micro002,1,9.38,0.0,1.02
-33,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM42_micro000,SM42_micro001,-1,-0.39,0.0,1.02
-34,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM42_micro000,SM42_micro002,1,4.63,0.0,1.02
-35,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM43_micro000,SM43_micro001,-1,-1.72,0.0,1.02
-36,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM43_micro000,SM43_micro002,1,8.0,0.0,1.02
-37,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM43_micro000,SM43_micro003,2,44.38,0.0,1.02
-38,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM44_micro000,SM44_micro001,-1,-8.85,0.0,1.02
-39,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM44_micro000,SM44_micro002,1,7.47,0.0,1.02
-40,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM45_micro000,SM45_micro001,-1,-8.25,0.0,1.02
-41,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM45_micro000,SM45_micro002,1,8.01,0.0,1.02
-42,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM46_micro000,SM46_micro001,-1,-8.73,0.0,1.02
-43,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM46_micro000,SM46_micro002,1,6.98,0.0,1.02
-44,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM46_micro000,SM46_micro003,2,46.3,0.0,1.02
-45,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM25_micro000,SM25_micro001,-1,10.9,0.0,0.4
-46,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM25_micro000,SM25_micro002,0,-13.46,0.0,0.4
-47,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM25_micro000,SM25_micro003,-1,-9.16,0.0,0.4
-48,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM26_micro000,SM26_micro001,-1,-6.05,0.0,0.4
-49,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM26_micro000,SM26_micro002,0,23.13,0.0,0.4
-50,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM26_micro000,SM26_micro003,-1,-23.44,0.0,0.4
-51,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM27_micro000,SM27_micro001,-1,-13.84,0.0,0.4
-52,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM28_micro000,SM28_micro001,0,28.41,0.0,0.4
-53,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM28_micro000,SM28_micro002,-1,-19.34,0.0,0.4
-54,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM28_micro000,SM28_micro003,1,4.57,0.0,0.4
-55,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM29_micro000,SM29_micro001,-1,-12.36,0.0,0.4
-56,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM30_micro000,SM30_micro001,-1,-12.86,0.0,0.4
-57,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM31_micro000,SM31_micro001,-1,-12.75,0.0,0.4
-58,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM32_micro000,SM32_micro001,-1,-12.34,0.0,0.4
-59,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM33_micro000,SM33_micro001,-1,-12.44,0.0,0.4
-60,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM34_micro000,SM34_micro001,-1,-12.41,0.0,0.4
-61,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM35_micro000,SM35_micro001,-1,-11.83,0.0,0.4
-62,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM35_micro000,SM35_micro002,0,-1.85,0.0,0.4
-63,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM35_micro000,SM35_micro003,-1,-12.97,0.0,0.4
-64,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM36_micro000,SM36_micro001,-1,-10.85,0.0,0.4
-65,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM36_micro000,SM36_micro002,0,-2.6,0.0,0.4
-66,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM36_micro000,SM36_micro003,-1,-10.71,0.0,0.4
-67,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro001,1,3.93,0.0,0.4
-68,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro002,-1,-8.2,0.0,0.4
-69,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro003,0,-1.87,0.0,0.4
-70,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro004,-1,-8.2,0.0,0.4
-71,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro005,1,3.14,0.0,0.4
-72,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM38_micro000,SM38_micro001,-1,-12.72,0.0,0.4
-73,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM39_micro000,SM39_micro001,-1,-10.64,0.0,0.4
-74,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM40_micro000,SM40_micro001,-1,-10.5,0.0,0.4
-75,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM40_micro000,SM40_micro002,1,6.6,0.0,0.4
-76,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM41_micro000,SM41_micro001,-1,-7.41,0.0,0.4
-77,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM41_micro000,SM41_micro002,1,5.53,0.0,0.4
-78,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM42_micro000,SM42_micro001,-1,-1.83,0.0,0.4
-79,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM42_micro000,SM42_micro002,1,1.22,0.0,0.4
-80,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM43_micro000,SM43_micro001,-1,-2.16,0.0,0.4
-81,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM43_micro000,SM43_micro002,1,-8.0,0.0,0.4
-82,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM43_micro000,SM43_micro003,2,25.54,0.0,0.4
-83,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM44_micro000,SM44_micro001,-1,-8.97,0.0,0.4
-84,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM44_micro000,SM44_micro002,1,4.49,0.0,0.4
-85,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM45_micro000,SM45_micro001,-1,-8.59,0.0,0.4
-86,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM45_micro000,SM45_micro002,1,3.96,0.0,0.4
-87,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM46_micro000,SM46_micro001,-1,-8.49,0.0,0.4
-88,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM46_micro000,SM46_micro002,1,3.98,0.0,0.4
-89,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM46_micro000,SM46_micro003,2,28.62,0.0,0.4
-90,RFE-prediction-M052X,pKa-VA-2,SM25_micro000,SM25_micro001,1,-4.64,0.5,0.8
-91,RFE-prediction-M052X,pKa-VA-2,SM26_micro000,SM26_micro001,1,-7.15,0.5,0.8
-92,RFE-prediction-M052X,pKa-VA-2,SM27_micro000,SM27_micro001,1,-9.76,0.5,0.8
-93,RFE-prediction-M052X,pKa-VA-2,SM28_micro000,SM28_micro001,1,-14.41,0.5,0.8
-94,RFE-prediction-M052X,pKa-VA-2,SM29_micro000,SM29_micro001,1,-8.59,0.5,0.8
-95,RFE-prediction-M052X,pKa-VA-2,SM30_micro000,SM30_micro001,1,-8.97,0.5,0.8
-96,RFE-prediction-M052X,pKa-VA-2,SM31_micro000,SM31_micro001,1,-12.63,0.5,0.8
-97,RFE-prediction-M052X,pKa-VA-2,SM32_micro000,SM32_micro001,1,-9.59,0.5,0.8
-98,RFE-prediction-M052X,pKa-VA-2,SM33_micro000,SM33_micro001,1,-8.81,0.5,0.8
-99,RFE-prediction-M052X,pKa-VA-2,SM34_micro000,SM34_micro001,1,-10.58,0.5,0.8
-100,RFE-prediction-M052X,pKa-VA-2,SM35_micro000,SM35_micro001,1,-10.5,0.5,0.8
-101,RFE-prediction-M052X,pKa-VA-2,SM36_micro000,SM36_micro001,1,-9.36,0.5,0.8
-102,RFE-prediction-M052X,pKa-VA-2,SM37_micro000,SM37_micro001,1,-9.97,0.5,0.8
-103,RFE-prediction-M052X,pKa-VA-2,SM38_micro000,SM38_micro001,1,-6.11,0.5,0.8
-104,RFE-prediction-M052X,pKa-VA-2,SM39_micro000,SM39_micro001,1,-5.84,0.5,0.8
-105,RFE-prediction-M052X,pKa-VA-2,SM40_micro000,SM40_micro001,1,-8.76,0.5,0.8
-106,RFE-prediction-M052X,pKa-VA-2,SM41_micro000,SM41_micro001,1,-10.77,0.5,0.8
-107,RFE-prediction-M052X,pKa-VA-2,SM42_micro000,SM42_micro001,1,-8.96,0.5,0.8
-108,RFE-prediction-M052X,pKa-VA-2,SM43_micro000,SM43_micro001,1,-9.73,0.5,0.8
-109,RFE-prediction-M052X,pKa-VA-2,SM44_micro000,SM44_micro001,1,-9.39,0.5,0.8
-110,RFE-prediction-M052X,pKa-VA-2,SM45_micro000,SM45_micro001,1,-10.72,0.5,0.8
-111,RFE-prediction-M052X,pKa-VA-2,SM46_micro000,SM46_micro001,1,-13.38,0.5,0.8
-112,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM25_micro000,SM25_micro001,-1,11.36,0.0,0.5
-113,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM25_micro000,SM25_micro002,0,-14.89,0.0,0.5
-114,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM25_micro000,SM25_micro003,-1,-8.14,0.0,0.5
-115,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM26_micro000,SM26_micro001,-1,-4.33,0.0,0.5
-116,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM26_micro000,SM26_micro002,0,19.5,0.0,0.5
-117,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM26_micro000,SM26_micro003,-1,-21.0,0.0,0.5
-118,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM27_micro000,SM27_micro001,-1,-12.99,0.0,0.5
-119,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM28_micro000,SM28_micro001,0,25.74,0.0,0.5
-120,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM28_micro000,SM28_micro002,-1,-16.37,0.0,0.5
-121,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM28_micro000,SM28_micro003,1,2.79,0.0,0.5
-122,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM29_micro000,SM29_micro001,-1,-11.67,0.0,0.5
-123,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM30_micro000,SM30_micro001,-1,-10.37,0.0,0.5
-124,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM31_micro000,SM31_micro001,-1,-11.53,0.0,0.5
-125,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM32_micro000,SM32_micro001,-1,-12.03,0.0,0.5
-126,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM33_micro000,SM33_micro001,-1,-10.13,0.0,0.5
-127,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM34_micro000,SM34_micro001,-1,-12.16,0.0,0.5
-128,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM35_micro000,SM35_micro001,-1,-10.72,0.0,0.5
-129,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM35_micro000,SM35_micro002,0,0.72,0.0,0.5
-130,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM35_micro000,SM35_micro003,-1,-13.04,0.0,0.5
-131,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM36_micro000,SM36_micro001,-1,-9.03,0.0,0.5
-132,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM36_micro000,SM36_micro002,0,-0.85,0.0,0.5
-133,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM36_micro000,SM36_micro003,-1,-9.86,0.0,0.5
-134,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro001,1,7.4,0.0,0.5
-135,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro002,-1,-9.26,0.0,0.5
-136,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro003,0,0.14,0.0,0.5
-137,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro004,-1,-7.79,0.0,0.5
-138,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro005,1,6.45,0.0,0.5
-139,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM38_micro000,SM38_micro001,-1,-12.38,0.0,0.5
-140,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM39_micro000,SM39_micro001,-1,-8.64,0.0,0.5
-141,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM40_micro000,SM40_micro001,-1,-8.98,0.0,0.5
-142,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM40_micro000,SM40_micro002,1,7.83,0.0,0.5
-143,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM41_micro000,SM41_micro001,-1,-6.22,0.0,0.5
-144,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM41_micro000,SM41_micro002,1,7.18,0.0,0.5
-145,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM42_micro000,SM42_micro001,-1,-5.5,0.0,0.5
-146,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM42_micro000,SM42_micro002,1,7.85,0.0,0.5
-147,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM43_micro000,SM43_micro001,-1,-5.74,0.0,0.5
-148,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM43_micro000,SM43_micro002,1,8.0,0.0,0.5
-149,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM43_micro000,SM43_micro003,2,44.39,0.0,0.5
-150,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM44_micro000,SM44_micro001,-1,-6.53,0.0,0.5
-151,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM44_micro000,SM44_micro002,1,5.43,0.0,0.5
-152,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM45_micro000,SM45_micro001,-1,-6.85,0.0,0.5
-153,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM45_micro000,SM45_micro002,1,6.03,0.0,0.5
-154,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM46_micro000,SM46_micro001,-1,-7.24,0.0,0.5
-155,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM46_micro000,SM46_micro002,1,5.3,0.0,0.5
-156,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM46_micro000,SM46_micro003,2,39.25,0.0,0.5
-157,Standard Gaussian Process,pKa-RobertRaddi,SM25_micro000,SM25_micro001,-1,16.33,2.22,9.39
-158,Standard Gaussian Process,pKa-RobertRaddi,SM25_micro000,SM25_micro002,0,8.09,2.22,4.71
-159,Standard Gaussian Process,pKa-RobertRaddi,SM25_micro000,SM25_micro003,-1,8.19,2.22,4.71
-160,Standard Gaussian Process,pKa-RobertRaddi,SM26_micro000,SM26_micro001,-1,7.85,2.22,3.42
-161,Standard Gaussian Process,pKa-RobertRaddi,SM26_micro000,SM26_micro002,0,-7.79,2.22,4.71
-162,Standard Gaussian Process,pKa-RobertRaddi,SM26_micro000,SM26_micro003,-1,0.87,2.22,5.88
-163,Standard Gaussian Process,pKa-RobertRaddi,SM27_micro000,SM27_micro001,-1,8.01,2.22,4.71
-164,Standard Gaussian Process,pKa-RobertRaddi,SM28_micro000,SM28_micro001,0,-7.82,2.22,4.71
-165,Standard Gaussian Process,pKa-RobertRaddi,SM28_micro000,SM28_micro002,-1,8.16,2.22,3.72
-166,Standard Gaussian Process,pKa-RobertRaddi,SM28_micro000,SM28_micro003,1,-5.18,2.22,4.0
-167,Standard Gaussian Process,pKa-RobertRaddi,SM29_micro000,SM29_micro001,-1,8.02,2.22,4.71
-168,Standard Gaussian Process,pKa-RobertRaddi,SM30_micro000,SM30_micro001,-1,8.06,2.22,4.71
-169,Standard Gaussian Process,pKa-RobertRaddi,SM31_micro000,SM31_micro001,-1,8.02,2.22,4.71
-170,Standard Gaussian Process,pKa-RobertRaddi,SM31_micro000,SM31_micro002,1,-8.07,2.22,4.7
-171,Standard Gaussian Process,pKa-RobertRaddi,SM32_micro000,SM32_micro001,-1,8.02,2.22,4.71
-172,Standard Gaussian Process,pKa-RobertRaddi,SM33_micro000,SM33_micro001,-1,8.08,2.22,4.71
-173,Standard Gaussian Process,pKa-RobertRaddi,SM34_micro000,SM34_micro001,-1,8.06,2.22,4.71
-174,Standard Gaussian Process,pKa-RobertRaddi,SM34_micro000,SM34_micro002,1,-8.05,2.22,4.7
-175,Standard Gaussian Process,pKa-RobertRaddi,SM35_micro000,SM35_micro001,-1,8.08,2.22,4.71
-176,Standard Gaussian Process,pKa-RobertRaddi,SM35_micro000,SM35_micro002,0,0.03,2.22,6.66
-177,Standard Gaussian Process,pKa-RobertRaddi,SM35_micro000,SM35_micro003,-1,8.02,2.22,4.71
-178,Standard Gaussian Process,pKa-RobertRaddi,SM36_micro000,SM36_micro001,-1,8.07,2.22,4.71
-179,Standard Gaussian Process,pKa-RobertRaddi,SM36_micro000,SM36_micro002,0,0.0,2.22,6.66
-180,Standard Gaussian Process,pKa-RobertRaddi,SM36_micro000,SM36_micro003,-1,8.06,2.22,4.71
-181,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro001,1,-8.01,2.22,4.69
-182,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro002,-1,8.1,2.22,4.71
-183,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro003,0,-0.01,2.22,6.66
-184,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro004,-1,8.09,2.22,4.71
-185,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro005,1,-8.07,2.22,4.71
-186,Standard Gaussian Process,pKa-RobertRaddi,SM38_micro000,SM38_micro001,-1,8.09,2.22,4.71
-187,Standard Gaussian Process,pKa-RobertRaddi,SM39_micro000,SM39_micro001,-1,8.13,2.22,4.71
-188,Standard Gaussian Process,pKa-RobertRaddi,SM40_micro000,SM40_micro001,-1,8.14,2.22,4.71
-189,Standard Gaussian Process,pKa-RobertRaddi,SM40_micro000,SM40_micro002,1,-8.02,2.22,4.68
-190,Standard Gaussian Process,pKa-RobertRaddi,SM41_micro000,SM41_micro001,-1,8.01,2.22,4.59
-191,Standard Gaussian Process,pKa-RobertRaddi,SM41_micro000,SM41_micro002,1,-5.81,2.22,4.37
-192,Standard Gaussian Process,pKa-RobertRaddi,SM42_micro000,SM42_micro001,-1,8.96,2.22,4.52
-193,Standard Gaussian Process,pKa-RobertRaddi,SM42_micro000,SM42_micro002,1,-7.86,2.22,4.69
-194,Standard Gaussian Process,pKa-RobertRaddi,SM42_micro000,SM42_micro003,0,0.98,2.22,6.41
-195,Standard Gaussian Process,pKa-RobertRaddi,SM43_micro000,SM43_micro001,-1,8.4,2.22,4.6
-196,Standard Gaussian Process,pKa-RobertRaddi,SM43_micro000,SM43_micro002,1,-7.99,2.22,4.7
-197,Standard Gaussian Process,pKa-RobertRaddi,SM43_micro000,SM43_micro003,2,-15.89,2.22,9.3
-198,Standard Gaussian Process,pKa-RobertRaddi,SM44_micro000,SM44_micro001,-1,8.05,2.22,4.59
-199,Standard Gaussian Process,pKa-RobertRaddi,SM44_micro000,SM44_micro002,1,-6.67,2.22,4.39
-200,Standard Gaussian Process,pKa-RobertRaddi,SM45_micro000,SM45_micro001,-1,8.68,2.22,3.8
-201,Standard Gaussian Process,pKa-RobertRaddi,SM45_micro000,SM45_micro002,1,-6.66,2.22,4.42
-202,Standard Gaussian Process,pKa-RobertRaddi,SM46_micro000,SM46_micro001,-1,8.19,2.22,4.63
-203,Standard Gaussian Process,pKa-RobertRaddi,SM46_micro000,SM46_micro002,1,-6.85,2.22,4.28
-204,Standard Gaussian Process,pKa-RobertRaddi,SM46_micro000,SM46_micro003,2,-16.23,2.22,9.39
-205,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro001,-1,-2.7,0.0,0.9
-206,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro002,0,-2.0,0.0,0.9
-207,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro003,-1,4.53,0.0,0.9
-208,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro004,0,-5.75,0.0,0.9
-209,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro005,1,0.65,0.0,0.9
-210,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro001,-1,3.02,0.0,0.9
-211,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro002,0,6.95,0.0,0.9
-212,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro003,-1,11.12,0.0,0.9
-213,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro004,0,3.78,0.0,0.9
-214,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro005,1,6.34,0.0,0.9
-215,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM27_micro000,SM27_micro001,-1,6.11,0.0,0.9
-216,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM28_micro000,SM28_micro001,0,8.29,0.0,0.9
-217,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM28_micro000,SM28_micro002,-1,8.78,0.0,0.9
-218,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM28_micro000,SM28_micro003,1,3.91,0.0,0.9
-219,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM28_micro000,SM28_micro004,-1,18.7,0.0,0.9
-220,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM29_micro000,SM29_micro001,-1,6.33,0.0,0.9
-221,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM30_micro000,SM30_micro001,-1,5.86,0.0,0.9
-222,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM31_micro000,SM31_micro002,1,4.51,0.0,0.9
-223,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM31_micro000,SM31_micro001,-1,6.0,0.0,0.9
-224,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM32_micro000,SM32_micro001,-1,5.91,0.0,0.9
-225,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM33_micro000,SM33_micro001,-1,5.17,0.0,0.9
-226,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM34_micro000,SM34_micro002,1,4.37,0.0,0.9
-227,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM34_micro000,SM34_micro001,-1,5.73,0.0,0.9
-228,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM35_micro000,SM35_micro001,-1,3.2,0.0,0.9
-229,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM35_micro000,SM35_micro002,0,-1.89,0.0,0.9
-230,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM35_micro000,SM35_micro003,-1,3.2,0.0,0.9
-231,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM36_micro000,SM36_micro001,-1,5.22,0.0,0.9
-232,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM36_micro000,SM36_micro002,0,0.38,0.0,0.9
-233,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM36_micro000,SM36_micro003,-1,5.23,0.0,0.9
-234,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro001,1,2.13,0.0,0.9
-235,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro002,-1,3.7,0.0,0.9
-236,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro003,0,-1.49,0.0,0.9
-237,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro004,-1,3.78,0.0,0.9
-238,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro005,1,1.26,0.0,0.9
-239,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM38_micro000,SM38_micro001,-1,5.22,0.0,0.9
-240,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM39_micro000,SM39_micro001,-1,5.13,0.0,0.9
-241,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM40_micro000,SM40_micro001,-1,4.98,0.0,0.9
-242,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM40_micro000,SM40_micro002,1,6.17,0.0,0.9
-243,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM41_micro000,SM41_micro001,-1,2.17,0.0,0.9
-244,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM41_micro000,SM41_micro002,1,3.09,0.0,0.9
-245,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM42_micro000,SM42_micro001,-1,0.15,0.0,0.9
-246,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM42_micro000,SM42_micro002,1,0.79,0.0,0.9
-247,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM42_micro000,SM42_micro003,0,-1.95,0.0,0.9
-248,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro001,-1,0.5,0.0,0.9
-249,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro002,1,2.95,0.0,0.9
-250,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro003,2,6.25,0.0,0.9
-251,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro004,0,-2.08,0.0,0.9
-252,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro005,1,0.41,0.0,0.9
-253,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM44_micro000,SM44_micro001,-1,4.25,0.0,0.9
-254,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM44_micro000,SM44_micro002,1,3.55,0.0,0.9
-255,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM45_micro000,SM45_micro001,-1,4.39,0.0,0.9
-256,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM45_micro000,SM45_micro002,1,3.68,0.0,0.9
-257,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM46_micro000,SM46_micro001,-1,4.0,0.0,0.9
-258,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM46_micro000,SM46_micro002,1,3.51,0.0,0.9
-259,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM46_micro000,SM46_micro003,2,8.07,0.0,0.9
-260,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM46_micro000,SM46_micro004,1,5.18,0.0,0.9
-261,IEFPCM/MST,pKa-IEFPCMMST-1,SM25_micro000,SM25_micro001,-1,16.31,0.0,1.45
-262,IEFPCM/MST,pKa-IEFPCMMST-1,SM25_micro000,SM25_micro002,0,14.57,0.0,1.45
-263,IEFPCM/MST,pKa-IEFPCMMST-1,SM25_micro000,SM25_micro003,-1,9.85,0.0,1.45
-264,IEFPCM/MST,pKa-IEFPCMMST-1,SM26_micro000,SM26_micro001,-1,6.15,0.0,1.45
-265,IEFPCM/MST,pKa-IEFPCMMST-1,SM26_micro000,SM26_micro002,0,22.09,0.0,1.45
-266,IEFPCM/MST,pKa-IEFPCMMST-1,SM26_micro000,SM26_micro003,-1,32.35,0.0,1.45
-267,IEFPCM/MST,pKa-IEFPCMMST-1,SM27_micro000,SM27_micro001,-1,16.78,0.0,1.45
-268,IEFPCM/MST,pKa-IEFPCMMST-1,SM28_micro000,SM28_micro001,0,23.52,0.0,1.45
-269,IEFPCM/MST,pKa-IEFPCMMST-1,SM28_micro000,SM28_micro002,-1,21.92,0.0,1.45
-270,IEFPCM/MST,pKa-IEFPCMMST-1,SM28_micro000,SM28_micro003,1,9.38,0.0,1.45
-271,IEFPCM/MST,pKa-IEFPCMMST-1,SM29_micro000,SM29_micro001,-1,15.65,0.0,1.45
-272,IEFPCM/MST,pKa-IEFPCMMST-1,SM30_micro000,SM30_micro001,-1,14.96,0.0,1.45
-273,IEFPCM/MST,pKa-IEFPCMMST-1,SM31_micro000,SM31_micro001,-1,14.74,0.0,1.45
-274,IEFPCM/MST,pKa-IEFPCMMST-1,SM32_micro000,SM32_micro001,-1,16.25,0.0,1.45
-275,IEFPCM/MST,pKa-IEFPCMMST-1,SM33_micro000,SM33_micro001,-1,14.54,0.0,1.45
-276,IEFPCM/MST,pKa-IEFPCMMST-1,SM34_micro000,SM34_micro001,-1,14.81,0.0,1.45
-277,IEFPCM/MST,pKa-IEFPCMMST-1,SM35_micro000,SM35_micro001,-1,13.98,0.0,1.45
-278,IEFPCM/MST,pKa-IEFPCMMST-1,SM35_micro000,SM35_micro002,0,0.0,0.0,1.45
-279,IEFPCM/MST,pKa-IEFPCMMST-1,SM35_micro000,SM35_micro003,-1,13.98,0.0,1.45
-280,IEFPCM/MST,pKa-IEFPCMMST-1,SM36_micro000,SM36_micro001,-1,12.51,0.0,1.45
-281,IEFPCM/MST,pKa-IEFPCMMST-1,SM36_micro000,SM36_micro002,0,0.0,0.0,1.45
-282,IEFPCM/MST,pKa-IEFPCMMST-1,SM36_micro000,SM36_micro003,-1,12.51,0.0,1.45
-283,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro001,1,5.37,0.0,1.45
-284,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro002,-1,11.03,0.0,1.45
-285,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro003,0,0.0,0.0,1.45
-286,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro004,-1,5.37,0.0,1.45
-287,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro005,1,11.03,0.0,1.45
-288,IEFPCM/MST,pKa-IEFPCMMST-1,SM38_micro000,SM38_micro001,-1,13.36,0.0,1.45
-289,IEFPCM/MST,pKa-IEFPCMMST-1,SM39_micro000,SM39_micro001,-1,12.04,0.0,1.45
-290,IEFPCM/MST,pKa-IEFPCMMST-1,SM40_micro000,SM40_micro001,-1,11.23,0.0,1.45
-291,IEFPCM/MST,pKa-IEFPCMMST-1,SM40_micro000,SM40_micro002,1,8.57,0.0,1.45
-292,IEFPCM/MST,pKa-IEFPCMMST-1,SM41_micro000,SM41_micro001,-1,6.98,0.0,1.45
-293,IEFPCM/MST,pKa-IEFPCMMST-1,SM41_micro000,SM41_micro002,1,13.86,0.0,1.45
-294,IEFPCM/MST,pKa-IEFPCMMST-1,SM42_micro000,SM42_micro001,-1,6.61,0.0,1.45
-295,IEFPCM/MST,pKa-IEFPCMMST-1,SM42_micro000,SM42_micro002,1,14.25,0.0,1.45
-296,IEFPCM/MST,pKa-IEFPCMMST-1,SM43_micro000,SM43_micro001,-1,6.02,0.0,1.45
-297,IEFPCM/MST,pKa-IEFPCMMST-1,SM43_micro000,SM43_micro002,1,9.14,0.0,1.45
-298,IEFPCM/MST,pKa-IEFPCMMST-1,SM43_micro000,SM43_micro003,2,28.22,0.0,1.45
-299,IEFPCM/MST,pKa-IEFPCMMST-1,SM44_micro000,SM44_micro001,-1,9.64,0.0,1.45
-300,IEFPCM/MST,pKa-IEFPCMMST-1,SM44_micro000,SM44_micro002,1,6.19,0.0,1.45
-301,IEFPCM/MST,pKa-IEFPCMMST-1,SM45_micro000,SM45_micro001,-1,10.02,0.0,1.45
-302,IEFPCM/MST,pKa-IEFPCMMST-1,SM45_micro000,SM45_micro002,1,7.43,0.0,1.45
-303,IEFPCM/MST,pKa-IEFPCMMST-1,SM46_micro000,SM46_micro001,-1,7.56,0.0,1.45
-304,IEFPCM/MST,pKa-IEFPCMMST-1,SM46_micro000,SM46_micro002,1,6.75,0.0,1.45
-305,IEFPCM/MST,pKa-IEFPCMMST-1,SM46_micro000,SM46_micro003,2,19.79,0.0,1.45
-306,IEFPCM/MST,pKa-IEFPCMMST-1,SM46_micro000,SM46_micro004,1,11.25,0.0,1.45
-307,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro003,-1,7.91,0.01,1.04
-308,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro001,-1,-6.66,0.01,1.04
-309,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro002,0,-7.52,0.01,1.04
-310,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro004,0,-12.08,0.01,1.04
-311,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro005,1,-2.33,0.01,1.04
-312,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro001,-1,5.53,0.01,1.04
-313,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro003,-1,19.92,0.01,1.04
-314,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro002,0,12.59,0.01,1.04
-315,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro004,0,4.82,0.01,1.04
-316,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro005,1,9.95,0.01,1.04
-317,EC_RISM,pKa-ECRISM-1,SM27_micro000,SM27_micro001,-1,10.17,0.01,1.04
-318,EC_RISM,pKa-ECRISM-1,SM28_micro000,SM28_micro002,-1,13.95,0.01,1.04
-319,EC_RISM,pKa-ECRISM-1,SM28_micro000,SM28_micro001,0,14.75,0.01,1.04
-320,EC_RISM,pKa-ECRISM-1,SM28_micro000,SM28_micro004,-1,31.52,0.01,1.04
-321,EC_RISM,pKa-ECRISM-1,SM28_micro000,SM28_micro003,1,6.75,0.01,1.04
-322,EC_RISM,pKa-ECRISM-1,SM29_micro000,SM29_micro001,-1,9.88,0.01,1.04
-323,EC_RISM,pKa-ECRISM-1,SM30_micro000,SM30_micro001,-1,9.4,0.01,1.04
-324,EC_RISM,pKa-ECRISM-1,SM31_micro000,SM31_micro001,-1,11.15,0.01,1.04
-325,EC_RISM,pKa-ECRISM-1,SM31_micro000,SM31_micro002,1,1.88,0.01,1.04
-326,EC_RISM,pKa-ECRISM-1,SM32_micro000,SM32_micro001,-1,10.25,0.01,1.04
-327,EC_RISM,pKa-ECRISM-1,SM33_micro000,SM33_micro001,-1,9.8,0.01,1.04
-328,EC_RISM,pKa-ECRISM-1,SM34_micro000,SM34_micro001,-1,10.4,0.01,1.04
-329,EC_RISM,pKa-ECRISM-1,SM34_micro000,SM34_micro002,1,1.08,0.01,1.04
-330,EC_RISM,pKa-ECRISM-1,SM35_micro000,SM35_micro001,-1,9.68,0.01,1.04
-331,EC_RISM,pKa-ECRISM-1,SM35_micro000,SM35_micro003,-1,9.68,0.01,1.04
-332,EC_RISM,pKa-ECRISM-1,SM35_micro000,SM35_micro002,0,0.21,0.01,1.04
-333,EC_RISM,pKa-ECRISM-1,SM36_micro000,SM36_micro001,-1,9.4,0.01,1.04
-334,EC_RISM,pKa-ECRISM-1,SM36_micro000,SM36_micro003,-1,9.4,0.01,1.04
-335,EC_RISM,pKa-ECRISM-1,SM36_micro000,SM36_micro002,0,-0.01,0.01,1.04
-336,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro002,-1,10.03,0.01,1.04
-337,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro004,-1,10.03,0.01,1.04
-338,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro003,0,0.19,0.01,1.04
-339,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro001,1,3.59,0.01,1.04
-340,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro005,1,0.58,0.01,1.04
-341,EC_RISM,pKa-ECRISM-1,SM38_micro000,SM38_micro001,-1,9.31,0.01,1.04
-342,EC_RISM,pKa-ECRISM-1,SM39_micro000,SM39_micro001,-1,8.45,0.01,1.04
-343,EC_RISM,pKa-ECRISM-1,SM40_micro000,SM40_micro001,-1,9.4,0.01,1.04
-344,EC_RISM,pKa-ECRISM-1,SM40_micro000,SM40_micro002,1,2.7,0.01,1.04
-345,EC_RISM,pKa-ECRISM-1,SM41_micro000,SM41_micro001,-1,5.74,0.01,1.04
-346,EC_RISM,pKa-ECRISM-1,SM41_micro000,SM41_micro002,1,5.07,0.01,1.04
-347,EC_RISM,pKa-ECRISM-1,SM42_micro000,SM42_micro001,-1,0.54,0.01,1.04
-348,EC_RISM,pKa-ECRISM-1,SM42_micro000,SM42_micro002,1,0.3,0.01,1.04
-349,EC_RISM,pKa-ECRISM-1,SM42_micro000,SM42_micro003,0,-5.05,0.01,1.04
-350,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro001,-1,1.31,0.01,1.04
-351,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro004,0,-5.21,0.01,1.04
-352,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro005,1,-0.19,0.01,1.04
-353,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro002,1,-2.02,0.01,1.04
-354,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro003,2,7.57,0.01,1.04
-355,EC_RISM,pKa-ECRISM-1,SM44_micro000,SM44_micro001,-1,6.32,0.01,1.04
-356,EC_RISM,pKa-ECRISM-1,SM44_micro000,SM44_micro002,1,2.33,0.01,1.04
-357,EC_RISM,pKa-ECRISM-1,SM45_micro000,SM45_micro001,-1,6.05,0.01,1.04
-358,EC_RISM,pKa-ECRISM-1,SM45_micro000,SM45_micro002,1,2.25,0.01,1.04
-359,EC_RISM,pKa-ECRISM-1,SM46_micro000,SM46_micro001,-1,6.52,0.01,1.04
-360,EC_RISM,pKa-ECRISM-1,SM46_micro000,SM46_micro002,1,2.56,0.01,1.04
-361,EC_RISM,pKa-ECRISM-1,SM46_micro000,SM46_micro004,1,2.4,0.01,1.04
-362,EC_RISM,pKa-ECRISM-1,SM46_micro000,SM46_micro003,2,8.84,0.01,1.04
+,method name,file name,reference state,ID tag,total charge,sign correction?,Relative microstate free energy prediction,Relative microstate free energy SEM,model uncertainty,Relative microstate free energy prediction (unscaled),Relative microstate free energy SEM (unscaled),model uncertainty (unscaled)
+0,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM25_micro000,SM25_micro001,-1,yes,-7.713235294117647,0.0,0.75,10.49,0.0,1.02
+1,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM25_micro000,SM25_micro002,0,yes,9.411764705882353,0.0,0.75,-12.8,0.0,1.02
+2,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM25_micro000,SM25_micro003,-1,yes,6.735294117647059,0.0,0.75,-9.16,0.0,1.02
+3,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM26_micro000,SM26_micro001,-1,yes,4.367647058823529,0.0,0.75,-5.94,0.0,1.02
+4,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM26_micro000,SM26_micro002,0,yes,-15.301470588235292,0.0,0.75,20.81,0.0,1.02
+5,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM26_micro000,SM26_micro003,-1,yes,16.257352941176467,0.0,0.75,-22.11,0.0,1.02
+6,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM27_micro000,SM27_micro001,-1,yes,10.191176470588234,0.0,0.75,-13.86,0.0,1.02
+7,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM28_micro000,SM28_micro001,0,yes,-18.91176470588235,0.0,0.75,25.72,0.0,1.02
+8,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM28_micro000,SM28_micro002,-1,yes,14.02941176470588,0.0,0.75,-19.08,0.0,1.02
+9,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM28_micro000,SM28_micro003,1,yes,-5.352941176470588,0.0,0.75,7.28,0.0,1.02
+10,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM29_micro000,SM29_micro001,-1,yes,9.999999999999998,0.0,0.75,-13.6,0.0,1.02
+11,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM30_micro000,SM30_micro001,-1,yes,9.485294117647058,0.0,0.75,-12.9,0.0,1.02
+12,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM31_micro000,SM31_micro001,-1,yes,9.676470588235293,0.0,0.75,-13.16,0.0,1.02
+13,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM32_micro000,SM32_micro001,-1,yes,10.102941176470587,0.0,0.75,-13.74,0.0,1.02
+14,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM33_micro000,SM33_micro001,-1,yes,8.735294117647058,0.0,0.75,-11.88,0.0,1.02
+15,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM34_micro000,SM34_micro001,-1,yes,10.551470588235293,0.0,0.75,-14.35,0.0,1.02
+16,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM35_micro000,SM35_micro001,-1,yes,8.602941176470587,0.0,0.75,-11.7,0.0,1.02
+17,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM35_micro000,SM35_micro002,0,yes,0.823529411764706,0.0,0.75,-1.12,0.0,1.02
+18,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM35_micro000,SM35_micro003,-1,yes,9.705882352941176,0.0,0.75,-13.2,0.0,1.02
+19,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM36_micro000,SM36_micro001,-1,yes,7.007352941176469,0.0,0.75,-9.53,0.0,1.02
+20,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM36_micro000,SM36_micro002,0,yes,2.3676470588235294,0.0,0.75,-3.22,0.0,1.02
+21,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM36_micro000,SM36_micro003,-1,yes,6.992647058823529,0.0,0.75,-9.51,0.0,1.02
+22,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro001,1,yes,-6.26470588235294,0.0,0.75,8.52,0.0,1.02
+23,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro002,-1,yes,6.669117647058823,0.0,0.75,-9.07,0.0,1.02
+24,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro003,0,yes,2.227941176470588,0.0,0.75,-3.03,0.0,1.02
+25,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro004,-1,yes,6.669117647058823,0.0,0.75,-9.07,0.0,1.02
+26,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM37_micro000,SM37_micro005,1,yes,-5.6764705882352935,0.0,0.75,7.72,0.0,1.02
+27,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM38_micro000,SM38_micro001,-1,yes,9.13235294117647,0.0,0.75,-12.42,0.0,1.02
+28,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM39_micro000,SM39_micro001,-1,yes,7.470588235294117,0.0,0.75,-10.16,0.0,1.02
+29,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM40_micro000,SM40_micro001,-1,yes,8.426470588235293,0.0,0.75,-11.46,0.0,1.02
+30,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM40_micro000,SM40_micro002,1,yes,-8.294117647058822,0.0,0.75,11.28,0.0,1.02
+31,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM41_micro000,SM41_micro001,-1,yes,4.566176470588235,0.0,0.75,-6.21,0.0,1.02
+32,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM41_micro000,SM41_micro002,1,yes,-6.897058823529412,0.0,0.75,9.38,0.0,1.02
+33,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM42_micro000,SM42_micro001,-1,yes,0.2867647058823529,0.0,0.75,-0.39,0.0,1.02
+34,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM42_micro000,SM42_micro002,1,yes,-3.4044117647058822,0.0,0.75,4.63,0.0,1.02
+35,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM43_micro000,SM43_micro001,-1,yes,1.2647058823529411,0.0,0.75,-1.72,0.0,1.02
+36,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM43_micro000,SM43_micro002,1,yes,-5.88235294117647,0.0,0.75,8.0,0.0,1.02
+37,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM43_micro000,SM43_micro003,2,yes,-32.63235294117647,0.0,0.75,44.38,0.0,1.02
+38,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM44_micro000,SM44_micro001,-1,yes,6.50735294117647,0.0,0.75,-8.85,0.0,1.02
+39,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM44_micro000,SM44_micro002,1,yes,-5.492647058823529,0.0,0.75,7.47,0.0,1.02
+40,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM45_micro000,SM45_micro001,-1,yes,6.066176470588235,0.0,0.75,-8.25,0.0,1.02
+41,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM45_micro000,SM45_micro002,1,yes,-5.88970588235294,0.0,0.75,8.01,0.0,1.02
+42,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM46_micro000,SM46_micro001,-1,yes,6.419117647058823,0.0,0.75,-8.73,0.0,1.02
+43,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM46_micro000,SM46_micro002,1,yes,-5.13235294117647,0.0,0.75,6.98,0.0,1.02
+44,RFE-SMD,pKa_RodriguezPaluch_SMD_3,SM46_micro000,SM46_micro003,2,yes,-34.04411764705882,0.0,0.75,46.3,0.0,1.02
+45,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM25_micro000,SM25_micro001,-1,yes,-8.01470588235294,0.0,0.29411764705882354,10.9,0.0,0.4
+46,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM25_micro000,SM25_micro002,0,yes,9.897058823529411,0.0,0.29411764705882354,-13.46,0.0,0.4
+47,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM25_micro000,SM25_micro003,-1,yes,6.735294117647059,0.0,0.29411764705882354,-9.16,0.0,0.4
+48,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM26_micro000,SM26_micro001,-1,yes,4.448529411764706,0.0,0.29411764705882354,-6.05,0.0,0.4
+49,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM26_micro000,SM26_micro002,0,yes,-17.007352941176467,0.0,0.29411764705882354,23.13,0.0,0.4
+50,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM26_micro000,SM26_micro003,-1,yes,17.235294117647058,0.0,0.29411764705882354,-23.44,0.0,0.4
+51,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM27_micro000,SM27_micro001,-1,yes,10.176470588235293,0.0,0.29411764705882354,-13.84,0.0,0.4
+52,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM28_micro000,SM28_micro001,0,yes,-20.88970588235294,0.0,0.29411764705882354,28.41,0.0,0.4
+53,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM28_micro000,SM28_micro002,-1,yes,14.220588235294116,0.0,0.29411764705882354,-19.34,0.0,0.4
+54,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM28_micro000,SM28_micro003,1,yes,-3.360294117647059,0.0,0.29411764705882354,4.57,0.0,0.4
+55,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM29_micro000,SM29_micro001,-1,yes,9.088235294117647,0.0,0.29411764705882354,-12.36,0.0,0.4
+56,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM30_micro000,SM30_micro001,-1,yes,9.455882352941176,0.0,0.29411764705882354,-12.86,0.0,0.4
+57,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM31_micro000,SM31_micro001,-1,yes,9.375,0.0,0.29411764705882354,-12.75,0.0,0.4
+58,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM32_micro000,SM32_micro001,-1,yes,9.073529411764705,0.0,0.29411764705882354,-12.34,0.0,0.4
+59,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM33_micro000,SM33_micro001,-1,yes,9.147058823529411,0.0,0.29411764705882354,-12.44,0.0,0.4
+60,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM34_micro000,SM34_micro001,-1,yes,9.125,0.0,0.29411764705882354,-12.41,0.0,0.4
+61,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM35_micro000,SM35_micro001,-1,yes,8.698529411764705,0.0,0.29411764705882354,-11.83,0.0,0.4
+62,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM35_micro000,SM35_micro002,0,yes,1.3602941176470589,0.0,0.29411764705882354,-1.85,0.0,0.4
+63,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM35_micro000,SM35_micro003,-1,yes,9.536764705882353,0.0,0.29411764705882354,-12.97,0.0,0.4
+64,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM36_micro000,SM36_micro001,-1,yes,7.977941176470587,0.0,0.29411764705882354,-10.85,0.0,0.4
+65,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM36_micro000,SM36_micro002,0,yes,1.9117647058823528,0.0,0.29411764705882354,-2.6,0.0,0.4
+66,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM36_micro000,SM36_micro003,-1,yes,7.875,0.0,0.29411764705882354,-10.71,0.0,0.4
+67,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro001,1,yes,-2.889705882352941,0.0,0.29411764705882354,3.93,0.0,0.4
+68,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro002,-1,yes,6.029411764705881,0.0,0.29411764705882354,-8.2,0.0,0.4
+69,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro003,0,yes,1.375,0.0,0.29411764705882354,-1.87,0.0,0.4
+70,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro004,-1,yes,6.029411764705881,0.0,0.29411764705882354,-8.2,0.0,0.4
+71,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM37_micro000,SM37_micro005,1,yes,-2.3088235294117645,0.0,0.29411764705882354,3.14,0.0,0.4
+72,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM38_micro000,SM38_micro001,-1,yes,9.352941176470589,0.0,0.29411764705882354,-12.72,0.0,0.4
+73,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM39_micro000,SM39_micro001,-1,yes,7.823529411764706,0.0,0.29411764705882354,-10.64,0.0,0.4
+74,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM40_micro000,SM40_micro001,-1,yes,7.720588235294117,0.0,0.29411764705882354,-10.5,0.0,0.4
+75,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM40_micro000,SM40_micro002,1,yes,-4.852941176470588,0.0,0.29411764705882354,6.6,0.0,0.4
+76,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM41_micro000,SM41_micro001,-1,yes,5.448529411764706,0.0,0.29411764705882354,-7.41,0.0,0.4
+77,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM41_micro000,SM41_micro002,1,yes,-4.0661764705882355,0.0,0.29411764705882354,5.53,0.0,0.4
+78,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM42_micro000,SM42_micro001,-1,yes,1.3455882352941175,0.0,0.29411764705882354,-1.83,0.0,0.4
+79,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM42_micro000,SM42_micro002,1,yes,-0.8970588235294117,0.0,0.29411764705882354,1.22,0.0,0.4
+80,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM43_micro000,SM43_micro001,-1,yes,1.588235294117647,0.0,0.29411764705882354,-2.16,0.0,0.4
+81,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM43_micro000,SM43_micro002,1,yes,5.88235294117647,0.0,0.29411764705882354,-8.0,0.0,0.4
+82,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM43_micro000,SM43_micro003,2,yes,-18.77941176470588,0.0,0.29411764705882354,25.54,0.0,0.4
+83,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM44_micro000,SM44_micro001,-1,yes,6.595588235294118,0.0,0.29411764705882354,-8.97,0.0,0.4
+84,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM44_micro000,SM44_micro002,1,yes,-3.301470588235294,0.0,0.29411764705882354,4.49,0.0,0.4
+85,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM45_micro000,SM45_micro001,-1,yes,6.316176470588235,0.0,0.29411764705882354,-8.59,0.0,0.4
+86,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM45_micro000,SM45_micro002,1,yes,-2.911764705882353,0.0,0.29411764705882354,3.96,0.0,0.4
+87,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM46_micro000,SM46_micro001,-1,yes,6.242647058823529,0.0,0.29411764705882354,-8.49,0.0,0.4
+88,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM46_micro000,SM46_micro002,1,yes,-2.926470588235294,0.0,0.29411764705882354,3.98,0.0,0.4
+89,RFE-SMD-SAS,pKa_RodriguezPaluch_SMD_2,SM46_micro000,SM46_micro003,2,yes,-21.044117647058822,0.0,0.29411764705882354,28.62,0.0,0.4
+90,RFE-prediction-M052X,pKa-VA-2,SM25_micro000,SM25_micro001,1,yes,3.4117647058823524,0.3676470588235294,0.5882352941176471,-4.64,0.5,0.8
+91,RFE-prediction-M052X,pKa-VA-2,SM26_micro000,SM26_micro001,1,yes,5.25735294117647,0.3676470588235294,0.5882352941176471,-7.15,0.5,0.8
+92,RFE-prediction-M052X,pKa-VA-2,SM27_micro000,SM27_micro001,1,yes,7.1764705882352935,0.3676470588235294,0.5882352941176471,-9.76,0.5,0.8
+93,RFE-prediction-M052X,pKa-VA-2,SM28_micro000,SM28_micro001,1,yes,10.595588235294118,0.3676470588235294,0.5882352941176471,-14.41,0.5,0.8
+94,RFE-prediction-M052X,pKa-VA-2,SM29_micro000,SM29_micro001,1,yes,6.316176470588235,0.3676470588235294,0.5882352941176471,-8.59,0.5,0.8
+95,RFE-prediction-M052X,pKa-VA-2,SM30_micro000,SM30_micro001,1,yes,6.595588235294118,0.3676470588235294,0.5882352941176471,-8.97,0.5,0.8
+96,RFE-prediction-M052X,pKa-VA-2,SM31_micro000,SM31_micro001,1,yes,9.286764705882353,0.3676470588235294,0.5882352941176471,-12.63,0.5,0.8
+97,RFE-prediction-M052X,pKa-VA-2,SM32_micro000,SM32_micro001,1,yes,7.0514705882352935,0.3676470588235294,0.5882352941176471,-9.59,0.5,0.8
+98,RFE-prediction-M052X,pKa-VA-2,SM33_micro000,SM33_micro001,1,yes,6.477941176470588,0.3676470588235294,0.5882352941176471,-8.81,0.5,0.8
+99,RFE-prediction-M052X,pKa-VA-2,SM34_micro000,SM34_micro001,1,yes,7.779411764705882,0.3676470588235294,0.5882352941176471,-10.58,0.5,0.8
+100,RFE-prediction-M052X,pKa-VA-2,SM35_micro000,SM35_micro001,1,yes,7.720588235294117,0.3676470588235294,0.5882352941176471,-10.5,0.5,0.8
+101,RFE-prediction-M052X,pKa-VA-2,SM36_micro000,SM36_micro001,1,yes,6.88235294117647,0.3676470588235294,0.5882352941176471,-9.36,0.5,0.8
+102,RFE-prediction-M052X,pKa-VA-2,SM37_micro000,SM37_micro001,1,yes,7.330882352941177,0.3676470588235294,0.5882352941176471,-9.97,0.5,0.8
+103,RFE-prediction-M052X,pKa-VA-2,SM38_micro000,SM38_micro001,1,yes,4.492647058823529,0.3676470588235294,0.5882352941176471,-6.11,0.5,0.8
+104,RFE-prediction-M052X,pKa-VA-2,SM39_micro000,SM39_micro001,1,yes,4.294117647058823,0.3676470588235294,0.5882352941176471,-5.84,0.5,0.8
+105,RFE-prediction-M052X,pKa-VA-2,SM40_micro000,SM40_micro001,1,yes,6.441176470588235,0.3676470588235294,0.5882352941176471,-8.76,0.5,0.8
+106,RFE-prediction-M052X,pKa-VA-2,SM41_micro000,SM41_micro001,1,yes,7.9191176470588225,0.3676470588235294,0.5882352941176471,-10.77,0.5,0.8
+107,RFE-prediction-M052X,pKa-VA-2,SM42_micro000,SM42_micro001,1,yes,6.588235294117648,0.3676470588235294,0.5882352941176471,-8.96,0.5,0.8
+108,RFE-prediction-M052X,pKa-VA-2,SM43_micro000,SM43_micro001,1,yes,7.154411764705882,0.3676470588235294,0.5882352941176471,-9.73,0.5,0.8
+109,RFE-prediction-M052X,pKa-VA-2,SM44_micro000,SM44_micro001,1,yes,6.904411764705882,0.3676470588235294,0.5882352941176471,-9.39,0.5,0.8
+110,RFE-prediction-M052X,pKa-VA-2,SM45_micro000,SM45_micro001,1,yes,7.88235294117647,0.3676470588235294,0.5882352941176471,-10.72,0.5,0.8
+111,RFE-prediction-M052X,pKa-VA-2,SM46_micro000,SM46_micro001,1,yes,9.838235294117647,0.3676470588235294,0.5882352941176471,-13.38,0.5,0.8
+112,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM25_micro000,SM25_micro001,-1,yes,-8.352941176470587,0.0,0.3676470588235294,11.36,0.0,0.5
+113,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM25_micro000,SM25_micro002,0,yes,10.948529411764705,0.0,0.3676470588235294,-14.89,0.0,0.5
+114,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM25_micro000,SM25_micro003,-1,yes,5.985294117647059,0.0,0.3676470588235294,-8.14,0.0,0.5
+115,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM26_micro000,SM26_micro001,-1,yes,3.1838235294117645,0.0,0.3676470588235294,-4.33,0.0,0.5
+116,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM26_micro000,SM26_micro002,0,yes,-14.338235294117647,0.0,0.3676470588235294,19.5,0.0,0.5
+117,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM26_micro000,SM26_micro003,-1,yes,15.441176470588234,0.0,0.3676470588235294,-21.0,0.0,0.5
+118,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM27_micro000,SM27_micro001,-1,yes,9.551470588235293,0.0,0.3676470588235294,-12.99,0.0,0.5
+119,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM28_micro000,SM28_micro001,0,yes,-18.92647058823529,0.0,0.3676470588235294,25.74,0.0,0.5
+120,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM28_micro000,SM28_micro002,-1,yes,12.036764705882353,0.0,0.3676470588235294,-16.37,0.0,0.5
+121,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM28_micro000,SM28_micro003,1,yes,-2.051470588235294,0.0,0.3676470588235294,2.79,0.0,0.5
+122,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM29_micro000,SM29_micro001,-1,yes,8.580882352941176,0.0,0.3676470588235294,-11.67,0.0,0.5
+123,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM30_micro000,SM30_micro001,-1,yes,7.624999999999999,0.0,0.3676470588235294,-10.37,0.0,0.5
+124,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM31_micro000,SM31_micro001,-1,yes,8.477941176470587,0.0,0.3676470588235294,-11.53,0.0,0.5
+125,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM32_micro000,SM32_micro001,-1,yes,8.845588235294116,0.0,0.3676470588235294,-12.03,0.0,0.5
+126,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM33_micro000,SM33_micro001,-1,yes,7.448529411764706,0.0,0.3676470588235294,-10.13,0.0,0.5
+127,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM34_micro000,SM34_micro001,-1,yes,8.941176470588236,0.0,0.3676470588235294,-12.16,0.0,0.5
+128,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM35_micro000,SM35_micro001,-1,yes,7.88235294117647,0.0,0.3676470588235294,-10.72,0.0,0.5
+129,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM35_micro000,SM35_micro002,0,yes,-0.5294117647058822,0.0,0.3676470588235294,0.72,0.0,0.5
+130,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM35_micro000,SM35_micro003,-1,yes,9.588235294117645,0.0,0.3676470588235294,-13.04,0.0,0.5
+131,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM36_micro000,SM36_micro001,-1,yes,6.63970588235294,0.0,0.3676470588235294,-9.03,0.0,0.5
+132,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM36_micro000,SM36_micro002,0,yes,0.6249999999999999,0.0,0.3676470588235294,-0.85,0.0,0.5
+133,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM36_micro000,SM36_micro003,-1,yes,7.249999999999999,0.0,0.3676470588235294,-9.86,0.0,0.5
+134,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro001,1,yes,-5.4411764705882355,0.0,0.3676470588235294,7.4,0.0,0.5
+135,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro002,-1,yes,6.8088235294117645,0.0,0.3676470588235294,-9.26,0.0,0.5
+136,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro003,0,yes,-0.10294117647058824,0.0,0.3676470588235294,0.14,0.0,0.5
+137,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro004,-1,yes,5.727941176470588,0.0,0.3676470588235294,-7.79,0.0,0.5
+138,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM37_micro000,SM37_micro005,1,yes,-4.742647058823529,0.0,0.3676470588235294,6.45,0.0,0.5
+139,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM38_micro000,SM38_micro001,-1,yes,9.102941176470589,0.0,0.3676470588235294,-12.38,0.0,0.5
+140,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM39_micro000,SM39_micro001,-1,yes,6.352941176470588,0.0,0.3676470588235294,-8.64,0.0,0.5
+141,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM40_micro000,SM40_micro001,-1,yes,6.602941176470588,0.0,0.3676470588235294,-8.98,0.0,0.5
+142,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM40_micro000,SM40_micro002,1,yes,-5.75735294117647,0.0,0.3676470588235294,7.83,0.0,0.5
+143,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM41_micro000,SM41_micro001,-1,yes,4.573529411764706,0.0,0.3676470588235294,-6.22,0.0,0.5
+144,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM41_micro000,SM41_micro002,1,yes,-5.279411764705881,0.0,0.3676470588235294,7.18,0.0,0.5
+145,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM42_micro000,SM42_micro001,-1,yes,4.044117647058823,0.0,0.3676470588235294,-5.5,0.0,0.5
+146,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM42_micro000,SM42_micro002,1,yes,-5.772058823529411,0.0,0.3676470588235294,7.85,0.0,0.5
+147,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM43_micro000,SM43_micro001,-1,yes,4.220588235294118,0.0,0.3676470588235294,-5.74,0.0,0.5
+148,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM43_micro000,SM43_micro002,1,yes,-5.88235294117647,0.0,0.3676470588235294,8.0,0.0,0.5
+149,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM43_micro000,SM43_micro003,2,yes,-32.63970588235294,0.0,0.3676470588235294,44.39,0.0,0.5
+150,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM44_micro000,SM44_micro001,-1,yes,4.801470588235294,0.0,0.3676470588235294,-6.53,0.0,0.5
+151,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM44_micro000,SM44_micro002,1,yes,-3.992647058823529,0.0,0.3676470588235294,5.43,0.0,0.5
+152,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM45_micro000,SM45_micro001,-1,yes,5.036764705882352,0.0,0.3676470588235294,-6.85,0.0,0.5
+153,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM45_micro000,SM45_micro002,1,yes,-4.4338235294117645,0.0,0.3676470588235294,6.03,0.0,0.5
+154,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM46_micro000,SM46_micro001,-1,yes,5.323529411764706,0.0,0.3676470588235294,-7.24,0.0,0.5
+155,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM46_micro000,SM46_micro002,1,yes,-3.8970588235294112,0.0,0.3676470588235294,5.3,0.0,0.5
+156,RFE-SMD-explicit-water,pKa_RodriguezPaluch_SMD_1,SM46_micro000,SM46_micro003,2,yes,-28.860294117647058,0.0,0.3676470588235294,39.25,0.0,0.5
+157,Standard Gaussian Process,pKa-RobertRaddi,SM25_micro000,SM25_micro001,-1,no,16.33,2.22,9.39,,,
+158,Standard Gaussian Process,pKa-RobertRaddi,SM25_micro000,SM25_micro002,0,no,8.09,2.22,4.71,,,
+159,Standard Gaussian Process,pKa-RobertRaddi,SM25_micro000,SM25_micro003,-1,no,8.19,2.22,4.71,,,
+160,Standard Gaussian Process,pKa-RobertRaddi,SM26_micro000,SM26_micro001,-1,no,7.85,2.22,3.42,,,
+161,Standard Gaussian Process,pKa-RobertRaddi,SM26_micro000,SM26_micro002,0,no,-7.79,2.22,4.71,,,
+162,Standard Gaussian Process,pKa-RobertRaddi,SM26_micro000,SM26_micro003,-1,no,0.87,2.22,5.88,,,
+163,Standard Gaussian Process,pKa-RobertRaddi,SM27_micro000,SM27_micro001,-1,no,8.01,2.22,4.71,,,
+164,Standard Gaussian Process,pKa-RobertRaddi,SM28_micro000,SM28_micro001,0,no,-7.82,2.22,4.71,,,
+165,Standard Gaussian Process,pKa-RobertRaddi,SM28_micro000,SM28_micro002,-1,no,8.16,2.22,3.72,,,
+166,Standard Gaussian Process,pKa-RobertRaddi,SM28_micro000,SM28_micro003,1,no,-5.18,2.22,4.0,,,
+167,Standard Gaussian Process,pKa-RobertRaddi,SM29_micro000,SM29_micro001,-1,no,8.02,2.22,4.71,,,
+168,Standard Gaussian Process,pKa-RobertRaddi,SM30_micro000,SM30_micro001,-1,no,8.06,2.22,4.71,,,
+169,Standard Gaussian Process,pKa-RobertRaddi,SM31_micro000,SM31_micro001,-1,no,8.02,2.22,4.71,,,
+170,Standard Gaussian Process,pKa-RobertRaddi,SM31_micro000,SM31_micro002,1,no,-8.07,2.22,4.7,,,
+171,Standard Gaussian Process,pKa-RobertRaddi,SM32_micro000,SM32_micro001,-1,no,8.02,2.22,4.71,,,
+172,Standard Gaussian Process,pKa-RobertRaddi,SM33_micro000,SM33_micro001,-1,no,8.08,2.22,4.71,,,
+173,Standard Gaussian Process,pKa-RobertRaddi,SM34_micro000,SM34_micro001,-1,no,8.06,2.22,4.71,,,
+174,Standard Gaussian Process,pKa-RobertRaddi,SM34_micro000,SM34_micro002,1,no,-8.05,2.22,4.7,,,
+175,Standard Gaussian Process,pKa-RobertRaddi,SM35_micro000,SM35_micro001,-1,no,8.08,2.22,4.71,,,
+176,Standard Gaussian Process,pKa-RobertRaddi,SM35_micro000,SM35_micro002,0,no,0.03,2.22,6.66,,,
+177,Standard Gaussian Process,pKa-RobertRaddi,SM35_micro000,SM35_micro003,-1,no,8.02,2.22,4.71,,,
+178,Standard Gaussian Process,pKa-RobertRaddi,SM36_micro000,SM36_micro001,-1,no,8.07,2.22,4.71,,,
+179,Standard Gaussian Process,pKa-RobertRaddi,SM36_micro000,SM36_micro002,0,no,0.0,2.22,6.66,,,
+180,Standard Gaussian Process,pKa-RobertRaddi,SM36_micro000,SM36_micro003,-1,no,8.06,2.22,4.71,,,
+181,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro001,1,no,-8.01,2.22,4.69,,,
+182,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro002,-1,no,8.1,2.22,4.71,,,
+183,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro003,0,no,-0.01,2.22,6.66,,,
+184,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro004,-1,no,8.09,2.22,4.71,,,
+185,Standard Gaussian Process,pKa-RobertRaddi,SM37_micro000,SM37_micro005,1,no,-8.07,2.22,4.71,,,
+186,Standard Gaussian Process,pKa-RobertRaddi,SM38_micro000,SM38_micro001,-1,no,8.09,2.22,4.71,,,
+187,Standard Gaussian Process,pKa-RobertRaddi,SM39_micro000,SM39_micro001,-1,no,8.13,2.22,4.71,,,
+188,Standard Gaussian Process,pKa-RobertRaddi,SM40_micro000,SM40_micro001,-1,no,8.14,2.22,4.71,,,
+189,Standard Gaussian Process,pKa-RobertRaddi,SM40_micro000,SM40_micro002,1,no,-8.02,2.22,4.68,,,
+190,Standard Gaussian Process,pKa-RobertRaddi,SM41_micro000,SM41_micro001,-1,no,8.01,2.22,4.59,,,
+191,Standard Gaussian Process,pKa-RobertRaddi,SM41_micro000,SM41_micro002,1,no,-5.81,2.22,4.37,,,
+192,Standard Gaussian Process,pKa-RobertRaddi,SM42_micro000,SM42_micro001,-1,no,8.96,2.22,4.52,,,
+193,Standard Gaussian Process,pKa-RobertRaddi,SM42_micro000,SM42_micro002,1,no,-7.86,2.22,4.69,,,
+194,Standard Gaussian Process,pKa-RobertRaddi,SM42_micro000,SM42_micro003,0,no,0.98,2.22,6.41,,,
+195,Standard Gaussian Process,pKa-RobertRaddi,SM43_micro000,SM43_micro001,-1,no,8.4,2.22,4.6,,,
+196,Standard Gaussian Process,pKa-RobertRaddi,SM43_micro000,SM43_micro002,1,no,-7.99,2.22,4.7,,,
+197,Standard Gaussian Process,pKa-RobertRaddi,SM43_micro000,SM43_micro003,2,no,-15.89,2.22,9.3,,,
+198,Standard Gaussian Process,pKa-RobertRaddi,SM44_micro000,SM44_micro001,-1,no,8.05,2.22,4.59,,,
+199,Standard Gaussian Process,pKa-RobertRaddi,SM44_micro000,SM44_micro002,1,no,-6.67,2.22,4.39,,,
+200,Standard Gaussian Process,pKa-RobertRaddi,SM45_micro000,SM45_micro001,-1,no,8.68,2.22,3.8,,,
+201,Standard Gaussian Process,pKa-RobertRaddi,SM45_micro000,SM45_micro002,1,no,-6.66,2.22,4.42,,,
+202,Standard Gaussian Process,pKa-RobertRaddi,SM46_micro000,SM46_micro001,-1,no,8.19,2.22,4.63,,,
+203,Standard Gaussian Process,pKa-RobertRaddi,SM46_micro000,SM46_micro002,1,no,-6.85,2.22,4.28,,,
+204,Standard Gaussian Process,pKa-RobertRaddi,SM46_micro000,SM46_micro003,2,no,-16.23,2.22,9.39,,,
+205,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro001,-1,no,-2.7,0.0,0.9,,,
+206,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro002,0,no,-2.0,0.0,0.9,,,
+207,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro003,-1,no,4.53,0.0,0.9,,,
+208,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro004,0,no,-5.75,0.0,0.9,,,
+209,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM25_micro000,SM25_micro005,1,no,0.65,0.0,0.9,,,
+210,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro001,-1,no,3.02,0.0,0.9,,,
+211,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro002,0,no,6.95,0.0,0.9,,,
+212,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro003,-1,no,11.12,0.0,0.9,,,
+213,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro004,0,no,3.78,0.0,0.9,,,
+214,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM26_micro000,SM26_micro005,1,no,6.34,0.0,0.9,,,
+215,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM27_micro000,SM27_micro001,-1,no,6.11,0.0,0.9,,,
+216,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM28_micro000,SM28_micro001,0,no,8.29,0.0,0.9,,,
+217,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM28_micro000,SM28_micro002,-1,no,8.78,0.0,0.9,,,
+218,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM28_micro000,SM28_micro003,1,no,3.91,0.0,0.9,,,
+219,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM28_micro000,SM28_micro004,-1,no,18.7,0.0,0.9,,,
+220,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM29_micro000,SM29_micro001,-1,no,6.33,0.0,0.9,,,
+221,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM30_micro000,SM30_micro001,-1,no,5.86,0.0,0.9,,,
+222,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM31_micro000,SM31_micro002,1,no,4.51,0.0,0.9,,,
+223,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM31_micro000,SM31_micro001,-1,no,6.0,0.0,0.9,,,
+224,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM32_micro000,SM32_micro001,-1,no,5.91,0.0,0.9,,,
+225,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM33_micro000,SM33_micro001,-1,no,5.17,0.0,0.9,,,
+226,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM34_micro000,SM34_micro002,1,no,4.37,0.0,0.9,,,
+227,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM34_micro000,SM34_micro001,-1,no,5.73,0.0,0.9,,,
+228,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM35_micro000,SM35_micro001,-1,no,3.2,0.0,0.9,,,
+229,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM35_micro000,SM35_micro002,0,no,-1.89,0.0,0.9,,,
+230,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM35_micro000,SM35_micro003,-1,no,3.2,0.0,0.9,,,
+231,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM36_micro000,SM36_micro001,-1,no,5.22,0.0,0.9,,,
+232,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM36_micro000,SM36_micro002,0,no,0.38,0.0,0.9,,,
+233,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM36_micro000,SM36_micro003,-1,no,5.23,0.0,0.9,,,
+234,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro001,1,no,2.13,0.0,0.9,,,
+235,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro002,-1,no,3.7,0.0,0.9,,,
+236,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro003,0,no,-1.49,0.0,0.9,,,
+237,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro004,-1,no,3.78,0.0,0.9,,,
+238,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM37_micro000,SM37_micro005,1,no,1.26,0.0,0.9,,,
+239,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM38_micro000,SM38_micro001,-1,no,5.22,0.0,0.9,,,
+240,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM39_micro000,SM39_micro001,-1,no,5.13,0.0,0.9,,,
+241,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM40_micro000,SM40_micro001,-1,no,4.98,0.0,0.9,,,
+242,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM40_micro000,SM40_micro002,1,no,6.17,0.0,0.9,,,
+243,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM41_micro000,SM41_micro001,-1,no,2.17,0.0,0.9,,,
+244,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM41_micro000,SM41_micro002,1,no,3.09,0.0,0.9,,,
+245,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM42_micro000,SM42_micro001,-1,no,0.15,0.0,0.9,,,
+246,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM42_micro000,SM42_micro002,1,no,0.79,0.0,0.9,,,
+247,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM42_micro000,SM42_micro003,0,no,-1.95,0.0,0.9,,,
+248,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro001,-1,no,0.5,0.0,0.9,,,
+249,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro002,1,no,2.95,0.0,0.9,,,
+250,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro003,2,no,6.25,0.0,0.9,,,
+251,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro004,0,no,-2.08,0.0,0.9,,,
+252,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM43_micro000,SM43_micro005,1,no,0.41,0.0,0.9,,,
+253,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM44_micro000,SM44_micro001,-1,no,4.25,0.0,0.9,,,
+254,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM44_micro000,SM44_micro002,1,no,3.55,0.0,0.9,,,
+255,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM45_micro000,SM45_micro001,-1,no,4.39,0.0,0.9,,,
+256,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM45_micro000,SM45_micro002,1,no,3.68,0.0,0.9,,,
+257,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM46_micro000,SM46_micro001,-1,no,4.0,0.0,0.9,,,
+258,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM46_micro000,SM46_micro002,1,no,3.51,0.0,0.9,,,
+259,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM46_micro000,SM46_micro003,2,no,8.07,0.0,0.9,,,
+260,Gaussian_corrected,pKa_prediction_Iorga_Beckstein_1,SM46_micro000,SM46_micro004,1,no,5.18,0.0,0.9,,,
+261,IEFPCM/MST,pKa-IEFPCMMST-1,SM25_micro000,SM25_micro001,-1,no,16.31,0.0,1.45,,,
+262,IEFPCM/MST,pKa-IEFPCMMST-1,SM25_micro000,SM25_micro002,0,no,14.57,0.0,1.45,,,
+263,IEFPCM/MST,pKa-IEFPCMMST-1,SM25_micro000,SM25_micro003,-1,no,9.85,0.0,1.45,,,
+264,IEFPCM/MST,pKa-IEFPCMMST-1,SM26_micro000,SM26_micro001,-1,no,6.15,0.0,1.45,,,
+265,IEFPCM/MST,pKa-IEFPCMMST-1,SM26_micro000,SM26_micro002,0,no,22.09,0.0,1.45,,,
+266,IEFPCM/MST,pKa-IEFPCMMST-1,SM26_micro000,SM26_micro003,-1,no,32.35,0.0,1.45,,,
+267,IEFPCM/MST,pKa-IEFPCMMST-1,SM27_micro000,SM27_micro001,-1,no,16.78,0.0,1.45,,,
+268,IEFPCM/MST,pKa-IEFPCMMST-1,SM28_micro000,SM28_micro001,0,no,23.52,0.0,1.45,,,
+269,IEFPCM/MST,pKa-IEFPCMMST-1,SM28_micro000,SM28_micro002,-1,no,21.92,0.0,1.45,,,
+270,IEFPCM/MST,pKa-IEFPCMMST-1,SM28_micro000,SM28_micro003,1,no,9.38,0.0,1.45,,,
+271,IEFPCM/MST,pKa-IEFPCMMST-1,SM29_micro000,SM29_micro001,-1,no,15.65,0.0,1.45,,,
+272,IEFPCM/MST,pKa-IEFPCMMST-1,SM30_micro000,SM30_micro001,-1,no,14.96,0.0,1.45,,,
+273,IEFPCM/MST,pKa-IEFPCMMST-1,SM31_micro000,SM31_micro001,-1,no,14.74,0.0,1.45,,,
+274,IEFPCM/MST,pKa-IEFPCMMST-1,SM32_micro000,SM32_micro001,-1,no,16.25,0.0,1.45,,,
+275,IEFPCM/MST,pKa-IEFPCMMST-1,SM33_micro000,SM33_micro001,-1,no,14.54,0.0,1.45,,,
+276,IEFPCM/MST,pKa-IEFPCMMST-1,SM34_micro000,SM34_micro001,-1,no,14.81,0.0,1.45,,,
+277,IEFPCM/MST,pKa-IEFPCMMST-1,SM35_micro000,SM35_micro001,-1,no,13.98,0.0,1.45,,,
+278,IEFPCM/MST,pKa-IEFPCMMST-1,SM35_micro000,SM35_micro002,0,no,0.0,0.0,1.45,,,
+279,IEFPCM/MST,pKa-IEFPCMMST-1,SM35_micro000,SM35_micro003,-1,no,13.98,0.0,1.45,,,
+280,IEFPCM/MST,pKa-IEFPCMMST-1,SM36_micro000,SM36_micro001,-1,no,12.51,0.0,1.45,,,
+281,IEFPCM/MST,pKa-IEFPCMMST-1,SM36_micro000,SM36_micro002,0,no,0.0,0.0,1.45,,,
+282,IEFPCM/MST,pKa-IEFPCMMST-1,SM36_micro000,SM36_micro003,-1,no,12.51,0.0,1.45,,,
+283,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro001,1,no,5.37,0.0,1.45,,,
+284,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro002,-1,no,11.03,0.0,1.45,,,
+285,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro003,0,no,0.0,0.0,1.45,,,
+286,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro004,-1,no,5.37,0.0,1.45,,,
+287,IEFPCM/MST,pKa-IEFPCMMST-1,SM37_micro000,SM37_micro005,1,no,11.03,0.0,1.45,,,
+288,IEFPCM/MST,pKa-IEFPCMMST-1,SM38_micro000,SM38_micro001,-1,no,13.36,0.0,1.45,,,
+289,IEFPCM/MST,pKa-IEFPCMMST-1,SM39_micro000,SM39_micro001,-1,no,12.04,0.0,1.45,,,
+290,IEFPCM/MST,pKa-IEFPCMMST-1,SM40_micro000,SM40_micro001,-1,no,11.23,0.0,1.45,,,
+291,IEFPCM/MST,pKa-IEFPCMMST-1,SM40_micro000,SM40_micro002,1,no,8.57,0.0,1.45,,,
+292,IEFPCM/MST,pKa-IEFPCMMST-1,SM41_micro000,SM41_micro001,-1,no,6.98,0.0,1.45,,,
+293,IEFPCM/MST,pKa-IEFPCMMST-1,SM41_micro000,SM41_micro002,1,no,13.86,0.0,1.45,,,
+294,IEFPCM/MST,pKa-IEFPCMMST-1,SM42_micro000,SM42_micro001,-1,no,6.61,0.0,1.45,,,
+295,IEFPCM/MST,pKa-IEFPCMMST-1,SM42_micro000,SM42_micro002,1,no,14.25,0.0,1.45,,,
+296,IEFPCM/MST,pKa-IEFPCMMST-1,SM43_micro000,SM43_micro001,-1,no,6.02,0.0,1.45,,,
+297,IEFPCM/MST,pKa-IEFPCMMST-1,SM43_micro000,SM43_micro002,1,no,9.14,0.0,1.45,,,
+298,IEFPCM/MST,pKa-IEFPCMMST-1,SM43_micro000,SM43_micro003,2,no,28.22,0.0,1.45,,,
+299,IEFPCM/MST,pKa-IEFPCMMST-1,SM44_micro000,SM44_micro001,-1,no,9.64,0.0,1.45,,,
+300,IEFPCM/MST,pKa-IEFPCMMST-1,SM44_micro000,SM44_micro002,1,no,6.19,0.0,1.45,,,
+301,IEFPCM/MST,pKa-IEFPCMMST-1,SM45_micro000,SM45_micro001,-1,no,10.02,0.0,1.45,,,
+302,IEFPCM/MST,pKa-IEFPCMMST-1,SM45_micro000,SM45_micro002,1,no,7.43,0.0,1.45,,,
+303,IEFPCM/MST,pKa-IEFPCMMST-1,SM46_micro000,SM46_micro001,-1,no,7.56,0.0,1.45,,,
+304,IEFPCM/MST,pKa-IEFPCMMST-1,SM46_micro000,SM46_micro002,1,no,6.75,0.0,1.45,,,
+305,IEFPCM/MST,pKa-IEFPCMMST-1,SM46_micro000,SM46_micro003,2,no,19.79,0.0,1.45,,,
+306,IEFPCM/MST,pKa-IEFPCMMST-1,SM46_micro000,SM46_micro004,1,no,11.25,0.0,1.45,,,
+307,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro003,-1,no,5.816176470588235,0.007352941176470588,0.7647058823529411,,,
+308,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro001,-1,no,-4.897058823529411,0.007352941176470588,0.7647058823529411,,,
+309,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro002,0,no,-5.529411764705881,0.007352941176470588,0.7647058823529411,,,
+310,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro004,0,no,-8.88235294117647,0.007352941176470588,0.7647058823529411,,,
+311,EC_RISM,pKa-ECRISM-1,SM25_micro000,SM25_micro005,1,no,-1.713235294117647,0.007352941176470588,0.7647058823529411,,,
+312,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro001,-1,no,4.0661764705882355,0.007352941176470588,0.7647058823529411,,,
+313,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro003,-1,no,14.647058823529411,0.007352941176470588,0.7647058823529411,,,
+314,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro002,0,no,9.25735294117647,0.007352941176470588,0.7647058823529411,,,
+315,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro004,0,no,3.5441176470588234,0.007352941176470588,0.7647058823529411,,,
+316,EC_RISM,pKa-ECRISM-1,SM26_micro000,SM26_micro005,1,no,7.316176470588235,0.007352941176470588,0.7647058823529411,,,
+317,EC_RISM,pKa-ECRISM-1,SM27_micro000,SM27_micro001,-1,no,7.477941176470588,0.007352941176470588,0.7647058823529411,,,
+318,EC_RISM,pKa-ECRISM-1,SM28_micro000,SM28_micro002,-1,no,10.25735294117647,0.007352941176470588,0.7647058823529411,,,
+319,EC_RISM,pKa-ECRISM-1,SM28_micro000,SM28_micro001,0,no,10.845588235294118,0.007352941176470588,0.7647058823529411,,,
+320,EC_RISM,pKa-ECRISM-1,SM28_micro000,SM28_micro004,-1,no,23.176470588235293,0.007352941176470588,0.7647058823529411,,,
+321,EC_RISM,pKa-ECRISM-1,SM28_micro000,SM28_micro003,1,no,4.963235294117647,0.007352941176470588,0.7647058823529411,,,
+322,EC_RISM,pKa-ECRISM-1,SM29_micro000,SM29_micro001,-1,no,7.264705882352941,0.007352941176470588,0.7647058823529411,,,
+323,EC_RISM,pKa-ECRISM-1,SM30_micro000,SM30_micro001,-1,no,6.911764705882352,0.007352941176470588,0.7647058823529411,,,
+324,EC_RISM,pKa-ECRISM-1,SM31_micro000,SM31_micro001,-1,no,8.198529411764705,0.007352941176470588,0.7647058823529411,,,
+325,EC_RISM,pKa-ECRISM-1,SM31_micro000,SM31_micro002,1,no,1.3823529411764703,0.007352941176470588,0.7647058823529411,,,
+326,EC_RISM,pKa-ECRISM-1,SM32_micro000,SM32_micro001,-1,no,7.536764705882352,0.007352941176470588,0.7647058823529411,,,
+327,EC_RISM,pKa-ECRISM-1,SM33_micro000,SM33_micro001,-1,no,7.205882352941177,0.007352941176470588,0.7647058823529411,,,
+328,EC_RISM,pKa-ECRISM-1,SM34_micro000,SM34_micro001,-1,no,7.647058823529411,0.007352941176470588,0.7647058823529411,,,
+329,EC_RISM,pKa-ECRISM-1,SM34_micro000,SM34_micro002,1,no,0.7941176470588235,0.007352941176470588,0.7647058823529411,,,
+330,EC_RISM,pKa-ECRISM-1,SM35_micro000,SM35_micro001,-1,no,7.117647058823529,0.007352941176470588,0.7647058823529411,,,
+331,EC_RISM,pKa-ECRISM-1,SM35_micro000,SM35_micro003,-1,no,7.117647058823529,0.007352941176470588,0.7647058823529411,,,
+332,EC_RISM,pKa-ECRISM-1,SM35_micro000,SM35_micro002,0,no,0.15441176470588233,0.007352941176470588,0.7647058823529411,,,
+333,EC_RISM,pKa-ECRISM-1,SM36_micro000,SM36_micro001,-1,no,6.911764705882352,0.007352941176470588,0.7647058823529411,,,
+334,EC_RISM,pKa-ECRISM-1,SM36_micro000,SM36_micro003,-1,no,6.911764705882352,0.007352941176470588,0.7647058823529411,,,
+335,EC_RISM,pKa-ECRISM-1,SM36_micro000,SM36_micro002,0,no,-0.007352941176470588,0.007352941176470588,0.7647058823529411,,,
+336,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro002,-1,no,7.374999999999999,0.007352941176470588,0.7647058823529411,,,
+337,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro004,-1,no,7.374999999999999,0.007352941176470588,0.7647058823529411,,,
+338,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro003,0,no,0.13970588235294118,0.007352941176470588,0.7647058823529411,,,
+339,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro001,1,no,2.6397058823529407,0.007352941176470588,0.7647058823529411,,,
+340,EC_RISM,pKa-ECRISM-1,SM37_micro000,SM37_micro005,1,no,0.42647058823529405,0.007352941176470588,0.7647058823529411,,,
+341,EC_RISM,pKa-ECRISM-1,SM38_micro000,SM38_micro001,-1,no,6.845588235294118,0.007352941176470588,0.7647058823529411,,,
+342,EC_RISM,pKa-ECRISM-1,SM39_micro000,SM39_micro001,-1,no,6.213235294117646,0.007352941176470588,0.7647058823529411,,,
+343,EC_RISM,pKa-ECRISM-1,SM40_micro000,SM40_micro001,-1,no,6.911764705882352,0.007352941176470588,0.7647058823529411,,,
+344,EC_RISM,pKa-ECRISM-1,SM40_micro000,SM40_micro002,1,no,1.9852941176470589,0.007352941176470588,0.7647058823529411,,,
+345,EC_RISM,pKa-ECRISM-1,SM41_micro000,SM41_micro001,-1,no,4.220588235294118,0.007352941176470588,0.7647058823529411,,,
+346,EC_RISM,pKa-ECRISM-1,SM41_micro000,SM41_micro002,1,no,3.7279411764705883,0.007352941176470588,0.7647058823529411,,,
+347,EC_RISM,pKa-ECRISM-1,SM42_micro000,SM42_micro001,-1,no,0.39705882352941174,0.007352941176470588,0.7647058823529411,,,
+348,EC_RISM,pKa-ECRISM-1,SM42_micro000,SM42_micro002,1,no,0.2205882352941176,0.007352941176470588,0.7647058823529411,,,
+349,EC_RISM,pKa-ECRISM-1,SM42_micro000,SM42_micro003,0,no,-3.7132352941176467,0.007352941176470588,0.7647058823529411,,,
+350,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro001,-1,no,0.9632352941176471,0.007352941176470588,0.7647058823529411,,,
+351,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro004,0,no,-3.830882352941176,0.007352941176470588,0.7647058823529411,,,
+352,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro005,1,no,-0.13970588235294118,0.007352941176470588,0.7647058823529411,,,
+353,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro002,1,no,-1.4852941176470587,0.007352941176470588,0.7647058823529411,,,
+354,EC_RISM,pKa-ECRISM-1,SM43_micro000,SM43_micro003,2,no,5.5661764705882355,0.007352941176470588,0.7647058823529411,,,
+355,EC_RISM,pKa-ECRISM-1,SM44_micro000,SM44_micro001,-1,no,4.647058823529411,0.007352941176470588,0.7647058823529411,,,
+356,EC_RISM,pKa-ECRISM-1,SM44_micro000,SM44_micro002,1,no,1.713235294117647,0.007352941176470588,0.7647058823529411,,,
+357,EC_RISM,pKa-ECRISM-1,SM45_micro000,SM45_micro001,-1,no,4.448529411764706,0.007352941176470588,0.7647058823529411,,,
+358,EC_RISM,pKa-ECRISM-1,SM45_micro000,SM45_micro002,1,no,1.6544117647058822,0.007352941176470588,0.7647058823529411,,,
+359,EC_RISM,pKa-ECRISM-1,SM46_micro000,SM46_micro001,-1,no,4.7941176470588225,0.007352941176470588,0.7647058823529411,,,
+360,EC_RISM,pKa-ECRISM-1,SM46_micro000,SM46_micro002,1,no,1.8823529411764706,0.007352941176470588,0.7647058823529411,,,
+361,EC_RISM,pKa-ECRISM-1,SM46_micro000,SM46_micro004,1,no,1.764705882352941,0.007352941176470588,0.7647058823529411,,,
+362,EC_RISM,pKa-ECRISM-1,SM46_micro000,SM46_micro003,2,no,6.499999999999999,0.007352941176470588,0.7647058823529411,,,

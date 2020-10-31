@@ -204,7 +204,7 @@ class pKaSubmissionCollection:
     """A collection of pKa submissions."""
 
 
-    def __init__(self, submissions, output_directory_path, pKa_submission_collection_file_path):#, no_outliers = True):
+    def __init__(self, submissions, output_directory_path, pKa_submission_collection_file_path, no_outliers = True):
         # Build collection dataframe from the beginning.
         # Build full pKa collection table.
 
@@ -212,27 +212,58 @@ class pKaSubmissionCollection:
 
         # Submissions for pKa.
         for submission in submissions_RFE:
-            #print(submission.method_name)
-            #if "RFE-NHLBI-TZVP-QM" in submission.method_name and no_outliers:
-            #    continue
+            #print(submission.file_name)
+            if "RFE-NHLBI-TZVP-QM" in submission.method_name and no_outliers:
+                continue
             #print(submission.method_name)
             for mol_ID, series in submission.data.iterrows():
                 ref_state = submission.data.loc[mol_ID, "Molecule ID"]
+
                 pKa_mean_pred = submission.data.loc[mol_ID, "pKa mean"]
                 pKa_SEM_pred = submission.data.loc[mol_ID, "pKa SEM"]
                 total_charge = submission.data.loc[mol_ID, "total charge"]
                 pKa_model_uncertainty =  submission.data.loc[mol_ID, "pKa model uncertainty"]
 
-                data.append({
-                    'method name': submission.method_name,
-                    'file name': submission.file_name,
-                    'reference state': ref_state,
-                    'ID tag': mol_ID,
-                    'total charge': total_charge,
-                    'Relative microstate free energy prediction': pKa_mean_pred,
-                    'Relative microstate free energy SEM': pKa_SEM_pred,
-                    'model uncertainty': pKa_model_uncertainty
-                })
+                if submission.file_name in ["pKa-ECRISM-1", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1", "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+                    pKa_mean_pred_unscaled = pKa_mean_pred
+                    pKa_SEM_pred_unscaled = pKa_SEM_pred
+                    pKa_model_uncertainty_unscaled = pKa_model_uncertainty
+
+                    pKa_mean_pred = pKa_mean_pred/1.36 #convert submission to kcal/mol
+                    pKa_SEM_pred = pKa_SEM_pred/1.36
+                    pKa_model_uncertainty = pKa_model_uncertainty/1.36
+
+                #If single transition states are opposite in sign from macro pKa, we assume they made a sign error
+                if submission.file_name in ["pka-nhlbi-1c", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1", "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+                    sign_error = "yes"
+                    pKa_mean_pred = pKa_mean_pred*-1
+                    data.append({
+                        'method name': submission.method_name,
+                        'file name': submission.file_name,
+                        'reference state': ref_state,
+                        'ID tag': mol_ID,
+                        'total charge': total_charge,
+                        'sign correction?': sign_error,
+                        'Relative microstate free energy prediction': pKa_mean_pred,
+                        'Relative microstate free energy SEM': pKa_SEM_pred,
+                        'model uncertainty': pKa_model_uncertainty,
+                        'Relative microstate free energy prediction (unscaled)': pKa_mean_pred_unscaled,
+                        'Relative microstate free energy SEM (unscaled)': pKa_SEM_pred_unscaled,
+                        'model uncertainty (unscaled)': pKa_model_uncertainty_unscaled
+                    })
+                else:
+                    sign_error = "no"
+                    data.append({
+                        'method name': submission.method_name,
+                        'file name': submission.file_name,
+                        'reference state': ref_state,
+                        'ID tag': mol_ID,
+                        'total charge': total_charge,
+                        'sign correction?': sign_error,
+                        'Relative microstate free energy prediction': pKa_mean_pred,
+                        'Relative microstate free energy SEM': pKa_SEM_pred,
+                        'model uncertainty': pKa_model_uncertainty
+                    })
 
 
         # Transform into Pandas DataFrame.
@@ -408,8 +439,10 @@ if __name__ == '__main__':
     submissions_RFE = load_submissions(pKa_SUBMISSIONS_DIR_PATH, user_map)
 
 
-    collection_logP = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path)#, no_outliers = False)
+    collection_logP = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path, no_outliers = False)
+    print(collection_logP.data)
     collection_data = read_collection_file(collection_file_path = pKa_submission_collection_file_path)
+
 
 
     # Ridge plot using all predictions
@@ -439,10 +472,8 @@ if __name__ == '__main__':
 
 
 
-
-
     # Repeat without outlier
-    '''output_directory_path = "./plots"
+    output_directory_path = "./plots"
     pKa_submission_collection_file_path = "{}/relative_microstate_FE_submissions_no_outlier.csv".format(output_directory_path)
 
     os.makedirs(output_directory_path, exist_ok=True)
@@ -452,7 +483,7 @@ if __name__ == '__main__':
     submissions_RFE = load_submissions(pKa_SUBMISSIONS_DIR_PATH, user_map)
 
 
-    collection_logP_no_outllier = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path)#, no_outliers = True)
+    collection_logP_no_outllier = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path, no_outliers = True)
     collection_data_no_outlier = read_collection_file(collection_file_path = pKa_submission_collection_file_path)
 
 
@@ -475,4 +506,4 @@ if __name__ == '__main__':
     df4.to_csv(output_directory_path+"/numbers_no_outlier.csv")
 
     # Barplot of average FE predictions
-    barplot(df=df4, output_directory_path=output_directory_path, figsize=(28,10), fig_name="barplot_average_FE_predictions_no_outlier")'''
+    barplot(df=df4, output_directory_path=output_directory_path, figsize=(28,10), fig_name="barplot_average_FE_predictions_no_outlier")
