@@ -233,6 +233,23 @@ class pKaSubmissionCollection:
                     pKa_SEM_pred = pKa_SEM_pred/1.36
                     pKa_model_uncertainty = pKa_model_uncertainty/1.36
 
+                # fix submission which seems to be in kJ/mol
+                if submission.file_name in ["pka-nhlbi-1c"]:
+                    pKa_mean_pred_unscaled = pKa_mean_pred
+                    pKa_SEM_pred_unscaled = pKa_SEM_pred
+                    pKa_model_uncertainty_unscaled = pKa_model_uncertainty
+
+                    pKa_mean_pred = pKa_mean_pred/4.186
+                    pKa_SEM_pred = pKa_SEM_pred/4.186
+                    pKa_model_uncertainty = pKa_model_uncertainty/4.186
+
+                    #convert to kcal/mol
+                    pKa_mean_pred = pKa_mean_pred/1.36
+                    pKa_SEM_pred = pKa_SEM_pred/1.36
+                    pKa_model_uncertainty = pKa_model_uncertainty/1.36
+
+
+
                 #If single transition states are opposite in sign from macro pKa, we assume they made a sign error
                 if submission.file_name in ["pka-nhlbi-1c", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1", "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
                     sign_error = "yes"
@@ -417,8 +434,9 @@ if __name__ == '__main__':
 
         plt.bar(x, y)
         plt.xticks(x, df['ID tag'], rotation=90)#, horizontalalignment='right')
-        plt.errorbar(x, y, yerr=df['average SEM'], fmt="none", ecolor=sns_color, capsize=3,
-                     capthick=True, label='SEM', alpha=0.75)
+        #plt.errorbar(x, y, yerr=df['average SEM'], fmt="none", ecolor=sns_color, capsize=3, capthick=True, label='SEM', alpha=0.75)
+        plt.errorbar(x, y, yerr=df['prediction STD'], fmt="none", ecolor=sns_color, capsize=3, capthick=True, label='STDEV', alpha=0.75)
+
 
         plt.xlabel("Microstates")
         plt.ylabel("Average relative microstate free energy")
@@ -472,7 +490,7 @@ if __name__ == '__main__':
 
 
 
-    # Repeat without outlier
+    '''# Repeat without outlier
     output_directory_path = "./plots"
     pKa_submission_collection_file_path = "{}/relative_microstate_FE_submissions_no_outlier.csv".format(output_directory_path)
 
@@ -507,3 +525,4 @@ if __name__ == '__main__':
 
     # Barplot of average FE predictions
     barplot(df=df4, output_directory_path=output_directory_path, figsize=(28,10), fig_name="barplot_average_FE_predictions_no_outlier")
+'''
