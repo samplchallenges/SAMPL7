@@ -155,9 +155,9 @@ class pKaSubmission(SamplSubmission):
     CSV_SECTIONS = {"Predictions": ("ID tag",
                                     "Molecule ID",
                                     "total charge",
-                                    "pKa mean",
-                                    "pKa SEM",
-                                    "pKa model uncertainty")}
+                                    "relative free energy",
+                                    "relative free energy SEM",
+                                    "relative free energy model uncertainty")}
 
 
     def __init__(self, file_path, user_map):
@@ -219,42 +219,43 @@ class pKaSubmissionCollection:
             for mol_ID, series in submission.data.iterrows():
                 ref_state = submission.data.loc[mol_ID, "Molecule ID"]
 
-                pKa_mean_pred = submission.data.loc[mol_ID, "pKa mean"]
-                pKa_SEM_pred = submission.data.loc[mol_ID, "pKa SEM"]
-                total_charge = submission.data.loc[mol_ID, "total charge"]
-                pKa_model_uncertainty =  submission.data.loc[mol_ID, "pKa model uncertainty"]
+                RFE_mean_pred_original = submission.data.loc[mol_ID, "relative free energy"]
 
-                # correct some sign issues
-                if submission.file_name in ["pka-nhlbi-1c", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1",
+                RFE_SEM_pred_original = submission.data.loc[mol_ID, "relative free energy SEM"]
+                total_charge = submission.data.loc[mol_ID, "total charge"]
+                RFE_model_uncertainty_original =  submission.data.loc[mol_ID, "relative free energy model uncertainty"]
+
+                # correct sign + unit
+                if submission.file_name in ["pKa-VA-2", "pKa_RodriguezPaluch_SMD_1",
                                             "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
                     sign_error = "yes"
-                    pKa_mean_pred = pKa_mean_pred*-1
+                    RFE_mean_pred = RFE_mean_pred_original*-1
 
-                if submission.file_name in ["pKa-ECRISM-1", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1",
-                                            "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
-                    pKa_mean_pred_unscaled = pKa_mean_pred
-                    pKa_SEM_pred_unscaled = pKa_SEM_pred
-                    pKa_model_uncertainty_unscaled = pKa_model_uncertainty
+                    RFE_mean_pred = RFE_mean_pred/1.36 #convert submission to kcal/mol
+                    RFE_SEM_pred = RFE_SEM_pred_original/1.36
+                    RFE_model_uncertainty = RFE_model_uncertainty_original/1.36
 
-                    pKa_mean_pred = pKa_mean_pred/1.36 #convert submission to kcal/mol
-                    pKa_SEM_pred = pKa_SEM_pred/1.36
-                    pKa_model_uncertainty = pKa_model_uncertainty/1.36
+                #convert submission to kcal/mol
+                if submission.file_name in ["pKa-ECRISM-1"]:
+
+                    RFE_mean_pred = RFE_mean_pred_original/1.36
+                    RFE_SEM_pred = RFE_SEM_pred_original/1.36
+                    RFE_model_uncertainty = RFE_model_uncertainty_original/1.36
 
                 # fix submission which seems to be in kJ/mol
                 if submission.file_name in ["pka-nhlbi-1c"]:
-                    pKa_mean_pred_unscaled = pKa_mean_pred
-                    pKa_SEM_pred_unscaled = pKa_SEM_pred
-                    pKa_model_uncertainty_unscaled = pKa_model_uncertainty
+                    sign_error = "yes"
+                    RFE_mean_pred = RFE_mean_pred_original*-1
 
-                    pKa_mean_pred = pKa_mean_pred/4.186
-                    pKa_SEM_pred = pKa_SEM_pred/4.186
-                    pKa_model_uncertainty = pKa_model_uncertainty/4.186
-
+                    RFE_mean_pred = RFE_mean_pred/4.186
+                    RFE_SEM_pred = RFE_SEM_pred_original/4.186
+                    RFE_model_uncertainty = RFE_model_uncertainty_original/4.186
 
 
                 #If single transition states are opposite in sign from macro pKa, we assume they made a sign error
-                if submission.file_name in ["pka-nhlbi-1c", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1",
-                                            "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+                if submission.file_name in ["pKa-ECRISM-1", "pka-nhlbi-1c", "pKa-VA-2",
+                                            "pKa_RodriguezPaluch_SMD_1", "pKa_RodriguezPaluch_SMD_2",
+                                            "pKa_RodriguezPaluch_SMD_3"]:
 
                     data.append({
                         'method name': submission.method_name,
@@ -263,12 +264,12 @@ class pKaSubmissionCollection:
                         'ID tag': mol_ID,
                         'total charge': total_charge,
                         'sign correction?': sign_error,
-                        'Relative microstate free energy prediction': pKa_mean_pred,
-                        'Relative microstate free energy SEM': pKa_SEM_pred,
-                        'model uncertainty': pKa_model_uncertainty,
-                        'Relative microstate free energy prediction (unscaled)': pKa_mean_pred_unscaled,
-                        'Relative microstate free energy SEM (unscaled)': pKa_SEM_pred_unscaled,
-                        'model uncertainty (unscaled)': pKa_model_uncertainty_unscaled
+                        'Relative microstate free energy prediction': RFE_mean_pred,
+                        'Relative microstate free energy SEM': RFE_SEM_pred,
+                        'model uncertainty': RFE_model_uncertainty,
+                        'Relative microstate free energy prediction (original)': RFE_mean_pred_original,
+                        'Relative microstate free energy SEM (original)': RFE_SEM_pred_original,
+                        'model uncertainty (original)': RFE_model_uncertainty_original
                     })
                 else:
                     sign_error = "no"
@@ -279,9 +280,9 @@ class pKaSubmissionCollection:
                         'ID tag': mol_ID,
                         'total charge': total_charge,
                         'sign correction?': sign_error,
-                        'Relative microstate free energy prediction': pKa_mean_pred,
-                        'Relative microstate free energy SEM': pKa_SEM_pred,
-                        'model uncertainty': pKa_model_uncertainty
+                        'Relative microstate free energy prediction': RFE_mean_pred_original,
+                        'Relative microstate free energy SEM': RFE_SEM_pred_original,
+                        'model uncertainty': RFE_model_uncertainty_original
                     })
 
 
@@ -384,7 +385,7 @@ if __name__ == '__main__':
 
 
     def violinplot(df, output_directory_path, width, fig_name):
-        '''print("Making horizontal violin plot")
+        print("Making horizontal violin plot")
 
         plt.close('all')
         data_ordered_by_mol_ID = df.sort_values(["ID tag"], ascending=["True"])
@@ -395,7 +396,7 @@ if __name__ == '__main__':
                        linewidth=0.5, width=width)
         plt.tight_layout()
         #plt.savefig(output_directory_path + "/" + "violinplot.pdf")
-        plt.savefig(output_directory_path + "/" + fig_name+"_horizontal.pdf")'''
+        plt.savefig(output_directory_path + "/" + fig_name+"_horizontal.pdf")
 
 
 
@@ -405,9 +406,10 @@ if __name__ == '__main__':
         data_ordered_by_mol_ID = df.sort_values(["ID tag"], ascending=["True"])
 
         sns.set(rc={'figure.figsize': (12,8)})
-        v = sns.violinplot(x="ID tag", y='Relative microstate free energy prediction',
-                       data=data_ordered_by_mol_ID, inner='point',
-                       linewidth=0.5, width=width)
+        v = sns.violinplot(x="ID tag",
+                           y='Relative microstate free energy prediction',
+                           data=data_ordered_by_mol_ID, inner='point',
+                           linewidth=0.5, width=width)
 
         v.set_xticklabels(v.get_xticklabels(),rotation=90)
         plt.tight_layout()
@@ -462,6 +464,7 @@ if __name__ == '__main__':
     collection_logP = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path, no_outliers = False)
     print(collection_logP.data)
     collection_data = read_collection_file(collection_file_path = pKa_submission_collection_file_path)
+
 
 
 
