@@ -231,16 +231,16 @@ class pKaSubmissionCollection:
                     sign_error = "yes"
                     RFE_mean_pred = RFE_mean_pred_original*-1
 
-                    RFE_mean_pred = RFE_mean_pred/1.36 #convert submission to kcal/mol
-                    RFE_SEM_pred = RFE_SEM_pred_original/1.36
-                    RFE_model_uncertainty = RFE_model_uncertainty_original/1.36
+                    RFE_mean_pred = RFE_mean_pred*1.36 #convert submission to kcal/mol
+                    RFE_SEM_pred = RFE_SEM_pred_original*1.36
+                    RFE_model_uncertainty = RFE_model_uncertainty_original*1.36
 
                 #convert submission to kcal/mol
                 if submission.file_name in ["pKa-ECRISM-1"]:
 
-                    RFE_mean_pred = RFE_mean_pred_original/1.36
-                    RFE_SEM_pred = RFE_SEM_pred_original/1.36
-                    RFE_model_uncertainty = RFE_model_uncertainty_original/1.36
+                    RFE_mean_pred = RFE_mean_pred_original*1.36
+                    RFE_SEM_pred = RFE_SEM_pred_original*1.36
+                    RFE_model_uncertainty = RFE_model_uncertainty_original*1.36
 
                 # fix submission which seems to be in kJ/mol
                 if submission.file_name in ["pka-nhlbi-1c"]:
