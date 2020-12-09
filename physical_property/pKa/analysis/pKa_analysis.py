@@ -1584,9 +1584,21 @@ def pop_charge(pH, formal_charge, state_details):
 
 
 # get G of each group
+# Given a group of microstates, which share the same net charge in this case, what is the average free energy of this
+# group?
 def getG(msgroup):
+    # Input: msgroup
+    #     msgroup is a list of microstates
+    #     each microstate is a tuple: (moleculeID, RFE, formal_charge)
+    # Output:
+    #     canonical ensemble free energy of this group of microstates in unit Kcal/mol
+
+    # Get the normalized population (sum of P to be 1) based on Boltzmann distribution
     Pi_raw = np.array([np.exp(-beta*ms[1]) for ms in msgroup])
     Pi_norm = Pi_raw/sum(Pi_raw)
+
+    # Compose free energy of this group
+    # ref: https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)#Calculating_the_thermodynamic_total_energy
     E = sum(np.array([ms[1] for ms in msgroup]) * Pi_norm)
     TS = -sum(Pi_norm * np.log(Pi_norm))/beta
     G = E - TS
@@ -1595,22 +1607,32 @@ def getG(msgroup):
 class Macro_pKa:
     def __init__(self):
         self.molecule = ""
-        self.transition_from = 0
-        self.transition_to = 0
-        self.pKa_bytitration = 0.0
-        self.pKa_bydG = 0.0
+        self.transition_from = 0      # formal charge for a pKa, transition from
+        self.transition_to = 0        # formal charge for a pKa, transition to
+        self.pKa_bytitration = 0.0    # Macro-pKa calculated by titration method
+        self.pKa_bydG = 0.0           # Macro-pKa calculated by delta G method
 
 
 def get_macropka(rfe_data):
+    # Input: rfe_data
+    #     rfe_data is a pandas table of rfe submission by one author.
+    #     each row is a molecule microstate. The columns contain state(ID), fre in Kcal/mol, charge, and other fields.
+    # Output:
+    #     A list of macro-pKas, in data structure defined by class Macro_pKa.
+
     macropkas = []
 
-    # Extract each molecule
+    # Extract each molecule from pandas table, only use three fields: "IT Tag", "total charge", and "pKa mean" (rfe)
     molecules = {}
     for index, row in rfe_data.iterrows():
         SM = index
         state = row["ID tag"]
         charge = row["total charge"]
         rfe = row["pKa mean"]
+
+        # Since one author will submit multiple molecules (SM25, SM26 etc), and one molecule has multiple rows for
+        # microstates, molecules are stored in a dictionary, indexed by the molecule name (SM25, SM26...) and have value
+        # as a list of microstates.
         if SM in molecules:
             molecules[SM].append((state, rfe, charge))
         else:
@@ -1621,7 +1643,8 @@ def get_macropka(rfe_data):
     SM_names.sort()
     for sm_name in SM_names:
         state_details = molecules[sm_name]
-        #print(state_details)
+        # state_details is a tuple in form of ('SM29_micro001', 9.88, -1)
+        # print(state_details)
 
         # Figure out what formal charges are present in states
         formal_charges = [info[2] for info in state_details]
@@ -1629,16 +1652,17 @@ def get_macropka(rfe_data):
         #print(sm_name)
 
         # group microstates into groups based their formal charge
-        msgroup_p2 = [state for state in state_details if state[2] == 2]  # microstates with formal charge +2
-        msgroup_p1 = [state for state in state_details if state[2] == 1]  # microstates with formal charge +1
-        msgroup_p0 = [state for state in state_details if state[2] == 0]  # microstates with formal charge 0
-        msgroup_p0.append(("reference state", 0, 0))  # add back reference state
+        msgroup_p2 = [state for state in state_details if state[2] == 2]   # microstates with formal charge +2
+        msgroup_p1 = [state for state in state_details if state[2] == 1]   # microstates with formal charge +1
+        msgroup_p0 = [state for state in state_details if state[2] == 0]   # microstates with formal charge 0
+        msgroup_p0.append(("reference state", 0, 0))                       # add back reference state
         msgroup_n1 = [state for state in state_details if state[2] == -1]  # microstates with formal charge -1
 
-        # for reaction A -> B
-        # ΔGAB = (-1)(C_unit)(pH - pKaBA)
-        # Therefore when pH = 0, we have pKaBA = ΔGAB/C_unit
-
+        # for reaction A -> B, assuming a proton release reaction that transits from high to low formal charge:
+        #     ΔGAB = (-1)(C_unit)(pH - pKaBA)
+        # In delta G method, A and B are no longer microstates, they are instead microstete groups with the same
+        # formal charges, but the theory still holds. Therefore when pH = 0, we have:
+        #     pKaBA = ΔGAB/C_unit
 
         # Compute +2 to +1 transition
         if 2 in formal_charges:
@@ -1647,11 +1671,13 @@ def get_macropka(rfe_data):
             pka.transition_from = 2
             pka.transition_to = 1
 
+            # titration method given my David's group
             init_guess = -5
             func_10 = lambda pH: (pop_charge(pH, 2, state_details) - pop_charge(pH, 1, state_details))
             pH_solution_2to1 = fsolve(func_10, init_guess, factor=0.1)
             pka.pKa_bytitration = pH_solution_2to1
 
+            # delta G method given by newbooks (Junjun Mao)
             dG = getG(msgroup_p1) - getG(msgroup_p2)
             pka.pKa_bydG = (dG / C_unit)
 
@@ -1664,11 +1690,13 @@ def get_macropka(rfe_data):
             pka.transition_from = 1
             pka.transition_to = 0
 
+            # titration method given my David's group
             init_guess = -5
             func_10 = lambda pH: (pop_charge(pH, 1, state_details) - pop_charge(pH, 0, state_details))
             pH_solution_1to0 = fsolve(func_10, init_guess, factor=0.1)
             pka.pKa_bytitration = pH_solution_1to0
 
+            # delta G method given by newbooks (Junjun Mao)
             dG = getG(msgroup_p0) - getG(msgroup_p1)
             pka.pKa_bydG = (dG / C_unit)
 
@@ -1681,11 +1709,13 @@ def get_macropka(rfe_data):
             pka.transition_from = 0
             pka.transition_to = -1
 
+            # titration method given my David's group
             init_guess = 5
             func_0neg1 = lambda pH: (pop_charge(pH, -1, state_details) - pop_charge(pH, 0, state_details))
             pH_solution_0toneg1 = fsolve(func_0neg1, init_guess, factor=0.1)
             pka.pKa_bytitration = pH_solution_0toneg1
 
+            # delta G method given by newbooks (Junjun Mao)
             dG = getG(msgroup_n1) - getG(msgroup_p0)
             pka.pKa_bydG = (dG / C_unit)
 
@@ -1728,7 +1758,6 @@ if __name__ == '__main__':
         user_map = pd.read_csv(f)
 
 
-
     # Configuration: statistics to compute.
     stats_funcs = collections.OrderedDict([
         ('RMSE', rmse),
@@ -1765,10 +1794,11 @@ if __name__ == '__main__':
 
     # Loop through each submission, convert relative FE's to micro pKas, then convert to macro pKas
     for sub in submissions_RFE:
-        print(sub.participant)
+        print("Macro-pKa conversion %s" % sub.participant)
         print("Molecule From  To  pKa(titr)  pKa(dG)")
-        # print("Submission dataframe \n", sub.data)
-        # Compute macro pKa with titration method and delta G method. -- Yingying Zhang, reviewed by Junjun Mao
+        # Compute macro pKa by two methods:
+        # 1. simulated titration
+        # 2. delta G method. Based on canonical ensemble of microstate groups that share the same formal charge.
         macropkas = get_macropka(sub.data)
         for pka in macropkas:
             print("%6s   %2d   %2d    %8.3f %8.3f" %(pka.molecule, pka.transition_from, pka.transition_to, pka.pKa_bytitration, pka.pKa_bytitration))
