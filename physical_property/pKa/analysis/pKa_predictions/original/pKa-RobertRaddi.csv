@@ -1,0 +1,194 @@
+# RELATIVE FREE ENERGY PREDICTIONS (for pKa prediction)
+#
+# This file will be automatically parsed. It must contain the following four elements:
+# predictions, name of method, software listing, and method description.
+# These elements must be provided in the order shown with their respective headers.
+#
+# Any line that begins with a # is considered a comment and will be ignored when parsing.
+#
+# PREDICTION SECTION
+#
+# It is mandatory to submit relative free energy (RFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
+# Please report RFE standard error of the mean (SEM) and RFE model uncertainty.
+#
+# The data in each prediction line should be structured as follows:
+# Microstate ID of reference state, Microstate ID of the predicted microstate, total charge, RFE, RFE SEM, RFE model uncertainty
+#
+# If you have evaluated additional microstates, include the following:
+# Microstate ID of reference state, Microstate ID of the predicted microstate, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string of the predicted microstate
+#
+# The molecule ID of the other microstate needs to be in the format: `SMXX_extra001` (number can vary)
+# Also email us the `.mol2` file of your microstate with explicit hydrogens and correct bond orders,
+# Please send the `.mol2` file to the email listed on the instructions page.
+#
+# The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
+Predictions:
+SM25_micro000,SM25_micro001,-1,16.33,2.22,9.39
+SM25_micro000,SM25_micro002,0,8.09,2.22,4.71
+SM25_micro000,SM25_micro003,-1,8.19,2.22,4.71
+SM26_micro000,SM26_micro001,-1,7.85,2.22,3.42
+SM26_micro000,SM26_micro002,0,-7.79,2.22,4.71
+SM26_micro000,SM26_micro003,-1,0.87,2.22,5.88
+SM27_micro000,SM27_micro001,-1,8.01,2.22,4.71
+SM28_micro000,SM28_micro001,0,-7.82,2.22,4.71
+SM28_micro000,SM28_micro002,-1,8.16,2.22,3.72
+SM28_micro000,SM28_micro003,+1,-5.18,2.22,4.0
+SM29_micro000,SM29_micro001,-1,8.02,2.22,4.71
+SM30_micro000,SM30_micro001,-1,8.06,2.22,4.71
+SM31_micro000,SM31_micro001,-1,8.02,2.22,4.71
+SM31_micro000,SM31_micro002,+1,-8.07,2.22,4.7
+SM32_micro000,SM32_micro001,-1,8.02,2.22,4.71
+SM33_micro000,SM33_micro001,-1,8.08,2.22,4.71
+SM34_micro000,SM34_micro001,-1,8.06,2.22,4.71
+SM34_micro000,SM34_micro002,+1,-8.05,2.22,4.7
+SM35_micro000,SM35_micro001,-1,8.08,2.22,4.71
+SM35_micro000,SM35_micro002,0,0.03,2.22,6.66
+SM35_micro000,SM35_micro003,-1,8.02,2.22,4.71
+SM36_micro000,SM36_micro001,-1,8.07,2.22,4.71
+SM36_micro000,SM36_micro002,0,0.0,2.22,6.66
+SM36_micro000,SM36_micro003,-1,8.06,2.22,4.71
+SM37_micro000,SM37_micro001,+1,-8.01,2.22,4.69
+SM37_micro000,SM37_micro002,-1,8.1,2.22,4.71
+SM37_micro000,SM37_micro003,0,-0.01,2.22,6.66
+SM37_micro000,SM37_micro004,-1,8.09,2.22,4.71
+SM37_micro000,SM37_micro005,+1,-8.07,2.22,4.71
+SM38_micro000,SM38_micro001,-1,8.09,2.22,4.71
+SM39_micro000,SM39_micro001,-1,8.13,2.22,4.71
+SM40_micro000,SM40_micro001,-1,8.14,2.22,4.71
+SM40_micro000,SM40_micro002,+1,-8.02,2.22,4.68
+SM41_micro000,SM41_micro001,-1,8.01,2.22,4.59
+SM41_micro000,SM41_micro002,+1,-5.81,2.22,4.37
+SM42_micro000,SM42_micro001,-1,8.96,2.22,4.52
+SM42_micro000,SM42_micro002,+1,-7.86,2.22,4.69
+SM42_micro000,SM42_micro003,0,0.98,2.22,6.41
+SM43_micro000,SM43_micro001,-1,8.4,2.22,4.6
+SM43_micro000,SM43_micro002,+1,-7.99,2.22,4.7
+SM43_micro000,SM43_micro003,2,-15.89,2.22,9.3
+SM44_micro000,SM44_micro001,-1,8.05,2.22,4.59
+SM44_micro000,SM44_micro002,+1,-6.67,2.22,4.39
+SM45_micro000,SM45_micro001,-1,8.68,2.22,3.8
+SM45_micro000,SM45_micro002,+1,-6.66,2.22,4.42
+SM46_micro000,SM46_micro001,-1,8.19,2.22,4.63
+SM46_micro000,SM46_micro002,+1,-6.85,2.22,4.28
+SM46_micro000,SM46_micro003,2,-16.23,2.22,9.39
+
+
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+Robert Raddi
+
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+Temple University
+
+#
+#
+# NAME SECTION
+#
+# Please provide an informal but informative name of the method used.
+# The name of the method should not exceed 40 characters.
+# The 'Name:' keyword is required as shown here.
+Name:
+Standard Gaussian Process
+
+#
+#
+# COMPUTE TIME SECTION
+#
+# Please provide the average compute time across all of the molecules.
+# For physical methods, report the GPU and/or CPU compute time in hours.
+# For empirical methods, report the query time in hours.
+# Create a new line for each processor type.
+# The 'Compute time:' keyword is required as shown here.
+Compute time:
+0.16 hr (compute features, 4-6 CPUs)
+0.15 hr (prediction calculations, 4-6 CPUs)
+0.31 hr (total, 4-6 CPUs)
+#
+# COMPUTING AND HARDWARE SECTION
+#
+# Please provide details of the computing resources that were used to train models and make predictions.
+# Please specify compute time for training models and querying separately for empirical prediction methods.
+# Provide a detailed description of the hardware used.
+# The 'Computing and hardware:' keyword is required as shown here.
+Computing and hardware:
+1.0 hr to train the model (4 CPUs)
+3 GHz 6-Core Intel Core i5
+
+# SOFTWARE SECTION
+#
+# List all major software packages used and their versions.
+# Create a new line for each software.
+# The 'Software:' keyword is required.
+Software:
+In order of usage (1st listed is used the most)
+RDKit 2020.03.4
+pandas 1.0.3
+numpy 1.18.2
+scikit-learn 0.22.1
+openeye-toolkits 2019.10.2
+openforcefield 0.6.0
+
+# METHOD CATEGORY SECTION
+#
+# State if your prediction method is better classified as an
+# experimental database lookup (DL), linear free energy relationship (LFER),
+# quantitative structure-property relationship or machine learning (QSPR/ML),
+# quantum mechanics without empirical correction (QM) model, quantum mechanics with
+# linear empirical correction (QM+LEC), and combined quantum mechanics and molecular
+# mechanics (QM+MM), or Other, using the following category labels:
+# `DL`, `LFER`, `QSPR/ML`, `QM`, `QM+LEC`, `QM+MM` or `Other`.
+#
+# Pick only one category label.
+# The `Category:` keyword is required.
+Category:
+QSPR/ML
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of details should be roughly equivalent to that used in a publication.
+# Please include the values of key parameters with units.
+# Please explain how statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+# All text following the 'Method:' keyword will be regarded as part of your free text methods description.
+Method:
+This submission is the first step in attempts to improve a Gaussian process pKa predictor previously submitted in the SAMPL6 challenge \cite{bannan2018sampl6}. For the features and model parameters, please refer to the work by Bannan et al. The ten features used in the previous model were closely followed here. Six features are the AM1BCC partial charges described by Bannan et al. Partial charges were computed using Openforcefield and RDKit. Two other features are the free energy of solvation and the change in enthalpy. These were both computed using OpenEye-toolkits. The remaining two features are solvent accessible surface area of the deprotonated atom via the Shrake algorithm and the partial bond order via the extended Hückel molecular orbital method to obtain the overlap populations, both calculated using RDKit.
+The primary difference between these two models is the training set. Our hand curated training set consists of approximately 3500 small molecules entirely from open-source databases. Approximately 40 small molecules with sulfonamide groups were added in attempt to assist predictions and increase chemical diversity. Model validation suggests a subset (1122 monoprotic) of the dataset gives the best training set for optimal kernel parameters. The optimized kernel parameters used for making predictions were obtained by executing a 4-fold model validation procedure. As suggested by Bannan et al., we added a small subset of diprotic acids and all monoprotics that had experimental pKas between 0 and 12 back into the training set (2752 total) to increase the chemical space when making predictions.
+Statistical uncertainty in micro-pKa was computed during model validation. The standard Gaussian process model automatically provides uncertainties that correspond to how closely the molecule of interest overlaps with the molecules in the training set. Note that the predictions reported have have high uncertainty due to the lack of chemical space in the training set as well as the lack of similarity of the molecules of interest to that of the molecules found in the training set.  Microscopic pKa values are directly related to relative free energies and were computed following the work by Gunner et al.\cite{gunner2020standard} in units of kcal/mol.
+
+//ref.bib
+@article{bannan2018sampl6,
+  title={SAMPL6 challenge results from $pK_a$ predictions based on a general Gaussian process model},
+  author={Bannan, Caitlin C and Mobley, David L and Skillman, A Geoffrey},
+  journal={Journal of computer-aided molecular design},
+  volume={32},
+  number={10},
+  pages={1165--1177},
+  year={2018},
+  publisher={Springer}
+}
+@article{gunner2020standard,
+  title={Standard state free energies, not pK as, are ideal for describing small molecule protonation and tautomeric states},
+  author={Gunner, Marilyn R and Murakami, Taichi and Rustenburg, Ari{\"e}n S and I{\c{s}}{\i}k, Mehtap and Chodera, John D},
+  journal={Journal of Computer-Aided Molecular Design},
+  pages={1--13},
+  year={2020},
+  publisher={Springer}
+}
+
+
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True
+

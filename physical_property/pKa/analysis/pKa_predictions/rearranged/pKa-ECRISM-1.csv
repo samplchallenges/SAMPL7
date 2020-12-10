@@ -1,0 +1,141 @@
+Predictions:
+SM25_micro003,SM25_micro000,-1,7.91,0.01,1.04
+SM25_micro001,SM25_micro000,-1,-6.66,0.01,1.04
+SM25_micro002,SM25_micro000,0,-7.52,0.01,1.04
+SM25_micro004,SM25_micro000,0,-12.08,0.01,1.04
+SM25_micro005,SM25_micro000,1,-2.33,0.01,1.04
+SM26_micro001,SM26_micro000,-1,5.53,0.01,1.04
+SM26_micro003,SM26_micro000,-1,19.92,0.01,1.04
+SM26_micro002,SM26_micro000,0,12.59,0.01,1.04
+SM26_micro004,SM26_micro000,0,4.82,0.01,1.04
+SM26_micro005,SM26_micro000,1,9.95,0.01,1.04
+SM27_micro001,SM27_micro000,-1,10.17,0.01,1.04
+SM28_micro002,SM28_micro000,-1,13.95,0.01,1.04
+SM28_micro001,SM28_micro000,0,14.75,0.01,1.04
+SM28_micro004,SM28_micro000,-1,31.52,0.01,1.04
+SM28_micro003,SM28_micro000,1,6.75,0.01,1.04
+SM29_micro001,SM29_micro000,-1,9.88,0.01,1.04
+SM30_micro001,SM30_micro000,-1,9.4,0.01,1.04
+SM31_micro001,SM31_micro000,-1,11.15,0.01,1.04
+SM31_micro002,SM31_micro000,1,1.88,0.01,1.04
+SM32_micro001,SM32_micro000,-1,10.25,0.01,1.04
+SM33_micro001,SM33_micro000,-1,9.8,0.01,1.04
+SM34_micro001,SM34_micro000,-1,10.4,0.01,1.04
+SM34_micro002,SM34_micro000,1,1.08,0.01,1.04
+SM35_micro001,SM35_micro000,-1,9.68,0.01,1.04
+SM35_micro003,SM35_micro000,-1,9.68,0.01,1.04
+SM35_micro002,SM35_micro000,0,0.21,0.01,1.04
+SM36_micro001,SM36_micro000,-1,9.4,0.01,1.04
+SM36_micro003,SM36_micro000,-1,9.4,0.01,1.04
+SM36_micro002,SM36_micro000,0,-0.01,0.01,1.04
+SM37_micro002,SM37_micro000,-1,10.03,0.01,1.04
+SM37_micro004,SM37_micro000,-1,10.03,0.01,1.04
+SM37_micro003,SM37_micro000,0,0.19,0.01,1.04
+SM37_micro001,SM37_micro000,1,3.59,0.01,1.04
+SM37_micro005,SM37_micro000,1,0.58,0.01,1.04
+SM38_micro001,SM38_micro000,-1,9.31,0.01,1.04
+SM39_micro001,SM39_micro000,-1,8.45,0.01,1.04
+SM40_micro001,SM40_micro000,-1,9.4,0.01,1.04
+SM40_micro002,SM40_micro000,1,2.7,0.01,1.04
+SM41_micro001,SM41_micro000,-1,5.74,0.01,1.04
+SM41_micro002,SM41_micro000,1,5.07,0.01,1.04
+SM42_micro001,SM42_micro000,-1,0.54,0.01,1.04
+SM42_micro002,SM42_micro000,1,0.3,0.01,1.04
+SM42_micro003,SM42_micro000,0,-5.05,0.01,1.04
+SM43_micro001,SM43_micro000,-1,1.31,0.01,1.04
+SM43_micro004,SM43_micro000,0,-5.21,0.01,1.04
+SM43_micro005,SM43_micro000,1,-0.19,0.01,1.04
+SM43_micro002,SM43_micro000,1,-2.02,0.01,1.04
+SM43_micro003,SM43_micro000,2,7.57,0.01,1.04
+SM44_micro001,SM44_micro000,-1,6.32,0.01,1.04
+SM44_micro002,SM44_micro000,1,2.33,0.01,1.04
+SM45_micro001,SM45_micro000,-1,6.05,0.01,1.04
+SM45_micro002,SM45_micro000,1,2.25,0.01,1.04
+SM46_micro001,SM46_micro000,-1,6.52,0.01,1.04
+SM46_micro002,SM46_micro000,1,2.56,0.01,1.04
+SM46_micro004,SM46_micro000,1,2.4,0.01,1.04
+SM46_micro003,SM46_micro000,2,8.84,0.01,1.04
+
+Participant name:
+Stefan M. Kast, Nicolas Tielker
+
+Participant organization:
+TU Dortmund University
+
+Name:
+EC_RISM
+
+Compute time:
+174 hours, CPU
+
+Computing and hardware:
+All calculations were conducted on the LiDO 3 high performance cluster of TU Dortmund University. Calculations were automatically scheduled and ran on either an Intel Xeon E5-4604v4 or an Intel Xeon E5-2640v4 CPU, depending on node availability.
+
+Software:
+Corina 4.3.0
+Gaussian 09 Rev E.01
+Gaussian 16 Rev C.01
+3D RISM (inhouse development)
+EC-RISM (inhouse development)
+Python 3.6
+Anaconda2018.12
+Amber 12
+Mathematica 12.0 (Wolfram)
+
+Category:
+Physical (QM)
+
+Method:
+For microstates with multiple possible stereoisomers these were generated using Corina.
+50 geometries,or 200 for molecules containing more than seven rotatable bonds,were generated for each microstate using the EmbedMultipleConfs function of RDKit. These structures were pre-optimized with Amber 12 using GAFF 1.7 parameters and AM1-BCC charges with an ALPB model to represent the dielectric environment of water.
+Conformations with an energy of more than 20 kcal/mol than the minimum structure of that microstate were discarded and the remaining structures clustered with a structural RMSD of 0.5 Angstrom. The cluster representatives were then optimized using Gaussian 16revC01 with IEF-PCM using default settings for water at the B3LYP/6-311+G(d,p) level of theory.
+Additional stereoisomers were treated as if they were additional conformational states of the same microstate so that for each microsate only up to 5 conformations with the lowest PCM energies for each solvent were treated with EC-RISM/MP2/6-311+G(d,p) using the PSE2 closure [REF1] and the resulting EC-RISM energies corrected using (c1*mu_{ex}+c2*PMV_{EC-RISM}+c3*q). The correction for water has a fixed parameter c1 = 1 since this additional parameter was found to be of no predicitve value in previous challenges,c2 = -0.1025 kcal*mol^-1*A^-3 and c3 = -15.7284 kcal mol^-1 e^-1. [REF2]. These yield G_{mtc} where m refers to the ionization state, t to the tautomer (microstate per ionization state) and c to the respective conformation. The different statistical weights of conformations were taken into account by computing the free energy of the resulting discrete partition function G_{mt}=-RT*ln[sum_c(exp(-G_{mtc}/RT))]. For the deprotonation process of a microstate with k protons,pKa_{raw}=(G_{k}-G_{k-1})/(RT ln(10)) and the macrostate pKa follows from m*pKa_{raw}+b where parameters m and b are calculated within the chosen level of theory by fitting to the reference data set from [REF3]. Here,m = 0.7449 and b = -150.7196. To calculate the relative free energies with respect to each micro000, four different formulas must be used, depending on the difference in the protonation state. If there is no difference in the protonation state, i.e. the microstates are tautomers,the relative free energy is calculated via m*(G(micro000)-G(m2)) to achieve thermodynamically consistent cycles. Since micro000 is always a neutral species for a single deprotonation the relative free energy is calculated using m*(G(micro000)-G(m2))+b,and -(m*(G(micro000)-G(m2))+b) for a protonation process. For the doubly protonated species the calculated relative free energy is -(m*(G(micro000)-G(m2))+2*b). Macrostate pKa values were calculated using the partition function approach of Eq. 5 in [REF4].
+The SEM was estimated as the convergence criterion for a single EC-RISM calculation. The uncertainty was estimated as the RMSE from the pKa training set.
+
+References:
+REF1: N. Tielker, D. Tomazic, J. Heil, T. Kloss, S. Ehrhart, S. Guessregen, K. F. Schmidt, S. M. Kast,J. Comput.-Aided Mol. Des. 30,1035-1044 (2016).,
+REF2: N. Tielker, L. Eberlein, S. Guessregen, S. M. Kast,J. Comput.-Aided Mol. Des. 32,1151-1163 (2018).
+REF3: Klicic, J. J., Friesner, R. A., Liu, S., Guida, W. C.,J. Phys. Chem. A 106,1327-1335 (2002).,
+REF4: N. Tielker, L. Eberlein, C. Chodun, S. Guessregen, S. M. Kast,J. Mol. Model. 25,139 (2019).,
+
+Macro pKa values:
+SM25,5.42,-1,0
+SM25,-9.75,0,1
+SM26,5.53,-1,0
+SM26,-9.95,0,1
+SM27,10.17,-1,0
+SM28,13.95,-1,0
+SM28,-6.75,0,1
+SM29,9.88,-1,0
+SM30,9.4,-1,0
+SM31,11.15,-1,0
+SM31,-1.88,0,1
+SM32,10.25,-1,0
+SM33,9.8,-1,0
+SM34,10.4,-1,0
+SM34,-1.08,0,1
+SM35,9.59,-1,0
+SM36,9.41,-1,0
+SM37,9.94,-1,0
+SM37,-0.72,0,1
+SM38,9.31,-1,0
+SM39,8.45,-1,0
+SM40,9.4,-1,0
+SM40,-2.7,0,1
+SM41,5.74,-1,0
+SM41,-5.07,0,1
+SM42,5.59,-1,0
+SM42,-5.35,0,1
+SM43,6.52,-1,0
+SM43,-3.2,0,1
+SM43,-9.59,1,2
+SM44,6.32,-1,0
+SM44,-2.33,0,1
+SM45,6.05,-1,0
+SM45,-2.25,0,1
+SM46,6.52,-1,0
+SM46,-2.25,0,1
+SM46,-6.59,1,2
+
+Ranked:
+TRUE
