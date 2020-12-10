@@ -1782,20 +1782,17 @@ if __name__ == '__main__':
             pKa_model_uncertainty =  work_submission.data.loc[mol_ID, "pKa model uncertainty"]
 
             if work_submission.file_name in ["pKa-ECRISM-1", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
-                pKa_mean_pred = pKa_mean_pred/1.36 #convert submission to kcal/mol
-                pKa_SEM_pred = pKa_SEM_pred/1.36
-                pKa_model_uncertainty = pKa_model_uncertainty/1.36
+                pKa_mean_pred = pKa_mean_pred*1.36 #convert submission to kcal/mol
+                pKa_SEM_pred = pKa_SEM_pred*1.36
+                pKa_model_uncertainty = pKa_model_uncertainty*1.36
 
             # fix submission which seems to be in kJ/mol
             if work_submission.file_name in ["pka-nhlbi-1c"]:
+                # correct free energies into kcal/mol
+                # submission seemed to have used C_units = 5.69 for kJ/mol, so can divide by 4.186 to get kcal/mol
                 pKa_mean_pred = pKa_mean_pred/4.186
                 pKa_SEM_pred = pKa_SEM_pred/4.186
                 pKa_model_uncertainty = pKa_model_uncertainty/4.186
-
-                #convert to kcal/mol
-                pKa_mean_pred = pKa_mean_pred/1.36
-                pKa_SEM_pred = pKa_SEM_pred/1.36
-                pKa_model_uncertainty = pKa_model_uncertainty/1.36
 
             #If single transition states are opposite in sign from macro pKa, we assume they made a sign error
             if work_submission.file_name in ["pka-nhlbi-1c", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
@@ -1837,7 +1834,7 @@ if __name__ == '__main__':
                                                     pka.transition_from, pka.transition_to,
                                                     pka.pKa_bytitration, pka.pKa_bydG,
                                                     str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))
-
+    print("Experimental data: \n", experimental_data)
 
 
 

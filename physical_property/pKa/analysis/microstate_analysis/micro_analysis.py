@@ -7,7 +7,7 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 from pylab import rcParams
 from matplotlib import cm
-import joypy
+#import joypy
 
 
 
@@ -217,6 +217,8 @@ class pKaSubmissionCollection:
                 continue
             #print(submission.method_name)
             for mol_ID, series in submission.data.iterrows():
+                print("mol_ID",mol_ID)
+                print(goob)
                 ref_state = submission.data.loc[mol_ID, "Molecule ID"]
 
                 RFE_mean_pred_original = submission.data.loc[mol_ID, "relative free energy"]
@@ -361,7 +363,7 @@ if __name__ == '__main__':
         #plt.tight_layout()
 
         # Make ridge plot
-        fig, axes = joypy.joyplot(data=df, by=by, column=column, figsize=figsize, colormap=colormap, linewidth=1)
+        #fig, axes = joypy.joyplot(data=df, by=by, column=column, figsize=figsize, colormap=colormap, linewidth=1)
         # Add x-axis label
         axes[-1].set_xlabel(column)
 
@@ -378,7 +380,7 @@ if __name__ == '__main__':
         plt.tight_layout()
 
         # Make ridge plot
-        fig, axes = joypy.joyplot(data=df, by=by, column=column, figsize=figsize, colormap=colormap, linewidth=1, overlap=0)
+        #fig, axes = joypy.joyplot(data=df, by=by, column=column, figsize=figsize, colormap=colormap, linewidth=1, overlap=0)
         # Add x-axis label
         axes[-1].set_xlabel(column)
         plt.savefig(output_directory_path + "/" + "ridgeplot.pdf")
@@ -447,7 +449,211 @@ if __name__ == '__main__':
         plt.savefig(output_directory_path + "/" + fig_name+".pdf")
 
 
+    # =======
+    # Macro pKa calculation, adapted from David's email
+    # =======
 
+    import numpy as np
+    from scipy.special import logsumexp
+    from scipy.optimize import fsolve
+
+    # Compute beta and other constants
+    kB = 1.381 * 6.02214 / 1000.0  # [kJ/(mol K)]
+    beta = 1. / (kB * 300)  # [mol/kJ]
+    beta = beta * 4.186
+    C_unit = 1 / beta * np.log(10)
+
+    # Store in list of tupes of (state, relative free energy, charge).
+
+
+    # Test some Tielker/ECRISM cases -- note that these need their units changed before analysis
+    # state_details = [(3, 7.91 * C_unit, -1), (1, -6.66 * C_unit, -1), (2, -7.52 * C_unit, 0), (4, -12.08 * C_unit, 0),
+    #                 (5, -2.33 * C_unit, 1)]
+
+
+    # Let's look at molecule 42 as it's a little simpler
+    # state_details = [ (1, 0.54*C_unit, -1), (2, 0.3*C_unit, 1), (3, -5.05*C_unit, 0)]
+    # Tielker SM26:
+    # state_details = [ (1, 5.53*C_unit, -1), (3, 19.92*C_unit, -1), (2, 12.59*C_unit, 0), (4, 4.82*C_unit, 0), (5, 9.95*C_unit, 1)]
+    # Tielker SM27, to handle simple case:
+    # state_details = [ (1, 10.17*C_unit, -1)]
+
+    # Test some Beckstein/Iorga cases
+    # Molecule 25
+    # state_details = [ (1, -2.7, -1), (2, -2, 0), (3, 4.53, -1), (4, -5.75, 0), (5, 0.65, 1)]
+    # Beckstein/Iorga molecule 42
+    # state_details = [ (1, 0.15, -1), (2, 0.79, 1), (3, -1.95, 0)]
+
+    # Let's try the IEFPCM one for state 42
+    # state_details = [(1, 6.61, -1), (2, 14.25, 1)]
+
+
+    # Compute free energy as a function of pH for states
+    # WITHIN-charge transitions have same pH dependence
+    def DeltaG(pH, state, state_details):
+        for item in state_details:
+            if item[0] == state:
+                # 0 serves as the reference state; all transitions are away from 0.
+                if item[2] == -1:
+                    DeltaM = 1
+                elif item[2] == 1:
+                    DeltaM = -1
+                else:
+                    DeltaM = 0  # Hack to capture fact that pH dependence of states at same formal charge is same/cancels
+                # Compute value
+                return (item[1] - pH * DeltaM * C_unit)  # Gunner eq 3
+
+
+    # Compute populations for charge states (without normalization, due to laziness/since it'll drop out)
+    def pop_charge(pH, formal_charge, state_details):
+        free_energies = []
+        for item in state_details:
+            if item[2] == formal_charge:
+                free_energies.append(-beta * DeltaG(pH, item[0], state_details))
+        if formal_charge == 0:
+            free_energies.append(0 * pH)
+        return np.exp(logsumexp(free_energies))
+
+
+    # get G of each group
+    # Given a group of microstates, which share the same net charge in this case, what is the average free energy of this
+    # group?
+    def getG(msgroup):
+        # Input: msgroup
+        #     msgroup is a list of microstates
+        #     each microstate is a tuple: (moleculeID, RFE, formal_charge)
+        # Output:
+        #     canonical ensemble free energy of this group of microstates in unit Kcal/mol
+
+        # Get the normalized population (sum of P to be 1) based on Boltzmann distribution
+        Pi_raw = np.array([np.exp(-beta*ms[1]) for ms in msgroup])
+        Pi_norm = Pi_raw/sum(Pi_raw)
+
+        # Compose free energy of this group
+        # ref: https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)#Calculating_the_thermodynamic_total_energy
+        E = sum(np.array([ms[1] for ms in msgroup]) * Pi_norm)
+        TS = -sum(Pi_norm * np.log(Pi_norm))/beta
+        G = E - TS
+        return G
+
+    class Macro_pKa:
+        def __init__(self):
+            self.molecule = ""
+            self.transition_from = 0      # formal charge for a pKa, transition from
+            self.transition_to = 0        # formal charge for a pKa, transition to
+            self.pKa_bytitration = 0.0    # Macro-pKa calculated by titration method
+            self.pKa_bydG = 0.0           # Macro-pKa calculated by delta G method
+
+
+    def get_macropka(rfe_data):
+        # Input: rfe_data
+        #     rfe_data is a pandas table of rfe submission by one author.
+        #     each row is a molecule microstate. The columns contain state(ID), fre in Kcal/mol, charge, and other fields.
+        # Output:
+        #     A list of macro-pKas, in data structure defined by class Macro_pKa.
+
+        macropkas = []
+
+        # Extract each molecule from pandas table, only use three fields: "IT Tag", "total charge", and "pKa mean" (rfe)
+        molecules = {}
+        for index, row in rfe_data.iterrows():
+            SM = index
+            state = row["ID tag"]
+            charge = row["total charge"]
+            rfe = row["pKa mean"]
+
+            # Since one author will submit multiple molecules (SM25, SM26 etc), and one molecule has multiple rows for
+            # microstates, molecules are stored in a dictionary, indexed by the molecule name (SM25, SM26...) and have value
+            # as a list of microstates.
+            if SM in molecules:
+                molecules[SM].append((state, rfe, charge))
+            else:
+                molecules[SM] = [(state, rfe, charge)]
+
+        # Loop over molecules, convert to state_details
+        SM_names = [x for x in molecules.keys()]
+        SM_names.sort()
+        for sm_name in SM_names:
+            state_details = molecules[sm_name]
+            # state_details is a tuple in form of ('SM29_micro001', 9.88, -1)
+            # print(state_details)
+
+            # Figure out what formal charges are present in states
+            formal_charges = [info[2] for info in state_details]
+
+            #print(sm_name)
+
+            # group microstates into groups based their formal charge
+            msgroup_p2 = [state for state in state_details if state[2] == 2]   # microstates with formal charge +2
+            msgroup_p1 = [state for state in state_details if state[2] == 1]   # microstates with formal charge +1
+            msgroup_p0 = [state for state in state_details if state[2] == 0]   # microstates with formal charge 0
+            msgroup_p0.append(("reference state", 0, 0))                       # add back reference state
+            msgroup_n1 = [state for state in state_details if state[2] == -1]  # microstates with formal charge -1
+
+            # for reaction A -> B, assuming a proton release reaction that transits from high to low formal charge:
+            #     ΔGAB = (-1)(C_unit)(pH - pKaBA)
+            # In delta G method, A and B are no longer microstates, they are instead microstete groups with the same
+            # formal charges, but the theory still holds. Therefore when pH = 0, we have:
+            #     pKaBA = ΔGAB/C_unit
+
+            # Compute +2 to +1 transition
+            if 2 in formal_charges:
+                pka = Macro_pKa()
+                pka.molecule = sm_name.split("_")[0]
+                pka.transition_from = 2
+                pka.transition_to = 1
+
+                # titration method given my David's group
+                init_guess = -5
+                func_10 = lambda pH: (pop_charge(pH, 2, state_details) - pop_charge(pH, 1, state_details))
+                pH_solution_2to1 = fsolve(func_10, init_guess, factor=0.1)
+                pka.pKa_bytitration = pH_solution_2to1
+
+                # delta G method given by newbooks (Junjun Mao)
+                dG = getG(msgroup_p1) - getG(msgroup_p2)
+                pka.pKa_bydG = (dG / C_unit)
+
+                macropkas.append(pka)
+
+            # Compute +1 to 0 transition
+            if 1 in formal_charges:
+                pka = Macro_pKa()
+                pka.molecule = sm_name.split("_")[0]
+                pka.transition_from = 1
+                pka.transition_to = 0
+
+                # titration method given my David's group
+                init_guess = -5
+                func_10 = lambda pH: (pop_charge(pH, 1, state_details) - pop_charge(pH, 0, state_details))
+                pH_solution_1to0 = fsolve(func_10, init_guess, factor=0.1)
+                pka.pKa_bytitration = pH_solution_1to0
+
+                # delta G method given by newbooks (Junjun Mao)
+                dG = getG(msgroup_p0) - getG(msgroup_p1)
+                pka.pKa_bydG = (dG / C_unit)
+
+                macropkas.append(pka)
+
+            # Compute 0 to -1 transition
+            if -1 in formal_charges:
+                pka = Macro_pKa()
+                pka.molecule = sm_name.split("_")[0]
+                pka.transition_from = 0
+                pka.transition_to = -1
+
+                # titration method given my David's group
+                init_guess = 5
+                func_0neg1 = lambda pH: (pop_charge(pH, -1, state_details) - pop_charge(pH, 0, state_details))
+                pH_solution_0toneg1 = fsolve(func_0neg1, init_guess, factor=0.1)
+                pka.pKa_bytitration = pH_solution_0toneg1
+
+                # delta G method given by newbooks (Junjun Mao)
+                dG = getG(msgroup_n1) - getG(msgroup_p0)
+                pka.pKa_bydG = (dG / C_unit)
+
+                macropkas.append(pka)
+
+        return macropkas
     # ======================================================================================================================
     #
     # ======================================================================================================================
@@ -460,10 +666,9 @@ if __name__ == '__main__':
     # Load submissions data.
     submissions_RFE = load_submissions(pKa_SUBMISSIONS_DIR_PATH, user_map)
 
-
     collection_logP = pKaSubmissionCollection(submissions_RFE, output_directory_path, pKa_submission_collection_file_path, no_outliers = False)
     print(collection_logP.data)
-    collection_data = read_collection_file(collection_file_path = pKa_submission_collection_file_path)
+    '''collection_data = read_collection_file(collection_file_path = pKa_submission_collection_file_path)
 
 
 
@@ -495,7 +700,7 @@ if __name__ == '__main__':
 
 
 
-    '''# Repeat without outlier
+    # Repeat without outlier
     output_directory_path = "./plots"
     pKa_submission_collection_file_path = "{}/relative_microstate_FE_submissions_no_outlier.csv".format(output_directory_path)
 
@@ -530,4 +735,5 @@ if __name__ == '__main__':
 
     # Barplot of average FE predictions
     barplot(df=df4, output_directory_path=output_directory_path, figsize=(28,10), fig_name="barplot_average_FE_predictions_no_outlier")
+
 '''
