@@ -1569,15 +1569,42 @@ def DeltaG(pH, state, state_details):
             # Compute value
             return (item[1] - pH * DeltaM * C_unit)  # Gunner eq 3
 
+def DeltaG_SEM(pH, state, state_details):
+    for item in state_details:
+        if item[0] == state:
+            # 0 serves as the reference state; all transitions are away from 0.
+            if item[2] == -1:
+                DeltaM = 1
+            elif item[2] == 1:
+                DeltaM = -1
+            else:
+                DeltaM = 0  # Hack to capture fact that pH dependence of states at same formal charge is same/cancels
+            # Compute value
+            return (item[3] - pH * DeltaM * C_unit)
+
+def DeltaG_MU(pH, state, state_details):
+    for item in state_details:
+        if item[0] == state:
+            # 0 serves as the reference state; all transitions are away from 0.
+            if item[2] == -1:
+                DeltaM = 1
+            elif item[2] == 1:
+                DeltaM = -1
+            else:
+                DeltaM = 0  # Hack to capture fact that pH dependence of states at same formal charge is same/cancels
+            # Compute value
+            return (item[4] - pH * DeltaM * C_unit)
 
 # Compute populations for charge states (without normalization, due to laziness/since it'll drop out)
 def pop_charge(pH, formal_charge, state_details):
     free_energies = []
-    for item in state_details:
+    for item in state_details: #state_details [('SM42_micro001', 0.5304000000000001, -1, 0.0, 1.3872000000000002)
         if item[2] == formal_charge:
+            # item[0] = microstate ID (eg "SM45_micro001")
             free_energies.append(-beta * DeltaG(pH, item[0], state_details))
     if formal_charge == 0:
         free_energies.append(0 * pH)
+    #print("free_energies",free_energies)
     return np.exp(logsumexp(free_energies))
 
 
@@ -1597,6 +1624,9 @@ class Macro_pKa:
         self.transition_to = 0
         self.pKa_bytitration = 0.0
         self.pKa_bydG = 0.0
+        self.SEM = 0.0
+        self.MU = 0.0
+
 
 
 def get_macropka(rfe_data):
@@ -1610,10 +1640,22 @@ def get_macropka(rfe_data):
         state = row["ID tag"]
         charge = row["total charge"]
         rfe = row["pKa mean"]
+        sem = row["pKa SEM"]
+        model_uncertainty = row["pKa model uncertainty"]
+        #print("SEM",sem)
+        #print("model_uncertainty",model_uncertainty)
+
+
+        #print("SEM",sem)
+        #print("model_uncertainty",model_uncertainty)
+
+
         if SM in molecules:
-            molecules[SM].append((state, rfe, charge))
+            molecules[SM].append((state, rfe, charge, sem, model_uncertainty))
         else:
-            molecules[SM] = [(state, rfe, charge)]
+            molecules[SM] = [(state, rfe, charge, sem, model_uncertainty)]
+
+    #print("molecules",molecules) #{'SM25_micro000': [('SM25_micro001', -14.2664, -1, 0.0, 1.3872000000000002)
 
     # Loop over molecules, convert to state_details
     SM_names = [x for x in molecules.keys()]
@@ -1641,7 +1683,7 @@ def get_macropka(rfe_data):
 
 
         # Compute +2 to +1 transition
-        if 2 in formal_charges:
+        '''if 2 in formal_charges:
             pka = Macro_pKa()
             pka.molecule = sm_name.split("_")[0]
             pka.transition_from = 2
@@ -1653,14 +1695,14 @@ def get_macropka(rfe_data):
             pka.pKa_bytitration = pH_solution_2to1
 
             dG = getG(msgroup_p1) - getG(msgroup_p2)
-            print("msgroup_p1",msgroup_p1)
-            print("msgroup_p2",msgroup_p2)
+            #print("msgroup_p1",msgroup_p1)
+            #print("msgroup_p2",msgroup_p2)
             pka.pKa_bydG = (dG / C_unit)
 
-            macropkas.append(pka)
+            macropkas.append(pka)'''
 
         # Compute +1 to 0 transition
-        if 1 in formal_charges:
+        '''if 1 in formal_charges:
             pka = Macro_pKa()
             pka.molecule = sm_name.split("_")[0]
             pka.transition_from = 1
@@ -1675,7 +1717,7 @@ def get_macropka(rfe_data):
             dG = getG(msgroup_p0) - getG(msgroup_p1)
             pka.pKa_bydG = (dG / C_unit)
 
-            macropkas.append(pka)
+            macropkas.append(pka)'''
 
         # Compute 0 to -1 transition
         if -1 in formal_charges:
@@ -1685,9 +1727,15 @@ def get_macropka(rfe_data):
             pka.transition_to = -1
 
             init_guess = 5
+            #print("state_details",state_details[0][3])
             func_0neg1 = lambda pH: (pop_charge(pH, -1, state_details) - pop_charge(pH, 0, state_details))
             pH_solution_0toneg1 = fsolve(func_0neg1, init_guess, factor=0.1)
             pka.pKa_bytitration = pH_solution_0toneg1
+
+            pka.SEM = state_details[0][3]
+            pka.MU = state_details[0][4]
+
+
 
             # dG method
             dG = getG(msgroup_n1) - getG(msgroup_p0)
@@ -1714,8 +1762,7 @@ if __name__ == '__main__':
     # Read experimental data.
     with open(EXPERIMENTAL_DATA_FILE_PATH, 'r') as f:
         # experimental_data = pd.read_json(f, orient='index')
-        names = ('Molecule ID', 'pKa mean', 'pKa SEM',
-                 'Assay Type', 'Isomeric SMILES')
+        names = ('Molecule ID', 'pKa mean', 'pKa SEM', 'Assay Type', 'Isomeric SMILES')
         experimental_data = pd.read_csv(f, names=names, skiprows=1)
 
     # Convert numeric values to dtype float.
@@ -1767,27 +1814,26 @@ if __name__ == '__main__':
 
     # Load submissions data.
     submissions_RFE = load_submissions(pKa_SUBMISSIONS_DIR_PATH, user_map)
+    #print(type(submissions_RFE))
 
     # Loop through each submission, convert relative FE's to micro pKas, then convert to macro pKas
     for submission in submissions_RFE:
-        original_submission = submission
-        work_submission = submission
-        #print("\n"+work_submission.file_name+"\n")
-        #print(work_submission.data)
+        sub = submission.data
         #reset the index so that each prediction can be accessed individually (without having to rearrange reference state and microstate)
-        work_submission.data=work_submission.data.rename_axis('Molecule ID').reset_index()
-        for mol_ID, series in work_submission.data.iterrows():
-            pKa_mean_pred = work_submission.data.loc[mol_ID, "pKa mean"]
-            pKa_SEM_pred = work_submission.data.loc[mol_ID, "pKa SEM"]
-            pKa_model_uncertainty =  work_submission.data.loc[mol_ID, "pKa model uncertainty"]
+        submission.data=submission.data.rename_axis('Molecule ID').reset_index()
+        for mol_ID, series in submission.data.iterrows():
+            #print(submission.data.loc[mol_ID, "Molecule ID"])
+            pKa_mean_pred = submission.data.loc[mol_ID, "pKa mean"]
+            pKa_SEM_pred = submission.data.loc[mol_ID, "pKa SEM"]
+            pKa_model_uncertainty =  submission.data.loc[mol_ID, "pKa model uncertainty"]
 
-            if work_submission.file_name in ["pKa-ECRISM-1", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+            if submission.file_name in ["pKa-ECRISM-1", "pKa-VA-2-charge-correction", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
                 pKa_mean_pred = pKa_mean_pred*1.36 #convert submission to kcal/mol
                 pKa_SEM_pred = pKa_SEM_pred*1.36
                 pKa_model_uncertainty = pKa_model_uncertainty*1.36
 
             # fix submission which seems to be in kJ/mol
-            if work_submission.file_name in ["pka-nhlbi-1c"]:
+            if submission.file_name in ["pka-nhlbi-1c"]:
                 # correct free energies into kcal/mol
                 # submission seemed to have used C_units = 5.69 for kJ/mol, so can divide by 4.186 to get kcal/mol
                 pKa_mean_pred = pKa_mean_pred/4.186
@@ -1795,25 +1841,82 @@ if __name__ == '__main__':
                 pKa_model_uncertainty = pKa_model_uncertainty/4.186
 
             #If single transition states are opposite in sign from macro pKa, we assume they made a sign error
-            if work_submission.file_name in ["pka-nhlbi-1c", "pKa-VA-2", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+            if submission.file_name in [ "pKa-VA-2-charge-correction","pka-nhlbi-1c", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
                 #fix sign error
                 pKa_mean_pred = pKa_mean_pred*-1
-                work_submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
+                submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
                 # update values
 
-            work_submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
-            work_submission.data.loc[mol_ID, "pKa SEM"] = pKa_SEM_pred
-            work_submission.data.loc[mol_ID, "pKa model uncertainty"] = pKa_model_uncertainty
+            submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
+            submission.data.loc[mol_ID, "pKa SEM"] = pKa_SEM_pred
+            submission.data.loc[mol_ID, "pKa model uncertainty"] = pKa_model_uncertainty
+            print("submission",submission.data)
+
+        #Columns: [Molecule ID, ID tag, total charge, pKa mean, pKa SEM, pKa model uncertainty]
+        cleared_sub = submission.data[0:0]
+        del cleared_sub['ID tag']
+        del cleared_sub['total charge']
+        submission.data=submission.data.set_index('Molecule ID')
+        macropkas = get_macropka(submission.data)
+
+        print(submission.participant)
+        for pka in macropkas:
+            print(pka.molecule, pka.pKa_bytitration, pka.SEM, pka.MU)
+            cleared_sub = cleared_sub.append({"Molecule ID": str(pka.molecule),
+                                              "pKa mean": pka.pKa_bytitration[0]},
+                                              ignore_index = True)
+
+        #print(cleared_sub)
+
+
+
+
+        print(poop)
+
+
 
         # set the index to the reference state/"molecule ID"
-        work_submission.data=work_submission.data.set_index('Molecule ID')
-        #print("AFTER\n",work_submission.data)
+        #submission.data=submission.data.set_index('Molecule ID')
+
+        '''print("subission",submission.data)
+
+        # have df with mol id, tag, charge, rfe, rfe sem, and model uncertainty
+
+        # get names of indexes for which total charge has a value of 1
+        #index_names1 = submission.data[ submission.data['total charge'] == 1 ].index
+        #submission.data.drop(index_names3, inplace = True)
+        macropkas = get_macropka(submission.data)
+        for pka in macropkas:
+            print(pka.molecule, pka.pKa_bytitration)
+        #print(index_names)
+        print("subission",submission.data)
+        print(poop)'''
 
         # Transform into Pandas DataFrame.
-        #submission.data = pd.DataFrame(data=work_submission.data)
+        #submission.data = pd.DataFrame(data=submission.data)
 
         # Convert to macro pKas
-        '''with open("pKa_method_output.csv", "a") as pKafile:
+
+        print("______________________________________")
+        print("\n"+submission.participant+"\n")
+        #print("Molecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
+        #print("Submission dataframe \n", submission.data)
+        # Compute macro pKa with titration method and delta G method. -- Yingying Zhang, reviewed by Junjun Mao
+        macropkas = get_macropka(submission.data)
+        for pka in macropkas:
+            #print(pka.molecule)
+            print("%6s    %2d   %2d   %8.3f %8.3f   %s" %(pka.molecule,
+                                                    pka.transition_from, pka.transition_to,
+                                                    pka.pKa_bytitration, pka.pKa_bydG,
+                                                    str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))
+        #print(submission.data)
+        #submission.data.loc[mol_ID, "Molecule ID"] =
+
+    #print("Experimental data: \n", experimental_data)
+
+
+
+        with open("pKa_sign_units_corrected_1_to_0_transition.csv", "a") as pKafile:
             pKafile.write("\n______________________________________")
             pKafile.write("\n"+submission.participant)
             pKafile.write("\nMolecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
@@ -1822,22 +1925,7 @@ if __name__ == '__main__':
                 pKafile.write("\n%6s    %2d   %2d   %8.3f %8.3f   %s" %(pka.molecule,
                                                         pka.transition_from, pka.transition_to,
                                                         pka.pKa_bytitration, pka.pKa_bydG,
-                                                        str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))'''
-        print("______________________________________")
-        print("\n"+submission.participant+"\n")
-        print("Molecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
-        #print("Submission dataframe \n", submission.data)
-        # Compute macro pKa with titration method and delta G method. -- Yingying Zhang, reviewed by Junjun Mao
-        macropkas = get_macropka(submission.data)
-        for pka in macropkas:
-            print("%6s    %2d   %2d   %8.3f %8.3f   %s" %(pka.molecule,
-                                                    pka.transition_from, pka.transition_to,
-                                                    pka.pKa_bytitration, pka.pKa_bydG,
-                                                    str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))
-    print("Experimental data: \n", experimental_data)
-
-
-
+                                                        str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))
 
 
 
