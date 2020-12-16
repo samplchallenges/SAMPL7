@@ -72,7 +72,7 @@ def kendall_tau(data):
 def compute_bootstrap_statistics(samples, stats_funcs, percentile=0.95, n_bootstrap_samples=1000):
     """Compute bootstrap confidence interval for the given statistics functions."""
     # Handle case where only a single function is passed.
-    #print("SAMPLES:\n", samples)
+    #print("\nSAMPLES:\n", samples)
 
     try:
         len(stats_funcs)
@@ -85,9 +85,10 @@ def compute_bootstrap_statistics(samples, stats_funcs, percentile=0.95, n_bootst
     # Generate bootstrap statistics.
     bootstrap_samples_statistics = np.zeros((len(statistics), n_bootstrap_samples))
     for bootstrap_sample_idx in range(n_bootstrap_samples):
-        samples_indices = np.random.randint(low=0, high=len(samples), size=len(samples))
-        for stats_func_idx, stats_func in enumerate(stats_funcs):
-            bootstrap_samples_statistics[stats_func_idx][bootstrap_sample_idx] = stats_func(samples[samples_indices])
+        samples_indices = np.random.randint(low=0, high=len(samples), size=len(samples)) # picks X num of new samples to use
+        for stats_func_idx, stats_func in enumerate(stats_funcs): #go through each stat
+            bootstrap_samples_statistics[stats_func_idx][bootstrap_sample_idx] = stats_func(samples[samples_indices])#compute new stat
+
 
     # Compute confidence intervals.
     percentile_index = int(np.floor(n_bootstrap_samples * (1 - percentile) / 2)) - 1
@@ -229,6 +230,7 @@ def getQQdata(calc, expt, dcalc, dexpt, boot_its):
     slopes: Erros Slope (ES) of line fit to QQ-plot of bootstrapped datapoints
     """
     integral_range, integral = compute_range_table()
+    #print("calc, expt, dcalc, dexpt, integral_range, integral\n",calc, expt, dcalc, dexpt, integral_range, integral)
     X, Y = fracfound_vs_error(calc, expt, dcalc, dexpt, integral_range, integral)
     xtemp = X[:, np.newaxis]
     coeff, _, _, _ = np.linalg.lstsq(xtemp, Y,rcond=-1)
@@ -398,7 +400,7 @@ def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_lab
     # Bar colors
     if color_label == "category":
         #category_list = ["Physical", "Empirical", "Mixed", "Other"]
-        category_list = ["Physical (MM)", "Empirical", "Physical (QM)"]#["Physical", "Empirical"]
+        category_list = ["QM", "QM+LEC", "QSPR/ML"]#["Physical", "Empirical"]
     #elif color_label == "reassigned_category":
         #category_list = ["Physical (MM)", "Empirical", "Mixed", "Physical (QM)"]
         #category_list = ["Physical (MM)", "Empirical", "Physical (QM)"]
@@ -448,9 +450,9 @@ def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_lab
     # create legend
     from matplotlib.lines import Line2D
     if color_label == 'category':
-        custom_lines = [Line2D([0], [0], color=bar_color_dict["Physical (MM)"], lw=5),
-                        Line2D([0], [0], color=bar_color_dict["Empirical"], lw=5),
-                        Line2D([0], [0], color=bar_color_dict["Physical (QM)"], lw=5)]
+        custom_lines = [Line2D([0], [0], color=bar_color_dict["QM"], lw=5),
+                        Line2D([0], [0], color=bar_color_dict["QM+LEC"], lw=5),
+                        Line2D([0], [0], color=bar_color_dict["QSPR/ML"], lw=5)]
                         #Line2D([0], [0], color=bar_color_dict["Mixed"], lw=5),
                         #Line2D([0], [0], color=bar_color_dict["Other"], lw=5)]
     #elif color_label == 'reassigned_category':
@@ -557,8 +559,6 @@ def makeQQplot(X, Y, slope, title, xLabel ="Expected fraction within range" , yL
         # Adjust spacing then save and close figure
         plt.savefig(fileName)
         plt.close(fig1)
-## other
-
 
 
 def name_to_filename(id):
@@ -693,6 +693,22 @@ class SamplSubmission:
         # Concatenate the two columns into a single dataframe.
         return pd.concat([experimental_series, submission_series], axis=1)
 
+    @classmethod
+    def _create_single_dataframe(cls, column_name, submission_data):
+        """Create a single dataframe with submission and experimental data."""
+        # Filter only the systems IDs in this submissions.
+
+
+        #experimental_data = experimental_data[experimental_data.index.isin(submission_data.index)] # match by column index
+        # Fix the names of the columns for labelling.
+        submission_series = submission_data[column_name]
+        #submission_series.name += ' (calc)'
+        #experimental_series = experimental_data[column_name]
+        #experimental_series.name += ' (expt)'
+
+        # Concatenate the two columns into a single dataframe.
+        return pd.DataFrame(submission_series)#, axis=1) #pd.concat([submission_series], axis=1)
+
 # =============================================================================
 # pKa PREDICTION CHALLENGE
 # =============================================================================
@@ -735,20 +751,13 @@ class pKaSubmission(SamplSubmission):
                                     "pKa mean",
                                     "pKa SEM",
                                     "pKa model uncertainty")}
-    '''CSV_SECTIONS = {"Predictions": ("ID tag",
-                                    "Molecule ID",
-                                    "total charge",
-                                    "pKa mean",
-                                    "pKa SEM",
-                                    "pKa model uncertainty")}
-                                    #"SMILES of extra microstate")}'''
 
 
     def __init__(self, file_path, user_map):
         super().__init__(file_path, user_map)
 
         file_name = os.path.splitext(os.path.basename(file_path))[0]
-        print("file_name: \n", file_name)
+        #print("file_name: \n", file_name)
         file_data = file_name.split('-')
 
         # Load predictions.
@@ -921,26 +930,13 @@ class pKaSubmissionCollection:
                     print(f"Error: {submission.participant} submitted multiple ranked submissions.")
                     continue
 
-
-
             for mol_ID, series in submission.data.iterrows():
-                print("mol_ID",mol_ID)
+                #print("mol_ID",mol_ID)
                 pKa_mean_exp = experimental_data.loc[mol_ID, 'pKa mean']
                 pKa_SEM_exp = experimental_data.loc[mol_ID, 'pKa SEM']
-
-
-                '''#Convert dG predictions to pKas (skip Ref/NULL)
-                if "REF" in submission.method_name or "NULL" in submission.method_name:
-                    pKa_mean_pred = submission.data.loc[mol_ID, "pKa mean"]
-                else:
-                    self.data = sections['Predictions']
-                    print("self.data before: \n",self.data)
-                    self.data["pKa mean"] = self.data["pKa mean"].apply(get_pKa)
-                    print("self.data after: \n",self.data)'''
-
                 pKa_mean_pred = submission.data.loc[mol_ID, "pKa mean"]
                 pKa_SEM_pred = submission.data.loc[mol_ID, "pKa SEM"]
-                print("pKa_mean_pred \n",pKa_mean_pred)
+                #print("pKa_mean_pred \n",pKa_mean_pred)
 
                 pKa_model_uncertainty =  submission.data.loc[mol_ID, "pKa model uncertainty"]
                 ranked = submission.ranked
@@ -950,7 +946,6 @@ class pKaSubmissionCollection:
                     'file name': submission.file_name,
                     'category': submission.category,
                     'Molecule ID': mol_ID,
-                    #'dG (calc)': dG_mean_pred,
                     'pKa (calc)': pKa_mean_pred,
                     'pKa SEM (calc)': pKa_SEM_pred,
                     'pKa (exp)': pKa_mean_exp,
@@ -973,19 +968,20 @@ class pKaSubmissionCollection:
         self.data.to_csv(pKa_submission_collection_file_path)
 
     def generate_correlation_plots(self):
+
         # pKa correlation plots.
-        output_dir_path = os.path.join(self.output_directory_path,
-                                       self.pKa_CORRELATION_PLOT_BY_METHOD_PATH_DIR)
+        output_dir_path = os.path.join(self.output_directory_path, self.pKa_CORRELATION_PLOT_BY_METHOD_PATH_DIR)
+
         os.makedirs(output_dir_path, exist_ok=True)
-        print("self.data \n",self.data)
-        print(print("self.data.method_name\n",self.data.method_name))
+
         for method_name in self.data.method_name.unique():
+
             # Skip NULL0 submission
             if "NULL" in method_name:
                 continue
 
             data = self.data[self.data.method_name == method_name]
-            print("data \n",data)
+
             title = '{}'.format(method_name)
 
             plt.close('all')
@@ -998,9 +994,9 @@ class pKaSubmissionCollection:
             plt.savefig(output_path)
 
     def generate_correlation_plots_with_SEM(self):
+
         # pKa correlation plots.
-        output_dir_path = os.path.join(self.output_directory_path,
-                                       self.pKa_CORRELATION_PLOT_WITH_SEM_BY_METHOD_PATH_DIR)
+        output_dir_path = os.path.join(self.output_directory_path, self.pKa_CORRELATION_PLOT_WITH_SEM_BY_METHOD_PATH_DIR)
         os.makedirs(output_dir_path, exist_ok=True)
         for method_name in self.data.method_name.unique():
 
@@ -1340,13 +1336,13 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
         # Plot RMSE, MAE, Kendall's Tau, and R-squared comparison plots for each category separately
         #category_list = ["Physical","Empirical", "Mixed", "Other"]
         #category_list = ["Physical (MM)", "Empirical", "Mixed", "Physical (QM)"] # Reassigned categories
-        category_list = ["Physical (MM)", "Empirical", "Physical (QM)"] # Reassigned categories
+        category_list = ["QM", "QM+LEC", "QSPR/ML"]
 
         # New labels for file naming for reassigned categories
-        category_path_label_dict = {"Physical (MM)": "Physical_MM",
-                                               "Empirical": "Empirical",
-                                               #"Mixed": "Mixed",
-                                               "Physical (QM)": "Physical_QM"}
+        category_path_label_dict = {"QM": "QM",
+                                    "QM+LEC": "QM_LEC",
+                                    #"Mixed": "Mixed",
+                                    "QSPR/ML": "QSPR_ML"}
 
 
         for category in category_list:
@@ -1390,11 +1386,11 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
             plt.savefig(directory_path + "/Rsquared_vs_method_plot_for_{}_category.pdf".format(category_path_label_dict[category]))
 
 
-        # Create plots for Physical methods (both MM and QM methods)
+        # Create plots for Physical methods (both "QM" and "QM+LEC" methods)
 
-        df_statistics_MM = df_statistics.loc[df_statistics['category'] == "Physical (MM)"]
-        df_statistics_QM = df_statistics.loc[df_statistics['category'] == "Physical (QM)"]
-        df_statistics_physical = pd.concat([df_statistics_MM, df_statistics_QM])
+        df_statistics_QM = df_statistics.loc[df_statistics['category'] == "QM"] # Reassigned categories ["QM", "QM+LEC", "QSPR/ML"]
+        df_statistics_QM_LEC = df_statistics.loc[df_statistics['category'] == "QM+LEC"]
+        df_statistics_physical = pd.concat([df_statistics_QM, df_statistics_QM_LEC])
 
         # RMSE comparison plot
         # Reorder based on RMSE value
@@ -1406,7 +1402,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                    y_upper_label="RMSE_upper_bound", color_label="category",
                                                    figsize=(28, 10))
         plt.ylim(0.0, 5.0)
-        plt.savefig(directory_path + "/RMSE_vs_method_plot_physical_methoods_colored_by_method_category.pdf")
+        plt.savefig(directory_path + "/RMSE_vs_method_plot_QM_and_QMLEC_methods_colored_by_method_category.pdf")
 
         # Do same graph with colorizing by reference calculation
         if not ignore_refcalcs:
@@ -1416,7 +1412,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                        y_upper_label="RMSE_upper_bound", color_label="type",
                                                        figsize=(28, 10))
             plt.ylim(0.0, 5.0)
-            plt.savefig(directory_path + "/RMSE_vs_method_plot_physical_methods_colored_by_type.pdf")
+            plt.savefig(directory_path + "/RMSE_vs_method_plot_QM_and_QMLEC_methods_colored_by_type.pdf")
 
         # MAE comparison plot
         # Reorder based on MAE value
@@ -1428,7 +1424,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                    y_upper_label="MAE_upper_bound", color_label="category",
                                                    figsize=(28, 10))
         plt.ylim(0.0, 5.0)
-        plt.savefig(directory_path + "/MAE_vs_method_plot_physical_methoods_colored_by_method_category.pdf")
+        plt.savefig(directory_path + "/MAE_vs_method_plot_QM_and_QMLEC_methods_colored_by_method_category.pdf")
 
         # Do same graph with colorizing by reference calculation
         if not ignore_refcalcs:
@@ -1438,7 +1434,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                        y_upper_label="MAE_upper_bound", color_label="type",
                                                        figsize=(28, 10))
             plt.ylim(0.0, 5.0)
-            plt.savefig(directory_path + "/MAE_vs_method_plot_physical_methods_colored_by_type.pdf")
+            plt.savefig(directory_path + "/MAE_vs_method_plot_QM_and_QMLEC_methods_colored_by_type.pdf")
 
         # Kendall's Tau comparison plot
         # Reorder based on Tau value
@@ -1449,7 +1445,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                    y_lower_label="kendall_tau_lower_bound",
                                                    y_upper_label="kendall_tau_upper_bound", color_label="category",
                                                    figsize=(28, 10))
-        plt.savefig(directory_path + "/kendall_tau_vs_method_plot_physical_methoods_colored_by_method_category.pdf")
+        plt.savefig(directory_path + "/kendall_tau_vs_method_plot_QM_and_QMLEC_methods_colored_by_method_category.pdf")
 
         # Do same graph with colorizing by reference calculation
         if not ignore_refcalcs:
@@ -1458,7 +1454,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                        y_lower_label="kendall_tau_lower_bound",
                                                        y_upper_label="kendall_tau_upper_bound", color_label="type",
                                                        figsize=(28, 10))
-            plt.savefig(directory_path + "/kendall_tau_vs_method_plot_physical_methods_colored_by_type.pdf")
+            plt.savefig(directory_path + "/kendall_tau_vs_method_plot_QM_and_QMLEC_methods_colored_by_type.pdf")
 
 
         # R-squared comparison plot
@@ -1471,7 +1467,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                    y_upper_label="R2_upper_bound", color_label="category",
                                                    figsize=(28, 10))
         plt.ylim(0, 1.0)
-        plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methoods_colored_by_method_category.pdf")
+        plt.savefig(directory_path + "/Rsquared_vs_method_plot_QM_and_QMLEC_methods_colored_by_method_category.pdf")
 
         # Do same graph with colorizing by reference calculation
         if not ignore_refcalcs:
@@ -1481,7 +1477,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                        y_upper_label="R2_upper_bound", color_label="type",
                                                        figsize=(28, 10))
             plt.ylim(0, 1.0)
-            plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methods_colored_by_type.pdf")
+            plt.savefig(directory_path + "/Rsquared_vs_method_plot_QM_and_QMLEC_methods_colored_by_type.pdf")
 
 
 
@@ -1557,6 +1553,7 @@ C_unit = 1 / beta * np.log(10)
 # Compute free energy as a function of pH for states
 # WITHIN-charge transitions have same pH dependence
 def DeltaG(pH, state, state_details):
+    #print("state_details",state_details)
     for item in state_details:
         if item[0] == state:
             # 0 serves as the reference state; all transitions are away from 0.
@@ -1567,9 +1564,12 @@ def DeltaG(pH, state, state_details):
             else:
                 DeltaM = 0  # Hack to capture fact that pH dependence of states at same formal charge is same/cancels
             # Compute value
+            #if "SM25" in item[0]:
+                #print("state_details",state_details)
+                #print(item[1] - pH * DeltaM * C_unit)
             return (item[1] - pH * DeltaM * C_unit)  # Gunner eq 3
 
-def DeltaG_SEM(pH, state, state_details):
+'''def DeltaG_SEM(pH, state, state_details):
     for item in state_details:
         if item[0] == state:
             # 0 serves as the reference state; all transitions are away from 0.
@@ -1593,20 +1593,37 @@ def DeltaG_MU(pH, state, state_details):
             else:
                 DeltaM = 0  # Hack to capture fact that pH dependence of states at same formal charge is same/cancels
             # Compute value
-            return (item[4] - pH * DeltaM * C_unit)
+            return (item[4] - pH * DeltaM * C_unit)'''
 
 # Compute populations for charge states (without normalization, due to laziness/since it'll drop out)
 def pop_charge(pH, formal_charge, state_details):
     free_energies = []
     for item in state_details: #state_details [('SM42_micro001', 0.5304000000000001, -1, 0.0, 1.3872000000000002)
         if item[2] == formal_charge:
-            # item[0] = microstate ID (eg "SM45_micro001")
             free_energies.append(-beta * DeltaG(pH, item[0], state_details))
     if formal_charge == 0:
         free_energies.append(0 * pH)
     #print("free_energies",free_energies)
     return np.exp(logsumexp(free_energies))
 
+'''def pop_charge_SEM(pH, formal_charge, state_details):
+    SEMs = []
+    for item in state_details: #state_details [('SM42_micro001', 0.5304000000000001, -1, 0.0, 1.3872000000000002)
+        if item[2] == formal_charge:
+            SEMs.append(-beta * DeltaG_SEM(pH, item[0], state_details))
+            #
+    if formal_charge == 0:
+        SEMs.append(0 * pH)
+    return np.exp(logsumexp(SEMs))
+
+def pop_charge_MU(pH, formal_charge, state_details):
+    model_uncertainties = []
+    for item in state_details: #state_details [('SM42_micro001', 0.5304000000000001, -1, 0.0, 1.3872000000000002)
+        if item[2] == formal_charge:
+            model_uncertainties.append(-beta * DeltaG_MU(pH, item[0], state_details))
+    if formal_charge == 0:
+        model_uncertainties.append(0 * pH)
+    return np.exp(logsumexp(model_uncertainties))'''
 
 # get G of each group
 def getG(msgroup):
@@ -1682,8 +1699,8 @@ def get_macropka(rfe_data):
         # Therefore when pH = 0, we have pKaBA = ΔGAB/C_unit
 
 
-        # Compute +2 to +1 transition
-        '''if 2 in formal_charges:
+        '''# Compute +2 to +1 transition
+        if 2 in formal_charges:
             pka = Macro_pKa()
             pka.molecule = sm_name.split("_")[0]
             pka.transition_from = 2
@@ -1699,10 +1716,10 @@ def get_macropka(rfe_data):
             #print("msgroup_p2",msgroup_p2)
             pka.pKa_bydG = (dG / C_unit)
 
-            macropkas.append(pka)'''
+            macropkas.append(pka)
 
         # Compute +1 to 0 transition
-        '''if 1 in formal_charges:
+        if 1 in formal_charges:
             pka = Macro_pKa()
             pka.molecule = sm_name.split("_")[0]
             pka.transition_from = 1
@@ -1726,14 +1743,27 @@ def get_macropka(rfe_data):
             pka.transition_from = 0
             pka.transition_to = -1
 
+            pka.SEM = state_details[0][3]
+            pka.MU = state_details[0][4]
+
             init_guess = 5
-            #print("state_details",state_details[0][3])
+
             func_0neg1 = lambda pH: (pop_charge(pH, -1, state_details) - pop_charge(pH, 0, state_details))
             pH_solution_0toneg1 = fsolve(func_0neg1, init_guess, factor=0.1)
             pka.pKa_bytitration = pH_solution_0toneg1
+            #print(pka.pKa_bytitration)
 
-            pka.SEM = state_details[0][3]
-            pka.MU = state_details[0][4]
+            '''func_0neg1_SEM = lambda pH: (pop_charge_SEM(pH, -1, state_details) - pop_charge_SEM(pH, 0, state_details))
+            pH_solution_0toneg1_SEM = fsolve(func_0neg1_SEM, init_guess, factor=0.1)
+            pka.SEM = pH_solution_0toneg1_SEM
+            print(pka.SEM)
+
+            func_0neg1_MU = lambda pH: (pop_charge_MU(pH, -1, state_details) - pop_charge_MU(pH, 0, state_details))
+            pH_solution_0toneg1_MU = fsolve(func_0neg1_MU, init_guess, factor=0.1)
+            pka.MU = pH_solution_0toneg1_MU
+            print(pka.MU)'''
+
+
 
 
 
@@ -1827,10 +1857,17 @@ if __name__ == '__main__':
             pKa_SEM_pred = submission.data.loc[mol_ID, "pKa SEM"]
             pKa_model_uncertainty =  submission.data.loc[mol_ID, "pKa model uncertainty"]
 
+
+            # Compute beta and other constants
+            kB = 1.381*6.02214/1000.0 # [kJ/(mol K)]
+            beta = 1./(kB*300) # [mol/kJ]
+            beta = beta*4.186
+            C_unit = 1/beta*np.log(10)
+
             if submission.file_name in ["pKa-ECRISM-1", "pKa-VA-2-charge-correction", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
-                pKa_mean_pred = pKa_mean_pred*1.36 #convert submission to kcal/mol
-                pKa_SEM_pred = pKa_SEM_pred*1.36
-                pKa_model_uncertainty = pKa_model_uncertainty*1.36
+                pKa_mean_pred = pKa_mean_pred*C_unit #convert submission to kcal/mol
+                pKa_SEM_pred = pKa_SEM_pred*C_unit
+                pKa_model_uncertainty = pKa_model_uncertainty*C_unit
 
             # fix submission which seems to be in kJ/mol
             if submission.file_name in ["pka-nhlbi-1c"]:
@@ -1841,7 +1878,7 @@ if __name__ == '__main__':
                 pKa_model_uncertainty = pKa_model_uncertainty/4.186
 
             #If single transition states are opposite in sign from macro pKa, we assume they made a sign error
-            if submission.file_name in [ "pKa-VA-2-charge-correction","pka-nhlbi-1c", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+            if submission.file_name in [ "pKa-VA-2-charge-correction", "pka-nhlbi-1c", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
                 #fix sign error
                 pKa_mean_pred = pKa_mean_pred*-1
                 submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
@@ -1850,73 +1887,34 @@ if __name__ == '__main__':
             submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
             submission.data.loc[mol_ID, "pKa SEM"] = pKa_SEM_pred
             submission.data.loc[mol_ID, "pKa model uncertainty"] = pKa_model_uncertainty
-            print("submission",submission.data)
+            #print("submission",submission.data)
 
         #Columns: [Molecule ID, ID tag, total charge, pKa mean, pKa SEM, pKa model uncertainty]
         cleared_sub = submission.data[0:0]
         del cleared_sub['ID tag']
         del cleared_sub['total charge']
         submission.data=submission.data.set_index('Molecule ID')
+
+
         macropkas = get_macropka(submission.data)
-
-        print(submission.participant)
-        for pka in macropkas:
-            print(pka.molecule, pka.pKa_bytitration, pka.SEM, pka.MU)
-            cleared_sub = cleared_sub.append({"Molecule ID": str(pka.molecule),
-                                              "pKa mean": pka.pKa_bytitration[0]},
-                                              ignore_index = True)
-
-        #print(cleared_sub)
-
-
-
-
-        print(poop)
-
-
-
-        # set the index to the reference state/"molecule ID"
-        #submission.data=submission.data.set_index('Molecule ID')
-
-        '''print("subission",submission.data)
-
-        # have df with mol id, tag, charge, rfe, rfe sem, and model uncertainty
-
-        # get names of indexes for which total charge has a value of 1
-        #index_names1 = submission.data[ submission.data['total charge'] == 1 ].index
-        #submission.data.drop(index_names3, inplace = True)
-        macropkas = get_macropka(submission.data)
-        for pka in macropkas:
-            print(pka.molecule, pka.pKa_bytitration)
-        #print(index_names)
-        print("subission",submission.data)
-        print(poop)'''
-
-        # Transform into Pandas DataFrame.
-        #submission.data = pd.DataFrame(data=submission.data)
-
-        # Convert to macro pKas
-
-        print("______________________________________")
         print("\n"+submission.participant+"\n")
-        #print("Molecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
-        #print("Submission dataframe \n", submission.data)
-        # Compute macro pKa with titration method and delta G method. -- Yingying Zhang, reviewed by Junjun Mao
-        macropkas = get_macropka(submission.data)
+        print("Molecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
         for pka in macropkas:
-            #print(pka.molecule)
+            #print("Molecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
             print("%6s    %2d   %2d   %8.3f %8.3f   %s" %(pka.molecule,
                                                     pka.transition_from, pka.transition_to,
                                                     pka.pKa_bytitration, pka.pKa_bydG,
                                                     str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))
-        #print(submission.data)
-        #submission.data.loc[mol_ID, "Molecule ID"] =
+            cleared_sub = cleared_sub.append({"Molecule ID": str(pka.molecule),
+                                              "pKa mean": pka.pKa_bytitration[0],
+                                              "pKa SEM": pka.SEM,
+                                              "pKa model uncertainty":pka.MU},
+                                              ignore_index = True)
 
-    #print("Experimental data: \n", experimental_data)
+            #print(cleared_sub)
 
-
-
-        with open("pKa_sign_units_corrected_1_to_0_transition.csv", "a") as pKafile:
+        submission.data = cleared_sub.set_index('Molecule ID')
+        '''with open("pKa_check.csv", "a") as pKafile:
             pKafile.write("\n______________________________________")
             pKafile.write("\n"+submission.participant)
             pKafile.write("\nMolecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
@@ -1926,6 +1924,15 @@ if __name__ == '__main__':
                                                         pka.transition_from, pka.transition_to,
                                                         pka.pKa_bytitration, pka.pKa_bydG,
                                                         str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))
+
+            print("%6s    %2d   %2d   %8.3f %8.3f   %s" %(pka.molecule,
+                                                    pka.transition_from, pka.transition_to,
+                                                    pka.pKa_bytitration, pka.pKa_bydG,
+                                                    str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))'''
+
+    # Transform into Pandas DataFrame.
+    #submission.data = pd.DataFrame(data=submission.data)
+
 
 
 
@@ -1938,15 +1945,15 @@ if __name__ == '__main__':
     # Perform the analysis
 
 
-    '''output_directory_path='./analysis_outputs_all_submissions'
+    output_directory_path='./analysis_outputs_all_submissions'
     pKa_submission_collection_file_path = '{}/pKa_submission_collection.csv'.format(output_directory_path)
 
     collection_pKa = pKaSubmissionCollection(submissions_RFE, experimental_data,
                                                output_directory_path,pKa_submission_collection_file_path,
                                                ignore_refcalcs = False, ranked_only = False, allow_multiple = True)
 
-    print("collection_pKa \n", collection_pKa)'''
-    '''
+    print("collection_pKa \n", collection_pKa)
+
     # Generate plots and tables.
     for collection in [collection_pKa]:
         collection.generate_correlation_plots()
@@ -1960,7 +1967,7 @@ if __name__ == '__main__':
         shutil.rmtree('{}/StatisticsTables'.format(output_directory_path))
 
 
-    for submissions, type in zip([submissions_pKa], ['pKa']):
+    for submissions, type in zip([submissions_RFE], ['pKa']):
         generate_statistics_tables(submissions,
                                    stats_funcs,
                                    directory_path=output_directory_path + '/StatisticsTables',
@@ -1981,7 +1988,7 @@ if __name__ == '__main__':
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
                                             directory_path=QQplot_directory_path)
 
-
+'''
     #==========================================================================================
     #==========================================================================================
     # Analysis of ranked blind submissions only (no nonranked or ref)
@@ -2037,4 +2044,4 @@ if __name__ == '__main__':
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
                                             directory_path=QQplot_directory_path)
-    '''
+'''
