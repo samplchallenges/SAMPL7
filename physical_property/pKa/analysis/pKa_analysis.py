@@ -595,16 +595,6 @@ class SamplSubmission:
     IgnoredSubmission
         If the submission ID is among the ignored submissions.
     """
-    # The D3R challenge IDs that are handled by this class.
-    CHALLENGE_IDS = {1559}
-
-    # The IDs of the submissions used for testing the validation.
-    TEST_SUBMISSIONS = {}
-
-    # The IDs of submissions used for reference calculations
-    REF_SUBMISSIONS = ['REF00']
-
-
     # Section of the submission file.
     SECTIONS = {}
 
@@ -619,17 +609,17 @@ class SamplSubmission:
         sections = self._load_sections(file_path)  # From parent-class.
         self.data = sections['Predictions']  # This is a list
         self.data = pd.DataFrame(data=self.data) # Now a DataFrame
-        #self.name = sections['Name'][0] #want this to take the place of the 5 letter code
         self.file_name = file_name
-
-        self.method_name = sections['Name'][0] #want this to take the place of the 5 letter code
+        self.method_name = sections['Name'][0]
 
         # Check if this is a reference submission
         self.reference_submission = False
-        #if self.method_name in self.REF_SUBMISSIONS:
+
         if "REF" in self.method_name or "NULL" in self.method_name:
             print("REF found: ", self.method_name)
             self.reference_submission = True
+        #print(self.data)
+
 
     @classmethod
     def _read_lines(cls, file_path):
@@ -764,7 +754,7 @@ class pKaSubmission(SamplSubmission):
         sections = self._load_sections(file_path)  # From parent-class.
         self.data = sections['Predictions']  # This is a pandas DataFrame.
         self.method_name = sections['Name'][0]
-        self.category = sections['Category'][0] # New section for pKa challenge.
+        self.category = sections['Category'][0]
         self.participant = sections['Participant name'][0].strip()
         self.organization = sections['Participant organization'][0].strip()
         self.ranked = sections['Ranked'][0].strip() =='True'
@@ -794,22 +784,22 @@ class pKaSubmission(SamplSubmission):
     def compute_pKa_model_uncertainty_statistics(self,experimental_data):
 
         # Create a dataframe for data necessary for error slope analysis
+        # Experimental
         expt_pKa_series = experimental_data["pKa mean"]
         expt_pKa_SEM_series = experimental_data["pKa SEM"]
+        # Predictions
         pred_pKa_series = self.data["pKa mean"]
         pred_pKa_SEM_series = self.data["pKa SEM"]
         pred_pKa_mod_unc_series = self.data["pKa model uncertainty"]
 
         # Concatenate the columns into a single dataframe.
         data_exp =  pd.concat([expt_pKa_series, expt_pKa_SEM_series], axis=1)
-        data_exp = data_exp.rename(index=str, columns={"pKa mean": "pKa mean (expt)",
-                                                        "pKa SEM": "pKa SEM (expt)"})
+        data_exp = data_exp.rename(index=str, columns={"pKa mean": "pKa mean (expt)", "pKa SEM": "pKa SEM (expt)"})
 
         data_mod_unc = pd.concat([data_exp, pred_pKa_series, pred_pKa_SEM_series, pred_pKa_mod_unc_series], axis=1)
-        data_mod_unc = data_mod_unc.rename(index=str, columns={"pKa mean (calc)": "pKa mean (calc)",
-                                                                "pKa SEM": "pKa SEM (calc)",
-                                                                "pKa model uncertainty": "pKa model uncertainty"})
-        #print("data_mod_unc:\n", data_mod_unc)
+        #print("\nBEFORE data_mod_unc:\n", data_mod_unc)
+        data_mod_unc = data_mod_unc.rename(index=str, columns={"pKa mean": "pKa mean (calc)", "pKa SEM": "pKa SEM (calc)", "pKa model uncertainty": "pKa model uncertainty"})
+        #print("\nAFTER data_mod_unc:\n", data_mod_unc)
 
         # Compute QQ-Plot Error Slope (ES)
         calc = data_mod_unc.loc[:, "pKa mean (calc)"].values
@@ -845,11 +835,10 @@ class pKaSubmission(SamplSubmission):
 
 
 def load_submissions(directory_path, user_map):
-    """Load submissions from a specified directory using a specified user map.
-    Optional argument:
-        ref_ids: List specifying submission IDs (alphanumeric, typically) of
-        reference submissions which are to be ignored/analyzed separately.
-    Returns: submissions
+    """Load submissions from a specified directory using a specified user map,
+    correct unit and sign errors in submissions, and convert relative free energy
+    calculations to macro pKa predictions.
+    Returns: submissions (where each prediction is a macro pKa)
     """
     submissions = []
     for file_path in glob.glob(os.path.join(directory_path, '*.csv')):
@@ -859,6 +848,7 @@ def load_submissions(directory_path, user_map):
         except IgnoredSubmissionError:
             continue
         submissions.append(submission)
+
     return submissions
 
 
@@ -866,9 +856,6 @@ def load_submissions(directory_path, user_map):
 def load_ranked_submissions(directory_path, user_map):
     """
     Load submissions from a specified directory using a specified user map.
-    Optional argument:
-        ref_ids: List specifying submission IDs (alphanumeric, typically) of
-        reference submissions which are to be ignored/analyzed separately.
     Returns: submissions
     """
     submissions = []
@@ -958,8 +945,8 @@ class pKaSubmissionCollection:
         self.data = pd.DataFrame(data=data)
         self.output_directory_path = output_directory_path
 
-        print("\n SubmissionCollection: \n")
-        print(self.data)
+        #print("\n SubmissionCollection: \n")
+        #print(self.data)
 
         # Create general output directory.
         os.makedirs(self.output_directory_path, exist_ok=True)
@@ -1087,10 +1074,11 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
                   ''.format(method_name, i + 1, len(submissions)), end='')
 
         bootstrap_statistics = submission.compute_pKa_statistics(experimental_data, stats_funcs)
+        #print("\n bootstrap_statistics \n", bootstrap_statistics)
 
         # Compute error slope
         error_slope_bootstrap_statistics, QQplot_data = submission.compute_pKa_model_uncertainty_statistics(experimental_data)
-        #print("error_slope_bootstrap_statistics:\n")
+        #print("\n error_slope_bootstrap_statistics:\n")
         #print(error_slope_bootstrap_statistics)
 
         # Add data to to QQplot dictionary
@@ -1098,7 +1086,7 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
 
         # Add error slope and CI to bootstrap_statistics
         bootstrap_statistics.update({'ES' : error_slope_bootstrap_statistics })
-        #print("bootstrap_statistics:\n", bootstrap_statistics)
+        #print("\n bootstrap_statistics:\n", bootstrap_statistics)
 
         # Organize data to construct CSV and PDF versions of statistics tables
         record_csv = {}
@@ -1124,9 +1112,9 @@ def generate_statistics_tables(submissions, stats_funcs, directory_path, file_ba
         statistics_csv.append({'method name': method_name, 'file name': file_name, 'category': category, 'type': type, **record_csv})
         escaped_name = file_name.replace('_', '\_')
         statistics_latex.append({'method name': method_name, 'file name': escaped_name, 'category': category, 'type':type, **record_latex})
-    print()
-    print("statistics_csv:\n",statistics_csv)
-    print()
+    #print()
+    #print("statistics_csv:\n",statistics_csv)
+    #print()
 
 
     # Write QQplot_dict to a JSON file for plotting later
@@ -1332,18 +1320,11 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
             plt.savefig(directory_path + "/Rsquared_vs_method_plot_colored_by_type.pdf")
 
 
-
         # Plot RMSE, MAE, Kendall's Tau, and R-squared comparison plots for each category separately
-        #category_list = ["Physical","Empirical", "Mixed", "Other"]
-        #category_list = ["Physical (MM)", "Empirical", "Mixed", "Physical (QM)"] # Reassigned categories
         category_list = ["QM", "QM+LEC", "QSPR/ML"]
 
         # New labels for file naming for reassigned categories
-        category_path_label_dict = {"QM": "QM",
-                                    "QM+LEC": "QM_LEC",
-                                    #"Mixed": "Mixed",
-                                    "QSPR/ML": "QSPR_ML"}
-
+        category_path_label_dict = {"QM": "QM", "QM+LEC": "QM_LEC", "QSPR/ML": "QSPR_ML"}
 
         for category in category_list:
             print("category: ",category)
@@ -1511,9 +1492,9 @@ def generate_QQplots_for_model_uncertainty(input_file_name, directory_path):
     print("QQ Plots for model uncertainty generated.")
 
 
-# =======
+# =================================================
 # Macro pKa calculation, adapted from David's email
-# =======
+# =================================================
 
 import numpy as np
 from scipy.special import logsumexp
@@ -1524,30 +1505,6 @@ kB = 1.381 * 6.02214 / 1000.0  # [kJ/(mol K)]
 beta = 1. / (kB * 300)  # [mol/kJ]
 beta = beta * 4.186
 C_unit = 1 / beta * np.log(10)
-
-# Store in list of tupes of (state, relative free energy, charge).
-
-
-# Test some Tielker/ECRISM cases -- note that these need their units changed before analysis
-# state_details = [(3, 7.91 * C_unit, -1), (1, -6.66 * C_unit, -1), (2, -7.52 * C_unit, 0), (4, -12.08 * C_unit, 0),
-#                 (5, -2.33 * C_unit, 1)]
-
-
-# Let's look at molecule 42 as it's a little simpler
-# state_details = [ (1, 0.54*C_unit, -1), (2, 0.3*C_unit, 1), (3, -5.05*C_unit, 0)]
-# Tielker SM26:
-# state_details = [ (1, 5.53*C_unit, -1), (3, 19.92*C_unit, -1), (2, 12.59*C_unit, 0), (4, 4.82*C_unit, 0), (5, 9.95*C_unit, 1)]
-# Tielker SM27, to handle simple case:
-# state_details = [ (1, 10.17*C_unit, -1)]
-
-# Test some Beckstein/Iorga cases
-# Molecule 25
-# state_details = [ (1, -2.7, -1), (2, -2, 0), (3, 4.53, -1), (4, -5.75, 0), (5, 0.65, 1)]
-# Beckstein/Iorga molecule 42
-# state_details = [ (1, 0.15, -1), (2, 0.79, 1), (3, -1.95, 0)]
-
-# Let's try the IEFPCM one for state 42
-# state_details = [(1, 6.61, -1), (2, 14.25, 1)]
 
 
 # Compute free energy as a function of pH for states
@@ -1569,31 +1526,6 @@ def DeltaG(pH, state, state_details):
                 #print(item[1] - pH * DeltaM * C_unit)
             return (item[1] - pH * DeltaM * C_unit)  # Gunner eq 3
 
-'''def DeltaG_SEM(pH, state, state_details):
-    for item in state_details:
-        if item[0] == state:
-            # 0 serves as the reference state; all transitions are away from 0.
-            if item[2] == -1:
-                DeltaM = 1
-            elif item[2] == 1:
-                DeltaM = -1
-            else:
-                DeltaM = 0  # Hack to capture fact that pH dependence of states at same formal charge is same/cancels
-            # Compute value
-            return (item[3] - pH * DeltaM * C_unit)
-
-def DeltaG_MU(pH, state, state_details):
-    for item in state_details:
-        if item[0] == state:
-            # 0 serves as the reference state; all transitions are away from 0.
-            if item[2] == -1:
-                DeltaM = 1
-            elif item[2] == 1:
-                DeltaM = -1
-            else:
-                DeltaM = 0  # Hack to capture fact that pH dependence of states at same formal charge is same/cancels
-            # Compute value
-            return (item[4] - pH * DeltaM * C_unit)'''
 
 # Compute populations for charge states (without normalization, due to laziness/since it'll drop out)
 def pop_charge(pH, formal_charge, state_details):
@@ -1605,25 +1537,6 @@ def pop_charge(pH, formal_charge, state_details):
         free_energies.append(0 * pH)
     #print("free_energies",free_energies)
     return np.exp(logsumexp(free_energies))
-
-'''def pop_charge_SEM(pH, formal_charge, state_details):
-    SEMs = []
-    for item in state_details: #state_details [('SM42_micro001', 0.5304000000000001, -1, 0.0, 1.3872000000000002)
-        if item[2] == formal_charge:
-            SEMs.append(-beta * DeltaG_SEM(pH, item[0], state_details))
-            #
-    if formal_charge == 0:
-        SEMs.append(0 * pH)
-    return np.exp(logsumexp(SEMs))
-
-def pop_charge_MU(pH, formal_charge, state_details):
-    model_uncertainties = []
-    for item in state_details: #state_details [('SM42_micro001', 0.5304000000000001, -1, 0.0, 1.3872000000000002)
-        if item[2] == formal_charge:
-            model_uncertainties.append(-beta * DeltaG_MU(pH, item[0], state_details))
-    if formal_charge == 0:
-        model_uncertainties.append(0 * pH)
-    return np.exp(logsumexp(model_uncertainties))'''
 
 # get G of each group
 def getG(msgroup):
@@ -1659,33 +1572,21 @@ def get_macropka(rfe_data):
         rfe = row["pKa mean"]
         sem = row["pKa SEM"]
         model_uncertainty = row["pKa model uncertainty"]
-        #print("SEM",sem)
-        #print("model_uncertainty",model_uncertainty)
-
-
-        #print("SEM",sem)
-        #print("model_uncertainty",model_uncertainty)
-
 
         if SM in molecules:
             molecules[SM].append((state, rfe, charge, sem, model_uncertainty))
         else:
             molecules[SM] = [(state, rfe, charge, sem, model_uncertainty)]
 
-    #print("molecules",molecules) #{'SM25_micro000': [('SM25_micro001', -14.2664, -1, 0.0, 1.3872000000000002)
 
     # Loop over molecules, convert to state_details
     SM_names = [x for x in molecules.keys()]
     SM_names.sort()
     for sm_name in SM_names:
         state_details = molecules[sm_name]
-        #print(state_details)
 
         # Figure out what formal charges are present in states
         formal_charges = [info[2] for info in state_details]
-        #print(formal_charges)
-
-        #print(sm_name)
 
         # group microstates into groups based their formal charge
         msgroup_p2 = [state for state in state_details if state[2] == 2]  # microstates with formal charge +2
@@ -1698,9 +1599,8 @@ def get_macropka(rfe_data):
         # ΔGAB = (-1)(C_unit)(pH - pKaBA)
         # Therefore when pH = 0, we have pKaBA = ΔGAB/C_unit
 
-
-        '''# Compute +2 to +1 transition
-        if 2 in formal_charges:
+        # Compute +2 to +1 transition
+        '''if 2 in formal_charges:
             pka = Macro_pKa()
             pka.molecule = sm_name.split("_")[0]
             pka.transition_from = 2
@@ -1716,7 +1616,7 @@ def get_macropka(rfe_data):
             #print("msgroup_p2",msgroup_p2)
             pka.pKa_bydG = (dG / C_unit)
 
-            macropkas.append(pka)
+            macropkas.append(pka)'''
 
         # Compute +1 to 0 transition
         if 1 in formal_charges:
@@ -1724,6 +1624,8 @@ def get_macropka(rfe_data):
             pka.molecule = sm_name.split("_")[0]
             pka.transition_from = 1
             pka.transition_to = 0
+            pka.SEM = state_details[0][3]
+            pka.MU = state_details[0][4]
 
             init_guess = -5
             func_10 = lambda pH: (pop_charge(pH, 1, state_details) - pop_charge(pH, 0, state_details))
@@ -1734,50 +1636,99 @@ def get_macropka(rfe_data):
             dG = getG(msgroup_p0) - getG(msgroup_p1)
             pka.pKa_bydG = (dG / C_unit)
 
-            macropkas.append(pka)'''
+            macropkas.append(pka)
 
         # Compute 0 to -1 transition
-        if -1 in formal_charges:
+        '''if -1 in formal_charges:
             pka = Macro_pKa()
             pka.molecule = sm_name.split("_")[0]
             pka.transition_from = 0
             pka.transition_to = -1
-
             pka.SEM = state_details[0][3]
             pka.MU = state_details[0][4]
 
             init_guess = 5
-
             func_0neg1 = lambda pH: (pop_charge(pH, -1, state_details) - pop_charge(pH, 0, state_details))
             pH_solution_0toneg1 = fsolve(func_0neg1, init_guess, factor=0.1)
             pka.pKa_bytitration = pH_solution_0toneg1
-            #print(pka.pKa_bytitration)
-
-            '''func_0neg1_SEM = lambda pH: (pop_charge_SEM(pH, -1, state_details) - pop_charge_SEM(pH, 0, state_details))
-            pH_solution_0toneg1_SEM = fsolve(func_0neg1_SEM, init_guess, factor=0.1)
-            pka.SEM = pH_solution_0toneg1_SEM
-            print(pka.SEM)
-
-            func_0neg1_MU = lambda pH: (pop_charge_MU(pH, -1, state_details) - pop_charge_MU(pH, 0, state_details))
-            pH_solution_0toneg1_MU = fsolve(func_0neg1_MU, init_guess, factor=0.1)
-            pka.MU = pH_solution_0toneg1_MU
-            print(pka.MU)'''
-
-
-
-
 
             # dG method
             dG = getG(msgroup_n1) - getG(msgroup_p0)
             pka.pKa_bydG = (dG / C_unit)
 
-            macropkas.append(pka)
+            macropkas.append(pka)'''
 
     return macropkas
 
 
 
+def submission_fix_and_convert(submission_data):
+    one_to_0transitions=[]
+    for submission in submission_data:
+        sub = submission.data
+        #reset the index so that each prediction can be accessed individually (without having to rearrange reference state and microstate)
+        submission.data=submission.data.rename_axis('Molecule ID').reset_index()
+        for mol_ID, series in submission.data.iterrows():
+            pKa_mean_pred = submission.data.loc[mol_ID, "pKa mean"]
+            pKa_SEM_pred = submission.data.loc[mol_ID, "pKa SEM"]
+            pKa_model_uncertainty =  submission.data.loc[mol_ID, "pKa model uncertainty"]
 
+            # Convert submissions to kcal/mol
+            if submission.file_name in ["pKa-ECRISM-1", "pKa-VA-2-charge-correction", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+                pKa_mean_pred = pKa_mean_pred*C_unit #convert submission to kcal/mol
+                pKa_SEM_pred = pKa_SEM_pred*C_unit
+                pKa_model_uncertainty = pKa_model_uncertainty*C_unit
+
+            # fix submission which seems to be in kJ/mol
+            if submission.file_name in ["pka-nhlbi-1c"]:
+                # correct free energies into kcal/mol
+                # submission seemed to have used C_units = 5.69 for kJ/mol, so can divide by 4.186 to get kcal/mol
+                pKa_mean_pred = pKa_mean_pred/4.186
+                pKa_SEM_pred = pKa_SEM_pred/4.186
+                pKa_model_uncertainty = pKa_model_uncertainty/4.186
+
+            #If single transition states are opposite in sign from macro pKa, we assume they made a sign error
+            if submission.file_name in [ "pKa-VA-2-charge-correction", "pka-nhlbi-1c", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+                pKa_mean_pred = pKa_mean_pred*-1 #fix sign error
+                submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
+
+            submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
+            submission.data.loc[mol_ID, "pKa SEM"] = pKa_SEM_pred
+            submission.data.loc[mol_ID, "pKa model uncertainty"] = pKa_model_uncertainty
+
+        cleared_sub = submission.data[0:0]
+        del cleared_sub['ID tag']
+        del cleared_sub['total charge']
+        submission.data=submission.data.set_index('Molecule ID')
+
+        #print(submission.participant)
+        # Convert relative free energies to macro pKa's
+        if submission.reference_submission == False:
+            macropkas = get_macropka(submission.data)
+            #print("Molecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
+            for pka in macropkas:
+                '''print("%6s    %2d   %2d   %8.3f %8.3f   %s" %(pka.molecule,
+                                                        pka.transition_from, pka.transition_to,
+                                                        pka.pKa_bytitration, pka.pKa_bydG,
+                                                        str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))'''
+                cleared_sub = cleared_sub.append({"Molecule ID": str(pka.molecule),
+                                                  "pKa mean": pka.pKa_bytitration[0],
+                                                  "pKa SEM": pka.SEM,
+                                                  "pKa model uncertainty":pka.MU},
+                                                  ignore_index = True)
+                submission.data = cleared_sub.set_index('Molecule ID')
+        else:
+            # Cleanup the reference calculations dataframe column names
+            del submission.data['pKa SEM']
+            del submission.data['pKa model uncertainty']
+            submission.data.rename(columns = {'ID tag':'pKa mean','total charge':'pKa SEM','pKa mean':'pKa model uncertainty'}, inplace = True)
+
+
+
+        if submission.file_name in ["pKa_RodriguezPaluch_SMD_3", "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_1", "pKa-RobertRaddi", "pKa_prediction_Iorga_Beckstein_1", "pKa-IEFPCMMST-1", "pKa-ECRISM-1", "pka-nhlbi-1c"]:
+            one_to_0transitions.append(submission)
+    #print(one_to_0transitions)
+    return submission_data, one_to_0transitions
 
 
 # =============================================================================
@@ -1837,122 +1788,36 @@ if __name__ == '__main__':
 
 
 
-    # ======================================================================================================================
-    # TO DO:  Convert relative microstate free energies to microscopic pKas, then calculate MACRO pKas from the micro pKas
-    # ======================================================================================================================
-
-
+    ############################################################################################################
+    ############################################################################################################
     # Load submissions data.
     submissions_RFE = load_submissions(pKa_SUBMISSIONS_DIR_PATH, user_map)
-    #print(type(submissions_RFE))
 
-    # Loop through each submission, convert relative FE's to micro pKas, then convert to macro pKas
-    for submission in submissions_RFE:
-        sub = submission.data
-        #reset the index so that each prediction can be accessed individually (without having to rearrange reference state and microstate)
-        submission.data=submission.data.rename_axis('Molecule ID').reset_index()
-        for mol_ID, series in submission.data.iterrows():
-            #print(submission.data.loc[mol_ID, "Molecule ID"])
-            pKa_mean_pred = submission.data.loc[mol_ID, "pKa mean"]
-            pKa_SEM_pred = submission.data.loc[mol_ID, "pKa SEM"]
-            pKa_model_uncertainty =  submission.data.loc[mol_ID, "pKa model uncertainty"]
+    # Fix charge and unit errors, then convert relative free energies to macro pKa's
+    #submissions_pKa, one_to_0transitions = submission_fix_and_convert(submissions_RFE)
+    submissions_pKa, one_to_0transitions = submission_fix_and_convert(submissions_RFE)
+    #print(submissions_pKa)
 
+    output_directory_path='./1to0'
+    file_path = '{}/collection.csv'.format(output_directory_path)
 
-            # Compute beta and other constants
-            kB = 1.381*6.02214/1000.0 # [kJ/(mol K)]
-            beta = 1./(kB*300) # [mol/kJ]
-            beta = beta*4.186
-            C_unit = 1/beta*np.log(10)
+    collection_pKa = pKaSubmissionCollection(one_to_0transitions, experimental_data,
+                                               output_directory_path, file_path,
+                                               ignore_refcalcs = True, ranked_only = False, allow_multiple = True)
 
-            if submission.file_name in ["pKa-ECRISM-1", "pKa-VA-2-charge-correction", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
-                pKa_mean_pred = pKa_mean_pred*C_unit #convert submission to kcal/mol
-                pKa_SEM_pred = pKa_SEM_pred*C_unit
-                pKa_model_uncertainty = pKa_model_uncertainty*C_unit
+    # ================================================================================================================ #
+    # ================================================================================================================ #
+    #          Analysis of ranked and non-ranked blind submissions WITH reference calculations                         #
+    # ================================================================================================================ #
+    # ================================================================================================================ #
 
-            # fix submission which seems to be in kJ/mol
-            if submission.file_name in ["pka-nhlbi-1c"]:
-                # correct free energies into kcal/mol
-                # submission seemed to have used C_units = 5.69 for kJ/mol, so can divide by 4.186 to get kcal/mol
-                pKa_mean_pred = pKa_mean_pred/4.186
-                pKa_SEM_pred = pKa_SEM_pred/4.186
-                pKa_model_uncertainty = pKa_model_uncertainty/4.186
-
-            #If single transition states are opposite in sign from macro pKa, we assume they made a sign error
-            if submission.file_name in [ "pKa-VA-2-charge-correction", "pka-nhlbi-1c", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
-                #fix sign error
-                pKa_mean_pred = pKa_mean_pred*-1
-                submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
-                # update values
-
-            submission.data.loc[mol_ID, "pKa mean"] = pKa_mean_pred
-            submission.data.loc[mol_ID, "pKa SEM"] = pKa_SEM_pred
-            submission.data.loc[mol_ID, "pKa model uncertainty"] = pKa_model_uncertainty
-            #print("submission",submission.data)
-
-        #Columns: [Molecule ID, ID tag, total charge, pKa mean, pKa SEM, pKa model uncertainty]
-        cleared_sub = submission.data[0:0]
-        del cleared_sub['ID tag']
-        del cleared_sub['total charge']
-        submission.data=submission.data.set_index('Molecule ID')
-
-
-        macropkas = get_macropka(submission.data)
-        print("\n"+submission.participant+"\n")
-        print("Molecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
-        for pka in macropkas:
-            #print("Molecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
-            print("%6s    %2d   %2d   %8.3f %8.3f   %s" %(pka.molecule,
-                                                    pka.transition_from, pka.transition_to,
-                                                    pka.pKa_bytitration, pka.pKa_bydG,
-                                                    str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))
-            cleared_sub = cleared_sub.append({"Molecule ID": str(pka.molecule),
-                                              "pKa mean": pka.pKa_bytitration[0],
-                                              "pKa SEM": pka.SEM,
-                                              "pKa model uncertainty":pka.MU},
-                                              ignore_index = True)
-
-            #print(cleared_sub)
-
-        submission.data = cleared_sub.set_index('Molecule ID')
-        '''with open("pKa_check.csv", "a") as pKafile:
-            pKafile.write("\n______________________________________")
-            pKafile.write("\n"+submission.participant)
-            pKafile.write("\nMolecule From  To  pKa(titr)  pKa(dG)   Equivalent?")
-            macropkas = get_macropka(submission.data)
-            for pka in macropkas:
-                pKafile.write("\n%6s    %2d   %2d   %8.3f %8.3f   %s" %(pka.molecule,
-                                                        pka.transition_from, pka.transition_to,
-                                                        pka.pKa_bytitration, pka.pKa_bydG,
-                                                        str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))
-
-            print("%6s    %2d   %2d   %8.3f %8.3f   %s" %(pka.molecule,
-                                                    pka.transition_from, pka.transition_to,
-                                                    pka.pKa_bytitration, pka.pKa_bydG,
-                                                    str(round(pka.pKa_bytitration[0],2))==str(round(pka.pKa_bydG,2))))'''
-
-    # Transform into Pandas DataFrame.
-    #submission.data = pd.DataFrame(data=submission.data)
-
-
-
-
-
-
-
-    # ==========================================================================================
-    # Analysis of ranked and non-ranked blind submissions WITH reference calculations
-    # ==========================================================================================
-    # Perform the analysis
-
-
+    '''# Perform the analysis
     output_directory_path='./analysis_outputs_all_submissions'
     pKa_submission_collection_file_path = '{}/pKa_submission_collection.csv'.format(output_directory_path)
 
-    collection_pKa = pKaSubmissionCollection(submissions_RFE, experimental_data,
+    collection_pKa = pKaSubmissionCollection(submissions_pKa, experimental_data,
                                                output_directory_path,pKa_submission_collection_file_path,
                                                ignore_refcalcs = False, ranked_only = False, allow_multiple = True)
-
-    print("collection_pKa \n", collection_pKa)
 
     # Generate plots and tables.
     for collection in [collection_pKa]:
@@ -1967,7 +1832,7 @@ if __name__ == '__main__':
         shutil.rmtree('{}/StatisticsTables'.format(output_directory_path))
 
 
-    for submissions, type in zip([submissions_RFE], ['pKa']):
+    for submissions, type in zip([submissions_pKa], ['pKa']):
         generate_statistics_tables(submissions,
                                    stats_funcs,
                                    directory_path=output_directory_path + '/StatisticsTables',
@@ -1985,20 +1850,25 @@ if __name__ == '__main__':
 
     # Generate QQ-Plots for model uncertainty predictions
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
-    generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
-                                            directory_path=QQplot_directory_path)
+    generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle", directory_path=QQplot_directory_path)
 
-'''
-    #==========================================================================================
-    #==========================================================================================
-    # Analysis of ranked blind submissions only (no nonranked or ref)
-    #==========================================================================================
-    #==========================================================================================
+    print("\n ####### Analysis of all submissions is done ####### \n")'''
+
+
+
+    #================================================================================================================ #
+    #================================================================================================================ #
+    #          Analysis of ranked blind submissions only (no nonranked or reference submissions)                      #
+    #================================================================================================================ #
+    #================================================================================================================ #
 
     # Load submissions data.
-    ranked_submissions_pKa = load_ranked_submissions(pKa_SUBMISSIONS_DIR_PATH, user_map)
+    ranked_submissions_RFE = load_ranked_submissions(pKa_SUBMISSIONS_DIR_PATH, user_map)
 
-    # Perform the analysis
+    # Fix charge and unit errors, then convert relative free energies to macro pKa's
+    ranked_submissions_pKa = submission_fix_and_convert(ranked_submissions_RFE)
+
+    '''# Perform the analysis
     output_directory_path='./analysis_outputs_ranked_submissions'
     pKa_submission_collection_file_path = '{}/pKa_submission_collection.csv'.format(output_directory_path)
 
@@ -2007,8 +1877,6 @@ if __name__ == '__main__':
                                                output_directory_path,
                                                pKa_submission_collection_file_path,
                                                ignore_refcalcs = True, ranked_only = True, allow_multiple = False)
-
-    #print("collection_pKa: \n", collection_pKa)
 
     # Generate plots and tables.
     for collection in [collection_pKa]:
@@ -2024,8 +1892,8 @@ if __name__ == '__main__':
         shutil.rmtree('{}/StatisticsTables'.format(output_directory_path))
 
 
-    for ranked_submissions, type in zip([ranked_submissions_pKa], ['pKa']):
-        generate_statistics_tables(ranked_submissions,
+    for submissions, type in zip([ranked_submissions_pKa], ['pKa']):
+        generate_statistics_tables(submissions,
                                     stats_funcs,
                                     directory_path = output_directory_path + '/StatisticsTables',
                                     file_base_name = 'statistics',
@@ -2043,5 +1911,4 @@ if __name__ == '__main__':
     # Generate QQ-Plots for model uncertainty predictions
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
-                                            directory_path=QQplot_directory_path)
-'''
+                                            directory_path=QQplot_directory_path)'''

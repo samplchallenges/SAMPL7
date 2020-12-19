@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[a4paper,margin=0.005in,tmargin=0.5in,lmargin=0.5in,rmargin=0.5in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\scriptsize
+\begin{longtable}{|ccccccccc|}
+\toprule
+                   method name &                             file name &               RMSE &                MAE &                   ME &              R$^2$ &                     m &                $\tau$ &                    ES \\
+\midrule
+\endhead
+\midrule
+\multicolumn{9}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+    REF00_Chemaxon_Chemicalize &  pKa\_REF00\_Chemaxon\_Chemicalize\_1 &  0.71 [0.49, 0.90] &  0.56 [0.37, 0.76] &   0.09 [-0.22, 0.38] &  0.91 [0.86, 0.96] &     0.88 [0.72, 1.03] &     0.73 [0.51, 0.90] &    0.10 [-0.00, 0.27] \\
+                       EC_RISM &                          pKa-ECRISM-1 &  0.72 [0.46, 0.96] &  0.53 [0.33, 0.75] &   0.20 [-0.10, 0.51] &  0.93 [0.87, 0.98] &     0.80 [0.72, 0.91] &     0.81 [0.64, 0.96] &     1.32 [1.20, 1.42] \\
+                    IEFPCM/MST &                       pKa-IEFPCMMST-1 &  1.81 [0.97, 2.69] &  1.29 [0.83, 1.92] &   0.38 [-0.35, 1.21] &  0.55 [0.21, 0.87] &     0.81 [0.49, 1.13] &     0.50 [0.20, 0.74] &     1.01 [0.81, 1.18] \\
+                DFT_M05-2X_SMD &            pKa-VA-2-charge-correction &  2.90 [1.99, 3.66] &  2.28 [1.51, 3.09] &  -0.78 [-2.03, 0.44] &  0.03 [0.00, 0.38] &    0.15 [-0.32, 0.54] &    0.17 [-0.22, 0.55] &     0.55 [0.33, 0.82] \\
+                       TZVP-QM &                          pka-nhlbi-1c &  2.90 [2.52, 3.25] &  2.75 [2.34, 3.15] &   1.20 [-0.00, 2.36] &  0.23 [0.03, 0.59] &  -0.11 [-0.20, -0.03] &   -0.14 [-0.48, 0.23] &  -0.00 [-0.00, -0.00] \\
+     Standard Gaussian Process &                       pKa-RobertRaddi &  3.49 [2.76, 4.13] &  2.91 [2.06, 3.76] &    2.47 [1.36, 3.55] &  0.30 [0.09, 0.69] &  -0.05 [-0.09, -0.02] &  -0.42 [-0.69, -0.09] &     1.11 [0.97, 1.25] \\
+ DFT_M06-2X_SMD_explicit_water &          pKa\_RodriguezPaluch\_SMD\_1 &  3.77 [1.03, 6.29] &  1.81 [0.82, 3.44] &   0.99 [-0.24, 2.79] &  0.45 [0.39, 0.86] &     1.37 [0.64, 2.41] &     0.64 [0.37, 0.85] &     0.58 [0.34, 0.85] \\
+   DFT_M06-2X_SMD_implicit_SAS &          pKa\_RodriguezPaluch\_SMD\_2 &  4.07 [1.81, 6.41] &  2.57 [1.51, 4.21] &   0.08 [-1.40, 2.13] &  0.53 [0.40, 0.78] &     1.70 [0.82, 2.74] &     0.58 [0.30, 0.81] &     0.26 [0.08, 0.46] \\
+       DFT_M06-2X_SMD_implicit &          pKa\_RodriguezPaluch\_SMD\_3 &  4.09 [1.80, 6.37] &  2.59 [1.49, 4.21] &   0.20 [-1.32, 2.24] &  0.56 [0.44, 0.78] &     1.77 [0.91, 2.76] &     0.71 [0.49, 0.89] &     0.61 [0.38, 0.86] \\
+            Gaussian_corrected &  pKa\_prediction\_Iorga\_Beckstein\_1 &  5.36 [4.68, 5.95] &  5.12 [4.40, 5.80] &    5.12 [4.40, 5.80] &  0.76 [0.63, 0.88] &     0.35 [0.27, 0.45] &     0.60 [0.42, 0.76] &    0.00 [-0.00, 0.00] \\
+\end{longtable}
+\end{center}
+
+Notes
+
+- RMSE: Root mean square error
+
+- MAE: Mean absolute error
+
+- ME: Mean error
+
+- R2: R-squared, square of Pearson correlation coefficient
+
+- m: slope of the line fit to predicted vs experimental pKa values
+
+- $\tau$:  Kendall rank correlation coefficient
+
+- ES: error slope calculated from the QQ Plots of model uncertainty predictions
+
+- Mean and 95\% confidence intervals of RMSE, MAE, ME, R2, and m were calculated by bootstrapping with 10000 samples.
+
+- 95\% confidence intervals of ES were calculated by bootstrapping with 1000 samples.\end{document}

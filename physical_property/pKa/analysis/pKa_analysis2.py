@@ -202,7 +202,7 @@ def ridge_plot_wo_overlap(df, by, column, figsize, colormap):
 # =============================================================================
 
 # Paths to input data.
-#pKa_COLLECTION_PATH_RANKED_SUBMISSIONS = './analysis_outputs_ranked_submissions/pKa_submission_collection.csv'
+pKa_COLLECTION_PATH_RANKED_SUBMISSIONS = './analysis_outputs_ranked_submissions/pKa_submission_collection.csv'
 pKa_COLLECTION_PATH_ALL_SUBMISSIONS =  './analysis_outputs_all_submissions/pKa_submission_collection.csv'
 
 # =============================================================================
@@ -482,6 +482,25 @@ def calculate_summary_statistics_of_top_methods_of_each_category(statistics_df, 
 
 if __name__ == '__main__':
 
+
+
+    collection_data = read_collection_file(collection_file_path = "1to0/collection.csv")
+
+    # Create new directory to store molecular statistics
+    output_directory_path = '1to0/.'
+    analysis_directory_name = 'MolecularStatisticsTables'
+
+    if os.path.isdir('{}/{}'.format(output_directory_path, analysis_directory_name)):
+        shutil.rmtree('{}/{}'.format(output_directory_path, analysis_directory_name))
+
+    # Calculate MAE of each molecule across all predictions methods
+    molecular_statistics_directory_path = os.path.join(output_directory_path, "MolecularStatisticsTables")
+    calc_MAE_for_molecules_across_all_predictions(collection_df = collection_data,
+                                                  directory_path = molecular_statistics_directory_path,
+                                                  file_base_name = "molecular_error_statistics")
+
+    print(yaya)
+
     # ==========================================================================================
     # Analysis of standard blind submissions (ranked and nonranked), including reference calculations
     # ==========================================================================================
@@ -526,8 +545,8 @@ if __name__ == '__main__':
 
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods (found consistently in the top 15 across 4 metrics)
     #well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
-    '''well_performing_method_ids = ["Chemprop", "ClassicalGSG DB2", "ClassicalGSG DB3", "ClassicalGSG DB4",
-                                  "TFE MLR", "TFE-SM8-solvent-opt", "TFE-SM8-vacuum-opt"]'''
+    #well_performing_method_ids = ["Chemprop", "ClassicalGSG DB2", "ClassicalGSG DB3", "ClassicalGSG DB4",
+    #                              "TFE MLR", "TFE-SM8-solvent-opt", "TFE-SM8-vacuum-opt"]
     create_molecular_error_distribution_plots(collection_df=collection_data,
                                               directory_path=molecular_statistics_directory_path,
                                               #subset_of_method_ids=well_performing_method_ids,
@@ -542,7 +561,7 @@ if __name__ == '__main__':
                                               directory_path=category_comparison_directory_path,
                                               file_base_name="error_distribution_of_method_categories_ridge_plot")
 
-    # Calculate mean and standard deviation of performance statistics of top 10 methods of each category.
+    '''# Calculate mean and standard deviation of performance statistics of top 10 methods of each category.
     statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
     calculate_summary_statistics_of_top_methods_of_each_category(
         statistics_df= statistics_table_path, categories=list_of_method_categories, top=10,
@@ -554,7 +573,7 @@ if __name__ == '__main__':
     calculate_summary_statistics_of_top_methods_of_each_category(
         statistics_df= statistics_table_path, categories=list_of_method_categories, top=5,
         directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top5.csv"
-    )
+    )'''
 
     # ==========================================================================================
     # Repeat analysis for just ranked submissions
@@ -600,8 +619,7 @@ if __name__ == '__main__':
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
     #  (found consistently in the top 10 across 4 metrics)
     #well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
-    '''well_performing_method_ids = ["Chemprop", "ClassicalGSG DB3", "COSMO-RS",
-                                  "MD (CGenFF/TIP3P)", "TFE MLR"]'''
+    #well_performing_method_ids = ["Chemprop", "ClassicalGSG DB3", "COSMO-RS","MD (CGenFF/TIP3P)", "TFE MLR"]
     create_molecular_error_distribution_plots(collection_df=collection_data,
                                               directory_path=molecular_statistics_directory_path,
                                               #subset_of_method_ids=well_performing_method_ids,
@@ -615,8 +633,9 @@ if __name__ == '__main__':
     os.makedirs(category_comparison_directory_path, exist_ok=True)
     create_category_error_distribution_plots(collection_df=collection_data,
                                               directory_path=category_comparison_directory_path,
-                                              file_base_name="error_distribution_of_method_categories_ridge_plot")
+                                              file_base_name="error_distribution_of_method_categories_ridge_plot")'''
 
+    '''
     # Calculate mean and standard deviation of performance statistics of top 10 methods of each category.
     statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
     calculate_summary_statistics_of_top_methods_of_each_category(
@@ -629,4 +648,5 @@ if __name__ == '__main__':
     calculate_summary_statistics_of_top_methods_of_each_category(
         statistics_df= statistics_table_path, categories=list_of_method_categories, top=5,
         directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top5.csv"
-    )'''
+    )
+    '''
