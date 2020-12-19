@@ -1801,7 +1801,7 @@ if __name__ == '__main__':
     output_directory_path='./1to0'
     file_path = '{}/collection.csv'.format(output_directory_path)
 
-    collection_pKa = pKaSubmissionCollection(one_to_0transitions, experimental_data,
+    collect_pKa = pKaSubmissionCollection(one_to_0transitions, experimental_data,
                                                output_directory_path, file_path,
                                                ignore_refcalcs = True, ranked_only = False, allow_multiple = True)
 
@@ -1811,7 +1811,7 @@ if __name__ == '__main__':
     # ================================================================================================================ #
     # ================================================================================================================ #
 
-    '''# Perform the analysis
+    # Perform the analysis
     output_directory_path='./analysis_outputs_all_submissions'
     pKa_submission_collection_file_path = '{}/pKa_submission_collection.csv'.format(output_directory_path)
 
@@ -1852,7 +1852,7 @@ if __name__ == '__main__':
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle", directory_path=QQplot_directory_path)
 
-    print("\n ####### Analysis of all submissions is done ####### \n")'''
+    print("\n ####### Analysis of all submissions is done ####### \n")
 
 
 
@@ -1868,7 +1868,7 @@ if __name__ == '__main__':
     # Fix charge and unit errors, then convert relative free energies to macro pKa's
     ranked_submissions_pKa = submission_fix_and_convert(ranked_submissions_RFE)
 
-    '''# Perform the analysis
+    # Perform the analysis
     output_directory_path='./analysis_outputs_ranked_submissions'
     pKa_submission_collection_file_path = '{}/pKa_submission_collection.csv'.format(output_directory_path)
 
@@ -1911,4 +1911,4 @@ if __name__ == '__main__':
     # Generate QQ-Plots for model uncertainty predictions
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
-                                            directory_path=QQplot_directory_path)'''
+                                            directory_path=QQplot_directory_path)

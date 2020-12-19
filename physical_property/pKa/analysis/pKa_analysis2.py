@@ -487,7 +487,7 @@ if __name__ == '__main__':
     collection_data = read_collection_file(collection_file_path = "1to0/collection.csv")
 
     # Create new directory to store molecular statistics
-    output_directory_path = '1to0/.'
+    '''output_directory_path = '1to0/.'
     analysis_directory_name = 'MolecularStatisticsTables'
 
     if os.path.isdir('{}/{}'.format(output_directory_path, analysis_directory_name)):
@@ -497,9 +497,8 @@ if __name__ == '__main__':
     molecular_statistics_directory_path = os.path.join(output_directory_path, "MolecularStatisticsTables")
     calc_MAE_for_molecules_across_all_predictions(collection_df = collection_data,
                                                   directory_path = molecular_statistics_directory_path,
-                                                  file_base_name = "molecular_error_statistics")
+                                                  file_base_name = "molecular_error_statistics")'''
 
-    print(yaya)
 
     # ==========================================================================================
     # Analysis of standard blind submissions (ranked and nonranked), including reference calculations
