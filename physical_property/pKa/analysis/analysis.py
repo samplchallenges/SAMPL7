@@ -306,6 +306,8 @@ def DeltaG(pH, state, state_details):
                 DeltaM = 1
             elif item[2] == 1:
                 DeltaM = -1
+            elif item[2] ==2:
+                DeltaM=-2
             else:
                 DeltaM = 0  # Hack to capture fact that pH dependence of states at same formal charge is same/cancels
             # Compute value
@@ -412,9 +414,9 @@ def get_macropka(rfe_data):
             pka.transition_to = 1
 
             # titration method given my David's group
-            init_guess = -5
-            func_10 = lambda pH: (pop_charge(pH, 2, state_details) - pop_charge(pH, 1, state_details))
-            pH_solution_2to1 = fsolve(func_10, init_guess, factor=0.1)
+            init_guess = -10
+            func_2to1 = lambda pH : (pop_charge(pH, 2) - pop_charge(pH, 1))
+            pH_solution_2to1 = fsolve(func_2to1, init_guess, factor = 0.1)
             pka.pKa_bytitration = pH_solution_2to1
 
             # delta G method given by newbooks (Junjun Mao)
