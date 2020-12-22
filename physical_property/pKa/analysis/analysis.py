@@ -173,13 +173,20 @@ class pKaSubmission(SamplSubmission):
                 "Ranked"}
 
     # Sections in CSV format with columns names.
+
     CSV_SECTIONS = {"Predictions": ("Molecule ID",
                                     "ID tag",
                                     "total charge",
-                                    "Relative microstate free energy",
-                                    "Relative microstate free energy SEM",
-                                    "Relative microstate free energy model uncertainty",
-                                    "SMILES of extra microstate")}
+                                    "pKa mean",
+                                    "pKa SEM",
+                                    "pKa model uncertainty")}
+                                    #{"Predictions": ("Molecule ID",
+                                    #"ID tag",
+                                    #"total charge",
+                                    #"Relative microstate free energy",
+                                    #"Relative microstate free energy SEM",
+                                    #"Relative microstate free energy model uncertainty",
+                                    #"SMILES of extra microstate")}
 
 
     def __init__(self, file_path, user_map):
@@ -220,10 +227,12 @@ def load_submissions(directory_path, user_map):
     """
     submissions = []
     for file_path in glob.glob(os.path.join(directory_path, '*.csv')):
+        print("Trying to load %s" % file_path)
         try:
             submission = pKaSubmission(file_path, user_map)
 
         except IgnoredSubmissionError:
+            print("Error on %s" % file_path)
             continue
         submissions.append(submission)
     return submissions
@@ -414,9 +423,16 @@ def get_macropka(rfe_data):
             pka.transition_to = 1
 
             # titration method given my David's group
-            init_guess = -10
-            func_2to1 = lambda pH : (pop_charge(pH, 2) - pop_charge(pH, 1))
-            pH_solution_2to1 = fsolve(func_2to1, init_guess, factor = 0.1)
+            init_guess = -15
+            func_2to1 = lambda pH : (pop_charge(pH, 2, state_details) - pop_charge(pH, 1, state_details))
+            pH_solution_2to1, infodict, ier, mesg = fsolve(func_2to1, init_guess, factor = 0.1, full_output=True)
+            # If message indicates poor convergence, change initial guess and try again
+            if 'The iteration is not making good progress' in mesg:
+                init_guess-=5
+            pH_solution_2to1, infodict, ier, mesg = fsolve(func_2to1, init_guess, factor = 0.1, full_output=True)
+            # If still poor convergence, print warning (MAY NEED BETTER SOLUTION TO THIS)
+            if 'The iteration is not making good progress' in mesg:
+                print("WARNING: Numerical problems encountered with fsolv")
             pka.pKa_bytitration = pH_solution_2to1
 
             # delta G method given by newbooks (Junjun Mao)
@@ -435,7 +451,13 @@ def get_macropka(rfe_data):
             # titration method given my David's group
             init_guess = -5
             func_10 = lambda pH: (pop_charge(pH, 1, state_details) - pop_charge(pH, 0, state_details))
-            pH_solution_1to0 = fsolve(func_10, init_guess, factor=0.1)
+            pH_solution_1to0, infodict, ier, mesg = fsolve(func_10, init_guess, factor=0.1, full_output=True)
+            if 'The iteration is not making good progress' in mesg:
+                init_guess-=3
+            pH_solution_1to0, infodict, ier, mesg = fsolve(func_10, init_guess, factor=0.1, full_output=True)
+            # If still poor convergence, print warning (MAY NEED BETTER SOLUTION TO THIS)
+            if 'The iteration is not making good progress' in mesg:
+                print("WARNING: Numerical problems encountered with fsolv")
             pka.pKa_bytitration = pH_solution_1to0
 
             # delta G method given by newbooks (Junjun Mao)
@@ -454,7 +476,13 @@ def get_macropka(rfe_data):
             # titration method given my David's group
             init_guess = 5
             func_0neg1 = lambda pH: (pop_charge(pH, -1, state_details) - pop_charge(pH, 0, state_details))
-            pH_solution_0toneg1 = fsolve(func_0neg1, init_guess, factor=0.1)
+            pH_solution_0toneg1, infodict, ier, mesg = fsolve(func_0neg1, init_guess, factor=0.1, full_output=True)
+            if 'The iteration is not making good progress' in mesg:
+                init_guess+=3
+            pH_solution_0toneg1, infodict, ier, mesg = fsolve(func_0neg1, init_guess, factor=0.1, full_output=True)
+            # If still poor convergence, print warning (MAY NEED BETTER SOLUTION TO THIS)
+            if 'The iteration is not making good progress' in mesg:
+                print("WARNING: Numerical problems encountered with fsolv")
             pka.pKa_bytitration = pH_solution_0toneg1
 
             # delta G method given by newbooks (Junjun Mao)
@@ -470,26 +498,31 @@ def get_macropka(rfe_data):
 
 
 
-    # ======================================================================================================================
-    # TO DO:  Convert relative microstate free energies to microscopic pKas, then calculate MACRO pKas from the micro pKas
-    # ======================================================================================================================
+# ======================================================================================================================
+# TO DO:  Convert relative microstate free energies to microscopic pKas, then calculate MACRO pKas from the micro pKas
+# ======================================================================================================================
 
-    # Load submissions data.
-    submissions_RFE = load_submissions(relative_microstate_free_energy_SUBMISSIONS_DIR_PATH, user_map)
+# Load submissions data.
+submissions_RFE = load_submissions(relative_microstate_free_energy_SUBMISSIONS_DIR_PATH, user_map)
+print(submissions_RFE)
 
-    '''# Loop through each submission, convert relative FE's to micro pKas, then convert to macro pKas
-    for sub in submissions_RFE:
-        print("Submission dataframe \n", sub.data)
+# Loop through each submission, convert relative FE's to micro pKas, then convert to macro pKas
+for sub in submissions_RFE:
+    print("Submission dataframe \n", sub.data)
 
-    print("Experimental data: \n", experimental_data)'''
+print("Experimental data: \n", experimental_data)
 
-    # Loop through each submission, convert relative FE's to micro pKas, then convert to macro pKas
-    for sub in submissions_RFE:
-        print("Macro-pKa conversion %s" % sub.participant)
-        print("Molecule From  To  pKa(titr)  pKa(dG)")
-        # Compute macro pKa by two methods:
-        # 1. simulated titration
-        # 2. delta G method. Based on canonical ensemble of microstate groups that share the same formal charge.
-        macropkas = get_macropka(sub.data)
-        for pka in macropkas:
-            print("%6s   %2d   %2d    %8.3f %8.3f" %(pka.molecule, pka.transition_from, pka.transition_to, pka.pKa_bytitration, pka.pKa_bytitration))
+# Loop through each submission, convert relative FE's to micro pKas, then convert to macro pKas
+for sub in submissions_RFE:
+    print("Macro-pKa conversion %s" % sub.participant)
+    print("Molecule From  To  pKa(titr)  pKa(dG)")
+    # Compute macro pKa by two methods:
+    # 1. simulated titration
+    # 2. delta G method. Based on canonical ensemble of microstate groups that share the same formal charge.
+    macropkas = get_macropka(sub.data)
+    for pka in macropkas:
+        # Print only cases which differ substantially (and are reasonable) for debugging purposes
+        if np.abs(pka.pKa_bytitration-pka.pKa_bydG) > 0.5:# and (np.abs(pka.pKa_bytitration) < 20 and np.abs(pka.pKa_bydG) < 20):
+            print("%6s   %2d   %2d    %8.3f %8.3f" %(pka.molecule, pka.transition_from, pka.transition_to, pka.pKa_bytitration, pka.pKa_bydG))
+
+        #print("%6s   %2d   %2d    %8.3f %8.3f" %(pka.molecule, pka.transition_from, pka.transition_to, pka.pKa_bytitration, pka.pKa_bydG))
