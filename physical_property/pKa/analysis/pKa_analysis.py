@@ -1518,6 +1518,8 @@ def DeltaG(pH, state, state_details):
                 DeltaM = 1
             elif item[2] == 1:
                 DeltaM = -1
+            elif item[2] ==2:
+                DeltaM = -2
             else:
                 DeltaM = 0  # Hack to capture fact that pH dependence of states at same formal charge is same/cancels
             # Compute value
@@ -1600,23 +1602,23 @@ def get_macropka(rfe_data):
         # Therefore when pH = 0, we have pKaBA = ΔGAB/C_unit
 
         # Compute +2 to +1 transition
-        '''if 2 in formal_charges:
+        if 2 in formal_charges:
             pka = Macro_pKa()
             pka.molecule = sm_name.split("_")[0]
             pka.transition_from = 2
             pka.transition_to = 1
 
-            init_guess = -5
-            func_10 = lambda pH: (pop_charge(pH, 2, state_details) - pop_charge(pH, 1, state_details))
-            pH_solution_2to1 = fsolve(func_10, init_guess, factor=0.1)
+            # titration method given my David's group
+            init_guess = -10
+            func_2to1 = lambda pH : (pop_charge(pH, 2, state_details) - pop_charge(pH, 1, state_details))
+            pH_solution_2to1 = fsolve(func_2to1, init_guess, factor = 0.1)
             pka.pKa_bytitration = pH_solution_2to1
 
+            # delta G method given by newbooks (Junjun Mao)
             dG = getG(msgroup_p1) - getG(msgroup_p2)
-            #print("msgroup_p1",msgroup_p1)
-            #print("msgroup_p2",msgroup_p2)
             pka.pKa_bydG = (dG / C_unit)
 
-            macropkas.append(pka)'''
+            macropkas.append(pka)
 
         # Compute +1 to 0 transition
         if 1 in formal_charges:
