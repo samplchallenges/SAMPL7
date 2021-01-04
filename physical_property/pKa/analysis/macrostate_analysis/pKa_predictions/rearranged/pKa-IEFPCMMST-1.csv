@@ -1,0 +1,201 @@
+# RELATIVE FREE ENERGY PREDICTIONS (for pKa prediction),
+#
+# This file will be automatically parsed. It must contain the following four elements:
+# predictions, name of method, software listing, and method description.
+# These elements must be provided in the order shown with their respective headers.,
+#
+# Any line that begins with a # is considered a comment and will be ignored when parsing.,
+#
+# PREDICTION SECTION,
+#
+# It is mandatory to submit relative free energy (RFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.,
+# Please report RFE standard error of the mean (SEM) and RFE model uncertainty.,
+#
+# The data in each prediction line should be structured as follows:
+# Microstate ID of reference state, Microstate ID of the predicted microstate, total charge, RFE, RFE SEM, RFE model uncertainty
+#
+# If you have evaluated additional microstates, include the following:
+# Microstate ID of reference state, Microstate ID of the predicted microstate, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string of the predicted microstate,
+#
+# The molecule ID of the other microstate needs to be in the format: `SMXX_extra001` (number can vary),
+# Also email us the `.mol2` file of your microstate with explicit hydrogens and correct bond orders,
+# Please send the `.mol2` file to the email listed on the instructions page.,
+#
+# The list of predictions must begin with the 'Predictions:' keyword as illustrated here.,
+Predictions:
+SM25_micro001,SM25_micro000,-1,16.31,0.00,1.45
+SM25_micro002,SM25_micro000,0,14.57,0.00,1.45
+SM25_micro003,SM25_micro000,-1,9.85,0.00,1.45
+SM26_micro001,SM26_micro000,-1,6.15,0.00,1.45
+SM26_micro002,SM26_micro000,0,22.09,0.00,1.45
+SM26_micro003,SM26_micro000,-1,32.35,0.00,1.45
+SM27_micro001,SM27_micro000,-1,16.78,0.00,1.45
+SM28_micro001,SM28_micro000,0,23.52,0.00,1.45
+SM28_micro002,SM28_micro000,-1,21.92,0.00,1.45
+SM28_micro003,SM28_micro000,1,9.38,0.00,1.45
+SM29_micro001,SM29_micro000,-1,15.65,0.00,1.45
+SM30_micro001,SM30_micro000,-1,14.96,0.00,1.45
+SM31_micro001,SM31_micro000,-1,14.74,0.00,1.45
+SM32_micro001,SM32_micro000,-1,16.25,0.00,1.45
+SM33_micro001,SM33_micro000,-1,14.54,0.00,1.45
+SM34_micro001,SM34_micro000,-1,14.81,0.00,1.45
+SM35_micro001,SM35_micro000,-1,13.98,0.00,1.45
+SM35_micro002,SM35_micro000,0,0.00,0.00,1.45
+SM35_micro003,SM35_micro000,-1,13.98,0.00,1.45
+SM36_micro001,SM36_micro000,-1,12.51,0.00,1.45
+SM36_micro002,SM36_micro000,0,0.00,0.00,1.45
+SM36_micro003,SM36_micro000,-1,12.51,0.00,1.45
+SM37_micro001,SM37_micro000,1,5.37,0.00,1.45
+SM37_micro002,SM37_micro000,-1,11.03,0.00,1.45
+SM37_micro003,SM37_micro000,0,0.00,0.00,1.45
+SM37_micro004,SM37_micro000,-1,5.37,0.00,1.45
+SM37_micro005,SM37_micro000,1,11.03,0.00,1.45
+SM38_micro001,SM38_micro000,-1,13.36,0.00,1.45
+SM39_micro001,SM39_micro000,-1,12.04,0.00,1.45
+SM40_micro001,SM40_micro000,-1,11.23,0.00,1.45
+SM40_micro002,SM40_micro000,1,8.57,0.00,1.45
+SM41_micro001,SM41_micro000,-1,6.98,0.00,1.45
+SM41_micro002,SM41_micro000,1,13.86,0.00,1.45
+SM42_micro001,SM42_micro000,-1,6.61,0.00,1.45
+SM42_micro002,SM42_micro000,1,14.25,0.00,1.45
+SM43_micro001,SM43_micro000,-1,6.02,0.00,1.45
+SM43_micro002,SM43_micro000,1,9.14,0.00,1.45
+SM43_micro003,SM43_micro000,2,28.22,0.00,1.45
+SM44_micro001,SM44_micro000,-1,9.64,0.00,1.45
+SM44_micro002,SM44_micro000,1,6.19,0.00,1.45
+SM45_micro001,SM45_micro000,-1,10.02,0.00,1.45
+SM45_micro002,SM45_micro000,1,7.43,0.00,1.45
+SM46_micro001,SM46_micro000,-1,7.56,0.00,1.45
+SM46_micro002,SM46_micro000,1,6.75,0.00,1.45
+SM46_micro003,SM46_micro000,2,19.79,0.00,1.45
+SM46_micro004,SM46_micro000,1,11.25,0.00,1.45
+
+#
+#
+# Please list your name,"using only UTF-8 characters as described above. The ""Participant name:"" entry is required."
+Participant name:
+CBDD Group
+#
+#
+# Please list your organization/affiliation,using only UTF-8 characters as described above.
+Participant organization:
+University of Barcelona and University of Costa Rica
+
+#
+#
+# NAME SECTION
+#
+# Please provide an informal but informative name of the method used.,
+# The name of the method should not exceed 40 characters.,
+# The 'Name:' keyword is required as shown here.,
+Name:
+IEFPCM/MST
+
+#
+#
+# COMPUTE TIME SECTION,
+#
+# Please provide the average compute time across all of the molecules.,
+# For physical methods, report the GPU and/or CPU compute time in hours.
+# For empirical methods, report the query time in hours.
+# Create a new line for each processor type.,
+# The 'Compute time:' keyword is required as shown here.,
+Compute time:
+1447 hour, CPU
+
+#
+# COMPUTING AND HARDWARE SECTION,
+#
+# Please provide details of the computing resources that were used to train models and make predictions.,
+# Please specify compute time for training models and querying separately for empirical prediction methods.,
+# Provide a detailed description of the hardware used.,
+# The 'Computing and hardware:' keyword is required as shown here.,
+Computing and hardware:
+The conformational ensembles were built in the RPBS Web Portal (https://mobyle.rpbs.univ-paris-diderot.fr/cgi-bin/portal.py#forms::Frog2) using the FRee Online druG conformation generation (Frog2). Quamtum mechanics computations were run on the Consorci de Serveis Universitaris de Catalunya (CSUC).,
+
+# SOFTWARE SECTION,
+#
+# List all major software packages used and their versions.,
+# Create a new line for each software.,
+# The 'Software:' keyword is required.,
+Software:
+Software Frog 2.14
+Software Gaussian 16
+
+# METHOD CATEGORY SECTION,
+#
+# State if your prediction method is better classified as an,
+# experimental database lookup (DL), linear free energy relationship (LFER)
+# quantitative structure-property relationship or machine learning (QSPR/ML),
+# quantum mechanics without empirical correction (QM) model, quantum mechanics with
+# linear empirical correction (QM+LEC), and combined quantum mechanics and molecular
+# mechanics (QM+MM), or Other, using the following category labels:
+# `DL`, `LFER`, `QSPR/ML`, `QM`, `QM+LEC`, `QM+MM` or `Other`.
+#
+# Pick only one category label.,
+# The `Category:` keyword is required.,
+Category:
+Physical (QM)
+
+# METHOD DESCRIPTION SECTION,
+#
+# Methodology and computational details.,
+# Level of details should be roughly equivalent to that used in a publication.,
+# Please include the values of key parameters with units.,
+# Please explain how statistical uncertainties were estimated.,
+# Use as many lines of text as you need.,
+#
+# We strongly encourage you to submit your predicted macro pKa values in this section in consecutive lines following this format:
+# compound name, macro pKa, initial formal charge, formal charge after transition, e.g.:
+# SM25,3.5,0,1
+# This will allow us to check that our analysis of your free energies leads to the same endpoint as your analysis.,
+#
+# All text following the 'Method:' keyword will be regarded as part of your free text methods description.,
+Method:
+Here,we have used the Frog 2.14 software to explore the conformational preferences of all microstates for the Sampl7 molecules. The molecular geometries of the compounds were fully optimized at the B3LYP/6-31G(d) level of theory, taking into account the solvation effect of water on the geometrical parameters of the solutes, using the IEFPCM version of the MST
+model. The resulting minima were verified by vibrational frequency analysis, which gave positive frequencies in all cases. Then,the relative energies of the whole set of conformational species were refined from single-point computations performed at the MP2/aug-cc-pVDZ levels of theory. In addition,the gas phase estimate of the free energy difference for all microstates was derived by combining the MP2 enegies with zero point energy corrections (ZPE). Finally,solvation effects were added by using the B3LYP/6-31G(d) version of the IEFPCM/MST model, which is a quantum mechanical (QM) self-consistent continuum solvation method.
+The pKa was determined using both,the experimental hydration free energy of the proton (-270.28 kcal/mol) and a Boltzmann’s weighting scheme to the relative stabilities of the conformational species determined for the microstates involved in the equilibrium constant for the dissociation reaction following the thermodynamic cycle reported in previous studies [Brown TN,Mora Diez N. Computational determination of aqueous (pKa) values of protonated benzimidazoles (part 1). J. Phys. Chem. B. 110(18),9270–9279 (2006)]. The uncertainties of our method is reported according our previous work Pérez-Areales FJ, Betari N, Viayna A, Pont C, Espargaró A, Bartolini M, De Simone A, Rinaldi Alvarenga JF, Pérez B, Sabate R, Lamuela-Raventós RM, Andrisano V, Luque FJ, Muñoz-Torrero D. Design,synthesis and multitarget biological profiling of second-generation anti-Alzheimer rhein-huprine hybrids. Future Med Chem. 2017 Jun;9(10):965-981. doi: 10.4155/fmc-2017-0049]
+
+Macro pKa values
+SM25,7.24,0,-1
+SM26,4.52,0,-1
+SM27,12.34,0,-1
+SM28,16.12,0,-1
+SM28,-6.90,0,1
+SM29,11.51,0,-1
+SM30,11.00,0,-1
+SM31,10.84,0,-1
+SM32,11.95,0,-1
+SM33,10.69,0,-1
+SM34,10.64,0,-1
+SM35,10.28,0,-1
+SM36,9.20,0,-1
+SM37,-3.95,0,1
+SM37,8.11,0,-1
+SM38,9.82,0,-1
+SM39,8.85,0,-1
+SM40,8.26,0,-1
+SM40,-6.30,0,1
+SM41,5.13,0,-1
+SM41,-10.19,0,1
+SM42,4.86,0,-1
+SM42,-10.48,0,1
+SM43,4.43,0,-1
+SM43,-6.72,0,1
+SM43,-14.03,1,2
+SM44,7.09,0,-1
+SM44,-4.55,0,1
+SM45,7.37,0,-1
+SM45,-5.46,0,1
+SM46,5.56,0,-1
+SM46,-4.96,0,1
+SM46,-9.59,1,2
+
+#
+# All submissions must either be ranked or non-ranked.,
+# Only one ranked submission per participant is allowed.,
+# Multiple ranked submissions from the same participant will not be judged.,
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.,
+"# The ""Ranked:"" keyword is required", and expects a Boolean value (True/False)
+Ranked:
+TRUE

@@ -1,0 +1,62 @@
+Predictions:
+SM25, 4.24, 0.0, 0.0
+SM26, 4.09, 0.0, 0.0
+SM27, 9.59, 0.0, 0.0
+#SM28, 13.53, 0.0, 0.0
+SM29, 9.59, 0.0, 0.0
+SM30, 10.15, 0.0, 0.0
+SM31, 9.78, 0.0, 0.0
+SM32, 10.70, 0.0, 0.0
+#SM33, 10.16, 0.0, 0.0
+SM34, 10.89, 0.0, 0.0
+SM35, 10.16, 0.0, 0.0
+SM36, 10.16, 0.0, 0.0
+SM37, 10.42, 0.0, 0.0
+SM38, 9.07, 0.0, 0.0
+SM39, 10.16, 0.0, 0.0
+SM40, 9.35, 0.0, 0.0
+SM41, 6.44, 0.0, 0.0
+SM42, 5.82, 0.0, 0.0
+SM43, 7.17, 0.0, 0.0
+SM44, 6.48, 0.0, 0.0
+SM45, 5.72, 0.0, 0.0
+SM46, 7.20, 0.0, 0.0
+
+Participant name:
+Danielle Bergazin
+
+Participant organization:
+University of California Irvine
+
+Name:
+REF00_Chemaxon_Chemicalize
+
+Compute time:
+0 hr
+
+Computing and hardware:
+None
+
+Software:
+Chemaxon Chemicalize
+
+# METHOD CATEGORY SECTION
+#
+# State if your prediction method is better classified as an
+# experimental database lookup (DL), linear free energy relationship (LFER),
+# quantitative structure-property relationship or machine learning (QSPR/ML),
+# quantum mechanics without empirical correction (QM) model, quantum mechanics with
+# linear empirical correction (QM+LEC), and combined quantum mechanics and molecular
+# mechanics (QM+MM), or Other, using the following category labels:
+# `DL`, `LFER`, `QSPR/ML`, `QM`, `QM+LEC`, `QM+MM` or `Other`.
+#
+# Pick only one category label.
+# The `Category:` keyword is required.
+Category:
+QSPR/ML
+
+Method:
+Chemaxon Chemicalize
+
+Ranked:
+True
