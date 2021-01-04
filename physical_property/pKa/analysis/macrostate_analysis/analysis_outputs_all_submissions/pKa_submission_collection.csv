@@ -59,26 +59,26 @@
 57,DFT_M06-2X_SMD_explicit_water,pKa_RodriguezPaluch_SMD_1,QM,SM44,6.53,0.0,6.34,0.01,0.1900000000000004,0.6862024272328914
 58,DFT_M06-2X_SMD_explicit_water,pKa_RodriguezPaluch_SMD_1,QM,SM45,6.850000000000007,0.0,5.93,0.05,0.920000000000007,0.6862024272328914
 59,DFT_M06-2X_SMD_explicit_water,pKa_RodriguezPaluch_SMD_1,QM,SM46,7.24,0.0,6.42,0.01,0.8200000000000003,0.6862024272328914
-60,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM25,4.24,0.0,4.49,0.04,-0.25,0.0
-61,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM26,4.09,0.0,4.91,0.01,-0.8200000000000003,0.0
-62,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM27,9.59,0.0,10.45,0.01,-0.8599999999999994,0.0
-63,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM29,9.59,0.0,10.05,0.01,-0.46000000000000085,0.0
-64,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM30,10.15,0.0,10.29,0.12,-0.1399999999999988,0.0
-65,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM31,9.78,0.0,11.02,0.01,-1.2400000000000002,0.0
-66,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM32,10.7,0.0,10.45,0.02,0.25,0.0
-67,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM34,10.89,0.0,11.93,0.05,-1.0399999999999991,0.0
-68,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM35,10.16,0.0,9.87,0.01,0.2900000000000009,0.0
-69,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM36,10.16,0.0,9.8,0.06,0.35999999999999943,0.0
-70,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM37,10.42,0.0,10.33,0.02,0.08999999999999986,0.0
-71,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM38,9.07,0.0,9.44,0.02,-0.3699999999999992,0.0
-72,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM39,10.16,0.0,10.22,0.15,-0.0600000000000005,0.0
-73,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM40,9.35,0.0,9.58,0.01,-0.23000000000000043,0.0
-74,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM41,6.44,0.0,5.22,0.01,1.2200000000000006,0.0
-75,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM42,5.82,0.0,6.62,0.02,-0.7999999999999998,0.0
-76,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM43,7.17,0.0,5.62,0.02,1.5499999999999998,0.0
-77,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM44,6.48,0.0,6.34,0.01,0.14000000000000057,0.0
-78,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM45,5.72,0.0,5.93,0.05,-0.20999999999999996,0.0
-79,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM46,7.2,0.0,6.42,0.01,0.7800000000000002,0.0
+60,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM25,4.24,0.0,4.49,0.04,-0.25,0.5
+61,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM26,4.09,0.0,4.91,0.01,-0.8200000000000003,0.5
+62,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM27,9.59,0.0,10.45,0.01,-0.8599999999999994,0.5
+63,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM29,9.59,0.0,10.05,0.01,-0.46000000000000085,0.5
+64,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM30,10.15,0.0,10.29,0.12,-0.1399999999999988,0.5
+65,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM31,9.78,0.0,11.02,0.01,-1.2400000000000002,0.5
+66,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM32,10.7,0.0,10.45,0.02,0.25,0.5
+67,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM34,10.89,0.0,11.93,0.05,-1.0399999999999991,0.5
+68,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM35,10.16,0.0,9.87,0.01,0.2900000000000009,0.5
+69,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM36,10.16,0.0,9.8,0.06,0.35999999999999943,0.5
+70,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM37,10.42,0.0,10.33,0.02,0.08999999999999986,0.5
+71,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM38,9.07,0.0,9.44,0.02,-0.3699999999999992,0.5
+72,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM39,10.16,0.0,10.22,0.15,-0.0600000000000005,0.5
+73,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM40,9.35,0.0,9.58,0.01,-0.23000000000000043,0.5
+74,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM41,6.44,0.0,5.22,0.01,1.2200000000000006,0.5
+75,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM42,5.82,0.0,6.62,0.02,-0.7999999999999998,0.5
+76,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM43,7.17,0.0,5.62,0.02,1.5499999999999998,0.5
+77,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM44,6.48,0.0,6.34,0.01,0.14000000000000057,0.5
+78,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM45,5.72,0.0,5.93,0.05,-0.20999999999999996,0.5
+79,REF00_Chemaxon_Chemicalize,pKa_REF00_Chemaxon_Chemicalize_1,QSPR/ML,SM46,7.2,0.0,6.42,0.01,0.7800000000000002,0.5
 80,Standard Gaussian Process,pKa-RobertRaddi,QSPR/ML,SM25,5.967626851843212,2.22,4.49,0.04,1.4776268518432119,9.39
 81,Standard Gaussian Process,pKa-RobertRaddi,QSPR/ML,SM26,6.31008870175041,2.22,4.91,0.01,1.40008870175041,3.42
 82,Standard Gaussian Process,pKa-RobertRaddi,QSPR/ML,SM27,5.836470174187735,2.22,10.45,0.01,-4.613529825812265,4.71

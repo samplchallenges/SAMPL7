@@ -343,7 +343,7 @@ def calc_MAE_for_molecules_across_selected_predictions(collection_df, selected_m
     #                                        "Physical (QM)": "Physical_QM"}
 
     subset_directory_path = os.path.join(directory_path, category_path_label_dict[selected_method_group])
-    
+
     # Calculate MAE using subsection of collection database
     calc_MAE_for_molecules_across_all_predictions(collection_df=collection_df_subset, directory_path=subset_directory_path, file_base_name=file_base_name)
 
@@ -578,7 +578,7 @@ if __name__ == '__main__':
     # Repeat analysis for just ranked submissions
     # ==========================================================================================
 
-    '''# Read collection file
+    # Read collection file
     collection_data = read_collection_file(collection_file_path = pKa_COLLECTION_PATH_RANKED_SUBMISSIONS)
 
     # Create new directory to store molecular statistics
@@ -632,7 +632,7 @@ if __name__ == '__main__':
     os.makedirs(category_comparison_directory_path, exist_ok=True)
     create_category_error_distribution_plots(collection_df=collection_data,
                                               directory_path=category_comparison_directory_path,
-                                              file_base_name="error_distribution_of_method_categories_ridge_plot")'''
+                                              file_base_name="error_distribution_of_method_categories_ridge_plot")
 
     '''
     # Calculate mean and standard deviation of performance statistics of top 10 methods of each category.
