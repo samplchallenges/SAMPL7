@@ -30,14 +30,14 @@ SM26_micro000,SM26_micro001,-1,6.15,0.00,1.45
 SM26_micro000,SM26_micro002,0,22.09,0.00,1.45
 SM26_micro000,SM26_micro003,-1,32.35,0.00,1.45
 SM27_micro000,SM27_micro001,-1,16.78,0.00,1.45
-#SM28_micro000,SM28_micro001,0,23.52,0.00,1.45
-#SM28_micro000,SM28_micro002,-1,21.92,0.00,1.45
-#SM28_micro000,SM28_micro003,1,9.38,0.00,1.45
+SM28_micro000,SM28_micro001,0,23.52,0.00,1.45
+SM28_micro000,SM28_micro002,-1,21.92,0.00,1.45
+SM28_micro000,SM28_micro003,1,9.38,0.00,1.45
 SM29_micro000,SM29_micro001,-1,15.65,0.00,1.45
 SM30_micro000,SM30_micro001,-1,14.96,0.00,1.45
 SM31_micro000,SM31_micro001,-1,14.74,0.00,1.45
 SM32_micro000,SM32_micro001,-1,16.25,0.00,1.45
-#SM33_micro000,SM33_micro001,-1,14.54,0.00,1.45
+SM33_micro000,SM33_micro001,-1,14.54,0.00,1.45
 SM34_micro000,SM34_micro001,-1,14.81,0.00,1.45
 SM35_micro000,SM35_micro001,-1,13.98,0.00,1.45
 SM35_micro000,SM35_micro002,0,0.00,0.00,1.45
@@ -89,7 +89,7 @@ University of Barcelona and University of Costa Rica
 # The name of the method should not exceed 40 characters.
 # The 'Name:' keyword is required as shown here.
 Name:
-IEFPCM/MST
+IEFPCM/MST 
 
 #
 #
@@ -135,7 +135,7 @@ Software Gaussian 16
 # Pick only one category label.
 # The `Category:` keyword is required.
 Category:
-QM
+Physical (QM)
 
 # METHOD DESCRIPTION SECTION
 #

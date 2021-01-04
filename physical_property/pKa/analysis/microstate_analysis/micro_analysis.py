@@ -205,6 +205,13 @@ class pKaSubmissionCollection:
 
 
     def __init__(self, submissions, output_directory_path, pKa_submission_collection_file_path, no_outliers = True):
+
+        # Compute beta and other constants
+        kB = 1.381 * 6.02214 / 1000.0  # [kJ/(mol K)]
+        beta = 1. / (kB * 300)  # [mol/kJ]
+        beta = beta * 4.186
+        C_unit = 1 / beta * np.log(10)
+
         # Build collection dataframe from the beginning.
         # Build full pKa collection table.
 
@@ -225,37 +232,39 @@ class pKaSubmissionCollection:
                 total_charge = submission.data.loc[mol_ID, "total charge"]
                 RFE_model_uncertainty_original =  submission.data.loc[mol_ID, "relative free energy model uncertainty"]
 
-                # correct sign + unit
-                if submission.file_name in ["pKa-VA-2", "pKa_RodriguezPaluch_SMD_1",
-                                            "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+                '''# correct sign + unit
+                if submission.file_name in ["pKa-VA-2", "pKa_RodriguezPaluch_SMD_1", "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
                     sign_error = "yes"
                     RFE_mean_pred = RFE_mean_pred_original*-1
 
                     RFE_mean_pred = RFE_mean_pred*1.36 #convert submission to kcal/mol
                     RFE_SEM_pred = RFE_SEM_pred_original*1.36
-                    RFE_model_uncertainty = RFE_model_uncertainty_original*1.36
+                    RFE_model_uncertainty = RFE_model_uncertainty_original*1.36'''
 
-                #convert submission to kcal/mol
-                if submission.file_name in ["pKa-ECRISM-1"]:
-
-                    RFE_mean_pred = RFE_mean_pred_original*1.36
-                    RFE_SEM_pred = RFE_SEM_pred_original*1.36
-                    RFE_model_uncertainty = RFE_model_uncertainty_original*1.36
+                # Convert submissions to kcal/mol
+                if submission.file_name in ["pKa-ECRISM-1", "pKa-VA-2-charge-correction", "pKa_RodriguezPaluch_SMD_1", "pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+                    RFE_mean_pred = RFE_mean_pred_original*C_unit #convert submission to kcal/mol
+                    RFE_SEM_pred = RFE_SEM_pred_original*C_unit
+                    RFE_model_uncertainty = RFE_SEM_pred_original*C_unit
 
                 # fix submission which seems to be in kJ/mol
                 if submission.file_name in ["pka-nhlbi-1c"]:
-                    sign_error = "yes"
-                    RFE_mean_pred = RFE_mean_pred_original*-1
+                    # correct free energies into kcal/mol
+                    # submission seemed to have used C_units = 5.69 for kJ/mol, so can divide by 4.186 to get kcal/mol
 
-                    RFE_mean_pred = RFE_mean_pred/4.186
+                    #sign_error = "yes"
+                    #RFE_mean_pred = RFE_mean_pred_original*-1
+
+                    RFE_mean_pred = RFE_mean_pred_original/4.186
                     RFE_SEM_pred = RFE_SEM_pred_original/4.186
                     RFE_model_uncertainty = RFE_model_uncertainty_original/4.186
 
 
                 #If single transition states are opposite in sign from macro pKa, we assume they made a sign error
-                if submission.file_name in ["pKa-ECRISM-1", "pka-nhlbi-1c", "pKa-VA-2",
-                                            "pKa_RodriguezPaluch_SMD_1", "pKa_RodriguezPaluch_SMD_2",
-                                            "pKa_RodriguezPaluch_SMD_3"]:
+                if submission.file_name in [ "pKa-VA-2-charge-correction", "pka-nhlbi-1c", "pKa_RodriguezPaluch_SMD_1","pKa_RodriguezPaluch_SMD_2", "pKa_RodriguezPaluch_SMD_3"]:
+                    RFE_mean_pred = RFE_mean_pred*-1 #fix sign error
+                    submission.data.loc[mol_ID, "relative free energy"] = RFE_mean_pred
+                    sign_error = "yes"
 
                     data.append({
                         'method name': submission.method_name,

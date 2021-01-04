@@ -4,50 +4,50 @@
 #
 Predictions:
 SM25_micro000,SM25_micro001,-1,10.49,0, 1.02
-SM25_micro000,SM25_micro002,0,-12.80,0,1.02	
-SM25_micro000,SM25_micro003,-1,-9.16,0,1.02	
-SM26_micro000,SM26_micro001,-1,-5.94,0,1.02	
-SM26_micro000,SM26_micro002,0,20.81,0,1.02	
+SM25_micro000,SM25_micro002,0,-12.80,0,1.02
+SM25_micro000,SM25_micro003,-1,-9.16,0,1.02
+SM26_micro000,SM26_micro001,-1,-5.94,0,1.02
+SM26_micro000,SM26_micro002,0,20.81,0,1.02
 SM26_micro000,SM26_micro003,-1,-22.11,0,1.02
-SM27_micro000,SM27_micro001,-1,-13.86,0,1.02	
-SM28_micro000,SM28_micro001,0,25.72,0,1.02	
-SM28_micro000,SM28_micro002,-1,-19.08,0,1.02	
-SM28_micro000,SM28_micro003,1,7.28,0,1.02	
-SM29_micro000,SM29_micro001,-1,-13.60,0,1.02	
-SM30_micro000,SM30_micro001,-1,-12.90,0,1.02	
-SM31_micro000,SM31_micro001,-1,-13.16,0,1.02	
-SM32_micro000,SM32_micro001,-1,-13.74,0,1.02	
-SM33_micro000,SM33_micro001,-1,-11.88,0,1.02	
-SM34_micro000,SM34_micro001,-1,-14.35,0,1.02	
-SM35_micro000,SM35_micro001,-1,-11.70,0,1.02	
+SM27_micro000,SM27_micro001,-1,-13.86,0,1.02
+#SM28_micro000,SM28_micro001,0,25.72,0,1.02
+#SM28_micro000,SM28_micro002,-1,-19.08,0,1.02
+#SM28_micro000,SM28_micro003,1,7.28,0,1.02
+SM29_micro000,SM29_micro001,-1,-13.60,0,1.02
+SM30_micro000,SM30_micro001,-1,-12.90,0,1.02
+SM31_micro000,SM31_micro001,-1,-13.16,0,1.02
+SM32_micro000,SM32_micro001,-1,-13.74,0,1.02
+#SM33_micro000,SM33_micro001,-1,-11.88,0,1.02
+SM34_micro000,SM34_micro001,-1,-14.35,0,1.02
+SM35_micro000,SM35_micro001,-1,-11.70,0,1.02
 SM35_micro000,SM35_micro002,0,-1.12,0,1.02
-SM35_micro000,SM35_micro003,-1,-13.20,0,1.02	
+SM35_micro000,SM35_micro003,-1,-13.20,0,1.02
 SM36_micro000,SM36_micro001,-1,-9.53,0,1.02
-SM36_micro000,SM36_micro002,0,-3.22,0,1.02	
-SM36_micro000,SM36_micro003,-1,-9.51,0,1.02	
+SM36_micro000,SM36_micro002,0,-3.22,0,1.02
+SM36_micro000,SM36_micro003,-1,-9.51,0,1.02
 SM37_micro000,SM37_micro001,1,8.52,0,1.02
-SM37_micro000,SM37_micro002,-1,-9.07,0,1.02	
-SM37_micro000,SM37_micro003,0,-3.03,0,1.02	
-SM37_micro000,SM37_micro004,-1,-9.07,0,1.02	
-SM37_micro000,SM37_micro005,1,7.72,0,1.02	
-SM38_micro000,SM38_micro001,-1,-12.42,0,1.02	
-SM39_micro000,SM39_micro001,-1,-10.16,0,1.02	
-SM40_micro000,SM40_micro001,-1,-11.46,0,1.02	
-SM40_micro000,SM40_micro002,1,11.28,0,1.02	
-SM41_micro000,SM41_micro001,-1,-6.21,0,1.02	
-SM41_micro000,SM41_micro002,1,9.38,0,1.02	
-SM42_micro000,SM42_micro001,-1,-0.39,0,1.02	
-SM42_micro000,SM42_micro002,1,4.63,0,1.02	
-SM43_micro000,SM43_micro001,-1,-1.72,0,1.02	
-SM43_micro000,SM43_micro002,1,8.00,0,1.02	
-SM43_micro000,SM43_micro003,2,44.38,0,1.02	
-SM44_micro000,SM44_micro001,-1,-8.85,0,1.02	
-SM44_micro000,SM44_micro002,1,7.47,0,1.02	
-SM45_micro000,SM45_micro001,-1,-8.25,0,1.02	
-SM45_micro000,SM45_micro002,1,8.01,0,1.02		
-SM46_micro000,SM46_micro001,-1,-8.73,0,1.02	
-SM46_micro000,SM46_micro002,1,6.98,0,1.02	
-SM46_micro000,SM46_micro003,2,46.30,0,1.02	
+SM37_micro000,SM37_micro002,-1,-9.07,0,1.02
+SM37_micro000,SM37_micro003,0,-3.03,0,1.02
+SM37_micro000,SM37_micro004,-1,-9.07,0,1.02
+SM37_micro000,SM37_micro005,1,7.72,0,1.02
+SM38_micro000,SM38_micro001,-1,-12.42,0,1.02
+SM39_micro000,SM39_micro001,-1,-10.16,0,1.02
+SM40_micro000,SM40_micro001,-1,-11.46,0,1.02
+SM40_micro000,SM40_micro002,1,11.28,0,1.02
+SM41_micro000,SM41_micro001,-1,-6.21,0,1.02
+SM41_micro000,SM41_micro002,1,9.38,0,1.02
+SM42_micro000,SM42_micro001,-1,-0.39,0,1.02
+SM42_micro000,SM42_micro002,1,4.63,0,1.02
+SM43_micro000,SM43_micro001,-1,-1.72,0,1.02
+SM43_micro000,SM43_micro002,1,8.00,0,1.02
+SM43_micro000,SM43_micro003,2,44.38,0,1.02
+SM44_micro000,SM44_micro001,-1,-8.85,0,1.02
+SM44_micro000,SM44_micro002,1,7.47,0,1.02
+SM45_micro000,SM45_micro001,-1,-8.25,0,1.02
+SM45_micro000,SM45_micro002,1,8.01,0,1.02
+SM46_micro000,SM46_micro001,-1,-8.73,0,1.02
+SM46_micro000,SM46_micro002,1,6.98,0,1.02
+SM46_micro000,SM46_micro003,2,46.30,0,1.02
 #
 Participant name:
 Sergio Antonio Rodriguez
@@ -58,7 +58,7 @@ University of Santiago del Estero, Argentina
 Miami University
 #
 Name:
-RFE-SMD
+DFT_M06-2X_SMD_implicit
 #
 # COMPUTE TIME SECTION
 #
@@ -67,7 +67,7 @@ Compute time:
 #
 # COMPUTING AND HARDWARE SECTION
 #
-Computing and hardware: 
+Computing and hardware:
 All simulations were performed on the Pitzer Cluster at the Ohio Supercomputer Center
 (https://www.osc.edu/resources/technical_support/supercomputers/pitzer).
 The reported compute time is taken as the walltime times the number of processors (core hours).
@@ -79,24 +79,24 @@ nodes as part of a Pitzer Expansion cluster.
 
 # SOFTWARE SECTION
 #
-Software: 
+Software:
 Gaussian 16
 
 # METHOD CATEGORY SECTION
 #
 Category:
-QM quantum mechanics
+QM
 
 # METHOD DESCRIPTION SECTION
 #
 Method:
-Calculations were performed by the Gaussian 16 revision E01 series of programs using one hybrid density functional M06-2X, 6-31+G(d,p) as basis set, 
-and the SMD implicit solvation model. Geometries were fully optimized in aqueous solution. Harmonic frequencies were calculated to confirm that 
-the structures were minima on the potential energy surface and to obtain the thermal and entropic contributions to the free energies. 
-The calculation of pKa was based on the use of the direct approach, given by the proton dissociation reaction. The pKa value of the molecule HA 
+Calculations were performed by the Gaussian 16 revision E01 series of programs using one hybrid density functional M06-2X, 6-31+G(d,p) as basis set,
+and the SMD implicit solvation model. Geometries were fully optimized in aqueous solution. Harmonic frequencies were calculated to confirm that
+the structures were minima on the potential energy surface and to obtain the thermal and entropic contributions to the free energies.
+The calculation of pKa was based on the use of the direct approach, given by the proton dissociation reaction. The pKa value of the molecule HA
 was calculated according to the following equation
-   pKa= G*aq/2.303RT; G*aq=G*aq,A- + G*aq,H+ - G*aq,HA 
-where G*aq,A- and G*aq,HA are the standard free energies of the deprotonated and protonated species, respectively, calculated directly in aqueous solution at 298.15 K. 
+   pKa= G*aq/2.303RT; G*aq=G*aq,A- + G*aq,H+ - G*aq,HA
+where G*aq,A- and G*aq,HA are the standard free energies of the deprotonated and protonated species, respectively, calculated directly in aqueous solution at 298.15 K.
 
 Macro pKa values
 # compound name, macro pKa, initial formal charge, formal charge after transition, e.g.:

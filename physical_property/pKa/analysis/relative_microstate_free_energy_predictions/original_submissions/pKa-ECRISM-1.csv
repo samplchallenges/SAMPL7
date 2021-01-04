@@ -10,16 +10,16 @@ SM26_micro000,SM26_micro002,0,12.59,0.01,1.04
 SM26_micro000,SM26_micro004,0,4.82,0.01,1.04
 SM26_micro000,SM26_micro005,1,9.95,0.01,1.04
 SM27_micro000,SM27_micro001,-1,10.17,0.01,1.04
-#SM28_micro000,SM28_micro002,-1,13.95,0.01,1.04
-#SM28_micro000,SM28_micro001,0,14.75,0.01,1.04
-#SM28_micro000,SM28_micro004,-1,31.52,0.01,1.04
-#SM28_micro000,SM28_micro003,1,6.75,0.01,1.04
+SM28_micro000,SM28_micro002,-1,13.95,0.01,1.04
+SM28_micro000,SM28_micro001,0,14.75,0.01,1.04
+SM28_micro000,SM28_micro004,-1,31.52,0.01,1.04
+SM28_micro000,SM28_micro003,1,6.75,0.01,1.04
 SM29_micro000,SM29_micro001,-1,9.88,0.01,1.04
 SM30_micro000,SM30_micro001,-1,9.4,0.01,1.04
 SM31_micro000,SM31_micro001,-1,11.15,0.01,1.04
 SM31_micro000,SM31_micro002,1,1.88,0.01,1.04
 SM32_micro000,SM32_micro001,-1,10.25,0.01,1.04
-#SM33_micro000,SM33_micro001,-1,9.8,0.01,1.04
+SM33_micro000,SM33_micro001,-1,9.8,0.01,1.04
 SM34_micro000,SM34_micro001,-1,10.4,0.01,1.04
 SM34_micro000,SM34_micro002,1,1.08,0.01,1.04
 SM35_micro000,SM35_micro001,-1,9.68,0.01,1.04
@@ -83,7 +83,7 @@ Amber 12
 Mathematica 12.0 (Wolfram)
 
 Category:
-QM
+Physical (QM)
 
 Method:
 For microstates with multiple possible stereoisomers these were generated using Corina.
