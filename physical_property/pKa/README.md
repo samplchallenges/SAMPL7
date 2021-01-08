@@ -16,4 +16,4 @@ Experimental pK<sub>a</sub> measurements will made available after the challenge
 - [`example_submission_file/pKa-DanielleBergazinExampleFile-1.csv`](example_submission_file/pKa-DanielleBergazinExampleFile-1.csv) - An example submission file filled with random values to illustrate expected format.
 - [`pKa_challenge_instructions.md`](pKa_challenge_instructions.md) - Instructions for the pK<sub>a</sub> challenge.
 - [`transition_networks/`](transition_networks/) - This directory contains transition networks of the challenge molecules in `.PDF` and `.PPTX` format.
-- [`analysis`](analysis/): Contains relative microstate free energy participant submissions and analysis results.
+- [`analysis`](analysis/): Contains participant submissions and analysis results.

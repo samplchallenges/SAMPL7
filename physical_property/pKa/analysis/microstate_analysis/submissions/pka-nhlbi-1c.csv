@@ -85,7 +85,7 @@ NIH NHLBI
 # The name must not exceed 40 characters.
 # The 'Name:' keyword is required as shown here.
 Name:
-RFE-NHLBI-TZVP-QM
+TZVP-QM
 
 # SOFTWARE SECTION
 #
