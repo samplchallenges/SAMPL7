@@ -1,6 +1,11 @@
-# Analysis of macro pKa's
+# Analysis of macro pK<sub>a</sub>'s
 
-Submitted relative free energies were converted to macro pKa predictions and analyzed here. General analysis of pKa predictions include calculated vs predicted pKa correlation plots and 6 performance statistics (RMSE, MAE, ME, R^2, linear regression slope(m), and error slope(ES)) for all the submissions.
+Submitted relative free energies were converted to macro pK<sub>a</sub> predictions and analyzed here.
+
+Participants submitted relative free energies between microstates.
+As a consistency check, two methods are implemented in the [pKa_analysis.py](pKa_analysis.py) code to convert participant submissions to macro pK<sub>a</sub>'s. One method is the delta G method given by Junjun Mao (Levich Institute, City College of New York), and the other is a titration method given by David Mobley which follows the [Selwa et al](https://link.springer.com/article/10.1007/s10822-018-0138-6) SAMPL6 work from JCAMD 2018. The Selwa approach was used in the analysis here. In cases where there is more than one macro pK<sub>a</sub> estimated, the calculated macro pK<sub>a</sub> values are related to experiment using the 0 to -1 transition.
+
+General analysis of pK<sub>a</sub> predictions include calculated vs predicted pK<sub>a</sub> correlation plots and 6 performance statistics (RMSE, MAE, ME, R^2, linear regression slope(m), and error slope(ES)) for all the submissions.
 95%-percentile bootstrap confidence intervals of all the statistics were reported.
 
 Molecular statistics analysis was performed to indicate which molecules were more difficult to predict accurately across submitted methods. Error statistics (MAE and RMSE) were calculated for each molecule averaging across all methods or for all methods within a method category.
@@ -8,14 +13,14 @@ Molecular statistics analysis was performed to indicate which molecules were mor
 ## Manifest
 - [`pKa_analysis.py`](pKa_analysis.py) - Python script that parses submissions and performs the analysis. Provides two separate treatment for ranked blind predictions alone (output directory: [`analysis_outputs_ranked_submissions/`](analysis_outputs_ranked_submissions/)) and blind ranked and non-ranked predictions together with reference calculations (output directory: [`analysis_outputs_all_submissions/`](analysis_outputs_all_submissions/)). Reference calculations are not formally part of the challenge but are provided as reference/comparison methods.
 - [`pKa_analysis2.py`](pKa_analysis2.py) - Python script that performs the analysis of molecular statistics (Error statistics, MAE and RMSE, calculated across methods for each molecule.)
-- [`pKa_experimental_values.csv`](pKa_experimental_values.csv) -  CSV table of potentiometric and shake-flask pKa measurements of 22 molecules and their SMILES.
+- [`pKa_experimental_values.csv`](pKa_experimental_values.csv) -  CSV table of potentiometric and shake-flask pK<sub>a</sub> measurements of 22 molecules and their SMILES.
 - [`SAMPL7-user-map-pKa.csv`](SAMPL7-user-map-pKa.csv) - User map of all submissions.
 - [`get_usermap.py`](get_usermap.py) - Python script used to create the user map.
 - [`analysis_outputs_ranked_submissions/`](analysis_outputs_ranked_submissions/) - This directory contain analysis outputs of ranked submissions only.
-    - `error_for_each_pKa.pdf` - Violin plots that show error distribution of predictions related to each experimental pKa.
-    - `pKaCorrelationPlots/` - This directory contains plots of predicted vs. experimental pKa values with linear regression line (blue) for each method. Files are named according to the submitted method name of each subission, which can be found in `statistics_table.csv`. In correlation plots, the dashed black line has a slope of 1. Dark and light green shaded areas indicate +-0.5 and +-1.0 pKa unit error regions, respectively.
-    - `pKaCorrelationPlotsWithSEM/` - This directory contains similar plots to the `pKaCorrelationPlots/` directory with error bars added for Standard Error of the Mean (SEM) of experimental and predicted values for submissions that reported these values. Some experimental pKa SEM values are  too small to be able to see the horizontal error bars.
-    - `AbsoluteErrorPlots/` - This directory contains a bar plot for each method showing the absolute error for each pKa prediction compared to the experimental value.
+    - `error_for_each_pKa.pdf` - Violin plots that show error distribution of predictions related to each experimental pK<sub>a</sub>.
+    - `pKaCorrelationPlots/` - This directory contains plots of predicted vs. experimental pK<sub>a</sub> values with linear regression line (blue) for each method. Files are named according to the submitted method name of each subission, which can be found in `statistics_table.csv`. In correlation plots, the dashed black line has a slope of 1. Dark and light green shaded areas indicate +-0.5 and +-1.0 pK<sub>a</sub> unit error regions, respectively.
+    - `pKaCorrelationPlotsWithSEM/` - This directory contains similar plots to the `pKaCorrelationPlots/` directory with error bars added for Standard Error of the Mean (SEM) of experimental and predicted values for submissions that reported these values. Some experimental pK<sub>a</sub> SEM values are  too small to be able to see the horizontal error bars.
+    - `AbsoluteErrorPlots/` - This directory contains a bar plot for each method showing the absolute error for each pK<sub>a</sub> prediction compared to the experimental value.
     - `StatisticsTables/` - This directory contains machine-readable copies of the Statistics Table, bootstrap distributions of performance statistics, and overall performance comparison plots based on RMSE and MAE values.
         - `statistics.csv`- A table of performance statistics (RMSE, MAE, ME, R^2, linear regression slope(m), Kendall's Tau, and error slope(ES)) for all the submissions.
         - `RMSE_vs_method_plot.pdf`

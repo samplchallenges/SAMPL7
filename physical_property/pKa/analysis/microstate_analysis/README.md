@@ -1,3 +1,6 @@
+
+Participants submitted relative free energies between microstates. Included are graphs looking at the average relative microstate free energy for each microstate, the  distributions of microstate transition free energies relative to the reference state (based on predictions from all methods), and the distributions of microstate transition free energies relative to the reference state (based on predictions from all methods).
+
 ## Manifest
 - [`get_usermap.py`](get_usermap.py) - Python script used to create the user map.
 - [`micro_analysis.py`](micro_analysis.py) - Python script that parses submissions and performs the analysis.
@@ -7,4 +10,4 @@
   - [`barplot_average_FE_predictions.pdf`](plots/barplot_average_FE_predictions.pdf) - average relative microstate free energy for each microstate.
   - [`ridgeplot_all_FE_predictions.pdf`](plots/ridgeplot_all_FE_predictions.pdf) - Ridge plot that shows the  distributions of microstate transition free energies relative to the reference state, based on predictions from all methods.
   - [`violinplot_all_FE_predictions.pdf`](plots/violinplot_all_FE_predictions.pdf) - Violin plot that shows the  distributions of microstate transition free energies relative to the reference state, based on predictions from all methods.
-- [`submissions/`](submissions/) - Participant submissions.
+- [`submissions/`](submissions/) - Participant submissions. These are the same as the submission files in [relative_microstate_free_energy_predictions](../relative_microstate_free_energy_predictions/), except the reference state and microstate sections were switched for quick use in the analysis here.
