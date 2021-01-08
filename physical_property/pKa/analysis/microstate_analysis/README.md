@@ -1,5 +1,5 @@
 
-Participants submitted relative free energies between microstates. Included are graphs looking at the average relative microstate free energy for each microstate, the  distributions of microstate transition free energies relative to the reference state (based on predictions from all methods), and the distributions of microstate transition free energies relative to the reference state (based on predictions from all methods).
+Participants submitted relative free energies between microstates and were analyzed here. Analysis includes the average relative microstate free energy for each microstate, the  distributions of microstate transition free energies relative to the reference state (based on predictions from all methods), and the distributions of microstate transition free energies relative to the reference state (based on predictions from all methods).
 
 ## Manifest
 - [`get_usermap.py`](get_usermap.py) - Python script used to create the user map.
