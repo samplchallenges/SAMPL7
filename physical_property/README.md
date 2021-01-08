@@ -19,7 +19,7 @@ Submissions to the SAMPL7 physical property challenge will be due October 8, 202
 
 Submission details, templates, instructions and analysis are linked to in the manifest.
 
-The submission servers are now live: [SAMPL7 pK<sub>a</sub> submissions](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa) and [SAMPL7 logP/permeability submissions](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop)). Note that each challenge component has its own format, but logP and permeability share the same submission URL.
+The submission servers are now live: [SAMPL7 pK<sub>a</sub> submissions](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa) and [SAMPL7 logP/permeability submissions](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop). Note that each challenge component has its own format, but logP and permeability share the same submission URL.
 
 ## A view of the compounds
 
@@ -41,7 +41,7 @@ Effective permeability (log<sub>*P*<sub>*app*</sub></sub>) was measured by PAMPA
 
 - [`SAMPL7_molecule_ID_and_SMILES.csv`](SAMPL7_molecule_ID_and_SMILES.csv): A `.CSV` file containing SAMPL7 challenge molecule IDs and SMILES. SMILES were provided by the [Ballatore lab](https://pharmacy.ucsd.edu/faculty/ballatore).
 - [`logP/`](logP/): Folder contains an input file in `.CSV` format with SMILES strings of the neutral states of the molecules. This folder contains participant submissions, instructions, a submission template and the analysis for the logP challenge.
-- [`pK<sub>a</sub>/`](pKa/): Folder contains challenge input files in `.CSV` format with SMILES of enumerated microstates. `.MOL2` and `.SDF` files of each microstate are also provided. This folder contains instructions and a submission template for the pK<sub>a</sub> challenge. This folder contains instructions, a submission template and the analysis for the pK<sub>a</sub> challenge. Microstates (tautomers and protomers) were generated with a notebook wich uses RDKit and OpenEye tools. Additional microstates were enumerated using Chemicalize (Chemaxon) and Epik (Schrodinger) and added to the notebook generated `.CSV` files.
+- [`pKa`](pKa/): Folder contains challenge input files in `.CSV` format with SMILES of enumerated microstates. `.MOL2` and `.SDF` files of each microstate are also provided. This folder contains instructions and a submission template for the pK<sub>a</sub> challenge. This folder contains instructions, a submission template and the analysis for the pK<sub>a</sub> challenge. Microstates (tautomers and protomers) were generated with a notebook wich uses RDKit and OpenEye tools. Additional microstates were enumerated using Chemicalize (Chemaxon) and Epik (Schrodinger) and added to the notebook generated `.CSV` files.
 - [`permeability/`](permeability/): Folder contains input files in `.CSV` format with SMILES strings of molecules. This folder contains instructions, a submission template and the analysis for the permeability challenge.
 - [`images/`](images): Folder containing images related to this challenge in PDF and/or JPEG format.
 - [`experimental_data/`](experimental_data/): Folder contains experimental measurements of pK<sub>a</sub>, partitioning, and permeability values.
