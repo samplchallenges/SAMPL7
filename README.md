@@ -9,10 +9,6 @@ See the [SAMPL website](https://samplchallenges.github.io) for information on th
 Because these files are available publicly, we have no record of who downloads them. Therefore, you should sign up for notifications. Specifically, if you want to receive updates if we uncover any problems, it is imperative that you either (a) sign up for the SAMPL e-mail list, or (b) sign up for notifications of changes to this GitHub repository (the Watch button, above); ideally you would do both.
 Join our [SAMPL7 e-mail list](http://eepurl.com/gpBBun) to get e-mails with SAMPL7-related announcements.
 
-## Upcoming workshop
-
-We're running a [2020 SAMPL virtual workshop on Nov. 4](https://www.gdch.de/gcc2020) in combination with the GCC.  It’s timed so both European and US folks can join, and will be hot on the heels of the current SAMPL7 physical properties challenge. Sign up if you're interested in attending.
-
 
 ## Acknowledging and citing SAMPL
 
@@ -21,6 +17,12 @@ If you've benefitted from our work on the SAMPL series of challenges, please be 
 We also ask you to cite the SAMPL dataset(s) you used. These are versioned on Zenodo, and the latest DOI is here: [![DOI](https://zenodo.org/badge/184310568.svg)](https://zenodo.org/badge/latestdoi/184310568) . Click through for access to all data releases. You may cite these sets by their DOI.
 
 Of course, we also appreciate it if you cite any overview/experimental papers relevant to the particular SAMPL challenge you participated in.
+
+## SAMPL7 special issues
+
+The SAMPL7 physical properties special issue of JCAMD is now open for submission; deadline is March 1, 2021. Select the "SAMPL7" special issue from the dropdown menu on submission, and be sure your paper title includes "SAMPL7".
+
+The SAMPL7 host-guest special issue is closed for submissions.
 
 ## What's here
 - [Challenge Overview](#challenge-overview)
@@ -35,13 +37,12 @@ Of course, we also appreciate it if you cite any overview/experimental papers re
 - [Details of the SAMPL7 physical property challenge](physical_property/) on log *P*, pK<sub>a</sub> and permeability. Input files, instructions, submission formats, and example submission formats are available in the subdirectories for the individual challenges.
 - SAMPL7 physical property submission instructions and submission server links ([SAMPL7 pKa submission](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-pKa), [SAMPL7 logP/permeability submission](http://sampl-submit.us-west-1.elasticbeanstalk.com/submit/SAMPL7-physprop))
 - SAMPL7 physical properties experimental values, in [`physical_property/experimental_data'](physical_property/experimental_data)
-- [SAMPL7 log*P* and permeability analysis](physical_property/) are available in the subdirectories for the individual challenges.
+- [SAMPL7 physical property analysis](physical_property/) are available in the subdirectories for the individual challenges.
 
-The SAMPL7 physical property challenge is now open! All three host-guest challenges are now closed, as are the three stages of the PHIP2 protein-ligand challenge. Note the first phase of the SAMPL8 host-guest challenge is now open on the SAMPL8 GitHub repo.
+All SAMPL7 challenges are now closed. Note the first phase of the SAMPL8 host-guest challenge is now open on the SAMPL8 GitHub repo.
 
 ## What's coming
 - PHIPA analysis
-- Physical properties analysis
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -62,16 +63,15 @@ The SAMPL7 physical property challenge is now open! All three host-guest challen
 - **Release 0.6** (Oct. 13, 2020, DOI [10.5281/zenodo.4086044](https://dx.doi.org/10.5281/zenodo.3975152)):  Release the finalized the physical properties challenge inputs, formats, submissions and experimental results. A later release will include the results of analysis. These changes were all available in master earlier (see detailed changelog in release notes), but this provides an official release. Analysis of physical properties results will come at a later date.
 
 ### Changes not in a release
+- Added physical properties analysis (December 2020-January 2021)
 
 ## Challenge overview
 
-The SAMPL7 phase of challenges currently includes a physical property challenge on pK<sub>a</sub>, partitioning, and permeability.
-
-Recently concluded SAMPL7 challenges include a protein-ligand component on PHIP2, as well as host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involved a total of 9-20 binding free energy calculations.
+Recently concluded SAMPL7 challenges included a physical property challenge on pK<sub>a</sub>, partitioning, and permeability; a protein-ligand component on PHIP2; and host-guest binding on three systems: A pair of Gibb Deep Cavity Cavitands (GDCCs), a new "TrimerTrip" molecule from Lyle Isaacs and his group, and a series of cyclodextrin derivatives from Mike Gilson's group. Each host binds one or more guests, and each system involved a total of 9-20 binding free energy calculations.
 Additional details are provided below. Several hosts and/or guests were optional.
 Note that the [SAMPL8 host-guest challenge is commencing](https://github.com/samplchallenges/SAMPL8)
 
-The planned later stage of SAMPL7 focused on GSK physical property data is being shifted to SAMPL8 because of availability of a more time-sensitive physical property dataset which was used here.
+The planned later stage of SAMPL7 focused on GSK physical property data was shifted to SAMPL8 because of availability of a more time-sensitive physical property dataset which was used here.
 
 
 
