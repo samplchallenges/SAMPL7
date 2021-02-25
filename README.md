@@ -20,7 +20,7 @@ Of course, we also appreciate it if you cite any overview/experimental papers re
 
 ## SAMPL7 special issues
 
-The SAMPL7 physical properties special issue of JCAMD is now open for submission; deadline is March 1, 2021. Select the "SAMPL7" special issue from the dropdown menu on submission, and be sure your paper title includes "SAMPL7".
+The SAMPL7 physical properties special issue of JCAMD is now open for submission; deadline is March 31, 2021. Select the "SAMPL7" special issue from the dropdown menu on submission, and be sure your paper title includes "SAMPL7".
 
 The SAMPL7 host-guest special issue is closed for submissions.
 
