@@ -106,3 +106,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+physical_property/logD/calc_logD2.nb
