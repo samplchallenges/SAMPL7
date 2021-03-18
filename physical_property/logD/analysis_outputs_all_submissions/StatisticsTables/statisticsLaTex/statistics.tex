@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[a4paper,margin=0.005in,tmargin=0.5in,lmargin=0.5in,rmargin=0.5in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\scriptsize
+\begin{longtable}{|ccccccccc|}
+\toprule
+                                       method name &                    file name &                category &       type &               RMSE &                MAE &                    ME &              R$^2$ &                     m &                $\tau$ &                  ES \\
+\midrule
+\endhead
+\midrule
+\multicolumn{11}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+                                     REF0 ChemAxon &  logD-REF0-ChemAxon-Bergazin &               Empirical &  Reference &  1.06 [0.82, 1.27] &  0.91 [0.68, 1.14] &    0.28 [-0.14, 0.70] &  0.27 [0.01, 0.58] &     0.54 [0.10, 0.90] &    0.31 [-0.02, 0.61] &  0.12 [-0.00, 0.28] \\
+                       TFE IEFPCM MST + IEFPCM/MST &               logD-IEFPCMMST &           Physical (QM) &   Standard &  1.27 [0.85, 1.64] &  0.98 [0.67, 1.33] &    0.24 [-0.28, 0.75] &  0.55 [0.17, 0.87] &     1.31 [0.71, 1.70] &     0.57 [0.27, 0.82] &   1.16 [0.89, 1.25] \\
+                                             NULL0 &          logD-NULL0-Bergazin &               Empirical &  Reference &  1.59 [1.22, 1.93] &  1.35 [1.00, 1.71] &     1.23 [0.81, 1.65] &  0.00 [0.00, 0.00] &     0.00 [0.00, 0.00] &        nan [nan, nan] &   0.65 [0.44, 0.87] \\
+                                           EC_RISM &                  logD-ECRISM &           Physical (QM) &   Standard &  1.69 [1.30, 2.05] &  1.43 [1.07, 1.82] &  -1.43 [-1.81, -1.07] &  0.53 [0.20, 0.77] &     0.95 [0.54, 1.29] &     0.51 [0.21, 0.74] &   0.84 [0.64, 1.02] \\
+                      TFE b3lypd3 + DFT_M05-2X_SMD &             logD-EvrimArslan &           Physical (QM) &   Standard &  2.15 [1.56, 2.71] &  1.78 [1.31, 2.31] &     1.78 [1.31, 2.31] &  0.32 [0.04, 0.66] &     0.80 [0.27, 1.30] &     0.41 [0.05, 0.72] &   0.42 [0.27, 0.70] \\
+            MD (CGenFF/TIP3P) + Gaussian_corrected &       logD\_Iorga\_Beckstein &  Physical (MM) + QM+LEC &   Standard &  2.27 [1.97, 2.55] &  2.13 [1.80, 2.45] &     1.84 [1.21, 2.35] &  0.62 [0.35, 0.84] &     1.53 [0.93, 2.18] &     0.62 [0.36, 0.82] &   0.88 [0.75, 1.00] \\
+                                           TZVP-QM &                   logD-nhlbi &           Physical (QM) &   Standard &  2.80 [2.01, 3.52] &  2.27 [1.62, 2.99] &     2.02 [1.21, 2.85] &  0.42 [0.08, 0.76] &  -0.72 [-1.17, -0.30] &  -0.46 [-0.73, -0.12] &  0.03 [-0.00, 0.12] \\
+ TFE-SMD-solvent-opt + DFT_M06-2X_SMD_explicit_... &   logD\_RodriguezPaluch\_SMD &           Physical (QM) &   Standard &  4.54 [2.09, 7.15] &  2.92 [1.88, 4.57] &     2.88 [1.80, 4.55] &  0.25 [0.11, 0.76] &     1.92 [0.53, 4.45] &     0.55 [0.22, 0.80] &   0.55 [0.38, 0.73] \\
+\end{longtable}
+\end{center}
+
+Notes
+
+- RMSE: Root mean square error
+
+- MAE: Mean absolute error
+
+- ME: Mean error
+
+- R2: R-squared, square of Pearson correlation coefficient
+
+- m: slope of the line fit to predicted vs experimental logD values
+
+- $\tau$:  Kendall rank correlation coefficient
+
+- ES: error slope calculated from the QQ Plots of model uncertainty predictions
+
+- Mean and 95\% confidence intervals of RMSE, MAE, ME, R2, and m were calculated by bootstrapping with 10000 samples.
+
+- 95\% confidence intervals of ES were calculated by bootstrapping with 1000 samples.\end{document}
