@@ -62,8 +62,10 @@ All SAMPL7 challenges are now closed. Note the first phase of the SAMPL8 host-gu
 - **Relase 0.5** (Aug. 6, 2020, DOI [10.5281/zenodo.3975152](https://dx.doi.org/10.5281/zenodo.3975152)): Adds PHIP2 components from 2019; corrects an OctaAcid value; brings in host-guest challenge results and reference calculations; adds details on SAMPL7 physical property (pKa, logP, logD, PAMPA permeability) challenge along with inputs and submission formats.
 - **Release 0.6** (Oct. 13, 2020, DOI [10.5281/zenodo.4086044](https://dx.doi.org/10.5281/zenodo.3975152)):  Release the finalized the physical properties challenge inputs, formats, submissions and experimental results. A later release will include the results of analysis. These changes were all available in master earlier (see detailed changelog in release notes), but this provides an official release. Analysis of physical properties results will come at a later date.
 
+
 ### Changes not in a release
 - Added physical properties analysis (December 2020-January 2021)
+- Added updated analysis for the SAMPL7 logP challenge after correcting two submissions that had errors (4/9/2021)
 
 ## Challenge overview
 
