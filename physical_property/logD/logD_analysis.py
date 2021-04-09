@@ -25,7 +25,7 @@ import math
 # Paths to input data.
 LOGD_SUBMISSIONS_DIR_PATH = './calculate_logD/logD_predictions'
 EXPERIMENTAL_DATA_FILE_PATH = './logD_experimental_values.csv'
-USER_MAP_FILE_PATH = './calculate_logD/logD_predictions/user-map.csv'
+USER_MAP_FILE_PATH = './calculate_logD/user-map.csv'
 
 # =============================================================================
 # STATS FUNCTIONS
@@ -713,7 +713,7 @@ class logDSubmission(SamplSubmission):
     """
     # Section of the submission file.
     SECTIONS = {"Predictions",
-                "Participant name",
+                #"Participant name",
                 #"Participant organization",
                 "Name",
                 #"Compute time",
@@ -738,7 +738,7 @@ class logDSubmission(SamplSubmission):
         # Load predictions.
         sections = self._load_sections(file_path)  # From parent-class.
         self.data = sections['Predictions']  # This is a pandas DataFrame.
-        self.participant = sections['Participant name'][0].strip()
+        #self.participant = sections['Participant name'][0].strip()
         self.method_name = sections['Name'][0]
         self.category = sections['Category'][0] # New section for logD challenge.
         self.ranked = sections['Ranked'][0].strip() =='True'
@@ -888,7 +888,7 @@ class logDSubmissionCollection:
 
         # Participant names we've found so far; tracked to ensure no one has more than one
         # ranked submission
-        self.participant_names_ranked = []
+        self.method_names_ranked = []
 
         # Submissions for logD.
         for submission in submissions:
@@ -899,10 +899,10 @@ class logDSubmissionCollection:
                 continue
             # Store names associated with ranked submission, skip if they submitted multiple (only if we need to check for duplicate authors)
             if submission.ranked and not allow_multiple:
-                if not submission.participant in self.participant_names_ranked:
-                    self.participant_names_ranked.append(submission.participant)
+                if not submission.method_name in self.method_names_ranked:
+                    self.method_names_ranked.append(submission.method_name)
                 else:
-                    print(f"Error: {submission.participant} submitted multiple ranked submissions.")
+                    print(f"Error: {submission.method_name} submitted multiple ranked submissions.")
                     continue
 
 
