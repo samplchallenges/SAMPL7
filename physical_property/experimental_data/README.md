@@ -11,4 +11,4 @@ Experimental values for the 22 challenge molecules are available in this directo
 - [`experimental_ID_and_SAMPL7_molecule_ID_table.csv`](experimental_ID_and_SAMPL7_molecule_ID_table.csv): A table that matches experimental molecule IDs to SAMPL7 challenge molecule IDs (`.CVS` format).
 
 ## Publication on experimental measurements
-Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres" *(Details to be announced)*
+Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres". European Journal of Medicinal Chemistry. 2021 March. https://doi.org/10.1016/j.ejmech.2021.113399

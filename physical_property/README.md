@@ -47,4 +47,4 @@ Effective permeability (log<sub>*P*<sub>*app*</sub></sub>) was measured by PAMPA
 - [`experimental_data/`](experimental_data/): Folder contains experimental measurements of pK<sub>a</sub>, partitioning, and permeability values.
 
 ## Publication on experimental measurements
-Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres" *(Details to be announced)*
+Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres". European Journal of Medicinal Chemistry. 2021 March. https://doi.org/10.1016/j.ejmech.2021.113399
