@@ -8,3 +8,6 @@ Placeholder
 
 ## References
 [1] Bannan, Caitlin C., Kalistyn H. Burley, Michael Chiu, Michael R. Shirts, Michael K. Gilson, and David L. Mobley. “Blind Prediction of Cyclohexane–water Distribution Coefficients from the SAMPL5 Challenge.” Journal of Computer-Aided Molecular Design 30, no. 11 (November 2016): 927–44.
+
+## Publication on experimental measurements
+Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres". European Journal of Medicinal Chemistry. 2021 March. https://doi.org/10.1016/j.ejmech.2021.113399

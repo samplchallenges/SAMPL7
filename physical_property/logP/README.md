@@ -1,4 +1,4 @@
-## SAMPL7 log *P* Prediction Challenge
+## SAMPL7 log *P* Prediction Challenge (closed)
 
 The SAMPL7 log *P* Challenge consists of predicting the water-octanol partition coefficients of 22 molecules. Our aim is to evaluate how well current models can capture the transfer free energy of small molecules between different solvent environments through blind predictions. Challenge participants will be asked to predict the difference in free energy for the neutral form between water and octanol. This challenge is *optional* and will be run at the same time as the pK<sub>a</sub> and permeability challenge (both of which are also optional).  
 
@@ -18,3 +18,6 @@ Experimental log *P* measurements will made available after the challenge deadli
 - [`submission_template/logP_prediction_template.csv`](submission_template/logP_prediction_template.csv) - An empty prediction submission template file.
 - [`example_submission_file/logP-DanielleBergazinExampleFile-1.csv`](example_submission_file/logP-DanielleBergazinExampleFile-1.csv) - An example submission file filled with random values to illustrate expected format.
 - [`logP_challenge_instructions.md`](logP_challenge_instructions.md) - Instructions for the log *P* challenge.
+
+## Publication on experimental measurements
+Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres". European Journal of Medicinal Chemistry. 2021 March. https://doi.org/10.1016/j.ejmech.2021.113399

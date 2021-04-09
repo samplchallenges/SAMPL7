@@ -18,3 +18,6 @@ Experimental permeability data will made available after the challenge deadline.
 - [`submission_template/permeability_prediction_template.csv`](submission_template/permeability_prediction_template.csv) - An empty prediction submission template file.
 - [`example_submission_file/permeability-DanielleBergazinExampleFile-1.csv`](example_submission_file/permeability-DanielleBergazinExampleFile-1.csv) - An example submission file filled with random values to illustrate expected format.
 - [`permeability_challenge_instructions.md`](permeability_challenge_instructions.md) - Instructions for permeability challenge.
+
+## Publication on experimental measurements
+Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres". European Journal of Medicinal Chemistry. 2021 March. https://doi.org/10.1016/j.ejmech.2021.113399
