@@ -1,0 +1,11 @@
+1,logD-EC_RISM_wet-EC_RISM.csv
+3,logD-TFE_SMD_solvent_opt-DFT_M06_2X_SMD_explicit_water.csv
+4,logD-MD_CGenFF_TIP3P-Gaussian_corrected.csv
+5,logD-TFE_IEFPCM_MST-IEFPCM_MST.csv
+6,logD-TFE_b3lypd3-DFT_M05_2X_SMD.csv
+8,logD-TFE_NHLBI_TZVP_QM-TZVP_QM.csv
+9,logD-NES_1_GAFF2_OPC3_B-pKa_experimental.csv
+10,logD-TFE_MLR-pKa_experimental.csv
+11,logD-logP_experimental-DFT_M05_2X_SMD.csv
+12,logD-logP_experimental-EC_RISM.csv
+13,logD_2_best_ranked_pKa_logP_combo.csv
