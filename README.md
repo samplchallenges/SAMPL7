@@ -64,6 +64,8 @@ All SAMPL7 challenges are now closed. Note the first phase of the SAMPL8 host-gu
 
 ### Changes not in a release
 - Added physical properties analysis (December 2020-January 2021)
+- Fixed two submissions that had errors and updated the overview plots/stats and individual plots for the two affected submissions (4/9/2021)
+
 
 ## Challenge overview
 
