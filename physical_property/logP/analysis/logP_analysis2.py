@@ -14,7 +14,6 @@ from matplotlib import pyplot as plt
 from matplotlib import cm
 import joypy
 
-
 # =============================================================================
 # PLOTTING FUNCTIONS
 # =============================================================================
