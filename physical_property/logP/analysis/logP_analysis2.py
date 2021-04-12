@@ -410,6 +410,14 @@ def create_molecular_error_distribution_plots(collection_df, directory_path, fil
     plt.savefig(directory_path + "/" + file_base_name +"_well_performing_methods.pdf")
 
 
+def create_molecular_error_distribution_plots2(collection_df, directory_path, file_base_name):
+
+    # Ridge plot using all predictions
+    ridge_plot(df=collection_df, by = "Molecule ID", column = "$\Delta$logP error (calc - exp)", figsize=(4, 6), colormap=cm.plasma)
+    plt.savefig(directory_path + "/" + file_base_name +"_all_methods.pdf")
+    plt.savefig(directory_path + "/" + file_base_name +"_well_performing_methods.pdf")
+
+
 def create_category_error_distribution_plots(collection_df, directory_path, file_base_name):
 
     # Ridge plot using all predictions
@@ -529,12 +537,11 @@ if __name__ == '__main__':
                                                                  file_base_name="molecular_MAE_comparison_between_method_categories")
 
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods (found consistently in the top 15 across 4 metrics)
-    #well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
-    well_performing_method_ids = ["Chemprop", "ClassicalGSG DB2", "ClassicalGSG DB3", "ClassicalGSG DB4",
-                                  "TFE MLR", "TFE-SM8-solvent-opt", "TFE-SM8-vacuum-opt"]
-    create_molecular_error_distribution_plots(collection_df=collection_data,
+    #well_performing_method_ids = ["Chemprop", "ClassicalGSG DB2", "ClassicalGSG DB3", "ClassicalGSG DB4",
+    #                              "TFE MLR", "TFE-SM8-solvent-opt", "TFE-SM8-vacuum-opt"]
+    create_molecular_error_distribution_plots2(collection_df=collection_data,
                                               directory_path=molecular_statistics_directory_path,
-                                              subset_of_method_ids=well_performing_method_ids,
+                                              #subset_of_method_ids=well_performing_method_ids,
                                               file_base_name="molecular_error_distribution_ridge_plot")
 
     # Compare method categories
@@ -608,7 +615,7 @@ if __name__ == '__main__':
     #  (found consistently in the top 10 across 4 metrics)
     #well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
     well_performing_method_ids = ["Chemprop", "ClassicalGSG DB3", "COSMO-RS",
-                                  "MD (CGenFF/TIP3P)", "TFE MLR"]
+                                  "TFE-NHLBI-TZVP-QM", "TFE MLR"]
     create_molecular_error_distribution_plots(collection_df=collection_data,
                                               directory_path=molecular_statistics_directory_path,
                                               subset_of_method_ids=well_performing_method_ids,
