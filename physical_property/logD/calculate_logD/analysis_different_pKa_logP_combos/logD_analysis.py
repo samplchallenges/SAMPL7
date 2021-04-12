@@ -397,10 +397,11 @@ def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_lab
     color1 = "#F5793A"#orange
     color3 = "#85C0F9"#light blue
     color2 = "#A95AA1" #purple
-    color4 = "#009e73" #green
-    color5 = "#CC79A7" #pink
+    color4 = "#009e73" #lighter green
+    color5 = "#211522" #pink
     color6 = "#f0e442"#yellow
-    current_palette = [color0, color1, color3, color2, color4, color5,color6]
+    color7 = "#16760B"#dark green
+    current_palette = [color0, color1, color3, color2, color4, color5,color6,color7]
     error_color = 'gray'
     # Bar colors
     if color_label == "category":
@@ -410,7 +411,8 @@ def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_lab
         "MM logP + Experimental pKa",
         "Empirical logP + Experimental pKa",
         "Experimental logP + QM pKa",
-        "Empirical logP + QM pKa"]
+        "Empirical logP + QM pKa",
+        "Experimental logP + Experimental pKa"]
     elif color_label == "type":
         category_list = ["Standard", "Reference"]
     else:
@@ -465,7 +467,8 @@ def barplot_with_CI_errorbars_colored_by_label(df, x_label, y_label, y_lower_lab
                         Line2D([0], [0], color=bar_color_dict["MM logP + Experimental pKa"], lw=5),
                         Line2D([0], [0], color=bar_color_dict["Empirical logP + Experimental pKa"], lw=5),
                         Line2D([0], [0], color=bar_color_dict["Experimental logP + QM pKa"], lw=5),
-                        Line2D([0], [0], color=bar_color_dict["Empirical logP + QM pKa"], lw=5)]
+                        Line2D([0], [0], color=bar_color_dict["Empirical logP + QM pKa"], lw=5),
+                        Line2D([0], [0], color=bar_color_dict["Experimental logP + Experimental pKa"], lw=5)]
     elif color_label == 'type':
         custom_lines = [Line2D([0], [0], color=bar_color_dict["Standard"], lw=5),
                         Line2D([0], [0], color=bar_color_dict["Reference"], lw=5)]
@@ -1312,14 +1315,15 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
 
 
 
-        # Plot RMSE, MAE, Kendall's Tau, and R-squared comparison plots for each category separately
+        '''# Plot RMSE, MAE, Kendall's Tau, and R-squared comparison plots for each category separately
         category_list = ["MM logP + QM+LEC pKa",
         "Empirical (ref)",
         "QM logP + QM pKa",
         "MM logP + Experimental pKa",
         "Empirical logP + Experimental pKa",
         "Experimental logP + QM pKa",
-        "Empirical logP + QM pKa"]
+        "Empirical logP + QM pKa",
+        "Experimental logP + Experimental pKa"]
 
 
         # New labels for file naming for reassigned categories
@@ -1329,7 +1333,8 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                "MM logP + Experimental pKa":"Physical_MM_Experimental_pKa",
                                                "Empirical logP + Experimental pKa":"Empirical_Experimental_pKa",
                                                "Experimental logP + QM pKa":"Experimental_logP_QM",
-                                               "Empirical logP + QM pKa":"Empirical_QM"}
+                                               "Empirical logP + QM pKa":"Empirical_QM",
+                                               "Experimental logP + Experimental pKa":"Experimental_only"}
 
 
         for category in category_list:
@@ -1454,7 +1459,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                    y_upper_label="R2_upper_bound", color_label="category",
                                                    figsize=(28, 10))
         plt.ylim(0, 1.0)
-        plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methoods_colored_by_method_category.pdf")
+        plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methods_colored_by_method_category.pdf")
 
         # Do same graph with colorizing by reference calculation
         if not ignore_refcalcs:
@@ -1464,7 +1469,7 @@ def generate_performance_comparison_plots(statistics_filename, directory_path, i
                                                        y_upper_label="R2_upper_bound", color_label="type",
                                                        figsize=(28, 10))
             plt.ylim(0, 1.0)
-            plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methods_colored_by_type.pdf")
+            plt.savefig(directory_path + "/Rsquared_vs_method_plot_physical_methods_colored_by_type.pdf")'''
 
 
 

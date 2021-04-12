@@ -471,7 +471,10 @@ def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path,
     df_gr1 = pd.read_csv(directory_path + "/" + label1 + "/molecular_error_statistics_for_{}_methods.csv".format(label1))
     df_gr2 = pd.read_csv(directory_path + "/" + label2 + "/molecular_error_statistics_for_{}_methods.csv".format(label2))
     df_gr3 = pd.read_csv(directory_path + "/" + label3 + "/molecular_error_statistics_for_{}_methods.csv".format(label3))
-    #df_gr4 = pd.read_csv(directory_path + "/" + label4 + "/molecular_error_statistics_for_{}_methods.csv".format(label4))
+    df_gr4 = pd.read_csv(directory_path + "/" + label4 + "/molecular_error_statistics_for_{}_methods.csv".format(label4))
+    df_gr5 = pd.read_csv(directory_path + "/" + label1 + "/molecular_error_statistics_for_{}_methods.csv".format(label5))
+    df_gr6 = pd.read_csv(directory_path + "/" + label2 + "/molecular_error_statistics_for_{}_methods.csv".format(label6))
+    df_gr7 = pd.read_csv(directory_path + "/" + label3 + "/molecular_error_statistics_for_{}_methods.csv".format(label7))
 
 
     # Reorder dataframes based on the order of molecular MAE statistic of Physical QM methods group
@@ -486,10 +489,14 @@ def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path,
     df_gr1_reordered = df_gr1_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr3
     df_gr1_reordered = df_gr1_reordered.reset_index()
 
+    
+
 
     # Plot
     # Molecular labels will be taken from 1st dataframe, so the second dataframe should have the same molecule ID order.
-    barplot_with_CI_errorbars_and_4groups(df1=df_gr1_reordered, df2=df_gr2_reordered, df3=df_gr3, #df4=df_gr4_reordered,
+    barplot_with_CI_errorbars_and_4groups(df1=df_gr1_reordered,
+                                            df2=df_gr2_reordered,
+                                            df3=df_gr3, #df4=df_gr4_reordered,
                                           x_label="Molecule ID", y_label="MAE",
                                           y_lower_label="MAE_lower_CI", y_upper_label="MAE_upper_CI",
                                           group_labels=[group1, group2, group3])#, group4])
