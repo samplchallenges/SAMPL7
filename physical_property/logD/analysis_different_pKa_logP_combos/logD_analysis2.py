@@ -67,7 +67,7 @@ def barplot_with_CI_errorbars(df, x_label, y_label, y_lower_label, y_upper_label
     plt.xlabel(x_label)
     plt.ylabel(y_label)
 
-def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, x_label, y_label, y_lower_label, y_upper_label,group_labels):
+def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, df4, df5, df6, df7, df8, x_label, y_label, y_lower_label, y_upper_label,group_labels):
     """Creates bar plot of a given dataframe with asymmetric error bars for y axis.
     Args:
         df: Pandas Dataframe that should have columns with columnnames specified in other arguments.
@@ -97,9 +97,13 @@ def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, x_label, y_label, y_low
     # Zesty colorblind-friendly color palette
     color0 = "#0F2080" #dark blue for Physical (MM) + QM+LEC
     color1 = "#F5793A" #orange for Empirical
-    #color2 = "#A95AA1" #purple
     color3 = "#85C0F9" #light blue for Physical (QM)
-    current_palette = [color0, color1, color3]#, color2, color3]
+    color2 = "#a866a1" #purple
+    color4 = "#009e73"#light green
+    color5 = "#000000"#black
+    color6 = "#f0e442"#yellow
+    color7 = "#808080"#grey
+    current_palette = [color0, color1, color3, color2, color4, color5,color6,color7]
     error_color = 'gray'
 
 
@@ -112,7 +116,7 @@ def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, x_label, y_label, y_low
 
     x = range(len(data[y_label]))
     y = data[y_label]
-    ax.bar(x, y, label = "Physical (MM) + QM+LEC", width=bar_width, color=current_palette[0])
+    ax.bar(x, y, label = "MM logP + QM+LEC pKa", width=bar_width, color=current_palette[0])
     plt.xticks(x, data[x_label], rotation=90)
     plt.errorbar(x, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
                  fmt="none", ecolor=error_color, capsize=2, capthick=True, elinewidth=1)
@@ -122,11 +126,9 @@ def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, x_label, y_label, y_low
     data[delta_lower_yerr_label] = data[y_label] - data[y_lower_label]
     data[delta_upper_yerr_label] = data[y_upper_label] - data[y_label]
     index = np.arange(df2.shape[0])
-
     x = range(len(data[y_label]))
     y = data[y_label]
-
-    ax.bar(index + bar_width, y, label = "Empirical", width=bar_width, color=current_palette[1])
+    ax.bar(index + bar_width, y, label = "Empirical (ref)", width=bar_width, color=current_palette[1])
     plt.xticks(index + bar_width/2, data[x_label], rotation=90)
     plt.errorbar(index + bar_width, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
                  fmt="none", ecolor=error_color, capsize=2, capthick=True, elinewidth=1)
@@ -136,11 +138,79 @@ def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, x_label, y_label, y_low
     data[delta_lower_yerr_label] = data[y_label] - data[y_lower_label]
     data[delta_upper_yerr_label] = data[y_upper_label] - data[y_label]
     index = np.arange(df3.shape[0])
-
     x = range(len(data[y_label]))
     y = data[y_label]
+    ax.bar(index + 2*bar_width, y, label="QM logP + QM pKa", width=bar_width, color=current_palette[2])
+    plt.xticks(index + bar_width + bar_width / 2, data[x_label], rotation=90)
+    plt.errorbar(index + 2*bar_width, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
+                 fmt="none", ecolor=error_color, capsize=2, capthick=True, elinewidth=1)
 
-    ax.bar(index + 2*bar_width, y, label="Physical (QM)", width=bar_width, color=current_palette[2])
+
+
+    #########
+    # Plot 4nd group of data
+    data = df4  # Pandas DataFrame
+    data[delta_lower_yerr_label] = data[y_label] - data[y_lower_label]
+    data[delta_upper_yerr_label] = data[y_upper_label] - data[y_label]
+    index = np.arange(df4.shape[0])
+    x = range(len(data[y_label]))
+    y = data[y_label]
+    ax.bar(index + 2*bar_width, y, label="MM logP + Experimental pKa", width=bar_width, color=current_palette[2])
+    plt.xticks(index + bar_width + bar_width / 2, data[x_label], rotation=90)
+    plt.errorbar(index + 2*bar_width, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
+                 fmt="none", ecolor=error_color, capsize=2, capthick=True, elinewidth=1)
+
+
+    #########
+    # Plot 5nd group of data
+    data = df5  # Pandas DataFrame
+    data[delta_lower_yerr_label] = data[y_label] - data[y_lower_label]
+    data[delta_upper_yerr_label] = data[y_upper_label] - data[y_label]
+    index = np.arange(df5.shape[0])
+    x = range(len(data[y_label]))
+    y = data[y_label]
+    ax.bar(index + 2*bar_width, y, label="Empirical logP + Experimental pKa", width=bar_width, color=current_palette[2])
+    plt.xticks(index + bar_width + bar_width / 2, data[x_label], rotation=90)
+    plt.errorbar(index + 2*bar_width, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
+                 fmt="none", ecolor=error_color, capsize=2, capthick=True, elinewidth=1)
+
+
+    # Plot 6nd group of data
+    data = df6  # Pandas DataFrame
+    data[delta_lower_yerr_label] = data[y_label] - data[y_lower_label]
+    data[delta_upper_yerr_label] = data[y_upper_label] - data[y_label]
+    index = np.arange(df6.shape[0])
+    x = range(len(data[y_label]))
+    y = data[y_label]
+    ax.bar(index + 2*bar_width, y, label="Experimental logP + QM pKa", width=bar_width, color=current_palette[2])
+    plt.xticks(index + bar_width + bar_width / 2, data[x_label], rotation=90)
+    plt.errorbar(index + 2*bar_width, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
+                 fmt="none", ecolor=error_color, capsize=2, capthick=True, elinewidth=1)
+
+
+    # Plot 7nd group of data
+    data = df7  # Pandas DataFrame
+    data[delta_lower_yerr_label] = data[y_label] - data[y_lower_label]
+    data[delta_upper_yerr_label] = data[y_upper_label] - data[y_label]
+    index = np.arange(df7.shape[0])
+    x = range(len(data[y_label]))
+    y = data[y_label]
+    ax.bar(index + 2*bar_width, y, label="Empirical logP + QM pKa", width=bar_width, color=current_palette[2])
+    plt.xticks(index + bar_width + bar_width / 2, data[x_label], rotation=90)
+    plt.errorbar(index + 2*bar_width, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
+                 fmt="none", ecolor=error_color, capsize=2, capthick=True, elinewidth=1)
+
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+
+    # Plot 8th group of data
+    data = df8  # Pandas DataFrame
+    data[delta_lower_yerr_label] = data[y_label] - data[y_lower_label]
+    data[delta_upper_yerr_label] = data[y_upper_label] - data[y_label]
+    index = np.arange(df8.shape[0])
+    x = range(len(data[y_label]))
+    y = data[y_label]
+    ax.bar(index + 2*bar_width, y, label="Experimental logP + Experimental pKa", width=bar_width, color=current_palette[2])
     plt.xticks(index + bar_width + bar_width / 2, data[x_label], rotation=90)
     plt.errorbar(index + 2*bar_width, y, yerr=(data[delta_lower_yerr_label], data[delta_upper_yerr_label]),
                  fmt="none", ecolor=error_color, capsize=2, capthick=True, elinewidth=1)
@@ -152,7 +222,10 @@ def barplot_with_CI_errorbars_and_4groups(df1, df2, df3, x_label, y_label, y_low
     from matplotlib.lines import Line2D
     custom_lines = [Line2D([0], [0], color=current_palette[0], lw=5), #dark blue for Physical (MM) + QM+LEC
                     Line2D([0], [0], color=current_palette[1], lw=5), #orange for Empirical
-                    Line2D([0], [0], color=current_palette[2], lw=5)] #light blue for Physical (QM)
+                    Line2D([0], [0], color=current_palette[2], lw=5),
+                    Line2D([0], [0], color=current_palette[3], lw=5),
+                    Line2D([0], [0], color=current_palette[4], lw=5),
+                    Line2D([0], [0], color=current_palette[5], lw=5)] #light blue for Physical (QM)
 
     ax.legend(custom_lines, group_labels)
 
@@ -181,12 +254,16 @@ def barplot_with_CI_errorbars_and_4groups_ranked(df1, df3, x_label, y_label, y_l
     #plt.figure(figsize=(8, 6))
     bar_width = 0.2
 
-    # Zesty colorblind-friendly color palette
+    # color palette
     color0 = "#0F2080" #dark blue for Physical (MM) + QM+LEC
     color1 = "#F5793A" #orange for Empirical
-    #color2 = "#A95AA1" #purple
     color3 = "#85C0F9" #light blue for Physical (QM)
-    current_palette = [color0, color1, color3]#, color2, color3]
+    color2 = "#a866a1" #purple
+    color4 = "#009e73"#light green
+    color5 = "#000000"#black
+    color6 = "#f0e442"#yellow
+    color7 = "#808080"#grey
+    current_palette = [color0, color1, color3, color2, color4, color5,color6,color7]
     error_color = 'gray'
 
     fig, ax = plt.subplots(figsize=(8, 6))
@@ -258,7 +335,7 @@ def ridge_plot_wo_overlap(df, by, column, figsize, colormap):
 # =============================================================================
 
 # Paths to input data.
-LOGD_COLLECTION_PATH_RANKED_SUBMISSIONS = './analysis_outputs_ranked_submissions/logD_submission_collection.csv'
+#LOGD_COLLECTION_PATH_RANKED_SUBMISSIONS = './analysis_outputs_ranked_submissions/logD_submission_collection.csv'
 LOGD_COLLECTION_PATH_ALL_SUBMISSIONS =  './analysis_outputs_all_submissions/logD_submission_collection.csv'
 
 # =============================================================================
@@ -361,17 +438,10 @@ def select_subsection_of_collection(collection_df, method_group):
     :param method_group: String that specifies with method group is requested. "Physical","Empirical","Mixed" or "Other"
     :return: Pandas DataFrame of subsection of submission collection.
     """
-
-    print("Looking for submissions of selected method group...")
-    print("Method group: {}".format(method_group))
-
-    print("Collection_df:\n",collection_df)
-
     # Filter collection dataframe based on method category
     #collection_df_of_selected_method_group = collection_df.loc[collection_df["reassigned category"] == method_group]
     collection_df_of_selected_method_group = collection_df.loc[collection_df["category"] == method_group]
     collection_df_of_selected_method_group = collection_df_of_selected_method_group.reset_index(drop=True)
-    print("collection_df_of_selected_method_group: \n {}".format(collection_df_of_selected_method_group))
 
     return collection_df_of_selected_method_group
 
@@ -388,34 +458,34 @@ def calc_MAE_for_molecules_across_selected_predictions(collection_df, selected_m
     """
 
     # Create subsection of collection dataframe for selected methods
-    print("selected_method_group...", selected_method_group)
-    print("collection_df...", collection_df)
+
     collection_df_subset = select_subsection_of_collection(collection_df=collection_df, method_group=selected_method_group)
 
-    # category_path_label_dict ={ "Physical (MM) + QM+LEC": "Physical_MM",
-    #                                        "Empirical": "Empirical",
-    #                                        "Mixed": "Mixed",
-    #                                        "Physical (QM)": "Physical_QM"}
 
     subset_directory_path = os.path.join(directory_path, category_path_label_dict[selected_method_group])
-    print("calc_MAE_for_molecules_across_all_predictions STARTING")
+
     # Calculate MAE using subsection of collection database
     calc_MAE_for_molecules_across_all_predictions(collection_df=collection_df_subset, directory_path=subset_directory_path, file_base_name=file_base_name)
 
 
-#def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path, group1, group2, group3, group4, file_base_name):
-def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path, group1, group2, group3, file_base_name):
+def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path, group1, group2, group3, group4, group5, group6, group7, group8,file_base_name):
     label1 = category_path_label_dict[group1]
     label2 = category_path_label_dict[group2]
     label3 = category_path_label_dict[group3]
-    #label4 = category_path_label_dict[group4]
-
+    label4 = category_path_label_dict[group4]
+    label5 = category_path_label_dict[group5]
+    label6 = category_path_label_dict[group6]
+    label7 = category_path_label_dict[group7]
+    label8 = category_path_label_dict[group8]
     # Read molecular_error_statistics table
     df_gr1 = pd.read_csv(directory_path + "/" + label1 + "/molecular_error_statistics_for_{}_methods.csv".format(label1))
     df_gr2 = pd.read_csv(directory_path + "/" + label2 + "/molecular_error_statistics_for_{}_methods.csv".format(label2))
     df_gr3 = pd.read_csv(directory_path + "/" + label3 + "/molecular_error_statistics_for_{}_methods.csv".format(label3))
-    #df_gr4 = pd.read_csv(directory_path + "/" + label4 + "/molecular_error_statistics_for_{}_methods.csv".format(label4))
-
+    df_gr4 = pd.read_csv(directory_path + "/" + label4 + "/molecular_error_statistics_for_{}_methods.csv".format(label4))
+    df_gr5 = pd.read_csv(directory_path + "/" + label5 + "/molecular_error_statistics_for_{}_methods.csv".format(label5))
+    df_gr6 = pd.read_csv(directory_path + "/" + label6 + "/molecular_error_statistics_for_{}_methods.csv".format(label6))
+    df_gr7 = pd.read_csv(directory_path + "/" + label7 + "/molecular_error_statistics_for_{}_methods.csv".format(label7))
+    df_gr8 = pd.read_csv(directory_path + "/" + label8 + "/molecular_error_statistics_for_{}_methods.csv".format(label8))
 
     # Reorder dataframes based on the order of molecular MAE statistic of Physical QM methods group
     ordered_molecule_list = list(df_gr3["Molecule ID"])
@@ -429,59 +499,123 @@ def create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path,
     df_gr1_reordered = df_gr1_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr3
     df_gr1_reordered = df_gr1_reordered.reset_index()
 
+    df_gr4_reordered = df_gr4.set_index("Molecule ID")
+    df_gr4_reordered = df_gr4_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr4_reordered = df_gr4_reordered.reset_index()
+
+    df_gr5_reordered = df_gr5.set_index("Molecule ID")
+    df_gr5_reordered = df_gr5_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr5_reordered = df_gr5_reordered.reset_index()
+
+    df_gr6_reordered = df_gr6.set_index("Molecule ID")
+    df_gr6_reordered = df_gr6_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr6_reordered = df_gr6_reordered.reset_index()
+
+    df_gr7_reordered = df_gr7.set_index("Molecule ID")
+    df_gr7_reordered = df_gr7_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr7_reordered = df_gr7_reordered.reset_index()
+
+    df_gr8_reordered = df_gr8.set_index("Molecule ID")
+    df_gr8_reordered = df_gr8_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr8_reordered = df_gr8_reordered.reset_index()
+
+
+
 
     # Plot
     # Molecular labels will be taken from 1st dataframe, so the second dataframe should have the same molecule ID order.
-    barplot_with_CI_errorbars_and_4groups(df1=df_gr1_reordered, df2=df_gr2_reordered, df3=df_gr3, #df4=df_gr4_reordered,
+    barplot_with_CI_errorbars_and_4groups(df1=df_gr1_reordered,
+                                            df2=df_gr2_reordered,
+                                            df3=df_gr3,
+                                            df4=df_gr4_reordered,
+                                            df5=df_gr5_reordered,
+                                            df6=df_gr6_reordered,
+                                            df7=df_gr7_reordered,
+                                            df8=df_gr8_reordered,
                                           x_label="Molecule ID", y_label="MAE",
                                           y_lower_label="MAE_lower_CI", y_upper_label="MAE_upper_CI",
-                                          group_labels=[group1, group2, group3])#, group4])
+                                          group_labels=[group1, group2, group3, group4, group5, group6, group7, group8])
     plt.savefig(molecular_statistics_directory_path + "/" + file_base_name + ".pdf")
-    print("completed barplot_with_CI_errorbars_and_4groups")
 
     # Same comparison plot with only QM results (only for presentation effects)
     #barplot_with_CI_errorbars_and_1st_of_2groups(df1=df_qm, df2=df_empirical_reordered, x_label="Molecule ID", y_label="MAE",
      #                                     y_lower_label="MAE_lower_CI", y_upper_label="MAE_upper_CI")
     #plt.savefig(molecular_statistics_directory_path + "/" + file_base_name + "_only_QM.pdf")
 
-def create_comparison_plot_of_molecular_MAE_of_method_categories_ranked(directory_path, group1, group3, file_base_name):
+def create_comparison_plot_of_molecular_MAE_of_method_categories_ranked(directory_path, group1, group2, group3, group4, group5, group6, group7, group8, file_base_name):
     label1 = category_path_label_dict[group1]
-    #label2 = category_path_label_dict[group2]
+    label2 = category_path_label_dict[group2]
     label3 = category_path_label_dict[group3]
-    #label4 = category_path_label_dict[group4]
+    label4 = category_path_label_dict[group4]
+    label5 = category_path_label_dict[group5]
+    label6 = category_path_label_dict[group6]
+    label7 = category_path_label_dict[group7]
+    label8 = category_path_label_dict[group8]
 
     # Read molecular_error_statistics table
     df_gr1 = pd.read_csv(directory_path + "/" + label1 + "/molecular_error_statistics_for_{}_methods.csv".format(label1))
-    #df_gr2 = pd.read_csv(directory_path + "/" + label2 + "/molecular_error_statistics_for_{}_methods.csv".format(label2))
+    df_gr2 = pd.read_csv(directory_path + "/" + label2 + "/molecular_error_statistics_for_{}_methods.csv".format(label2))
     df_gr3 = pd.read_csv(directory_path + "/" + label3 + "/molecular_error_statistics_for_{}_methods.csv".format(label3))
-    #df_gr4 = pd.read_csv(directory_path + "/" + label4 + "/molecular_error_statistics_for_{}_methods.csv".format(label4))
+    df_gr4 = pd.read_csv(directory_path + "/" + label4 + "/molecular_error_statistics_for_{}_methods.csv".format(label4))
+    df_gr5 = pd.read_csv(directory_path + "/" + label5 + "/molecular_error_statistics_for_{}_methods.csv".format(label5))
+    df_gr6 = pd.read_csv(directory_path + "/" + label6 + "/molecular_error_statistics_for_{}_methods.csv".format(label6))
+    df_gr7 = pd.read_csv(directory_path + "/" + label7 + "/molecular_error_statistics_for_{}_methods.csv".format(label7))
+    df_gr8 = pd.read_csv(directory_path + "/" + label8 + "/molecular_error_statistics_for_{}_methods.csv".format(label8))
 
 
     # Reorder dataframes based on the order of molecular MAE statistic of first group (Physical QM methods)
     ordered_molecule_list = list(df_gr3["Molecule ID"])
     print("ordered_molecule_list: \n", ordered_molecule_list)
 
-    #df_gr2_reordered = df_gr2.set_index("Molecule ID")
-    #df_gr2_reordered = df_gr2_reordered.reindex(index=df_gr1['Molecule ID']) #Reset row order based on index of df_gr1
-    #df_gr2_reordered = df_gr2_reordered.reset_index()
-
     df_gr1_reordered = df_gr1.set_index("Molecule ID")
     df_gr1_reordered = df_gr1_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
     df_gr1_reordered = df_gr1_reordered.reset_index()
-    print("df_gr1_reordered",df_gr1_reordered)
+
+    df_gr2_reordered = df_gr2.set_index("Molecule ID")
+    df_gr2_reordered = df_gr2_reordered.reindex(index=df_gr3['Molecule ID']) #Reset row order based on index of df_gr1
+    df_gr2_reordered = df_gr2_reordered.reset_index()
+
+    df_gr4_reordered = df_gr4.set_index("Molecule ID")
+    df_gr4_reordered = df_gr4_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr4_reordered = df_gr4_reordered.reset_index()
+
+    df_gr5_reordered = df_gr5.set_index("Molecule ID")
+    df_gr5_reordered = df_gr5_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr5_reordered = df_gr5_reordered.reset_index()
+
+    df_gr6_reordered = df_gr6.set_index("Molecule ID")
+    df_gr6_reordered = df_gr6_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr6_reordered = df_gr6_reordered.reset_index()
+
+    df_gr7_reordered = df_gr7.set_index("Molecule ID")
+    df_gr7_reordered = df_gr7_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr7_reordered = df_gr7_reordered.reset_index()
+
+    df_gr8_reordered = df_gr8.set_index("Molecule ID")
+    df_gr8_reordered = df_gr8_reordered.reindex(index=df_gr3['Molecule ID'])  # Reset row order based on index of df_gr1
+    df_gr8_reordered = df_gr8_reordered.reset_index()
 
     # Plot
     # Molecular labels will be taken from 1st dataframe, so the second dataframe should have the same molecule ID order.
     barplot_with_CI_errorbars_and_4groups_ranked(df1=df_gr1_reordered,
-                                          #df2=df_gr2_reordered,
-                                          df3=df_gr3, #df4=df_gr4_reordered,
+                                            df2=df_gr2_reordered,
+                                            df3=df_gr3,
+                                            df4=df_gr4_reordered,
+                                            df5=df_gr5_reordered,
+                                            df6=df_gr6_reordered,
+                                            df7=df_gr7_reordered,
+                                            df8=df_gr8_reordered,
                                           x_label="Molecule ID", y_label="MAE",
                                           y_lower_label="MAE_lower_CI", y_upper_label="MAE_upper_CI",
                                           group_labels=[group1,
-                                                        #group2,
-                                                        group3])#, group4])
+                                                        group2,
+                                                        group3,
+                                                        group4,
+                                                        group5,
+                                                        group6,
+                                                        group7,
+                                                        group8])
     plt.savefig(molecular_statistics_directory_path + "/" + file_base_name + ".pdf")
-    print("completed barplot_with_CI_errorbars_and_4groups")
 
     # Same comparison plot with only QM results (only for presentation effects)
     #barplot_with_CI_errorbars_and_1st_of_2groups(df1=df_qm, df2=df_empirical_reordered, x_label="Molecule ID", y_label="MAE",
@@ -576,10 +710,6 @@ def calculate_summary_statistics_of_top_methods_of_each_category(statistics_df, 
 
 if __name__ == '__main__':
 
-    # ==========================================================================================
-    # Analysis of ALL submissions (ranked and nonranked), including reference calculations
-    # ==========================================================================================
-
     # Read collection file
     collection_data = read_collection_file(collection_file_path = LOGD_COLLECTION_PATH_ALL_SUBMISSIONS)
 
@@ -598,13 +728,24 @@ if __name__ == '__main__':
 
 
     # Calculate MAE for each molecule across each method category
-    #list_of_method_categories = ["Physical (MM) + QM+LEC", "Empirical", "Mixed", "Physical (QM)"]
-    list_of_method_categories = ["Physical (MM) + QM+LEC", "Empirical", "Physical (QM)"]
+    list_of_method_categories = ["MM logP + QM+LEC pKa",
+                                "Empirical (ref)",
+                                "QM logP + QM pKa",
+                                "MM logP + Experimental pKa",
+                                "Empirical logP + Experimental pKa",
+                                "Experimental logP + QM pKa",
+                                "Empirical logP + QM pKa",
+                                "Experimental logP + Experimental pKa"]
+
     # New labels for file naming for reassigned categories
-    category_path_label_dict = {"Physical (MM) + QM+LEC": "Physical_MM_QM_LEC",
-                                           "Empirical": "Empirical",
-                                           #"Mixed": "Mixed",
-                                           "Physical (QM)": "Physical_QM"}
+    category_path_label_dict = {"MM logP + QM+LEC pKa": "Physical_MM_QM_LEC",
+                                "Empirical (ref)": "Empirical",
+                                "QM logP + QM pKa": "Physical_QM",
+                                "MM logP + Experimental pKa":"Physical_MM_Experimental_pKa",
+                                "Empirical logP + Experimental pKa":"Empirical_Experimental_pKa",
+                                "Experimental logP + QM pKa":"Experimental_logP_QM",
+                                "Empirical logP + QM pKa":"Empirical_QM",
+                                "Experimental logP + Experimental pKa":"Experimental_only"}
 
     for category in list_of_method_categories:
         category_file_label = category_path_label_dict[category]
@@ -615,119 +756,30 @@ if __name__ == '__main__':
 
     # Create comparison plot of MAE for each molecule across method categories
     create_comparison_plot_of_molecular_MAE_of_method_categories(directory_path=molecular_statistics_directory_path,
-                                                                 group1='Physical (MM) + QM+LEC',
-                                                                 group2='Empirical',
-                                                                 #group3="Mixed",
-                                                                 group3='Physical (QM)',
+                                                                 group1="MM logP + QM+LEC pKa",
+                                                                 group2="Empirical (ref)",
+                                                                 group3="QM logP + QM pKa",
+                                                                 group4="MM logP + Experimental pKa",
+                                                                 group5="Empirical logP + Experimental pKa",
+                                                                 group6="Experimental logP + QM pKa",
+                                                                 group7="Empirical logP + QM pKa",
+                                                                 group8="Experimental logP + Experimental pKa",
                                                                  file_base_name="molecular_MAE_comparison_between_method_categories")
 
     # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods (found consistently in the top 15 across 4 metrics)
     #well_performing_method_ids = ["4K631", "006AC", "43M66", "5W956", "847L9", "HC032", "7RS67", "D4406"]
     #well_performing_method_ids = ["Chemprop", "ClassicalGSG DB3", "COSMO-RS",
     #                              "MD (CGenFF/TIP3P)", "TFE MLR"]
-    create_molecular_error_distribution_plots(collection_df=collection_data,
+    '''create_molecular_error_distribution_plots(collection_df=collection_data,
                                               directory_path=molecular_statistics_directory_path,
                                               #subset_of_method_ids=well_performing_method_ids,
-                                              file_base_name="molecular_error_distribution_ridge_plot")
+                                              file_base_name="molecular_error_distribution_ridge_plot")'''
 
     # Compare method categories
 
     # Calculate error distribution plots for each method category
-    category_comparison_directory_path = os.path.join(output_directory_path, "StatisticsTables/MethodCategoryComparison")
+    '''category_comparison_directory_path = os.path.join(output_directory_path, "StatisticsTables/MethodCategoryComparison")
     os.makedirs(category_comparison_directory_path, exist_ok=True)
     create_category_error_distribution_plots(collection_df=collection_data,
                                               directory_path=category_comparison_directory_path,
-                                              file_base_name="error_distribution_of_method_categories_ridge_plot")
-
-    '''# Calculate mean and standard deviation of performance statistics of top 10 methods of each category.
-    statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
-    calculate_summary_statistics_of_top_methods_of_each_category(
-        statistics_df= statistics_table_path, categories=list_of_method_categories, top=10,
-        directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top10.csv"
-    )
-
-    # Calculate mean and standard deviation of performance statistics of top 5 methods of each category.
-    statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
-    calculate_summary_statistics_of_top_methods_of_each_category(
-        statistics_df= statistics_table_path, categories=list_of_method_categories, top=5,
-        directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top5.csv"
-    )'''
-
-    # ==========================================================================================
-    # Repeat analysis for just ranked submissions
-    # ==========================================================================================
-
-    # Read collection file
-    collection_data = read_collection_file(collection_file_path = LOGD_COLLECTION_PATH_RANKED_SUBMISSIONS)
-
-    # Create new directory to store molecular statistics
-    output_directory_path = './analysis_outputs_ranked_submissions'
-    analysis_directory_name = 'MolecularStatisticsTables'
-
-    if os.path.isdir('{}/{}'.format(output_directory_path, analysis_directory_name)):
-        shutil.rmtree('{}/{}'.format(output_directory_path, analysis_directory_name))
-
-    # Calculate MAE of each molecule across all predictions methods
-    molecular_statistics_directory_path = os.path.join(output_directory_path, "MolecularStatisticsTables")
-    calc_MAE_for_molecules_across_all_predictions(collection_df = collection_data,
-                                                  directory_path = molecular_statistics_directory_path,
-                                                  file_base_name = "molecular_error_statistics")
-
-
-    # Calculate MAE for each molecule across each method category
-    #list_of_method_categories = ["Physical (MM) + QM+LEC", "Empirical", "Mixed", "Physical (QM)"]
-    #list_of_method_categories = ["Physical (MM) + QM+LEC", "Empirical", "Physical (QM)"]
-    list_of_method_categories = ["Physical (MM) + QM+LEC", "Physical (QM)"]
-    # New labels for file naming for reassigned categories
-    category_path_label_dict = {"Physical (MM) + QM+LEC": "Physical_MM",
-                                           #"Empirical": "Empirical",
-                                           #"Mixed": "Mixed",
-                                           "Physical (QM)": "Physical_QM"}
-
-    for category in list_of_method_categories:
-        category_file_label = category_path_label_dict[category]
-        calc_MAE_for_molecules_across_selected_predictions(collection_df=collection_data,
-                                                       selected_method_group=category,
-                                                       directory_path=molecular_statistics_directory_path,
-                                                       file_base_name="molecular_error_statistics_for_{}_methods".format(category_file_label))
-
-    # Create comparison plot of MAE for each molecule across all method categories
-    create_comparison_plot_of_molecular_MAE_of_method_categories_ranked(directory_path=molecular_statistics_directory_path,
-                                                                 group1='Physical (MM) + QM+LEC',
-                                                                 #group2='Empirical',
-                                                                 #group3="Mixed",
-                                                                 group3='Physical (QM)',
-                                                                 file_base_name="molecular_MAE_comparison_between_method_categories")
-
-    # Create molecular error distribution ridge plots  for all methods  and a subset of well performing methods
-    #  (found consistently in the top X across 4 metrics)
-    #well_performing_method_ids = ["Chemprop", "ClassicalGSG DB3", "COSMO-RS",
-    #                              "MD (CGenFF/TIP3P)", "TFE MLR"]
-    create_molecular_error_distribution_plots(collection_df=collection_data,
-                                              directory_path=molecular_statistics_directory_path,
-                                              #subset_of_method_ids=well_performing_method_ids,
-                                              file_base_name="molecular_error_distribution_ridge_plot")
-
-    # Compare method categories
-
-    # Calculate error distribution plots for each method category
-
-    category_comparison_directory_path = os.path.join(output_directory_path, "StatisticsTables/MethodCategoryComparison")
-    os.makedirs(category_comparison_directory_path, exist_ok=True)
-    create_category_error_distribution_plots(collection_df=collection_data,
-                                              directory_path=category_comparison_directory_path,
-                                              file_base_name="error_distribution_of_method_categories_ridge_plot")
-
-    '''# Calculate mean and standard deviation of performance statistics of top 10 methods of each category.
-    statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
-    calculate_summary_statistics_of_top_methods_of_each_category(
-        statistics_df= statistics_table_path, categories=list_of_method_categories, top=10,
-        directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top10.csv"
-    )
-
-    # Calculate mean and standard deviation of performance statistics of top 5 methods of each category.
-    statistics_table_path = os.path.join(output_directory_path, "StatisticsTables/statistics.csv")
-    calculate_summary_statistics_of_top_methods_of_each_category(
-        statistics_df= statistics_table_path, categories=list_of_method_categories, top=5,
-        directory_path=category_comparison_directory_path, file_base_name="summary_statistics_of_method_categories_top5.csv"
-    )'''
+                                              file_base_name="error_distribution_of_method_categories_ridge_plot")'''

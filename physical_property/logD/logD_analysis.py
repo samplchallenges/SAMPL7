@@ -285,7 +285,7 @@ def plot_correlation_with_SEM(x_lab, y_lab, x_err_lab, y_err_lab, data, title=No
     x_values = data.loc[:, x_lab]
     y_values = data.loc[:, y_lab]
     data = data[[x_lab, y_lab]]
-
+    
     # Find extreme values to make axes equal.
     min_limit = np.ceil(min(data.min()) - 1)
     max_limit = np.floor(max(data.max()) + 1)
@@ -302,10 +302,10 @@ def plot_correlation_with_SEM(x_lab, y_lab, x_err_lab, y_err_lab, data, title=No
                  label='SEM', alpha=0.75)
     plt.axis("equal")
 
-    if len(title) > 70:
-        plt.title(title[:70]+"...")
-    else:
-        plt.title(title)
+    #if len(title) > 70:
+    #    plt.title(title[:70]+"...")
+    #else:
+    plt.title(title)
 
     # Add diagonal line.
     grid.plot(axes_limits, axes_limits, ls='--', c='black', alpha=0.8, lw=0.7)
@@ -317,7 +317,6 @@ def plot_correlation_with_SEM(x_lab, y_lab, x_err_lab, y_err_lab, data, title=No
 
     plt.xlim(axes_limits)
     plt.ylim(axes_limits)
-
 
 def barplot_with_CI_errorbars(df, x_label, y_label, y_lower_label, y_upper_label, figsize=False):
     """Creates bar plot of a given dataframe with asymmetric error bars for y axis.
@@ -1561,12 +1560,12 @@ if __name__ == '__main__':
 
     # Generate plots and tables.
     for collection in [collection_logD]:
-        collection.generate_correlation_plots()
+        #collection.generate_correlation_plots()
         collection.generate_correlation_plots_with_SEM()
-        collection.generate_molecules_plot()
-        collection.generate_absolute_error_vs_molecule_ID_plot()
+        #collection.generate_molecules_plot()
+        #collection.generate_absolute_error_vs_molecule_ID_plot()
 
-    import shutil
+    """import shutil
 
     if os.path.isdir('{}/StatisticsTables'.format(output_directory_path)):
         shutil.rmtree('{}/StatisticsTables'.format(output_directory_path))
@@ -1591,7 +1590,7 @@ if __name__ == '__main__':
     # Generate QQ-Plots for model uncertainty predictions
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
-                                            directory_path=QQplot_directory_path)
+                                            directory_path=QQplot_directory_path)"""
 
 
     #==========================================================================================
@@ -1617,13 +1616,13 @@ if __name__ == '__main__':
 
     # Generate plots and tables.
     for collection in [collection_logD]:
-        collection.generate_correlation_plots()
+        #collection.generate_correlation_plots()
         collection.generate_correlation_plots_with_SEM()
-        collection.generate_molecules_plot()
-        collection.generate_absolute_error_vs_molecule_ID_plot()
+        #collection.generate_molecules_plot()
+        #collection.generate_absolute_error_vs_molecule_ID_plot()
 
 
-    import shutil
+    '''import shutil
 
     if os.path.isdir('{}/StatisticsTables'.format(output_directory_path)):
         shutil.rmtree('{}/StatisticsTables'.format(output_directory_path))
@@ -1648,4 +1647,4 @@ if __name__ == '__main__':
     # Generate QQ-Plots for model uncertainty predictions
     QQplot_directory_path = os.path.join(output_directory_path, "QQPlots")
     generate_QQplots_for_model_uncertainty(input_file_name="QQplot_dict.pickle",
-                                            directory_path=QQplot_directory_path)
+                                            directory_path=QQplot_directory_path)'''

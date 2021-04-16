@@ -1,0 +1,43 @@
+## What's here
+- [`analysis/`](analysis/) - Analysis of log *D* predictions. Analysis is similar to that found in `../analysis_outputs_all_submissions/` except it includes some additional pK<sub>a</sub> and log *P* combinations (for log *D*  estimation). Method name *logP_experimental + EC_RISM* combines the experimental log *P* with the top performing pK<sub>a</sub> method (based on RMSE), method *logP_experimental + pKa_experimental* combines the experimental log *P* and pK<sub>a</sub> value, method *TFE MLR + EC_RISM* combines the best performing (based on RMSE) log *P* and pK<sub>a</sub> methods, method *TFE MLR + pKa_experimental* combines the best performing (based on RMSE) log *P* method with the experimental pK<sub>a</sub>, method *logP_experimental + DFT_M05-2X_SMD* combines the experimental log *P* with an average performing pK<sub>a</sub> method, method *NES-1 (GAFF2/OPC3) B  + pKa_experimental* combines a log *P* method with average performance with the experimental pK<sub>a</sub>.
+- `error_for_each_logD.pdf` - Violin plots that show error distribution of predictions related to each experimental log *P*.
+- `logDCorrelationPlots/` - This directory contains plots of predicted vs. experimental log *P* values with linear regression line (blue) for each method. Files are named according to the submitted method name of each subission, which can be found in `statistics_table.csv`. In correlation plots, the dashed black line has a slope of 1. Dark and light green shaded areas indicate +-0.5 and +-1.0 log *P* unit error regions, respectively.
+- `logDCorrelationPlotsWithSEM/` - This directory contains similar plots to the `logDCorrelationPlots/` directory with error bars added for Standard Error of the Mean (SEM) of experimental and predicted values for submissions that reported these values. Experimental log *P* SEM values are either too small to be able to see the horizontal error bars, or some of the experimental log *P* SEM values were not collected.
+- `AbsoluteErrorPlots/` - This directory contains a bar plot for each method showing the absolute error for each log *P* prediction compared to the experimental value.
+- `StatisticsTables/` - This directory contains machine-readable copies of the Statistics Table, bootstrap distributions of performance statistics, and overall performance comparison plots based on RMSE and MAE values.
+    - `statistics.csv`- A table of performance statistics (RMSE, MAE, ME, R^2, linear regression slope(m), Kendall's Tau, and error slope(ES)) for all the submissions.
+    - `RMSE_vs_method_plot.pdf`
+    - `RMSE_vs_method_plot_colored_by_method_category.pdf`
+    - `RMSE_vs_method_plot_colored_by_type.pdf`
+    - `MAE_vs_method_plot.pdf`
+    - `MAE_vs_method_plot_colored_by_method_category.pdf`
+    - `MAE_vs_method_plot_colored_by_type.pdf`
+    - `kendalls_tau_vs_method_plot.pdf`
+    - `kendalls_tau_vs_method_plot_colored_by_method_category.pdf`
+    - `kendalls_tau_vs_method_plot_colored_by_type.pdf`
+    - `Rsquared_vs_method_plot.pdf`                            
+    - `Rsquared_vs_method_plot_colored_by_method_category.pdf`                 
+    - `Rsquared_vs_method_plot_colored_by_type`.pdf
+- `QQPlots/` - Quantile-Quantile plots for the analysis of model uncertainty predictions.
+- `MolecularStatisticsTables/` - This directory contains tables and barplots of molecular statistics analysis (Error statistics, MAE and RMSE, calculated across methods for each molecule.)
+    - `MAE_vs_molecule_ID_plot.pdf` - Barplot of MAE calculated for each molecule averaging over all prediction methods.
+    - `RMSE_vs_molecule_ID_plot.pdf` - Barplot of RMSE calculated for each molecule averaged over all prediction methods
+    - `molecular_error_statistics.csv` - MAE and RMSE statistics calculated for each molecule averaged over all prediction methods. 95% confidence intervals were calculated via bootstrapping (10000 samples).
+    - `Empirical/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the empirical method category.
+    - `Empirical_Experimental_pKa/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods combining an empirical method and experimental pK<sub>a</sub>.
+    - `Empirical_QM/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods combining an empirical and QM method.
+    - `Experimental_logP_QM/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods combining experimental log *P* and QM predictions.
+    - `Experimental_only/`
+    - `Physical_MM_Experimental_pKa/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods combining MM methods and experimental pK<sub>a</sub>.
+    - `Physical_MM_QM_LEC/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods combining MM and QM+LEC.
+    - `Physical_QM/` - This directory contains table and barplots of molecular statistics analysis calculated only for methods in the physical QM category.
+
+- [`submission_collection_files/`](logD_submission_collection.csv) - Contains analysis of log *D*<sub>7.4</sub> predictions generated from log *P* and pK<sub>a</sub> predictions using the `calc_logD.nb` notebook found in `../calculate_logD`.
+  - `experimental_pKa_and_logP_combined.csv` - log *D* predictions generated from the experimental log *P* and pK<sub>a</sub> values.
+  - `best_pKa_and_logP_method_combined.csv` - log *D* predictions generated from the top log *P* prediction *P* and pK<sub>a</sub> predictions.
+  - `experimental_logP_and_participant_predictions_combined.csv` - log *D* predictions generated from experimental log *P* and ranked pK<sub>a</sub> predictions.
+  - `experimental_pKa_and_participant_predictions_combined.csv` - log *D* predictions generated from from experimental log *P* and all ranked participants.
+- [`make_input.ipynb`](make_input.ipynb) - Noteook that takes the log *D* data in `submission_collection_files/` and converts it to SAMPL style submission format to be used as input for analysis.
+- [`input_files/`](input_files/) - Contains SAMPL style submission files that were created from the log *D* data generated by [`calc_logD.nb`](calc_logD.nb). Also contains files from `../calculate_logD/logD_predictions/`. These were used as input for the general SAMPL analysis.
+- [`user-map2.csv`](user-map2.csv) - manually created user map of all log *D* estimate files. Used as input for the general SAMPL analysis scripts.
+- [`experimental_value_files/`](experimental_value_files/) - Contains files that have log *P* and pK<sub>a</sub> values. Used as input for [`calc_logD.nb`](calc_logD.nb).
