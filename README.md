@@ -63,8 +63,9 @@ All SAMPL7 challenges are now closed. Note the first phase of the SAMPL8 host-gu
 - **Release 0.6** (Oct. 13, 2020, DOI [10.5281/zenodo.4086044](https://dx.doi.org/10.5281/zenodo.3975152)):  Release the finalized the physical properties challenge inputs, formats, submissions and experimental results. A later release will include the results of analysis. These changes were all available in master earlier (see detailed changelog in release notes), but this provides an official release. Analysis of physical properties results will come at a later date.
 
 ### Changes not in a release
-- Added physical properties analysis (December 2020-January 2021)
-- Fixed two submissions that had errors and updated the overview plots/stats and individual plots for the two affected submissions (4/9/2021)
+- Added physical properties analysis for logP and pKa (December 2020-January 2021)
+- Fixed two log *P* submissions that had errors and updated the overview plots/stats and individual plots for the two affected submissions (4/9/2021)
+- After fixing the two log *P* submissions that had errors, log *D* estimates were regenerated and analysis was done (4/19/2021)
 
 
 ## Challenge overview
