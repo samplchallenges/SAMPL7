@@ -61,12 +61,11 @@ All SAMPL7 challenges are now closed. Note the first phase of the SAMPL8 host-gu
 - **Release 0.4.1** (Nov. 27, 2019, DOI [10.5281/zenodo.3555601](https://dx.doi.org/10.5281/zenodo.3555601)): Fixes and corrects some SMILES formatting errors (see release notes) for protein-ligand challenge, adds host-guest experimental data, adds submission instructions for stage 1 protein-ligand challenge.
 - **Relase 0.5** (Aug. 6, 2020, DOI [10.5281/zenodo.3975152](https://dx.doi.org/10.5281/zenodo.3975152)): Adds PHIP2 components from 2019; corrects an OctaAcid value; brings in host-guest challenge results and reference calculations; adds details on SAMPL7 physical property (pKa, logP, logD, PAMPA permeability) challenge along with inputs and submission formats.
 - **Release 0.6** (Oct. 13, 2020, DOI [10.5281/zenodo.4086044](https://dx.doi.org/10.5281/zenodo.3975152)):  Release the finalized the physical properties challenge inputs, formats, submissions and experimental results. A later release will include the results of analysis. These changes were all available in master earlier (see detailed changelog in release notes), but this provides an official release. Analysis of physical properties results will come at a later date.
+- **Release 0.7** (Changes up to Jan. 14, 2021, DOI [10.5281/zenodo.4706017](https://dx.doi.org/10.5281/zenodo.4706017)): Includes the physical properties analysis/plots (for logP and pKa) most participants used in their SAMPL7 papers. These stayed the same until a draft of the overview paper was sent out in April, 2021, at which point two participants noticed sign/units errors in their logP submissions and these were corrected.
+- **Release 0.8** (Changes up to March 16, 2021, DOI [10.5281/zenodo.4706020](https://dx.doi.org/10.5281/zenodo.4706020)): Includes initial logD analysis as of PR ...
+- **Release 1.0** (April 20, 2021, DOI [10.5281/zenodo.4706021](10.5281/zenodo.4706021)): Includes updates to two logP submissions, then corrections to the overall analysis and performance statistics to reflect these changes (as of April 9, 2021). Also includes finalized logD analysis (April 20, 2021).
 
 ### Changes not in a release
-- Added physical properties analysis for logP and pKa (December 2020-January 2021)
-- Fixed two log *P* submissions that had errors and updated the overview plots/stats and individual plots for the two affected submissions (4/9/2021)
-- After fixing the two log *P* submissions that had errors, log *D* estimates were regenerated and analysis was done (4/19/2021)
-
 
 ## Challenge overview
 
