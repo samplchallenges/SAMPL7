@@ -6,7 +6,7 @@ Experimental values for the 22 challenge molecules are available in this directo
 ## Manifest
 - [`Experimental_Properties_of_SAMPL7_Compounds.pdf`](Experimental_Properties_of_SAMPL7_Compounds.pdf): A table containing experimental properties of the SAMPL7 compounds in `.PDF` format.
 
-- [`Experimental_Properties_of_SAMPL7_Compounds.csv`](Experimental_Properties_of_SAMPL7_Compounds.csv): A table containing experimental properties of the SAMPL7 compounds in `CSV` format. (The logP and logD data for SM41 and SM43 have been corrected)
+- [`Experimental_Properties_of_SAMPL7_Compounds.csv`](Experimental_Properties_of_SAMPL7_Compounds.csv): A table containing experimental properties of the SAMPL7 compounds in `CSV` format. (The logP and logD data for SM41 and SM43 have been corrected per the Ballatore lab; their source data will be updated in a forthcoming erratum.)
 
 - [`experimental_ID_and_SAMPL7_molecule_ID_table.csv`](experimental_ID_and_SAMPL7_molecule_ID_table.csv): A table that matches experimental molecule IDs to SAMPL7 challenge molecule IDs (`.CVS` format).
 
