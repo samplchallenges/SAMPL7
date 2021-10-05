@@ -66,6 +66,7 @@ All SAMPL7 challenges are now closed. Note the first phase of the SAMPL8 host-gu
 - **Release 1.0** (April 20, 2021, DOI [10.5281/zenodo.4706021](10.5281/zenodo.4706021)): Includes updates to two logP submissions, then corrections to the overall analysis and performance statistics to reflect these changes (as of April 9, 2021). Also includes finalized logD analysis (April 20, 2021).
 
 ### Changes not in a release
+- 2021-10-05: Update two logP/logD experimental values (SM41 and SM43) to reflect an error in the experimental values provided us, as discussed in a forthcoming erratum to the experimental study from the Ballatore lab.
 
 ## Challenge overview
 
