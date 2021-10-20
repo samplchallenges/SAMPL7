@@ -12,3 +12,5 @@ Experimental values for the 22 challenge molecules are available in this directo
 
 ## Publication on experimental measurements
 Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres". European Journal of Medicinal Chemistry. 2021 March. https://doi.org/10.1016/j.ejmech.2021.113399
+
+This was updated with a [corrigendum](https://doi.org/10.1016/j.ejmech.2021.113894) with new values for logP and logD of compounds 27 and 29, and the intrinsic solubility of compound 14. These values have been corrected in the experimental values provided here as of Oct. 20, 2021.

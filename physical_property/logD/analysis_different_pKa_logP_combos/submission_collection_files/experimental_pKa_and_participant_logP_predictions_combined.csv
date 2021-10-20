@@ -1,0 +1,133 @@
+,logP method_name,pKa method_name,logP file name,pKa file name,logP category,pKa category,Molecule ID,logD7.4 (calc),logD SEM (calc),logD7.4 (exp),logD7.4 SEM (exp),ΔlogD7.4 error (calc-exp),logD model uncertainty
+0,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM25,1.8900000000000001,0.21990175982820837,-0.09,0.01,1.9800000000000002,1.5
+1,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM26,-0.74,0.14974237622905218,-0.87,0.06,0.13,1.5
+2,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM27,2.43,0.13000003171656935,1.56,0.11,0.8700000000000001,1.5
+3,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM28,1.85,0.13,1.18,0.08,0.6700000000000002,1.5
+4,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM29,1.94,0.15000019958028396,1.61,0.11,0.32999999999999985,1.5
+5,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM30,4.2,0.14000006621276928,2.76,0.19,1.4400000000000004,1.5
+6,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM31,3.0500000000000003,0.13000000230065584,1.96,0.14,1.0900000000000003,1.5
+7,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM32,4.36,0.16000003171656935,2.44,0.17,1.9200000000000004,1.5
+8,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM33,5.45,0.16,2.96,0.21,2.49,1.5
+9,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM34,4.46,0.1400000000348365,2.83,0.2,1.63,1.5
+10,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM35,1.98,0.36000045616483534,0.87,0.06,1.1099999999999999,1.5
+11,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM36,2.68,0.6000006289396016,0.76,0.05,1.9200000000000002,1.5
+12,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM37,2.43,0.7500000550858541,1.45,0.1,0.9800000000000002,1.5
+13,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM38,1.6600000000000001,0.4100032671890941,1.03,0.07,0.6300000000000001,1.5
+14,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM39,3.74,0.41000009135794513,1.89,0.13,1.8500000000000003,1.5
+15,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM40,2.59,0.31000172321773445,1.82,0.13,0.7699999999999998,1.5
+16,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM41,0.41000000000000003,0.2194766376651706,-0.42,0.03,0.8300000000000001,1.5
+17,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM42,4.29,0.1594234547197126,0.99,0.07,3.3,1.5
+18,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM43,1.95,0.19870466475253715,0.42,0.03,1.53,1.5
+19,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM44,-0.26,0.2538472905132671,0.06,0.,-0.32,1.5
+20,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM45,2.3000000000000003,0.4474210538020761,1.06,0.07,1.2400000000000002,1.5
+21,MD (CGenFF/TIP3P),pKa_experimental,logP_prediction_Iorga_Beckstein_CGenFF,pKa_experimental_values,Physical (MM),experimental,SM46,1.27,0.32277639433955946,0.69,0.05,0.5800000000000001,1.5
+22,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM25,-1.03,0.039901759828208386,-0.09,0.01,-0.9400000000000001,1.06
+23,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM26,-2.7,0.03974237622905219,-0.87,0.06,-1.83,1.06
+24,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM27,1.75,3.171656935122753e-8,1.56,0.11,0.18999999999999995,1.06
+25,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM28,0.83,0.,1.18,0.08,-0.35,1.06
+26,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM29,1.23,1.9958028397883462e-7,1.61,0.11,-0.3800000000000001,1.06
+27,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM30,3.5300000000000002,6.621276927099837e-8,2.76,0.19,0.7700000000000005,1.06
+28,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM31,1.61,2.300655839167245e-9,1.96,0.14,-0.34999999999999987,1.06
+29,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM32,1.6300000000000001,3.171656935122753e-8,2.44,0.17,-0.8099999999999998,1.06
+30,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM33,4.27,0.,2.96,0.21,1.3099999999999996,1.06
+31,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM34,2.39,3.4836487372642844e-11,2.83,0.2,-0.43999999999999995,1.06
+32,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM35,0.77,4.561648353517754e-7,0.87,0.06,-0.09999999999999998,1.06
+33,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM36,3.74,6.28939601658209e-7,0.76,0.05,2.9800000000000004,1.06
+34,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM37,1.8800000000000001,5.508585407394285e-8,1.45,0.1,0.43000000000000016,1.06
+35,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM38,0.48,3.267189094097668e-6,1.03,0.07,-0.55,1.06
+36,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM39,2.47,9.135794513077607e-8,1.89,0.13,0.5800000000000003,1.06
+37,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM40,1.42,1.7232177344455449e-6,1.82,0.13,-0.40000000000000013,1.06
+38,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM41,-1.31,0.039476637665170594,-0.42,0.03,-0.8900000000000001,1.06
+39,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM42,2.89,0.029423454719712593,0.99,0.07,1.9000000000000001,1.06
+40,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM43,0.06,0.038704664752537137,0.42,0.03,-0.36,1.06
+41,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM44,-1.26,0.03384729051326709,0.06,0.,-1.32,1.06
+42,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM45,0.55,0.03742105380207609,1.06,0.07,-0.51,1.06
+43,TFE IEFPCM MST,pKa_experimental,logP-IEFPCMMST-1,pKa_experimental_values,Physical (QM),experimental,SM46,-0.07,0.0327763943395595,0.69,0.05,-0.76,1.06
+44,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM25,1.32,0.04990175982820839,-0.09,0.01,1.4100000000000001,1.05
+45,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM26,-0.1,0.04974237622905219,-0.87,0.06,0.77,1.05
+46,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM27,2.21,0.010000031716569352,1.56,0.11,0.6499999999999999,1.05
+47,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM28,2.18,0.01,1.18,0.08,1.0000000000000002,1.05
+48,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM29,2.07,0.010000199580283978,1.61,0.11,0.45999999999999974,1.05
+49,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM30,3.7800000000000002,0.010000066212769271,2.76,0.19,1.0200000000000005,1.05
+50,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM31,3.27,0.01000000230065584,1.96,0.14,1.31,1.05
+51,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM32,2.59,0.010000031716569352,2.44,0.17,0.1499999999999999,1.05
+52,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM33,5.27,0.01,2.96,0.21,2.3099999999999996,1.05
+53,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM34,5.2700000000000005,0.010000000034836488,2.83,0.2,2.4400000000000004,1.05
+54,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM35,0.9500000000000001,0.010000456164835352,0.87,0.06,0.08000000000000007,1.05
+55,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM36,2.59,0.010000628939601658,0.76,0.05,1.8299999999999998,1.05
+56,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM37,2.14,0.010000055085854075,1.45,0.1,0.6900000000000002,1.05
+57,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM38,2.3000000000000003,0.010003267189094098,1.03,0.07,1.2700000000000002,1.05
+58,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM39,4.16,0.010000091357945131,1.89,0.13,2.2700000000000005,1.05
+59,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM40,3.61,0.010001723217734446,1.82,0.13,1.7899999999999998,1.05
+60,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM41,1.1300000000000001,0.049476637665170596,-0.42,0.03,1.55,1.05
+61,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM42,5.41,0.03942345471971259,0.99,0.07,4.42,1.05
+62,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM43,2.48,0.04870466475253714,0.42,0.03,2.06,1.05
+63,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM44,0.52,0.04384729051326709,0.06,0.,0.46,1.05
+64,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM45,1.69,0.04742105380207609,1.06,0.07,0.6299999999999999,1.05
+65,EC_RISM_wet,pKa_experimental,logP-ECRISM-1,pKa_experimental_values,Physical (QM),experimental,SM46,1.54,0.0427763943395595,0.69,0.05,0.8500000000000001,1.05
+66,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM25,-1.37,0.039901759828208386,-0.09,0.01,-1.28,0.
+67,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM26,-2.38,0.03974237622905219,-0.87,0.06,-1.5099999999999998,0.
+68,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM27,0.47000000000000003,3.171656935122753e-8,1.56,0.11,-1.09,0.
+69,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM28,-0.23,0.,1.18,0.08,-1.41,0.
+70,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM29,0.18,1.9958028397883462e-7,1.61,0.11,-1.4300000000000002,0.
+71,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM30,1.73,6.621276927099837e-8,2.76,0.19,-1.0299999999999998,0.
+72,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM31,0.9400000000000001,2.300655839167245e-9,1.96,0.14,-1.02,0.
+73,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM32,1.5,3.171656935122753e-8,2.44,0.17,-0.94,0.
+74,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM33,3.12,0.,2.96,0.21,0.16000000000000014,0.
+75,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM34,2.18,3.4836487372642844e-11,2.83,0.2,-0.6499999999999999,0.
+76,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM35,-0.6900000000000001,4.561648353517754e-7,0.87,0.06,-1.56,0.
+77,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM36,0.58,6.28939601658209e-7,0.76,0.05,-0.18000000000000005,0.
+78,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM37,0.78,5.508585407394285e-8,1.45,0.1,-0.6699999999999999,0.
+79,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM38,-1.6,3.267189094097668e-6,1.03,0.07,-2.63,0.
+80,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM39,0.47000000000000003,9.135794513077607e-8,1.89,0.13,-1.42,0.
+81,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM40,-0.71,1.7232177344455449e-6,1.82,0.13,-2.5300000000000002,0.
+82,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM41,-2.79,0.039476637665170594,-0.42,0.03,-2.37,0.
+83,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM42,0.21,0.029423454719712593,0.99,0.07,-0.78,0.
+84,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM43,-1.7,0.038704664752537137,0.42,0.03,-2.12,0.
+85,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM44,-2.63,0.03384729051326709,0.06,0.,-2.69,0.
+86,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM45,-1.74,0.03742105380207609,1.06,0.07,-2.8,0.
+87,TFE-NHLBI-TZVP-QM,pKa_experimental,logp-nhlbi-1,pKa_experimental_values,Physical (QM),experimental,SM46,-1.8,0.0327763943395595,0.69,0.05,-2.49,0.
+88,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM25,-2.48,0.039901759828208386,-0.09,0.01,-2.39,1.47
+89,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM26,-2.91,0.03974237622905219,-0.87,0.06,-2.04,1.47
+90,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM27,0.01,3.171656935122753e-8,1.56,0.11,-1.55,1.47
+91,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM28,-0.79,0.,1.18,0.08,-1.97,1.47
+92,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM29,-0.76,1.9958028397883462e-7,1.61,0.11,-2.37,1.47
+93,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM30,1.17,6.621276927099837e-8,2.76,0.19,-1.5899999999999999,1.47
+94,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM31,-0.13,2.300655839167245e-9,1.96,0.14,-2.09,1.47
+95,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM32,0.86,3.171656935122753e-8,2.44,0.17,-1.58,1.47
+96,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM33,2.61,0.,2.96,0.21,-0.3500000000000001,1.47
+97,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM34,0.92,3.4836487372642844e-11,2.83,0.2,-1.9100000000000001,1.47
+98,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM35,-0.79,4.561648353517754e-7,0.87,0.06,-1.6600000000000001,1.47
+99,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM36,-0.17,6.28939601658209e-7,0.76,0.05,-0.93,1.47
+100,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM37,-1.04,5.508585407394285e-8,1.45,0.1,-2.49,1.47
+101,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM38,-2.75,3.267189094097668e-6,1.03,0.07,-3.7800000000000002,1.47
+102,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM39,-1.2,9.135794513077607e-8,1.89,0.13,-3.09,1.47
+103,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM40,-2.17,1.7232177344455449e-6,1.82,0.13,-3.99,1.47
+104,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM41,-3.22,0.039476637665170594,-0.42,0.03,-2.8000000000000003,1.47
+105,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM42,-0.1,0.029423454719712593,0.99,0.07,-1.09,1.47
+106,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM43,-3.0500000000000003,0.038704664752537137,0.42,0.03,-3.47,1.47
+107,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM44,-3.2600000000000002,0.03384729051326709,0.06,0.,-3.3200000000000003,1.47
+108,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM45,-2.34,0.03742105380207609,1.06,0.07,-3.4,1.47
+109,TFE-SMD-solvent-opt,pKa_experimental,logP_RodriguezPaluch_SMD_2,pKa_experimental_values,Physical (QM),experimental,SM46,-2.89,0.0327763943395595,0.69,0.05,-3.58,1.47
+110,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM25,-2.48,0.39990175982820836,-0.09,0.01,-2.39,0.8
+111,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM26,-3.04,0.3997423762290522,-0.87,0.06,-2.17,0.8
+112,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM27,0.49,0.36000003171656936,1.56,0.11,-1.07,0.8
+113,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM28,-0.6,0.36,1.18,0.08,-1.7799999999999998,0.8
+114,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM29,-0.51,0.36000019958028395,1.61,0.11,-2.12,0.8
+115,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM30,0.9500000000000001,0.36000006621276925,2.76,0.19,-1.8099999999999996,0.8
+116,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM31,0.58,0.3600000023006558,1.96,0.14,-1.38,0.8
+117,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM32,1.24,0.36000003171656936,2.44,0.17,-1.2,0.8
+118,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM33,2.55,0.36,2.96,0.21,-0.41000000000000014,0.8
+119,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM34,1.46,0.36000000003483645,2.83,0.2,-1.37,0.8
+120,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM35,-0.81,0.36000045616483534,0.87,0.06,-1.6800000000000002,0.8
+121,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM36,0.19,0.36000062893960166,0.76,0.05,-0.5700000000000001,0.8
+122,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM37,-1.62,0.3600000550858541,1.45,0.1,-3.0700000000000003,0.8
+123,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM38,-2.59,0.3600032671890941,1.03,0.07,-3.62,0.8
+124,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM39,-0.43,0.36000009135794514,1.89,0.13,-2.32,0.8
+125,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM40,-1.9100000000000001,0.36000172321773444,1.82,0.13,-3.7300000000000004,0.8
+126,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM41,-3.21,0.3994766376651706,-0.42,0.03,-2.79,0.8
+127,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM42,-0.61,0.38942345471971257,0.99,0.07,-1.6,0.8
+128,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM43,-1.99,0.39870466475253713,0.42,0.03,-2.41,0.8
+129,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM44,-2.73,0.39384729051326706,0.06,0.,-2.79,0.8
+130,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM45,-1.98,0.3974210538020761,1.06,0.07,-3.04,0.8
+131,TFE b3lypd3,pKa_experimental,logP-EvrimArslan-6,pKa_experimental_values,Physical (QM),experimental,SM46,-2.82,0.39277639433955946,0.69,0.05,-3.51,0.8

@@ -19,7 +19,7 @@ The original analysis used a Mathematica notebook, linked below, as discussed ab
 
 ### Updated analysis
 
-The updated analysis is based on the derivation from Dhiman Ray in the `theory` directory, here, which produces logD titration curves which match those in the Sirius reports provided by the Ballatore lab.
+The updated analysis is (will be) based on the derivation from Dhiman Ray in the `theory` directory, here, which produces logD titration curves which match those in the Sirius reports provided by the Ballatore lab. It also is updated to include the results of the Ballatore corrigendum which affects some compounds.
 
 ## Manifest
 (We can probably say that otherwise, this duplicates the structure below except ...)
