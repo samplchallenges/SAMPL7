@@ -15,9 +15,9 @@ SM37,1.45,0.10,shake-flask assay (run by Analiza),O=S(N[C@@]1(C[S+]([O-])C1)CCC2
 SM38,1.03,0.07,shake-flask assay (run by Analiza),CS(NC1(CS(C1)(=O)=O)CCC2=CC=CC=C2)(=O)=O
 SM39,1.89,0.13,shake-flask assay (run by Analiza),O=S(NC1(CS(C1)(=O)=O)CCC2=CC=CC=C2)(C3=CC=CC=C3)=O
 SM40,1.83,0.05,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1(CS(C1)(=O)=O)CCC2=CC=CC=C2)(N(C)C)=O
-SM41,0.58,0.02,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(C)=O
+SM41,1.97,0.01,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(C)=O
 SM42,1.76,0.03,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(C3=CC=CC=C3)=O
-SM43,0.85,0.01,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(N(C)C)=O
+SM43,2.51,0.01,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(N(C)C)=O
 SM44,1.16,0.03,"potentiometric titrations using a Sirius T3, Pion",O=S(NC(N=N1)=CN1C2=CC=CC=C2)(C)=O
 SM45,2.55,0.04,"potentiometric titrations using a Sirius T3, Pion",O=S(NC(N=N1)=CN1C2=CC=CC=C2)(C3=CC=CC=C3)=O
 SM46,1.72,0.01,"potentiometric titrations using a Sirius T3, Pion",O=S(NC(N=N1)=CN1C2=CC=CC=C2)(N(C)C)=O
