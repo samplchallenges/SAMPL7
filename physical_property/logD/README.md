@@ -1,18 +1,38 @@
 ## SAMPL7 log *D* Predictions
 
-Ranked SAMPL7 pK<sub>a</sub> and log *P* predictions were combined to estimate log *D*<sub>7.4</sub>. The Mathematica notebook used to do this analysis is available in the manifest.
+Originally, for the [SAMPL7 physical properties overview paper](https://dx.doi.org/10.1007/s10822-021-00397-3), ranked SAMPL7 pK<sub>a</sub> and log *P* predictions were combined to estimate log *D*<sub>7.4</sub> via a  Mathematica notebook (available below). However, subsequent analysis found that this approach was incorrect, in part because it assumed (for an acid) that no ionic species could enter the octanol phase -- which is true in low pH when the ionization is low, but not at high pH when the concentration of the ionic species becomes high enough that some can partition into the octanol phase. (The reverse would be true for a base.) This approximation had led to an inconsistency in estimating experimental logD given the experimental pKa and logP which was mentioned in the overview paper, p793, column 2 -- values we calculated did not agree with those reported experimentally.
 
-General analysis of log *D* predictions include calculated vs predicted log *D* correlation plots and 6 performance statistics (RMSE, MAE, ME, R^2, linear regression slope(m), and error slope(ES)) for all the submissions.
+Subsequently, additional work by Dhiman Ray in the Mobley lab (after correspondence with Pion, the maker of the Sirius T3, and members of the Ballatore lab) was able to resolve this discrepancy by updating how we estimate logD, both from the experimental data (now yielding values consistent with the experimental estimates) and from computed logD/pKa. The logD analysis presented here, then, is being updated (as of August 2021) to correct this.
+
+*For archival purposes, we are making both the original (flawed) analysis and the updated analysis available*.
+
+### Analysis overview
+
+In both our original analysis, and our current analysis, the general analysis of log *D* predictions include calculated vs predicted log *D* correlation plots and 6 performance statistics (RMSE, MAE, ME, R^2, linear regression slope(m), and error slope(ES)) for all the submissions.
 95%-percentile bootstrap confidence intervals of all the statistics were reported.
 
 Molecular statistics analysis was performed to indicate which molecules were more difficult to predict accurately across submitted methods. Error statistics (MAE and RMSE) were calculated for each molecule averaging across all methods or for all methods within a method category.
 
+### The original analysis
+
+The original analysis used a Mathematica notebook, linked below, as discussed above. All original analysis has been moved to the `original_analysis` folder.
+
+### Updated analysis
+
+The updated analysis is updated to include the results of the Ballatore corrigendum which affects some compounds (SM41 and SM43 in particular).
+
+Originally we had hoped to also update the analysis based on the observation (see `theory/logD_logP_pKa.pdf`) that partitioning of charged species between phases seems to be non-neglible in some cases (that is, Theory eq. 7 applies better than Theory Eq. 9 or 11), but this would require participants to have submitted separate partitioning coefficient estimates for the neutral and charged species (P0 and P1) which they did not. So, we do not believe we can improve upon our present analysis given the data at hand. (The extent of the approximation made here can be tested by examining the experimental data, or for comparison, by attempting to compute experimental logD values from experimental logP and pKa using eq. 9; for many compounds, values agree, but in some cases there are dramatic errors.)
+
 ## Manifest
-- [`calculate_logD/`](./calculate_logD/)
+
+### Analysis
+
+  - `theory`: Contains a PDF file showing the theory for obtaining logD from pKa and measured partition coefficients; also contains the source LaTeX file as well as a Python script which produces logD titration curves.
+  - [`calculate_logD/`](calculate_logD/)
   - `calc_logD.nb` - Wolfram Mathematica `.nb` file that calculates and exports SAMPL7 distribution coefficients log *D*<sub>7.4</sub> for participants that had submitted a ranked log *P* and a ranked pK<sub>a</sub> submission. The notebook gathers the predicted macroscopic acidity constants and the partition coefficients from [`pKa_submission_collection.csv`](../pKa/analysis/macrostate_analysis/analysis_outputs_ranked_submissions/pKa_submission_collection.csv) and [`logP_submission_collection.csv`](../logP/analysis/analysis_outputs_ranked_submissions/logP_submission_collection.csv), respectively. The log *D*<sub>7.4</sub> is then calculated under the assumption that the ionic species can not enter the organic phase [1]. Because the acidity constants listed in [`pKa_submission_collection.csv`](../pKa/analysis/macrostate_analysis/analysis_outputs_ranked_submissions/pKa_submission_collection.csv) do not contain information about the charge states of the protonated and deprotonated species, the consensus of models that had submitted macroscopic pK<sub>a</sub> values including the charge states was used to determine that eq. 4 should be used for all compounds. Notebook created by Nicolas Tielker.
   - `logD_submission_collection.csv` - Contains log *D*<sub>7.4</sub> predictions generated from log *P* and pK<sub>a</sub> predictions.
   - `logD_predictions/` - Contains SAMPL style submission files created from the log *D* data found in `logD_submission_collection.csv`. One reference method and one null method were added to this folder to be used as a comparison to other methods in the general SAMPL analysis. These submission style files were used as input to the general SAMPL analysis script (`logD_analysis.py`) and the output can be found in `analysis_outputs_all_submissions/` and `analysis_outputs_ranked_submissions/`.
-- [`logD_analysis.py`](logD_analysis.py) - Python script that parses submissions and performs the analysis. Provides two separate treatment for ranked blind predictions alone (output directory: [`analysis_outputs_ranked_submissions/`](analysis_outputs_ranked_submissions/)) and ranked and reference calculations together (output directory: [`analysis_outputs_all_submissions/`](analysis_outputs_all_submissions/)). Reference calculations are provided as reference/comparison methods.  logD_analysis.py
+- [`logD_analysis.py`](logD_analysis.py) - Python script that parses submissions and performs the analysis. Provides two separate treatment for ranked blind predictions alone (output directory: [`analysis_outputs_ranked_submissions/`](analysis_outputs_ranked_submissions/)) and ranked and reference calculations together (output directory: [`analysis_outputs_all_submissions/`](analysis_outputs_all_submissions/)). Reference calculations are provided as reference/comparison methods.  
 - [`logD_analysis2.py`](logD_analysis2.py) - Python script that performs the analysis of molecular statistics (Error statistics, MAE and RMSE, calculated across methods for each molecule.)
 - [`logD_experimental_values.csv`](logD_experimental_values.csv) -  A CSV (`.csv`) table of potentiometric and shake-flask log *D* measurements of the 22 SAMPL molecules.
 - [`analysis_outputs_ranked_submissions/`](analysis_outputs_ranked_submissions/) - This directory contain analysis outputs of ranked submissions only.
@@ -69,6 +89,7 @@ Molecular statistics analysis was performed to indicate which molecules were mor
     - `StatisticsTables/MAE_vs_method_plot_colored_by_type.pdf`: Barplot showing overall performance by MAE, with reference calculations colored differently.
     - `StatisticsTables/RMSE_vs_method_plot_colored_by_type.pdf`: Barplot showing overall performance by RMSE, with reference calculations colored differently.
 - [`analysis_different_pKa_logP_combos`](analysis_different_pKa_logP_combos) - Contains similar analysis to `analysis_outputs_all_submissions/` except it includes some additional pK<sub>a</sub> and log *P* combinations (for log *D*  estimation).
+- [`original_analysis`]: Contains an archived copy of original analysis before 2021-10-20 updates to Ballatore data based on corrigendum.
 
 ## References
 [1] Bannan, Caitlin C., Kalistyn H. Burley, Michael Chiu, Michael R. Shirts, Michael K. Gilson, and David L. Mobley. “Blind Prediction of Cyclohexane–water Distribution Coefficients from the SAMPL5 Challenge.” Journal of Computer-Aided Molecular Design 30, no. 11 (November 2016): 927–44.

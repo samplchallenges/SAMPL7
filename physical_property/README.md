@@ -48,3 +48,6 @@ Effective permeability (log<sub>*P*<sub>*app*</sub></sub>) was measured by PAMPA
 
 ## Publication on experimental measurements
 Karol R. Francisco, Thomas J. Paniak, Marisa C. Kozlowski, and Carlo Ballatore. "Structure Property Relationships of N-Acylsulfonamides and Related Bioisosteres". European Journal of Medicinal Chemistry. 2021 March. https://doi.org/10.1016/j.ejmech.2021.113399
+
+This was updated later with a [corrigendum](https://doi.org/10.1016/j.ejmech.2021.113894) with updated values for compounds 27 and 29 which are reflected here as of Oct. 20, 2021.
+

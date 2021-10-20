@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[a4paper,margin=0.005in,tmargin=0.5in,lmargin=0.5in,rmargin=0.5in,landscape]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\pagenumbering{gobble}
+\begin{document}
+\begin{center}
+\scriptsize
+\begin{longtable}{|ccccccccc|}
+\toprule
+                                       method name &                                          file name &                category &      type &               RMSE &                MAE &                    ME &              R$^2$ &                  m &             $\tau$ &                  ES \\
+\midrule
+\endhead
+\midrule
+\multicolumn{11}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+                       TFE IEFPCM MST + IEFPCM/MST &                  logD-TFE\_IEFPCM\_MST-IEFPCM\_MST &           Physical (QM) &  Standard &  1.27 [0.84, 1.65] &  0.98 [0.66, 1.35] &    0.24 [-0.29, 0.74] &  0.55 [0.16, 0.88] &  1.31 [0.70, 1.70] &  0.57 [0.27, 0.82] &   1.16 [0.87, 1.26] \\
+                             EC_RISM_wet + EC_RISM &                        logD-EC\_RISM\_wet-EC\_RISM &           Physical (QM) &  Standard &  1.69 [1.30, 2.05] &  1.43 [1.06, 1.81] &  -1.43 [-1.81, -1.06] &  0.53 [0.21, 0.78] &  0.95 [0.55, 1.30] &  0.50 [0.21, 0.74] &   0.84 [0.64, 1.03] \\
+                       TFE-NHLBI-TZVP-QM + TZVP-QM &                 logD-TFE\_NHLBI\_TZVP\_QM-TZVP\_QM &           Physical (QM) &  Standard &  1.72 [1.29, 2.12] &  1.47 [1.12, 1.86] &     1.26 [0.77, 1.74] &  0.25 [0.01, 0.64] &  0.64 [0.06, 1.24] &  0.38 [0.01, 0.70] &  0.05 [-0.00, 0.18] \\
+                      TFE b3lypd3 + DFT_M05-2X_SMD &                logD-TFE\_b3lypd3-DFT\_M05\_2X\_SMD &           Physical (QM) &  Standard &  2.15 [1.55, 2.71] &  1.78 [1.30, 2.30] &     1.78 [1.30, 2.30] &  0.32 [0.05, 0.67] &  0.80 [0.28, 1.30] &  0.41 [0.05, 0.72] &   0.42 [0.27, 0.68] \\
+            MD (CGenFF/TIP3P) + Gaussian_corrected &         logD-MD\_CGenFF\_TIP3P-Gaussian\_corrected &  Physical (MM) + QM+LEC &  Standard &  2.27 [1.97, 2.55] &  2.13 [1.80, 2.45] &     1.84 [1.26, 2.34] &  0.62 [0.34, 0.84] &  1.53 [0.91, 2.19] &  0.62 [0.35, 0.83] &   0.88 [0.74, 1.00] \\
+ TFE-SMD-solvent-opt + DFT_M06-2X_SMD_explicit_... &  logD-TFE\_SMD\_solvent\_opt-DFT\_M06\_2X\_SMD\... &           Physical (QM) &  Standard &  4.54 [2.10, 7.14] &  2.92 [1.89, 4.54] &     2.88 [1.81, 4.52] &  0.25 [0.10, 0.77] &  1.92 [0.52, 4.35] &  0.55 [0.22, 0.80] &   0.55 [0.38, 0.74] \\
+\end{longtable}
+\end{center}
+
+Notes
+
+- RMSE: Root mean square error
+
+- MAE: Mean absolute error
+
+- ME: Mean error
+
+- R2: R-squared, square of Pearson correlation coefficient
+
+- m: slope of the line fit to predicted vs experimental logD values
+
+- $\tau$:  Kendall rank correlation coefficient
+
+- ES: error slope calculated from the QQ Plots of model uncertainty predictions
+
+- Mean and 95\% confidence intervals of RMSE, MAE, ME, R2, and m were calculated by bootstrapping with 10000 samples.
+
+- 95\% confidence intervals of ES were calculated by bootstrapping with 1000 samples.\end{document}
