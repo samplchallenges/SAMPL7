@@ -280,7 +280,7 @@ def main_rmsd (submitted_folder_path, template_folder_path, realigned = True):
             new_data = "%-20s,%-20s,%-20s\n"%(input_ligand, template_ligand, this_rmsd)
             all_rmsd_data.append(new_data)
 
-        for file in os.listdir("."):
+        for file in os.listdir(".."):
             if os.path.isfile(file) and "match" in file:
                 try:
                     os.remove(file)

@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+__author__ = "Harold Grosjean"
+__email__ = "haroldgrosjean@gmail.com"
+
 import os
 import subprocess
 import numpy as np

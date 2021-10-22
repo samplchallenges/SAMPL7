@@ -16,3 +16,9 @@ python analyze_stage1.py
 
 # Compile LaTeX statistic table for each directory
 for i in ../Analysis-outputs-stage1/*/*/StatisticsTables/statisticsLaTex/; do cd $i; pdflatex statistics.tex; rm statistics.aux;cd -; done
+
+# Run analysis for stage2 and create collection file
+python analyze_stage2.py
+
+# Run analysis for stage3 and create collection file
+python analyze_stage3.py

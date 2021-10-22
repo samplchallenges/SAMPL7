@@ -29,7 +29,7 @@
 Predictions:
 1, MOLPORT:000-800-360, O=C(c1ccccc1)c1ccc(-c2nc(-c3ccccc3)[nH]c2-c2ccccc2)cc1, 5
 2, MOLPORT:001-732-911, Cc1cccc(-c2nc(-c3cccc4ccccc34)c(-c3ccccc3)[nH]2)c1, 5
-3, MOLPORT:002-129-897, CC1(C)C=C(c2ccccc2)c2c(c3ccccc3c3ccccc23)C(c2ccccc2)=C1, 5
+3, MOLPORT:002-129-897, heterogeneous, 5
 4, MOLPORT:002-231-584, O=C1C(=Cc2c(-c3ccccc3)[nH]c3ccccc23)SC(=S)N1c1cccc([N+](=O)[O-])c1, 5
 5, MOLPORT:001-732-911, Cc1cccc(-c2nc(-c3cccc4ccccc34)c(-c3ccccc3)[nH]2)c1, 5
 6, MOLPORT:000-702-788, CC=C1CN2CCC34C(=C(C=O)C1CC23)Nc1ccccc14, 5

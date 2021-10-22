@@ -1,19 +1,12 @@
 import os
-import glob
-import copy
-import collections
-import pickle
-import tarfile
 
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from matplotlib import pyplot as plt
 
-from pkganalysis.submission import (SamplSubmission, IgnoredSubmissionError,
-                                    load_submissions, plot_correlation)
+from pkganalysis.submission import (SamplSubmission, IgnoredSubmissionError)
 
-from RMSD_calculator_HG import RMSD_calculator, RMSD_calculator_protein
+from pkganalysis.RMSD_calculator_HG import RMSD_calculator, RMSD_calculator_protein
 # =============================================================================
 # CONSTANTS
 # =============================================================================
@@ -373,12 +366,18 @@ class Stage2SubmissionCollection:
         #plt.figure(figsize = (10, 8))
         #TO DO: Add correct legends
         fig = stat_table_SIDs[['Successes rate highest poses', 'Success rate best poses']].plot.bar(rot=0, figsize = (10, 8))
-        plt.legend(['Top 1', ' Best in all'])
+        plt.legend(['Top 1', ' Best in all'], fontsize=17.5)
         fig.set_xticklabels(stat_table_SIDs.SIDs)
-        plt.title('Prediction performance for submissions'.format(ranking), loc='center')
-        plt.ylabel('Success rate (%)')
-        plt.xlabel('SID')
+        plt.title('Prediction performance for submissions'.format(ranking), loc='center', fontsize=25)
+        plt.ylabel('Success rate (%)', fontsize=20)
+        plt.xlabel('SID', fontsize=20)
+
+        #make bigger lables
+        plt.xticks(fontsize=15)
+        plt.yticks(fontsize=15)
+
         plt.savefig('{}/{}/methods_statistics_table_for_{}_submissions.png'.format(output_directory_path, ranking, ranking))
+        #plt.savefig('{}/{}/methods_statistics_table_for_{}_submissions.eps'.format(output_directory_path, ranking, ranking), format='eps')
         plt.close()
 
         successVSrmsd_best_table_SID = pd.DataFrame(successVSrmsd_best)
@@ -387,17 +386,20 @@ class Stage2SubmissionCollection:
         #                       index=False)
 
         plt.figure(figsize=(10, 6))
-        plt.title('Best in all'.format(ranking), loc='center')
+        plt.title('Best in all'.format(ranking), loc='center', fontsize=25)
         for SID in successVSrmsd_best_table_SID.columns[1:]:
             plt.plot(successVSrmsd_best_table_SID['RMSD'],
                      successVSrmsd_best_table_SID[SID],
                      label=SID)
         plt.xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         plt.axvline(2, 0, 1, label='RMSD cut-off', color='black', linestyle='--')
-        plt.xlabel('RMSD ($\AA$)')
-        plt.ylabel('Success Rate (%)')
-        #plt.legend()
+        plt.xlabel('RMSD cut-off ($\AA$)', fontsize=20)
+        plt.ylabel('Success Rate', fontsize=20)
+        plt.legend(fontsize=12)
+        plt.xticks(fontsize=15)
+        plt.yticks(fontsize=15)
         plt.savefig('{}/{}/SuccessVSrmsd_best_for_{}_submissions.png'.format(output_directory_path, ranking, ranking))
+        #plt.savefig('{}/{}/SuccessVSrmsd_best_for_{}_submissions.eps'.format(output_directory_path, ranking, ranking),format='eps')
         plt.close()
 
         successVSrmsd_highest_table_SID = pd.DataFrame(successVSrmsd_highest)
@@ -406,17 +408,21 @@ class Stage2SubmissionCollection:
         #                       index=False)
 
         plt.figure(figsize=(10, 6))
-        plt.title('Top 1'.format(ranking), loc='center')
+        plt.title('Top 1'.format(ranking), loc='center', fontsize=25)
         for SID in successVSrmsd_highest_table_SID.columns[1:]:
             plt.plot(successVSrmsd_highest_table_SID['RMSD'],
                      successVSrmsd_highest_table_SID[SID],
                      label=SID)
         plt.axvline(2, 0, 1, label='RMSD cut-off', color='black', linestyle='--')
         plt.xticks([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-        plt.xlabel('RMSD ($\AA$)')
-        plt.ylabel('Success Rate (%)')
-        plt.legend()
+        plt.xlabel('RMSD cut-off ($\AA$)', fontsize=20)
+        plt.ylabel('Success Rate', fontsize=20)
+        plt.legend(fontsize=12)
+        plt.xticks(fontsize=15)
+        plt.yticks(fontsize=15)
         plt.savefig('{}/{}/SuccessVSrmsd_highest_for_{}_submissions.png'.format(output_directory_path, ranking, ranking))
+        #plt.savefig('{}/{}/SuccessVSrmsd_highest_for_{}_submissions.eps'.format(output_directory_path, ranking, ranking),
+                    #format='eps')
         plt.close()
 
     #What fragment is docked the best/worst? success rate for method as well
@@ -475,11 +481,15 @@ class Stage2SubmissionCollection:
                                                                                         figsize=(10, 8),
                                                                                         legend=False)
         #plt.legend(['Top 1', ' Best in all'])
-        plt.title('Perdiction performances for fragments'.format(ranking), loc='center')
+        plt.title('Perdiction performances for fragments'.format(ranking), loc='center', fontsize=25)
         #plt.ylabel('Success rate')
-        plt.xlabel('Fragment')
+        plt.xlabel('Fragment', fontsize=20)
         fig.set_xticklabels(ligands_success_rates.Fragments)
+        plt.legend(fontsize=12.5)
+        plt.xticks(fontsize=12.5)
+        plt.yticks(fontsize=15)
         plt.savefig('{}/{}/ligands_success_rates_table_for_{}_submissions.png'.format(output_directory_path, ranking, ranking))
+        #plt.savefig('{}/{}/ligands_success_rates_table_for_{}_submissions.eps'.format(output_directory_path, ranking, ranking), format='eps')
         plt.close()
         # successVSrmsd_best_table_SID = pd.DataFrame(successVSrmsd_best)
         # successVSrmsd_best_table_SID.to_csv('{}/{}/Fragments_successVSrmsd_best_for_{}_submissions.csv'.format(output_directory_path, ranking, ranking),
@@ -523,7 +533,3 @@ if __name__ == '__main__':
 
     for ranking in ["Ranked_and_non-ranked", "Ranked", "Non-ranked"]:
         Stage2SubmissionCollection.calculate_statistics(overview_pdbs, rmsd_cutoff=2.0, ranking=ranking, output_directory_path=output_directory_path)
-
-
-
-

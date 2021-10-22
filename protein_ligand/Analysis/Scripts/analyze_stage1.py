@@ -138,7 +138,7 @@ class Stage1SubmissionCollection:
                 if submission.reference_submission and ignore_refcalcs:
                     continue
 
-                df_collection_of_each_submission = self.data.loc[self.data["SID"] == int(submission.sid) ]
+                df_collection_of_each_submission = self.data.loc[self.data["SID"] == int(submission.sid)]
 
                 #print("df_collection_of_each_submission:\n",df_collection_of_each_submission)
 
@@ -539,11 +539,14 @@ class Stage1SubmissionCollection:
         plt.legend(bbox_to_anchor=(0.5, 1.05),
                    ncol=4, fancybox=True, shadow=True)
         plt.ylim(0, 1)
-        plt.xlabel("SID")
-        plt.ylabel("Rate")
+        plt.xlabel("SID", fontsize=20)
+        plt.ylabel("Rate", fontsize=20)
+        plt.xticks(fontsize=15)
+        plt.yticks(fontsize=15)
         plt.xticks(balanced_accuracy_pos, statistics_csv.index)
-        plt.title('True positive and negative rates for {} binders ({} set)'.format(site, correction), loc='center')
-        plt.savefig('{}/ROC_points_barplot_of_{}_predictions_for_{}'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC, ranking, site))
+        plt.title('True positive and negative rates for {} binders ({} set)'.format(site, correction), loc='center', fontsize=25)
+        plt.savefig('{}/ROC_points_barplot_of_{}_predictions_for_{}.png'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC, ranking, site))
+        #plt.savefig('{}/ROC_points_barplot_of_{}_predictions_for_{}.eps'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC, ranking, site), format='eps')
         plt.close()
 
         # Plot precision
@@ -569,7 +572,8 @@ class Stage1SubmissionCollection:
         plt.ylim(0, 1)
         plt.xlabel("SID")
         plt.title('precision_of_barplot_of_{} predictions_for_{}'.format(ranking, site), loc='center')
-        plt.savefig('{}/precision_of_barplot_of_{} predictions_for_{}'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC, ranking, site))
+        plt.savefig('{}/precision_of_barplot_of_{} predictions_for_{}.png'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC, ranking, site))
+        #plt.savefig('{}/precision_of_barplot_of_{} predictions_for_{}.eps'.format(OUTPUT_DIRECTORY_PATH_SPECIFIC, ranking, site), format='eps')
         plt.close()
 
 
