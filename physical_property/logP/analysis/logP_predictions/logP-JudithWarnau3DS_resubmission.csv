@@ -1,0 +1,195 @@
+# OCTANOL TO WATER (ΔG_octanol - ΔG_water) TRANSFER FREE ENERGY PREDICTIONS
+#
+# This file will be automatically parsed. It must contain the following four elements:
+# predictions, name of method, software listing, and method description.
+# These elements must be provided in the order shown with their respective headers.
+#
+# Any line that begins with a # is considered a comment and will be ignored when parsing.,,,,
+#
+#
+# PREDICTION SECTION
+#
+# It is mandatory to submit water to octanol (ΔG_octanol - ΔG_water) transfer free energy (TFE) predictions for all 22 molecules.
+# Incomplete submissions will not be accepted.
+#
+# The energy units must be in kcal/mol.
+# Please report the general molecule `ID tag` in the form of `SMXX` (e.g. SM25, SM26, etc).
+# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section (e.g. `SM25_micro000`, `SM26_micro000 SM26_extra001`)
+# Please report TFE standard error of the mean (SEM) and TFE model uncertainty.
+#
+# The data in each prediction line should be structured as follows:
+# ID tag, Molecule ID/IDs considered (no commas), TFE, TFE SEM, TFE model uncertainty
+#
+# Your transfer free energy prediction for the neutral form does NOT have to be `SMXX_micro000` (which is the challenge provided neutral microstate).
+# If you use a microstate other than the challenge provided microstate, please fill out the `Molecule ID/IDs considered (no commas)` section using a molecule ID in the form of `SMXX_extra001` (number can vary) and please list the molecule ID and it's SMILES string in your methods description in the `METHOD DESCRIPTION SECTION`.,,,
+#
+# Only one entry in the second column (`Molecule ID/IDs considered (no commas)`) is required, but you should list all IDs considered/input to your calculations. See challenge instructions.,,,
+#
+# If you have evaluated additional microstates then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_extra001` (number can vary).,,,,
+# If multiple microstates are used, please report the order of population in the aqueous phase in descending order.
+# Please list microstate populations, SMILES strings and the molecule IDs in the `METHOD DESCRIPTION SECTION` section further below.
+#
+# The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
+#
+#
+Predictions:
+SM25,SM25_extra001,-4.18,0.1,0.6
+SM26,SM26_micro000,-1.66,0.1,0.6
+SM27, SM27_micro000,-2.32,0.1,0.6
+SM28, SM28_micro000,-0.88,0.1,0.6
+SM29, SM29_micro000,-1.80,0.1,0.6
+SM30, SM30_micro000,-3.60,0.1,0.6
+SM31, SM31_micro000,-3.36,0.1,0.6
+SM32, SM32_micro000,-3.27,0.1,0.6
+SM33, SM33_micro000,-5.79,0.1,0.6
+SM34, SM34_micro000,-4.99,0.1,0.6
+SM35, SM35_micro002 SM35_micro000,-0.87,0.1,0.6
+SM36, SM36_micro002 SM36_micro000,-3.13,0.1,0.6
+SM37, SM37_micro000 SM37_micro003,-2.34,0.1,0.6
+SM38, SM38_micro000,-0.95,0.1,0.6
+SM39, SM39_micro000,-2.53,0.1,0.6
+SM40, SM40_micro000,-2.57,0.1,0.6
+SM41, SM41_micro000 SM41_extra001,-2.01,0.1,0.6
+SM42, SM42_extra001 SM42_micro000,-4.75,0.1,0.6
+SM43, SM43_extra001 SM43_micro000,-3.53,0.1,0.6
+SM44, SM44_micro000 SM44_extra001,-0.63,0.1,0.6
+SM45, SM45_micro000 SM45_extra001,-2.94,0.1,0.6
+SM46, SM46_micro000 SM46_extra001,-2.00,0.1,0.6
+
+#
+#
+# Please list your name," using only UTF-8 characters as described above. The ""Participant name:"" entry is required."
+Participant name:
+Michael Diedenhofen, Frank Eckert, Jens Reinisch, Johannes Schwoebel, Judith Warnau, Karin Wichmann
+
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+Dassault Systemes Deutschland GmbH, BIOVIA
+
+#
+#
+# NAME SECTION
+#
+# Please provide an informal but informative name of the method used.,,,,
+# The name must not exceed 40 characters.
+# The 'Name:' keyword is required as shown here.
+Name:
+COSMO-RS
+
+#
+#
+# COMPUTE TIME SECTION
+#
+# Please provide the average compute time across all of the molecules.
+# For physical methods, report the GPU and/or CPU compute time in hours.
+# For empirical methods, report the query time in hours.
+# Create a new line for each processor type.
+# The 'Compute time:' keyword is required as shown here.
+Compute time:
+216 hours, CPU
+
+#
+# COMPUTING AND HARDWARE SECTION
+#
+# Please provide details of the computing resources that were used to train models and make predictions.
+# Please specify compute time for training models and querying separately for empirical prediction methods.
+# Provide a detailed description of the hardware used to run the simulations.
+# The 'Computing and hardware:' keyword is required as shown here.
+Computing and hardware:
+The total average time per molecule was estimated by taking the conformationally most demanding molecule SM36 and conducting a conformer search on standard Think Pad Laptop (Intel Core i7-985H CPU 2.6 GHz, 32GB RAM).
+The estimated time on this hardware is 9 CPU-days per molecule including all considered microstates. The average time per microstate is 3 CPU-days. 
+In total, we performed more than 8500 BP-TZVP-COSMO geometry optimizations on various standard CPUs.
+
+# SOFTWARE SECTION
+#
+# List all major software packages used and their versions.
+# Create a new line for each software.
+# The 'Software:' keyword is required.
+Software:
+BIOVIA COSMOquick 2020: A proprietary tool of Dassault Systemes to generate tautomeric states.
+BIOVIA COSMOconf 2020: A proprietary tool of Dassault Systemes that applies conformational search using force fields, TURBOMOLE and COSMOtherm.
+BIOVIA COSMOtherm 2020: The proprietary software developed and distributed by Dassault Systemes, which uses COSMO-RS. COSMO-RS is a published theory: Klamt A (1995) Conductor-like screening model for real solvents: a new approach to the quantitative calculation of solvation phenomena. J Phys Chem 99:2224-2235. https://doi.org/10.1021/j100007a062
+TURBOMOLE 7.5: The quantum chemistry suite. University of Karlsruhe and Forschungszentrum Karlsruhe GmbH, 1989-2007, TURBOMOLE GmbH, since 2007; available from http://www.turbomole.com: Karlsruhe, Germany, 2020.
+
+# METHOD CATEGORY SECTION
+#
+# State which method category your prediction method is better described as:
+# `Physical (MM)`, `Physical (QM)`, `Empirical`, or `Mixed`.
+# Pick only one category label.
+# The `Category:` keyword is required.
+Category:
+Physical (QM)
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of details should be roughly equivalent to that used in a publication.
+# Please include the values of key parameters with units.
+# Please explain how statistical uncertainties were estimated.
+#
+# If you have evaluated additional microstates, please report their SMILES strings and populations of all the microstates in this section.
+# If you used a microstate other than the challenge provided microstate (`SMXX_micro000`), please list your chosen `Molecule ID` (in the form of `SMXX_extra001`) along with the SMILES string in your methods description.
+#
+# Use as many lines of text as you need.
+# All text following the 'Method:' keyword will be regarded as part of your free text methods description.
+Method:
+Workflow
+1) We used COSMOquick to generate possible tautomeric states. Irrelevant states where discarded due to an internal energy threshold implemented in COSMOquick.
+By a subsequent manual check, we sorted out destroyed molecules and failed calculations. We conducted a conformational search of every microstate with COSMOconf using up to 150 conformers.
+2) For each conformer we performed a geometry optimization using the BP86 functional with a TZVP basis set and the COSMO solvation scheme,
+followed by a single point energy calculation using the BP86 functional with a def2-TZVPD basis set and the FINE COSMO cavity.
+All density functional theory calculations were carried out with the TURBOMOLE 7.5 program package.
+We manually checked the outcome for destroyed molecules and failed calculations.
+3) A conformer selection was done by applying COSMOconf (using internally COSMOtherm) to reduce the number of conformers and tautomers for the neutral molecule sets.
+The final set of the neutral state contains only those conformers and states that are relevant in liquid solutions.
+This set may contain various microstates, if they have not been identified as irrelevant in one of the steps before.
+4) The COSMOtherm software, version 2020, was used to calculate the free energy difference for each molecule set from step 2 and to calculate the relative weight of the microstates in water.
+All free energy calculations were carried out using the BP-TZVPD-FINE 20 level of COSMO-RS in COSMOtherm.
+Within the used COSMO-RS an ensemble of conformers and microstates is automatically used and weighted according to the total free energy in the rspective liquid phase, i.e. different weights are used in water and octanol.
+
+The applied COSMO-RS version BP-TZVPD-FINE 20 shows a general root mean square deviation (RMSD) of 0.6 kcal/mol with regard to experimental octanol/water partitioning data.
+COSMO-RS algorithm by itself has no statistical error. The overall workflow including the conformational search (or molecule or state) has a statistical noise smaller than 0.1 kcal/mol.
+
+SM25_extra001, c1ccc(cc1)CCC(=O)(NS(=O)(=O)c2ccccc2),100% population
+SM26_micro000, CC(=O)NS(=O)(=O)CCc1ccccc1,100% population
+SM27_micro000, CC1(COC1)NS(=O)(=O)CCc2ccccc2,100% population
+SM28_micro000, CC(=O)NC1(CS(=O)(=O)C1)CCc2ccccc2,100% population
+SM29_micro000, CS(=O)(=O)NC1(COC1)CCc2ccccc2,100% population
+SM30_micro000, c1ccc(cc1)CCC2(COC2)NS(=O)(=O)c3ccccc3,100% population
+SM31_micro000, CN(C)S(=O)(=O)NC1(COC1)CCc2ccccc2,100% population
+SM32_micro000, CS(=O)(=O)NC1(CSC1)CCc2ccccc2,100% population
+SM33_micro000, c1ccc(cc1)CCC2(CSC2)NS(=O)(=O)c3ccccc3,100% population
+SM34_micro000, CN(C)S(=O)(=O)NC1(CSC1)CCc2ccccc2,100% population
+SM35_micro002, CS(=O)(=O)N[C@]1(CCC2=CC=CC=C2)C[S@](=O)C1,57% population
+SM35_micro000, CS(=O)(=O)N[C@]1(CCc2ccccc2)CS(=O)C1,43% population
+SM36_micro002, O=[S@]1C[C@](CCC2=CC=CC=C2)(C1)NS(=O)(=O)C1=CC=CC=C1,95% population
+SM36_micro000, O=S1C[C@](CCc2ccccc2)(C1)NS(=O)(=O)c1ccccc1,5% population
+SM37_micro000, CN(C)S(=O)(=O)N[C@]1(CCc2ccccc2)CS(=O)C1,54% population
+SM37_micro003, CN(C)S(=O)(=O)N[C@]1(CCC2=CC=CC=C2)C[S@](=O)C1,46% population
+SM38_micro000, CS(=O)(=O)NC1(CS(=O)(=O)C1)CCc2ccccc2,100% population
+SM39_micro000, c1ccc(cc1)CCC2(CS(=O)(=O)C2)NS(=O)(=O)c3ccccc3,100% population
+SM40_micro000, CN(C)S(=O)(=O)NC1(CS(=O)(=O)C1)CCc2ccccc2,100% population
+SM41_micro000, CS(=O)(=O)Nc1cc(on1)c2ccccc2,100% population
+SM41_extra001, CS(=O)(=O)N=C1[NH+]OC(=C1)c1ccccc1,0% population
+SM42_extra001, O=S(=O)(Nc1cc(on1)-c1ccccc1)c1ccccc1,100% population
+SM42_micro000, O=S(=O)(N=c1cc(o[nH]1)-c1ccccc1)c1ccccc1,0% population
+SM43_extra001, CN(C)S(=O)(=O)Nc1cc(on1)-c1ccccc1,100% population
+SM43_micro000, CN(C)S(=O)(=O)N=c1cc(o[nH]1)c2ccccc2,0% population
+SM44_micro000, CS(=O)(=O)Nc1cn(nn1)c2ccccc2,100% population
+SM44_extra001, CS(=O)(=O)[N-]C1=CN(N=[NH+]1)c1ccccc1,0% population
+SM45_micro000, c1ccc(cc1)n2cc(nn2)NS(=O)(=O)c3ccccc3,98% population
+SM45_extra001, O=S(=O)([N-]C1=CN(N=[NH+]1)C1=CC=CC=C1)C1=CC=CC=C1,2% population
+SM46_micro000, CN(C)S(=O)(=O)Nc1cn(nn1)c2ccccc2,100% population
+SM46_extra001, CN(C)S(=O)(=O)[N-]C1=CN(N=[NH+]1)c1ccccc1,0% population
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The ""Ranked:"" keyword is required
+Ranked:
+True

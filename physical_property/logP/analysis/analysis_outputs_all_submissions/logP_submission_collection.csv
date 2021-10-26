@@ -1,0 +1,793 @@
+,method_name,file name,category,Molecule ID,logP (calc),logP SEM (calc),logP (exp),logP SEM (exp),$\Delta$logP error (calc - exp),logP model uncertainty
+0,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM25,4.8,0.18,2.67,0.01,2.13,1.5
+1,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM26,1.75,0.11,1.04,0.01,0.71,1.5
+2,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM27,2.43,0.13,1.56,0.11,0.8700000000000001,1.5
+3,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM28,1.85,0.13,1.18,0.08,0.6700000000000002,1.5
+4,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM29,1.94,0.15,1.61,0.03,0.32999999999999985,1.5
+5,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM30,4.2,0.14,2.76,0.19,1.4400000000000004,1.5
+6,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM31,3.05,0.13,1.96,0.14,1.0899999999999999,1.5
+7,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM32,4.36,0.16,2.44,0.17,1.9200000000000004,1.5
+8,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM33,5.45,0.16,2.96,0.21,2.49,1.5
+9,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM34,4.46,0.14,2.83,0.2,1.63,1.5
+10,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM35,1.98,0.36,0.88,0.02,1.1,1.5
+11,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM36,2.68,0.6,0.76,0.05,1.9200000000000002,1.5
+12,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM37,2.43,0.75,1.45,0.1,0.9800000000000002,1.5
+13,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM38,1.66,0.41,1.03,0.07,0.6299999999999999,1.5
+14,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM39,3.74,0.41,1.89,0.13,1.8500000000000003,1.5
+15,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM40,2.59,0.31,1.83,0.05,0.7599999999999998,1.5
+16,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM41,2.59,0.18,1.97,0.01,0.6199999999999999,1.5
+17,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM42,5.14,0.13,1.76,0.03,3.38,1.5
+18,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM43,3.74,0.16,2.51,0.01,1.2300000000000004,1.5
+19,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM44,0.84,0.22,1.16,0.03,-0.31999999999999995,1.5
+20,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM45,3.78,0.41,2.55,0.04,1.23,1.5
+21,MD (CGenFF/TIP3P),logP_prediction_Iorga_Beckstein_CGenFF,Physical (MM),SM46,2.29,0.29,1.72,0.01,0.5700000000000001,1.5
+22,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM25,2.66,0.0,2.67,0.01,-0.009999999999999787,0.0
+23,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM26,2.66,0.0,1.04,0.01,1.62,0.0
+24,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM27,2.66,0.0,1.56,0.11,1.1,0.0
+25,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM28,2.66,0.0,1.18,0.08,1.4800000000000002,0.0
+26,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM29,2.66,0.0,1.61,0.03,1.05,0.0
+27,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM30,2.66,0.0,2.76,0.19,-0.09999999999999964,0.0
+28,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM31,2.66,0.0,1.96,0.14,0.7000000000000002,0.0
+29,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM32,2.66,0.0,2.44,0.17,0.2200000000000002,0.0
+30,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM33,2.66,0.0,2.96,0.21,-0.2999999999999998,0.0
+31,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM34,2.66,0.0,2.83,0.2,-0.16999999999999993,0.0
+32,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM35,2.66,0.0,0.88,0.02,1.7800000000000002,0.0
+33,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM36,2.66,0.0,0.76,0.05,1.9000000000000001,0.0
+34,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM37,2.66,0.0,1.45,0.1,1.2100000000000002,0.0
+35,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM38,2.66,0.0,1.03,0.07,1.6300000000000001,0.0
+36,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM39,2.66,0.0,1.89,0.13,0.7700000000000002,0.0
+37,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM40,2.66,0.0,1.83,0.05,0.8300000000000001,0.0
+38,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM41,2.66,0.0,1.97,0.01,0.6900000000000002,0.0
+39,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM42,2.66,0.0,1.76,0.03,0.9000000000000001,0.0
+40,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM43,2.66,0.0,2.51,0.01,0.15000000000000036,0.0
+41,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM44,2.66,0.0,1.16,0.03,1.5000000000000002,0.0
+42,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM45,2.66,0.0,2.55,0.04,0.11000000000000032,0.0
+43,NULL0 mean clogP FDA,NULL0-logP-DanielleBergazin-2,Empirical,SM46,2.66,0.0,1.72,0.01,0.9400000000000002,0.0
+44,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM25,0.98,0.52,2.67,0.01,-1.69,2.0
+45,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM26,-0.56,0.97,1.04,0.01,-1.6,2.0
+46,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM27,1.16,0.91,1.56,0.11,-0.40000000000000013,2.0
+47,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM28,0.19,1.13,1.18,0.08,-0.99,2.0
+48,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM29,1.01,0.88,1.61,0.03,-0.6000000000000001,2.0
+49,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM30,2.37,0.79,2.76,0.19,-0.3899999999999997,2.0
+50,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM31,2.46,0.52,1.96,0.14,0.5,2.0
+51,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM32,2.06,0.67,2.44,0.17,-0.3799999999999999,2.0
+52,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM33,3.67,0.72,2.96,0.21,0.71,2.0
+53,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM34,3.23,0.8,2.83,0.2,0.3999999999999999,2.0
+54,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM35,-0.58,1.89,0.88,0.02,-1.46,2.0
+55,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM36,0.89,1.16,0.76,0.05,0.13,2.0
+56,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM37,1.06,1.21,1.45,0.1,-0.3899999999999999,2.0
+57,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM38,-0.92,1.23,1.03,0.07,-1.9500000000000002,2.0
+58,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM39,1.31,1.08,1.89,0.13,-0.5799999999999998,2.0
+59,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM40,0.28,0.83,1.83,0.05,-1.55,2.0
+60,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM41,2.46,0.95,1.97,0.01,0.49,2.0
+61,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM42,2.9,0.83,1.76,0.03,1.14,2.0
+62,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM43,3.78,1.09,2.51,0.01,1.27,2.0
+63,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM44,2.31,1.02,1.16,0.03,1.1500000000000001,2.0
+64,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM45,3.94,1.19,2.55,0.04,1.3900000000000001,2.0
+65,NES-1 (GAFF2/OPC3) J,logP-PieroProcacci-NES1-J,Physical (MM),SM46,3.26,1.32,1.72,0.01,1.5399999999999998,2.0
+66,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM25,2.98,0.07,2.67,0.01,0.31000000000000005,2.12
+67,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM26,0.13,0.08,1.04,0.01,-0.91,2.12
+68,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM27,1.89,0.1,1.56,0.11,0.32999999999999985,2.12
+69,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM28,1.41,0.22,1.18,0.08,0.22999999999999998,2.12
+70,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM29,1.61,0.1,1.61,0.03,0.0,2.12
+71,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM30,3.67,0.11,2.76,0.19,0.9100000000000001,2.12
+72,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM31,1.99,0.11,1.96,0.14,0.030000000000000027,2.12
+73,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM32,3.04,0.09,2.44,0.17,0.6000000000000001,2.12
+74,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM33,5.52,0.09,2.96,0.21,2.5599999999999996,2.12
+75,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM34,4.49,0.13,2.83,0.2,1.6600000000000001,2.12
+76,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM35,1.47,0.09,0.88,0.02,0.59,2.12
+77,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM36,1.51,0.11,0.76,0.05,0.75,2.12
+78,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM37,1.47,0.1,1.45,0.1,0.020000000000000018,2.12
+79,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM38,1.01,0.11,1.03,0.07,-0.020000000000000018,2.12
+80,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM39,2.79,0.14,1.89,0.13,0.9000000000000001,2.12
+81,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM40,1.99,0.11,1.83,0.05,0.15999999999999992,2.12
+82,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM41,2.79,0.07,1.97,0.01,0.8200000000000001,2.12
+83,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM42,3.57,0.19,1.76,0.03,1.8099999999999998,2.12
+84,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM43,2.74,0.06,2.51,0.01,0.23000000000000043,2.12
+85,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM44,1.65,0.06,1.16,0.03,0.49,2.12
+86,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM45,3.53,0.08,2.55,0.04,0.98,2.12
+87,TFE MD neat oct (GAFF/TIP4P),logP_AndrewPaluch_MD_1,Physical (MM),SM46,2.57,0.13,1.72,0.01,0.8499999999999999,2.12
+88,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM25,4.11,0.08,2.67,0.01,1.4400000000000004,2.12
+89,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM26,1.65,0.18,1.04,0.01,0.6099999999999999,2.12
+90,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM27,2.3,0.21,1.56,0.11,0.7399999999999998,2.12
+91,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM28,2.0,0.1,1.18,0.08,0.8200000000000001,2.12
+92,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM29,2.36,0.21,1.61,0.03,0.7499999999999998,2.12
+93,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM30,3.09,0.12,2.76,0.19,0.33000000000000007,2.12
+94,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM31,2.82,0.11,1.96,0.14,0.8599999999999999,2.12
+95,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM32,3.09,0.08,2.44,0.17,0.6499999999999999,2.12
+96,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM33,4.65,0.09,2.96,0.21,1.6900000000000004,2.12
+97,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM34,5.14,0.13,2.83,0.2,2.3099999999999996,2.12
+98,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM35,1.99,0.17,0.88,0.02,1.1099999999999999,2.12
+99,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM36,3.56,0.13,0.76,0.05,2.8,2.12
+100,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM37,2.05,0.22,1.45,0.1,0.5999999999999999,2.12
+101,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM38,1.83,0.11,1.03,0.07,0.8,2.12
+102,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM39,3.4,0.12,1.89,0.13,1.51,2.12
+103,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM40,2.73,0.2,1.83,0.05,0.8999999999999999,2.12
+104,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM41,3.05,0.16,1.97,0.01,1.0799999999999998,2.12
+105,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM42,3.76,0.11,1.76,0.03,1.9999999999999998,2.12
+106,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM43,3.2,0.16,2.51,0.01,0.6900000000000004,2.12
+107,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM44,2.68,0.18,1.16,0.03,1.5200000000000002,2.12
+108,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM45,3.57,0.19,2.55,0.04,1.02,2.12
+109,TFE wet oct (GAFF/TIP4P),logP_AndrewPaluch_MD_2,Physical (MM),SM46,3.12,0.06,1.72,0.01,1.4000000000000001,2.12
+110,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM25,3.06,0.1,2.67,0.01,0.3900000000000001,0.6
+111,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM26,1.22,0.1,1.04,0.01,0.17999999999999994,0.6
+112,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM27,1.7,0.1,1.56,0.11,0.1399999999999999,0.6
+113,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM28,0.65,0.1,1.18,0.08,-0.5299999999999999,0.6
+114,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM29,1.32,0.1,1.61,0.03,-0.29000000000000004,0.6
+115,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM30,2.64,0.1,2.76,0.19,-0.11999999999999966,0.6
+116,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM31,2.46,0.1,1.96,0.14,0.5,0.6
+117,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM32,2.4,0.1,2.44,0.17,-0.040000000000000036,0.6
+118,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM33,4.24,0.1,2.96,0.21,1.2800000000000002,0.6
+119,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM34,3.66,0.1,2.83,0.2,0.8300000000000001,0.6
+120,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM35,0.64,0.1,0.88,0.02,-0.24,0.6
+121,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM36,2.29,0.1,0.76,0.05,1.53,0.6
+122,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM37,1.72,0.1,1.45,0.1,0.27,0.6
+123,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM38,0.7,0.1,1.03,0.07,-0.33000000000000007,0.6
+124,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM39,1.85,0.1,1.89,0.13,-0.039999999999999813,0.6
+125,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM40,1.88,0.1,1.83,0.05,0.04999999999999982,0.6
+126,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM41,1.47,0.1,1.97,0.01,-0.5,0.6
+127,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM42,3.48,0.1,1.76,0.03,1.72,0.6
+128,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM43,2.59,0.1,2.51,0.01,0.08000000000000007,0.6
+129,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM44,0.46,0.1,1.16,0.03,-0.7,0.6
+130,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM45,2.16,0.1,2.55,0.04,-0.3899999999999997,0.6
+131,COSMO-RS,logP-JudithWarnau3DS_resubmission,Physical (QM),SM46,1.47,0.1,1.72,0.01,-0.25,0.6
+132,TFE MLR,logP-MLRUCR-1,Empirical,SM25,2.35,0.0,2.67,0.01,-0.31999999999999984,1.36
+133,TFE MLR,logP-MLRUCR-1,Empirical,SM26,1.18,0.0,1.04,0.01,0.1399999999999999,1.36
+134,TFE MLR,logP-MLRUCR-1,Empirical,SM27,1.47,0.0,1.56,0.11,-0.09000000000000008,1.36
+135,TFE MLR,logP-MLRUCR-1,Empirical,SM28,1.87,0.0,1.18,0.08,0.6900000000000002,1.36
+136,TFE MLR,logP-MLRUCR-1,Empirical,SM29,1.47,0.0,1.61,0.03,-0.14000000000000012,1.36
+137,TFE MLR,logP-MLRUCR-1,Empirical,SM30,2.73,0.0,2.76,0.19,-0.029999999999999805,1.36
+138,TFE MLR,logP-MLRUCR-1,Empirical,SM31,1.54,0.0,1.96,0.14,-0.41999999999999993,1.36
+139,TFE MLR,logP-MLRUCR-1,Empirical,SM32,1.97,0.0,2.44,0.17,-0.47,1.36
+140,TFE MLR,logP-MLRUCR-1,Empirical,SM33,3.24,0.0,2.96,0.21,0.28000000000000025,1.36
+141,TFE MLR,logP-MLRUCR-1,Empirical,SM34,2.05,0.0,2.83,0.2,-0.7800000000000002,1.36
+142,TFE MLR,logP-MLRUCR-1,Empirical,SM35,1.36,0.0,0.88,0.02,0.4800000000000001,1.36
+143,TFE MLR,logP-MLRUCR-1,Empirical,SM36,2.63,0.0,0.76,0.05,1.8699999999999999,1.36
+144,TFE MLR,logP-MLRUCR-1,Empirical,SM37,1.44,0.0,1.45,0.1,-0.010000000000000009,1.36
+145,TFE MLR,logP-MLRUCR-1,Empirical,SM38,0.93,0.0,1.03,0.07,-0.09999999999999998,1.36
+146,TFE MLR,logP-MLRUCR-1,Empirical,SM39,2.21,0.0,1.89,0.13,0.32000000000000006,1.36
+147,TFE MLR,logP-MLRUCR-1,Empirical,SM40,1.01,0.0,1.83,0.05,-0.8200000000000001,1.36
+148,TFE MLR,logP-MLRUCR-1,Empirical,SM41,1.44,0.0,1.97,0.01,-0.53,1.36
+149,TFE MLR,logP-MLRUCR-1,Empirical,SM42,1.57,0.0,1.76,0.03,-0.18999999999999995,1.36
+150,TFE MLR,logP-MLRUCR-1,Empirical,SM43,0.38,0.0,2.51,0.01,-2.13,1.36
+151,TFE MLR,logP-MLRUCR-1,Empirical,SM44,1.39,0.0,1.16,0.03,0.22999999999999998,1.36
+152,TFE MLR,logP-MLRUCR-1,Empirical,SM45,2.65,0.0,2.55,0.04,0.10000000000000009,1.36
+153,TFE MLR,logP-MLRUCR-1,Empirical,SM46,1.46,0.0,1.72,0.01,-0.26,1.36
+154,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM25,3.64,0.3,2.67,0.01,0.9700000000000002,1.5
+155,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM26,1.38,0.31,1.04,0.01,0.33999999999999986,1.5
+156,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM27,1.97,0.25,1.56,0.11,0.4099999999999999,1.5
+157,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM28,1.41,0.36,1.18,0.08,0.22999999999999998,1.5
+158,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM29,0.67,0.25,1.61,0.03,-0.9400000000000001,1.5
+159,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM30,4.38,0.24,2.76,0.19,1.62,1.5
+160,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM31,4.0,0.23,1.96,0.14,2.04,1.5
+161,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM32,3.76,0.3,2.44,0.17,1.3199999999999998,1.5
+162,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM33,4.85,0.31,2.96,0.21,1.8899999999999997,1.5
+163,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM34,5.8,0.24,2.83,0.2,2.9699999999999998,1.5
+164,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM35,0.78,0.45,0.88,0.02,-0.09999999999999998,1.5
+165,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM36,3.83,0.51,0.76,0.05,3.0700000000000003,1.5
+166,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM37,4.22,0.33,1.45,0.1,2.7699999999999996,1.5
+167,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM38,-2.78,0.54,1.03,0.07,-3.8099999999999996,1.5
+168,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM39,1.59,0.45,1.89,0.13,-0.2999999999999998,1.5
+169,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM40,2.54,0.56,1.83,0.05,0.71,1.5
+170,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM41,2.15,0.22,1.97,0.01,0.17999999999999994,1.5
+171,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM42,4.75,0.38,1.76,0.03,2.99,1.5
+172,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM43,4.91,0.35,2.51,0.01,2.4000000000000004,1.5
+173,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM44,2.65,0.21,1.16,0.03,1.49,1.5
+174,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM45,5.58,0.19,2.55,0.04,3.0300000000000002,1.5
+175,MD (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_OPLS-AA,Physical (MM),SM46,5.09,0.24,1.72,0.01,3.37,1.5
+176,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM25,-2.92,0.11,2.67,0.01,-5.59,0.42
+177,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM26,-1.12,0.02,1.04,0.01,-2.16,0.42
+178,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM27,-1.04,0.57,1.56,0.11,-2.6,0.42
+179,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM28,-0.73,0.44,1.18,0.08,-1.91,0.42
+180,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM29,-0.84,0.46,1.61,0.03,-2.45,0.42
+181,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM30,-2.63,0.15,2.76,0.19,-5.39,0.42
+182,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM31,-1.43,0.4,1.96,0.14,-3.3899999999999997,0.42
+183,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM32,-1.58,0.51,2.44,0.17,-4.02,0.42
+184,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM33,-3.24,0.15,2.96,0.21,-6.2,0.42
+185,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM34,-2.1,0.08,2.83,0.2,-4.93,0.42
+186,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM35,-0.56,0.35,0.88,0.02,-1.44,0.42
+187,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM36,-1.93,0.25,0.76,0.05,-2.69,0.42
+188,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM37,-0.97,0.25,1.45,0.1,-2.42,0.42
+189,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM38,-0.45,0.43,1.03,0.07,-1.48,0.42
+190,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM39,-1.81,0.54,1.89,0.13,-3.7,0.42
+191,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM40,-0.76,0.52,1.83,0.05,-2.59,0.42
+192,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM41,-1.8,0.01,1.97,0.01,-3.77,0.42
+193,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM42,-3.14,0.23,1.76,0.03,-4.9,0.42
+194,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM43,-1.76,0.12,2.51,0.01,-4.27,0.42
+195,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM44,-1.21,0.34,1.16,0.03,-2.37,0.42
+196,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM45,-2.75,0.33,2.55,0.04,-5.3,0.42
+197,QSPR_Mordred2D_TPOT_AutoML,logP-DavyGuan-1,Empirical,SM46,-1.69,0.18,1.72,0.01,-3.41,0.42
+198,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM25,2.92,0.0,2.67,0.01,0.25,0.0
+199,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM26,0.78,0.0,1.04,0.01,-0.26,0.0
+200,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM27,0.83,0.0,1.56,0.11,-0.7300000000000001,0.0
+201,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM28,0.1,0.0,1.18,0.08,-1.0799999999999998,0.0
+202,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM29,0.76,0.0,1.61,0.03,-0.8500000000000001,0.0
+203,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM30,2.81,0.0,2.76,0.19,0.050000000000000266,0.0
+204,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM31,0.89,0.0,1.96,0.14,-1.0699999999999998,0.0
+205,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM32,1.34,0.0,2.44,0.17,-1.0999999999999999,0.0
+206,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM33,3.4,0.0,2.96,0.21,0.43999999999999995,0.0
+207,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM34,1.47,0.0,2.83,0.2,-1.36,0.0
+208,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM35,-0.43,0.0,0.88,0.02,-1.31,0.0
+209,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM36,1.62,0.0,0.76,0.05,0.8600000000000001,0.0
+210,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM37,-0.3,0.0,1.45,0.1,-1.75,0.0
+211,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM38,-0.24,0.0,1.03,0.07,-1.27,0.0
+212,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM39,1.81,0.0,1.89,0.13,-0.07999999999999985,0.0
+213,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM40,-0.11,0.0,1.83,0.05,-1.9400000000000002,0.0
+214,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM41,1.21,0.0,1.97,0.01,-0.76,0.0
+215,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM42,3.26,0.0,1.76,0.03,1.4999999999999998,0.0
+216,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM43,1.33,0.0,2.51,0.01,-1.1799999999999997,0.0
+217,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM44,0.57,0.0,1.16,0.03,-0.59,0.0
+218,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM45,2.63,0.0,2.55,0.04,0.08000000000000007,0.0
+219,REF1 ChemAxon,REF00-logP-DanielleBergazin-1,Empirical,SM46,0.7,0.0,1.72,0.01,-1.02,0.0
+220,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM25,1.6,0.0,2.67,0.01,-1.0699999999999998,0.6
+221,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM26,1.28,0.0,1.04,0.01,0.24,0.6
+222,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM27,1.67,0.0,1.56,0.11,0.10999999999999988,0.6
+223,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM28,1.44,0.0,1.18,0.08,0.26,0.6
+224,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM29,1.36,0.0,1.61,0.03,-0.25,0.6
+225,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM30,2.69,0.0,2.76,0.19,-0.06999999999999984,0.6
+226,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM31,1.5,0.0,1.96,0.14,-0.45999999999999996,0.6
+227,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM32,2.47,0.0,2.44,0.17,0.03000000000000025,0.6
+228,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM33,3.95,0.0,2.96,0.21,0.9900000000000002,0.6
+229,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM34,2.54,0.0,2.83,0.2,-0.29000000000000004,0.6
+230,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM35,1.08,0.0,0.88,0.02,0.20000000000000007,0.6
+231,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM36,2.28,0.0,0.76,0.05,1.5199999999999998,0.6
+232,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM37,1.22,0.0,1.45,0.1,-0.22999999999999998,0.6
+233,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM38,0.32,0.0,1.03,0.07,-0.71,0.6
+234,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM39,1.71,0.0,1.89,0.13,-0.17999999999999994,0.6
+235,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM40,0.48,0.0,1.83,0.05,-1.35,0.6
+236,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM41,0.75,0.0,1.97,0.01,-1.22,0.6
+237,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM42,2.04,0.0,1.76,0.03,0.28,0.6
+238,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM43,0.92,0.0,2.51,0.01,-1.5899999999999999,0.6
+239,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM44,0.29,0.0,1.16,0.03,-0.8699999999999999,0.6
+240,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM45,1.83,0.0,2.55,0.04,-0.7199999999999998,0.6
+241,TFE-SM8-vacuum-opt,logP_RodriguezPaluch_SM8_1,Physical (QM),SM46,0.67,0.0,1.72,0.01,-1.0499999999999998,0.6
+242,TFE_Attentive_FP,logP-dddc-1,Empirical,SM25,2.21,0.08,2.67,0.01,-0.45999999999999996,0.5
+243,TFE_Attentive_FP,logP-dddc-1,Empirical,SM26,0.86,0.08,1.04,0.01,-0.18000000000000005,0.5
+244,TFE_Attentive_FP,logP-dddc-1,Empirical,SM27,1.46,0.12,1.56,0.11,-0.10000000000000009,0.5
+245,TFE_Attentive_FP,logP-dddc-1,Empirical,SM28,1.0,0.28,1.18,0.08,-0.17999999999999994,0.5
+246,TFE_Attentive_FP,logP-dddc-1,Empirical,SM29,1.42,0.05,1.61,0.03,-0.19000000000000017,0.5
+247,TFE_Attentive_FP,logP-dddc-1,Empirical,SM30,2.62,0.07,2.76,0.19,-0.13999999999999968,0.5
+248,TFE_Attentive_FP,logP-dddc-1,Empirical,SM31,1.88,0.23,1.96,0.14,-0.08000000000000007,0.5
+249,TFE_Attentive_FP,logP-dddc-1,Empirical,SM32,1.9,0.15,2.44,0.17,-0.54,0.5
+250,TFE_Attentive_FP,logP-dddc-1,Empirical,SM33,3.34,0.1,2.96,0.21,0.3799999999999999,0.5
+251,TFE_Attentive_FP,logP-dddc-1,Empirical,SM34,2.32,0.2,2.83,0.2,-0.5100000000000002,0.5
+252,TFE_Attentive_FP,logP-dddc-1,Empirical,SM35,1.44,0.12,0.88,0.02,0.5599999999999999,0.5
+253,TFE_Attentive_FP,logP-dddc-1,Empirical,SM36,2.83,0.36,0.76,0.05,2.0700000000000003,0.5
+254,TFE_Attentive_FP,logP-dddc-1,Empirical,SM37,1.93,0.44,1.45,0.1,0.48,0.5
+255,TFE_Attentive_FP,logP-dddc-1,Empirical,SM38,0.81,0.02,1.03,0.07,-0.21999999999999997,0.5
+256,TFE_Attentive_FP,logP-dddc-1,Empirical,SM39,2.05,0.09,1.89,0.13,0.15999999999999992,0.5
+257,TFE_Attentive_FP,logP-dddc-1,Empirical,SM40,1.26,0.37,1.83,0.05,-0.5700000000000001,0.5
+258,TFE_Attentive_FP,logP-dddc-1,Empirical,SM41,2.04,0.08,1.97,0.01,0.07000000000000006,0.5
+259,TFE_Attentive_FP,logP-dddc-1,Empirical,SM42,3.32,0.0,1.76,0.03,1.5599999999999998,0.5
+260,TFE_Attentive_FP,logP-dddc-1,Empirical,SM43,2.44,0.32,2.51,0.01,-0.06999999999999984,0.5
+261,TFE_Attentive_FP,logP-dddc-1,Empirical,SM44,0.79,0.31,1.16,0.03,-0.3699999999999999,0.5
+262,TFE_Attentive_FP,logP-dddc-1,Empirical,SM45,2.13,0.1,2.55,0.04,-0.41999999999999993,0.5
+263,TFE_Attentive_FP,logP-dddc-1,Empirical,SM46,1.44,0.05,1.72,0.01,-0.28,0.5
+264,ClassicalGSG DB1,logp_DB1,Empirical,SM25,2.23,0.0,2.67,0.01,-0.43999999999999995,0.19
+265,ClassicalGSG DB1,logp_DB1,Empirical,SM26,0.96,0.0,1.04,0.01,-0.08000000000000007,0.15
+266,ClassicalGSG DB1,logp_DB1,Empirical,SM27,1.33,0.0,1.56,0.11,-0.22999999999999998,0.46
+267,ClassicalGSG DB1,logp_DB1,Empirical,SM28,1.41,0.0,1.18,0.08,0.22999999999999998,0.33
+268,ClassicalGSG DB1,logp_DB1,Empirical,SM29,1.4,0.0,1.61,0.03,-0.2100000000000002,0.43
+269,ClassicalGSG DB1,logp_DB1,Empirical,SM30,2.33,0.0,2.76,0.19,-0.4299999999999997,0.65
+270,ClassicalGSG DB1,logp_DB1,Empirical,SM31,1.47,0.0,1.96,0.14,-0.49,0.45
+271,ClassicalGSG DB1,logp_DB1,Empirical,SM32,2.21,0.0,2.44,0.17,-0.22999999999999998,0.73
+272,ClassicalGSG DB1,logp_DB1,Empirical,SM33,3.31,0.0,2.96,0.21,0.3500000000000001,0.56
+273,ClassicalGSG DB1,logp_DB1,Empirical,SM34,2.16,0.0,2.83,0.2,-0.6699999999999999,0.81
+274,ClassicalGSG DB1,logp_DB1,Empirical,SM35,0.45,0.0,0.88,0.02,-0.43,0.37
+275,ClassicalGSG DB1,logp_DB1,Empirical,SM36,1.69,0.0,0.76,0.05,0.9299999999999999,0.62
+276,ClassicalGSG DB1,logp_DB1,Empirical,SM37,0.3,0.0,1.45,0.1,-1.15,0.55
+277,ClassicalGSG DB1,logp_DB1,Empirical,SM38,1.42,0.0,1.03,0.07,0.3899999999999999,0.33
+278,ClassicalGSG DB1,logp_DB1,Empirical,SM39,1.91,0.0,1.89,0.13,0.020000000000000018,0.19
+279,ClassicalGSG DB1,logp_DB1,Empirical,SM40,1.33,0.0,1.83,0.05,-0.5,0.17
+280,ClassicalGSG DB1,logp_DB1,Empirical,SM41,1.61,0.0,1.97,0.01,-0.3599999999999999,0.38
+281,ClassicalGSG DB1,logp_DB1,Empirical,SM42,3.53,0.0,1.76,0.03,1.7699999999999998,0.67
+282,ClassicalGSG DB1,logp_DB1,Empirical,SM43,1.85,0.0,2.51,0.01,-0.6599999999999997,0.38
+283,ClassicalGSG DB1,logp_DB1,Empirical,SM44,0.37,0.0,1.16,0.03,-0.7899999999999999,0.27
+284,ClassicalGSG DB1,logp_DB1,Empirical,SM45,1.53,0.0,2.55,0.04,-1.0199999999999998,0.27
+285,ClassicalGSG DB1,logp_DB1,Empirical,SM46,0.4,0.0,1.72,0.01,-1.3199999999999998,0.3
+286,ClassicalGSG DB3,logp_DB3,Empirical,SM25,2.63,0.0,2.67,0.01,-0.040000000000000036,0.19
+287,ClassicalGSG DB3,logp_DB3,Empirical,SM26,0.7,0.0,1.04,0.01,-0.3400000000000001,0.15
+288,ClassicalGSG DB3,logp_DB3,Empirical,SM27,1.07,0.0,1.56,0.11,-0.49,0.46
+289,ClassicalGSG DB3,logp_DB3,Empirical,SM28,0.74,0.0,1.18,0.08,-0.43999999999999995,0.33
+290,ClassicalGSG DB3,logp_DB3,Empirical,SM29,1.19,0.0,1.61,0.03,-0.42000000000000015,0.43
+291,ClassicalGSG DB3,logp_DB3,Empirical,SM30,2.76,0.0,2.76,0.19,0.0,0.65
+292,ClassicalGSG DB3,logp_DB3,Empirical,SM31,2.09,0.0,1.96,0.14,0.1299999999999999,0.45
+293,ClassicalGSG DB3,logp_DB3,Empirical,SM32,3.63,0.0,2.44,0.17,1.19,0.73
+294,ClassicalGSG DB3,logp_DB3,Empirical,SM33,4.26,0.0,2.96,0.21,1.2999999999999998,0.56
+295,ClassicalGSG DB3,logp_DB3,Empirical,SM34,3.83,0.0,2.83,0.2,1.0,0.81
+296,ClassicalGSG DB3,logp_DB3,Empirical,SM35,1.03,0.0,0.88,0.02,0.15000000000000002,0.37
+297,ClassicalGSG DB3,logp_DB3,Empirical,SM36,2.32,0.0,0.76,0.05,1.5599999999999998,0.62
+298,ClassicalGSG DB3,logp_DB3,Empirical,SM37,1.38,0.0,1.45,0.1,-0.07000000000000006,0.55
+299,ClassicalGSG DB3,logp_DB3,Empirical,SM38,0.89,0.0,1.03,0.07,-0.14,0.33
+300,ClassicalGSG DB3,logp_DB3,Empirical,SM39,1.59,0.0,1.89,0.13,-0.2999999999999998,0.19
+301,ClassicalGSG DB3,logp_DB3,Empirical,SM40,1.17,0.0,1.83,0.05,-0.6600000000000001,0.17
+302,ClassicalGSG DB3,logp_DB3,Empirical,SM41,1.06,0.0,1.97,0.01,-0.9099999999999999,0.38
+303,ClassicalGSG DB3,logp_DB3,Empirical,SM42,3.01,0.0,1.76,0.03,1.2499999999999998,0.67
+304,ClassicalGSG DB3,logp_DB3,Empirical,SM43,2.19,0.0,2.51,0.01,-0.31999999999999984,0.38
+305,ClassicalGSG DB3,logp_DB3,Empirical,SM44,0.35,0.0,1.16,0.03,-0.8099999999999999,0.27
+306,ClassicalGSG DB3,logp_DB3,Empirical,SM45,2.0,0.0,2.55,0.04,-0.5499999999999998,0.27
+307,ClassicalGSG DB3,logp_DB3,Empirical,SM46,0.82,0.0,1.72,0.01,-0.9,0.3
+308,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM25,1.16,0.0,2.67,0.01,-1.51,0.6
+309,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM26,1.02,0.0,1.04,0.01,-0.020000000000000018,0.6
+310,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM27,1.3,0.0,1.56,0.11,-0.26,0.6
+311,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM28,1.02,0.0,1.18,0.08,-0.15999999999999992,0.6
+312,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM29,1.0,0.0,1.61,0.03,-0.6100000000000001,0.6
+313,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM30,2.22,0.0,2.76,0.19,-0.5399999999999996,0.6
+314,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM31,1.06,0.0,1.96,0.14,-0.8999999999999999,0.6
+315,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM32,2.12,0.0,2.44,0.17,-0.31999999999999984,0.6
+316,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM33,3.53,0.0,2.96,0.21,0.5699999999999998,0.6
+317,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM34,2.05,0.0,2.83,0.2,-0.7800000000000002,0.6
+318,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM35,0.78,0.0,0.88,0.02,-0.09999999999999998,0.6
+319,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM36,1.59,0.0,0.76,0.05,0.8300000000000001,0.6
+320,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM37,0.35,0.0,1.45,0.1,-1.1,0.6
+321,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM38,-0.48,0.0,1.03,0.07,-1.51,0.6
+322,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM39,0.82,0.0,1.89,0.13,-1.0699999999999998,0.6
+323,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM40,-0.35,0.0,1.83,0.05,-2.18,0.6
+324,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM41,0.44,0.0,1.97,0.01,-1.53,0.6
+325,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM42,1.81,0.0,1.76,0.03,0.050000000000000044,0.6
+326,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM43,0.21,0.0,2.51,0.01,-2.3,0.6
+327,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM44,-0.07,0.0,1.16,0.03,-1.23,0.6
+328,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM45,1.44,0.0,2.55,0.04,-1.1099999999999999,0.6
+329,TFE-SM8-solvent-opt,logP_RodriguezPaluch_SM8_2,Physical (QM),SM46,0.17,0.0,1.72,0.01,-1.55,0.6
+330,GROVER,logP-dddc-2,Empirical,SM25,2.32,0.19,2.67,0.01,-0.3500000000000001,0.41
+331,GROVER,logP-dddc-2,Empirical,SM26,1.06,0.19,1.04,0.01,0.020000000000000018,0.41
+332,GROVER,logP-dddc-2,Empirical,SM27,1.54,0.24,1.56,0.11,-0.020000000000000018,0.41
+333,GROVER,logP-dddc-2,Empirical,SM28,1.44,0.24,1.18,0.08,0.26,0.41
+334,GROVER,logP-dddc-2,Empirical,SM29,1.52,0.31,1.61,0.03,-0.09000000000000008,0.41
+335,GROVER,logP-dddc-2,Empirical,SM30,2.81,0.31,2.76,0.19,0.050000000000000266,0.41
+336,GROVER,logP-dddc-2,Empirical,SM31,1.68,0.28,1.96,0.14,-0.28,0.41
+337,GROVER,logP-dddc-2,Empirical,SM32,2.24,0.41,2.44,0.17,-0.19999999999999973,0.41
+338,GROVER,logP-dddc-2,Empirical,SM33,3.58,0.38,2.96,0.21,0.6200000000000001,0.41
+339,GROVER,logP-dddc-2,Empirical,SM34,2.36,0.29,2.83,0.2,-0.4700000000000002,0.41
+340,GROVER,logP-dddc-2,Empirical,SM35,1.46,0.61,0.88,0.02,0.58,0.41
+341,GROVER,logP-dddc-2,Empirical,SM36,2.81,0.75,0.76,0.05,2.05,0.41
+342,GROVER,logP-dddc-2,Empirical,SM37,1.56,0.37,1.45,0.1,0.1100000000000001,0.41
+343,GROVER,logP-dddc-2,Empirical,SM38,0.98,0.25,1.03,0.07,-0.050000000000000044,0.41
+344,GROVER,logP-dddc-2,Empirical,SM39,2.46,0.41,1.89,0.13,0.5700000000000001,0.41
+345,GROVER,logP-dddc-2,Empirical,SM40,1.28,0.37,1.83,0.05,-0.55,0.41
+346,GROVER,logP-dddc-2,Empirical,SM41,1.61,0.17,1.97,0.01,-0.3599999999999999,0.41
+347,GROVER,logP-dddc-2,Empirical,SM42,3.02,0.2,1.76,0.03,1.26,0.41
+348,GROVER,logP-dddc-2,Empirical,SM43,1.97,0.36,2.51,0.01,-0.5399999999999998,0.41
+349,GROVER,logP-dddc-2,Empirical,SM44,0.95,0.19,1.16,0.03,-0.20999999999999996,0.41
+350,GROVER,logP-dddc-2,Empirical,SM45,2.15,0.3,2.55,0.04,-0.3999999999999999,0.41
+351,GROVER,logP-dddc-2,Empirical,SM46,1.28,0.31,1.72,0.01,-0.43999999999999995,0.41
+352,ClassicalGSG DB2,logp_DB2,Empirical,SM25,2.44,0.0,2.67,0.01,-0.22999999999999998,0.19
+353,ClassicalGSG DB2,logp_DB2,Empirical,SM26,0.97,0.0,1.04,0.01,-0.07000000000000006,0.15
+354,ClassicalGSG DB2,logp_DB2,Empirical,SM27,1.17,0.0,1.56,0.11,-0.3900000000000001,0.46
+355,ClassicalGSG DB2,logp_DB2,Empirical,SM28,1.1,0.0,1.18,0.08,-0.07999999999999985,0.33
+356,ClassicalGSG DB2,logp_DB2,Empirical,SM29,1.22,0.0,1.61,0.03,-0.3900000000000001,0.43
+357,ClassicalGSG DB2,logp_DB2,Empirical,SM30,2.21,0.0,2.76,0.19,-0.5499999999999998,0.65
+358,ClassicalGSG DB2,logp_DB2,Empirical,SM31,1.69,0.0,1.96,0.14,-0.27,0.45
+359,ClassicalGSG DB2,logp_DB2,Empirical,SM32,2.6,0.0,2.44,0.17,0.16000000000000014,0.73
+360,ClassicalGSG DB2,logp_DB2,Empirical,SM33,3.23,0.0,2.96,0.21,0.27,0.56
+361,ClassicalGSG DB2,logp_DB2,Empirical,SM34,2.9,0.0,2.83,0.2,0.06999999999999984,0.81
+362,ClassicalGSG DB2,logp_DB2,Empirical,SM35,0.8,0.0,0.88,0.02,-0.07999999999999996,0.37
+363,ClassicalGSG DB2,logp_DB2,Empirical,SM36,1.91,0.0,0.76,0.05,1.15,0.62
+364,ClassicalGSG DB2,logp_DB2,Empirical,SM37,1.16,0.0,1.45,0.1,-0.29000000000000004,0.55
+365,ClassicalGSG DB2,logp_DB2,Empirical,SM38,0.79,0.0,1.03,0.07,-0.24,0.33
+366,ClassicalGSG DB2,logp_DB2,Empirical,SM39,1.59,0.0,1.89,0.13,-0.2999999999999998,0.19
+367,ClassicalGSG DB2,logp_DB2,Empirical,SM40,1.04,0.0,1.83,0.05,-0.79,0.17
+368,ClassicalGSG DB2,logp_DB2,Empirical,SM41,1.81,0.0,1.97,0.01,-0.15999999999999992,0.38
+369,ClassicalGSG DB2,logp_DB2,Empirical,SM42,2.55,0.0,1.76,0.03,0.7899999999999998,0.67
+370,ClassicalGSG DB2,logp_DB2,Empirical,SM43,1.48,0.0,2.51,0.01,-1.0299999999999998,0.38
+371,ClassicalGSG DB2,logp_DB2,Empirical,SM44,0.82,0.0,1.16,0.03,-0.33999999999999997,0.27
+372,ClassicalGSG DB2,logp_DB2,Empirical,SM45,2.01,0.0,2.55,0.04,-0.54,0.27
+373,ClassicalGSG DB2,logp_DB2,Empirical,SM46,0.96,0.0,1.72,0.01,-0.76,0.3
+374,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM25,3.49,0.33,2.67,0.01,0.8200000000000003,1.5
+375,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM26,1.17,0.2,1.04,0.01,0.1299999999999999,1.5
+376,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM27,2.81,0.35,1.56,0.11,1.25,1.5
+377,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM28,2.26,0.34,1.18,0.08,1.0799999999999998,1.5
+378,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM29,2.33,0.24,1.61,0.03,0.72,1.5
+379,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM30,3.89,0.42,2.76,0.19,1.1300000000000003,1.5
+380,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM31,3.18,0.25,1.96,0.14,1.2200000000000002,1.5
+381,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM32,3.35,0.24,2.44,0.17,0.9100000000000001,1.5
+382,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM33,4.13,0.24,2.96,0.21,1.17,1.5
+383,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM34,3.74,0.32,2.83,0.2,0.9100000000000001,1.5
+384,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM35,1.79,0.49,0.88,0.02,0.91,1.5
+385,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM36,3.61,0.47,0.76,0.05,2.8499999999999996,1.5
+386,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM37,2.77,0.42,1.45,0.1,1.32,1.5
+387,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM38,1.9,0.53,1.03,0.07,0.8699999999999999,1.5
+388,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM39,3.71,0.54,1.89,0.13,1.82,1.5
+389,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM40,3.5,0.49,1.83,0.05,1.67,1.5
+390,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM41,2.47,0.38,1.97,0.01,0.5000000000000002,1.5
+391,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM42,4.22,0.28,1.76,0.03,2.46,1.5
+392,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM43,2.87,0.24,2.51,0.01,0.3600000000000003,1.5
+393,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM44,2.28,0.25,1.16,0.03,1.1199999999999999,1.5
+394,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM45,3.6,0.28,2.55,0.04,1.0500000000000003,1.5
+395,MD (GAFF/TIP3P),logP_prediction_Iorga_Beckstein_GAFF,Physical (MM),SM46,3.01,0.19,1.72,0.01,1.2899999999999998,1.5
+396,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM25,1.88,0.0,2.67,0.01,-0.79,1.06
+397,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM26,-0.21,0.0,1.04,0.01,-1.25,1.06
+398,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM27,1.75,0.0,1.56,0.11,0.18999999999999995,1.06
+399,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM28,0.83,0.0,1.18,0.08,-0.35,1.06
+400,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM29,1.23,0.0,1.61,0.03,-0.3800000000000001,1.06
+401,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM30,3.53,0.0,2.76,0.19,0.77,1.06
+402,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM31,1.61,0.0,1.96,0.14,-0.34999999999999987,1.06
+403,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM32,1.63,0.0,2.44,0.17,-0.81,1.06
+404,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM33,4.27,0.0,2.96,0.21,1.3099999999999996,1.06
+405,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM34,2.39,0.0,2.83,0.2,-0.43999999999999995,1.06
+406,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM35,0.77,0.0,0.88,0.02,-0.10999999999999999,1.06
+407,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM36,3.74,0.0,0.76,0.05,2.9800000000000004,1.06
+408,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM37,1.88,0.0,1.45,0.1,0.42999999999999994,1.06
+409,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM38,0.48,0.0,1.03,0.07,-0.55,1.06
+410,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM39,2.47,0.0,1.89,0.13,0.5800000000000003,1.06
+411,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM40,1.42,0.0,1.83,0.05,-0.41000000000000014,1.06
+412,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM41,0.87,0.0,1.97,0.01,-1.1,1.06
+413,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM42,3.74,0.0,1.76,0.03,1.9800000000000002,1.06
+414,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM43,1.85,0.0,2.51,0.01,-0.6599999999999997,1.06
+415,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM44,-0.16,0.0,1.16,0.03,-1.3199999999999998,1.06
+416,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM45,2.03,0.0,2.55,0.04,-0.52,1.06
+417,TFE IEFPCM MST,logP-IEFPCMMST-1,Physical (QM),SM46,0.95,0.0,1.72,0.01,-0.77,1.06
+418,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM25,1.91,0.0,2.67,0.01,-0.76,0.69
+419,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM26,0.83,0.0,1.04,0.01,-0.21000000000000008,0.69
+420,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM27,1.09,0.0,1.56,0.11,-0.47,0.69
+421,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM28,1.03,0.0,1.18,0.08,-0.1499999999999999,0.69
+422,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM29,0.79,0.0,1.61,0.03,-0.8200000000000001,0.69
+423,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM30,2.48,0.0,2.76,0.19,-0.2799999999999998,0.69
+424,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM31,1.0,0.0,1.96,0.14,-0.96,0.69
+425,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM32,2.38,0.0,2.44,0.17,-0.06000000000000005,0.69
+426,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM33,4.09,0.0,2.96,0.21,1.13,0.69
+427,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM34,2.42,0.0,2.83,0.2,-0.41000000000000014,0.69
+428,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM35,1.24,0.0,0.88,0.02,0.36,0.69
+429,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM36,2.44,0.0,0.76,0.05,1.68,0.69
+430,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM37,1.03,0.0,1.45,0.1,-0.41999999999999993,0.69
+431,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM38,-0.05,0.0,1.03,0.07,-1.08,0.69
+432,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM39,1.69,0.0,1.89,0.13,-0.19999999999999996,0.69
+433,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM40,0.29,0.0,1.83,0.05,-1.54,0.69
+434,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM41,0.6,0.0,1.97,0.01,-1.37,0.69
+435,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM42,2.68,0.0,1.76,0.03,0.9200000000000002,0.69
+436,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM43,0.98,0.0,2.51,0.01,-1.5299999999999998,0.69
+437,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM44,-0.1,0.0,1.16,0.03,-1.26,0.69
+438,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM45,2.04,0.0,2.55,0.04,-0.5099999999999998,0.69
+439,TFE-SM12-vacuum-opt,logP_RodriguezPaluch_SM12_1,Physical (QM),SM46,0.47,0.0,1.72,0.01,-1.25,0.69
+440,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM25,4.23,0.01,2.67,0.01,1.5600000000000005,1.05
+441,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM26,2.39,0.01,1.04,0.01,1.35,1.05
+442,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM27,2.21,0.01,1.56,0.11,0.6499999999999999,1.05
+443,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM28,2.18,0.01,1.18,0.08,1.0000000000000002,1.05
+444,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM29,2.07,0.01,1.61,0.03,0.45999999999999974,1.05
+445,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM30,3.78,0.01,2.76,0.19,1.02,1.05
+446,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM31,3.27,0.01,1.96,0.14,1.31,1.05
+447,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM32,2.59,0.01,2.44,0.17,0.1499999999999999,1.05
+448,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM33,5.27,0.01,2.96,0.21,2.3099999999999996,1.05
+449,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM34,5.27,0.01,2.83,0.2,2.4399999999999995,1.05
+450,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM35,0.95,0.01,0.88,0.02,0.06999999999999995,1.05
+451,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM36,2.59,0.01,0.76,0.05,1.8299999999999998,1.05
+452,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM37,2.14,0.01,1.45,0.1,0.6900000000000002,1.05
+453,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM38,2.3,0.01,1.03,0.07,1.2699999999999998,1.05
+454,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM39,4.16,0.01,1.89,0.13,2.2700000000000005,1.05
+455,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM40,3.61,0.01,1.83,0.05,1.7799999999999998,1.05
+456,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM41,3.31,0.01,1.97,0.01,1.34,1.05
+457,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM42,6.26,0.01,1.76,0.03,4.5,1.05
+458,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM43,4.27,0.01,2.51,0.01,1.7599999999999998,1.05
+459,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM44,1.62,0.01,1.16,0.03,0.4600000000000002,1.05
+460,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM45,3.17,0.01,2.55,0.04,0.6200000000000001,1.05
+461,EC_RISM_wet,logP-ECRISM-1,Physical (QM),SM46,2.56,0.01,1.72,0.01,0.8400000000000001,1.05
+462,ClassicalGSG DB4,logp_DB4,Empirical,SM25,2.4,0.0,2.67,0.01,-0.27,0.19
+463,ClassicalGSG DB4,logp_DB4,Empirical,SM26,0.8,0.0,1.04,0.01,-0.24,0.15
+464,ClassicalGSG DB4,logp_DB4,Empirical,SM27,0.44,0.0,1.56,0.11,-1.12,0.46
+465,ClassicalGSG DB4,logp_DB4,Empirical,SM28,1.08,0.0,1.18,0.08,-0.09999999999999987,0.33
+466,ClassicalGSG DB4,logp_DB4,Empirical,SM29,0.56,0.0,1.61,0.03,-1.05,0.43
+467,ClassicalGSG DB4,logp_DB4,Empirical,SM30,1.45,0.0,2.76,0.19,-1.3099999999999998,0.65
+468,ClassicalGSG DB4,logp_DB4,Empirical,SM31,1.19,0.0,1.96,0.14,-0.77,0.45
+469,ClassicalGSG DB4,logp_DB4,Empirical,SM32,2.54,0.0,2.44,0.17,0.10000000000000009,0.73
+470,ClassicalGSG DB4,logp_DB4,Empirical,SM33,3.47,0.0,2.96,0.21,0.5100000000000002,0.56
+471,ClassicalGSG DB4,logp_DB4,Empirical,SM34,3.12,0.0,2.83,0.2,0.29000000000000004,0.81
+472,ClassicalGSG DB4,logp_DB4,Empirical,SM35,0.36,0.0,0.88,0.02,-0.52,0.37
+473,ClassicalGSG DB4,logp_DB4,Empirical,SM36,1.06,0.0,0.76,0.05,0.30000000000000004,0.62
+474,ClassicalGSG DB4,logp_DB4,Empirical,SM37,0.85,0.0,1.45,0.1,-0.6,0.55
+475,ClassicalGSG DB4,logp_DB4,Empirical,SM38,1.02,0.0,1.03,0.07,-0.010000000000000009,0.33
+476,ClassicalGSG DB4,logp_DB4,Empirical,SM39,1.57,0.0,1.89,0.13,-0.31999999999999984,0.19
+477,ClassicalGSG DB4,logp_DB4,Empirical,SM40,1.34,0.0,1.83,0.05,-0.49,0.17
+478,ClassicalGSG DB4,logp_DB4,Empirical,SM41,1.48,0.0,1.97,0.01,-0.49,0.38
+479,ClassicalGSG DB4,logp_DB4,Empirical,SM42,2.21,0.0,1.76,0.03,0.44999999999999996,0.67
+480,ClassicalGSG DB4,logp_DB4,Empirical,SM43,1.56,0.0,2.51,0.01,-0.9499999999999997,0.38
+481,ClassicalGSG DB4,logp_DB4,Empirical,SM44,0.66,0.0,1.16,0.03,-0.4999999999999999,0.27
+482,ClassicalGSG DB4,logp_DB4,Empirical,SM45,1.85,0.0,2.55,0.04,-0.6999999999999997,0.27
+483,ClassicalGSG DB4,logp_DB4,Empirical,SM46,0.89,0.0,1.72,0.01,-0.83,0.3
+484,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM25,0.66,0.0,2.67,0.01,-2.01,1.47
+485,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM26,-0.06,0.0,1.04,0.01,-1.1,1.47
+486,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM27,-0.06,0.0,1.56,0.11,-1.62,1.47
+487,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM28,-0.43,0.0,1.18,0.08,-1.6099999999999999,1.47
+488,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM29,-0.44,0.0,1.61,0.03,-2.0500000000000003,1.47
+489,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM30,1.36,0.0,2.76,0.19,-1.3999999999999997,1.47
+490,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM31,0.19,0.0,1.96,0.14,-1.77,1.47
+491,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM32,1.11,0.0,2.44,0.17,-1.3299999999999998,1.47
+492,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM33,2.79,0.0,2.96,0.21,-0.16999999999999993,1.47
+493,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM34,1.51,0.0,2.83,0.2,-1.32,1.47
+494,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM35,-0.33,0.0,0.88,0.02,-1.21,1.47
+495,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM36,0.2,0.0,0.76,0.05,-0.56,1.47
+496,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM37,-0.58,0.0,1.45,0.1,-2.03,1.47
+497,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM38,-2.18,0.0,1.03,0.07,-3.21,1.47
+498,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM39,-0.57,0.0,1.89,0.13,-2.46,1.47
+499,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM40,-1.39,0.0,1.83,0.05,-3.2199999999999998,1.47
+500,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM41,-0.82,0.0,1.97,0.01,-2.79,1.47
+501,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM42,1.02,0.0,1.76,0.03,-0.74,1.47
+502,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM43,-0.1,0.0,2.51,0.01,-2.61,1.47
+503,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM44,-1.99,0.0,1.16,0.03,-3.15,1.47
+504,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM45,-0.15,0.0,2.55,0.04,-2.6999999999999997,1.47
+505,TFE-SMD-vacuum-opt,logP_RodriguezPaluch_SMD_1,Physical (QM),SM46,-1.07,0.0,1.72,0.01,-2.79,1.47
+506,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM25,1.54,0.0,2.67,0.01,-1.13,0.0
+507,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM26,0.11,0.0,1.04,0.01,-0.93,0.0
+508,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM27,0.47,0.0,1.56,0.11,-1.09,0.0
+509,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM28,-0.23,0.0,1.18,0.08,-1.41,0.0
+510,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM29,0.18,0.0,1.61,0.03,-1.4300000000000002,0.0
+511,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM30,1.73,0.0,2.76,0.19,-1.0299999999999998,0.0
+512,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM31,0.94,0.0,1.96,0.14,-1.02,0.0
+513,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM32,1.5,0.0,2.44,0.17,-0.94,0.0
+514,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM33,3.12,0.0,2.96,0.21,0.16000000000000014,0.0
+515,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM34,2.18,0.0,2.83,0.2,-0.6499999999999999,0.0
+516,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM35,-0.69,0.0,0.88,0.02,-1.5699999999999998,0.0
+517,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM36,0.58,0.0,0.76,0.05,-0.18000000000000005,0.0
+518,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM37,0.78,0.0,1.45,0.1,-0.6699999999999999,0.0
+519,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM38,-1.6,0.0,1.03,0.07,-2.63,0.0
+520,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM39,0.47,0.0,1.89,0.13,-1.42,0.0
+521,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM40,-0.71,0.0,1.83,0.05,-2.54,0.0
+522,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM41,-0.61,0.0,1.97,0.01,-2.58,0.0
+523,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM42,1.06,0.0,1.76,0.03,-0.7,0.0
+524,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM43,0.09,0.0,2.51,0.01,-2.42,0.0
+525,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM44,-1.53,0.0,1.16,0.03,-2.69,0.0
+526,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM45,-0.26,0.0,2.55,0.04,-2.8099999999999996,0.0
+527,TFE-NHLBI-TZVP-QM,logp-nhlbi-1,Physical (QM),SM46,-0.78,0.0,1.72,0.01,-2.5,0.0
+528,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM25,2.51,0.36,2.67,0.01,-0.16000000000000014,0.5
+529,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM26,0.99,0.0,1.04,0.01,-0.050000000000000044,0.5
+530,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM27,1.59,0.15,1.56,0.11,0.030000000000000027,0.5
+531,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM28,0.84,0.36,1.18,0.08,-0.33999999999999997,0.5
+532,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM29,1.55,0.39,1.61,0.03,-0.06000000000000005,0.5
+533,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM30,2.68,0.43,2.76,0.19,-0.07999999999999963,0.5
+534,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM31,1.91,0.45,1.96,0.14,-0.050000000000000044,0.5
+535,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM32,2.29,0.13,2.44,0.17,-0.1499999999999999,0.5
+536,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM33,3.64,0.27,2.96,0.21,0.6800000000000002,0.5
+537,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM34,2.74,0.28,2.83,0.2,-0.08999999999999986,0.5
+538,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM35,1.46,0.34,0.88,0.02,0.58,0.5
+539,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM36,2.59,0.36,0.76,0.05,1.8299999999999998,0.5
+540,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM37,1.85,0.52,1.45,0.1,0.40000000000000013,0.5
+541,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM38,0.75,0.2,1.03,0.07,-0.28,0.5
+542,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM39,2.02,0.2,1.89,0.13,0.13000000000000012,0.5
+543,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM40,1.09,0.21,1.83,0.05,-0.74,0.5
+544,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM41,1.9,0.0,1.97,0.01,-0.07000000000000006,0.5
+545,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM42,3.6,0.0,1.76,0.03,1.84,0.5
+546,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM43,2.41,0.08,2.51,0.01,-0.09999999999999964,0.5
+547,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM44,0.85,0.0,1.16,0.03,-0.30999999999999994,0.5
+548,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM45,2.42,0.1,2.55,0.04,-0.1299999999999999,0.5
+549,ffsampled_deeplearning_cl1,logP-ChrisLoschen-1,Empirical,SM46,1.28,0.16,1.72,0.01,-0.43999999999999995,0.5
+550,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM25,0.43,0.0,2.67,0.01,-2.2399999999999998,1.47
+551,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM26,-0.42,0.0,1.04,0.01,-1.46,1.47
+552,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM27,0.01,0.0,1.56,0.11,-1.55,1.47
+553,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM28,-0.79,0.0,1.18,0.08,-1.97,1.47
+554,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM29,-0.76,0.0,1.61,0.03,-2.37,1.47
+555,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM30,1.17,0.0,2.76,0.19,-1.5899999999999999,1.47
+556,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM31,-0.13,0.0,1.96,0.14,-2.09,1.47
+557,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM32,0.86,0.0,2.44,0.17,-1.58,1.47
+558,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM33,2.61,0.0,2.96,0.21,-0.3500000000000001,1.47
+559,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM34,0.92,0.0,2.83,0.2,-1.9100000000000001,1.47
+560,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM35,-0.79,0.0,0.88,0.02,-1.67,1.47
+561,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM36,-0.17,0.0,0.76,0.05,-0.93,1.47
+562,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM37,-1.04,0.0,1.45,0.1,-2.49,1.47
+563,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM38,-2.75,0.0,1.03,0.07,-3.7800000000000002,1.47
+564,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM39,-1.2,0.0,1.89,0.13,-3.09,1.47
+565,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM40,-2.17,0.0,1.83,0.05,-4.0,1.47
+566,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM41,-1.04,0.0,1.97,0.01,-3.01,1.47
+567,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM42,0.75,0.0,1.76,0.03,-1.01,1.47
+568,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM43,-1.26,0.0,2.51,0.01,-3.7699999999999996,1.47
+569,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM44,-2.16,0.0,1.16,0.03,-3.3200000000000003,1.47
+570,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM45,-0.86,0.0,2.55,0.04,-3.4099999999999997,1.47
+571,TFE-SMD-solvent-opt,logP_RodriguezPaluch_SMD_2,Physical (QM),SM46,-1.87,0.0,1.72,0.01,-3.59,1.47
+572,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM25,2.74,0.91,2.67,0.01,0.07000000000000028,1.3
+573,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM26,0.09,0.3,1.04,0.01,-0.9500000000000001,1.3
+574,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM27,1.33,1.11,1.56,0.11,-0.22999999999999998,1.3
+575,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM28,-0.95,0.77,1.18,0.08,-2.13,1.3
+576,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM29,1.19,2.63,1.61,0.03,-0.42000000000000015,1.3
+577,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM30,2.21,1.43,2.76,0.19,-0.5499999999999998,1.3
+578,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM31,2.24,0.35,1.96,0.14,0.28000000000000025,1.3
+579,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM32,-0.07,1.26,2.44,0.17,-2.51,1.3
+580,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM33,4.57,0.41,2.96,0.21,1.6100000000000003,1.3
+581,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM34,3.04,2.23,2.83,0.2,0.20999999999999996,1.3
+582,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM35,0.4,1.66,0.88,0.02,-0.48,1.3
+583,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM36,2.76,1.71,0.76,0.05,1.9999999999999998,1.3
+584,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM37,2.0,2.2,1.45,0.1,0.55,1.3
+585,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM38,3.63,1.97,1.03,0.07,2.5999999999999996,1.3
+586,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM39,3.93,2.69,1.89,0.13,2.04,1.3
+587,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM40,1.58,1.29,1.83,0.05,-0.25,1.3
+588,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM41,3.37,2.16,1.97,0.01,1.4000000000000001,1.3
+589,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM42,6.2,1.42,1.76,0.03,4.44,1.3
+590,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM43,3.58,1.44,2.51,0.01,1.0700000000000003,1.3
+591,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM44,5.21,0.56,1.16,0.03,4.05,1.3
+592,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM45,5.64,0.52,2.55,0.04,3.09,1.3
+593,MD-EE-MCC (GAFF-TIP4P-Ew),logP-FabioFalcioni-1,Physical (MM),SM46,3.16,1.25,1.72,0.01,1.4400000000000002,1.3
+594,Chemprop,LogP_chemprop_submission,Empirical,SM33,3.5,0.09,2.96,0.21,0.54,0.53
+595,Chemprop,LogP_chemprop_submission,Empirical,SM42,3.16,0.05,1.76,0.03,1.4000000000000001,0.53
+596,Chemprop,LogP_chemprop_submission,Empirical,SM30,2.95,0.1,2.76,0.19,0.1900000000000004,0.53
+597,Chemprop,LogP_chemprop_submission,Empirical,SM34,2.63,0.15,2.83,0.2,-0.20000000000000018,0.53
+598,Chemprop,LogP_chemprop_submission,Empirical,SM43,2.51,0.1,2.51,0.01,0.0,0.53
+599,Chemprop,LogP_chemprop_submission,Empirical,SM25,2.33,0.04,2.67,0.01,-0.33999999999999986,0.53
+600,Chemprop,LogP_chemprop_submission,Empirical,SM45,2.21,0.07,2.55,0.04,-0.33999999999999986,0.53
+601,Chemprop,LogP_chemprop_submission,Empirical,SM31,2.16,0.09,1.96,0.14,0.20000000000000018,0.53
+602,Chemprop,LogP_chemprop_submission,Empirical,SM39,2.12,0.08,1.89,0.13,0.2300000000000002,0.53
+603,Chemprop,LogP_chemprop_submission,Empirical,SM36,2.05,0.1,0.76,0.05,1.2899999999999998,0.53
+604,Chemprop,LogP_chemprop_submission,Empirical,SM32,1.91,0.12,2.44,0.17,-0.53,0.53
+605,Chemprop,LogP_chemprop_submission,Empirical,SM27,1.85,0.11,1.56,0.11,0.29000000000000004,0.53
+606,Chemprop,LogP_chemprop_submission,Empirical,SM41,1.77,0.07,1.97,0.01,-0.19999999999999996,0.53
+607,Chemprop,LogP_chemprop_submission,Empirical,SM46,1.52,0.1,1.72,0.01,-0.19999999999999996,0.53
+608,Chemprop,LogP_chemprop_submission,Empirical,SM29,1.42,0.08,1.61,0.03,-0.19000000000000017,0.53
+609,Chemprop,LogP_chemprop_submission,Empirical,SM40,1.37,0.09,1.83,0.05,-0.45999999999999996,0.53
+610,Chemprop,LogP_chemprop_submission,Empirical,SM37,1.36,0.11,1.45,0.1,-0.08999999999999986,0.53
+611,Chemprop,LogP_chemprop_submission,Empirical,SM26,1.11,0.06,1.04,0.01,0.07000000000000006,0.53
+612,Chemprop,LogP_chemprop_submission,Empirical,SM28,1.03,0.06,1.18,0.08,-0.1499999999999999,0.53
+613,Chemprop,LogP_chemprop_submission,Empirical,SM44,0.78,0.08,1.16,0.03,-0.3799999999999999,0.53
+614,Chemprop,LogP_chemprop_submission,Empirical,SM38,0.7,0.08,1.03,0.07,-0.33000000000000007,0.53
+615,Chemprop,LogP_chemprop_submission,Empirical,SM35,0.68,0.09,0.88,0.02,-0.19999999999999996,0.53
+616,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM25,1.47,0.77,2.67,0.01,-1.2,2.0
+617,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM26,-0.24,0.74,1.04,0.01,-1.28,2.0
+618,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM27,1.62,0.77,1.56,0.11,0.06000000000000005,2.0
+619,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM28,0.37,0.98,1.18,0.08,-0.8099999999999999,2.0
+620,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM29,1.25,0.77,1.61,0.03,-0.3600000000000001,2.0
+621,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM30,2.55,0.67,2.76,0.19,-0.20999999999999996,2.0
+622,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM31,2.52,0.58,1.96,0.14,0.56,2.0
+623,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM32,1.88,0.71,2.44,0.17,-0.56,2.0
+624,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM33,3.94,0.85,2.96,0.21,0.98,2.0
+625,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM34,3.28,0.65,2.83,0.2,0.44999999999999973,2.0
+626,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM35,-0.08,1.0,0.88,0.02,-0.96,2.0
+627,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM36,1.17,0.94,0.76,0.05,0.4099999999999999,2.0
+628,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM37,0.97,0.94,1.45,0.1,-0.48,2.0
+629,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM38,-0.25,0.89,1.03,0.07,-1.28,2.0
+630,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM39,0.48,0.94,1.89,0.13,-1.41,2.0
+631,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM40,0.44,0.88,1.83,0.05,-1.3900000000000001,2.0
+632,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM41,2.38,0.7,1.97,0.01,0.4099999999999999,2.0
+633,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM42,3.29,0.71,1.76,0.03,1.53,2.0
+634,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM43,3.66,0.66,2.51,0.01,1.1500000000000004,2.0
+635,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM44,2.12,0.72,1.16,0.03,0.9600000000000002,2.0
+636,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM45,3.82,0.9,2.55,0.04,1.27,2.0
+637,NES-1 (GAFF2/OPC3) G,logP-PieroProcacci-NES1-G,Physical (MM),SM46,3.64,0.65,1.72,0.01,1.9200000000000002,2.0
+638,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM25,-1.8,0.78,2.67,0.01,-4.47,0.98
+639,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM26,-1.88,0.78,1.04,0.01,-2.92,0.98
+640,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM27,-2.38,0.78,1.56,0.11,-3.94,0.98
+641,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM28,-2.57,0.78,1.18,0.08,-3.75,0.98
+642,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM29,-1.13,0.78,1.61,0.03,-2.74,0.98
+643,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM30,-2.49,0.78,2.76,0.19,-5.25,0.98
+644,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM31,-2.68,0.78,1.96,0.14,-4.640000000000001,0.98
+645,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM32,-1.36,0.78,2.44,0.17,-3.8,0.98
+646,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM33,-2.39,0.78,2.96,0.21,-5.35,0.98
+647,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM34,-2.68,0.78,2.83,0.2,-5.51,0.98
+648,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM35,-2.05,0.78,0.88,0.02,-2.9299999999999997,0.98
+649,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM36,-2.76,0.78,0.76,0.05,-3.5199999999999996,0.98
+650,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM37,-3.23,0.78,1.45,0.1,-4.68,0.98
+651,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM38,-1.96,0.78,1.03,0.07,-2.99,0.98
+652,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM39,-2.44,0.78,1.89,0.13,-4.33,0.98
+653,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM40,-2.77,0.78,1.83,0.05,-4.6,0.98
+654,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM41,-2.07,0.78,1.97,0.01,-4.04,0.98
+655,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM42,-2.84,0.78,1.76,0.03,-4.6,0.98
+656,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM43,-2.65,0.78,2.51,0.01,-5.16,0.98
+657,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM44,-0.71,0.78,1.16,0.03,-1.8699999999999999,0.98
+658,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM45,-1.39,0.78,2.55,0.04,-3.9399999999999995,0.98
+659,TFE-NHLBI-NN-IN,logp-nhlbi-2,Empirical,SM46,-1.05,0.78,1.72,0.01,-2.77,0.98
+660,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM25,3.14,0.27,2.67,0.01,0.4700000000000002,0.49
+661,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM26,0.89,0.0,1.04,0.01,-0.15000000000000002,0.49
+662,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM27,1.57,0.06,1.56,0.11,0.010000000000000009,0.49
+663,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM28,0.9,0.34,1.18,0.08,-0.2799999999999999,0.49
+664,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM29,1.74,0.07,1.61,0.03,0.1299999999999999,0.49
+665,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM30,3.1,0.16,2.76,0.19,0.3400000000000003,0.49
+666,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM31,2.16,0.24,1.96,0.14,0.20000000000000018,0.49
+667,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM32,2.37,0.05,2.44,0.17,-0.06999999999999984,0.49
+668,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM33,3.8,0.18,2.96,0.21,0.8399999999999999,0.49
+669,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM34,2.84,0.21,2.83,0.2,0.009999999999999787,0.49
+670,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM35,1.33,0.32,0.88,0.02,0.45000000000000007,0.49
+671,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM36,2.73,0.24,0.76,0.05,1.97,0.49
+672,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM37,1.73,0.34,1.45,0.1,0.28,0.49
+673,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM38,1.0,0.16,1.03,0.07,-0.030000000000000027,0.49
+674,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM39,2.35,0.08,1.89,0.13,0.4600000000000002,0.49
+675,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM40,1.15,0.35,1.83,0.05,-0.6800000000000002,0.49
+676,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM41,2.02,0.0,1.97,0.01,0.050000000000000044,0.49
+677,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM42,3.69,0.0,1.76,0.03,1.93,0.49
+678,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM43,2.49,0.2,2.51,0.01,-0.019999999999999574,0.49
+679,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM44,0.91,0.0,1.16,0.03,-0.2499999999999999,0.49
+680,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM45,2.4,0.06,2.55,0.04,-0.1499999999999999,0.49
+681,ffsampled_deeplearning_cl2,logP-ChrisLoschen-2,Empirical,SM46,1.25,0.07,1.72,0.01,-0.47,0.49
+682,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM25,1.76,0.08,2.67,0.01,-0.9099999999999999,2.0
+683,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM26,-0.43,0.1,1.04,0.01,-1.47,2.0
+684,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM27,1.44,0.17,1.56,0.11,-0.1200000000000001,2.0
+685,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM28,1.39,0.13,1.18,0.08,0.20999999999999996,2.0
+686,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM29,1.22,0.1,1.61,0.03,-0.3900000000000001,2.0
+687,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM30,3.55,0.19,2.76,0.19,0.79,2.0
+688,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM31,3.12,0.15,1.96,0.14,1.1600000000000001,2.0
+689,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM32,2.31,0.09,2.44,0.17,-0.1299999999999999,2.0
+690,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM33,4.63,0.19,2.96,0.21,1.67,2.0
+691,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM34,3.66,0.14,2.83,0.2,0.8300000000000001,2.0
+692,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM35,-0.07,0.22,0.88,0.02,-0.95,2.0
+693,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM36,0.89,0.2,0.76,0.05,0.13,2.0
+694,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM37,1.11,0.1,1.45,0.1,-0.33999999999999986,2.0
+695,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM38,-0.35,0.13,1.03,0.07,-1.38,2.0
+696,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM39,2.02,0.29,1.89,0.13,0.13000000000000012,2.0
+697,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM40,0.62,0.15,1.83,0.05,-1.21,2.0
+698,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM41,2.7,0.09,1.97,0.01,0.7300000000000002,2.0
+699,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM42,4.54,0.17,1.76,0.03,2.7800000000000002,2.0
+700,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM43,4.17,0.1,2.51,0.01,1.6600000000000001,2.0
+701,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM44,2.49,0.06,1.16,0.03,1.3300000000000003,2.0
+702,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM45,4.13,0.18,2.55,0.04,1.58,2.0
+703,NES-1 (GAFF2/OPC3) B,logP-PieroProcacci-NES1-B,Physical (MM),SM46,3.72,0.11,1.72,0.01,2.0,2.0
+704,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM25,-1.81,0.38,2.67,0.01,-4.48,0.44
+705,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM26,-1.05,0.32,1.04,0.01,-2.09,0.44
+706,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM27,-1.22,0.36,1.56,0.11,-2.7800000000000002,0.44
+707,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM28,-1.35,0.23,1.18,0.08,-2.5300000000000002,0.44
+708,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM29,-1.23,0.44,1.61,0.03,-2.84,0.44
+709,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM30,-1.79,0.51,2.76,0.19,-4.55,0.44
+710,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM31,-1.43,0.36,1.96,0.14,-3.3899999999999997,0.44
+711,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM32,-1.53,0.42,2.44,0.17,-3.9699999999999998,0.44
+712,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM33,-2.17,0.44,2.96,0.21,-5.13,0.44
+713,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM34,-1.61,0.54,2.83,0.2,-4.44,0.44
+714,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM35,-1.32,0.42,0.88,0.02,-2.2,0.44
+715,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM36,-1.85,0.43,0.76,0.05,-2.6100000000000003,0.44
+716,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM37,-1.41,0.46,1.45,0.1,-2.86,0.44
+717,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM38,-1.33,0.31,1.03,0.07,-2.3600000000000003,0.44
+718,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM39,-1.84,0.4,1.89,0.13,-3.73,0.44
+719,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM40,-1.4,0.4,1.83,0.05,-3.23,0.44
+720,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM41,-1.09,0.28,1.97,0.01,-3.06,0.44
+721,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM42,-1.63,0.43,1.76,0.03,-3.3899999999999997,0.44
+722,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM43,-1.33,0.42,2.51,0.01,-3.84,0.44
+723,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM44,-0.99,0.36,1.16,0.03,-2.15,0.44
+724,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM45,-1.47,0.32,2.55,0.04,-4.02,0.44
+725,Ensemble Martel,logp_ensemble_logp_model1,Empirical,SM46,-1.15,0.21,1.72,0.01,-2.87,0.44
+726,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM25,1.51,0.74,2.67,0.01,-1.16,1.5
+727,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM26,0.97,0.33,1.04,0.01,-0.07000000000000006,1.5
+728,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM27,-1.52,0.36,1.56,0.11,-3.08,1.5
+729,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM28,1.28,0.5,1.18,0.08,0.10000000000000009,1.5
+730,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM29,-1.81,0.5,1.61,0.03,-3.42,1.5
+731,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM30,-0.57,0.51,2.76,0.19,-3.3299999999999996,1.5
+732,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM31,4.0,0.23,1.96,0.14,2.04,1.5
+733,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM32,0.45,0.38,2.44,0.17,-1.99,1.5
+734,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM33,1.47,0.56,2.96,0.21,-1.49,1.5
+735,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM34,5.8,0.24,2.83,0.2,2.9699999999999998,1.5
+736,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM35,-3.06,0.46,0.88,0.02,-3.94,1.5
+737,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM36,-1.32,0.96,0.76,0.05,-2.08,1.5
+738,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM37,4.22,0.33,1.45,0.1,2.7699999999999996,1.5
+739,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM38,-1.18,0.54,1.03,0.07,-2.21,1.5
+740,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM39,2.51,0.5,1.89,0.13,0.6199999999999999,1.5
+741,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM40,2.54,0.56,1.83,0.05,0.71,1.5
+742,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM41,2.05,0.26,1.97,0.01,0.07999999999999985,1.5
+743,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM42,3.23,0.41,1.76,0.03,1.47,1.5
+744,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM43,4.91,0.35,2.51,0.01,2.4000000000000004,1.5
+745,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM44,1.8,0.27,1.16,0.03,0.6400000000000001,1.5
+746,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM45,3.36,0.46,2.55,0.04,0.81,1.5
+747,MD LigParGen (OPLS-AA/TIP4P),logP_prediction_Iorga_Beckstein_LigParGen,Physical (MM),SM46,-0.85,0.5,1.72,0.01,-2.57,1.5
+748,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM25,0.43,0.36,2.67,0.01,-2.2399999999999998,0.8
+749,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM26,-0.55,0.36,1.04,0.01,-1.59,0.8
+750,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM27,0.49,0.36,1.56,0.11,-1.07,0.8
+751,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM28,-0.6,0.36,1.18,0.08,-1.7799999999999998,0.8
+752,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM29,-0.51,0.36,1.61,0.03,-2.12,0.8
+753,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM30,0.95,0.36,2.76,0.19,-1.8099999999999998,0.8
+754,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM31,0.58,0.36,1.96,0.14,-1.38,0.8
+755,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM32,1.24,0.36,2.44,0.17,-1.2,0.8
+756,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM33,2.55,0.36,2.96,0.21,-0.41000000000000014,0.8
+757,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM34,1.46,0.36,2.83,0.2,-1.37,0.8
+758,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM35,-0.81,0.36,0.88,0.02,-1.69,0.8
+759,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM36,0.19,0.36,0.76,0.05,-0.5700000000000001,0.8
+760,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM37,-1.62,0.36,1.45,0.1,-3.0700000000000003,0.8
+761,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM38,-2.59,0.36,1.03,0.07,-3.62,0.8
+762,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM39,-0.43,0.36,1.89,0.13,-2.32,0.8
+763,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM40,-1.91,0.36,1.83,0.05,-3.74,0.8
+764,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM41,-1.03,0.36,1.97,0.01,-3.0,0.8
+765,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM42,0.24,0.36,1.76,0.03,-1.52,0.8
+766,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM43,-0.2,0.36,2.51,0.01,-2.71,0.8
+767,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM44,-1.63,0.36,1.16,0.03,-2.79,0.8
+768,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM45,-0.5,0.36,2.55,0.04,-3.05,0.8
+769,TFE b3lypd3,logP-EvrimArslan-6,Physical (QM),SM46,-1.8,0.36,1.72,0.01,-3.52,0.8
+770,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM25,-1.46,0.08,2.67,0.01,-4.13,0.35
+771,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM26,-0.53,0.1,1.04,0.01,-1.57,0.35
+772,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM27,-0.73,0.15,1.56,0.11,-2.29,0.35
+773,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM28,-0.81,0.24,1.18,0.08,-1.99,0.35
+774,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM29,-0.6,0.03,1.61,0.03,-2.21,0.35
+775,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM30,-1.25,0.12,2.76,0.19,-4.01,0.35
+776,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM31,-0.55,0.09,1.96,0.14,-2.51,0.35
+777,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM32,-1.04,0.3,2.44,0.17,-3.48,0.35
+778,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM33,-1.66,0.35,2.96,0.21,-4.62,0.35
+779,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM34,-1.06,0.22,2.83,0.2,-3.89,0.35
+780,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM35,-0.42,0.27,0.88,0.02,-1.3,0.35
+781,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM36,-1.17,0.32,0.76,0.05,-1.93,0.35
+782,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM37,-0.48,0.07,1.45,0.1,-1.93,0.35
+783,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM38,-0.56,0.17,1.03,0.07,-1.59,0.35
+784,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM39,-1.2,0.21,1.89,0.13,-3.09,0.35
+785,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM40,-0.54,0.15,1.83,0.05,-2.37,0.35
+786,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM41,-0.78,0.08,1.97,0.01,-2.75,0.35
+787,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM42,-1.4,0.24,1.76,0.03,-3.16,0.35
+788,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM43,-0.78,0.04,2.51,0.01,-3.29,0.35
+789,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM44,-0.25,0.07,1.16,0.03,-1.41,0.35
+790,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM45,-0.84,0.02,2.55,0.04,-3.3899999999999997,0.35
+791,Ensemble EPI physprop,logp_ensemble_logp_model2,Empirical,SM46,-0.34,0.1,1.72,0.01,-2.06,0.35

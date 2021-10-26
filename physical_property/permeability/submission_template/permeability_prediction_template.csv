@@ -1,0 +1,118 @@
+# PERMEABILITY PREDICTIONS
+#
+# This file will be automatically parsed. It must contain the following four elements:
+# predictions, name of method, software listing, and method description.
+# These elements must be provided in the order shown with their respective headers.
+#
+# Any line that begins with a # is considered a comment and will be ignored when parsing.
+#
+# PREDICTION SECTION
+#
+# It is mandatory to submit permeability predictions for all 22 molecules.
+# Incomplete submissions will not be accepted.
+#
+# Please report the general molecule `ID tag` in the form of `SMXX` (e.g. SM25, SM26, etc).
+# Please indicate the microstate(s) used in the `Molecule ID/IDs considered (no commas)` section- if you used
+# the the challenge provided molecule (as found in the `SAMPL7_molecule_ID_and_SMILES.csv` file in the permeability repo) use the form `SMXX`,
+# if you used a microstate that was provided in the pKa challenge please use that name here (e.g. SM26_micro000, SM26_micro001, etc), and
+# if you used a microstate not provided in the sampl challenge you must use the form `SMXX_extraXXX` (where XXX can be any number).
+#
+# Please report apparent permeability coefficient (logPapp) standard error of the mean (SEM) and logPapp model uncertainty.
+#
+# The data in each prediction line should be structured as follows:
+# ID tag, Molecule ID/IDs considered (no commas), logPapp, logPapp SEM, logPapp model uncertainty
+#
+# Your logPapp predictions do NOT have to use the challenge provided molecules in the `SAMPL7_molecule_ID_and_SMILES.csv` file.
+# If you use a microstate other than the one listed in the challenge provided files, please fill out the `Molecule ID/IDs considered (no commas)`
+# section using a molecule ID in the form of `SMXX_extra001` (number can vary) and please list the molecule ID and it's SMILES string in your methods
+# description in the `METHOD DESCRIPTION SECTION`.
+#
+# Only one entry in the second column (`Molecule ID/IDs considered (no commas)`) is required, but you should list all IDs considered/input to your calculations. See challenge instructions.
+#
+# If you have evaluated additional microstates then the molecule ID used in the `Molecule ID/IDs considered (no commas)` section needs to be in the format: `SMXX_extra001` (number can vary).
+# If multiple microstates are used, please report the order of population in the aqueous phase in descending order.
+# Please list microstate populations, SMILES strings and the molecule IDs in the `METHOD DESCRIPTION SECTION` section further below.
+#
+# The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
+Predictions:
+
+#
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+
+#
+#
+# NAME SECTION
+#
+# Please provide an informal but informative name of the method used.
+# The character limit for the name should not exceed 40 characters.
+# The 'Name:' keyword is required as shown here.
+Name:
+
+#
+#
+# COMPUTE TIME SECTION
+#
+# Please provide the average compute time across all of the molecules.
+# For physical methods, report the GPU and/or CPU compute time in hours.
+# For empirical methods, report the query time in hours.
+# Create a new line for each processor type.
+# The 'Compute time:' keyword is required as shown here.
+Compute time:
+
+#
+# COMPUTING AND HARDWARE SECTION
+#
+# Please provide details of the computing resources that were used to train models and make predictions.
+# Please specify compute time for training models and querying separately for empirical prediction methods.
+# Provide a detailed description of the hardware used.
+# The 'Computing and hardware:' keyword is required as shown here.
+Computing and hardware:
+
+# SOFTWARE SECTION
+#
+# List all major software packages used and their versions.
+# Create a new line for each software.
+# The 'Software:' keyword is required.
+Software:
+
+# METHOD CATEGORY SECTION
+#
+# State which method category your prediction method is better described as:
+# `Physical (MM)`, `Physical (QM)`, `Empirical`, or `Mixed`.
+# Pick only one category label.
+# The `Category:` keyword is required.
+Category:
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of details should be roughly equivalent to that used in a publication.
+# Please include the values of key parameters with units.
+# Please explain how statistical uncertainties were estimated.
+#
+# If you have evaluated additional microstates (that are not found in the separate pKa challenge), please report their SMILES strings
+# and populations in this section.
+# If you used a microstate other than the challenge provided microstate found in the `SAMPL7_molecule_ID_and_SMILES.csv` file, please
+# list your chosen molecule ID (in the form of `SMXX_extraXXX`) along with the SMILES string in your methods description.
+#
+# Use as many lines of text as you need.
+# All text following the 'Method:' keyword will be regarded as part of your free text methods description.
+Method:
+
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True

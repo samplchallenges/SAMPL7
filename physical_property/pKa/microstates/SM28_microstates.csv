@@ -1,0 +1,6 @@
+microstate ID,canonical isomeric SMILES
+SM28_micro000,CC(=O)NC1(CS(=O)(=O)C1)CCc2ccccc2
+SM28_micro001,C=C(NC1(CS(=O)(=O)C1)CCc2ccccc2)O
+SM28_micro002,CC(=O)[N-]C1(CCc2ccccc2)CS(=O)(=O)C1
+SM28_micro003,CC(=[OH+])NC1(CCc2ccccc2)CS(=O)(=O)C1
+SM28_micro004,C=C([N-]C1(CS(=O)(=O)C1)CCc2ccccc2)O

@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Relationship between logD, logP and p$K_a$}
+\author{Dhiman Ray}
+\date{\today}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Derivation for monoprotic acid/base}
+Ionization of a solute 
+\begin{equation}
+    X + H^+ \rightleftharpoons XH^+
+\end{equation}
+Partition coefficients
+\begin{equation}
+    P^0 = \frac{[X]_{octanol}}{[X]_{water}}, \;\;\;\; 
+    P^1 = \frac{[XH^+]_{octanol}}{[XH^+]_{water}}, \;\;\;\;
+    D = \frac{[X]_{octanol} + [XH^+]_{octanol}}{[X]_{water} + [XH^+]_{water}}
+\end{equation}
+Using this equation we can write
+\begin{equation}
+    D = \frac{P^0[X]_{water} + P^1[XH^+]_{water}}{[X]_{water} + [XH^+]_{water}}
+    \label{eqn:D}
+\end{equation}
+From Henderson Equation
+\begin{equation}
+    pH = pK_a + \log \left(\frac{[X]_{water}}{[XH^+]_{water}}\right)
+\end{equation}
+we can write 
+\begin{equation}
+    [X]_{water} = [XH^+]_{water} \times 10^{pH - pK_a} = [XH^+]_{water} \frac{10^{- pK_a}}{10^{-pH}} = [XH^+]_{water} \frac{K_a}{[H]}
+\end{equation}
+Substituting in Eq. \ref{eqn:D}
+\begin{equation}
+    D = \frac{P^0 [XH^+]_{water} \frac{K_a}{[H]} + P^1[XH^+]_{water}}{[XH^+]_{water} \frac{K_a}{[H]} + [XH^+]_{water}}
+\end{equation}
+Canceling out the $[XH^+]_{water}$ and rearranging
+\begin{equation}
+    D = \frac{P^0 K_a + P^1 [H]}{K_a + [H]}
+    \label{eqn:Dexact}
+\end{equation}
+This is the equation which accurately represents the relation between logD, log$P^0$, log$P^1$ and $pK_a$, if we use the relation $K_a = 10^{- pK_a}$ and $[H] = 10^{- pH}$
+
+\section{Approximation}
+If we assume that the charged species never goes into octanol phase we can derive simple approximate relations between logP and logD. 
+\subsection{Weak Acid}
+For weak acids $X$ is ionized and $XH^+$ is neutral. So we can consider $P^0 = 0$ and $P = P^1$. So Eq. \ref{eqn:Dexact} becomes
+\begin{equation}
+    D = \frac{P^1 [H]}{K_a + [H]}
+\end{equation}
+Rearranging
+\begin{equation}
+    \frac{D}{P} = \frac{1}{1+\frac{K_a}{[H]}} \;\;\; => \;\;\; \log D = \log P - \log(1+10^{pH-pK_a})
+\end{equation}
+\subsection{Weak Base}
+For weak base $XH^+$ is ionized and $X$ is neutral. So we can consider $P^1 = 0$ and $P = P^0$. So Eq. \ref{eqn:Dexact} becomes
+\begin{equation}
+    D = \frac{P^0 K_a}{K_a + [H]}
+\end{equation}
+Rearranging
+\begin{equation}
+    \frac{D}{P} = \frac{1}{1+\frac{[H]}{K_a}} \;\;\; => \;\;\; \log D = \log P - \log(1+10^{pK_a-pH})
+\end{equation}
+\subsection{Limitations of the approximation}
+This approximation will break down at high pH for weak acids and at low pH for weak base. In that situation a large fraction of the base/acid will be in ionized form. Although the partition coefficient for ionic species is low, some ions will still enter the octanol phase. In that case this approximation will break down and we need to use the Eq. \ref{eqn:Dexact} to calculate logD.
+%\bibliographystyle{plain}
+%\bibliography{references}
+\end{document}

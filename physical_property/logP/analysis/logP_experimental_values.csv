@@ -1,0 +1,23 @@
+Molecule ID,logP mean,logP SEM,Assay Type,Isomeric SMILES
+SM25,2.67,0.01,"potentiometric titrations using a Sirius T3, Pion",O=C(NS(C1=CC=CC=C1)(=O)=O)CCC2=CC=CC=C2
+SM26,1.04,0.01,"potentiometric titrations using a Sirius T3, Pion",O=S(CCC1=CC=CC=C1)(NC(C)=O)=O
+SM27,1.56,0.11,shake-flask assay (run by Analiza),O=S(CCC1=CC=CC=C1)(NC2(C)COC2)=O
+SM28,1.18,0.08,shake-flask assay (run by Analiza),O=S(CC1(NC(C)=O)CCC2=CC=CC=C2)(C1)=O
+SM29,1.61,0.03,"potentiometric titrations using a Sirius T3, Pion",CS(NC1(COC1)CCC2=CC=CC=C2)(=O)=O
+SM30,2.76,0.19,shake-flask assay (run by Analiza),O=S(NC1(COC1)CCC2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM31,1.96,0.14,shake-flask assay (run by Analiza),O=S(NC1(COC1)CCC2=CC=CC=C2)(N(C)C)=O
+SM32,2.44,0.17,shake-flask assay (run by Analiza),CS(NC1(CSC1)CCC2=CC=CC=C2)(=O)=O
+SM33,2.96,0.21,shake-flask assay (run by Analiza),O=S(NC1(CSC1)CCC2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM34,2.83,0.20,shake-flask assay (run by Analiza),O=S(NC1(CSC1)CCC2=CC=CC=C2)(N(C)C)=O
+SM35,0.88,0.02,"potentiometric titrations using a Sirius T3, Pion",CS(N[C@@]1(C[S+]([O-])C1)CCC2=CC=CC=C2)(=O)=O
+SM36,0.76,0.05,shake-flask assay (run by Analiza),O=S(N[C@@]1(C[S+]([O-])C1)CCC2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM37,1.45,0.10,shake-flask assay (run by Analiza),O=S(N[C@@]1(C[S+]([O-])C1)CCC2=CC=CC=C2)(N(C)C)=O
+SM38,1.03,0.07,shake-flask assay (run by Analiza),CS(NC1(CS(C1)(=O)=O)CCC2=CC=CC=C2)(=O)=O
+SM39,1.89,0.13,shake-flask assay (run by Analiza),O=S(NC1(CS(C1)(=O)=O)CCC2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM40,1.83,0.05,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1(CS(C1)(=O)=O)CCC2=CC=CC=C2)(N(C)C)=O
+SM41,1.97,0.01,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(C)=O
+SM42,1.76,0.03,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(C3=CC=CC=C3)=O
+SM43,2.51,0.01,"potentiometric titrations using a Sirius T3, Pion",O=S(NC1=NOC(C2=CC=CC=C2)=C1)(N(C)C)=O
+SM44,1.16,0.03,"potentiometric titrations using a Sirius T3, Pion",O=S(NC(N=N1)=CN1C2=CC=CC=C2)(C)=O
+SM45,2.55,0.04,"potentiometric titrations using a Sirius T3, Pion",O=S(NC(N=N1)=CN1C2=CC=CC=C2)(C3=CC=CC=C3)=O
+SM46,1.72,0.01,"potentiometric titrations using a Sirius T3, Pion",O=S(NC(N=N1)=CN1C2=CC=CC=C2)(N(C)C)=O

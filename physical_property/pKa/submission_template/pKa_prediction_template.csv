@@ -1,0 +1,112 @@
+# RELATIVE FREE ENERGY PREDICTIONS (for pKa prediction)
+#
+# This file will be automatically parsed. It must contain the following four elements:
+# predictions, name of method, software listing, and method description.
+# These elements must be provided in the order shown with their respective headers.
+#
+# Any line that begins with a # is considered a comment and will be ignored when parsing.
+#
+# PREDICTION SECTION
+#
+# It is mandatory to submit relative free energy (RFE) predictions for all 22 molecules. Incomplete submissions will not be accepted.
+# Please report RFE standard error of the mean (SEM) and RFE model uncertainty.
+#
+# The data in each prediction line should be structured as follows:
+# Microstate ID of reference state, Microstate ID of the predicted microstate, total charge, RFE, RFE SEM, RFE model uncertainty
+#
+# If you have evaluated additional microstates, include the following:
+# Microstate ID of reference state, Microstate ID of the predicted microstate, total charge, RFE, RFE SEM, RFE model uncertainty, SMILES string of the predicted microstate
+#
+# The molecule ID of the other microstate needs to be in the format: `SMXX_extra001` (number can vary)
+# Also email us the `.mol2` file of your microstate with explicit hydrogens and correct bond orders,
+# Please send the `.mol2` file to the email listed on the instructions page.
+#
+# The list of predictions must begin with the 'Predictions:' keyword as illustrated here.
+Predictions:
+
+#
+#
+# Please list your name, using only UTF-8 characters as described above. The "Participant name:" entry is required.
+Participant name:
+
+#
+#
+# Please list your organization/affiliation, using only UTF-8 characters as described above.
+Participant organization:
+
+#
+#
+# NAME SECTION
+#
+# Please provide an informal but informative name of the method used.
+# The name of the method should not exceed 40 characters.
+# The 'Name:' keyword is required as shown here.
+Name:
+
+#
+#
+# COMPUTE TIME SECTION
+#
+# Please provide the average compute time across all of the molecules.
+# For physical methods, report the GPU and/or CPU compute time in hours.
+# For empirical methods, report the query time in hours.
+# Create a new line for each processor type.
+# The 'Compute time:' keyword is required as shown here.
+Compute time:
+
+#
+# COMPUTING AND HARDWARE SECTION
+#
+# Please provide details of the computing resources that were used to train models and make predictions.
+# Please specify compute time for training models and querying separately for empirical prediction methods.
+# Provide a detailed description of the hardware used.
+# The 'Computing and hardware:' keyword is required as shown here.
+Computing and hardware:
+
+# SOFTWARE SECTION
+#
+# List all major software packages used and their versions.
+# Create a new line for each software.
+# The 'Software:' keyword is required.
+Software:
+
+# METHOD CATEGORY SECTION
+#
+# State if your prediction method is better classified as an
+# experimental database lookup (DL), linear free energy relationship (LFER),
+# quantitative structure-property relationship or machine learning (QSPR/ML),
+# quantum mechanics without empirical correction (QM) model, quantum mechanics with
+# linear empirical correction (QM+LEC), and combined quantum mechanics and molecular
+# mechanics (QM+MM), or Other, using the following category labels:
+# `DL`, `LFER`, `QSPR/ML`, `QM`, `QM+LEC`, `QM+MM` or `Other`.
+#
+# Pick only one category label.
+# The `Category:` keyword is required.
+Category:
+
+# METHOD DESCRIPTION SECTION
+#
+# Methodology and computational details.
+# Level of details should be roughly equivalent to that used in a publication.
+# Please include the values of key parameters with units.
+# Please explain how statistical uncertainties were estimated.
+# Use as many lines of text as you need.
+#
+# We strongly encourage you to submit your predicted macro pKa values in this section in consecutive lines following this format:
+# compound name, macro pKa, initial formal charge, formal charge after transition, e.g.:
+# SM25, 3.5, 0, +1
+# This will allow us to check that our analysis of your free energies leads to the same endpoint as your analysis.
+#
+# All text following the 'Method:' keyword will be regarded as part of your free text methods description.
+Method:
+
+
+#
+#
+# All submissions must either be ranked or non-ranked.
+# Only one ranked submission per participant is allowed.
+# Multiple ranked submissions from the same participant will not be judged.
+# Non-ranked submissions are accepted so we can verify that they were made before the deadline.
+# The "Ranked:" keyword is required, and expects a Boolean value (True/False)
+Ranked:
+True
