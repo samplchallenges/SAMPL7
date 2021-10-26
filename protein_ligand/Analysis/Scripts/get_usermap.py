@@ -9,6 +9,7 @@ file.close()
 
 # Write output file, removing e-mail addresses and keeping only PHIP2 submissions
 file = open(outfile, 'w')
+
 for line in text:
     if 'PHIP2' in line:
         tmp = line.split(',')

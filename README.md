@@ -68,6 +68,7 @@ All SAMPL7 challenges are now closed. Note the first phase of the SAMPL8 host-gu
 ### Changes not in a release
 - 2021-10-05: Update two logP/logD experimental values (SM41 and SM43) to reflect an error in the experimental values provided us, as discussed in a forthcoming erratum to the experimental study from the Ballatore lab.
 - 2021-10-20: Update with details to [Ballatore lab corrigendum](https://doi.org/10.1016/j.ejmech.2021.113894)
+- 2021-10-26: Add PHIP2 protein-ligand analysis.
 
 ## Challenge overview
 

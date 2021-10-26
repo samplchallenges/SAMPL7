@@ -148,7 +148,6 @@ True
 # Following is sample text; please edit to your taste.
 # All text following the "Method:" keyword will be regarded as part of your free text methods description.
 Method:
-
 We build a XGboost classifier to classify ligands and non-ligands in stage2; each molecules were represented as their MACCS fingerprint; default parameters were used. The classifier had a mean AUC of 0.73 with 10-fold CV.
 We used the whole 40M dataset to screen the molecules with our classifier; the top 200 scored molecules were selected.
 We used the scoring function of gnina to go into the energy minimization subroutine on given poses. Molecules were ranked by their mean affinities in all provides PDBs.

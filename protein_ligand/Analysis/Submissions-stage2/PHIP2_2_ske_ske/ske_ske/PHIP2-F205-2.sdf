@@ -1,0 +1,157 @@
+F205
+     RDKit          3D
+
+ 20 20  0  0  0  0  0  0  0  0999 V2000
+  -20.9155   16.9581   31.1019 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -20.1576   15.7479   30.6097 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -19.3989   15.0150   31.5336 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.6888   13.8967   31.1176 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.7283   13.5022   29.7818 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -17.9915   12.3473   29.3606 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -19.4938   14.2494   28.8689 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -19.5250   13.8885   27.6592 O   0  0  0  0  0  0  0  0  0  0  0  0
+  -20.1986   15.3575   29.2869 N   0  0  0  0  0  0  0  0  0  0  0  0
+  -21.0006   16.1347   28.3222 C   0  0  0  0  0  0  0  0  0  0  0  0
+  -22.0026   16.8211   30.9266 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -20.5646   17.8666   30.5702 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -20.7667   17.1245   32.1903 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -19.3560   15.3070   32.5758 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.1059   13.3366   31.8381 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -17.4252   11.7983   30.0454 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -18.0013   12.0270   28.3669 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -22.0672   16.1383   28.6309 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -20.9608   15.7213   27.2935 H   0  0  0  0  0  0  0  0  0  0  0  0
+  -20.6249   17.1783   28.2704 H   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0
+  2  3  2  0
+  3  4  1  0
+  4  5  2  0
+  5  6  1  0
+  5  7  1  0
+  7  8  2  0
+  7  9  1  0
+  9 10  1  0
+  9  2  1  0
+  1 11  1  0
+  1 12  1  0
+  1 13  1  0
+  3 14  1  0
+  4 15  1  0
+  6 16  1  0
+  6 17  1  0
+ 10 18  1  0
+ 10 19  1  0
+ 10 20  1  0
+M  END
+>  <CHROM.1>  (1) 
+1.02561495,-0.91611970,1.24699998
+
+>  <Name>  (1) 
+F205
+
+>  <RI>  (1) 
+1.76422e+07
+
+>  <Rbt.Current_Directory>  (1) 
+/data/out
+
+>  <Rbt.Executable>  (1) 
+rbdock ($Id: //depot/dev/client3/rdock/2013.1/src/exe/rbdock.cxx#4 $)
+
+>  <Rbt.Library>  (1) 
+libRbt.so (2013.1, Build901 2013/11/27)
+
+>  <Rbt.Parameter_File>  (1) 
+/python_libraries/phenodiscovery/docking/templates/RDOCK_TETHER.conf
+
+>  <Rbt.Receptor>  (1) 
+/data/out/rdock-opt/grid/rdock-grid.prm
+
+>  <SCORE>  (1) 
+-1.15745
+
+>  <SCORE.INTER>  (1) 
+-1.15745
+
+>  <SCORE.INTER.CONST>  (1) 
+1
+
+>  <SCORE.INTER.POLAR>  (1) 
+0
+
+>  <SCORE.INTER.REPUL>  (1) 
+0
+
+>  <SCORE.INTER.ROT>  (1) 
+0
+
+>  <SCORE.INTER.VDW>  (1) 
+-6.55745
+
+>  <SCORE.INTER.norm>  (1) 
+-0.115745
+
+>  <SCORE.INTRA>  (1) 
+0
+
+>  <SCORE.INTRA.DIHEDRAL>  (1) 
+0
+
+>  <SCORE.INTRA.DIHEDRAL.0>  (1) 
+0
+
+>  <SCORE.INTRA.POLAR>  (1) 
+0
+
+>  <SCORE.INTRA.POLAR.0>  (1) 
+0
+
+>  <SCORE.INTRA.REPUL>  (1) 
+0
+
+>  <SCORE.INTRA.REPUL.0>  (1) 
+0
+
+>  <SCORE.INTRA.VDW>  (1) 
+0
+
+>  <SCORE.INTRA.VDW.0>  (1) 
+0
+
+>  <SCORE.INTRA.norm>  (1) 
+0
+
+>  <SCORE.RESTR>  (1) 
+0
+
+>  <SCORE.RESTR.CAVITY>  (1) 
+0
+
+>  <SCORE.RESTR.norm>  (1) 
+0
+
+>  <SCORE.SYSTEM>  (1) 
+0
+
+>  <SCORE.SYSTEM.CONST>  (1) 
+0
+
+>  <SCORE.SYSTEM.DIHEDRAL>  (1) 
+0
+
+>  <SCORE.SYSTEM.norm>  (1) 
+0
+
+>  <SCORE.heavy>  (1) 
+10
+
+>  <SCORE.norm>  (1) 
+-0.115745
+
+>  <TETHERED ATOMS>  (1) 
+2,3,4,5,7,9,10,8
+
+>  <skeledock_score>  (1) 
+42
+
+$$$$
