@@ -42,7 +42,6 @@ The SAMPL7 host-guest special issue is closed for submissions.
 All SAMPL7 challenges are now closed. Note the first phase of the SAMPL8 host-guest challenge is now open on the SAMPL8 GitHub repo.
 
 ## What's coming
-- PHIPA analysis
 
 ## Disclaimers:
 - As usual, we make no warranty as to correctness of protonation states, tautomers, conformations and poses provided in these directories. In some cases the most relevant such states may not be known, or multiple states perhaps should be considered. Please exercise caution and due diligence.
@@ -63,12 +62,11 @@ All SAMPL7 challenges are now closed. Note the first phase of the SAMPL8 host-gu
 - **Release 0.6** (Oct. 13, 2020, DOI [10.5281/zenodo.4086044](https://dx.doi.org/10.5281/zenodo.3975152)):  Release the finalized the physical properties challenge inputs, formats, submissions and experimental results. A later release will include the results of analysis. These changes were all available in master earlier (see detailed changelog in release notes), but this provides an official release. Analysis of physical properties results will come at a later date.
 - **Release 0.7** (Changes up to Jan. 14, 2021, DOI [10.5281/zenodo.4706017](https://dx.doi.org/10.5281/zenodo.4706017)): Includes the physical properties analysis/plots (for logP and pKa) most participants used in their SAMPL7 papers. These stayed the same until a draft of the overview paper was sent out in April, 2021, at which point two participants noticed sign/units errors in their logP submissions and these were corrected.
 - **Release 0.8** (Changes up to March 16, 2021, DOI [10.5281/zenodo.4706020](https://dx.doi.org/10.5281/zenodo.4706020)): Includes initial logD analysis as of PR #128
-- **Release 1.0** (April 20, 2021, DOI [10.5281/zenodo.4706021](10.5281/zenodo.4706021)): Includes updates to two logP submissions, then corrections to the overall analysis and performance statistics to reflect these changes (as of April 9, 2021). Also includes finalized logD analysis (April 20, 2021).
+- **Release 1.0** (April 20, 2021, DOI [10.5281/zenodo.4706021](https://dx.doi.org/10.5281/zenodo.4706021)): Includes updates to two logP submissions, then corrections to the overall analysis and performance statistics to reflect these changes (as of April 9, 2021). Also includes finalized logD analysis (April 20, 2021).
+- **Release 1.1** (Nov. 1, 2021, DOI [ 10.5281/zenodo.5637494](https://dx.doi.org/10.5281/zenodo.5637494)): Updates two logP/logD experimental values (SM41 and SM43) to reflect an error in the experimental values provided us, as discussed in the [Ballatore lab corrigendum](https://doi.org/10.1016/j.ejmech.2021.113894). Adds PHIP2 protein-ligand analysis.
 
 ### Changes not in a release
-- 2021-10-05: Update two logP/logD experimental values (SM41 and SM43) to reflect an error in the experimental values provided us, as discussed in a forthcoming erratum to the experimental study from the Ballatore lab.
-- 2021-10-20: Update with details to [Ballatore lab corrigendum](https://doi.org/10.1016/j.ejmech.2021.113894)
-- 2021-10-26: Add PHIP2 protein-ligand analysis.
+
 
 ## Challenge overview
 
